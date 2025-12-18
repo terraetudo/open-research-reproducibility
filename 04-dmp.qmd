@@ -1,0 +1,161 @@
+---
+title: "Chapter 4 — Data Management Plans (UCL)"
+---
+
+# Data Management Plans (DMPs) {#sec-dmp}
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+-   explain the purpose of a Data Management Plan beyond funder compliance;
+-   recognise a DMP as a living record of decisions;
+-   distinguish data description from data governance;
+-   identify proportionate planning actions for different data types;
+-   locate UCL guidance, templates, and support for DMPs.
+
+This module builds on FAIR principles [Chapter 2: FAIR basics](02-fair-basics.qmd) and project organisation [Chapter 3 - Project organisation and continuity](03-project-mgmt.qmd). It prepares you for practical data handling and documentation in later chapters. At UCL, DMPs are structured around six core areas: data collection, storage and security, archiving and preservation, discovery and access, metadata, and roles and responsibilities.
+
+This chapter focuses on **what a DMP must commit to** and **how assessors interpret it**. Chapters 5–7 cover implementation in practice (data organisation, documentation, and code), and Chapter 9 covers automation and workflows.
+
+------------------------------------------------------------------------
+
+## What a DMP is (and is not)
+
+A Data Management Plan describes how data will be [@turingway_dmp2025; @michener2015ten; @miksa2019ten]:
+
+-   created or collected;
+-   stored, documented, and protected;
+-   retained, shared, or archived.
+
+This includes describing what data and materials will be collected or reused, how they are generated, and which data types are in scope. A DMP is **not** a guarantee that plans will not change. Instead, it provides a transparent record of *current intentions and decisions*. Funders expect data management, storage, curation, and sharing to be explicitly resourced and costed, not treated as overhead.
+
+Different data types (e.g. sensitive identifiers, geospatial data, qualitative materials, imaging, code/software outputs) require different levels of governance, documentation, and retention detail. The DMP should reflect this **proportionately**, without over-specifying implementation.
+
+Where AI or machine-learning tools are used for data processing or analysis, the DMP should record what tools are used, how outputs are generated, and what can be documented or shared (e.g. model version, prompts, training data constraints), without over-committing to full reproducibility where this is infeasible.
+
+Where patient or public contributors are involved, DMPs should reflect any implications for data access, consent, governance, and communication of outputs, even where contributors do not access raw data.
+
+## DMPs as decision records
+
+Good DMPs document decisions made under uncertainty, including:
+
+-   what will happen *if* data cannot be shared openly;
+-   how access will be managed under different scenarios;
+-   who is responsible for data stewardship over time;
+-   how data will be discovered, accessed, or requested, including where metadata will remain available even when access is restricted.
+
+Updating a DMP is good practice, not a failure of planning.
+
+## Data description vs data governance
+
+It is useful to separate two related but distinct elements:
+
+-   **Data description**: what the data are, how they are structured, formats used, and how they are documented.
+-   **Data governance**: who can access the data, under what conditions, how consent and approvals apply, and how storage, security, and backup responsibilities are defined, even if technical implementation is handled elsewhere.
+
+Keeping these elements distinct improves clarity and supports both FAIR practice and ethical compliance. DMPs are also expected to describe how metadata will be created, maintained, and reviewed over time, without requiring field-level standards to be specified at this stage.
+
+------------------------------------------------------------------------
+
+## What assessors look for in a good DMP
+
+When reviewing a Data Management Plan, assessors are not looking for technical detail for its own sake. Instead, they look for evidence that data management has been **thought through**, is **feasible**, and is **proportionate to the project context**.
+
+Strong DMPs typically demonstrate:
+
+-   clarity about what data will be created or used;
+-   realistic plans for documentation, storage, and preservation;
+-   awareness of ethical, legal, and contractual constraints;
+-   alignment between stated plans and the way the project is organised in practice;
+-   named responsibility for data stewardship during the project and after staff or funding end.
+
+Vague or generic statements are a common reason for weak DMP assessments.
+
+------------------------------------------------------------------------
+
+## Mapping good project practice to DMP sections
+
+Many elements of a strong DMP directly reflect good internal project organisation. The table below illustrates this alignment.
+
+Use this mapping to check that the DMP reflects plausible working practice. It reassures assessors that statements correspond to real practices, but you do **not** need to duplicate implementation detail in the DMP.
+
+-   **Project folder structure**  
+    → DMP sections should state how data organisation and workflow separation will be handled (e.g., raw vs derived; storage locations).
+
+-   **README files and codebooks**  
+    → DMP sections should state what documentation artefacts will exist and who maintains them.
+
+-   **Structured metadata**  
+    → DMP sections should state how metadata will be captured, updated, and kept available (including when data access is restricted).
+
+-   **Versioning and change logs**  
+    → DMP sections should state how changes to data, code, and outputs will be tracked (tool-agnostic).
+
+Making this alignment explicit reassures assessors that the DMP reflects real working practices rather than aspirational statements.
+
+------------------------------------------------------------------------
+
+## Planning for derived and intermediate data
+
+DMPs should consider not only final datasets, but also:
+
+-   derived datasets created during analysis;
+-   intermediate files produced by scripts or workflows;
+-   which data will be retained, archived, or discarded.
+
+These decisions directly inform the archiving, preservation, and curation plans described in the DMP, including what will be retained beyond the active life of the project.
+
+Chapter 5 covers how to structure and document data states and provenance in practice. In the DMP, focus on recording what you intend to retain, under what conditions, and why.
+
+------------------------------------------------------------------------
+
+## Sustainability and proportionality
+
+Planning data management also has environmental implications.
+
+DMPs should justify proportionate storage, retention, and compute plans in a way that supports reproducibility without unnecessary resource use. Practical options and examples are signposted in the [Resources and Further Reading](resources.qmd) chapter.
+
+------------------------------------------------------------------------
+
+## DMP support at UCL
+
+UCL provides:
+
+-   an institutional DMP template;
+-   Research Data Management guidance;
+-   support via Library Services and specialist teams.
+
+Relevant links, templates, and contacts are collated in the [Resources and Further Reading](resources.qmd) chapter (see **Data Management Plans** in Resources) to keep this module focused on principles rather than policy detail.
+
+------------------------------------------------------------------------
+
+## Practical prompts when drafting a DMP
+
+In practice, effective DMPs often make the following points explicit:
+
+-   what data types, formats, and volumes are in scope (and what is out of scope);
+-   likely access and sharing constraints, and how these will be managed;
+-   who is responsible for data stewardship during the project and after staff turnover;
+-   when the DMP will be reviewed and updated (e.g., start-up, mid-project, pre-publication, project end).
+
+These prompts support continuity and reduce last-minute compliance work.
+
+------------------------------------------------------------------------
+
+## Exercises (5--10 minutes)
+
+1.  Review the DMP (or draft one) for a current project.  
+    Is it clear which decisions are fixed and which may change?
+
+2.  Identify one type of derived or intermediate data.  
+    Decide whether it should be retained, documented, or discarded, and where that decision should be recorded in the DMP.
+
+::: callout-summary
+## Key takeaways
+
+-   A DMP is a living record of decisions, not a static form.
+-   Separating data description from governance improves clarity.
+-   Planning should include derived and intermediate data.
+-   Proportionate DMPs support reproducibility, ethics, and sustainability.
+:::

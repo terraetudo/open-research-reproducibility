@@ -1,0 +1,170 @@
+---
+title: "Chapter 8 — Responsible research: roles, decisions, and accountability"
+---
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+- explain responsibility as an ongoing research practice;
+- recognise ethical, legal, and governance considerations in everyday workflows;
+- identify and articulate roles and responsibilities within a research project;
+- document constraints, decisions, and trade-offs transparently;
+- link responsibility to decisions about sharing, restriction, and reuse.
+
+This module builds on [Chapter 7 — Code quality & testing](07-code-quality-testing.qmd)
+and informs later decisions about
+[Chapter 10 — Publishing, PIDs & preparing for reuse](10-publishing-pids.qmd).
+
+------------------------------------------------------------------------
+
+## What responsibility means in practice
+
+Responsible research is not limited to formal ethics approval or compliance
+checkpoints.
+
+It involves **anticipating consequences, making proportionate choices, and
+recording decisions** throughout the project lifecycle.
+
+Most responsibility challenges arise not from exceptional cases, but from
+routine decisions that are undocumented, implicit, or assumed to be someone
+else’s responsibility.
+
+------------------------------------------------------------------------
+
+## Responsibility as anticipation and decision capture
+
+The Turing Way frames responsibility as *anticipatory*.
+
+Key questions include:
+
+- Who might be affected by this research?
+- What risks, burdens, or exclusions could arise?
+- What constraints limit what can be done, shared, or reused?
+
+Responsible practice requires that these considerations are **made explicit and
+recorded**, alongside the rationale for decisions taken.
+
+Documenting constraints and trade-offs allows decisions to be understood,
+revisited, and defended as contexts change.
+
+------------------------------------------------------------------------
+
+## Roles, responsibilities, and accountability
+
+Responsibility in research is **distributed**.
+
+Projects involve multiple roles, which may overlap and change over time.
+Examples include:
+
+- principal investigator or project lead;
+- supervisors and advisory roles;
+- analysts and data stewards;
+- collaborators and external partners;
+- institutional approvers and governance bodies.
+
+Unclear or assumed responsibilities are a common source of risk.
+When roles are not explicit, decisions may be delayed, duplicated, or left
+undocumented.
+
+Responsible research therefore requires:
+
+- identifying who is responsible for key decisions;
+- recognising where responsibilities overlap;
+- recording how decisions are made and by whom.
+
+This is particularly important for:
+
+- data access and governance;
+- ethics and regulatory approvals;
+- analytical choices and exclusions;
+- decisions about sharing, restriction, and reuse.
+
+Responsibility is not about assigning blame.
+It is about ensuring that **accountability is visible**, supported, and
+reviewable.
+
+------------------------------------------------------------------------
+
+## Equity, inclusion, and accessibility as responsibility
+
+Equity and accessibility are not optional add-ons.
+They are operational aspects of responsible practice.
+
+Examples include:
+
+- tools or workflows that require specialist infrastructure;
+- documentation that assumes prior technical or institutional knowledge;
+- processes that place hidden burdens on junior staff or collaborators.
+
+Making expectations explicit, documenting decisions, and choosing proportionate
+approaches improves inclusion and collaboration.
+
+------------------------------------------------------------------------
+
+## Responsibility in sharing, restriction, and reuse
+
+Responsible research extends to how outputs are shared and reused.
+
+This includes:
+
+- setting clear access conditions and licences;
+- avoiding over-claiming reuse where constraints apply;
+- providing sufficient context to prevent misinterpretation.
+
+These considerations link directly to
+[Chapter 10 — Publishing, PIDs & preparing for reuse](10-publishing-pids.qmd).
+
+Responsible sharing does not mean sharing everything.
+It means **being explicit about what can be shared, what cannot, and why**.
+
+------------------------------------------------------------------------
+
+## Institutional support and escalation routes
+
+Responsibility is supported by institutional infrastructure.
+
+At UCL, guidance and support are available for:
+
+- research ethics and governance;
+- data protection and information security;
+- research integrity and responsible conduct;
+- data management, sharing, and preservation.
+
+Knowing **when and where to seek advice** is itself a responsible practice.
+
+Relevant training, policies, and support routes are collated in the
+[Resources and Further Reading](resources.qmd).
+
+------------------------------------------------------------------------
+
+## Practical guidance for ECR workflows
+
+For early-career researchers, proportionate responsible practice often involves:
+
+- clarifying roles and expectations early in a project;
+- documenting constraints and trade-offs rather than hiding them;
+- recording decisions as they are made, not retrospectively;
+- seeking advice when boundaries or responsibilities are unclear.
+
+Responsibility is a shared, supported practice — not an individual burden.
+
+------------------------------------------------------------------------
+
+## Exercises (5–10 minutes)
+
+1. Identify one decision in a current project.  
+   Who was responsible, and is the rationale documented?
+
+2. Identify one constraint (ethical, legal, practical).  
+   Is it recorded clearly enough for someone new to the project to understand?
+
+::: {.callout-summary}
+## Key takeaways
+
+- Responsibility is an ongoing, documented practice.
+- Clear roles and accountability reduce risk and confusion.
+- Constraints and trade-offs should be recorded, not hidden.
+- Responsible sharing requires transparency about limits.
+- Institutional support is part of responsible research.
+:::

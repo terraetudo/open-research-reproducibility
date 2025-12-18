@@ -1,0 +1,132 @@
+---
+title: "Chapter 5 - Organising and tidying data"
+---
+
+# Organising and tidying data {#sec-organise}
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+-   explain why data organisation is central to reproducibility and reuse;
+-   distinguish raw, cleaned, and derived data in practice;
+-   understand data provenance and why it matters;
+-   document missingness, exclusions, and transformations proportionately;
+-   locate minimum standards, examples, and templates for organised data.
+
+This module builds on data planning [Chapter 4 --- Data Management Plans (UCL)](04-dmp.qmd) and supports later modules on documentation, code, automation, and publishing.\
+**All concrete examples, templates, and minimum-standard artefacts are provided centrally in the [Resources and Further Reading](resources.qmd) chapter.**
+
+------------------------------------------------------------------------
+
+## Why data organisation matters
+
+Poorly organised data are difficult to understand, validate, or reuse---even by the original researcher. Organisation choices made early in a project shape how easily analyses can be checked, rerun, or extended later.
+
+Good data organisation:
+
+-   reduces ambiguity about what files represent;
+-   preserves provenance and interpretability;
+-   supports efficient analysis and collaboration;
+-   reduces the risk of accidental data loss or misuse.
+
+These benefits apply regardless of whether data can ultimately be shared openly.
+
+## Raw, cleaned, and derived data
+
+A useful organising principle is to **separate data by state**:
+
+-   **Raw data**: as collected or received; never overwritten.
+-   **Cleaned data**: errors corrected, formats standardised.
+-   **Derived data**: variables or datasets created during analysis.
+
+Keeping these states distinct preserves provenance and makes it possible to reproduce analyses from source data when needed.
+
+This separation should be reflected both in folder structure and in documentation. Canonical structures are provided in the [Resources and Further Reading](resources.qmd) chapter.
+
+## Data provenance and lineage
+
+**Data provenance** describes where data come from, how they change, and how outputs are produced.
+
+Recording provenance typically involves:
+
+-   documenting transformation steps and assumptions;
+-   linking derived outputs to scripts or workflows;
+-   recording versions and reasons for change.
+
+Explicit provenance supports audit, peer review, reuse, and defensibility. It is particularly important in regulated, sensitive, or administrative data contexts, where data access may be restricted but analytical transparency is still expected.
+
+Key transformations (recoding, aggregation, linkage) should be summarised in documentation even when implemented in code.
+
+## Tidy data principles (practical view)
+
+Tidy data conventions aim to make datasets easier to analyse and interpret[@qut_naming_convention2019; @aberdeen_file_naming2017]. In practice, this often means:
+
+-   one variable per column;
+-   one observation per row;
+-   consistent naming and coding conventions.
+
+Not all data can be perfectly tidy, and perfection is not the goal. Moving *towards* these principles improves legibility and reduces errors, even when constraints apply.
+
+Further guidance and examples are signposted in the [Resources and Further Reading](resources.qmd) chapter.
+
+## Missing data and exclusions
+
+Handling missing data is not only technical but interpretive.
+
+Good practice includes:
+
+-   using explicit missing value codes;
+-   documenting reasons for missingness where known;
+-   recording exclusions and filtering decisions.
+
+This information is often as important as the observed data itself and should be captured in documentation rather than inferred from code alone. Minimum documentation templates are provided in the [Resources and Further Reading](resources.qmd) chapter.
+
+## File formats, naming, and versioning
+
+Choices about formats, file names, and versions affect both longevity and reproducibility.
+
+At a principle level, organised data should:
+
+-   use stable, non-proprietary formats where possible;
+-   avoid ambiguous or overloaded file names;
+-   make changes traceable rather than overwriting files.
+
+Rather than memorising rules, the key question is whether someone else could understand *what changed, when, why, and by whom*. Canonical examples and a changelog template are provided in the [Resources and Further Reading](resources.qmd) chapter.
+
+## Minimum standards vs advanced practice
+
+This course defines **minimum standards** that are achievable for most student and early-career research projects.
+
+More advanced practices---such as automated validation, controlled vocabularies, or formal SOPs---are appropriate for large teams, regulated environments, or long-running studies. These are signposted in the [Resources and Further Reading](resources.qmd) chapter and are **not required** for all projects.
+
+The emphasis is on proportionality rather than completeness.
+
+## Practical guidance for ECR workflows
+
+In practice, proportionate data organisation often involves:
+
+-   freezing raw data early and working on copies;
+-   creating a short data dictionary alongside cleaning;
+-   documenting transformations as they occur, not retrospectively;
+-   agreeing naming and versioning conventions within the team.
+
+These steps scale from individual projects to large collaborations.
+
+## Exercises (5--15 minutes)
+
+1.  Identify one dataset in a current project.\
+    Can you clearly distinguish raw, cleaned, and derived versions?
+
+2.  Review how missing data are handled.\
+    Are reasons for missingness or exclusion documented anywhere?
+
+::: callout-summary
+## Key takeaways
+
+-   Clear data organisation underpins reproducibility and interpretation.
+-   Separating raw, cleaned, and derived data preserves provenance.
+-   Provenance and documentation matter even when data are restricted.
+-   Minimum standards should be achievable and proportionate.
+-   All templates and examples are centralised in the [Resources and Further Reading](resources.qmd) chapter.
+:::

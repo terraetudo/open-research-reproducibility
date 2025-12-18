@@ -1,0 +1,140 @@
+---
+title: "Chapter 3 - Project organisation and continuity"
+---
+
+# Project organisation for reproducible research {#sec-project-mgmt}
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+-   explain why project organisation is central to reproducibility and continuity;
+-   describe how metadata, roles, and conventions support collaboration;
+-   apply proportionate principles for organisation, versioning, and continuity;
+-   understand how project organisation underpins documentation, code, and automation;
+-   locate UCL-supported tools and templates relevant to project organisation.
+
+This module builds on the FAIR principles introduced in [Chapter 2: FAIR basics](02-fair-basics.qmd) and focuses on how projects are structured and managed over time.\
+**All copy-ready templates and concrete examples are provided centrally in the [Resources and Further Reading](resources.qmd) chapter.**
+
+------------------------------------------------------------------------
+
+## Why project organisation matters
+
+Many reproducibility problems arise not from technical complexity, but from poorly organised projects. As projects grow, involve multiple contributors, or span years, it becomes increasingly difficult to track what was done, why it was done, and by whom. This chapter does not teach general project management skills; it focuses on organisational practices that directly support reproducibility, governance, and long-term continuity.
+
+Effective project organisation supports[@ukdataservice_managing_sharing2019]:
+
+-   continuity when team members join or leave;
+-   transparent decision making;
+-   efficient collaboration across roles and disciplines;
+-   traceability of changes and outputs.
+
+These benefits are particularly important in research, where projects often involve multiple data types, governance requirements, and extended timelines.
+
+## Metadata about the project
+
+A project is more than a collection of files. Treat **project-level metadata** as a first-class research output. This metadata is distinct from dataset-level metadata (covered in Chapter 5), and exists to make the project itself legible.
+
+At a minimum, this includes:
+
+-   a brief description of **purpose and scope**;
+-   the **outputs** the project will generate and how they are identified (e.g. PIDs);
+-   conventions for naming, versioning, and access;
+-   roles and responsibilities for key tasks.
+
+A short project README or charter at the top level of your repository or shared drive improves discoverability, onboarding, and continuity.\
+A minimum README template is provided in [Resources and Further Reading](resources.qmd).
+
+## Structuring the project
+
+Well-organised projects tend to share common structural features, regardless of discipline or tools:
+
+-   a clear top-level project boundary;
+-   separation of raw data, derived data, analysis code, and outputs;
+-   a visible project metadata file (e.g. README);
+-   predictable locations for documentation and logs.
+
+Structure should prioritise **legibility for someone unfamiliar with the project**, including reviewers and your future self.
+
+Rather than inventing bespoke layouts, this course encourages starting from a simple baseline structure and adapting it as needed.\
+A canonical folder structure and guidance on its intended use are provided in the [Resources and Further Reading](resources.qmd) chapter.
+
+## Versioning: principles, not tools
+
+Versioning is essential for understanding how a project evolves over time. Crucially, **versioning principles apply to all research materials**, not only to code[@ukdataservice_versioning2023].
+
+It is useful to distinguish between two related but distinct practices.
+
+### File versioning (data, documents, outputs)
+
+File versioning applies to data files, documents, and other non-code outputs. At a minimum, good practice involves:
+
+-   retaining historical versions rather than overwriting files;
+-   using clear, consistent version identifiers;
+-   recording what changed and why.
+
+This can be achieved using structured file naming and simple change logs, without specialised tools. Minimum examples and a changelog template are provided in the [Resources and Further Reading](resources.qmd) chapter.
+
+### Code version control (e.g. Git)
+
+Code version control systems are designed for tracking changes to scripts and software. They support:
+
+-   fine-grained tracking of changes;
+-   collaboration across multiple contributors;
+-   reversible experimentation.
+
+Not all projects require formal code version control, but where code is central to analysis, its use substantially improves transparency and reproducibility.
+
+This course emphasises **principles before tools**. Tool-specific guidance and examples are signposted in the [Resources and Further Reading](resources.qmd) chapter.
+
+## Roles, responsibilities, and continuity
+
+Reproducible projects make roles explicit.
+
+Good practice includes:
+
+-   documenting who is responsible for data, code, and documentation;
+-   agreeing communication norms and review points;
+-   onboarding new contributors with a short guide to project conventions.
+
+Offboarding is equally important. When people leave a project, their context, assumptions, and decisions should not leave with them.
+
+## Project organisation across the lifecycle
+
+Organisation is not a one-off task.
+
+Structures, documentation, and metadata should evolve as a project moves from setup to analysis to dissemination. Use milestones (e.g. protocol finalised, data locked, analysis frozen) as prompts to review and update organisation and records.
+
+This helps ensure that published outputs reflect real working practices rather than retrospective reconstruction.
+
+These organisational practices underpin later chapters on documentation (Chapter 6), code quality (Chapter 7), and automation (Chapter 9).
+
+## Practical guidance for ECR workflows
+
+For early career researchers, proportionate project organisation often means:
+
+-   writing a project README at the outset;
+-   agreeing simple versioning conventions with collaborators;
+-   maintaining a short decision log alongside active work;
+-   keeping tasks, roles, and responsibilities visible to the team.
+
+These steps support transparent progress without requiring heavy infrastructure.
+
+## Exercises (5--15 minutes)
+
+1.  Look at the top level of a current project.\
+    Is there a project README describing purpose, outputs, and conventions?
+
+2.  Identify one recent decision in that project.\
+    Is it recorded with context and rationale? Add it to a log if not.
+
+::: callout-summary
+## Key takeaways
+
+-   Project organisation is foundational for reproducibility and collaboration.
+-   Project-level metadata improves discoverability and continuity.
+-   Versioning principles apply to data, documentation, and code.
+-   Explicit roles and decision records reduce risk and knowledge loss.
+-   Templates and examples are centralised in the [Resources and Further Reading](resources.qmd) chapter.
+:::

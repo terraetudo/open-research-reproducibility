@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Research &amp; Reproducibility - Chapter 5 - Organising and tidying data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06-docs-eln-sops.html" rel="next">
+<link href="./04-dmp.html" rel="prev">
+<link href="./cover.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles/style.scss">
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-organise-tidy.html"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Chapters</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-organise" class="level1">
+<h1>Organising and tidying data</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ul>
+<li>explain why data organisation is central to reproducibility and reuse;</li>
+<li>distinguish raw, cleaned, and derived data in practice;</li>
+<li>understand data provenance and why it matters;</li>
+<li>document missingness, exclusions, and transformations proportionately;</li>
+<li>locate minimum standards, examples, and templates for organised data.</li>
+</ul>
+<p>This module builds on data planning <a href="./04-dmp.html">Chapter 4 — Data Management Plans (UCL)</a> and supports later modules on documentation, code, automation, and publishing.<br>
+<strong>All concrete examples, templates, and minimum-standard artefacts are provided centrally in the <a href="./resources.html">Resources and Further Reading</a> chapter.</strong></p>
+<hr>
+</section>
+<section id="why-data-organisation-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-data-organisation-matters">Why data organisation matters</h2>
+<p>Poorly organised data are difficult to understand, validate, or reuse—even by the original researcher. Organisation choices made early in a project shape how easily analyses can be checked, rerun, or extended later.</p>
+<p>Good data organisation:</p>
+<ul>
+<li>reduces ambiguity about what files represent;</li>
+<li>preserves provenance and interpretability;</li>
+<li>supports efficient analysis and collaboration;</li>
+<li>reduces the risk of accidental data loss or misuse.</li>
+</ul>
+<p>These benefits apply regardless of whether data can ultimately be shared openly.</p>
+</section>
+<section id="raw-cleaned-and-derived-data" class="level2">
+<h2 class="anchored" data-anchor-id="raw-cleaned-and-derived-data">Raw, cleaned, and derived data</h2>
+<p>A useful organising principle is to <strong>separate data by state</strong>:</p>
+<ul>
+<li><strong>Raw data</strong>: as collected or received; never overwritten.</li>
+<li><strong>Cleaned data</strong>: errors corrected, formats standardised.</li>
+<li><strong>Derived data</strong>: variables or datasets created during analysis.</li>
+</ul>
+<p>Keeping these states distinct preserves provenance and makes it possible to reproduce analyses from source data when needed.</p>
+<p>This separation should be reflected both in folder structure and in documentation. Canonical structures are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+</section>
+<section id="data-provenance-and-lineage" class="level2">
+<h2 class="anchored" data-anchor-id="data-provenance-and-lineage">Data provenance and lineage</h2>
+<p><strong>Data provenance</strong> describes where data come from, how they change, and how outputs are produced.</p>
+<p>Recording provenance typically involves:</p>
+<ul>
+<li>documenting transformation steps and assumptions;</li>
+<li>linking derived outputs to scripts or workflows;</li>
+<li>recording versions and reasons for change.</li>
+</ul>
+<p>Explicit provenance supports audit, peer review, reuse, and defensibility. It is particularly important in regulated, sensitive, or administrative data contexts, where data access may be restricted but analytical transparency is still expected.</p>
+<p>Key transformations (recoding, aggregation, linkage) should be summarised in documentation even when implemented in code.</p>
+</section>
+<section id="tidy-data-principles-practical-view" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-principles-practical-view">Tidy data principles (practical view)</h2>
+<p>Tidy data conventions aim to make datasets easier to analyse and interpret<span class="citation" data-cites="qut_naming_convention2019 aberdeen_file_naming2017"><sup><a href="#ref-qut_naming_convention2019" role="doc-biblioref">1</a>,<a href="#ref-aberdeen_file_naming2017" role="doc-biblioref">2</a></sup></span>. In practice, this often means:</p>
+<ul>
+<li>one variable per column;</li>
+<li>one observation per row;</li>
+<li>consistent naming and coding conventions.</li>
+</ul>
+<p>Not all data can be perfectly tidy, and perfection is not the goal. Moving <em>towards</em> these principles improves legibility and reduces errors, even when constraints apply.</p>
+<p>Further guidance and examples are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+</section>
+<section id="missing-data-and-exclusions" class="level2">
+<h2 class="anchored" data-anchor-id="missing-data-and-exclusions">Missing data and exclusions</h2>
+<p>Handling missing data is not only technical but interpretive.</p>
+<p>Good practice includes:</p>
+<ul>
+<li>using explicit missing value codes;</li>
+<li>documenting reasons for missingness where known;</li>
+<li>recording exclusions and filtering decisions.</li>
+</ul>
+<p>This information is often as important as the observed data itself and should be captured in documentation rather than inferred from code alone. Minimum documentation templates are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+</section>
+<section id="file-formats-naming-and-versioning" class="level2">
+<h2 class="anchored" data-anchor-id="file-formats-naming-and-versioning">File formats, naming, and versioning</h2>
+<p>Choices about formats, file names, and versions affect both longevity and reproducibility.</p>
+<p>At a principle level, organised data should:</p>
+<ul>
+<li>use stable, non-proprietary formats where possible;</li>
+<li>avoid ambiguous or overloaded file names;</li>
+<li>make changes traceable rather than overwriting files.</li>
+</ul>
+<p>Rather than memorising rules, the key question is whether someone else could understand <em>what changed, when, why, and by whom</em>. Canonical examples and a changelog template are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+</section>
+<section id="minimum-standards-vs-advanced-practice" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-standards-vs-advanced-practice">Minimum standards vs advanced practice</h2>
+<p>This course defines <strong>minimum standards</strong> that are achievable for most student and early-career research projects.</p>
+<p>More advanced practices—such as automated validation, controlled vocabularies, or formal SOPs—are appropriate for large teams, regulated environments, or long-running studies. These are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter and are <strong>not required</strong> for all projects.</p>
+<p>The emphasis is on proportionality rather than completeness.</p>
+</section>
+<section id="practical-guidance-for-ecr-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
+<p>In practice, proportionate data organisation often involves:</p>
+<ul>
+<li>freezing raw data early and working on copies;</li>
+<li>creating a short data dictionary alongside cleaning;</li>
+<li>documenting transformations as they occur, not retrospectively;</li>
+<li>agreeing naming and versioning conventions within the team.</li>
+</ul>
+<p>These steps scale from individual projects to large collaborations.</p>
+</section>
+<section id="exercises-515-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-515-minutes">Exercises (5–15 minutes)</h2>
+<ol type="1">
+<li><p>Identify one dataset in a current project.<br>
+Can you clearly distinguish raw, cleaned, and derived versions?</p></li>
+<li><p>Review how missing data are handled.<br>
+Are reasons for missingness or exclusion documented anywhere?</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2 callout-summary">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Clear data organisation underpins reproducibility and interpretation.</li>
+<li>Separating raw, cleaned, and derived data preserves provenance.</li>
+<li>Provenance and documentation matter even when data are restricted.</li>
+<li>Minimum standards should be achievable and proportionate.</li>
+<li>All templates and examples are centralised in the <a href="./resources.html">Resources and Further Reading</a> chapter.</li>
+</ul>
+</section>
+
+
+<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-qut_naming_convention2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Queensland University of Technology. <em><a href="https://www.library.qut.edu.au/about/management/documents/QUTTILSDocNamingConvention.pdf">File Naming Convention</a></em>. (Queensland University of Technology Library, 2019).</div>
+</div>
+<div id="ref-aberdeen_file_naming2017" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">University of Aberdeen. <em><a href="https://www.abdn.ac.uk/media/site/staffnet/documents/policy-zone-information-policies/File_Naming_Conventions_July_2017.pdf">File Naming Conventions</a></em>. (University of Aberdeen, 2017).</div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04-dmp.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06-docs-eln-sops.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">CC BY 4.0 · Built with Quarto</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

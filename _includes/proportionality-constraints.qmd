@@ -1,0 +1,11 @@
+
+
+::: callout-tip
+## Proportionality and constraints
+
+Apply open and reproducible practice **proportionately**, but **always** make constraints explicit.
+
+- Constraints can include: sensitive/personal data, contractual/IP limits, governance restrictions, time/resource limits.
+- “Proportionate” means choosing a feasible approach and documenting it (e.g., in README, DMP, ethics/governance notes).
+- Even when outputs cannot be open, they should still be **well described** (metadata, documentation, access route).
+:::

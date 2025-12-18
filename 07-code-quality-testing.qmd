@@ -1,0 +1,164 @@
+---
+title: "Chapter 7 — Code quality & testing"
+---
+
+# Code quality, testing, and sustainable computation {#sec-code-quality-testing}
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+-   explain why code quality and documentation underpin reproducibility and defensibility;
+-   recognise the role of testing in reliable research workflows;
+-   understand how inefficient code affects reproducibility and sustainability;
+-   apply proportionate "green coding" practices in research contexts;
+-   identify practical steps to reduce unnecessary computation.
+
+This module builds on [Chapter 6 --- Documentation, ELNs & SOPs](06-docs-eln-sops.qmd) and prepares you for automation and workflows in [Chapter 9 --- Automation & simple workflows](09-automation.qmd).
+
+------------------------------------------------------------------------
+
+## Why code quality matters in research
+
+In research contexts, code quality is not about elegance or performance alone. It is about whether results can be:
+
+-   regenerated reliably;
+-   inspected and reviewed;
+-   adapted or extended by others (including your future self).
+
+Poor-quality code increases the risk of silent errors, irreproducible results, and excessive rework.
+
+## Testing as a research safeguard
+
+Testing checks that code behaves as expected when inputs or assumptions change.
+
+In practice, testing supports reproducibility by:
+
+-   detecting errors early;
+-   reducing reliance on manual checks;
+-   supporting refactoring without breaking results.
+
+Even simple tests (e.g. checking dimensions, ranges, or invariants) provide substantial benefits.
+
+::: callout-tip
+## Sustainable coding: quality that lasts (and wastes less)
+
+Sustainable code is not about perfection or performance for its own sake.
+It is about **reducing unnecessary recomputation, storage, and rework** while
+keeping analyses **understandable, defensible, and maintainable**.
+
+Well-designed code saves time, energy, and attention — for you and for others.
+:::
+
+### What to look for when coding sustainably
+
+The practices below focus on **high-value, low-burden choices** that improve
+both code quality *and* environmental sustainability.
+
+- **Restartable, modular workflows**  
+  Structure scripts so analyses can resume from intermediate outputs rather than
+  rerunning end-to-end. This reduces accidental full recomputation after small changes.  
+  *(Links to workflow tooling in Chapter 9.)*
+
+- **Incremental recomputation and caching**  
+  Save expensive intermediate results when justified, and recompute only what has
+  changed. This is often the single biggest energy-saving decision in analysis code.
+
+- **Profiling before optimisation**  
+  Use simple timing or memory checks to identify where time and compute are actually
+  spent. Optimising unmeasured code often wastes more energy than it saves.
+
+- **Algorithmic proportionality**  
+  Prefer methods and resolutions that are sufficient for the research question,
+  rather than maximal by default (e.g. spatial resolution, iterations, precision).
+  Small reductions here can dominate total compute cost.
+
+- **Clear inputs, outputs, and assumptions**  
+  Make it obvious what each script expects, produces, and assumes.
+  Ambiguity leads to reruns, duplication, and error-driven recomputation.
+
+- **Lightweight, targeted testing**  
+  A small number of high-value checks (e.g. input validation, key invariants)
+  can prevent long, expensive runs from failing late.
+
+- **Readable structure over cleverness**  
+  Code that is easy to read, review, and modify is less likely to be rerun
+  unnecessarily or replaced wholesale when changes are needed.
+
+### Why this matters beyond code style
+
+Poorly structured or opaque code increases the likelihood of:
+
+- full reruns due to uncertainty or small errors;
+- duplicated data and intermediate files;
+- wasted compute from over-resolution or over-iteration;
+- abandonment and reimplementation of analyses.
+
+In practice, inefficient code can make research *effectively* irreproducible.
+If analyses are too slow, expensive, or resource-intensive to rerun, this limits
+verification, sensitivity analysis, and extension by others.
+These constraints disproportionately affect researchers and teams with limited
+access to compute resources, creating hidden barriers to transparency and reuse.
+ These costs are **environmental, human, and organisational**.
+Good-enough code quality is therefore a sustainability intervention, not just
+a technical preference.
+
+(Responsibility and proportionality are discussed further in **Chapter 8**;
+workflow automation and dependency management are covered in **Chapter 9**.)
+
+### Documenting your code for clarity and reuse
+
+Good documentation is not an afterthought — it’s part of writing code that others (and you later) can reliably understand and reuse.
+
+- **Explain *why***: Comment the reasoning behind decisions, not just what the code does.  
+- **Write docs as you code**: Update documentation alongside code to avoid outdated notes.  
+- **Use clear naming and structure**: Consistent variable/function names and well-structured README/help files improve readability.  
+- **Document at multiple levels**: Inline comments, function headers, and high-level project docs all have a role.  
+- **Include examples**: Minimal usage examples help others understand expected inputs/outputs.  
+- **Keep docs up to date**: Outdated documentation misleads and can cost more time than none at all.  
+- **Choose appropriate tools**: Use `roxygen2` (R), Sphinx (Python), or Markdown with docstrings to integrate docs with code.
+
+*Why it matters*: well-documented code reduces confusion, unnecessary reruns, and onboarding friction — essential components of sustainable and reproducible research workflows.
+
+AI-generated code should be treated like any other external contribution: reviewed, tested, and documented before use.
+
+## Versioning, refactoring, and tests
+
+Refactoring code is safer when tests are in place. The versioning principles introduced for data and documentation in [(Chapter 5 - Organising and tidying data)](05-organise-tidy.qmd) apply equally to code. Scripts and analysis pipelines should not be overwritten without trace, and changes should be attributable, versioned, and recoverable. Code version control systems support this process, but the underlying expectation is consistency and traceability rather than tool choice.
+
+Testing supports sustainable workflows by:
+
+-   enabling incremental improvements;
+-   preventing costly re-runs after small changes;
+-   reducing fear of breaking working code.
+
+This is particularly important in long-running or resource-intensive analyses.
+
+## Practical guidance for ECR workflows
+
+Proportionate steps for most research projects include:
+
+-   writing scripts so they can be run end-to-end;
+-   adding basic checks or tests for key assumptions;
+-   avoiding unnecessary recomputation during exploration;
+-   documenting when and why full reruns are required.
+
+More advanced optimisation is context-dependent and not always necessary.
+
+## Exercises (5--15 minutes)
+
+1.  Identify one script or analysis that is slow or frequently re-run.\
+    Is there a step that could be cached or avoided?
+
+2.  Look at one function or script.\
+    What simple check could be added to detect errors early?
+
+::: callout-summary
+## Key takeaways
+
+-   Code quality underpins reproducibility and trust in results.
+-   Testing reduces errors, rework, and unnecessary computation.
+-   Inefficient code can make research effectively irreproducible.
+-   Green coding focuses on reducing waste through clarity and efficiency.
+-   Proportionate practices deliver most of the benefit.
+:::

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Research &amp; Reproducibility - Chapter 10 — Publishing, PIDs &amp; preparing for reuse</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./11-wrap-up.html" rel="next">
+<link href="./09-automation.html" rel="prev">
+<link href="./cover.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles/style.scss">
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-publishing-pids.html"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Chapters</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this chapter, you should be able to:</p>
+<ul>
+<li>understand publishing as a process of releasing research outputs;</li>
+<li>explain how persistent identifiers support credit, linkage, and traceability;</li>
+<li>prepare data, code, and documentation for responsible reuse;</li>
+<li>distinguish sharing from enabling reuse;</li>
+<li>recognise how publishing choices affect reproducibility and sustainability.</li>
+</ul>
+<p>This chapter builds on <a href="./02-fair-basics.html">Chapter 2 — FAIR basics</a>, <a href="./08-s-responsibility.html">Chapter 8 — Responsible research: roles, decisions, and accountability</a>, and <a href="./09-automation.html">Chapter 9 — Automation &amp; simple workflows</a>.</p>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible publishing builds on responsible research
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter <strong>assumes the principles established in Chapter 8</strong>: ethical, legal, and contractual constraints on sharing should be <strong>explicit, justified, and documented</strong>.</p>
+<p>Where outputs cannot be fully open, responsible publishing still requires clear metadata, documented access routes, and appropriate licensing for what <em>can</em> be shared.</p>
+</div>
+</div>
+</section>
+<section id="publishing-beyond-the-paper" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-beyond-the-paper">Publishing beyond the paper</h2>
+<p>Research outputs extend beyond journal articles. They may include:</p>
+<ul>
+<li>datasets and metadata;</li>
+<li>analysis code and workflows;</li>
+<li>protocols and documentation;</li>
+<li>figures, tables, and derived materials;</li>
+<li>preprints and other early research outputs.</li>
+</ul>
+<p>Publishing these outputs supports transparency, enables reuse, and ensures appropriate attribution.</p>
+<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible publishing sits on responsible research practice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter assumes the principles in <strong>Chapter 8 (Responsible &amp; sustainable research)</strong>:<br>
+constraints on sharing should be <strong>justified, documented, and revisited</strong>, and restricted outputs can still be <strong>FAIR through metadata, documentation, and clear access conditions</strong>.</p>
+</div>
+</div>
+</section>
+<section id="publishing-as-release-management" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-as-release-management">Publishing as release management</h2>
+<p>Publishing can be understood as the <strong>release</strong> of a research object.</p>
+<p>A release typically involves:</p>
+<ul>
+<li>freezing a version;</li>
+<li>documenting scope, assumptions, and limitations;</li>
+<li>assigning a persistent identifier;</li>
+<li>specifying access conditions and licences.</li>
+</ul>
+<p>Thinking in terms of releases supports clarity, traceability, and defensibility, particularly where outputs evolve over time.</p>
+<hr>
+</section>
+<section id="persistent-identifiers-pids" class="level2">
+<h2 class="anchored" data-anchor-id="persistent-identifiers-pids">Persistent identifiers (PIDs)</h2>
+<p>Persistent identifiers provide stable references to research outputs and people.</p>
+<p>Common examples include:</p>
+<ul>
+<li><strong>DOI (Digital Object Identifier)</strong> is a persistent, unique identifier used to reliably identify and locate a research output (e.g.&nbsp;datasets, code releases, preprints, and publications) over time. A DOI looks like this: 10.1371/journal.pcbi.1005510 It acts as a stable reference to an object, even if the web location (URL) changes.</li>
+<li><strong>ORCID (Open Researcher and Contributor ID)</strong> is a persistent digital identifier that uniquely identifies a researcher, independent of name variants, institutional moves, or changes over time. In practice, an ORCID iD is a 16-digit identifier (e.g.&nbsp;0000-0002-1825-0097) that links a person to their research contributions across systems.</li>
+<li><strong>ROR ID</strong> is a persistent identifier for a research organisation, for example:</li>
+</ul>
+<p>https://ror.org/02jx3x895 , (that one identifies University College London).</p>
+<p>PIDs allow outputs to be linked across systems and versions, supporting attribution, discovery, and long-term access.</p>
+<hr>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Credit and assessment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>PIDs and well-described outputs support credit, attribution, and reuse across systems.<br>
+They also reduce friction when reporting outputs for institutional processes and assessment.</p>
+</div>
+</div>
+</section>
+<section id="preprints-as-early-dissemination" class="level2">
+<h2 class="anchored" data-anchor-id="preprints-as-early-dissemination">Preprints as early dissemination</h2>
+<p>Preprints are <strong>public versions of research outputs shared prior to formal peer review</strong>. They support early dissemination, transparency, and feedback, and are now widely used in health and population research.</p>
+<p>Preprints should be understood as a <strong>stage in the publishing lifecycle</strong>, not a replacement for peer-reviewed publication.</p>
+<p>Used appropriately, preprints can:</p>
+<ul>
+<li>make findings visible earlier;</li>
+<li>establish precedence and credit;</li>
+<li>invite methodological and substantive feedback.</li>
+</ul>
+<p>However, preprints:</p>
+<ul>
+<li>have not undergone peer review;</li>
+<li>may change substantially before journal publication;</li>
+<li>should be interpreted with appropriate caution, particularly for policy- or clinically relevant findings.</li>
+</ul>
+<p>Good practice includes clearly labelling outputs as preprints and linking them to subsequent accepted or published versions where available.</p>
+<hr>
+</section>
+<section id="context-is-part-of-the-output" class="level2">
+<h2 class="anchored" data-anchor-id="context-is-part-of-the-output">Context is part of the output</h2>
+<p>Reuse depends on context.</p>
+<p>Good publishing practice includes documenting:</p>
+<ul>
+<li>analytical assumptions and decisions;</li>
+<li>known limitations and sources of uncertainty;</li>
+<li>constraints on interpretation or reuse;</li>
+<li>relationships between outputs (data, code, documentation, publications).</li>
+</ul>
+<p>Providing context reduces misinterpretation and inappropriate reuse. This includes structured metadata that supports discovery and interpretation, even when access to the underlying data is restricted.</p>
+<hr>
+</section>
+<section id="licences-and-reuse" class="level2">
+<h2 class="anchored" data-anchor-id="licences-and-reuse">Licences and reuse</h2>
+<p>A licence states <strong>what others may do</strong> with an output <strong>once they have lawful access</strong>. It does not determine <strong>who can access</strong> an output in the first place.</p>
+<p>Publishing for reuse usually involves <em>two</em> decisions:</p>
+<ol type="1">
+<li><strong>Access route</strong> (open, safeguarded, controlled, mediated).</li>
+<li><strong>Reuse licence</strong> (what reuse is permitted once access is granted).</li>
+</ol>
+<section id="common-licence-families-what-they-mean-in-practice" class="level3">
+<h3 class="anchored" data-anchor-id="common-licence-families-what-they-mean-in-practice">Common licence families (what they mean in practice)</h3>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Output type</th>
+<th>Typical licence family</th>
+<th>What it enables</th>
+<th>Common pitfalls</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Papers, figures, reports, READMEs, training materials</td>
+<td><strong>Creative Commons (CC)</strong></td>
+<td>Reuse of text/figures with defined conditions</td>
+<td>Restrictive CC variants can block legitimate reuse (e.g., translations, teaching adaptations)</td>
+</tr>
+<tr class="even">
+<td>Metadata records (dataset descriptions)</td>
+<td><strong>CC0</strong> (often used)</td>
+<td>Maximises discoverability and machine reuse</td>
+<td>Still must not disclose confidential/sensitive information</td>
+</tr>
+<tr class="odd">
+<td>Code / software</td>
+<td><strong>Open-source software licences</strong> (e.g.&nbsp;MIT/Apache/GPL)</td>
+<td>Reuse, modification, redistribution of code</td>
+<td>Licence mismatch across dependencies; unclear copyright ownership in collaborative code</td>
+</tr>
+<tr class="even">
+<td>Data</td>
+<td>Context-dependent (may be CC0/CC BY where lawful)</td>
+<td>Reuse where sharing is lawful and ethical</td>
+<td>Governance overrides licensing: you cannot “licence away” confidentiality, consent limits, or contractual restrictions</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A proportionate default (often suitable for ECR projects)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Text and documentation:</strong> prefer <strong>CC BY</strong> unless you have a clear reason to restrict adaptations.</li>
+<li><strong>Code:</strong> choose an explicit software licence (often <strong>MIT</strong> or <strong>Apache 2.0</strong>).</li>
+<li><strong>Metadata:</strong> consider <strong>CC0</strong> to maximise interoperability.</li>
+<li><strong>Sensitive data:</strong> publish <strong>metadata + access conditions</strong> even when data cannot be open (FAIR ≠ open).</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="publisher-agreements-and-rights" class="level3">
+<h3 class="anchored" data-anchor-id="publisher-agreements-and-rights">Publisher agreements and rights</h3>
+<p>For journal articles, what you can share (and when) is often governed by the <strong>publisher agreement</strong> (copyright transfer or an exclusive licence). Record:</p>
+<ul>
+<li>which version you can share (preprint / accepted manuscript / version of record);</li>
+<li>where you can deposit it (institutional repository, subject repository);</li>
+<li>any embargo period;</li>
+<li>the licence applied to the open version (if applicable).</li>
+</ul>
+<p>(See the <a href="./resources.html">Resources and Further Reading</a> chapter for links, training and institutional guidance.)</p>
+<hr>
+</section>
+</section>
+<section id="responsible-sharing-and-responsible-reuse" class="level2">
+<h2 class="anchored" data-anchor-id="responsible-sharing-and-responsible-reuse">Responsible sharing and responsible reuse</h2>
+<p>Sharing outputs responsibly involves:</p>
+<ul>
+<li>respecting ethical, legal, and contractual constraints;</li>
+<li>choosing appropriate access routes;</li>
+<li>applying clear licences.</li>
+</ul>
+<p>Enabling responsible reuse additionally requires sufficient documentation and context so others understand how, when, and for what purposes reuse is appropriate.</p>
+<p>For journal articles and associated outputs, responsible publishing also includes adherence to recognised reporting standards (e.g.&nbsp;STROBE, PRISMA)<span class="citation" data-cites="equator2025reporting"><sup><a href="#ref-equator2025reporting" role="doc-biblioref">1</a></sup></span>, which specify the minimum information needed for interpretation and reuse.<br>
+Relevant standards are listed in the <a href="./resources.html">Resources and Further Reading</a>.</p>
+<p>Many journals now require explicit data and code availability statements. These clarify what is available, under what conditions, and why any restrictions apply.</p>
+<p>Preparing outputs for reuse therefore involves a minimum package: clear documentation, structured metadata, an explicit licence, and a statement of access conditions.</p>
+</section>
+<section id="licensing-is-not-the-same-as-access" class="level2">
+<h2 class="anchored" data-anchor-id="licensing-is-not-the-same-as-access">Licensing is not the same as access</h2>
+<p>Licences define <strong>how an output may be reused</strong> once access is granted.<br>
+They do not determine <strong>who can access the output</strong> in the first place.</p>
+<p>For example:</p>
+<ul>
+<li>data may be openly accessible but licensed for limited reuse;</li>
+<li>data may be access-controlled but licensed permissively once access is approved;</li>
+<li>metadata may be openly available even when underlying data are restricted.</li>
+</ul>
+<p>Separating decisions about <strong>access</strong> (open, controlled, mediated) from decisions about <strong>licensing</strong> supports clearer governance and more appropriate reuse.</p>
+<p>Licences should be selected deliberately for each output type (text, data, code), and documented alongside access conditions.</p>
+<hr>
+</section>
+<section id="sustainability-and-publishing" class="level2">
+<h2 class="anchored" data-anchor-id="sustainability-and-publishing">Sustainability and publishing</h2>
+<p>Well-prepared outputs reduce downstream burden.</p>
+<p>Clear documentation, stable releases, and archived outputs:</p>
+<ul>
+<li>reduce repeated clarification requests;</li>
+<li>avoid unnecessary recomputation;</li>
+<li>support long-term reuse without ongoing effort.</li>
+</ul>
+<p>Publishing is therefore part of sustainable research practice. Choices about what to publish, how to document it, and where to archive it directly affect reproducibility and long-term sustainability.</p>
+<hr>
+</section>
+<section id="practical-guidance-for-ecr-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
+<p>In practice, preparing outputs often involves:</p>
+<ul>
+<li>deciding early which outputs will be released and when;</li>
+<li>using repositories that issue DOIs;</li>
+<li>linking outputs consistently via ORCID;</li>
+<li>choosing and recording an appropriate licence for each output;</li>
+<li>documenting scope, assumptions, and reuse conditions.</li>
+</ul>
+<p>These steps support visibility, credit, and robustness.</p>
+<hr>
+</section>
+<section id="exercises-510-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-510-minutes">Exercises (5–10 minutes)</h2>
+<ol type="1">
+<li><p>List the outputs from a recent project.<br>
+Which have persistent identifiers, and which do not?</p></li>
+<li><p>Pick one output.<br>
+What context and licence would someone else need to reuse it responsibly?</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2 callout-summary">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Publishing is a process of releasing research outputs, not a single event.</li>
+<li>Persistent identifiers support credit, linkage, and traceability.</li>
+<li>Preprints enable early dissemination but require careful interpretation.</li>
+<li>Licences are essential for enabling lawful reuse.</li>
+<li>Publishing well supports reproducibility and sustainability.</li>
+</ul>
+</section>
+
+
+<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-equator2025reporting" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">The EQUATOR Network. <a href="https://www.equator-network.org/reporting-guidelines/">Reporting guidelines</a>. (2025).</div>
+</div>
+</div>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./09-automation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./11-wrap-up.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">CC BY 4.0 · Built with Quarto</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,1038 @@
+[
+  {
+    "objectID": "10-publishing-pids.html#learning-objectives",
+    "href": "10-publishing-pids.html#learning-objectives",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this chapter, you should be able to:\n\nunderstand publishing as a process of releasing research outputs;\nexplain how persistent identifiers support credit, linkage, and traceability;\nprepare data, code, and documentation for responsible reuse;\ndistinguish sharing from enabling reuse;\nrecognise how publishing choices affect reproducibility and sustainability.\n\nThis chapter builds on Chapter 2 — FAIR basics, Chapter 8 — Responsible research: roles, decisions, and accountability, and Chapter 9 — Automation & simple workflows.\n\n\n\n\n\n\n\nResponsible publishing builds on responsible research\n\n\n\nThis chapter assumes the principles established in Chapter 8: ethical, legal, and contractual constraints on sharing should be explicit, justified, and documented.\nWhere outputs cannot be fully open, responsible publishing still requires clear metadata, documented access routes, and appropriate licensing for what can be shared."
+  },
+  {
+    "objectID": "10-publishing-pids.html#publishing-beyond-the-paper",
+    "href": "10-publishing-pids.html#publishing-beyond-the-paper",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Publishing beyond the paper",
+    "text": "Publishing beyond the paper\nResearch outputs extend beyond journal articles. They may include:\n\ndatasets and metadata;\nanalysis code and workflows;\nprotocols and documentation;\nfigures, tables, and derived materials;\npreprints and other early research outputs.\n\nPublishing these outputs supports transparency, enables reuse, and ensures appropriate attribution.\n\n\n\n\n\n\n\nResponsible publishing sits on responsible research practice\n\n\n\nThis chapter assumes the principles in Chapter 8 (Responsible & sustainable research):\nconstraints on sharing should be justified, documented, and revisited, and restricted outputs can still be FAIR through metadata, documentation, and clear access conditions."
+  },
+  {
+    "objectID": "10-publishing-pids.html#publishing-as-release-management",
+    "href": "10-publishing-pids.html#publishing-as-release-management",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Publishing as release management",
+    "text": "Publishing as release management\nPublishing can be understood as the release of a research object.\nA release typically involves:\n\nfreezing a version;\ndocumenting scope, assumptions, and limitations;\nassigning a persistent identifier;\nspecifying access conditions and licences.\n\nThinking in terms of releases supports clarity, traceability, and defensibility, particularly where outputs evolve over time."
+  },
+  {
+    "objectID": "10-publishing-pids.html#persistent-identifiers-pids",
+    "href": "10-publishing-pids.html#persistent-identifiers-pids",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Persistent identifiers (PIDs)",
+    "text": "Persistent identifiers (PIDs)\nPersistent identifiers provide stable references to research outputs and people.\nCommon examples include:\n\nDOI (Digital Object Identifier) is a persistent, unique identifier used to reliably identify and locate a research output (e.g. datasets, code releases, preprints, and publications) over time. A DOI looks like this: 10.1371/journal.pcbi.1005510 It acts as a stable reference to an object, even if the web location (URL) changes.\nORCID (Open Researcher and Contributor ID) is a persistent digital identifier that uniquely identifies a researcher, independent of name variants, institutional moves, or changes over time. In practice, an ORCID iD is a 16-digit identifier (e.g. 0000-0002-1825-0097) that links a person to their research contributions across systems.\nROR ID is a persistent identifier for a research organisation, for example:\n\nhttps://ror.org/02jx3x895 , (that one identifies University College London).\nPIDs allow outputs to be linked across systems and versions, supporting attribution, discovery, and long-term access.\n\n\n\n\n\n\n\nCredit and assessment\n\n\n\nPIDs and well-described outputs support credit, attribution, and reuse across systems.\nThey also reduce friction when reporting outputs for institutional processes and assessment."
+  },
+  {
+    "objectID": "10-publishing-pids.html#preprints-as-early-dissemination",
+    "href": "10-publishing-pids.html#preprints-as-early-dissemination",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Preprints as early dissemination",
+    "text": "Preprints as early dissemination\nPreprints are public versions of research outputs shared prior to formal peer review. They support early dissemination, transparency, and feedback, and are now widely used in health and population research.\nPreprints should be understood as a stage in the publishing lifecycle, not a replacement for peer-reviewed publication.\nUsed appropriately, preprints can:\n\nmake findings visible earlier;\nestablish precedence and credit;\ninvite methodological and substantive feedback.\n\nHowever, preprints:\n\nhave not undergone peer review;\nmay change substantially before journal publication;\nshould be interpreted with appropriate caution, particularly for policy- or clinically relevant findings.\n\nGood practice includes clearly labelling outputs as preprints and linking them to subsequent accepted or published versions where available."
+  },
+  {
+    "objectID": "10-publishing-pids.html#context-is-part-of-the-output",
+    "href": "10-publishing-pids.html#context-is-part-of-the-output",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Context is part of the output",
+    "text": "Context is part of the output\nReuse depends on context.\nGood publishing practice includes documenting:\n\nanalytical assumptions and decisions;\nknown limitations and sources of uncertainty;\nconstraints on interpretation or reuse;\nrelationships between outputs (data, code, documentation, publications).\n\nProviding context reduces misinterpretation and inappropriate reuse. This includes structured metadata that supports discovery and interpretation, even when access to the underlying data is restricted."
+  },
+  {
+    "objectID": "10-publishing-pids.html#licences-and-reuse",
+    "href": "10-publishing-pids.html#licences-and-reuse",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Licences and reuse",
+    "text": "Licences and reuse\nA licence states what others may do with an output once they have lawful access. It does not determine who can access an output in the first place.\nPublishing for reuse usually involves two decisions:\n\nAccess route (open, safeguarded, controlled, mediated).\nReuse licence (what reuse is permitted once access is granted).\n\n\nCommon licence families (what they mean in practice)\n\n\n\n\n\n\n\n\n\nOutput type\nTypical licence family\nWhat it enables\nCommon pitfalls\n\n\n\n\nPapers, figures, reports, READMEs, training materials\nCreative Commons (CC)\nReuse of text/figures with defined conditions\nRestrictive CC variants can block legitimate reuse (e.g., translations, teaching adaptations)\n\n\nMetadata records (dataset descriptions)\nCC0 (often used)\nMaximises discoverability and machine reuse\nStill must not disclose confidential/sensitive information\n\n\nCode / software\nOpen-source software licences (e.g. MIT/Apache/GPL)\nReuse, modification, redistribution of code\nLicence mismatch across dependencies; unclear copyright ownership in collaborative code\n\n\nData\nContext-dependent (may be CC0/CC BY where lawful)\nReuse where sharing is lawful and ethical\nGovernance overrides licensing: you cannot “licence away” confidentiality, consent limits, or contractual restrictions\n\n\n\n\n\n\n\n\n\nA proportionate default (often suitable for ECR projects)\n\n\n\n\nText and documentation: prefer CC BY unless you have a clear reason to restrict adaptations.\nCode: choose an explicit software licence (often MIT or Apache 2.0).\nMetadata: consider CC0 to maximise interoperability.\nSensitive data: publish metadata + access conditions even when data cannot be open (FAIR ≠ open).\n\n\n\n\n\nPublisher agreements and rights\nFor journal articles, what you can share (and when) is often governed by the publisher agreement (copyright transfer or an exclusive licence). Record:\n\nwhich version you can share (preprint / accepted manuscript / version of record);\nwhere you can deposit it (institutional repository, subject repository);\nany embargo period;\nthe licence applied to the open version (if applicable).\n\n(See the Resources and Further Reading chapter for links, training and institutional guidance.)"
+  },
+  {
+    "objectID": "10-publishing-pids.html#responsible-sharing-and-responsible-reuse",
+    "href": "10-publishing-pids.html#responsible-sharing-and-responsible-reuse",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Responsible sharing and responsible reuse",
+    "text": "Responsible sharing and responsible reuse\nSharing outputs responsibly involves:\n\nrespecting ethical, legal, and contractual constraints;\nchoosing appropriate access routes;\napplying clear licences.\n\nEnabling responsible reuse additionally requires sufficient documentation and context so others understand how, when, and for what purposes reuse is appropriate.\nFor journal articles and associated outputs, responsible publishing also includes adherence to recognised reporting standards (e.g. STROBE, PRISMA)1, which specify the minimum information needed for interpretation and reuse.\nRelevant standards are listed in the Resources and Further Reading.\nMany journals now require explicit data and code availability statements. These clarify what is available, under what conditions, and why any restrictions apply.\nPreparing outputs for reuse therefore involves a minimum package: clear documentation, structured metadata, an explicit licence, and a statement of access conditions."
+  },
+  {
+    "objectID": "10-publishing-pids.html#licensing-is-not-the-same-as-access",
+    "href": "10-publishing-pids.html#licensing-is-not-the-same-as-access",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Licensing is not the same as access",
+    "text": "Licensing is not the same as access\nLicences define how an output may be reused once access is granted.\nThey do not determine who can access the output in the first place.\nFor example:\n\ndata may be openly accessible but licensed for limited reuse;\ndata may be access-controlled but licensed permissively once access is approved;\nmetadata may be openly available even when underlying data are restricted.\n\nSeparating decisions about access (open, controlled, mediated) from decisions about licensing supports clearer governance and more appropriate reuse.\nLicences should be selected deliberately for each output type (text, data, code), and documented alongside access conditions."
+  },
+  {
+    "objectID": "10-publishing-pids.html#sustainability-and-publishing",
+    "href": "10-publishing-pids.html#sustainability-and-publishing",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Sustainability and publishing",
+    "text": "Sustainability and publishing\nWell-prepared outputs reduce downstream burden.\nClear documentation, stable releases, and archived outputs:\n\nreduce repeated clarification requests;\navoid unnecessary recomputation;\nsupport long-term reuse without ongoing effort.\n\nPublishing is therefore part of sustainable research practice. Choices about what to publish, how to document it, and where to archive it directly affect reproducibility and long-term sustainability."
+  },
+  {
+    "objectID": "10-publishing-pids.html#practical-guidance-for-ecr-workflows",
+    "href": "10-publishing-pids.html#practical-guidance-for-ecr-workflows",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Practical guidance for ECR workflows",
+    "text": "Practical guidance for ECR workflows\nIn practice, preparing outputs often involves:\n\ndeciding early which outputs will be released and when;\nusing repositories that issue DOIs;\nlinking outputs consistently via ORCID;\nchoosing and recording an appropriate licence for each output;\ndocumenting scope, assumptions, and reuse conditions.\n\nThese steps support visibility, credit, and robustness."
+  },
+  {
+    "objectID": "10-publishing-pids.html#exercises-510-minutes",
+    "href": "10-publishing-pids.html#exercises-510-minutes",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Exercises (5–10 minutes)",
+    "text": "Exercises (5–10 minutes)\n\nList the outputs from a recent project.\nWhich have persistent identifiers, and which do not?\nPick one output.\nWhat context and licence would someone else need to reuse it responsibly?"
+  },
+  {
+    "objectID": "10-publishing-pids.html#key-takeaways",
+    "href": "10-publishing-pids.html#key-takeaways",
+    "title": "Chapter 10 — Publishing, PIDs & preparing for reuse",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nPublishing is a process of releasing research outputs, not a single event.\nPersistent identifiers support credit, linkage, and traceability.\nPreprints enable early dissemination but require careful interpretation.\nLicences are essential for enabling lawful reuse.\nPublishing well supports reproducibility and sustainability."
+  },
+  {
+    "objectID": "01-why-open.html",
+    "href": "01-why-open.html",
+    "title": "Chapter 1 - Why Open?",
+    "section": "",
+    "text": "Why Open?"
+  },
+  {
+    "objectID": "01-why-open.html#learning-objectives",
+    "href": "01-why-open.html#learning-objectives",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why openness and reproducibility are now core expectations in research;\ndistinguish between openness, transparency, and reproducibility in practical terms;\nrecognise common sources of irreproducibility in everyday research workflows;\nunderstand how open practices reduce research risk, inefficiency, and avoidable error;\nsee how the principles introduced here translate into concrete practices covered in later modules.\n\nThis module sets the conceptual foundation for the rest of the course. The next module moves from why openness matters to how to describe and structure outputs so they remain usable over time (Chapter 2: FAIR basics)."
+  },
+  {
+    "objectID": "01-why-open.html#why-openness-now",
+    "href": "01-why-open.html#why-openness-now",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Why openness now?",
+    "text": "Why openness now?\nOpen research is no longer a niche movement or an optional add-on. Across scientific research, concerns about irreproducible findings, undocumented analytical decisions, and inaccessible research outputs have led funders, journals, and institutions to raise expectations around transparency and robustness1–3\nIn practice, this shift is less about ideology and more about reducing avoidable risk: rework, errors, lost context, and fragile results that cannot be checked, reused, or defended. This course is designed to support proportionate improvements that fit real research constraints.\nOpen and reproducible research supports meaningful involvement of patients, participants, and communities by making assumptions, decisions, and limitations visible and contestable."
+  },
+  {
+    "objectID": "01-why-open.html#key-terms-used-consistently-in-this-course",
+    "href": "01-why-open.html#key-terms-used-consistently-in-this-course",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Key terms (used consistently in this course)",
+    "text": "Key terms (used consistently in this course)\nThese terms overlap, but they are not identical:\n\nOpen research: making research outputs, methods, and decisions accessible to others, where lawful, ethical, and appropriate.\nTransparency: clearly documenting what was done, why it was done, and how decisions were made (including decisions not visible in the final paper).\nReproducibility: enabling someone else (or you in six months) to understand and, where possible, recreate the analytical steps and results using the same data and methods.\n\nA project can be reproducible without being fully open (e.g. sensitive data). Conversely, sharing outputs is not sufficient for reproducibility if key steps or provenance are missing.\n\n\n\n\n\n\nReproducible is not the only “-ible”\n\n\n\nIn The Turing Way terminology, results may be described as:\n\nreproducible (same data, same analysis),\nreplicable (different data, same analysis),\nrobust (same data, different analysis),\ngeneralisable (different data, different analysis).\n\nThese distinctions are useful when deciding what level of checking or reuse is realistic for a given project. For a short explainer and visual summary, see The Turing Way Definitions page4."
+  },
+  {
+    "objectID": "01-why-open.html#how-to-read-this-course",
+    "href": "01-why-open.html#how-to-read-this-course",
+    "title": "Chapter 1 - Why Open?",
+    "section": "How to read this course",
+    "text": "How to read this course\nThis course separates principles, practices, and tools:\n\nPrinciples are the underlying aims (e.g. transparency, accountability, reuse).\nPractices are the behaviours that implement those aims (e.g. versioning, documentation, sharing decisions).\nTools are the platforms that support practices (e.g. repositories, version control systems, workflow tools).\n\nTools change quickly; principles and practices travel well across projects and roles. This is why the course emphasises practices, while the Resources and Further Reading chapter centralises tool- and UCL-specific signposting.\n\n\n\n\n\n\nNew to UCL (or a new project team)?\n\n\n\nUse the Resources and Further Reading chapter as your “where to go next” page: UCL routes, contacts, and copy-ready templates are maintained there so links only need updating in one place."
+  },
+  {
+    "objectID": "01-why-open.html#minimum-expectations-in-practice-ucl-and-uk-funders",
+    "href": "01-why-open.html#minimum-expectations-in-practice-ucl-and-uk-funders",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Minimum expectations in practice (UCL and UK funders)",
+    "text": "Minimum expectations in practice (UCL and UK funders)\nOpen research is treated as a default position, applied across the research lifecycle and implemented proportionately within ethical, legal, and contractual constraints.\nIn most UCL research contexts, you should assume the following baseline expectations apply somewhere in your project:\n\nPlan data management proportionately, and document decisions (a Data Management Plan may be required by funders and is generally expected for funded projects and projects handling research data).\nMake outputs findable and preservable: ensure data, code, protocols, and other outputs (or at least metadata describing them) can be located, interpreted, and retained appropriately.\nEnable open access to publications through the institutional route, in line with funder and assessment requirements.\nRecord constraints explicitly (e.g. sensitive data, governance restrictions, IP, contractual limits) and document how they affect sharing, access, and retention.\n\nThis course shows how to meet these expectations through robust everyday practice. UCL-facing routes, contacts, and templates are maintained in Resources and Further Reading."
+  },
+  {
+    "objectID": "01-why-open.html#where-irreproducibility-comes-from-in-normal-workflows",
+    "href": "01-why-open.html#where-irreproducibility-comes-from-in-normal-workflows",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Where irreproducibility comes from (in normal workflows)",
+    "text": "Where irreproducibility comes from (in normal workflows)\nIrreproducibility is usually not caused by misconduct. More commonly it arises from routine workflow issues, including:\n\nmanual data cleaning or analysis steps that are not recorded;\nunclear file organisation, naming, or versioning;\nresults generated interactively without a saved script or pipeline;\nmissing information about software environments or dependencies;\nloss of project memory when staff or students move on.\n\nThese problems tend to surface late (submission, peer review, audit, or handover), when they are most expensive to fix."
+  },
+  {
+    "objectID": "01-why-open.html#proportionality-and-constraints",
+    "href": "01-why-open.html#proportionality-and-constraints",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Proportionality and constraints",
+    "text": "Proportionality and constraints\nOpen and reproducible practice is not a one-size-fits-all checklist. Constraints may include personal or sensitive data, contractual obligations, intellectual property considerations, and limited time or resource.\nGood practice means making constraints explicit, documenting decisions, and using appropriate infrastructure. Proportionality applies to how you implement open practices, not to whether you document and justify decisions."
+  },
+  {
+    "objectID": "01-why-open.html#open-research-in-practice-what-this-implies-for-day-to-day-work",
+    "href": "01-why-open.html#open-research-in-practice-what-this-implies-for-day-to-day-work",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Open research in practice: what this implies for day-to-day work",
+    "text": "Open research in practice: what this implies for day-to-day work\nOpen research is not only about making outputs publicly available at the end of a project. Across the research lifecycle, work should be organised, documented, and described so that others — including your future self — can understand:\n\nwhat was done and why;\nhow results were produced;\nwhat assumptions and decisions shaped the work;\nwhat could (and could not) be reused, and under what conditions.\n\nThree foundations support this:\n\nDocumentation: READMEs, protocols, decision logs, and data dictionaries that capture context and rationale.\nOrganisation: consistent folder structures, naming conventions, and versioning that reduce ambiguity and error.\nMetadata: structured descriptions that make outputs interpretable and discoverable (including for restricted-access data).\n\nThe next chapter introduces minimum expectations for describing outputs through the FAIR principles (see Chapter 2: FAIR basics)."
+  },
+  {
+    "objectID": "01-why-open.html#ai-and-open-science-and-reproducibility",
+    "href": "01-why-open.html#ai-and-open-science-and-reproducibility",
+    "title": "Chapter 1 - Why Open?",
+    "section": "AI and Open Science and Reproducibility",
+    "text": "AI and Open Science and Reproducibility\nAutomated and AI-assisted tools can improve efficiency and insight, but introduce new reproducibility challenges: opaque decision-making, stochastic outputs, undocumented prompts or parameters, and rapid model version changes. Open research practices remain essential to ensure transparency, accountability, and reuse in AI-assisted workflows."
+  },
+  {
+    "objectID": "01-why-open.html#what-you-will-do-in-later-modules",
+    "href": "01-why-open.html#what-you-will-do-in-later-modules",
+    "title": "Chapter 1 - Why Open?",
+    "section": "What you will do in later modules",
+    "text": "What you will do in later modules\nThis course focuses on practical steps that reduce risk and increase continuity, including:\n\nstructuring data and materials for reuse (Chapter 2: FAIR basics);\norganising projects so work remains legible and maintainable;\ndocumenting decisions and workflows so results can be understood and defended;\nimproving code quality and reducing manual steps where appropriate;\npreparing outputs for sharing, archiving, and attribution.\n\nYou are not expected to adopt everything at once. The course is designed to support incremental improvement."
+  },
+  {
+    "objectID": "01-why-open.html#exercises-510-minutes",
+    "href": "01-why-open.html#exercises-510-minutes",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Exercises (5–10 minutes)",
+    "text": "Exercises (5–10 minutes)\n\nChoose one current or recent project you are involved in.\nWrite down one thing that would make it hard for someone else to understand your results in six months’ time.\nWhere would you record this? (e.g. project README, methods note, decision log)\nIdentify one constraint (ethical, legal, contractual, or practical) that limits what you can share openly.\nWhere is that constraint recorded now — and where should it be recorded? (e.g. DMP, ethics documentation, governance notes, project README)\n\nIf you are unsure what “good enough” looks like for these artefacts, see the relevant templates in Resources and Further Reading."
+  },
+  {
+    "objectID": "01-why-open.html#key-takeaways",
+    "href": "01-why-open.html#key-takeaways",
+    "title": "Chapter 1 - Why Open?",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nOpen research is now a baseline expectation, not an optional ideal.\nReproducibility problems usually arise from everyday workflow issues, not misconduct.\nProportionate openness reduces risk, inefficiency, and avoidable error.\nYou do not need fully open data to practise open research — but you do need clear documentation and defensible decisions.\nChapter 2: FAIR basics translates these ideas into concrete, data-level practice."
+  },
+  {
+    "objectID": "02-fair-basics.html",
+    "href": "02-fair-basics.html",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "",
+    "text": "FAIR basics"
+  },
+  {
+    "objectID": "02-fair-basics.html#learning-objectives",
+    "href": "02-fair-basics.html#learning-objectives",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain what the FAIR principles are and how they work in practice;\ndistinguish FAIR from openness, documentation, and data management planning;\nunderstand what Findable, Accessible, Interoperable, and Reusable mean conceptually;\nrecognise how FAIR applies to data, code, and other research outputs;\nunderstand where FAIR principles are implemented later in the research workflow.\n\nThis module builds on the motivation introduced in Chapter 1 – Why Open?. It introduces FAIR as a set of design principles for research outputs, not as a checklist or compliance exercise."
+  },
+  {
+    "objectID": "02-fair-basics.html#what-fair-means-in-practice",
+    "href": "02-fair-basics.html#what-fair-means-in-practice",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "What FAIR means (in practice)",
+    "text": "What FAIR means (in practice)\nFAIR stands for Findable, Accessible, Interoperable, and Reusable1.\nThe FAIR principles describe how research outputs should be structured and described so that they can be:\n\ndiscovered,\naccessed under clear conditions,\ncorrectly interpreted,\nand reused over time.\n\nFAIR applies across the research lifecycle and to data, code, software, workflows, and documentation, not only datasets2.\nFAIR is not: - a requirement to make data open; - a single repository or platform; - a fixed checklist.\nInstead, FAIR provides a shared language for designing outputs that remain usable beyond the immediate project."
+  },
+  {
+    "objectID": "02-fair-basics.html#fair-is-not-the-same-as-open",
+    "href": "02-fair-basics.html#fair-is-not-the-same-as-open",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "FAIR is not the same as “open”",
+    "text": "FAIR is not the same as “open”\nFAIR does not mean publicly open.\nResearch outputs may be: - FAIR and open; - FAIR but access-restricted (e.g. personal or sensitive data); - FAIR with mediated or controlled access.\nA common framing is “as open as possible, as closed as necessary”. This distinction is especially important in health, social, and population research and is discussed further in Chapter 8 – Responsible & sustainable research.\n\n\n\n\n\n\nFAIR still applies when data cannot be shared\n\n\n\nWhen data cannot be shared openly, FAIR principles still apply to metadata, documentation, and access conditions describing the existence and nature of the output."
+  },
+  {
+    "objectID": "02-fair-basics.html#findable-how-outputs-are-discovered",
+    "href": "02-fair-basics.html#findable-how-outputs-are-discovered",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Findable: how outputs are discovered",
+    "text": "Findable: how outputs are discovered\nFindable means that research outputs can be discovered by others, including people outside the original project.\nIn practice, findability is supported by mechanisms such as:\n\npersistent identifiers (e.g. DOIs for datasets, ORCID iDs for researchers);\ndescriptive metadata that can be indexed by search systems;\nstable locations (e.g. repositories rather than personal storage).\n\nFindability is primarily about being locatable, not about being downloadable. An output can be findable even if access is restricted."
+  },
+  {
+    "objectID": "02-fair-basics.html#accessible-how-access-is-defined-and-managed",
+    "href": "02-fair-basics.html#accessible-how-access-is-defined-and-managed",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Accessible: how access is defined and managed",
+    "text": "Accessible: how access is defined and managed\nAccessible means that it is clear how an output can be accessed, under what conditions, and by whom.\nAccessibility does not imply openness. Instead, it requires:\n\na clear access route (open, mediated, or restricted);\ntransparent access conditions;\npersistence of metadata even if the data themselves are withdrawn or embargoed.\n\nFrom a FAIR perspective, knowing why something cannot be accessed is as important as knowing how it can be accessed."
+  },
+  {
+    "objectID": "02-fair-basics.html#interoperable-how-outputs-can-be-interpreted-correctly",
+    "href": "02-fair-basics.html#interoperable-how-outputs-can-be-interpreted-correctly",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Interoperable: how outputs can be interpreted correctly",
+    "text": "Interoperable: how outputs can be interpreted correctly\nInteroperable means that outputs can be understood and used correctly in different contexts, systems, or tools.\nThis is supported by:\n\nstandard or widely used file formats;\nconsistent variable naming and coding;\nuse of shared vocabularies or conventions where appropriate;\nclear documentation of transformations and assumptions.\n\nInteroperability reduces the risk of misinterpretation when data or code move between people, teams, or software environments."
+  },
+  {
+    "objectID": "02-fair-basics.html#reusable-how-outputs-can-be-used-again",
+    "href": "02-fair-basics.html#reusable-how-outputs-can-be-used-again",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Reusable: how outputs can be used again",
+    "text": "Reusable: how outputs can be used again\nReusable means that outputs can be used again for future research, whether by others or by your future self.\nReusability depends on:\n\nsufficient contextual information to interpret the output;\nclear licensing and reuse conditions;\nversioning and provenance information;\ndocumentation of limitations, assumptions, and constraints.\n\nReusability is not about guaranteeing reuse; it is about making reuse possible and responsible."
+  },
+  {
+    "objectID": "02-fair-basics.html#fair-applies-to-more-than-datasets",
+    "href": "02-fair-basics.html#fair-applies-to-more-than-datasets",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "FAIR applies to more than datasets",
+    "text": "FAIR applies to more than datasets\nFAIR principles apply to:\n\ndatasets and associated metadata;\nanalysis code and scripts;\nprotocols, analysis plans, and workflows;\ndocumentation capturing decisions and provenance.\n\nApplying FAIR principles to code and documentation often delivers the greatest immediate gains in reproducibility and project continuity."
+  },
+  {
+    "objectID": "02-fair-basics.html#fair-data-management-and-dmps-how-they-relate",
+    "href": "02-fair-basics.html#fair-data-management-and-dmps-how-they-relate",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "FAIR, data management, and DMPs: how they relate",
+    "text": "FAIR, data management, and DMPs: how they relate\nFAIR principles interact with, but are distinct from, other research practices:\n\nFAIR provides design principles for structuring outputs.\nData management practice implements those principles through organisation, documentation, and versioning.\nData Management Plans (DMPs) describe how those practices will be applied, justified, and resourced.\n\nThis course treats FAIR as the conceptual foundation, with implementation addressed in later chapters and supported by institutional infrastructure."
+  },
+  {
+    "objectID": "02-fair-basics.html#proportionality-and-constraints",
+    "href": "02-fair-basics.html#proportionality-and-constraints",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Proportionality and constraints",
+    "text": "Proportionality and constraints\nFAIR is not all-or-nothing.\nProjects differ in scale, sensitivity, duration, and resources. Good FAIR practice means making proportionate, defensible choices, documenting constraints, and being explicit about limitations.\nThis course focuses on FAIR considerations that are realistic for early-career researchers working within ethical, legal, and institutional boundaries."
+  },
+  {
+    "objectID": "02-fair-basics.html#where-fair-is-implemented-later-in-the-course",
+    "href": "02-fair-basics.html#where-fair-is-implemented-later-in-the-course",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Where FAIR is implemented later in the course",
+    "text": "Where FAIR is implemented later in the course\nIn this course:\n\nMinimum metadata standards are introduced in the Chapter 4 — Data Management Plans (UCL).\nPlanning and justification of FAIR actions are addressed in the Chapter 4 — Data Management Plans (UCL).\nTemplates, tools, and institutional routes are collected in Resources and Further Reading.\n\nThe next chapter focuses on project-level organisation and workflows, building directly on these principles."
+  },
+  {
+    "objectID": "02-fair-basics.html#exercises-510-minutes",
+    "href": "02-fair-basics.html#exercises-510-minutes",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Exercises (5–10 minutes)",
+    "text": "Exercises (5–10 minutes)\n\nChoose one research output you are working with (data, code, or documentation).\nWhich FAIR element (Findable, Accessible, Interoperable, or Reusable) do you think is currently weakest — and why?\nIdentify one constraint (ethical, legal, technical, or practical) that affects how FAIR could be applied to that output.\nWhere should that constraint be recorded later in the project?"
+  },
+  {
+    "objectID": "02-fair-basics.html#key-takeaways",
+    "href": "02-fair-basics.html#key-takeaways",
+    "title": "Chapter 2 - FAIR basics",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nFAIR describes how research outputs should be structured and described, not whether they are open.\nFindable, Accessible, Interoperable, and Reusable each address different aspects of long-term usability.\nFAIR applies to data, code, documentation, and workflows.\nFAIR principles inform — but do not replace — data management practice or DMPs.\nLater chapters translate FAIR principles into concrete project-level actions."
+  },
+  {
+    "objectID": "03-project-mgmt.html",
+    "href": "03-project-mgmt.html",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "",
+    "text": "Project organisation for reproducible research"
+  },
+  {
+    "objectID": "03-project-mgmt.html#learning-objectives",
+    "href": "03-project-mgmt.html#learning-objectives",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why project organisation is central to reproducibility and continuity;\ndescribe how metadata, roles, and conventions support collaboration;\napply proportionate principles for organisation, versioning, and continuity;\nunderstand how project organisation underpins documentation, code, and automation;\nlocate UCL-supported tools and templates relevant to project organisation.\n\nThis module builds on the FAIR principles introduced in Chapter 2: FAIR basics and focuses on how projects are structured and managed over time.\nAll copy-ready templates and concrete examples are provided centrally in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "03-project-mgmt.html#why-project-organisation-matters",
+    "href": "03-project-mgmt.html#why-project-organisation-matters",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Why project organisation matters",
+    "text": "Why project organisation matters\nMany reproducibility problems arise not from technical complexity, but from poorly organised projects. As projects grow, involve multiple contributors, or span years, it becomes increasingly difficult to track what was done, why it was done, and by whom. This chapter does not teach general project management skills; it focuses on organisational practices that directly support reproducibility, governance, and long-term continuity.\nEffective project organisation supports1:\n\ncontinuity when team members join or leave;\ntransparent decision making;\nefficient collaboration across roles and disciplines;\ntraceability of changes and outputs.\n\nThese benefits are particularly important in research, where projects often involve multiple data types, governance requirements, and extended timelines."
+  },
+  {
+    "objectID": "03-project-mgmt.html#metadata-about-the-project",
+    "href": "03-project-mgmt.html#metadata-about-the-project",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Metadata about the project",
+    "text": "Metadata about the project\nA project is more than a collection of files. Treat project-level metadata as a first-class research output. This metadata is distinct from dataset-level metadata (covered in Chapter 5), and exists to make the project itself legible.\nAt a minimum, this includes:\n\na brief description of purpose and scope;\nthe outputs the project will generate and how they are identified (e.g. PIDs);\nconventions for naming, versioning, and access;\nroles and responsibilities for key tasks.\n\nA short project README or charter at the top level of your repository or shared drive improves discoverability, onboarding, and continuity.\nA minimum README template is provided in Resources and Further Reading."
+  },
+  {
+    "objectID": "03-project-mgmt.html#structuring-the-project",
+    "href": "03-project-mgmt.html#structuring-the-project",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Structuring the project",
+    "text": "Structuring the project\nWell-organised projects tend to share common structural features, regardless of discipline or tools:\n\na clear top-level project boundary;\nseparation of raw data, derived data, analysis code, and outputs;\na visible project metadata file (e.g. README);\npredictable locations for documentation and logs.\n\nStructure should prioritise legibility for someone unfamiliar with the project, including reviewers and your future self.\nRather than inventing bespoke layouts, this course encourages starting from a simple baseline structure and adapting it as needed.\nA canonical folder structure and guidance on its intended use are provided in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "03-project-mgmt.html#versioning-principles-not-tools",
+    "href": "03-project-mgmt.html#versioning-principles-not-tools",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Versioning: principles, not tools",
+    "text": "Versioning: principles, not tools\nVersioning is essential for understanding how a project evolves over time. Crucially, versioning principles apply to all research materials, not only to code2.\nIt is useful to distinguish between two related but distinct practices.\n\nFile versioning (data, documents, outputs)\nFile versioning applies to data files, documents, and other non-code outputs. At a minimum, good practice involves:\n\nretaining historical versions rather than overwriting files;\nusing clear, consistent version identifiers;\nrecording what changed and why.\n\nThis can be achieved using structured file naming and simple change logs, without specialised tools. Minimum examples and a changelog template are provided in the Resources and Further Reading chapter.\n\n\nCode version control (e.g. Git)\nCode version control systems are designed for tracking changes to scripts and software. They support:\n\nfine-grained tracking of changes;\ncollaboration across multiple contributors;\nreversible experimentation.\n\nNot all projects require formal code version control, but where code is central to analysis, its use substantially improves transparency and reproducibility.\nThis course emphasises principles before tools. Tool-specific guidance and examples are signposted in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "03-project-mgmt.html#roles-responsibilities-and-continuity",
+    "href": "03-project-mgmt.html#roles-responsibilities-and-continuity",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Roles, responsibilities, and continuity",
+    "text": "Roles, responsibilities, and continuity\nReproducible projects make roles explicit.\nGood practice includes:\n\ndocumenting who is responsible for data, code, and documentation;\nagreeing communication norms and review points;\nonboarding new contributors with a short guide to project conventions.\n\nOffboarding is equally important. When people leave a project, their context, assumptions, and decisions should not leave with them."
+  },
+  {
+    "objectID": "03-project-mgmt.html#project-organisation-across-the-lifecycle",
+    "href": "03-project-mgmt.html#project-organisation-across-the-lifecycle",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Project organisation across the lifecycle",
+    "text": "Project organisation across the lifecycle\nOrganisation is not a one-off task.\nStructures, documentation, and metadata should evolve as a project moves from setup to analysis to dissemination. Use milestones (e.g. protocol finalised, data locked, analysis frozen) as prompts to review and update organisation and records.\nThis helps ensure that published outputs reflect real working practices rather than retrospective reconstruction.\nThese organisational practices underpin later chapters on documentation (Chapter 6), code quality (Chapter 7), and automation (Chapter 9)."
+  },
+  {
+    "objectID": "03-project-mgmt.html#practical-guidance-for-ecr-workflows",
+    "href": "03-project-mgmt.html#practical-guidance-for-ecr-workflows",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Practical guidance for ECR workflows",
+    "text": "Practical guidance for ECR workflows\nFor early career researchers, proportionate project organisation often means:\n\nwriting a project README at the outset;\nagreeing simple versioning conventions with collaborators;\nmaintaining a short decision log alongside active work;\nkeeping tasks, roles, and responsibilities visible to the team.\n\nThese steps support transparent progress without requiring heavy infrastructure."
+  },
+  {
+    "objectID": "03-project-mgmt.html#exercises-515-minutes",
+    "href": "03-project-mgmt.html#exercises-515-minutes",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Exercises (5–15 minutes)",
+    "text": "Exercises (5–15 minutes)\n\nLook at the top level of a current project.\nIs there a project README describing purpose, outputs, and conventions?\nIdentify one recent decision in that project.\nIs it recorded with context and rationale? Add it to a log if not."
+  },
+  {
+    "objectID": "03-project-mgmt.html#key-takeaways",
+    "href": "03-project-mgmt.html#key-takeaways",
+    "title": "Chapter 3 - Project organisation and continuity",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nProject organisation is foundational for reproducibility and collaboration.\nProject-level metadata improves discoverability and continuity.\nVersioning principles apply to data, documentation, and code.\nExplicit roles and decision records reduce risk and knowledge loss.\nTemplates and examples are centralised in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "04-dmp.html",
+    "href": "04-dmp.html",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "",
+    "text": "Data Management Plans (DMPs)"
+  },
+  {
+    "objectID": "04-dmp.html#learning-objectives",
+    "href": "04-dmp.html#learning-objectives",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain the purpose of a Data Management Plan beyond funder compliance;\nrecognise a DMP as a living record of decisions;\ndistinguish data description from data governance;\nidentify proportionate planning actions for different data types;\nlocate UCL guidance, templates, and support for DMPs.\n\nThis module builds on FAIR principles Chapter 2: FAIR basics and project organisation Chapter 3 - Project organisation and continuity. It prepares you for practical data handling and documentation in later chapters. At UCL, DMPs are structured around six core areas: data collection, storage and security, archiving and preservation, discovery and access, metadata, and roles and responsibilities.\nThis chapter focuses on what a DMP must commit to and how assessors interpret it. Chapters 5–7 cover implementation in practice (data organisation, documentation, and code), and Chapter 9 covers automation and workflows."
+  },
+  {
+    "objectID": "04-dmp.html#what-a-dmp-is-and-is-not",
+    "href": "04-dmp.html#what-a-dmp-is-and-is-not",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "What a DMP is (and is not)",
+    "text": "What a DMP is (and is not)\nA Data Management Plan describes how data will be1–3:\n\ncreated or collected;\nstored, documented, and protected;\nretained, shared, or archived.\n\nThis includes describing what data and materials will be collected or reused, how they are generated, and which data types are in scope. A DMP is not a guarantee that plans will not change. Instead, it provides a transparent record of current intentions and decisions. Funders expect data management, storage, curation, and sharing to be explicitly resourced and costed, not treated as overhead.\nDifferent data types (e.g. sensitive identifiers, geospatial data, qualitative materials, imaging, code/software outputs) require different levels of governance, documentation, and retention detail. The DMP should reflect this proportionately, without over-specifying implementation.\nWhere AI or machine-learning tools are used for data processing or analysis, the DMP should record what tools are used, how outputs are generated, and what can be documented or shared (e.g. model version, prompts, training data constraints), without over-committing to full reproducibility where this is infeasible.\nWhere patient or public contributors are involved, DMPs should reflect any implications for data access, consent, governance, and communication of outputs, even where contributors do not access raw data."
+  },
+  {
+    "objectID": "04-dmp.html#dmps-as-decision-records",
+    "href": "04-dmp.html#dmps-as-decision-records",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "DMPs as decision records",
+    "text": "DMPs as decision records\nGood DMPs document decisions made under uncertainty, including:\n\nwhat will happen if data cannot be shared openly;\nhow access will be managed under different scenarios;\nwho is responsible for data stewardship over time;\nhow data will be discovered, accessed, or requested, including where metadata will remain available even when access is restricted.\n\nUpdating a DMP is good practice, not a failure of planning."
+  },
+  {
+    "objectID": "04-dmp.html#data-description-vs-data-governance",
+    "href": "04-dmp.html#data-description-vs-data-governance",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Data description vs data governance",
+    "text": "Data description vs data governance\nIt is useful to separate two related but distinct elements:\n\nData description: what the data are, how they are structured, formats used, and how they are documented.\nData governance: who can access the data, under what conditions, how consent and approvals apply, and how storage, security, and backup responsibilities are defined, even if technical implementation is handled elsewhere.\n\nKeeping these elements distinct improves clarity and supports both FAIR practice and ethical compliance. DMPs are also expected to describe how metadata will be created, maintained, and reviewed over time, without requiring field-level standards to be specified at this stage."
+  },
+  {
+    "objectID": "04-dmp.html#what-assessors-look-for-in-a-good-dmp",
+    "href": "04-dmp.html#what-assessors-look-for-in-a-good-dmp",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "What assessors look for in a good DMP",
+    "text": "What assessors look for in a good DMP\nWhen reviewing a Data Management Plan, assessors are not looking for technical detail for its own sake. Instead, they look for evidence that data management has been thought through, is feasible, and is proportionate to the project context.\nStrong DMPs typically demonstrate:\n\nclarity about what data will be created or used;\nrealistic plans for documentation, storage, and preservation;\nawareness of ethical, legal, and contractual constraints;\nalignment between stated plans and the way the project is organised in practice;\nnamed responsibility for data stewardship during the project and after staff or funding end.\n\nVague or generic statements are a common reason for weak DMP assessments."
+  },
+  {
+    "objectID": "04-dmp.html#mapping-good-project-practice-to-dmp-sections",
+    "href": "04-dmp.html#mapping-good-project-practice-to-dmp-sections",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Mapping good project practice to DMP sections",
+    "text": "Mapping good project practice to DMP sections\nMany elements of a strong DMP directly reflect good internal project organisation. The table below illustrates this alignment.\nUse this mapping to check that the DMP reflects plausible working practice. It reassures assessors that statements correspond to real practices, but you do not need to duplicate implementation detail in the DMP.\n\nProject folder structure\n→ DMP sections should state how data organisation and workflow separation will be handled (e.g., raw vs derived; storage locations).\nREADME files and codebooks\n→ DMP sections should state what documentation artefacts will exist and who maintains them.\nStructured metadata\n→ DMP sections should state how metadata will be captured, updated, and kept available (including when data access is restricted).\nVersioning and change logs\n→ DMP sections should state how changes to data, code, and outputs will be tracked (tool-agnostic).\n\nMaking this alignment explicit reassures assessors that the DMP reflects real working practices rather than aspirational statements."
+  },
+  {
+    "objectID": "04-dmp.html#planning-for-derived-and-intermediate-data",
+    "href": "04-dmp.html#planning-for-derived-and-intermediate-data",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Planning for derived and intermediate data",
+    "text": "Planning for derived and intermediate data\nDMPs should consider not only final datasets, but also:\n\nderived datasets created during analysis;\nintermediate files produced by scripts or workflows;\nwhich data will be retained, archived, or discarded.\n\nThese decisions directly inform the archiving, preservation, and curation plans described in the DMP, including what will be retained beyond the active life of the project.\nChapter 5 covers how to structure and document data states and provenance in practice. In the DMP, focus on recording what you intend to retain, under what conditions, and why."
+  },
+  {
+    "objectID": "04-dmp.html#sustainability-and-proportionality",
+    "href": "04-dmp.html#sustainability-and-proportionality",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Sustainability and proportionality",
+    "text": "Sustainability and proportionality\nPlanning data management also has environmental implications.\nDMPs should justify proportionate storage, retention, and compute plans in a way that supports reproducibility without unnecessary resource use. Practical options and examples are signposted in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "04-dmp.html#dmp-support-at-ucl",
+    "href": "04-dmp.html#dmp-support-at-ucl",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "DMP support at UCL",
+    "text": "DMP support at UCL\nUCL provides:\n\nan institutional DMP template;\nResearch Data Management guidance;\nsupport via Library Services and specialist teams.\n\nRelevant links, templates, and contacts are collated in the Resources and Further Reading chapter (see Data Management Plans in Resources) to keep this module focused on principles rather than policy detail."
+  },
+  {
+    "objectID": "04-dmp.html#practical-prompts-when-drafting-a-dmp",
+    "href": "04-dmp.html#practical-prompts-when-drafting-a-dmp",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Practical prompts when drafting a DMP",
+    "text": "Practical prompts when drafting a DMP\nIn practice, effective DMPs often make the following points explicit:\n\nwhat data types, formats, and volumes are in scope (and what is out of scope);\nlikely access and sharing constraints, and how these will be managed;\nwho is responsible for data stewardship during the project and after staff turnover;\nwhen the DMP will be reviewed and updated (e.g., start-up, mid-project, pre-publication, project end).\n\nThese prompts support continuity and reduce last-minute compliance work."
+  },
+  {
+    "objectID": "04-dmp.html#exercises-510-minutes",
+    "href": "04-dmp.html#exercises-510-minutes",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Exercises (5–10 minutes)",
+    "text": "Exercises (5–10 minutes)\n\nReview the DMP (or draft one) for a current project.\nIs it clear which decisions are fixed and which may change?\nIdentify one type of derived or intermediate data.\nDecide whether it should be retained, documented, or discarded, and where that decision should be recorded in the DMP."
+  },
+  {
+    "objectID": "04-dmp.html#key-takeaways",
+    "href": "04-dmp.html#key-takeaways",
+    "title": "Chapter 4 — Data Management Plans (UCL)",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nA DMP is a living record of decisions, not a static form.\nSeparating data description from governance improves clarity.\nPlanning should include derived and intermediate data.\nProportionate DMPs support reproducibility, ethics, and sustainability."
+  },
+  {
+    "objectID": "05-organise-tidy.html",
+    "href": "05-organise-tidy.html",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "",
+    "text": "Organising and tidying data"
+  },
+  {
+    "objectID": "05-organise-tidy.html#learning-objectives",
+    "href": "05-organise-tidy.html#learning-objectives",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why data organisation is central to reproducibility and reuse;\ndistinguish raw, cleaned, and derived data in practice;\nunderstand data provenance and why it matters;\ndocument missingness, exclusions, and transformations proportionately;\nlocate minimum standards, examples, and templates for organised data.\n\nThis module builds on data planning Chapter 4 — Data Management Plans (UCL) and supports later modules on documentation, code, automation, and publishing.\nAll concrete examples, templates, and minimum-standard artefacts are provided centrally in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "05-organise-tidy.html#why-data-organisation-matters",
+    "href": "05-organise-tidy.html#why-data-organisation-matters",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Why data organisation matters",
+    "text": "Why data organisation matters\nPoorly organised data are difficult to understand, validate, or reuse—even by the original researcher. Organisation choices made early in a project shape how easily analyses can be checked, rerun, or extended later.\nGood data organisation:\n\nreduces ambiguity about what files represent;\npreserves provenance and interpretability;\nsupports efficient analysis and collaboration;\nreduces the risk of accidental data loss or misuse.\n\nThese benefits apply regardless of whether data can ultimately be shared openly."
+  },
+  {
+    "objectID": "05-organise-tidy.html#raw-cleaned-and-derived-data",
+    "href": "05-organise-tidy.html#raw-cleaned-and-derived-data",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Raw, cleaned, and derived data",
+    "text": "Raw, cleaned, and derived data\nA useful organising principle is to separate data by state:\n\nRaw data: as collected or received; never overwritten.\nCleaned data: errors corrected, formats standardised.\nDerived data: variables or datasets created during analysis.\n\nKeeping these states distinct preserves provenance and makes it possible to reproduce analyses from source data when needed.\nThis separation should be reflected both in folder structure and in documentation. Canonical structures are provided in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "05-organise-tidy.html#data-provenance-and-lineage",
+    "href": "05-organise-tidy.html#data-provenance-and-lineage",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Data provenance and lineage",
+    "text": "Data provenance and lineage\nData provenance describes where data come from, how they change, and how outputs are produced.\nRecording provenance typically involves:\n\ndocumenting transformation steps and assumptions;\nlinking derived outputs to scripts or workflows;\nrecording versions and reasons for change.\n\nExplicit provenance supports audit, peer review, reuse, and defensibility. It is particularly important in regulated, sensitive, or administrative data contexts, where data access may be restricted but analytical transparency is still expected.\nKey transformations (recoding, aggregation, linkage) should be summarised in documentation even when implemented in code."
+  },
+  {
+    "objectID": "05-organise-tidy.html#tidy-data-principles-practical-view",
+    "href": "05-organise-tidy.html#tidy-data-principles-practical-view",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Tidy data principles (practical view)",
+    "text": "Tidy data principles (practical view)\nTidy data conventions aim to make datasets easier to analyse and interpret1,2. In practice, this often means:\n\none variable per column;\none observation per row;\nconsistent naming and coding conventions.\n\nNot all data can be perfectly tidy, and perfection is not the goal. Moving towards these principles improves legibility and reduces errors, even when constraints apply.\nFurther guidance and examples are signposted in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "05-organise-tidy.html#missing-data-and-exclusions",
+    "href": "05-organise-tidy.html#missing-data-and-exclusions",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Missing data and exclusions",
+    "text": "Missing data and exclusions\nHandling missing data is not only technical but interpretive.\nGood practice includes:\n\nusing explicit missing value codes;\ndocumenting reasons for missingness where known;\nrecording exclusions and filtering decisions.\n\nThis information is often as important as the observed data itself and should be captured in documentation rather than inferred from code alone. Minimum documentation templates are provided in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "05-organise-tidy.html#file-formats-naming-and-versioning",
+    "href": "05-organise-tidy.html#file-formats-naming-and-versioning",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "File formats, naming, and versioning",
+    "text": "File formats, naming, and versioning\nChoices about formats, file names, and versions affect both longevity and reproducibility.\nAt a principle level, organised data should:\n\nuse stable, non-proprietary formats where possible;\navoid ambiguous or overloaded file names;\nmake changes traceable rather than overwriting files.\n\nRather than memorising rules, the key question is whether someone else could understand what changed, when, why, and by whom. Canonical examples and a changelog template are provided in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "05-organise-tidy.html#minimum-standards-vs-advanced-practice",
+    "href": "05-organise-tidy.html#minimum-standards-vs-advanced-practice",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Minimum standards vs advanced practice",
+    "text": "Minimum standards vs advanced practice\nThis course defines minimum standards that are achievable for most student and early-career research projects.\nMore advanced practices—such as automated validation, controlled vocabularies, or formal SOPs—are appropriate for large teams, regulated environments, or long-running studies. These are signposted in the Resources and Further Reading chapter and are not required for all projects.\nThe emphasis is on proportionality rather than completeness."
+  },
+  {
+    "objectID": "05-organise-tidy.html#practical-guidance-for-ecr-workflows",
+    "href": "05-organise-tidy.html#practical-guidance-for-ecr-workflows",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Practical guidance for ECR workflows",
+    "text": "Practical guidance for ECR workflows\nIn practice, proportionate data organisation often involves:\n\nfreezing raw data early and working on copies;\ncreating a short data dictionary alongside cleaning;\ndocumenting transformations as they occur, not retrospectively;\nagreeing naming and versioning conventions within the team.\n\nThese steps scale from individual projects to large collaborations."
+  },
+  {
+    "objectID": "05-organise-tidy.html#exercises-515-minutes",
+    "href": "05-organise-tidy.html#exercises-515-minutes",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Exercises (5–15 minutes)",
+    "text": "Exercises (5–15 minutes)\n\nIdentify one dataset in a current project.\nCan you clearly distinguish raw, cleaned, and derived versions?\nReview how missing data are handled.\nAre reasons for missingness or exclusion documented anywhere?"
+  },
+  {
+    "objectID": "05-organise-tidy.html#key-takeaways",
+    "href": "05-organise-tidy.html#key-takeaways",
+    "title": "Chapter 5 - Organising and tidying data",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nClear data organisation underpins reproducibility and interpretation.\nSeparating raw, cleaned, and derived data preserves provenance.\nProvenance and documentation matter even when data are restricted.\nMinimum standards should be achievable and proportionate.\nAll templates and examples are centralised in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#learning-objectives",
+    "href": "06-docs-eln-sops.html#learning-objectives",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why documentation is central to reproducibility and continuity;\ndistinguish between different types of research documentation;\ndecide when to use READMEs, ELNs, SOPs, or other formats;\nrecognise documentation as a tool for collaboration and handover;\napply proportionate documentation practices in everyday workflows.\n\nThis module builds on Chapter 3 - Project organisation and continuity and [Chapter 5 - Organising and tidying data] (05-organise-tidy.qmd). It supports later modules on code, automation, and publishing."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#why-documentation-matters",
+    "href": "06-docs-eln-sops.html#why-documentation-matters",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Why documentation matters",
+    "text": "Why documentation matters\nDocumentation is the backbone of reproducible research. Without it, data and code lose meaning, decisions become opaque, and results are difficult to interpret or defend. This chapter focuses on documentation that directly supports reproducibility, continuity, and reuse, rather than all possible records generated during a project.\nMost documentation failures are not due to lack of effort, but to unclear purpose: documenting everything everywhere, or documenting the wrong things. Over-documentation can be as harmful as under-documentation, creating noise, duplication, and maintenance burden without improving understanding."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#documentation-as-decision-capture",
+    "href": "06-docs-eln-sops.html#documentation-as-decision-capture",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Documentation as decision capture",
+    "text": "Documentation as decision capture\nGood documentation records not only what was done, but why it was done.\nDocumentation records analytical judgement, not just procedure. This includes coding decisions, exclusions, parameter choices, and deviations from plans, particularly in exploratory or qualitative work. Good documentation should allow an independent researcher to understand what was done, why it was done, and under what constraints. Documentation is evidence, not memory: it should be attributable, legible, contemporaneous, and retrievable.\nThis includes:\n\nanalytical choices and assumptions;\nchanges to protocols or plans;\nreasons for exclusions or deviations;\ntrade-offs made under constraints.\n\nCapturing decisions supports transparency and reduces reliance on memory.\nResponsibility for maintaining documentation should be explicit and shared across teams; roles and institutional responsibilities are discussed in Chapter 8.\n\n\n\n\n\n\nDocumenting PPIE decisions\n\n\n\nRecord:\n\nwho was involved and in what capacity;\nwhich stages of the research they informed;\nhow input influenced decisions (or why it did not);\nany constraints on sharing or reuse arising from PPIE."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#types-of-documentation-and-what-they-are-for",
+    "href": "06-docs-eln-sops.html#types-of-documentation-and-what-they-are-for",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Types of documentation (and what they are for)",
+    "text": "Types of documentation (and what they are for)\nDifferent documentation artefacts serve different audiences and purposes:\n\nREADMEs: high-level orientation to the project (purpose, structure, how to run or navigate it).\nElectronic Lab Notebooks (ELNs): chronological records of work, observations, and decisions.\nStandard Operating Procedures (SOPs): stable instructions for repeatable tasks.\nCode comments and docstrings: technical detail for specific scripts or functions.\nCodebooks / data dictionaries: variable-level descriptions supporting interpretation and reuse.\n\nNot all documents produced during a project are research documentation. Project plans, budgets, and timelines support delivery, while READMEs, ELNs, codebooks, and SOPs support reproducibility and reuse. Using the right format for the right purpose improves clarity and reduces duplication.\n\nDocumentation types and when to use each\nResearch projects typically require multiple forms of documentation, each serving a different purpose. Confusion often arises when a single document is used to do everything.\nThe table below summarises common documentation types and their primary role.\n\n\n\n\n\n\n\n\n\nDocumentation type\nPrimary purpose\nTypical audience\nWhen to use\n\n\n\n\nREADME\nProject or dataset orientation\nNew collaborators, reviewers, future you\nAt project or dataset level\n\n\nCodebook / data dictionary\nVariable-level description\nAnalysts, secondary users\nFor each dataset\n\n\nELN\nChronological record of work and decisions\nProject team\nDuring active research\n\n\nSOP\nStable instructions for repeatable tasks\nTeams, new staff\nWhen tasks are repeated\n\n\n\nUsing the appropriate document type reduces duplication, improves clarity, and supports reproducibility across the project lifecycle.\n\n\nChoosing the right document\nThe table below provides a simple decision guide.\n\n\n\n\n\n\n\nSituation\nUse this document\n\n\n\n\nSomeone new joins the project\nREADME\n\n\nYou need to explain what a variable means\nCodebook\n\n\nYou are recording what you tried and why\nELN\n\n\nA task needs to be done the same way every time\nSOP\n\n\nYou need to justify a decision later\nELN or decision log\n\n\nYou are preparing data for sharing or archiving\nREADME + codebook\n\n\n\nTemplates and examples for each document type are provided in the Resources and Further Reading."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#using-elns-effectively",
+    "href": "06-docs-eln-sops.html#using-elns-effectively",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Using ELNs effectively",
+    "text": "Using ELNs effectively\nELNs are most useful for recording:\n\nwhat was attempted and what happened;\ndecisions made during data collection or analysis;\ndeviations from plans or protocols.\n\nELNs are not well suited for:\n\nlong-term instructions (use SOPs);\nfinal project summaries (use READMEs);\nstoring large data files.\n\nKeeping ELNs focused improves their value for review and handover."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#sops-and-repeatability",
+    "href": "06-docs-eln-sops.html#sops-and-repeatability",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "SOPs and repeatability",
+    "text": "SOPs and repeatability\nSOPs support consistency across people and time.\nGood SOPs are:\n\ntask-specific and scoped;\nwritten for someone unfamiliar with the project;\nversioned and reviewed periodically.\n\nSOPs reduce variability, support training, and make quality control explicit."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#documentation-and-collaboration",
+    "href": "06-docs-eln-sops.html#documentation-and-collaboration",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Documentation and collaboration",
+    "text": "Documentation and collaboration\nDocumentation is a shared resource. Clear, accessible documentation:\n\nsupports onboarding of new team members;\nreduces reliance on informal knowledge;\nimproves equity by making expectations explicit;\nsupports offboarding and long-term continuity.\n\nThese benefits are particularly important in interdisciplinary and distributed teams.\n\n\n\n\n\n\nDocumenting AI-assisted work\n\n\n\nIf AI tools are used for coding, data cleaning, or analysis, record:\n\nthe tool and version;\nthe purpose (e.g. refactoring, summarisation, feature generation);\nhuman review and validation steps;\nknown limitations or non-determinism."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#practical-guidance-for-ecr-workflows",
+    "href": "06-docs-eln-sops.html#practical-guidance-for-ecr-workflows",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Practical guidance for ECR workflows",
+    "text": "Practical guidance for ECR workflows\nIn practice, proportionate documentation often involves:\n\nmaintaining a short project README;\nrecording key decisions in an ELN or decision log;\ncreating SOPs only for tasks that are repeated;\nreviewing documentation at project milestones.\n\nDocumentation should evolve with the project."
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#exercises-510-minutes",
+    "href": "06-docs-eln-sops.html#exercises-510-minutes",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Exercises (5–10 minutes)",
+    "text": "Exercises (5–10 minutes)\n\nIdentify one type of documentation used in a current project.\nIs its purpose clear, or is it being used to do too much?\nReview a recent decision.\nWhere is the rationale recorded, and could it be clearer?"
+  },
+  {
+    "objectID": "06-docs-eln-sops.html#key-takeaways",
+    "href": "06-docs-eln-sops.html#key-takeaways",
+    "title": "Chapter 6 — Documentation, ELNs & SOPs",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nDocumentation underpins reproducibility, interpretation, and continuity.\nDifferent documentation types serve different purposes.\nCapturing decisions is as important as recording actions.\nClear documentation supports collaboration and reduces risk."
+  },
+  {
+    "objectID": "07-code-quality-testing.html",
+    "href": "07-code-quality-testing.html",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "",
+    "text": "Code quality, testing, and sustainable computation"
+  },
+  {
+    "objectID": "07-code-quality-testing.html#learning-objectives",
+    "href": "07-code-quality-testing.html#learning-objectives",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why code quality and documentation underpin reproducibility and defensibility;\nrecognise the role of testing in reliable research workflows;\nunderstand how inefficient code affects reproducibility and sustainability;\napply proportionate “green coding” practices in research contexts;\nidentify practical steps to reduce unnecessary computation.\n\nThis module builds on Chapter 6 — Documentation, ELNs & SOPs and prepares you for automation and workflows in Chapter 9 — Automation & simple workflows."
+  },
+  {
+    "objectID": "07-code-quality-testing.html#why-code-quality-matters-in-research",
+    "href": "07-code-quality-testing.html#why-code-quality-matters-in-research",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "Why code quality matters in research",
+    "text": "Why code quality matters in research\nIn research contexts, code quality is not about elegance or performance alone. It is about whether results can be:\n\nregenerated reliably;\ninspected and reviewed;\nadapted or extended by others (including your future self).\n\nPoor-quality code increases the risk of silent errors, irreproducible results, and excessive rework."
+  },
+  {
+    "objectID": "07-code-quality-testing.html#testing-as-a-research-safeguard",
+    "href": "07-code-quality-testing.html#testing-as-a-research-safeguard",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "Testing as a research safeguard",
+    "text": "Testing as a research safeguard\nTesting checks that code behaves as expected when inputs or assumptions change.\nIn practice, testing supports reproducibility by:\n\ndetecting errors early;\nreducing reliance on manual checks;\nsupporting refactoring without breaking results.\n\nEven simple tests (e.g. checking dimensions, ranges, or invariants) provide substantial benefits.\n\n\n\n\n\n\nSustainable coding: quality that lasts (and wastes less)\n\n\n\nSustainable code is not about perfection or performance for its own sake. It is about reducing unnecessary recomputation, storage, and rework while keeping analyses understandable, defensible, and maintainable.\nWell-designed code saves time, energy, and attention — for you and for others.\n\n\n\nWhat to look for when coding sustainably\nThe practices below focus on high-value, low-burden choices that improve both code quality and environmental sustainability.\n\nRestartable, modular workflows\nStructure scripts so analyses can resume from intermediate outputs rather than rerunning end-to-end. This reduces accidental full recomputation after small changes.\n(Links to workflow tooling in Chapter 9.)\nIncremental recomputation and caching\nSave expensive intermediate results when justified, and recompute only what has changed. This is often the single biggest energy-saving decision in analysis code.\nProfiling before optimisation\nUse simple timing or memory checks to identify where time and compute are actually spent. Optimising unmeasured code often wastes more energy than it saves.\nAlgorithmic proportionality\nPrefer methods and resolutions that are sufficient for the research question, rather than maximal by default (e.g. spatial resolution, iterations, precision). Small reductions here can dominate total compute cost.\nClear inputs, outputs, and assumptions\nMake it obvious what each script expects, produces, and assumes. Ambiguity leads to reruns, duplication, and error-driven recomputation.\nLightweight, targeted testing\nA small number of high-value checks (e.g. input validation, key invariants) can prevent long, expensive runs from failing late.\nReadable structure over cleverness\nCode that is easy to read, review, and modify is less likely to be rerun unnecessarily or replaced wholesale when changes are needed.\n\n\n\nWhy this matters beyond code style\nPoorly structured or opaque code increases the likelihood of:\n\nfull reruns due to uncertainty or small errors;\nduplicated data and intermediate files;\nwasted compute from over-resolution or over-iteration;\nabandonment and reimplementation of analyses.\n\nIn practice, inefficient code can make research effectively irreproducible. If analyses are too slow, expensive, or resource-intensive to rerun, this limits verification, sensitivity analysis, and extension by others. These constraints disproportionately affect researchers and teams with limited access to compute resources, creating hidden barriers to transparency and reuse. These costs are environmental, human, and organisational. Good-enough code quality is therefore a sustainability intervention, not just a technical preference.\n(Responsibility and proportionality are discussed further in Chapter 8; workflow automation and dependency management are covered in Chapter 9.)\n\n\nDocumenting your code for clarity and reuse\nGood documentation is not an afterthought — it’s part of writing code that others (and you later) can reliably understand and reuse.\n\nExplain why: Comment the reasoning behind decisions, not just what the code does.\n\nWrite docs as you code: Update documentation alongside code to avoid outdated notes.\n\nUse clear naming and structure: Consistent variable/function names and well-structured README/help files improve readability.\n\nDocument at multiple levels: Inline comments, function headers, and high-level project docs all have a role.\n\nInclude examples: Minimal usage examples help others understand expected inputs/outputs.\n\nKeep docs up to date: Outdated documentation misleads and can cost more time than none at all.\n\nChoose appropriate tools: Use roxygen2 (R), Sphinx (Python), or Markdown with docstrings to integrate docs with code.\n\nWhy it matters: well-documented code reduces confusion, unnecessary reruns, and onboarding friction — essential components of sustainable and reproducible research workflows.\nAI-generated code should be treated like any other external contribution: reviewed, tested, and documented before use."
+  },
+  {
+    "objectID": "07-code-quality-testing.html#versioning-refactoring-and-tests",
+    "href": "07-code-quality-testing.html#versioning-refactoring-and-tests",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "Versioning, refactoring, and tests",
+    "text": "Versioning, refactoring, and tests\nRefactoring code is safer when tests are in place. The versioning principles introduced for data and documentation in (Chapter 5 - Organising and tidying data) apply equally to code. Scripts and analysis pipelines should not be overwritten without trace, and changes should be attributable, versioned, and recoverable. Code version control systems support this process, but the underlying expectation is consistency and traceability rather than tool choice.\nTesting supports sustainable workflows by:\n\nenabling incremental improvements;\npreventing costly re-runs after small changes;\nreducing fear of breaking working code.\n\nThis is particularly important in long-running or resource-intensive analyses."
+  },
+  {
+    "objectID": "07-code-quality-testing.html#practical-guidance-for-ecr-workflows",
+    "href": "07-code-quality-testing.html#practical-guidance-for-ecr-workflows",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "Practical guidance for ECR workflows",
+    "text": "Practical guidance for ECR workflows\nProportionate steps for most research projects include:\n\nwriting scripts so they can be run end-to-end;\nadding basic checks or tests for key assumptions;\navoiding unnecessary recomputation during exploration;\ndocumenting when and why full reruns are required.\n\nMore advanced optimisation is context-dependent and not always necessary."
+  },
+  {
+    "objectID": "07-code-quality-testing.html#exercises-515-minutes",
+    "href": "07-code-quality-testing.html#exercises-515-minutes",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "Exercises (5–15 minutes)",
+    "text": "Exercises (5–15 minutes)\n\nIdentify one script or analysis that is slow or frequently re-run.\nIs there a step that could be cached or avoided?\nLook at one function or script.\nWhat simple check could be added to detect errors early?"
+  },
+  {
+    "objectID": "07-code-quality-testing.html#key-takeaways",
+    "href": "07-code-quality-testing.html#key-takeaways",
+    "title": "Chapter 7 — Code quality & testing",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nCode quality underpins reproducibility and trust in results.\nTesting reduces errors, rework, and unnecessary computation.\nInefficient code can make research effectively irreproducible.\nGreen coding focuses on reducing waste through clarity and efficiency.\nProportionate practices deliver most of the benefit."
+  },
+  {
+    "objectID": "08-s-responsibility.html#learning-objectives",
+    "href": "08-s-responsibility.html#learning-objectives",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain responsibility as an ongoing research practice;\nrecognise ethical, legal, and governance considerations in everyday workflows;\nidentify and articulate roles and responsibilities within a research project;\ndocument constraints, decisions, and trade-offs transparently;\nlink responsibility to decisions about sharing, restriction, and reuse.\n\nThis module builds on Chapter 7 — Code quality & testing and informs later decisions about Chapter 10 — Publishing, PIDs & preparing for reuse."
+  },
+  {
+    "objectID": "08-s-responsibility.html#what-responsibility-means-in-practice",
+    "href": "08-s-responsibility.html#what-responsibility-means-in-practice",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "What responsibility means in practice",
+    "text": "What responsibility means in practice\nResponsible research is not limited to formal ethics approval or compliance checkpoints.\nIt involves anticipating consequences, making proportionate choices, and recording decisions throughout the project lifecycle.\nMost responsibility challenges arise not from exceptional cases, but from routine decisions that are undocumented, implicit, or assumed to be someone else’s responsibility."
+  },
+  {
+    "objectID": "08-s-responsibility.html#responsibility-as-anticipation-and-decision-capture",
+    "href": "08-s-responsibility.html#responsibility-as-anticipation-and-decision-capture",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Responsibility as anticipation and decision capture",
+    "text": "Responsibility as anticipation and decision capture\nThe Turing Way frames responsibility as anticipatory.\nKey questions include:\n\nWho might be affected by this research?\nWhat risks, burdens, or exclusions could arise?\nWhat constraints limit what can be done, shared, or reused?\n\nResponsible practice requires that these considerations are made explicit and recorded, alongside the rationale for decisions taken.\nDocumenting constraints and trade-offs allows decisions to be understood, revisited, and defended as contexts change."
+  },
+  {
+    "objectID": "08-s-responsibility.html#roles-responsibilities-and-accountability",
+    "href": "08-s-responsibility.html#roles-responsibilities-and-accountability",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Roles, responsibilities, and accountability",
+    "text": "Roles, responsibilities, and accountability\nResponsibility in research is distributed.\nProjects involve multiple roles, which may overlap and change over time. Examples include:\n\nprincipal investigator or project lead;\nsupervisors and advisory roles;\nanalysts and data stewards;\ncollaborators and external partners;\ninstitutional approvers and governance bodies.\n\nUnclear or assumed responsibilities are a common source of risk. When roles are not explicit, decisions may be delayed, duplicated, or left undocumented.\nResponsible research therefore requires:\n\nidentifying who is responsible for key decisions;\nrecognising where responsibilities overlap;\nrecording how decisions are made and by whom.\n\nThis is particularly important for:\n\ndata access and governance;\nethics and regulatory approvals;\nanalytical choices and exclusions;\ndecisions about sharing, restriction, and reuse.\n\nResponsibility is not about assigning blame. It is about ensuring that accountability is visible, supported, and reviewable."
+  },
+  {
+    "objectID": "08-s-responsibility.html#equity-inclusion-and-accessibility-as-responsibility",
+    "href": "08-s-responsibility.html#equity-inclusion-and-accessibility-as-responsibility",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Equity, inclusion, and accessibility as responsibility",
+    "text": "Equity, inclusion, and accessibility as responsibility\nEquity and accessibility are not optional add-ons. They are operational aspects of responsible practice.\nExamples include:\n\ntools or workflows that require specialist infrastructure;\ndocumentation that assumes prior technical or institutional knowledge;\nprocesses that place hidden burdens on junior staff or collaborators.\n\nMaking expectations explicit, documenting decisions, and choosing proportionate approaches improves inclusion and collaboration."
+  },
+  {
+    "objectID": "08-s-responsibility.html#responsibility-in-sharing-restriction-and-reuse",
+    "href": "08-s-responsibility.html#responsibility-in-sharing-restriction-and-reuse",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Responsibility in sharing, restriction, and reuse",
+    "text": "Responsibility in sharing, restriction, and reuse\nResponsible research extends to how outputs are shared and reused.\nThis includes:\n\nsetting clear access conditions and licences;\navoiding over-claiming reuse where constraints apply;\nproviding sufficient context to prevent misinterpretation.\n\nThese considerations link directly to Chapter 10 — Publishing, PIDs & preparing for reuse.\nResponsible sharing does not mean sharing everything. It means being explicit about what can be shared, what cannot, and why."
+  },
+  {
+    "objectID": "08-s-responsibility.html#institutional-support-and-escalation-routes",
+    "href": "08-s-responsibility.html#institutional-support-and-escalation-routes",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Institutional support and escalation routes",
+    "text": "Institutional support and escalation routes\nResponsibility is supported by institutional infrastructure.\nAt UCL, guidance and support are available for:\n\nresearch ethics and governance;\ndata protection and information security;\nresearch integrity and responsible conduct;\ndata management, sharing, and preservation.\n\nKnowing when and where to seek advice is itself a responsible practice.\nRelevant training, policies, and support routes are collated in the Resources and Further Reading."
+  },
+  {
+    "objectID": "08-s-responsibility.html#practical-guidance-for-ecr-workflows",
+    "href": "08-s-responsibility.html#practical-guidance-for-ecr-workflows",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Practical guidance for ECR workflows",
+    "text": "Practical guidance for ECR workflows\nFor early-career researchers, proportionate responsible practice often involves:\n\nclarifying roles and expectations early in a project;\ndocumenting constraints and trade-offs rather than hiding them;\nrecording decisions as they are made, not retrospectively;\nseeking advice when boundaries or responsibilities are unclear.\n\nResponsibility is a shared, supported practice — not an individual burden."
+  },
+  {
+    "objectID": "08-s-responsibility.html#exercises-510-minutes",
+    "href": "08-s-responsibility.html#exercises-510-minutes",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Exercises (5–10 minutes)",
+    "text": "Exercises (5–10 minutes)\n\nIdentify one decision in a current project.\nWho was responsible, and is the rationale documented?\nIdentify one constraint (ethical, legal, practical).\nIs it recorded clearly enough for someone new to the project to understand?"
+  },
+  {
+    "objectID": "08-s-responsibility.html#key-takeaways",
+    "href": "08-s-responsibility.html#key-takeaways",
+    "title": "Chapter 8 — Responsible research: roles, decisions, and accountability",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nResponsibility is an ongoing, documented practice.\nClear roles and accountability reduce risk and confusion.\nConstraints and trade-offs should be recorded, not hidden.\nResponsible sharing requires transparency about limits.\nInstitutional support is part of responsible research."
+  },
+  {
+    "objectID": "09-automation.html#learning-objectives",
+    "href": "09-automation.html#learning-objectives",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why automation supports reproducibility and efficiency;\nrecognise which steps benefit most from automation;\nunderstand automation as dependency management;\nlink automation to reduced compute waste and sustainability;\napply proportionate automation in research workflows.\n\nThis module builds on Chapter 7 — Code quality & testing and Chapter 8 — Responsible research: roles, decisions, and accountability. It prepares you for Chapter 10 — Publishing, PIDs & preparing for reuse."
+  },
+  {
+    "objectID": "09-automation.html#what-automation-means-in-research",
+    "href": "09-automation.html#what-automation-means-in-research",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "What automation means in research",
+    "text": "What automation means in research\nIn research, automation does not mean complex pipelines or advanced tooling by default.\nAutomation means making the steps that turn inputs (data, parameters, code) into outputs (tables, figures, models, results) explicit, repeatable, and runnable without manual intervention.At its core, automation is a way of managing dependencies between inputs, transformations, and outputs.\nA workflow can be automated even if it consists of only a small number of scripts, as long as:\n\nthe execution order is clear;\ninputs and outputs are explicit;\nresults can be regenerated reliably.\n\nAutomation sits above individual scripts.\nCode quality focuses on how code is written (Chapter 7); automation focuses on how pieces of work fit together."
+  },
+  {
+    "objectID": "09-automation.html#why-automate-research-workflows",
+    "href": "09-automation.html#why-automate-research-workflows",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Why automate research workflows?",
+    "text": "Why automate research workflows?\nManual workflows are fragile.\nThey rely on undocumented assumptions, memory, and manual steps that are difficult to reconstruct later — especially by collaborators, reviewers, or your future self.\nAutomation helps ensure that:\n\nsteps are run in the correct order;\ninputs and outputs are clearly linked;\nanalyses can be re-run consistently.\n\nThis reduces error, supports review, and increases confidence that results are defensible and reproducible.By avoiding unnecessary full reruns, automation reduces compute waste and supports environmentally sustainable research practice.\nFor open research, automation is often the difference between sharing code and enabling reuse."
+  },
+  {
+    "objectID": "09-automation.html#automation-as-dependency-management",
+    "href": "09-automation.html#automation-as-dependency-management",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Automation as dependency management",
+    "text": "Automation as dependency management\nAt its core, automation is about dependencies:\n\nwhich files or datasets are inputs;\nwhich scripts transform them;\nwhich outputs depend on which steps.\n\nWhen dependencies are explicit, workflows can:\n\nrerun only what has changed;\navoid accidental full reprocessing;\nmake provenance easier to inspect and explain.\n\nSimple automation relies on good foundations: clear folder structure, stable file naming, versioning, and separation of raw and derived data, as introduced in Chapter 5 — Organising and tidying data."
+  },
+  {
+    "objectID": "09-automation.html#what-to-automate-and-what-not-to",
+    "href": "09-automation.html#what-to-automate-and-what-not-to",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "What to automate (and what not to)",
+    "text": "What to automate (and what not to)\nAutomation is most valuable when steps are routine, repeatable, and diagnostic.\nIn health and population research, many activities labelled as “exploratory” are in fact systematic checks that recur across datasets and projects. These are prime candidates for automation.\n\nStrong candidates for automation\nAutomate steps that are:\n\nRepeated across projects or data extracts, such as:\n\nmissingness summaries and patterns;\nvariable ranges and implausible values;\nconsistency checks (e.g. dates, identifiers, categories);\nduplicate detection and basic record counts.\n\nRequired every time data are refreshed or updated, including:\n\nre-running descriptive summaries;\nregenerating standard tables or plots;\nvalidating joins or linkage outputs.\n\nCostly to rerun manually if missed, where late discovery leads to downstream rework.\n\nAutomating these steps improves comparability, creates an audit trail, and reduces the risk that important checks are skipped.\n\n\nWhat should remain flexible\nNot all exploratory work should be fully automated.\nActivities that often benefit from flexibility include:\n\nhypothesis generation and ad-hoc visualisation;\none-off transformations explored to understand unusual patterns;\nconceptual restructuring of variables or outcomes.\n\nHowever, even here, partial automation is often beneficial: saving scripts, parameterising functions, or re-running the same exploratory logic on updated data.\nThe goal is not to constrain thinking, but to avoid repeating the same diagnostic work from scratch."
+  },
+  {
+    "objectID": "09-automation.html#automation-and-sustainability",
+    "href": "09-automation.html#automation-and-sustainability",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Automation and sustainability",
+    "text": "Automation and sustainability\nAutomation supports sustainability by reducing waste.\nWell-designed workflows:\n\navoid repeated full pipeline runs;\nreuse unchanged intermediate results;\nprevent accidental recomputation.\n\nFrom a sustainability perspective, automation operationalises the green coding principles introduced in Chapter 7 — Code quality & testing.\nReducing unnecessary computation saves time, energy, and storage — and improves reproducibility at the same time."
+  },
+  {
+    "objectID": "09-automation.html#levels-of-automation-proportionate-choices",
+    "href": "09-automation.html#levels-of-automation-proportionate-choices",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Levels of automation (proportionate choices)",
+    "text": "Levels of automation (proportionate choices)\nAutomation can be lightweight.\nCommon forms include:\n\nscripts that run analyses end-to-end;\nsimple rule-based pipelines (e.g. make-style logic);\nscheduled or triggered runs for key steps.\n\nThe appropriate level depends on project scale, team size, and computational cost. More complex tooling is optional, not mandatory.\nStarting small and scaling only when needed is usually the most sustainable choice."
+  },
+  {
+    "objectID": "09-automation.html#transparency-and-automation",
+    "href": "09-automation.html#transparency-and-automation",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Transparency and automation",
+    "text": "Transparency and automation\nAutomated workflows support transparency by:\n\ndocumenting execution order implicitly;\nmaking assumptions and dependencies explicit;\nproducing consistent, traceable outputs.\n\nAutomation complements documentation — it does not replace it. Clear READMEs, comments, and decision logs remain essential (see Chapter 6)."
+  },
+  {
+    "objectID": "09-automation.html#practical-guidance-for-ecr-workflows",
+    "href": "09-automation.html#practical-guidance-for-ecr-workflows",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Practical guidance for ECR workflows",
+    "text": "Practical guidance for ECR workflows\nFor most research projects, proportionate automation involves:\n\nwriting scripts that can be run from top to bottom;\navoiding manual edits to generated files;\nrecording when and why full reruns are required;\nadding automation incrementally as projects mature.\n\nYou do not need complex tools to gain most of the benefits. Consistency and clarity matter more than sophistication.\nExamples, tools, and further guidance are collated in the Resources and Further Reading chapter."
+  },
+  {
+    "objectID": "09-automation.html#exercises-515-minutes",
+    "href": "09-automation.html#exercises-515-minutes",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Exercises (5–15 minutes)",
+    "text": "Exercises (5–15 minutes)\n\nIdentify one repeated manual step in a current project.\nCould it be automated with a single script?\nPick one analysis output.\nCan you trace which inputs and scripts produced it?"
+  },
+  {
+    "objectID": "09-automation.html#key-takeaways",
+    "href": "09-automation.html#key-takeaways",
+    "title": "Chapter 9 — Automation & simple workflows",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nAutomation supports reproducibility, transparency, and efficiency.\nManaging dependencies is the core benefit of automation.\nNot all steps need to be automated.\nAutomation reduces compute waste and supports sustainability.\nStart simple and scale only when needed."
+  },
+  {
+    "objectID": "11-wrap-up.html",
+    "href": "11-wrap-up.html",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "",
+    "text": "Wrap-up and next steps"
+  },
+  {
+    "objectID": "11-wrap-up.html#learning-objectives",
+    "href": "11-wrap-up.html#learning-objectives",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nreflect on what proportionate open and reproducible practice looks like;\nidentify which practices matter most in your own context;\nrecognise reproducibility as a form of risk reduction;\nknow where to go next for tools, guidance, and support.\n\nThis module consolidates the ideas introduced across Modules 1–10 and points to resources for continued learning and application."
+  },
+  {
+    "objectID": "11-wrap-up.html#what-this-course-set-out-to-do",
+    "href": "11-wrap-up.html#what-this-course-set-out-to-do",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "What this course set out to do",
+    "text": "What this course set out to do\nThis course has focused on practical, proportionate practices that support open and reproducible research in real institutional contexts.\nIt has aimed to:\n\nreduce avoidable errors and inefficiencies;\nimprove clarity, continuity, and defensibility;\nsupport collaboration and responsible reuse.\n\nIt is not a comprehensive technical manual, nor a checklist to be completed.\n\n\n\n\n\n\nBaseline expectations (UCL ECR “minimum viable reproducibility”)\n\n\n\nIf you do only these things, you will meet a sensible baseline for transparent, defensible research practice (including when data cannot be open):\n\nProject README at the root (purpose, structure, conventions, contacts).\nDecisions recorded (decision log or ELN entries for key changes/assumptions).\nRaw vs derived separated (never overwrite raw; document transformations).\nRe-runnable analysis (scripted steps; basic checks/tests where feasible).\nPlanned sharing and access (DMP/governance notes + clear access route).\nPublish with identifiers and clarity (ORCID, DOIs where appropriate; licence + access conditions; availability statements).\n\nUse Resources and Further Reading for copy-ready templates and UCL routes."
+  },
+  {
+    "objectID": "11-wrap-up.html#what-good-enough-looks-like",
+    "href": "11-wrap-up.html#what-good-enough-looks-like",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "What “good enough” looks like",
+    "text": "What “good enough” looks like\nReproducibility is incremental.\nWhat is appropriate depends on:\n\nproject scale and risk;\ndata sensitivity and governance;\nteam size and turnover;\navailable time and resources.\n\nGood practice means making choices explicit and defensible—not maximising openness at any cost."
+  },
+  {
+    "objectID": "11-wrap-up.html#practices-not-tools",
+    "href": "11-wrap-up.html#practices-not-tools",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "Practices, not tools",
+    "text": "Practices, not tools\nThroughout the course, the emphasis has been on practices rather than specific tools.\nTools will change. Principles such as clarity, documentation, versioning, and transparency endure.\nChoosing tools that support these practices in your context is more important than adopting any particular platform."
+  },
+  {
+    "objectID": "11-wrap-up.html#reproducibility-as-risk-reduction",
+    "href": "11-wrap-up.html#reproducibility-as-risk-reduction",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "Reproducibility as risk reduction",
+    "text": "Reproducibility as risk reduction\nMany open research practices function as risk management:\n\ndocumentation reduces reliance on memory;\nversioning reduces accidental loss;\nautomation reduces silent errors;\ntesting reduces rework;\nclear publishing reduces misinterpretation.\n\nSeen this way, reproducibility supports both research quality and researcher wellbeing."
+  },
+  {
+    "objectID": "11-wrap-up.html#where-to-go-next",
+    "href": "11-wrap-up.html#where-to-go-next",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "Where to go next",
+    "text": "Where to go next\nDepending on your needs, next steps may include:\n\nconsulting the Resources and Further Reading chapter;\nengaging with UCL support services for data, ethics, and open access;\nattending further training or workshops.\n\nLearning and improvement are ongoing processes."
+  },
+  {
+    "objectID": "11-wrap-up.html#applying-this-in-your-own-work",
+    "href": "11-wrap-up.html#applying-this-in-your-own-work",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "Applying this in your own work",
+    "text": "Applying this in your own work\nA practical way forward is to:\n\nchoose one or two practices to strengthen in your next project;\nrevisit them at key project milestones;\nbuild habits gradually rather than all at once.\n\nSmall, consistent improvements deliver the greatest benefit."
+  },
+  {
+    "objectID": "11-wrap-up.html#exercises-510-minutes",
+    "href": "11-wrap-up.html#exercises-510-minutes",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "Exercises (5–10 minutes)",
+    "text": "Exercises (5–10 minutes)\n\nIdentify one practice from this course you plan to adopt or improve next.\nWhat would “good enough” look like in your context?\nIdentify one risk in a current or past project.\nWhich reproducible practice might have reduced it?"
+  },
+  {
+    "objectID": "11-wrap-up.html#key-takeaways",
+    "href": "11-wrap-up.html#key-takeaways",
+    "title": "Chapter 11 — Wrap-up & next steps",
+    "section": "Key takeaways",
+    "text": "Key takeaways\n\nOpen and reproducible research is incremental and contextual.\n“Good enough” practice depends on risk, scale, and constraints.\nPractices matter more than specific tools.\nReproducibility supports quality, efficiency, and wellbeing.\nResources and communities support continued learning."
+  },
+  {
+    "objectID": "resources.html#sec-onboarding-first-actions",
+    "href": "resources.html#sec-onboarding-first-actions",
+    "title": "Resources and Further Reading",
+    "section": "Onboarding: first actions on a new project",
+    "text": "Onboarding: first actions on a new project\nUse this when you join a project (or onboard someone else).\n\nFind or create the project README (purpose, scope, structure, contacts).\nConfirm data access and governance (what you can/can’t do; where it’s documented).\nIdentify the source of truth (repository/shared drive) and the agreed naming/versioning rules.\nLocate raw data and confirm it is immutable; find how derived data are produced.\nIdentify the analysis entry point (main script / workflow) and the environment notes.\nFind the decision log / ELN and record your first assumptions and uncertainties.\nCheck expected outputs (papers, datasets, code releases) and likely release points."
+  },
+  {
+    "objectID": "resources.html#foundations",
+    "href": "resources.html#foundations",
+    "title": "Resources and Further Reading",
+    "section": "Foundations of open and reproducible research",
+    "text": "Foundations of open and reproducible research\nSupports Chapter 1\n\nConceptual foundations and terminology\n\nDefinitions: reproducible, replicable, robust, and generalisable\nhttps://book.the-turing-way.org/reproducible-research/overview/overview-definitions/\nWhy reproducible research matters (overview and benefits)\nhttps://book.the-turing-way.org/reproducible-research/overview\n\n\n\nKey readings\n\nThe Turing Way — foundational guidance on reproducibility, collaboration, project design, FAIR, and governance1\n\nNature survey of reproducibility challenges across science2\n\nManifesto for reproducible science3\n\nNational Academies report on reproducibility and replicability4\n\n\n\nUCL policies and frameworks\n\nUCL Research Transparency Policy\nhttps://www.ucl.ac.uk/research/strategy-environment/research-transparency\nUCL Research Integrity\nhttps://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity\nUCL Office for Open Science & Scholarship\nhttps://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship\nUCL Open Access guidance\nhttps://www.ucl.ac.uk/library/open-science-research-support/open-access\nUCL Research Data Repository: https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository\nAcknowledging the use of generative AI and referencing generative AI https://library-guides.ucl.ac.uk/referencing-plagiarism/acknowledging-genAI\nUCL RSDP: Research Governance and Organisation https://www.ucl.ac.uk/human-resources/organisational-development/researcher-development/research-staff/rsdp-research-governance-and"
+  },
+  {
+    "objectID": "resources.html#fair-resources",
+    "href": "resources.html#fair-resources",
+    "title": "Resources and Further Reading",
+    "section": "FAIR principles and data stewardship",
+    "text": "FAIR principles and data stewardship\nSupports Chapter 2\n\nCore readings\n\nOriginal FAIR principles5\n\nGO FAIR overview6\n\nOpenAIRE FAIR implementation guidance7\n\nFAIR chapter from The Turing Way8\n\n\n\nFAIR in practice (deeper dives)\n\nFAIR Princples\nhttps://www.go-fair.org/fair-principles/\nMachine-actionable metadata (overview)\nhttps://rdmkit.elixir-europe.org/machine_actionability\nPersistent identifiers and metadata schemas (DataCite)\nhttps://schema.datacite.org/\nFAIR and sensitive data\nhttps://www.openaire.eu/sensitive-data-guide\nProvenance and critical data elements\nhttps://book.the-turing-way.org/reproducible-research/rdm/rdm-metadata/\n\n\n\nUCL support\n\nUCL Research Data Repository\nhttps://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository\nResearch Data Management guidance\nhttps://library-guides.ucl.ac.uk/research-data-management/best-practices-fair-data\n\n\n\n\n## Project design and management {#pm}\n\n\nSupports Chapter 3 — Project organisation for reproducible research\n\n\n### Core conceptual readings\n\n\n- The Turing Way: project management methodologies overview9 https://book.the-turing-way.org/project-design/project-management-methodologies/overview\n\n\nThese introductions orient you to project-level decisions, continuity, and collaboration concepts in research contexts.\n\n\n\n\n\nProject metadata, roles, and conventions\nProject organisation is not just files; it’s agreements about how work is described and aligned across people and outputs.\n\nProject metadata and conventions\nhttps://www.resourcespace.com/complete-guide-to-metadata\nDecision logs and risk registers\nhttps://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions. https://www.prince2.com/uk/blog/the-risk-register-what-to-include-and-what-to-avoid\nOnboarding and offboarding practices\nhttps://book.the-turing-way.org/community-handbook/onboarding-offboarding/onboarding-core-team https://book.the-turing-way.org/community-handbook/onboarding-offboarding/offboarding-core-team/\n\nThis set supports the Chapter 3 emphasis on metadata, roles, and conventions for collaboration.\n\n\n\nVersioning and continuity (principles, not tools)\nProject continuity depends on how changes are tracked, not just which tool you use.\n\nVersioning data and documents (principle overview) — UK Data Service guidance\nhttps://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/\nGood Enough Practices in Scientific Computing (principles for tracking changes)\nhttps://carpentries-lab.github.io/good-enough-practices/\nDecision-making records and continuity https://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions.\n\nThese reinforce Chapter 3’s focus on proportionate principles rather than tool adoption.\n\n\n\nUCL-supported tools and routes\nChapter 3 promises learners can locate UCL support. These links are the authoritative institutional routes.\n\nUCL Research Data Management (Library Services) — guidance, templates, training\nhttps://www.ucl.ac.uk/library/open-science-research-support/research-data-management\nResearch governance (UCL Governance & Compliance) — structures and approvals\nhttps://www.ucl.ac.uk/governance-compliance/research-governance\nResearch Integrity (RI&S) — responsible conduct and research policy\nhttps://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity\nUCL Office for Open Science & Scholarship — broader open science support\nhttps://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship\n\nThese support learners in locating institutional expectations, help, and policy without burying it in narrative.\n\n\n\nRecommended tools (illustrative; principle-led)\nTools can help, but their use should reflect project needs and principles of reproducibility.\n\nCoordination & collaboration tools: GitHub / GitLab, Planner, Trello, OSF\n\nDocumentation & publication tooling: Quarto\n\nEnvironment stability: renv / conda / containers (see Resources → Tools and software)\n\nThese appear here as orientation; tool-specific guidance is signposted in other resource sections (e.g., Documentation, Code quality, Automation).\n\n\n\n\n\n\n\nHow this supports Chapter 3\n\n\n\n\nProject metadata, roles, and conventions make collaboration legible.\n\nVersioning principles support long-term continuity.\n\nUCL-supported routes help learners navigate policy and templates.\n\nTool suggestions are illustrative, not prescriptive.\n\nFor concrete templates (folder structure, versioning examples, change logs, project README), see the files/ folder in this book and the appropriate sections in this Resources chapter."
+  },
+  {
+    "objectID": "resources.html#data-provenance",
+    "href": "resources.html#data-provenance",
+    "title": "Resources and Further Reading",
+    "section": "Data organisation and provenance",
+    "text": "Data organisation and provenance\nSupports Chapter 5\n\nDeeper dives\n\nTidy data principles (overview)\nhttps://book.the-turing-way.org/reproducible-research/rdm/rdm-spreadsheets/#rr-rdm-spreadsheets-format\nData and version\nhttps://book.the-turing-way.org/reproducible-research/vcs/vcs-data/\nData dictionaries and documentation examples\nhttps://imi-immuniverse.pages.uni.lu/datadictionary#:~:text=What%20should%20be%20included%20in,ImmUniverse's%20data%20and%20analysis%20platform.\nProcess mapping to inform DMPs and metadata (conceptual bridge to Chapters 3–4)\nhttps://libguides.library.ohio.edu/RDM/dmps#:~:text=What%20is%20a%20Data%20Management,DMP%20with%20every%20funding%20request. https://learning.nceas.ucsb.edu/2023-04-coreR/session_14.html\nTidy Data (Hadley Wickham) https://vita.had.co.nz/papers/tidy-data.pdf\nData integrity principles (ALCOA) (reference; regulated/lab contexts) ALCOA (Attributable Legible Contemporaneous Original Accurate) is a framework that is required for the implementation of Good Documentation Practices (GDPs) and is utilized by regulated enterprises to ensure data integrity. https://www.ukcrfnetwork.co.uk/app/uploads/2023/07/Advisory-Notes-Data-Integrity_v01_Oct2019.pdf\n\n\n\nDomain-specific metadata standards (Advanced / reference)\n\nISO 19115 / ISO 19139 — geographic information metadata\n\nDDI (Data Documentation Initiative) — social science and survey data\nhttps://ddialliance.org/\nDublin Core — general-purpose descriptive metadata\nhttps://www.dublincore.org/"
+  },
+  {
+    "objectID": "resources.html#sec-essential-metadata",
+    "href": "resources.html#sec-essential-metadata",
+    "title": "Resources and Further Reading",
+    "section": "Essential metadata (minimum standard)",
+    "text": "Essential metadata (minimum standard)\nSupports Chapter 5 — Organising and tidying data\nReferenced by Chapters 6 (documentation) and 10 (publishing and reuse).\n\nEssential Metadata Checklist (minimum standard)\nWhen documenting a dataset, code release, protocol, or other output, include at least:\n\nTitle\nCreators / contributors (including ORCID where possible)\nDates (created; last updated)\nDescription (what it is; why it exists; what it can and cannot support)\nVersion\nMethods / provenance summary (how it was generated; key transformations)\nGeography / time coverage (if relevant)\nFile formats and any required software\nAccess conditions (open / controlled / mediated; who to contact)\nLicence (or explicit statement if licensing is constrained)\nFunding / grant (if relevant)\nPersistent identifier (DOI where appropriate; or stable URL + repository record)\n\n\n\n\n\n\n\nMinimum rule of thumb\n\n\n\nIf a competent colleague can answer what it is, where it came from, how to access it, how to cite it, and what they are allowed to do with it, your metadata is likely “good enough” for most purposes.\n\n\n\n\nExpanded metadata templates (Advanced / reference)\n\nGeneral research metadata template (provenance, methods, versions, licences, access conditions, related outputs)\n\nSpatial/geocoded metadata template (CRS, extent, resolution, temporal coverage, processing)\n\n(Keep these as copy-ready templates or separate downloadable files, then link them here.)"
+  },
+  {
+    "objectID": "resources.html#sec-project-organisation-templates",
+    "href": "resources.html#sec-project-organisation-templates",
+    "title": "Resources and Further Reading",
+    "section": "Project organisation templates (copy-ready)",
+    "text": "Project organisation templates (copy-ready)\nThese templates define project-level coordination conventions.\nData-state conventions (raw, derived, documentation) are interpreted in Chapter 5 and applied here.\n\nBaseline folder structure\nproject-root/\n├── README.md\n├── data/\n│   ├── raw/\n│   ├── derived/\n│   └── documentation/\n├── analysis/\n│   ├── scripts/\n│   └── outputs/\n├── docs/\n├── logs/\n└── outputs/\n\n\nFile naming and versioning (minimum standard)\nRecommended elements\n\nshort descriptive name\ndate (ISO): YYYYMMDD\nversion identifier (e.g. v01)\nno spaces or special characters\n\nExamples\nsurvey_responses_raw_20240315_v01.csv\nsurvey_responses_clean_20240318_v02.csv\nanalysis_model1_20240402_v03.R\nprotocol_amendment_20240510_v01.docx\n\n\nVersioning cheat-sheet\nCreate a new version when:\n\ncleaning/transformation changes;\nanalysis logic/parameters change;\noutputs are regenerated using modified inputs;\nerrors are corrected.\n\nRecord:\n\nversion identifier;\ndate;\nwhat changed (1–2 lines);\nwho changed it.\n\n\n\nOptional: code version control (Git) (Advanced / reference)\nAppropriate when code is central and/or multiple contributors edit scripts.\nKey principles:\n\ncommit little and often with meaningful messages;\navoid committing large data files;\nuse tags/releases for milestones."
+  },
+  {
+    "objectID": "resources.html#sec-codebook-template",
+    "href": "resources.html#sec-codebook-template",
+    "title": "Resources and Further Reading",
+    "section": "Codebook / data dictionary template (minimum standard)",
+    "text": "Codebook / data dictionary template (minimum standard)\nSupports Chapter 5\n# Codebook / data dictionary\n\n## Dataset\n- Name:\n- Version:\n- Created:\n- Source(s):\n- Unit of observation:\n- Notes on linkage / identifiers (if relevant):\n\n## Missingness and exclusions\n- Missing value codes:\n- Key exclusions (and rationale):\n- Known limitations:\n\n## Variables\nFor each variable:\n- Variable name:\n- Description:\n- Type (numeric / categorical / date / text):\n- Units (if applicable):\n- Valid range / levels:\n- Missingness coding:\n- Derivation (if derived):\n- Notes"
+  },
+  {
+    "objectID": "resources.html#docs-resources",
+    "href": "resources.html#docs-resources",
+    "title": "Resources and Further Reading",
+    "section": "Documentation, ELNs, and SOPs",
+    "text": "Documentation, ELNs, and SOPs\nSupports Chapter 6\nThis section focuses on documentation as a reproducibility practice: capturing decisions, assumptions, and procedures so work can be understood, reviewed, and reused over time.\n\nCore principles of research documentation\n\nDocumentation as decision-making evidence (The Turing Way — Documentation) https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project/\nGood Enough Practices: documenting analyses and decisions https://carpentries-lab.github.io/good-enough-practices/\n\nThese resources reinforce the principle that documentation should enable independent reconstruction, not just internal memory.\n\n\nREADMEs, codebooks, and dataset documentation\n\nREADME 101 (Make a README) https://www.makeareadme.com/\nDocumenting data: project- and dataset-level documentation (Imperial College London) https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/organising-and-describing-data/documenting-data/\nResearch data documentation cheat sheets (University of Manchester — Research data explained) https://www.education.library.manchester.ac.uk/mre/research-data-explained/\n\nUse these when preparing data for sharing, archiving, or handover.\n\n\nREADME template (minimum standard)\n# Project / dataset title\n\n## Overview\n- Purpose:\n- Research question(s):\n- Dates covered:\n- Geographic scope (if applicable):\n- Primary outputs:\n\n## Contents and structure\n- data/raw/:\n- data/derived/:\n- analysis/scripts/:\n- outputs/:\n\n## Data sources\n- Source 1:\n- Source 2:\n\n## Processing summary\n- Key scripts:\n- Key transformations:\n- Quality checks:\n\n## Conventions\n- File naming:\n- Versioning approach:\n- Missing value coding:\n\n## Access, governance, and ethics\n- Data sensitivity:\n- Approvals / consent:\n- Access conditions:\n\n## Software and environment (if relevant)\n- Software used:\n- Key packages:\n- Reproducibility notes:\n\n## Contacts\n- Data steward / maintainer:\n- Email / team contact:\n- Last updated:\n\n\n\n\n\n\nNote\n\n\n\nCodebooks and data dictionaries are defined as dataset-level artefacts. Use the Codebook / data dictionary template in the Resources that support Chapter 5 {#sec-codebook-template}.\n\n\n\n\nELNs\n\nElectronic lab notebooks (ELNs): good practice (The Turing Way) https://book.the-turing-way.org/reproducible-research/rdm/rdm-elns/\nTen simple rules for implementing electronic lab notebooks (ELNs) https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012170\nWhat is a risk register: a project manager’s guide (and example) (Asana) https://asana.com/resources/risk-register\n\nThese resources support chronological recording of analytical judgement, exploration, and deviations from plans.\n\n\nSOPs and essential research documents (health contexts)\nParticularly relevant for clinical, NHS-linked, or regulated research.\n\nEssential research documents (SOP example: UHBW) https://www.uhbristol.nhs.uk/media/3960134/sop_014_essential_research_documents_uhbw_v2.1_24.08.20.pdf\nEssential documents and Investigator Site File (UCLH/JRO SOP) https://www.ucl.ac.uk/joint-research-office/sites/joint-research-office/files/uclh_sop_8_essential_documents_and_investigator_site_file_v3_02.09.2019_clean_.pdf\n\nThese clarify what must be documented in regulated environments and how SOPs fit alongside READMEs and ELNs.\n\n\n\n\n\n\nDocumentation rule of thumb\n\n\n\nIf a colleague outside your project can understand what was done, why it was done, and under what constraints, your documentation is likely sufficient."
+  },
+  {
+    "objectID": "resources.html#code-quality",
+    "href": "resources.html#code-quality",
+    "title": "Resources and Further Reading",
+    "section": "Code quality, testing, and sustainable software",
+    "text": "Code quality, testing, and sustainable software\nSupports Chapter 7\nThese resources support writing clear, testable, and maintainable research code that can be understood, rerun, and reused over time. They focus on principles and proportionate practices rather than specialist tooling.\n\nCore guidance on code quality and testing\n\nThe Turing Way — Code quality https://book.the-turing-way.org/reproducible-research/code-quality\nThe Turing Way — Testing https://book.the-turing-way.org/reproducible-research/testing\n\n\n\nProportionate best practice for research code\n\nGood Enough Practices in Scientific Computing https://carpentries-lab.github.io/good-enough-practices/\nTen simple rules for reproducible computational research https://doi.org/10.1371/journal.pcbi.1003285\n\n\n\nWriting clear and maintainable code\n\nGuidelines for writing good R code https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/\nHow to get good with R (Nicola Tierney) https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/\n\n\n\nDocumenting code as part of code quality\n\nBeginner’s guide to documentation (Write the Docs) https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/\nTools and techniques for effective code documentation (GitHub) https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation\n\n\n\nSustainable and green research software\n\nEnvironmental impact of digital research https://book.the-turing-way.org/reproducible-research/reproducible-research-environment\nGreen Software Principles https://principles.green/\nMeasuring and reducing computational cost https://www.software.ac.uk/blog/2022-05-24-measuring-environmental-impact-research-software\n\n\n\n\n\n\n\nHow to use these resources\n\n\n\nFocus first on readability, structure, basic testing, and documentation. Advanced optimisation or tooling should be driven by demonstrated need, not habit."
+  },
+  {
+    "objectID": "resources.html#responsibility",
+    "href": "resources.html#responsibility",
+    "title": "Resources and Further Reading",
+    "section": "Responsible and inclusive research",
+    "text": "Responsible and inclusive research\nSupports Chapter 8\nResponsible research involves clear roles, accountability, and escalation routes, alongside ethical and inclusive practice. The resources below support decision-making, governance, and responsible restriction.\n\nEthical and inclusive research practice\n\nEthical research (The Turing Way) https://book.the-turing-way.org/ethical-research\n\n\n\nRoles, responsibilities, and governance (UCL)\n\nUCL Research Ethics Service https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-ethics-service\nUCL Research Integrity https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity\nUCL Data Protection and GDPR guidance https://www.ucl.ac.uk/data-protection\n\nThese pages clarify who is responsible for what, and where accountability sits institutionally.\n\n\nTrusted research, security, and risk\n\nUKRI Trusted Research and Innovation (TR&I) https://www.ukri.org/about-us/policies-standards-and-data/good-research-resource-hub/trusted-research-and-innovation/\nUCL Trusted Research guidance https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments\n\nTrusted research focuses on identifying and managing risks related to collaboration, data access, and international engagement.\n\n\nTraining and support\n\nUCL Research Integrity training https://www.ucl.ac.uk/research/integrity/training\nUCL Data Protection training https://www.ucl.ac.uk/data-protection/\nUCL Library Open Science & Research Support https://www.ucl.ac.uk/library/open-science-research-support\n\nUse these routes when responsibilities or boundaries are unclear. Seeking advice is part of responsible practice."
+  },
+  {
+    "objectID": "resources.html#automation-resources",
+    "href": "resources.html#automation-resources",
+    "title": "Resources and Further Reading",
+    "section": "Automation and workflows",
+    "text": "Automation and workflows\nSupports Chapter 9\nAutomation supports reproducibility by making dependencies, execution order, and outputs explicit. These resources provide practical entry points at different levels of complexity.\n\nWorkflow tools (use when complexity increases)\n\ntargets (R) https://docs.ropensci.org/targets/\nSnakemake https://snakemake.readthedocs.io/\n\n\n\nReproducible execution environments\n\nrenv (R) https://rstudio.github.io/renv/\nconda (Python) https://docs.conda.io/\n\n\n\nFurther reading\n\nWorkflow concepts overview https://book.the-turing-way.org/reproducible-research/ci/ci-github-actions/#id-1-workflow https://pure.manchester.ac.uk/ws/portalfiles/portal/783113834/2410.03490v1.pdf https://tm.web.ox.ac.uk/blog/workflows-how-do-researchers-do-their-research-how-does-collaboration-work\nContinuous integration for research (Advanced / reference) https://book.the-turing-way.org/reproducible-research/ci\n\n\n\n\n\n\n\nProportionate automation\n\n\n\nIf automation makes your work harder to understand, it is too heavy. Start with scripts, add structure when needed, and document decisions as you go."
+  },
+  {
+    "objectID": "resources.html#pids",
+    "href": "resources.html#pids",
+    "title": "Resources and Further Reading",
+    "section": "Publishing, PIDs, repositories, licensing, and reuse",
+    "text": "Publishing, PIDs, repositories, licensing, and reuse\nSupports Chapter 10\n\nPersistent identifiers and citation\n\nORCID — researcher identifiers https://orcid.org\nDataCite — DOIs and dataset metadata https://datacite.org\nROR — organisational identifiers https://ror.org\nZenodo ↔︎ GitHub: minting DOIs for code releases https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content\nCitable research objects (The Turing Way) https://book.the-turing-way.org/communication/citable\nData and software citation guidance (The Turing Way) https://book.the-turing-way.org/communication/citable/citable-steps\n\n\n\nPreprints and early dissemination\n\nPreprints overview (The Turing Way) https://book.the-turing-way.org/reproducible-research/open/open-access/#rr-open-access-preprints\n\n\n\nReporting guidelines for health and population research\nThis section provides orientation and signposting. Detailed application and worked examples belong in Chapter 10.\nHigh-quality research is only useful if it is reported transparently. Reporting guidelines specify the minimum information needed to describe how a study was designed, conducted, analysed, and interpreted.\nMore than 250 reporting guidelines exist, curated by the EQUATOR Network (Enhancing the QUAlity and Transparency Of health Research).\nEQUATOR Network — reporting guidelines library10\nCore guideline families (commonly used):\n\nCONSORT — randomised controlled trials\nSPIRIT — protocols for interventional trials\nSTROBE — observational studies (cohort, case–control, cross-sectional)\nPRISMA — systematic reviews and meta-analyses (incl. extensions such as PRISMA-S)\nMOOSE — meta-analyses of observational studies\nSTARD — diagnostic accuracy studies\n\nOverview resource (optional):11\n\n\nRepositories and access routes\n\nUCL Research Data Repository https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository\nChoosing a repository (The Turing Way) https://book.the-turing-way.org/reproducible-research/rdm/rdm-repository/\n\n\n\nLicensing and reuse (core)\n\nCopyright and your research publications (UCL) https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-and-your-research-publications\nLicensing research outputs (The Turing Way) https://book.the-turing-way.org/reproducible-research/licensing\nCreative Commons licences (overview) https://creativecommons.org/licenses/\nOpen-source software licences (chooser) https://choosealicense.com/\nLicence compatibility and common pitfalls https://book.the-turing-way.org/reproducible-research/licensing/licensing-compatibility\n\n\n\nCopyright training\n\nUCL Copyright training https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-training\nUCL Copyright Essentials 2023–2024 https://lccos.ucl.ac.uk/library/articulate/copyright-essentials/#/\n\n\n\n\n\n\n\nPractical licensing rule\n\n\n\nPick a licence per output type (text, data/metadata, code) and record it alongside access conditions. If you cannot licence something, record why and what can be shared instead (e.g., metadata + code + synthetic example)."
+  },
+  {
+    "objectID": "resources.html#sec-repo-guidance",
+    "href": "resources.html#sec-repo-guidance",
+    "title": "Resources and Further Reading",
+    "section": "Repository “minimum viable release” guidance",
+    "text": "Repository “minimum viable release” guidance\nWhen you release code/data/materials to a repository, include at least:\n\nREADME (purpose, how to run/use, inputs/outputs)\nCITATION information (e.g., CITATION.cff)\nLicence file\nVersion tag/release notes (what changed)\nEnvironment notes (how to recreate the software environment)\nData documentation and access statement (even if data are restricted)\n\nTools:\n\nCITATION.cff generator https://citation-file-format.github.io/\nGood Enough Project scaffold https://github.com/bvreede/good-enough-project"
+  },
+  {
+    "objectID": "resources.html#sec-tools",
+    "href": "resources.html#sec-tools",
+    "title": "Resources and Further Reading",
+    "section": "Tools and software (pragmatic, not prescriptive)",
+    "text": "Tools and software (pragmatic, not prescriptive)\n\nReproducible environments\n\nR: renv\nPython: conda / venv (choose one per team)\nContainers (Docker/Singularity): Advanced / reference (use when portability is critical)\n\n\n\nWorkflow / automation tools (Advanced / reference)\n\nSnakemake https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html\ntargets (R) https://docs.ropensci.org/targets/"
+  },
+  {
+    "objectID": "resources.html#sec-credit-assessment",
+    "href": "resources.html#sec-credit-assessment",
+    "title": "Resources and Further Reading",
+    "section": "Research evaluation, credit, and incentives",
+    "text": "Research evaluation, credit, and incentives\nWhy this matters (briefly):\n\nPIDs and well-described outputs make attribution easier across systems.\nClear releases reduce friction for internal reporting and assessment processes.\n\n(Keep this light; point learners to PIDs, ORCID, DOI practice, and good release notes.)"
+  },
+  {
+    "objectID": "resources.html#sec-community",
+    "href": "resources.html#sec-community",
+    "title": "Resources and Further Reading",
+    "section": "Community and support routes",
+    "text": "Community and support routes\n\nUCL Office for Open Science & Scholarship https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship\nUCL Research Data Management (RDM) https://library-guides.ucl.ac.uk/research-data-management\nUKRN resources https://www.ukrn.org/\nThe Turing Way (book) https://book.the-turing-way.org/"
+  },
+  {
+    "objectID": "resources.html#training",
+    "href": "resources.html#training",
+    "title": "Resources and Further Reading",
+    "section": "Training and further reading",
+    "text": "Training and further reading\n\nUCL transparency training https://www.ucl.ac.uk/research/strategy-environment/research-transparency#training\nThe Carpentries https://carpentries.org/\nTen simple rules for reproducible computational research https://doi.org/10.1371/journal.pcbi.1003285\nGood Enough Practices in Scientific Computing https://doi.org/10.1371/journal.pcbi.1005510"
+  },
+  {
+    "objectID": "resources.html#sec-pitfalls",
+    "href": "resources.html#sec-pitfalls",
+    "title": "Resources and Further Reading",
+    "section": "Common pitfalls (and how to avoid them)",
+    "text": "Common pitfalls (and how to avoid them)\n\nNo clear source of truth → agree repository/shared drive rules early.\nRaw data overwritten → lock raw data; derive via scripts.\nUnstated restrictions → document constraints + access route + rationale.\nNo licence → users assume reuse is not allowed.\nNo environment notes → code becomes “works on my machine”.\nOutputs not linked → use DOIs/ORCID; reference related objects in metadata/README.\n\n\n\n\n\n\n\n\nKeep this page current\n\n\n\nLink to this page from your project README.md or internal wiki. When policies or tools change, update here once — every Chapter and project benefits.\n\n\n\n\n\n\n1. The Turing Way Community. The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Data Science. (2022).\n\n\n2. Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452–454 (2016).\n\n\n3. Munafò, M. R. et al. A manifesto for reproducible science. Nature Human Behaviour 1, 1–9 (2017).\n\n\n4. National Academies of Sciences, Engineering, and Medicine. Reproducibility and Replicability in Science. (National Academies Press, 2019).\n\n\n5. Wilkinson, M. D. et al. The FAIR guiding principles for scientific data management and stewardship. Scientific Data 3, 160018 (2016).\n\n\n6. GO FAIR Initiative. FAIR principles. (2023).\n\n\n7. OpenAIRE. How to make your data FAIR. (2023).\n\n\n8. The Turing Way Community. FAIR data in the turing way.\n\n\n9. Community, T. T. W. Project Design — the Turing Way. (The Turing Way, 2025).\n\n\n10. The EQUATOR Network. Reporting guidelines. (2025).\n\n\n11. Grech, V. & Eldawlatly, A. A. STROBE, CONSORT, PRISMA, MOOSE, STARD, SPIRIT, and other guidelines – overview and application. Saudi Journal of Anaesthesia 18, 137–141 (2024)."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "References\n\n\n\n\n1. Plesser, H. E. Reproducibility vs. Replicability: A brief history of a confused terminology. Frontiers in Neuroinformatics 11, 76 (2018).\n\n\n2. The Turing Way Community. The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Data Science. (2022).\n\n\n3. Baker, M. 1,500 scientists lift the lid on reproducibility. Nature 533, 452–454 (2016).\n\n\n4. Munafò, M. R. et al. A manifesto for reproducible science. Nature Human Behaviour 1, 1–9 (2017).\n\n\n5. National Academies of Sciences, Engineering, and Medicine. Reproducibility and Replicability in Science. (National Academies Press, 2019).\n\n\n6. Wilkinson, M. D. et al. The FAIR guiding principles for scientific data management and stewardship. Scientific Data 3, 160018 (2016).\n\n\n7. GO FAIR Initiative. FAIR principles. (2023).\n\n\n8. OpenAIRE. How to make your data FAIR. (2023).\n\n\n9. The Turing Way Community. FAIR data in the turing way.\n\n\n10. Community, T. T. W. Project Design — the Turing Way. (The Turing Way, 2025).\n\n\n11. Community, T. T. W. Project Metadata — the Turing Way. (The Turing Way, 2025).\n\n\n12. Wickham, H. Tidy data. Journal of Statistical Software 59, (2014).\n\n\n13. The Turing Way Community. The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research. (Zenodo, 2025). doi:10.5281/zenodo.3233853.\n\n\n14. Michener, W. K. Ten simple rules for creating a good data management plan. PLoS computational biology 11, e1004525 (2015).\n\n\n15. Miksa, T., Simms, S., Mietchen, D. & Jones, S. Ten principles for machine-actionable data management plans. PLoS computational biology 15, e1006750 (2019).\n\n\n16. The Turing Way Community. The Turing Way: Data Management Plans. (Zenodo, 2025). doi:10.5281/zenodo.3233853.\n\n\n17. Osborne, J. M. et al. Ten simple rules for effective computational research. PLoS Computational Biology 10, e1003506 (2014).\n\n\n18. Noble, W. S. A quick guide to organizing computational biology projects. PLoS computational biology 5, e1000424 (2009).\n\n\n19. The Turing Way Community. The Turing Way: Environmental Impact of Research. (Zenodo, 2025). doi:10.5281/zenodo.3233853.\n\n\n20. Jacobsen, A. et al. FAIR principles: Interpretations and implementation considerations. Data intelligence vol. 2 10–29 (2020).\n\n\n21. UK Data Service. Managing and Sharing Data: Best Practice for Researchers. (UK Data Service, 2019).\n\n\n22. Queensland University of Technology. File Naming Convention. (Queensland University of Technology Library, 2019).\n\n\n23. University of Aberdeen. File Naming Conventions. (University of Aberdeen, 2017).\n\n\n24. UK Data Service. Versioning Your Data. (UK Data Service, 2023).\n\n\n25. The EQUATOR Network. Reporting guidelines. (2025).\n\n\n26. Grech, V. & Eldawlatly, A. A. STROBE, CONSORT, PRISMA, MOOSE, STARD, SPIRIT, and other guidelines – overview and application. Saudi Journal of Anaesthesia 18, 137–141 (2024)."
+  },
+  {
+    "objectID": "index.html#how-to-use-this-site",
+    "href": "index.html#how-to-use-this-site",
+    "title": "Open Research & Reproducibility",
+    "section": "How to use this site",
+    "text": "How to use this site\n\nWork through Chapters 1–10 in order (approximately 15–25 minutes per chapter).\n\nUse Resources and Further Reading for templates, checklists, and UCL-specific guidance.\n\nApply the practices to one live project as you go (your project README is the anchor).\n\nUse Chapter 11 to consolidate learning and identify next steps."
+  },
+  {
+    "objectID": "index.html#chapters",
+    "href": "index.html#chapters",
+    "title": "Open Research & Reproducibility",
+    "section": "Chapters",
+    "text": "Chapters\n\nChapter 1 - Why Open?\n\nChapter 2 - FAIR basics\n\nChapter 3 - Project organisation and continuity\n\nChapter 4 — Data Management Plans (UCL)\n\nChapter 5 - Organising and tidying data\n\nChapter 6 — Documentation, ELNs & SOPs\n\nChapter 7 — Code quality & testing\n\nChapter 8 — Responsible & sustainable research\n\nChapter 9 — Automation & simple workflows\n\nChapter 10 — Publishing, PIDs & preparing for reuse\n\nChapter 11 — Wrap-up & next steps\n\n\n\n\n\n\n\nFeedback and corrections\n\n\n\nIf you spot an error or want to suggest an improvement, please contact joana.cruz@ucl.ac.uk."
+  },
+  {
+    "objectID": "index.html#licence-and-citation",
+    "href": "index.html#licence-and-citation",
+    "title": "Open Research & Reproducibility",
+    "section": "Licence and citation",
+    "text": "Licence and citation\nContent is CC BY 4.0 unless otherwise stated. Please cite original sources linked in each chapter.\nIf this site has a DOI (or includes a CITATION.cff), add it below.\nSuggested citation:\nOpen Research & Reproducibility (PPP · UCL ICH). Version &lt;v&gt;, &lt;year&gt;.\nCC BY 4.0. Available at: &lt;site URL or DOI&gt;"
+  },
+  {
+    "objectID": "resources.html#sec-dmp-resources",
+    "href": "resources.html#sec-dmp-resources",
+    "title": "Resources and Further Reading",
+    "section": "Data Management Plans",
+    "text": "Data Management Plans\nSupports Chapter 4 — Data Management Plans (UCL)\nUse this section when you need UCL-specific routes, copy-ready DMP text, and signposting to governance and documentation resources.\n\nUCL DMP route and template\n\nUCL RDM hub (DMP guidance)\nhttps://library-guides.ucl.ac.uk/research-data-management\nUCL Data Management Plan template https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template\nUCL DMP template (local file) — Download ucl_data_management_plan_template_2024.docx\nUCL Managing data across the research lifecycle https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research\n\n\n\n\n\n\n\nHow this links to the rest of the course\n\n\n\n\nChapter 4 focuses on what the DMP must commit to and how assessors interpret it.\nChapter 5 owns minimum essential metadata: see Essential metadata.\nChapter 6 covers documentation artefacts (READMEs, ELNs, SOPs): see Documentation, ELNs, and SOPs.\n\n\n\n\n\n\nDerived and intermediate data: retention decision prompts (quick guide)\nUse these prompts when writing the DMP sections on retention, preservation, and storage.\nRecord explicitly:\n\nwhich derived datasets are considered analysis-critical (needed to reproduce results);\nwhich intermediate files are recomputable (can be regenerated from scripts + inputs);\nwhat will be retained during the project vs after project end;\nexpected access model (open / safeguarded / controlled / mediated) for each retained component;\nhow provenance will be captured at a high level (e.g., “derived datasets are generated by scripted workflows and versioned”).\n\nChapter 5 covers how to implement raw/derived organisation and provenance in practice; the DMP should state the commitment, scope, and rationale.\n\n\nUCL support routes (practical)\nUse these routes when you are unsure what to commit to, what is permissible, or who should approve decisions.\n\nUCL Research Integrity\nhttps://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity\nUCL Advanced Research Computing — sensitive data and trusted research environments\nhttps://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments"
+  }
+]

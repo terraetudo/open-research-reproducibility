@@ -1,0 +1,169 @@
+---
+title: "Chapter 1 - Why Open?"
+---
+
+# Why Open? {#sec-why-open}
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+-   explain why openness and reproducibility are now core expectations in research;
+-   distinguish between *openness*, *transparency*, and *reproducibility* in practical terms;
+-   recognise common sources of irreproducibility in everyday research workflows;
+-   understand how open practices reduce research risk, inefficiency, and avoidable error;
+-   see how the principles introduced here translate into concrete practices covered in later modules.
+
+This module sets the conceptual foundation for the rest of the course. The next module moves from *why openness matters* to *how to describe and structure outputs so they remain usable over time* ([Chapter 2: FAIR basics](02-fair-basics.qmd)).
+
+------------------------------------------------------------------------
+
+## Why openness now?
+
+Open research is no longer a niche movement or an optional add-on. Across scientific research, concerns about irreproducible findings, undocumented analytical decisions, and inaccessible research outputs have led funders, journals, and institutions to raise expectations around transparency and robustness[@baker2016reproducibility; @munafo2017manifesto; @plesser2018reproducibility]
+
+In practice, this shift is less about ideology and more about reducing avoidable risk: rework, errors, lost context, and fragile results that cannot be checked, reused, or defended. This course is designed to support proportionate improvements that fit real research constraints.
+
+Open and reproducible research supports meaningful involvement of patients, participants, and communities by making assumptions, decisions, and limitations visible and contestable.
+
+------------------------------------------------------------------------
+
+## Key terms (used consistently in this course)
+
+These terms overlap, but they are not identical:
+
+-   **Open research**: making research outputs, methods, and decisions accessible to others, where lawful, ethical, and appropriate.
+-   **Transparency**: clearly documenting what was done, why it was done, and how decisions were made (including decisions not visible in the final paper).
+-   **Reproducibility**: enabling someone else (or you in six months) to understand and, where possible, recreate the analytical steps and results using the same data and methods.
+
+A project can be reproducible without being fully open (e.g. sensitive data). Conversely, sharing outputs is not sufficient for reproducibility if key steps or provenance are missing.
+
+::: callout-note
+### Reproducible is not the only "-ible"
+
+In The Turing Way terminology, results may be described as:
+
+-   **reproducible** (same data, same analysis),
+-   **replicable** (different data, same analysis),
+-   **robust** (same data, different analysis),
+-   **generalisable** (different data, different analysis).
+
+These distinctions are useful when deciding what level of checking or reuse is realistic for a given project. For a short explainer and visual summary, see The Turing Way Definitions page [@turingway2025].
+:::
+
+------------------------------------------------------------------------
+
+## How to read this course
+
+This course separates **principles**, **practices**, and **tools**:
+
+-   **Principles** are the underlying aims (e.g. transparency, accountability, reuse).
+-   **Practices** are the behaviours that implement those aims (e.g. versioning, documentation, sharing decisions).
+-   **Tools** are the platforms that support practices (e.g. repositories, version control systems, workflow tools).
+
+Tools change quickly; principles and practices travel well across projects and roles. This is why the course emphasises *practices*, while the [**Resources and Further Reading**](resources.qmd) chapter centralises tool- and UCL-specific signposting.
+
+::: callout-tip
+### New to UCL (or a new project team)?
+
+Use the [**Resources and Further Reading**](resources.qmd) chapter as your "where to go next" page: UCL routes, contacts, and copy-ready templates are maintained there so links only need updating in one place.
+:::
+
+------------------------------------------------------------------------
+
+## Minimum expectations in practice (UCL and UK funders)
+
+Open research is treated as a **default position**, applied across the research lifecycle and implemented proportionately within ethical, legal, and contractual constraints.
+
+In most UCL research contexts, you should assume the following **baseline expectations** apply somewhere in your project:
+
+-   **Plan data management proportionately**, and document decisions (a Data Management Plan may be required by funders and is generally expected for funded projects and projects handling research data).
+-   **Make outputs findable and preservable**: ensure data, code, protocols, and other outputs (or at least metadata describing them) can be located, interpreted, and retained appropriately.
+-   **Enable open access to publications** through the institutional route, in line with funder and assessment requirements.
+-   **Record constraints explicitly** (e.g. sensitive data, governance restrictions, IP, contractual limits) and document how they affect sharing, access, and retention.
+
+This course shows how to meet these expectations through robust everyday practice. UCL-facing routes, contacts, and templates are maintained in [**Resources and Further Reading**](resources.qmd).
+
+------------------------------------------------------------------------
+
+## Where irreproducibility comes from (in normal workflows)
+
+Irreproducibility is usually not caused by misconduct. More commonly it arises from routine workflow issues, including:
+
+-   manual data cleaning or analysis steps that are not recorded;
+-   unclear file organisation, naming, or versioning;
+-   results generated interactively without a saved script or pipeline;
+-   missing information about software environments or dependencies;
+-   loss of project memory when staff or students move on.
+
+These problems tend to surface late (submission, peer review, audit, or handover), when they are most expensive to fix.
+
+------------------------------------------------------------------------
+
+## Proportionality and constraints
+
+Open and reproducible practice is not a one-size-fits-all checklist. Constraints may include personal or sensitive data, contractual obligations, intellectual property considerations, and limited time or resource.
+
+Good practice means making constraints explicit, documenting decisions, and using appropriate infrastructure. Proportionality applies to *how* you implement open practices, not to whether you document and justify decisions.
+
+------------------------------------------------------------------------
+
+## Open research in practice: what this implies for day-to-day work
+
+Open research is not only about making outputs publicly available at the end of a project. Across the research lifecycle, work should be organised, documented, and described so that others --- including your future self --- can understand:
+
+-   what was done and why;
+-   how results were produced;
+-   what assumptions and decisions shaped the work;
+-   what could (and could not) be reused, and under what conditions.
+
+Three foundations support this:
+
+-   **Documentation**: READMEs, protocols, decision logs, and data dictionaries that capture context and rationale.
+-   **Organisation**: consistent folder structures, naming conventions, and versioning that reduce ambiguity and error.
+-   **Metadata**: structured descriptions that make outputs interpretable and discoverable (including for restricted-access data).
+
+The next chapter introduces minimum expectations for describing outputs through the FAIR principles (see [Chapter 2: FAIR basics](02-fair-basics.qmd)).
+
+------------------------------------------------------------------------
+
+## AI and Open Science and Reproducibility
+
+Automated and AI-assisted tools can improve efficiency and insight, but introduce new reproducibility challenges: opaque decision-making, stochastic outputs, undocumented prompts or parameters, and rapid model version changes. Open research practices remain essential to ensure transparency, accountability, and reuse in AI-assisted workflows.
+
+------------------------------------------------------------------------------
+
+## What you will do in later modules
+
+This course focuses on practical steps that reduce risk and increase continuity, including:
+
+-   structuring data and materials for reuse ([Chapter 2: FAIR basics](02-fair-basics.qmd));
+-   organising projects so work remains legible and maintainable;
+-   documenting decisions and workflows so results can be understood and defended;
+-   improving code quality and reducing manual steps where appropriate;
+-   preparing outputs for sharing, archiving, and attribution.
+
+You are not expected to adopt everything at once. The course is designed to support incremental improvement.
+
+------------------------------------------------------------------------
+
+## Exercises (5--10 minutes)
+
+1.  Choose one current or recent project you are involved in.\
+    Write down one thing that would make it hard for someone else to understand your results in six months' time.\
+    **Where would you record this?** (e.g. project `README`, methods note, decision log)
+
+2.  Identify one constraint (ethical, legal, contractual, or practical) that limits what you can share openly.\
+    **Where is that constraint recorded now --- and where should it be recorded?** (e.g. DMP, ethics documentation, governance notes, project `README`)
+
+If you are unsure what "good enough" looks like for these artefacts, see the relevant templates in [**Resources and Further Reading**](resources.qmd).
+
+::: callout-summary
+## Key takeaways
+
+-   Open research is now a baseline expectation, not an optional ideal.
+-   Reproducibility problems usually arise from everyday workflow issues, not misconduct.
+-   Proportionate openness reduces risk, inefficiency, and avoidable error.
+-   You do not need fully open data to practise open research --- but you do need clear documentation and defensible decisions.
+-   [Chapter 2: FAIR basics](02-fair-basics.qmd) translates these ideas into concrete, data-level practice.
+:::

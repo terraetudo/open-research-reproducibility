@@ -1,0 +1,103 @@
+project:
+  type: book
+  output-dir: docs
+  
+site-url: "https://terraetudo.github.io/open-research-reproducibility/"
+repo-url: "https://github.com/terraetudo/open-research-reproducibility"
+repo-actions: [edit, issue]
+
+# Cache rendered outputs to speed rebuilds
+execute:
+  freeze: auto
+
+book:
+  title: "Open Research & Reproducibility"
+  subtitle: "A practical guide for health and population researchers"
+  page-navigation: true
+  search: true
+  favicon: cover.png
+
+  sidebar:
+    style: docked
+    background: light
+    title: "Chapters"
+    contents:
+      - text: "Overview"
+        href: index.qmd
+      - text: "Chapter 1 - Why Open?"
+        href: 01-why-open.qmd
+      - text: "Chapter 2 - FAIR basics"
+        href: 02-fair-basics.qmd
+      - text: "Chapter 3 - Project organisation and continuity"
+        href: 03-project-mgmt.qmd
+      - text: "Chapter 4 — Data Management Plans (UCL)"
+        href: 04-dmp.qmd
+      - text: "Chapter 5 - Organising and tidying data"
+        href: 05-organise-tidy.qmd
+      - text: "Chapter 6 — Documentation, ELNs & SOPs"
+        href: 06-docs-eln-sops.qmd
+      - text: "Chapter 7 — Code quality & testing"
+        href: 07-code-quality-testing.qmd
+      - text: "Chapter 8 — Responsible research: roles, decisions, and accountability"
+        href: 08-s-responsibility.qmd
+      - text: "Chapter 9 — Automation & simple workflows"
+        href: 09-automation.qmd
+      - text: "Chapter 10 — Publishing, PIDs & preparing for reuse"
+        href: 10-publishing-pids.qmd
+      - text: "Chapter 11 — Wrap-up & next steps"
+        href: 11-wrap-up.qmd
+      - text: "Resources and further reading"
+        href: resources.qmd
+      - text: "References"
+        href: references.qmd
+
+  chapters:
+    - index.qmd
+    - 01-why-open.qmd
+    - 02-fair-basics.qmd
+    - 03-project-mgmt.qmd
+    - 04-dmp.qmd
+    - 05-organise-tidy.qmd
+    - 06-docs-eln-sops.qmd
+    - 07-code-quality-testing.qmd
+    - 08-s-responsibility.qmd
+    - 09-automation.qmd
+    - 10-publishing-pids.qmd
+    - 11-wrap-up.qmd
+    - resources.qmd
+    - references.qmd
+
+  # Footer should be nested under book: (not at top-level)
+  page-footer:
+    left: "© PPP · UCL Institute of Child Health"
+    right: "CC BY 4.0 · Built with Quarto"
+
+navbar:
+  right:
+    - text: "Key Points"
+      href: key-points.qmd
+    - text: "Glossary"
+      href: glossary.qmd
+    - text: "Learner Profiles"
+      href: learner-profiles.qmd
+    - text: "More"
+      menu:
+        - text: "Resources and further reading"
+          href: resources.qmd
+        - text: "About"
+          href: about.qmd
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles/style.scss
+    number-sections: false
+    toc: false
+    code-copy: true
+    code-overflow: wrap
+    smooth-scroll: true
+    link-citations: true
+
+bibliography: references.bib
+csl: nature.csl

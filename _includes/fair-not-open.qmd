@@ -1,0 +1,9 @@
+::: callout-note
+## FAIR is not the same as “open”
+
+FAIR describes **how** outputs are structured and described so they remain usable.
+It does **not** require public access.
+
+Use the principle: **as open as possible, as closed as necessary**.
+If access is restricted, ensure metadata and access conditions remain clear.
+:::

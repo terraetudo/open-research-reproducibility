@@ -1,0 +1,80 @@
+{
+  "index.qmd": {
+    "index.html": "afc4b550"
+  },
+  "01-step1.qmd": {
+    "01-step1.html": "5e6f3091"
+  },
+  "02-step2.qmd": {
+    "02-step2.html": "b3a39842"
+  },
+  "03-step3.qmd": {
+    "03-step3.html": "0d037ed4"
+  },
+  "04-step4.qmd": {
+    "04-step4.html": "0b3617cc"
+  },
+  "05-step5.qmd": {
+    "05-step5.html": "f9b318b6"
+  },
+  "06-step6.qmd": {
+    "06-step6.html": "d1b6b230"
+  },
+  "07-step7.qmd": {
+    "07-step7.html": "29bf82dd"
+  },
+  "wrapup.qmd": {
+    "wrapup.html": "52040920"
+  },
+  "all-in-one.qmd": {
+    "all-in-one.html": "5625f60b"
+  },
+  "a-what-is-rr.qmd": {
+    "a-what-is-rr.html": "f2f7040e"
+  },
+  "b-why-it-matters.qmd": {
+    "b-why-it-matters.html": "9cc533f4"
+  },
+  "c-introducing-7-steps.qmd": {
+    "c-introducing-7-steps.html": "c719653c"
+  },
+  "01-why-open.qmd": {
+    "01-why-open.html": "b77b49a4"
+  },
+  "02-fair-basics.qmd": {
+    "02-fair-basics.html": "0cfca859"
+  },
+  "03-project-mgmt.qmd": {
+    "03-project-mgmt.html": "0513e91b"
+  },
+  "04-dmp.qmd": {
+    "04-dmp.html": "694ec175"
+  },
+  "05-organise-tidy.qmd": {
+    "05-organise-tidy.html": "11b1cb86"
+  },
+  "06-docs-eln-sops.qmd": {
+    "06-docs-eln-sops.html": "68dc5c99"
+  },
+  "07-code-quality-testing.qmd": {
+    "07-code-quality-testing.html": "fb499d4e"
+  },
+  "08-s-responsibility.qmd": {
+    "08-s-responsibility.html": "ef83346a"
+  },
+  "09-automation.qmd": {
+    "09-automation.html": "19d6e330"
+  },
+  "10-publishing-pids.qmd": {
+    "10-publishing-pids.html": "27a12e57"
+  },
+  "11-wrap-up.qmd": {
+    "11-wrap-up.html": "c54b758e"
+  },
+  "resources.qmd": {
+    "resources.html": "0cc338e6"
+  },
+  "references.qmd": {
+    "references.html": "0ff6aaec"
+  }
+}

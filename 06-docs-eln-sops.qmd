@@ -1,0 +1,177 @@
+---
+title: "Chapter 6 — Documentation, ELNs & SOPs"
+---
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+-   explain why documentation is central to reproducibility and continuity;
+-   distinguish between different types of research documentation;
+-   decide when to use READMEs, ELNs, SOPs, or other formats;
+-   recognise documentation as a tool for collaboration and handover;
+-   apply proportionate documentation practices in everyday workflows.
+
+This module builds on [Chapter 3 - Project organisation and continuity](03-project-mgmt.qmd) and \[Chapter 5 - Organising and tidying data\] (05-organise-tidy.qmd). It supports later modules on code, automation, and publishing.
+
+------------------------------------------------------------------------
+
+## Why documentation matters
+
+Documentation is the backbone of reproducible research. Without it, data and code lose meaning, decisions become opaque, and results are difficult to interpret or defend. This chapter focuses on documentation that directly supports reproducibility, continuity, and reuse, rather than all possible records generated during a project.
+
+Most documentation failures are not due to lack of effort, but to unclear purpose: documenting everything everywhere, or documenting the wrong things. Over-documentation can be as harmful as under-documentation, creating noise, duplication, and maintenance burden without improving understanding.
+
+## Documentation as decision capture
+
+Good documentation records not only *what* was done, but *why* it was done.
+
+Documentation records analytical judgement, not just procedure. This includes coding decisions, exclusions, parameter choices, and deviations from plans, particularly in exploratory or qualitative work. Good documentation should allow an independent researcher to understand what was done, why it was done, and under what constraints. Documentation is evidence, not memory: it should be attributable, legible, contemporaneous, and retrievable.
+
+This includes:
+
+-   analytical choices and assumptions;
+-   changes to protocols or plans;
+-   reasons for exclusions or deviations;
+-   trade-offs made under constraints.
+
+Capturing decisions supports transparency and reduces reliance on memory.
+
+Responsibility for maintaining documentation should be explicit and shared across teams; roles and institutional responsibilities are discussed in Chapter 8.
+
+::: callout-tip
+## Documenting PPIE decisions
+
+Record:
+
+-   who was involved and in what capacity;
+
+-   which stages of the research they informed;
+
+-   how input influenced decisions (or why it did not);
+
+-   any constraints on sharing or reuse arising from PPIE.
+:::
+
+## Types of documentation (and what they are for)
+
+Different documentation artefacts serve different audiences and purposes:
+
+-   **READMEs**: high-level orientation to the project (purpose, structure, how to run or navigate it).
+-   **Electronic Lab Notebooks (ELNs)**: chronological records of work, observations, and decisions.
+-   **Standard Operating Procedures (SOPs)**: stable instructions for repeatable tasks.
+-   **Code comments and docstrings**: technical detail for specific scripts or functions.
+-   **Codebooks / data dictionaries**: variable-level descriptions supporting interpretation and reuse.
+
+Not all documents produced during a project are research documentation. Project plans, budgets, and timelines support delivery, while READMEs, ELNs, codebooks, and SOPs support reproducibility and reuse. Using the right format for the right purpose improves clarity and reduces duplication.
+
+### Documentation types and when to use each
+
+Research projects typically require **multiple forms of documentation**, each serving a different purpose. Confusion often arises when a single document is used to do everything.
+
+The table below summarises common documentation types and their primary role.
+
+| Documentation type             | Primary purpose                            | Typical audience                         | When to use                 |
+|-------------------|------------------|------------------|-----------------|
+| **README**                     | Project or dataset orientation             | New collaborators, reviewers, future you | At project or dataset level |
+| **Codebook / data dictionary** | Variable-level description                 | Analysts, secondary users                | For each dataset            |
+| **ELN**                        | Chronological record of work and decisions | Project team                             | During active research      |
+| **SOP**                        | Stable instructions for repeatable tasks   | Teams, new staff                         | When tasks are repeated     |
+
+Using the appropriate document type reduces duplication, improves clarity, and supports reproducibility across the project lifecycle.
+
+### Choosing the right document
+
+The table below provides a simple decision guide.
+
+| Situation                                       | Use this document   |
+|-------------------------------------------------|---------------------|
+| Someone new joins the project                   | README              |
+| You need to explain what a variable means       | Codebook            |
+| You are recording what you tried and why        | ELN                 |
+| A task needs to be done the same way every time | SOP                 |
+| You need to justify a decision later            | ELN or decision log |
+| You are preparing data for sharing or archiving | README + codebook   |
+
+Templates and examples for each document type are provided in the [Resources and Further Reading](resources.qmd).
+
+## Using ELNs effectively
+
+ELNs are most useful for recording:
+
+-   what was attempted and what happened;
+-   decisions made during data collection or analysis;
+-   deviations from plans or protocols.
+
+ELNs are **not** well suited for:
+
+-   long-term instructions (use SOPs);
+-   final project summaries (use READMEs);
+-   storing large data files.
+
+Keeping ELNs focused improves their value for review and handover.
+
+## SOPs and repeatability
+
+SOPs support consistency across people and time.
+
+Good SOPs are:
+
+-   task-specific and scoped;
+-   written for someone unfamiliar with the project;
+-   versioned and reviewed periodically.
+
+SOPs reduce variability, support training, and make quality control explicit.
+
+## Documentation and collaboration
+
+Documentation is a shared resource. Clear, accessible documentation:
+
+-   supports onboarding of new team members;
+-   reduces reliance on informal knowledge;
+-   improves equity by making expectations explicit;
+-   supports offboarding and long-term continuity.
+
+These benefits are particularly important in interdisciplinary and distributed teams.
+
+::: callout-tip
+## Documenting AI-assisted work
+
+If AI tools are used for coding, data cleaning, or analysis, record:
+
+-   the tool and version;
+
+-   the purpose (e.g. refactoring, summarisation, feature generation);
+
+-   human review and validation steps;
+
+-   known limitations or non-determinism.
+:::
+
+## Practical guidance for ECR workflows
+
+In practice, proportionate documentation often involves:
+
+-   maintaining a short project README;
+-   recording key decisions in an ELN or decision log;
+-   creating SOPs only for tasks that are repeated;
+-   reviewing documentation at project milestones.
+
+Documentation should evolve with the project.
+
+## Exercises (5--10 minutes)
+
+1.  Identify one type of documentation used in a current project.\
+    Is its purpose clear, or is it being used to do too much?
+
+2.  Review a recent decision.\
+    Where is the rationale recorded, and could it be clearer?
+
+::: callout-summary
+## Key takeaways
+
+-   Documentation underpins reproducibility, interpretation, and continuity.
+-   Different documentation types serve different purposes.
+-   Capturing decisions is as important as recording actions.
+-   Clear documentation supports collaboration and reduces risk.
+:::

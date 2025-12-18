@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Research &amp; Reproducibility - Chapter 2 - FAIR basics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-project-mgmt.html" rel="next">
+<link href="./01-why-open.html" rel="prev">
+<link href="./cover.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles/style.scss">
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-fair-basics.html"><span class="chapter-title">Chapter 2 - FAIR basics</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Chapters</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 2 - FAIR basics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-fair" class="level1">
+<h1>FAIR basics</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ul>
+<li>explain what the FAIR principles are and how they work in practice;</li>
+<li>distinguish FAIR from openness, documentation, and data management planning;</li>
+<li>understand what <em>Findable</em>, <em>Accessible</em>, <em>Interoperable</em>, and <em>Reusable</em> mean conceptually;</li>
+<li>recognise how FAIR applies to data, code, and other research outputs;</li>
+<li>understand where FAIR principles are implemented later in the research workflow.</li>
+</ul>
+<p>This module builds on the motivation introduced in <a href="./01-why-open.html">Chapter 1 – Why Open?</a>. It introduces FAIR as a <strong>set of design principles for research outputs</strong>, not as a checklist or compliance exercise.</p>
+<hr>
+</section>
+<section id="what-fair-means-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="what-fair-means-in-practice">What FAIR means (in practice)</h2>
+<p>FAIR stands for <strong>Findable, Accessible, Interoperable, and Reusable</strong><span class="citation" data-cites="wilkinson2016fair"><sup><a href="#ref-wilkinson2016fair" role="doc-biblioref">1</a></sup></span>.</p>
+<p>The FAIR principles describe <em>how research outputs should be structured and described</em> so that they can be:</p>
+<ul>
+<li>discovered,</li>
+<li>accessed under clear conditions,</li>
+<li>correctly interpreted,</li>
+<li>and reused over time.</li>
+</ul>
+<p>FAIR applies across the research lifecycle and to <strong>data, code, software, workflows, and documentation</strong>, not only datasets<span class="citation" data-cites="jacobsen2020fair"><sup><a href="#ref-jacobsen2020fair" role="doc-biblioref">2</a></sup></span>.</p>
+<p>FAIR is not: - a requirement to make data open; - a single repository or platform; - a fixed checklist.</p>
+<p>Instead, FAIR provides a shared language for designing outputs that remain usable beyond the immediate project.</p>
+<hr>
+</section>
+<section id="fair-is-not-the-same-as-open" class="level2">
+<h2 class="anchored" data-anchor-id="fair-is-not-the-same-as-open">FAIR is not the same as “open”</h2>
+<p>FAIR does <strong>not</strong> mean publicly open.</p>
+<p>Research outputs may be: - FAIR and open; - FAIR but access-restricted (e.g.&nbsp;personal or sensitive data); - FAIR with mediated or controlled access.</p>
+<p>A common framing is <strong>“as open as possible, as closed as necessary”</strong>. This distinction is especially important in health, social, and population research and is discussed further in <a href="./08-s-responsibility.html">Chapter 8 – Responsible &amp; sustainable research</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FAIR still applies when data cannot be shared
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When data cannot be shared openly, FAIR principles still apply to <strong>metadata, documentation, and access conditions</strong> describing the existence and nature of the output.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="findable-how-outputs-are-discovered" class="level2">
+<h2 class="anchored" data-anchor-id="findable-how-outputs-are-discovered">Findable: how outputs are discovered</h2>
+<p><em>Findable</em> means that research outputs can be <strong>discovered by others</strong>, including people outside the original project.</p>
+<p>In practice, findability is supported by mechanisms such as:</p>
+<ul>
+<li>persistent identifiers (e.g.&nbsp;DOIs for datasets, ORCID iDs for researchers);</li>
+<li>descriptive metadata that can be indexed by search systems;</li>
+<li>stable locations (e.g.&nbsp;repositories rather than personal storage).</li>
+</ul>
+<p>Findability is primarily about <strong>being locatable</strong>, not about being downloadable. An output can be findable even if access is restricted.</p>
+<hr>
+</section>
+<section id="accessible-how-access-is-defined-and-managed" class="level2">
+<h2 class="anchored" data-anchor-id="accessible-how-access-is-defined-and-managed">Accessible: how access is defined and managed</h2>
+<p><em>Accessible</em> means that it is <strong>clear how an output can be accessed</strong>, under what conditions, and by whom.</p>
+<p>Accessibility does not imply openness. Instead, it requires:</p>
+<ul>
+<li>a clear access route (open, mediated, or restricted);</li>
+<li>transparent access conditions;</li>
+<li>persistence of metadata even if the data themselves are withdrawn or embargoed.</li>
+</ul>
+<p>From a FAIR perspective, knowing <em>why</em> something cannot be accessed is as important as knowing <em>how</em> it can be accessed.</p>
+<hr>
+</section>
+<section id="interoperable-how-outputs-can-be-interpreted-correctly" class="level2">
+<h2 class="anchored" data-anchor-id="interoperable-how-outputs-can-be-interpreted-correctly">Interoperable: how outputs can be interpreted correctly</h2>
+<p><em>Interoperable</em> means that outputs can be <strong>understood and used correctly in different contexts</strong>, systems, or tools.</p>
+<p>This is supported by:</p>
+<ul>
+<li>standard or widely used file formats;</li>
+<li>consistent variable naming and coding;</li>
+<li>use of shared vocabularies or conventions where appropriate;</li>
+<li>clear documentation of transformations and assumptions.</li>
+</ul>
+<p>Interoperability reduces the risk of misinterpretation when data or code move between people, teams, or software environments.</p>
+<hr>
+</section>
+<section id="reusable-how-outputs-can-be-used-again" class="level2">
+<h2 class="anchored" data-anchor-id="reusable-how-outputs-can-be-used-again">Reusable: how outputs can be used again</h2>
+<p><em>Reusable</em> means that outputs can be <strong>used again for future research</strong>, whether by others or by your future self.</p>
+<p>Reusability depends on:</p>
+<ul>
+<li>sufficient contextual information to interpret the output;</li>
+<li>clear licensing and reuse conditions;</li>
+<li>versioning and provenance information;</li>
+<li>documentation of limitations, assumptions, and constraints.</li>
+</ul>
+<p>Reusability is not about guaranteeing reuse; it is about <strong>making reuse possible and responsible</strong>.</p>
+<hr>
+</section>
+<section id="fair-applies-to-more-than-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="fair-applies-to-more-than-datasets">FAIR applies to more than datasets</h2>
+<p>FAIR principles apply to:</p>
+<ul>
+<li>datasets and associated metadata;</li>
+<li>analysis code and scripts;</li>
+<li>protocols, analysis plans, and workflows;</li>
+<li>documentation capturing decisions and provenance.</li>
+</ul>
+<p>Applying FAIR principles to <strong>code and documentation</strong> often delivers the greatest immediate gains in reproducibility and project continuity.</p>
+<hr>
+</section>
+<section id="fair-data-management-and-dmps-how-they-relate" class="level2">
+<h2 class="anchored" data-anchor-id="fair-data-management-and-dmps-how-they-relate">FAIR, data management, and DMPs: how they relate</h2>
+<p>FAIR principles interact with, but are distinct from, other research practices:</p>
+<ul>
+<li><strong>FAIR</strong> provides design principles for structuring outputs.</li>
+<li><strong>Data management practice</strong> implements those principles through organisation, documentation, and versioning.</li>
+<li><strong>Data Management Plans (DMPs)</strong> describe how those practices will be applied, justified, and resourced.</li>
+</ul>
+<p>This course treats FAIR as the <strong>conceptual foundation</strong>, with implementation addressed in later chapters and supported by institutional infrastructure.</p>
+<hr>
+</section>
+<section id="proportionality-and-constraints" class="level2">
+<h2 class="anchored" data-anchor-id="proportionality-and-constraints">Proportionality and constraints</h2>
+<p>FAIR is not all-or-nothing.</p>
+<p>Projects differ in scale, sensitivity, duration, and resources. Good FAIR practice means making <strong>proportionate, defensible choices</strong>, documenting constraints, and being explicit about limitations.</p>
+<p>This course focuses on FAIR considerations that are realistic for early-career researchers working within ethical, legal, and institutional boundaries.</p>
+<hr>
+</section>
+<section id="where-fair-is-implemented-later-in-the-course" class="level2">
+<h2 class="anchored" data-anchor-id="where-fair-is-implemented-later-in-the-course">Where FAIR is implemented later in the course</h2>
+<p>In this course:</p>
+<ul>
+<li><strong>Minimum metadata standards</strong> are introduced in the <a href="./04-dmp.html"><strong>Chapter 4 — Data Management Plans (UCL)</strong></a>.</li>
+<li><strong>Planning and justification</strong> of FAIR actions are addressed in the <a href="./04-dmp.html"><strong>Chapter 4 — Data Management Plans (UCL)</strong></a>.</li>
+<li><strong>Templates, tools, and institutional routes</strong> are collected in <strong><a href="./resources.html">Resources and Further Reading</a></strong>.</li>
+</ul>
+<p>The next chapter focuses on <strong>project-level organisation and workflows</strong>, building directly on these principles.</p>
+<hr>
+</section>
+<section id="exercises-510-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-510-minutes">Exercises (5–10 minutes)</h2>
+<ol type="1">
+<li><p>Choose one research output you are working with (data, code, or documentation).<br>
+Which FAIR element (<em>Findable</em>, <em>Accessible</em>, <em>Interoperable</em>, or <em>Reusable</em>) do you think is currently weakest — and why?</p></li>
+<li><p>Identify one constraint (ethical, legal, technical, or practical) that affects how FAIR could be applied to that output.<br>
+Where should that constraint be recorded later in the project?</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2 callout-summary">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>FAIR describes <em>how</em> research outputs should be structured and described, not whether they are open.</li>
+<li>Findable, Accessible, Interoperable, and Reusable each address different aspects of long-term usability.</li>
+<li>FAIR applies to data, code, documentation, and workflows.</li>
+<li>FAIR principles inform — but do not replace — data management practice or DMPs.</li>
+<li>Later chapters translate FAIR principles into concrete project-level actions.</li>
+</ul>
+</section>
+
+
+<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-wilkinson2016fair" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> The FAIR guiding principles for scientific data management and stewardship. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
+</div>
+<div id="ref-jacobsen2020fair" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Jacobsen, A. <em>et al.</em> FAIR principles: Interpretations and implementation considerations. <em>Data intelligence</em> vol. 2 10–29 (2020).</div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-why-open.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 1 - Why Open?</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-project-mgmt.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">CC BY 4.0 · Built with Quarto</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

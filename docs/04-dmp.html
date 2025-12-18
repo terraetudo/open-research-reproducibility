@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Research &amp; Reproducibility - Chapter 4 — Data Management Plans (UCL)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-organise-tidy.html" rel="next">
+<link href="./03-project-mgmt.html" rel="prev">
+<link href="./cover.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles/style.scss">
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-dmp.html"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Chapters</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-dmp" class="level1">
+<h1>Data Management Plans (DMPs)</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ul>
+<li>explain the purpose of a Data Management Plan beyond funder compliance;</li>
+<li>recognise a DMP as a living record of decisions;</li>
+<li>distinguish data description from data governance;</li>
+<li>identify proportionate planning actions for different data types;</li>
+<li>locate UCL guidance, templates, and support for DMPs.</li>
+</ul>
+<p>This module builds on FAIR principles <a href="./02-fair-basics.html">Chapter 2: FAIR basics</a> and project organisation <a href="./03-project-mgmt.html">Chapter 3 - Project organisation and continuity</a>. It prepares you for practical data handling and documentation in later chapters. At UCL, DMPs are structured around six core areas: data collection, storage and security, archiving and preservation, discovery and access, metadata, and roles and responsibilities.</p>
+<p>This chapter focuses on <strong>what a DMP must commit to</strong> and <strong>how assessors interpret it</strong>. Chapters 5–7 cover implementation in practice (data organisation, documentation, and code), and Chapter 9 covers automation and workflows.</p>
+<hr>
+</section>
+<section id="what-a-dmp-is-and-is-not" class="level2">
+<h2 class="anchored" data-anchor-id="what-a-dmp-is-and-is-not">What a DMP is (and is not)</h2>
+<p>A Data Management Plan describes how data will be<span class="citation" data-cites="turingway_dmp2025 michener2015ten miksa2019ten"><sup><a href="#ref-turingway_dmp2025" role="doc-biblioref">1</a>–<a href="#ref-miksa2019ten" role="doc-biblioref">3</a></sup></span>:</p>
+<ul>
+<li>created or collected;</li>
+<li>stored, documented, and protected;</li>
+<li>retained, shared, or archived.</li>
+</ul>
+<p>This includes describing what data and materials will be collected or reused, how they are generated, and which data types are in scope. A DMP is <strong>not</strong> a guarantee that plans will not change. Instead, it provides a transparent record of <em>current intentions and decisions</em>. Funders expect data management, storage, curation, and sharing to be explicitly resourced and costed, not treated as overhead.</p>
+<p>Different data types (e.g.&nbsp;sensitive identifiers, geospatial data, qualitative materials, imaging, code/software outputs) require different levels of governance, documentation, and retention detail. The DMP should reflect this <strong>proportionately</strong>, without over-specifying implementation.</p>
+<p>Where AI or machine-learning tools are used for data processing or analysis, the DMP should record what tools are used, how outputs are generated, and what can be documented or shared (e.g.&nbsp;model version, prompts, training data constraints), without over-committing to full reproducibility where this is infeasible.</p>
+<p>Where patient or public contributors are involved, DMPs should reflect any implications for data access, consent, governance, and communication of outputs, even where contributors do not access raw data.</p>
+</section>
+<section id="dmps-as-decision-records" class="level2">
+<h2 class="anchored" data-anchor-id="dmps-as-decision-records">DMPs as decision records</h2>
+<p>Good DMPs document decisions made under uncertainty, including:</p>
+<ul>
+<li>what will happen <em>if</em> data cannot be shared openly;</li>
+<li>how access will be managed under different scenarios;</li>
+<li>who is responsible for data stewardship over time;</li>
+<li>how data will be discovered, accessed, or requested, including where metadata will remain available even when access is restricted.</li>
+</ul>
+<p>Updating a DMP is good practice, not a failure of planning.</p>
+</section>
+<section id="data-description-vs-data-governance" class="level2">
+<h2 class="anchored" data-anchor-id="data-description-vs-data-governance">Data description vs data governance</h2>
+<p>It is useful to separate two related but distinct elements:</p>
+<ul>
+<li><strong>Data description</strong>: what the data are, how they are structured, formats used, and how they are documented.</li>
+<li><strong>Data governance</strong>: who can access the data, under what conditions, how consent and approvals apply, and how storage, security, and backup responsibilities are defined, even if technical implementation is handled elsewhere.</li>
+</ul>
+<p>Keeping these elements distinct improves clarity and supports both FAIR practice and ethical compliance. DMPs are also expected to describe how metadata will be created, maintained, and reviewed over time, without requiring field-level standards to be specified at this stage.</p>
+<hr>
+</section>
+<section id="what-assessors-look-for-in-a-good-dmp" class="level2">
+<h2 class="anchored" data-anchor-id="what-assessors-look-for-in-a-good-dmp">What assessors look for in a good DMP</h2>
+<p>When reviewing a Data Management Plan, assessors are not looking for technical detail for its own sake. Instead, they look for evidence that data management has been <strong>thought through</strong>, is <strong>feasible</strong>, and is <strong>proportionate to the project context</strong>.</p>
+<p>Strong DMPs typically demonstrate:</p>
+<ul>
+<li>clarity about what data will be created or used;</li>
+<li>realistic plans for documentation, storage, and preservation;</li>
+<li>awareness of ethical, legal, and contractual constraints;</li>
+<li>alignment between stated plans and the way the project is organised in practice;</li>
+<li>named responsibility for data stewardship during the project and after staff or funding end.</li>
+</ul>
+<p>Vague or generic statements are a common reason for weak DMP assessments.</p>
+<hr>
+</section>
+<section id="mapping-good-project-practice-to-dmp-sections" class="level2">
+<h2 class="anchored" data-anchor-id="mapping-good-project-practice-to-dmp-sections">Mapping good project practice to DMP sections</h2>
+<p>Many elements of a strong DMP directly reflect good internal project organisation. The table below illustrates this alignment.</p>
+<p>Use this mapping to check that the DMP reflects plausible working practice. It reassures assessors that statements correspond to real practices, but you do <strong>not</strong> need to duplicate implementation detail in the DMP.</p>
+<ul>
+<li><p><strong>Project folder structure</strong><br>
+→ DMP sections should state how data organisation and workflow separation will be handled (e.g., raw vs derived; storage locations).</p></li>
+<li><p><strong>README files and codebooks</strong><br>
+→ DMP sections should state what documentation artefacts will exist and who maintains them.</p></li>
+<li><p><strong>Structured metadata</strong><br>
+→ DMP sections should state how metadata will be captured, updated, and kept available (including when data access is restricted).</p></li>
+<li><p><strong>Versioning and change logs</strong><br>
+→ DMP sections should state how changes to data, code, and outputs will be tracked (tool-agnostic).</p></li>
+</ul>
+<p>Making this alignment explicit reassures assessors that the DMP reflects real working practices rather than aspirational statements.</p>
+<hr>
+</section>
+<section id="planning-for-derived-and-intermediate-data" class="level2">
+<h2 class="anchored" data-anchor-id="planning-for-derived-and-intermediate-data">Planning for derived and intermediate data</h2>
+<p>DMPs should consider not only final datasets, but also:</p>
+<ul>
+<li>derived datasets created during analysis;</li>
+<li>intermediate files produced by scripts or workflows;</li>
+<li>which data will be retained, archived, or discarded.</li>
+</ul>
+<p>These decisions directly inform the archiving, preservation, and curation plans described in the DMP, including what will be retained beyond the active life of the project.</p>
+<p>Chapter 5 covers how to structure and document data states and provenance in practice. In the DMP, focus on recording what you intend to retain, under what conditions, and why.</p>
+<hr>
+</section>
+<section id="sustainability-and-proportionality" class="level2">
+<h2 class="anchored" data-anchor-id="sustainability-and-proportionality">Sustainability and proportionality</h2>
+<p>Planning data management also has environmental implications.</p>
+<p>DMPs should justify proportionate storage, retention, and compute plans in a way that supports reproducibility without unnecessary resource use. Practical options and examples are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+<hr>
+</section>
+<section id="dmp-support-at-ucl" class="level2">
+<h2 class="anchored" data-anchor-id="dmp-support-at-ucl">DMP support at UCL</h2>
+<p>UCL provides:</p>
+<ul>
+<li>an institutional DMP template;</li>
+<li>Research Data Management guidance;</li>
+<li>support via Library Services and specialist teams.</li>
+</ul>
+<p>Relevant links, templates, and contacts are collated in the <a href="./resources.html">Resources and Further Reading</a> chapter (see <strong>Data Management Plans</strong> in Resources) to keep this module focused on principles rather than policy detail.</p>
+<hr>
+</section>
+<section id="practical-prompts-when-drafting-a-dmp" class="level2">
+<h2 class="anchored" data-anchor-id="practical-prompts-when-drafting-a-dmp">Practical prompts when drafting a DMP</h2>
+<p>In practice, effective DMPs often make the following points explicit:</p>
+<ul>
+<li>what data types, formats, and volumes are in scope (and what is out of scope);</li>
+<li>likely access and sharing constraints, and how these will be managed;</li>
+<li>who is responsible for data stewardship during the project and after staff turnover;</li>
+<li>when the DMP will be reviewed and updated (e.g., start-up, mid-project, pre-publication, project end).</li>
+</ul>
+<p>These prompts support continuity and reduce last-minute compliance work.</p>
+<hr>
+</section>
+<section id="exercises-510-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-510-minutes">Exercises (5–10 minutes)</h2>
+<ol type="1">
+<li><p>Review the DMP (or draft one) for a current project.<br>
+Is it clear which decisions are fixed and which may change?</p></li>
+<li><p>Identify one type of derived or intermediate data.<br>
+Decide whether it should be retained, documented, or discarded, and where that decision should be recorded in the DMP.</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2 callout-summary">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>A DMP is a living record of decisions, not a static form.</li>
+<li>Separating data description from governance improves clarity.</li>
+<li>Planning should include derived and intermediate data.</li>
+<li>Proportionate DMPs support reproducibility, ethics, and sustainability.</li>
+</ul>
+</section>
+
+
+<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-turingway_dmp2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: Data Management Plans</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
+</div>
+<div id="ref-michener2015ten" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Michener, W. K. Ten simple rules for creating a good data management plan. <em>PLoS computational biology</em> <strong>11</strong>, e1004525 (2015).</div>
+</div>
+<div id="ref-miksa2019ten" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Miksa, T., Simms, S., Mietchen, D. &amp; Jones, S. Ten principles for machine-actionable data management plans. <em>PLoS computational biology</em> <strong>15</strong>, e1006750 (2019).</div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-project-mgmt.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-organise-tidy.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">CC BY 4.0 · Built with Quarto</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

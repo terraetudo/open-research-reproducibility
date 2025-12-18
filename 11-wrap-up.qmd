@@ -1,0 +1,123 @@
+---
+title: "Chapter 11 — Wrap-up & next steps"
+---
+
+# Wrap-up and next steps {#sec-wrap-up}
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+- reflect on what proportionate open and reproducible practice looks like;
+- identify which practices matter most in your own context;
+- recognise reproducibility as a form of risk reduction;
+- know where to go next for tools, guidance, and support.
+
+This module consolidates the ideas introduced across Modules 1–10 and points to
+resources for continued learning and application.
+
+---
+
+## What this course set out to do
+
+This course has focused on **practical, proportionate practices** that support
+open and reproducible research in real institutional contexts.
+
+It has aimed to:
+
+- reduce avoidable errors and inefficiencies;
+- improve clarity, continuity, and defensibility;
+- support collaboration and responsible reuse.
+
+It is not a comprehensive technical manual, nor a checklist to be completed.
+
+::: callout-important
+## Baseline expectations (UCL ECR “minimum viable reproducibility”)
+
+If you do only these things, you will meet a sensible baseline for transparent, defensible research practice (including when data cannot be open):
+
+1. **Project README at the root** (purpose, structure, conventions, contacts).
+2. **Decisions recorded** (decision log or ELN entries for key changes/assumptions).
+3. **Raw vs derived separated** (never overwrite raw; document transformations).
+4. **Re-runnable analysis** (scripted steps; basic checks/tests where feasible).
+5. **Planned sharing and access** (DMP/governance notes + clear access route).
+6. **Publish with identifiers and clarity** (ORCID, DOIs where appropriate; licence + access conditions; availability statements).
+
+Use [**Resources and Further Reading**](resources.qmd) for copy-ready templates and UCL routes.
+:::
+
+## What “good enough” looks like
+
+Reproducibility is incremental.
+
+What is appropriate depends on:
+
+- project scale and risk;
+- data sensitivity and governance;
+- team size and turnover;
+- available time and resources.
+
+Good practice means making choices explicit and defensible—not maximising
+openness at any cost.
+
+## Practices, not tools
+
+Throughout the course, the emphasis has been on **practices** rather than
+specific tools.
+
+Tools will change. Principles such as clarity, documentation, versioning,
+and transparency endure.
+
+Choosing tools that support these practices in your context is more important
+than adopting any particular platform.
+
+## Reproducibility as risk reduction
+
+Many open research practices function as risk management:
+
+- documentation reduces reliance on memory;
+- versioning reduces accidental loss;
+- automation reduces silent errors;
+- testing reduces rework;
+- clear publishing reduces misinterpretation.
+
+Seen this way, reproducibility supports both research quality and researcher
+wellbeing.
+
+## Where to go next
+
+Depending on your needs, next steps may include:
+
+- consulting the **[Resources and Further Reading](resources.qmd) chapter**;
+- engaging with UCL support services for data, ethics, and open access;
+- attending further training or workshops.
+
+Learning and improvement are ongoing processes.
+
+## Applying this in your own work
+
+A practical way forward is to:
+
+- choose one or two practices to strengthen in your next project;
+- revisit them at key project milestones;
+- build habits gradually rather than all at once.
+
+Small, consistent improvements deliver the greatest benefit.
+
+## Exercises (5–10 minutes)
+
+1. Identify one practice from this course you plan to adopt or improve next.  
+   What would “good enough” look like in your context?
+
+2. Identify one risk in a current or past project.  
+   Which reproducible practice might have reduced it?
+
+::: {.callout-summary}
+## Key takeaways
+
+- Open and reproducible research is incremental and contextual.
+- “Good enough” practice depends on risk, scale, and constraints.
+- Practices matter more than specific tools.
+- Reproducibility supports quality, efficiency, and wellbeing.
+- Resources and communities support continued learning.
+:::

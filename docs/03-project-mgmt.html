@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Research &amp; Reproducibility - Chapter 3 - Project organisation and continuity</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-dmp.html" rel="next">
+<link href="./02-fair-basics.html" rel="prev">
+<link href="./cover.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles/style.scss">
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-project-mgmt.html"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Chapters</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-project-mgmt" class="level1">
+<h1>Project organisation for reproducible research</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ul>
+<li>explain why project organisation is central to reproducibility and continuity;</li>
+<li>describe how metadata, roles, and conventions support collaboration;</li>
+<li>apply proportionate principles for organisation, versioning, and continuity;</li>
+<li>understand how project organisation underpins documentation, code, and automation;</li>
+<li>locate UCL-supported tools and templates relevant to project organisation.</li>
+</ul>
+<p>This module builds on the FAIR principles introduced in <a href="./02-fair-basics.html">Chapter 2: FAIR basics</a> and focuses on how projects are structured and managed over time.<br>
+<strong>All copy-ready templates and concrete examples are provided centrally in the <a href="./resources.html">Resources and Further Reading</a> chapter.</strong></p>
+<hr>
+</section>
+<section id="why-project-organisation-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-project-organisation-matters">Why project organisation matters</h2>
+<p>Many reproducibility problems arise not from technical complexity, but from poorly organised projects. As projects grow, involve multiple contributors, or span years, it becomes increasingly difficult to track what was done, why it was done, and by whom. This chapter does not teach general project management skills; it focuses on organisational practices that directly support reproducibility, governance, and long-term continuity.</p>
+<p>Effective project organisation supports<span class="citation" data-cites="ukdataservice_managing_sharing2019"><sup><a href="#ref-ukdataservice_managing_sharing2019" role="doc-biblioref">1</a></sup></span>:</p>
+<ul>
+<li>continuity when team members join or leave;</li>
+<li>transparent decision making;</li>
+<li>efficient collaboration across roles and disciplines;</li>
+<li>traceability of changes and outputs.</li>
+</ul>
+<p>These benefits are particularly important in research, where projects often involve multiple data types, governance requirements, and extended timelines.</p>
+</section>
+<section id="metadata-about-the-project" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-about-the-project">Metadata about the project</h2>
+<p>A project is more than a collection of files. Treat <strong>project-level metadata</strong> as a first-class research output. This metadata is distinct from dataset-level metadata (covered in Chapter 5), and exists to make the project itself legible.</p>
+<p>At a minimum, this includes:</p>
+<ul>
+<li>a brief description of <strong>purpose and scope</strong>;</li>
+<li>the <strong>outputs</strong> the project will generate and how they are identified (e.g.&nbsp;PIDs);</li>
+<li>conventions for naming, versioning, and access;</li>
+<li>roles and responsibilities for key tasks.</li>
+</ul>
+<p>A short project README or charter at the top level of your repository or shared drive improves discoverability, onboarding, and continuity.<br>
+A minimum README template is provided in <a href="./resources.html">Resources and Further Reading</a>.</p>
+</section>
+<section id="structuring-the-project" class="level2">
+<h2 class="anchored" data-anchor-id="structuring-the-project">Structuring the project</h2>
+<p>Well-organised projects tend to share common structural features, regardless of discipline or tools:</p>
+<ul>
+<li>a clear top-level project boundary;</li>
+<li>separation of raw data, derived data, analysis code, and outputs;</li>
+<li>a visible project metadata file (e.g.&nbsp;README);</li>
+<li>predictable locations for documentation and logs.</li>
+</ul>
+<p>Structure should prioritise <strong>legibility for someone unfamiliar with the project</strong>, including reviewers and your future self.</p>
+<p>Rather than inventing bespoke layouts, this course encourages starting from a simple baseline structure and adapting it as needed.<br>
+A canonical folder structure and guidance on its intended use are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+</section>
+<section id="versioning-principles-not-tools" class="level2">
+<h2 class="anchored" data-anchor-id="versioning-principles-not-tools">Versioning: principles, not tools</h2>
+<p>Versioning is essential for understanding how a project evolves over time. Crucially, <strong>versioning principles apply to all research materials</strong>, not only to code<span class="citation" data-cites="ukdataservice_versioning2023"><sup><a href="#ref-ukdataservice_versioning2023" role="doc-biblioref">2</a></sup></span>.</p>
+<p>It is useful to distinguish between two related but distinct practices.</p>
+<section id="file-versioning-data-documents-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="file-versioning-data-documents-outputs">File versioning (data, documents, outputs)</h3>
+<p>File versioning applies to data files, documents, and other non-code outputs. At a minimum, good practice involves:</p>
+<ul>
+<li>retaining historical versions rather than overwriting files;</li>
+<li>using clear, consistent version identifiers;</li>
+<li>recording what changed and why.</li>
+</ul>
+<p>This can be achieved using structured file naming and simple change logs, without specialised tools. Minimum examples and a changelog template are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+</section>
+<section id="code-version-control-e.g.-git" class="level3">
+<h3 class="anchored" data-anchor-id="code-version-control-e.g.-git">Code version control (e.g.&nbsp;Git)</h3>
+<p>Code version control systems are designed for tracking changes to scripts and software. They support:</p>
+<ul>
+<li>fine-grained tracking of changes;</li>
+<li>collaboration across multiple contributors;</li>
+<li>reversible experimentation.</li>
+</ul>
+<p>Not all projects require formal code version control, but where code is central to analysis, its use substantially improves transparency and reproducibility.</p>
+<p>This course emphasises <strong>principles before tools</strong>. Tool-specific guidance and examples are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+</section>
+</section>
+<section id="roles-responsibilities-and-continuity" class="level2">
+<h2 class="anchored" data-anchor-id="roles-responsibilities-and-continuity">Roles, responsibilities, and continuity</h2>
+<p>Reproducible projects make roles explicit.</p>
+<p>Good practice includes:</p>
+<ul>
+<li>documenting who is responsible for data, code, and documentation;</li>
+<li>agreeing communication norms and review points;</li>
+<li>onboarding new contributors with a short guide to project conventions.</li>
+</ul>
+<p>Offboarding is equally important. When people leave a project, their context, assumptions, and decisions should not leave with them.</p>
+</section>
+<section id="project-organisation-across-the-lifecycle" class="level2">
+<h2 class="anchored" data-anchor-id="project-organisation-across-the-lifecycle">Project organisation across the lifecycle</h2>
+<p>Organisation is not a one-off task.</p>
+<p>Structures, documentation, and metadata should evolve as a project moves from setup to analysis to dissemination. Use milestones (e.g.&nbsp;protocol finalised, data locked, analysis frozen) as prompts to review and update organisation and records.</p>
+<p>This helps ensure that published outputs reflect real working practices rather than retrospective reconstruction.</p>
+<p>These organisational practices underpin later chapters on documentation (Chapter 6), code quality (Chapter 7), and automation (Chapter 9).</p>
+</section>
+<section id="practical-guidance-for-ecr-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
+<p>For early career researchers, proportionate project organisation often means:</p>
+<ul>
+<li>writing a project README at the outset;</li>
+<li>agreeing simple versioning conventions with collaborators;</li>
+<li>maintaining a short decision log alongside active work;</li>
+<li>keeping tasks, roles, and responsibilities visible to the team.</li>
+</ul>
+<p>These steps support transparent progress without requiring heavy infrastructure.</p>
+</section>
+<section id="exercises-515-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-515-minutes">Exercises (5–15 minutes)</h2>
+<ol type="1">
+<li><p>Look at the top level of a current project.<br>
+Is there a project README describing purpose, outputs, and conventions?</p></li>
+<li><p>Identify one recent decision in that project.<br>
+Is it recorded with context and rationale? Add it to a log if not.</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2 callout-summary">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Project organisation is foundational for reproducibility and collaboration.</li>
+<li>Project-level metadata improves discoverability and continuity.</li>
+<li>Versioning principles apply to data, documentation, and code.</li>
+<li>Explicit roles and decision records reduce risk and knowledge loss.</li>
+<li>Templates and examples are centralised in the <a href="./resources.html">Resources and Further Reading</a> chapter.</li>
+</ul>
+</section>
+
+
+<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-ukdataservice_managing_sharing2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://dam.ukdataservice.ac.uk/media/622417/managingsharing.pdf">Managing and Sharing Data: Best Practice for Researchers</a></em>. (UK Data Service, 2019).</div>
+</div>
+<div id="ref-ukdataservice_versioning2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/">Versioning Your Data</a></em>. (UK Data Service, 2023).</div>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02-fair-basics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 2 - FAIR basics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-dmp.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">CC BY 4.0 · Built with Quarto</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

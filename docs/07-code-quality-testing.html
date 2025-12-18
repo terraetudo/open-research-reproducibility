@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Research &amp; Reproducibility - Chapter 7 — Code quality &amp; testing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-s-responsibility.html" rel="next">
+<link href="./06-docs-eln-sops.html" rel="prev">
+<link href="./cover.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles/style.scss">
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-code-quality-testing.html"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Chapters</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-code-quality-testing" class="level1">
+<h1>Code quality, testing, and sustainable computation</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this module, you should be able to:</p>
+<ul>
+<li>explain why code quality and documentation underpin reproducibility and defensibility;</li>
+<li>recognise the role of testing in reliable research workflows;</li>
+<li>understand how inefficient code affects reproducibility and sustainability;</li>
+<li>apply proportionate “green coding” practices in research contexts;</li>
+<li>identify practical steps to reduce unnecessary computation.</li>
+</ul>
+<p>This module builds on <a href="./06-docs-eln-sops.html">Chapter 6 — Documentation, ELNs &amp; SOPs</a> and prepares you for automation and workflows in <a href="./09-automation.html">Chapter 9 — Automation &amp; simple workflows</a>.</p>
+<hr>
+</section>
+<section id="why-code-quality-matters-in-research" class="level2">
+<h2 class="anchored" data-anchor-id="why-code-quality-matters-in-research">Why code quality matters in research</h2>
+<p>In research contexts, code quality is not about elegance or performance alone. It is about whether results can be:</p>
+<ul>
+<li>regenerated reliably;</li>
+<li>inspected and reviewed;</li>
+<li>adapted or extended by others (including your future self).</li>
+</ul>
+<p>Poor-quality code increases the risk of silent errors, irreproducible results, and excessive rework.</p>
+</section>
+<section id="testing-as-a-research-safeguard" class="level2">
+<h2 class="anchored" data-anchor-id="testing-as-a-research-safeguard">Testing as a research safeguard</h2>
+<p>Testing checks that code behaves as expected when inputs or assumptions change.</p>
+<p>In practice, testing supports reproducibility by:</p>
+<ul>
+<li>detecting errors early;</li>
+<li>reducing reliance on manual checks;</li>
+<li>supporting refactoring without breaking results.</li>
+</ul>
+<p>Even simple tests (e.g.&nbsp;checking dimensions, ranges, or invariants) provide substantial benefits.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sustainable coding: quality that lasts (and wastes less)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sustainable code is not about perfection or performance for its own sake. It is about <strong>reducing unnecessary recomputation, storage, and rework</strong> while keeping analyses <strong>understandable, defensible, and maintainable</strong>.</p>
+<p>Well-designed code saves time, energy, and attention — for you and for others.</p>
+</div>
+</div>
+<section id="what-to-look-for-when-coding-sustainably" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-look-for-when-coding-sustainably">What to look for when coding sustainably</h3>
+<p>The practices below focus on <strong>high-value, low-burden choices</strong> that improve both code quality <em>and</em> environmental sustainability.</p>
+<ul>
+<li><p><strong>Restartable, modular workflows</strong><br>
+Structure scripts so analyses can resume from intermediate outputs rather than rerunning end-to-end. This reduces accidental full recomputation after small changes.<br>
+<em>(Links to workflow tooling in Chapter 9.)</em></p></li>
+<li><p><strong>Incremental recomputation and caching</strong><br>
+Save expensive intermediate results when justified, and recompute only what has changed. This is often the single biggest energy-saving decision in analysis code.</p></li>
+<li><p><strong>Profiling before optimisation</strong><br>
+Use simple timing or memory checks to identify where time and compute are actually spent. Optimising unmeasured code often wastes more energy than it saves.</p></li>
+<li><p><strong>Algorithmic proportionality</strong><br>
+Prefer methods and resolutions that are sufficient for the research question, rather than maximal by default (e.g.&nbsp;spatial resolution, iterations, precision). Small reductions here can dominate total compute cost.</p></li>
+<li><p><strong>Clear inputs, outputs, and assumptions</strong><br>
+Make it obvious what each script expects, produces, and assumes. Ambiguity leads to reruns, duplication, and error-driven recomputation.</p></li>
+<li><p><strong>Lightweight, targeted testing</strong><br>
+A small number of high-value checks (e.g.&nbsp;input validation, key invariants) can prevent long, expensive runs from failing late.</p></li>
+<li><p><strong>Readable structure over cleverness</strong><br>
+Code that is easy to read, review, and modify is less likely to be rerun unnecessarily or replaced wholesale when changes are needed.</p></li>
+</ul>
+</section>
+<section id="why-this-matters-beyond-code-style" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-matters-beyond-code-style">Why this matters beyond code style</h3>
+<p>Poorly structured or opaque code increases the likelihood of:</p>
+<ul>
+<li>full reruns due to uncertainty or small errors;</li>
+<li>duplicated data and intermediate files;</li>
+<li>wasted compute from over-resolution or over-iteration;</li>
+<li>abandonment and reimplementation of analyses.</li>
+</ul>
+<p>In practice, inefficient code can make research <em>effectively</em> irreproducible. If analyses are too slow, expensive, or resource-intensive to rerun, this limits verification, sensitivity analysis, and extension by others. These constraints disproportionately affect researchers and teams with limited access to compute resources, creating hidden barriers to transparency and reuse. These costs are <strong>environmental, human, and organisational</strong>. Good-enough code quality is therefore a sustainability intervention, not just a technical preference.</p>
+<p>(Responsibility and proportionality are discussed further in <strong>Chapter 8</strong>; workflow automation and dependency management are covered in <strong>Chapter 9</strong>.)</p>
+</section>
+<section id="documenting-your-code-for-clarity-and-reuse" class="level3">
+<h3 class="anchored" data-anchor-id="documenting-your-code-for-clarity-and-reuse">Documenting your code for clarity and reuse</h3>
+<p>Good documentation is not an afterthought — it’s part of writing code that others (and you later) can reliably understand and reuse.</p>
+<ul>
+<li><strong>Explain <em>why</em></strong>: Comment the reasoning behind decisions, not just what the code does.<br>
+</li>
+<li><strong>Write docs as you code</strong>: Update documentation alongside code to avoid outdated notes.<br>
+</li>
+<li><strong>Use clear naming and structure</strong>: Consistent variable/function names and well-structured README/help files improve readability.<br>
+</li>
+<li><strong>Document at multiple levels</strong>: Inline comments, function headers, and high-level project docs all have a role.<br>
+</li>
+<li><strong>Include examples</strong>: Minimal usage examples help others understand expected inputs/outputs.<br>
+</li>
+<li><strong>Keep docs up to date</strong>: Outdated documentation misleads and can cost more time than none at all.<br>
+</li>
+<li><strong>Choose appropriate tools</strong>: Use <code>roxygen2</code> (R), Sphinx (Python), or Markdown with docstrings to integrate docs with code.</li>
+</ul>
+<p><em>Why it matters</em>: well-documented code reduces confusion, unnecessary reruns, and onboarding friction — essential components of sustainable and reproducible research workflows.</p>
+<p>AI-generated code should be treated like any other external contribution: reviewed, tested, and documented before use.</p>
+</section>
+</section>
+<section id="versioning-refactoring-and-tests" class="level2">
+<h2 class="anchored" data-anchor-id="versioning-refactoring-and-tests">Versioning, refactoring, and tests</h2>
+<p>Refactoring code is safer when tests are in place. The versioning principles introduced for data and documentation in <a href="./05-organise-tidy.html">(Chapter 5 - Organising and tidying data)</a> apply equally to code. Scripts and analysis pipelines should not be overwritten without trace, and changes should be attributable, versioned, and recoverable. Code version control systems support this process, but the underlying expectation is consistency and traceability rather than tool choice.</p>
+<p>Testing supports sustainable workflows by:</p>
+<ul>
+<li>enabling incremental improvements;</li>
+<li>preventing costly re-runs after small changes;</li>
+<li>reducing fear of breaking working code.</li>
+</ul>
+<p>This is particularly important in long-running or resource-intensive analyses.</p>
+</section>
+<section id="practical-guidance-for-ecr-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
+<p>Proportionate steps for most research projects include:</p>
+<ul>
+<li>writing scripts so they can be run end-to-end;</li>
+<li>adding basic checks or tests for key assumptions;</li>
+<li>avoiding unnecessary recomputation during exploration;</li>
+<li>documenting when and why full reruns are required.</li>
+</ul>
+<p>More advanced optimisation is context-dependent and not always necessary.</p>
+</section>
+<section id="exercises-515-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-515-minutes">Exercises (5–15 minutes)</h2>
+<ol type="1">
+<li><p>Identify one script or analysis that is slow or frequently re-run.<br>
+Is there a step that could be cached or avoided?</p></li>
+<li><p>Look at one function or script.<br>
+What simple check could be added to detect errors early?</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level2 callout-summary">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Code quality underpins reproducibility and trust in results.</li>
+<li>Testing reduces errors, rework, and unnecessary computation.</li>
+<li>Inefficient code can make research effectively irreproducible.</li>
+<li>Green coding focuses on reducing waste through clarity and efficiency.</li>
+<li>Proportionate practices deliver most of the benefit.</li>
+</ul>
+</section>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-docs-eln-sops.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08-s-responsibility.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">CC BY 4.0 · Built with Quarto</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
