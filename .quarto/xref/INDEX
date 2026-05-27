@@ -76,5 +76,14 @@
   },
   "references.qmd": {
     "references.html": "0ff6aaec"
+  },
+  "00-introduction.qmd": {
+    "00-introduction.html": "f6b5f63b"
+  },
+  "08-publishing-pids-reuse.qmd": {
+    "08-publishing-pids-reuse.html": "ab5697c7"
+  },
+  "09-wrap-up-next-steps.qmd": {
+    "09-wrap-up-next-steps.html": "3560ec65"
   }
 }

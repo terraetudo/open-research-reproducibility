@@ -1,0 +1,886 @@
+---
+title: "Resources and Further Reading"
+description: "Tools, UCL support, and copy-ready templates referenced across the Chapters."
+bibliography: references.bib
+---
+
+This chapter gathers together **tools**, **UCL support**, **further reading**, and **copy-ready templates** referenced across **Chapters 1--9**.  
+It is intended as a *one-stop practical library* for early-career researchers and researchers onboarding to projects at UCL.
+
+Use this chapter when you need:
+
+- examples to implement ideas from the Chapters;
+- templates to copy into your own repositories;
+- links to UCL policies, services, and support.
+
+::: {.callout-tip}
+## How to use this page
+
+- **Start here** if you are new to UCL or new to a project team.
+- **Use the checklists** first; use the deeper links when you need more detail.
+- Sections marked **Advanced / reference** are optional unless your project context requires them.
+:::
+
+------------------------------------------------------------------------
+
+## Onboarding: first actions on a new project {#sec-onboarding-first-actions}
+
+Use this when you join a project (or onboard someone else).
+
+1. Find or create the **project README** (purpose, scope, structure, contacts).
+2. Confirm **data access and governance** (what you can/can't do; where it's documented).
+3. Identify the **source of truth** (repository/shared drive) and the agreed naming/versioning rules.
+4. Locate **raw data** and confirm it is immutable; find how **derived data** are produced.
+5. Identify the **analysis entry point** (main script / workflow) and the environment notes.
+6. Find the **decision log / ELN** and record your first assumptions and uncertainties.
+7. Check expected outputs (papers, datasets, code releases) and likely **release points**.
+
+------------------------------------------------------------------------
+
+## Foundations of open and reproducible research {#foundations}
+
+*Supports Chapter 1*
+
+### Conceptual foundations and terminology
+
+- **Definitions: reproducible, replicable, robust, and generalisable**  
+  <https://book.the-turing-way.org/reproducible-research/overview/overview-definitions/>
+
+- **Why reproducible research matters (overview and benefits)**  
+  <https://book.the-turing-way.org/reproducible-research/overview>
+
+### Key readings
+
+- *The Turing Way* — foundational guidance on reproducibility, collaboration, project design, FAIR, and governance @turingway2022  
+- Nature survey of reproducibility challenges across science @baker2016reproducibility  
+- Manifesto for reproducible science @munafo2017manifesto  
+- National Academies report on reproducibility and replicability @nas2019reproducibility  
+
+### UCL policies and frameworks
+
+- **UCL Research Transparency Policy**  
+  <https://www.ucl.ac.uk/research/strategy-environment/research-transparency>
+
+- **UCL Research Integrity**  
+  <https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity>
+
+- **UCL Office for Open Science & Scholarship**  
+  <https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship>
+
+- **UCL Open Access guidance**  
+  <https://www.ucl.ac.uk/library/open-science-research-support/open-access>
+  
+- **UCL Research Data Repository:**
+<https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository> 
+
+- **Acknowledging the use of generative AI and referencing generative AI**
+<https://library-guides.ucl.ac.uk/referencing-plagiarism/acknowledging-genAI>
+
+- **UCL RSDP: Research Governance and Organisation**
+  [https://www.ucl.ac.uk/human-resources/organisational-development/researcher-development/research-staff/rsdp-research-governance-and](https://www.ucl.ac.uk/human-resources/organisational-development/researcher-development/research-staff/rsdp-research-governance-and)
+
+------------------------------------------------------------------------
+
+## FAIR principles and data stewardship {#fair-resources}
+
+*Supports Chapter 2*
+
+### Core readings
+
+- Original FAIR principles @wilkinson2016fair  
+- GO FAIR overview @gofair2023  
+- OpenAIRE FAIR implementation guidance @openaire_fair2023  
+- FAIR chapter from *The Turing Way* @turingway_fair  
+
+### FAIR in practice (deeper dives)
+
+- **FAIR Princples**  
+  <https://www.go-fair.org/fair-principles/>
+
+- **Machine-actionable metadata (overview)**  
+  <https://rdmkit.elixir-europe.org/machine_actionability>
+
+- **Persistent identifiers and metadata schemas (DataCite)**  
+  <https://schema.datacite.org/>
+
+- **FAIR and sensitive data**  
+  <https://www.openaire.eu/sensitive-data-guide>
+
+- **Provenance and critical data elements**  
+  <https://book.the-turing-way.org/reproducible-research/rdm/rdm-metadata/>
+
+### UCL support
+
+- **UCL Research Data Repository**  
+  <https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository>
+
+- **Research Data Management guidance**  
+  <https://library-guides.ucl.ac.uk/research-data-management/best-practices-fair-data>
+
+------------------------------------------------------------------------
+## Project design and management {#pm}
+
+*Supports Chapter 3 — Project organisation for reproducible research*
+
+### Core conceptual readings
+
+- *The Turing Way*: project management methodologies overview @turingway_pm 
+<https://book.the-turing-way.org/project-design/project-management-methodologies/overview>
+
+These introductions orient you to project-level decisions, continuity, and collaboration concepts in research contexts.
+
+---
+
+### Project metadata, roles, and conventions
+
+Project organisation is not just files; it’s *agreements* about how work is described and aligned across people and outputs.
+
+- **Project metadata and conventions**  
+  <https://www.resourcespace.com/complete-guide-to-metadata>
+
+- **Decision logs and risk registers**  
+  <https://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions.>
+    <https://www.prince2.com/uk/blog/the-risk-register-what-to-include-and-what-to-avoid>
+
+- **Onboarding and offboarding practices**  
+  <https://book.the-turing-way.org/community-handbook/onboarding-offboarding/onboarding-core-team>
+  <https://book.the-turing-way.org/community-handbook/onboarding-offboarding/offboarding-core-team/>
+
+
+This set supports the Chapter 3 emphasis on *metadata, roles, and conventions* for collaboration.
+
+---
+
+### Versioning and continuity (principles, not tools)
+
+Project continuity depends on *how* changes are tracked, not just *which tool* you use.
+
+- **Versioning data and documents (principle overview)** — UK Data Service guidance  
+  <https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/>
+
+- **Good Enough Practices in Scientific Computing (principles for tracking changes)**  
+  <https://carpentries-lab.github.io/good-enough-practices/>
+
+- **Decision-making records and continuity**
+<https://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions.>
+
+These reinforce Chapter 3’s focus on *proportionate principles* rather than tool adoption.
+
+---
+
+### UCL-supported tools and routes
+
+Chapter 3 promises learners can *locate UCL support*. These links are the authoritative institutional routes.
+
+- **UCL Research Data Management (Library Services)** — guidance, templates, training  
+  <https://www.ucl.ac.uk/library/open-science-research-support/research-data-management>
+
+- **Research governance (UCL Governance & Compliance)** — structures and approvals  
+  <https://www.ucl.ac.uk/governance-compliance/research-governance>
+
+- **Research Integrity (RI&S)** — responsible conduct and research policy  
+  <https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity>
+
+- **UCL Office for Open Science & Scholarship** — broader open science support  
+  <https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship>
+
+These support learners in locating **institutional expectations, help, and policy** without burying it in narrative.
+
+---
+
+### Recommended tools (illustrative; principle-led)
+
+Tools can help, but their use should reflect project needs and principles of reproducibility.
+
+- **Coordination & collaboration tools**: GitHub / GitLab, Planner, Trello, OSF  
+- **Documentation & publication tooling**: Quarto  
+- **Environment stability**: `renv` / `conda` / containers (see Resources → Tools and software)
+
+These appear here as orientation; tool-specific guidance is signposted in other resource sections (e.g., Documentation, Code quality, Automation).
+
+---
+
+::: {.callout-note}
+## How this supports Chapter 3
+
+- Project metadata, roles, and conventions make *collaboration legible*.  
+- Versioning principles support *long-term continuity*.  
+- UCL-supported routes help learners *navigate policy and templates*.  
+- Tool suggestions are illustrative, not prescriptive.
+
+For **concrete templates** (folder structure, versioning examples, change logs, project README), see the `files/` folder in this book and the appropriate sections in this Resources chapter.
+:::
+
+------------------------------------------------------------------------
+
+## Data Management Plans {#sec-dmp-resources}
+
+*Supports Chapter 4 — Data Management Plans (UCL)*
+
+Use this section when you need **UCL-specific routes**, **copy-ready DMP text**, and **signposting** to governance and documentation resources.
+
+### UCL DMP route and template
+
+- **UCL RDM hub (DMP guidance)**  
+  <https://library-guides.ucl.ac.uk/research-data-management>
+
+- **UCL Data Management Plan template**
+  <https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template>
+  
+- **UCL DMP template (local file)** — [Download `ucl_data_management_plan_template_2024.docx`](files/ucl_data_management_plan_template_2024.docx)
+
+- **UCL Managing data across the research lifecycle**
+  <https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research>
+
+
+::: {.callout-note}
+### How this links to the rest of the course
+
+- Chapter 4 focuses on **what the DMP must commit to** and **how assessors interpret it**.
+- Chapter 5 owns **minimum essential metadata**: see [Essential metadata](#sec-essential-metadata).
+- Chapter 6 covers **documentation artefacts** (READMEs, ELNs, SOPs): see [Documentation, ELNs, and SOPs](#docs-resources).
+:::
+
+------------------------------------------------------------------------
+
+### Derived and intermediate data: retention decision prompts (quick guide)
+
+Use these prompts when writing the DMP sections on **retention**, **preservation**, and **storage**.
+
+**Record explicitly:**
+
+- which derived datasets are considered **analysis-critical** (needed to reproduce results);
+- which intermediate files are **recomputable** (can be regenerated from scripts + inputs);
+- what will be retained **during** the project vs **after** project end;
+- expected access model (open / safeguarded / controlled / mediated) for each retained component;
+- how provenance will be captured at a high level (e.g., “derived datasets are generated by scripted workflows and versioned”).
+
+Chapter 5 covers how to implement raw/derived organisation and provenance in practice; the DMP should state the **commitment**, **scope**, and **rationale**.
+
+
+### UCL support routes (practical)
+
+Use these routes when you are unsure what to commit to, what is permissible, or who should approve decisions.
+
+- **UCL Research Integrity**  
+  <https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity>
+
+- **UCL Advanced Research Computing — sensitive data and trusted research environments**  
+  <https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments>
+
+------------------------------------------------------------------------
+
+## Data organisation and provenance {#data-provenance}
+
+*Supports Chapter 5*
+
+### Deeper dives
+
+- **Tidy data principles (overview)**  
+  <https://book.the-turing-way.org/reproducible-research/rdm/rdm-spreadsheets/#rr-rdm-spreadsheets-format>
+
+- **Data and version**  
+  <https://book.the-turing-way.org/reproducible-research/vcs/vcs-data/>
+
+- **Data dictionaries and documentation examples**  
+  <https://imi-immuniverse.pages.uni.lu/datadictionary#:~:text=What%20should%20be%20included%20in,ImmUniverse's%20data%20and%20analysis%20platform.>
+
+- **Process mapping to inform DMPs and metadata** (conceptual bridge to Chapters 3–4)  
+  <https://libguides.library.ohio.edu/RDM/dmps#:~:text=What%20is%20a%20Data%20Management,DMP%20with%20every%20funding%20request.>
+  <https://learning.nceas.ucsb.edu/2023-04-coreR/session_14.html>
+
+- **Tidy Data (Hadley Wickham)**
+  <https://vita.had.co.nz/papers/tidy-data.pdf>
+
+- **Data integrity principles (ALCOA)** (reference; regulated/lab contexts)
+ALCOA (Attributable Legible Contemporaneous Original Accurate) is a framework that is required for the implementation of Good Documentation Practices (GDPs) and is utilized by regulated enterprises to ensure data integrity.
+<https://www.ukcrfnetwork.co.uk/app/uploads/2023/07/Advisory-Notes-Data-Integrity_v01_Oct2019.pdf>
+
+### Domain-specific metadata standards (Advanced / reference)
+
+- **ISO 19115 / ISO 19139** — geographic information metadata  
+- **DDI (Data Documentation Initiative)** — social science and survey data  
+  <https://ddialliance.org/>
+- **Dublin Core** — general-purpose descriptive metadata  
+  <https://www.dublincore.org/>
+
+------------------------------------------------------------------------
+
+## Essential metadata (minimum standard) {#sec-essential-metadata}
+
+*Supports Chapter 5 — Organising and tidying data*  
+*Referenced by Chapters 6 (documentation) and 10 (publishing and reuse).*
+
+### Essential Metadata Checklist (minimum standard)
+
+When documenting a dataset, code release, protocol, or other output, include at least:
+
+- **Title**
+- **Creators / contributors** (including ORCID where possible)
+- **Dates** (created; last updated)
+- **Description** (what it is; why it exists; what it can and cannot support)
+- **Version**
+- **Methods / provenance summary** (how it was generated; key transformations)
+- **Geography / time coverage** (if relevant)
+- **File formats** and any required software
+- **Access conditions** (open / controlled / mediated; who to contact)
+- **Licence** (or explicit statement if licensing is constrained)
+- **Funding / grant** (if relevant)
+- **Persistent identifier** (DOI where appropriate; or stable URL + repository record)
+
+::: {.callout-note}
+## Minimum rule of thumb
+
+If a competent colleague can answer *what it is, where it came from, how to access it, how to cite it, and what they are allowed to do with it*, your metadata is likely "good enough" for most purposes.
+:::
+
+### Expanded metadata templates (Advanced / reference)
+
+- **General research metadata template** (provenance, methods, versions, licences, access conditions, related outputs)  
+- **Spatial/geocoded metadata template** (CRS, extent, resolution, temporal coverage, processing)
+
+(Keep these as copy-ready templates or separate downloadable files, then link them here.)
+
+------------------------------------------------------------------------
+
+## Project organisation templates (copy-ready) {#sec-project-organisation-templates}
+
+These templates define **project-level coordination conventions**.  
+Data-state conventions (raw, derived, documentation) are interpreted in Chapter 5 and applied here.
+
+### Baseline folder structure
+
+```text
+project-root/
+├── README.md
+├── data/
+│   ├── raw/
+│   ├── derived/
+│   └── documentation/
+├── analysis/
+│   ├── scripts/
+│   └── outputs/
+├── docs/
+├── logs/
+└── outputs/
+````
+
+### File naming and versioning (minimum standard)
+
+**Recommended elements**
+
+* short descriptive name
+* date (ISO): `YYYYMMDD`
+* version identifier (e.g. `v01`)
+* no spaces or special characters
+
+**Examples**
+
+```text
+survey_responses_raw_20240315_v01.csv
+survey_responses_clean_20240318_v02.csv
+analysis_model1_20240402_v03.R
+protocol_amendment_20240510_v01.docx
+```
+
+### Versioning cheat-sheet
+
+**Create a new version when:**
+
+* cleaning/transformation changes;
+* analysis logic/parameters change;
+* outputs are regenerated using modified inputs;
+* errors are corrected.
+
+**Record:**
+
+* version identifier;
+* date;
+* what changed (1--2 lines);
+* who changed it.
+
+### Optional: code version control (Git) (Advanced / reference)
+
+Appropriate when code is central and/or multiple contributors edit scripts.
+
+Key principles:
+
+* commit little and often with meaningful messages;
+* avoid committing large data files;
+* use tags/releases for milestones.
+
+---
+
+## Codebook / data dictionary template (minimum standard) {#sec-codebook-template}
+
+*Supports Chapter 5*
+
+```text
+# Codebook / data dictionary
+
+## Dataset
+- Name:
+- Version:
+- Created:
+- Source(s):
+- Unit of observation:
+- Notes on linkage / identifiers (if relevant):
+
+## Missingness and exclusions
+- Missing value codes:
+- Key exclusions (and rationale):
+- Known limitations:
+
+## Variables
+For each variable:
+- Variable name:
+- Description:
+- Type (numeric / categorical / date / text):
+- Units (if applicable):
+- Valid range / levels:
+- Missingness coding:
+- Derivation (if derived):
+- Notes
+```
+
+---
+
+## Documentation, ELNs, and SOPs {#docs-resources}
+
+*Supports Chapter 6*
+
+This section focuses on **documentation as a reproducibility practice**: capturing decisions, assumptions, and procedures so work can be understood, reviewed, and reused over time.
+
+### Core principles of research documentation
+
+* **Documentation as decision-making evidence** (*The Turing Way — Documentation*)
+  [https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project/](https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project/)
+
+* **Good Enough Practices: documenting analyses and decisions**
+  [https://carpentries-lab.github.io/good-enough-practices/](https://carpentries-lab.github.io/good-enough-practices/)
+
+These resources reinforce the principle that documentation should enable *independent reconstruction*, not just internal memory.
+
+### READMEs, codebooks, and dataset documentation
+
+* **README 101** (*Make a README*)
+  [https://www.makeareadme.com/](https://www.makeareadme.com/)
+
+* **Documenting data: project- and dataset-level documentation** (*Imperial College London*)
+  [https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/organising-and-describing-data/documenting-data/](https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/organising-and-describing-data/documenting-data/)
+
+* **Research data documentation cheat sheets** (*University of Manchester — Research data explained*)
+  [https://www.education.library.manchester.ac.uk/mre/research-data-explained/](https://www.education.library.manchester.ac.uk/mre/research-data-explained/)
+
+Use these when preparing data for sharing, archiving, or handover.
+
+### README template (minimum standard) {#sec-readme-template}
+
+```text
+# Project / dataset title
+
+## Overview
+- Purpose:
+- Research question(s):
+- Dates covered:
+- Geographic scope (if applicable):
+- Primary outputs:
+
+## Contents and structure
+- data/raw/:
+- data/derived/:
+- analysis/scripts/:
+- outputs/:
+
+## Data sources
+- Source 1:
+- Source 2:
+
+## Processing summary
+- Key scripts:
+- Key transformations:
+- Quality checks:
+
+## Conventions
+- File naming:
+- Versioning approach:
+- Missing value coding:
+
+## Access, governance, and ethics
+- Data sensitivity:
+- Approvals / consent:
+- Access conditions:
+
+## Software and environment (if relevant)
+- Software used:
+- Key packages:
+- Reproducibility notes:
+
+## Contacts
+- Data steward / maintainer:
+- Email / team contact:
+- Last updated:
+```
+
+::: {.callout-note}
+Codebooks and data dictionaries are defined as dataset-level artefacts.
+Use the **Codebook / data dictionary template** in the Resources that support Chapter 5 {#sec-codebook-template}.
+:::
+
+### ELNs
+
+* **Electronic lab notebooks (ELNs): good practice** (*The Turing Way*)
+  [https://book.the-turing-way.org/reproducible-research/rdm/rdm-elns/](https://book.the-turing-way.org/reproducible-research/rdm/rdm-elns/)
+
+* **Ten simple rules for implementing electronic lab notebooks (ELNs)**
+  [https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012170](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012170)
+
+* **What is a risk register: a project manager’s guide (and example)** (*Asana*)
+  [https://asana.com/resources/risk-register](https://asana.com/resources/risk-register)
+
+These resources support chronological recording of analytical judgement, exploration, and deviations from plans.
+
+### SOPs and essential research documents (health contexts)
+
+Particularly relevant for clinical, NHS-linked, or regulated research.
+
+* **Essential research documents (SOP example: UHBW)**
+  [https://www.uhbristol.nhs.uk/media/3960134/sop_014_essential_research_documents_uhbw_v2.1_24.08.20.pdf](https://www.uhbristol.nhs.uk/media/3960134/sop_014_essential_research_documents_uhbw_v2.1_24.08.20.pdf)
+
+* **Essential documents and Investigator Site File (UCLH/JRO SOP)**
+  [https://www.ucl.ac.uk/joint-research-office/sites/joint-research-office/files/uclh_sop_8_essential_documents_and_investigator_site_file_v3_02.09.2019_clean_.pdf](https://www.ucl.ac.uk/joint-research-office/sites/joint-research-office/files/uclh_sop_8_essential_documents_and_investigator_site_file_v3_02.09.2019_clean_.pdf)
+
+These clarify what *must* be documented in regulated environments and how SOPs fit alongside READMEs and ELNs.
+
+
+::: {.callout-tip}
+### Documentation rule of thumb
+
+If a colleague outside your project can understand **what was done, why it was done, and under what constraints**, your documentation is likely sufficient.
+:::
+
+---
+
+## Code quality, testing, and sustainable software {#code-quality}
+
+*Supports Chapter 7*
+
+These resources support **writing clear, testable, and maintainable research code** that can be understood, rerun, and reused over time. They focus on principles and proportionate practices rather than specialist tooling.
+
+### Core guidance on code quality and testing
+
+* **The Turing Way — Code quality**
+  [https://book.the-turing-way.org/reproducible-research/code-quality](https://book.the-turing-way.org/reproducible-research/code-quality)
+
+* **The Turing Way — Testing**
+  [https://book.the-turing-way.org/reproducible-research/testing](https://book.the-turing-way.org/reproducible-research/testing)
+
+### Proportionate best practice for research code
+
+* **Good Enough Practices in Scientific Computing**
+  [https://carpentries-lab.github.io/good-enough-practices/](https://carpentries-lab.github.io/good-enough-practices/)
+
+* **Ten simple rules for reproducible computational research**
+  [https://doi.org/10.1371/journal.pcbi.1003285](https://doi.org/10.1371/journal.pcbi.1003285)
+
+### Writing clear and maintainable code
+
+* **Guidelines for writing good R code**
+  [https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/](https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/)
+
+* **How to get good with R** (Nicola Tierney)
+  [https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/](https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/)
+
+### Documenting code as part of code quality
+
+* **Beginner’s guide to documentation** (*Write the Docs*)
+  [https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/)
+
+* **Tools and techniques for effective code documentation** (GitHub)
+  [https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation](https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation)
+
+### Sustainable and green research software
+
+* **Environmental impact of digital research**
+  [https://book.the-turing-way.org/reproducible-research/reproducible-research-environment](https://book.the-turing-way.org/reproducible-research/reproducible-research-environment)
+
+* **Green Software Principles**
+  [https://principles.green/](https://principles.green/)
+
+* **Measuring and reducing computational cost**
+  [https://www.software.ac.uk/blog/2022-05-24-measuring-environmental-impact-research-software](https://www.software.ac.uk/blog/2022-05-24-measuring-environmental-impact-research-software)
+
+::: {.callout-tip}
+### How to use these resources
+
+Focus first on **readability, structure, basic testing, and documentation**.
+Advanced optimisation or tooling should be driven by demonstrated need, not habit.
+:::
+
+---
+
+## Responsible and inclusive research across the workflow {#responsibility}
+
+*Supports Chapters 4, 6 and 8*
+
+Responsible research involves **clear roles, accountability, and escalation routes**, alongside ethical and inclusive practice. The resources below support decision-making, governance, and responsible restriction.
+
+### Ethical and inclusive research practice
+
+* **Ethical research** (*The Turing Way*)
+  [https://book.the-turing-way.org/ethical-research](https://book.the-turing-way.org/ethical-research)
+
+### Roles, responsibilities, and governance (UCL)
+
+* **UCL Research Ethics Service**
+  [https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-ethics-service](https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-ethics-service)
+
+* **UCL Research Integrity**
+  [https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity](https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity)
+
+* **UCL Data Protection and GDPR guidance**
+  [https://www.ucl.ac.uk/data-protection](https://www.ucl.ac.uk/data-protection)
+
+These pages clarify **who is responsible for what**, and where accountability sits institutionally.
+
+### Trusted research, security, and risk
+
+* **UKRI Trusted Research and Innovation (TR&I)**
+  [https://www.ukri.org/about-us/policies-standards-and-data/good-research-resource-hub/trusted-research-and-innovation/](https://www.ukri.org/about-us/policies-standards-and-data/good-research-resource-hub/trusted-research-and-innovation/)
+
+* **UCL Trusted Research guidance**
+  [https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments](https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments)
+
+Trusted research focuses on identifying and managing risks related to collaboration, data access, and international engagement.
+
+### Training and support
+
+* **UCL Research Integrity training**
+  [https://www.ucl.ac.uk/research/integrity/training](https://www.ucl.ac.uk/research/integrity/training)
+
+* **UCL Data Protection training**
+  [https://www.ucl.ac.uk/data-protection/](https://www.ucl.ac.uk/data-protection/)
+
+* **UCL Library Open Science & Research Support**
+  [https://www.ucl.ac.uk/library/open-science-research-support](https://www.ucl.ac.uk/library/open-science-research-support)
+
+Use these routes when responsibilities or boundaries are unclear. Seeking advice is part of responsible practice.
+
+---
+
+## Automation and workflows within coding practice {#automation-resources}
+
+*Supports Chapter 7*
+
+Automation supports reproducibility by making **dependencies, execution order, and outputs explicit**. These resources provide practical entry points at different levels of complexity.
+
+### Workflow tools (use when complexity increases)
+
+* **targets (R)**
+  [https://docs.ropensci.org/targets/](https://docs.ropensci.org/targets/)
+
+* **Snakemake**
+  [https://snakemake.readthedocs.io/](https://snakemake.readthedocs.io/)
+
+### Reproducible execution environments
+
+* **renv (R)**
+  [https://rstudio.github.io/renv/](https://rstudio.github.io/renv/)
+
+* **conda (Python)**
+  [https://docs.conda.io/](https://docs.conda.io/)
+
+### Further reading
+
+* **Workflow concepts overview**
+  [https://book.the-turing-way.org/reproducible-research/ci/ci-github-actions/#id-1-workflow](https://book.the-turing-way.org/reproducible-research/ci/ci-github-actions/#id-1-workflow)
+  <https://pure.manchester.ac.uk/ws/portalfiles/portal/783113834/2410.03490v1.pdf>
+  <https://tm.web.ox.ac.uk/blog/workflows-how-do-researchers-do-their-research-how-does-collaboration-work>
+
+* **Continuous integration for research** (Advanced / reference)
+  [https://book.the-turing-way.org/reproducible-research/ci](https://book.the-turing-way.org/reproducible-research/ci)
+
+::: {.callout-tip}
+### Proportionate automation
+
+If automation makes your work harder to understand, it is too heavy.
+Start with scripts, add structure when needed, and document decisions as you go.
+:::
+
+---
+
+## Publishing, PIDs, repositories, licensing, and reuse {#pids}
+
+*Supports Chapter 8*
+
+### Persistent identifiers and citation
+
+* **ORCID** — researcher identifiers
+  [https://orcid.org](https://orcid.org)
+
+* **DataCite** — DOIs and dataset metadata
+  [https://datacite.org](https://datacite.org)
+
+* **ROR** — organisational identifiers
+  [https://ror.org](https://ror.org)
+
+* **Zenodo ↔ GitHub: minting DOIs for code releases**
+  [https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content)
+
+* **Citable research objects (The Turing Way)**
+  [https://book.the-turing-way.org/communication/citable](https://book.the-turing-way.org/communication/citable)
+
+* **Data and software citation guidance (The Turing Way)**
+  [https://book.the-turing-way.org/communication/citable/citable-steps](https://book.the-turing-way.org/communication/citable/citable-steps)
+
+### Preprints and early dissemination
+
+* **Preprints overview (The Turing Way)**
+  [https://book.the-turing-way.org/reproducible-research/open/open-access/#rr-open-access-preprints](https://book.the-turing-way.org/reproducible-research/open/open-access/#rr-open-access-preprints)
+
+### Reporting guidelines for health and population research {#sec-reporting-guidelines}
+
+This section provides **orientation and signposting**.
+Detailed application and worked examples belong in Chapter 10.
+
+High-quality research is only useful if it is **reported transparently**. Reporting guidelines specify the **minimum information** needed to describe how a study was designed, conducted, analysed, and interpreted.
+
+More than **250 reporting guidelines** exist, curated by the **EQUATOR Network (Enhancing the QUAlity and Transparency Of health Research)**.
+
+**EQUATOR Network — reporting guidelines library** [@equator2025reporting]
+
+Core guideline families (commonly used):
+
+* **CONSORT** — randomised controlled trials
+* **SPIRIT** — protocols for interventional trials
+* **STROBE** — observational studies (cohort, case–control, cross-sectional)
+* **PRISMA** — systematic reviews and meta-analyses (incl. extensions such as PRISMA-S)
+* **MOOSE** — meta-analyses of observational studies
+* **STARD** — diagnostic accuracy studies
+
+Overview resource (optional): [@grech2024reporting]
+
+### Repositories and access routes
+
+* **UCL Research Data Repository**
+  [https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository](https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository)
+
+* **Choosing a repository (The Turing Way)**
+  [https://book.the-turing-way.org/reproducible-research/rdm/rdm-repository/](https://book.the-turing-way.org/reproducible-research/rdm/rdm-repository/)
+
+### Licensing and reuse (core)
+
+* **Copyright and your research publications (UCL)**
+  [https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-and-your-research-publications](https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-and-your-research-publications)
+
+* **Licensing research outputs (The Turing Way)**
+  [https://book.the-turing-way.org/reproducible-research/licensing](https://book.the-turing-way.org/reproducible-research/licensing)
+
+* **Creative Commons licences (overview)**
+  [https://creativecommons.org/licenses/](https://creativecommons.org/licenses/)
+
+* **Open-source software licences (chooser)**
+  [https://choosealicense.com/](https://choosealicense.com/)
+
+* **Licence compatibility and common pitfalls**
+  [https://book.the-turing-way.org/reproducible-research/licensing/licensing-compatibility](https://book.the-turing-way.org/reproducible-research/licensing/licensing-compatibility)
+
+
+### Copyright training
+
+* **UCL Copyright training**
+  [https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-training](https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-training)
+
+* **UCL Copyright Essentials 2023–2024**
+  [https://lccos.ucl.ac.uk/library/articulate/copyright-essentials/#/](https://lccos.ucl.ac.uk/library/articulate/copyright-essentials/#/)
+
+::: {.callout-tip}
+## Practical licensing rule
+
+Pick a licence **per output type** (text, data/metadata, code) and record it alongside **access conditions**.
+If you cannot licence something, record *why* and what can be shared instead (e.g., metadata + code + synthetic example).
+:::
+
+---
+
+## Repository "minimum viable release" guidance {#sec-repo-guidance}
+
+When you release code/data/materials to a repository, include at least:
+
+* README (purpose, how to run/use, inputs/outputs)
+* CITATION information (e.g., `CITATION.cff`)
+* Licence file
+* Version tag/release notes (what changed)
+* Environment notes (how to recreate the software environment)
+* Data documentation and access statement (even if data are restricted)
+
+Tools:
+
+* **CITATION.cff generator**
+  [https://citation-file-format.github.io/](https://citation-file-format.github.io/)
+
+* **Good Enough Project scaffold**
+  [https://github.com/bvreede/good-enough-project](https://github.com/bvreede/good-enough-project)
+
+---
+
+## Tools and software (pragmatic, not prescriptive) {#sec-tools}
+
+### Reproducible environments
+
+* R: `renv`
+* Python: `conda` / `venv` (choose one per team)
+* Containers (Docker/Singularity): **Advanced / reference** (use when portability is critical)
+
+### Workflow / automation tools (Advanced / reference)
+
+* Snakemake
+  [https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html)
+
+* targets (R)
+  [https://docs.ropensci.org/targets/](https://docs.ropensci.org/targets/)
+
+---
+
+## Research evaluation, credit, and incentives {#sec-credit-assessment}
+
+Why this matters (briefly):
+
+* PIDs and well-described outputs make attribution easier across systems.
+* Clear releases reduce friction for internal reporting and assessment processes.
+
+(Keep this light; point learners to PIDs, ORCID, DOI practice, and good release notes.)
+
+---
+
+## Community and support routes {#sec-community}
+
+* **UCL Office for Open Science & Scholarship**
+  [https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship](https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship)
+
+* **UCL Research Data Management (RDM)**
+  [https://library-guides.ucl.ac.uk/research-data-management](https://library-guides.ucl.ac.uk/research-data-management)
+
+* **UKRN resources**
+  [https://www.ukrn.org/](https://www.ukrn.org/)
+
+* **The Turing Way (book)**
+  [https://book.the-turing-way.org/](https://book.the-turing-way.org/)
+
+---
+
+## Training and further reading {#training}
+
+* **UCL transparency training**
+  [https://www.ucl.ac.uk/research/strategy-environment/research-transparency#training](https://www.ucl.ac.uk/research/strategy-environment/research-transparency#training)
+
+* **The Carpentries**
+  [https://carpentries.org/](https://carpentries.org/)
+
+* **Ten simple rules for reproducible computational research**
+  [https://doi.org/10.1371/journal.pcbi.1003285](https://doi.org/10.1371/journal.pcbi.1003285)
+
+* **Good Enough Practices in Scientific Computing**
+  [https://doi.org/10.1371/journal.pcbi.1005510](https://doi.org/10.1371/journal.pcbi.1005510)
+
+---

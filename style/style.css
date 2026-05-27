@@ -1,0 +1,546 @@
+/* ============================================================
+   Open Research & Reproducibility Workshop
+   Quarto HTML styling
+   UCL visual identity, adapted for an accessible teaching website
+   ------------------------------------------------------------
+   Use this file as: css: style.css
+   in _quarto.yml.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. UCL colour palette and global variables
+   ------------------------------------------------------------ */
+
+:root {
+  /* UCL core colours */
+  --ucl-dark-purple: #361a54;
+  --ucl-white: #fafafa;
+  --ucl-bright-purple: #993bff;
+  --ucl-mid-purple: #ba82ff;
+
+  /* UCL supporting colours */
+  --ucl-light-purple: #ddbdff;
+  --ucl-pale-purple: #eedeff;
+  --ucl-heritage-blue: #30d6ff;
+
+  /* Neutral colours for readable teaching content */
+  --ucl-grey-100: #f7f7f7;
+  --ucl-grey-200: #e6e6e6;
+  --ucl-grey-300: #d0d0d0;
+  --ucl-grey-700: #444444;
+  --ucl-grey-900: #2e2e2e;
+
+  /* Semantic colours */
+  --note-bg: #eef7ff;
+  --tip-bg: #edf7ed;
+  --warning-bg: #fff8e1;
+  --important-bg: #fceef8;
+
+  --tip-accent: #1b5e20;
+  --warning-accent: #f57c00;
+  --important-accent: #c62828;
+
+  /* Layout */
+  --content-radius: 14px;
+  --card-radius: 12px;
+  --soft-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ------------------------------------------------------------
+   2. Base page style
+   ------------------------------------------------------------ */
+
+body {
+  background-color: var(--ucl-white);
+  color: var(--ucl-grey-900);
+  font-family: "UCL Sans", Aptos, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+main {
+  max-width: 980px;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: var(--ucl-dark-purple);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus {
+  color: var(--ucl-bright-purple);
+  text-decoration-thickness: 2px;
+}
+
+
+/* ------------------------------------------------------------
+   3. Headings
+   ------------------------------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--ucl-dark-purple);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-top: 2.4rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 4px solid var(--ucl-heritage-blue);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.35rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+
+/* ------------------------------------------------------------
+   4. Chapter hero block
+   ------------------------------------------------------------ */
+
+.chapter-hero {
+  background: var(--ucl-dark-purple);
+  color: var(--ucl-white);
+  padding: 3rem 3rem 3.4rem 3rem;
+  margin: 0 0 2rem 0;
+  border-top: 18px solid var(--ucl-mid-purple);
+  border-radius: 0 0 var(--content-radius) var(--content-radius);
+  box-shadow: var(--soft-shadow);
+}
+
+.chapter-hero h1,
+.chapter-hero h2,
+.chapter-hero h3,
+.chapter-hero p,
+.chapter-hero li {
+  color: var(--ucl-white);
+}
+
+.chapter-hero h1 {
+  font-size: 1.35rem;
+  margin: 0 0 0.35rem 0;
+  border: none;
+  letter-spacing: 0;
+}
+
+.chapter-hero h2 {
+  font-size: 2.65rem;
+  max-width: 950px;
+  margin: 0 0 1.2rem 0;
+  padding: 0;
+  border: none;
+  letter-spacing: -0.03em;
+}
+
+.chapter-hero p {
+  max-width: 850px;
+  font-size: 1.15rem;
+  margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------
+   5. Chapter overview and summary blocks
+   ------------------------------------------------------------ */
+
+.chapter-overview {
+  background-color: var(--ucl-pale-purple);
+  border-left: 8px solid var(--ucl-bright-purple);
+  border-radius: var(--card-radius);
+  padding: 1.15rem 1.35rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.chapter-overview h3 {
+  margin-top: 0;
+}
+
+.chapter-summary {
+  background-color: var(--ucl-dark-purple);
+  color: var(--ucl-white);
+  border-top: 10px solid var(--ucl-mid-purple);
+  border-radius: var(--content-radius);
+  padding: 1.5rem 1.7rem;
+  margin: 2.8rem 0 1.8rem 0;
+  box-shadow: var(--soft-shadow);
+}
+
+.chapter-summary h2,
+.chapter-summary h3,
+.chapter-summary p,
+.chapter-summary li {
+  color: var(--ucl-white);
+}
+
+.chapter-summary h2 {
+  margin-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+
+/* ------------------------------------------------------------
+   6. Cards and grids
+   ------------------------------------------------------------ */
+
+.definition-grid,
+.practice-grid,
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.definition-card,
+.practice-card,
+.resource-card {
+  background-color: var(--ucl-white);
+  border: 1px solid var(--ucl-grey-200);
+  border-top: 6px solid var(--ucl-bright-purple);
+  border-radius: var(--card-radius);
+  padding: 1rem 1.2rem;
+  box-shadow: var(--soft-shadow);
+}
+
+.definition-card h3,
+.practice-card h3,
+.resource-card h3 {
+  margin-top: 0;
+}
+
+.definition-card p:last-child,
+.practice-card p:last-child,
+.resource-card p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------
+   7. Activity, reflection, figure, and resource boxes
+   ------------------------------------------------------------ */
+
+.activity-box {
+  background-color: var(--ucl-pale-purple);
+  border-left: 8px solid var(--ucl-dark-purple);
+  border-radius: var(--card-radius);
+  padding: 1.25rem 1.45rem;
+  margin: 1.8rem 0;
+}
+
+.reflection-box,
+.figure-box,
+.resource-box {
+  background-color: var(--ucl-white);
+  border: 1px solid var(--ucl-grey-200);
+  border-left: 8px solid var(--ucl-heritage-blue);
+  border-radius: var(--card-radius);
+  padding: 1.25rem 1.45rem;
+  margin: 1.8rem 0;
+  box-shadow: var(--soft-shadow);
+}
+
+.activity-box h3,
+.reflection-box h3,
+.figure-box h3,
+.resource-box h3 {
+  margin-top: 0;
+}
+
+
+/* ------------------------------------------------------------
+   8. Quarto callouts
+   ------------------------------------------------------------ */
+
+.callout {
+  border-radius: var(--card-radius);
+  margin: 1.4rem 0;
+  box-shadow: none;
+}
+
+.callout.callout-style-default {
+  border-left-width: 6px;
+}
+
+.callout-note {
+  background-color: var(--note-bg);
+  border-left-color: var(--ucl-heritage-blue);
+}
+
+.callout-tip {
+  background-color: var(--tip-bg);
+  border-left-color: var(--tip-accent);
+}
+
+.callout-warning {
+  background-color: var(--warning-bg);
+  border-left-color: var(--warning-accent);
+}
+
+.callout-important {
+  background-color: var(--important-bg);
+  border-left-color: var(--important-accent);
+}
+
+.callout-title {
+  font-weight: 700;
+}
+
+
+/* ------------------------------------------------------------
+   9. Lists
+   ------------------------------------------------------------ */
+
+ul,
+ol {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+li > p {
+  margin-bottom: 0.4rem;
+}
+
+
+/* ------------------------------------------------------------
+   10. Tables
+   ------------------------------------------------------------ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  font-size: 0.96rem;
+}
+
+th,
+td {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--ucl-grey-200);
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--ucl-pale-purple);
+  color: var(--ucl-dark-purple);
+  font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--ucl-grey-100);
+}
+
+
+/* ------------------------------------------------------------
+   11. Code and source output
+   ------------------------------------------------------------ */
+
+code {
+  color: var(--ucl-dark-purple);
+  background-color: var(--ucl-pale-purple);
+  padding: 0.1rem 0.25rem;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+
+pre {
+  background-color: var(--ucl-grey-100);
+  border: 1px solid var(--ucl-grey-200);
+  border-radius: 8px;
+  padding: 0.9rem;
+  overflow-x: auto;
+}
+
+pre code {
+  color: var(--ucl-grey-900);
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+}
+
+
+/* ------------------------------------------------------------
+   12. Navbar, sidebar and table of contents
+   ------------------------------------------------------------ */
+
+.navbar {
+  background-color: var(--ucl-dark-purple);
+  border-bottom: 6px solid var(--ucl-mid-purple);
+}
+
+.navbar-title,
+.navbar-nav .nav-link {
+  color: var(--ucl-white) !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--ucl-heritage-blue) !important;
+}
+
+.sidebar,
+.sidebar-navigation {
+  background-color: var(--ucl-grey-100);
+}
+
+.sidebar-title {
+  color: var(--ucl-dark-purple);
+  font-weight: 700;
+  text-transform: none;
+}
+
+#TOC {
+  border-left: 4px solid var(--ucl-heritage-blue);
+  padding-left: 0.8rem;
+}
+
+#TOC a {
+  color: var(--ucl-grey-700);
+  font-weight: 500;
+}
+
+#TOC a:hover {
+  color: var(--ucl-dark-purple);
+}
+
+
+/* ------------------------------------------------------------
+   13. Figures and images
+   ------------------------------------------------------------ */
+
+figure {
+  margin: 1.8rem 0;
+}
+
+figcaption {
+  color: var(--ucl-grey-700);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ------------------------------------------------------------
+   14. Footer
+   ------------------------------------------------------------ */
+
+footer,
+.nav-footer {
+  font-size: 0.88rem;
+  color: var(--ucl-grey-700);
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--ucl-grey-200);
+}
+
+
+/* ------------------------------------------------------------
+   15. Accessibility and print
+   ------------------------------------------------------------ */
+
+:focus-visible {
+  outline: 3px solid var(--ucl-heritage-blue);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .chapter-hero {
+    padding: 2rem 1.4rem 2.4rem 1.4rem;
+  }
+
+  .chapter-hero h2 {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media print {
+  .navbar,
+  .sidebar,
+  #TOC {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000000;
+    background-color: #ffffff;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  .chapter-hero,
+  .chapter-summary {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+  }
+
+  .chapter-hero h1,
+  .chapter-hero h2,
+  .chapter-hero p,
+  .chapter-summary h2,
+  .chapter-summary p,
+  .chapter-summary li {
+    color: #000000;
+  }
+}

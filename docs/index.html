@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Practical guidance for open and reproducible research">
 
 <title>Open Research &amp; Reproducibility</title>
 <style>
@@ -43,11 +42,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -65,19 +64,47 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Overview</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Before we start</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -87,14 +114,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -104,62 +126,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,21 +189,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#before-we-start" id="toc-before-we-start" class="nav-link active" data-scroll-target="#before-we-start">Before we start</a>
+  <ul class="collapse">
+  <li><a href="#about-these-workshop-materials" id="toc-about-these-workshop-materials" class="nav-link" data-scroll-target="#about-these-workshop-materials">About these workshop materials</a></li>
+  </ul></li>
+  <li><a href="#purpose-of-this-resource" id="toc-purpose-of-this-resource" class="nav-link" data-scroll-target="#purpose-of-this-resource">Purpose of this resource</a></li>
+  <li><a href="#how-to-use-these-materials" id="toc-how-to-use-these-materials" class="nav-link" data-scroll-target="#how-to-use-these-materials">How to use these materials</a></li>
+  <li><a href="#what-the-workshop-covers" id="toc-what-the-workshop-covers" class="nav-link" data-scroll-target="#what-the-workshop-covers">What the workshop covers</a></li>
+  <li><a href="#acknowledgement-and-sources" id="toc-acknowledgement-and-sources" class="nav-link" data-scroll-target="#acknowledgement-and-sources">Acknowledgement and sources</a></li>
+  <li><a href="#licence" id="toc-licence" class="nav-link" data-scroll-target="#licence">Licence</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Open Research &amp; Reproducibility</h1>
-<p class="subtitle lead">A practical guide for health and population researchers</p>
+<p class="subtitle lead">About these workshop materials</p>
 </div>
 
-<div>
-  <div class="description">
-    Practical guidance for open and reproducible research
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -204,98 +227,67 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome. This site supports the <strong>Open Research &amp; Reproducibility</strong> workshop for <strong>Great Ormond Street Institute of Child Health</strong> researchers and staff.<br>
-It is designed to be <strong>practical</strong>, <strong>proportionate</strong>, and to <strong>signpost authoritative guidance</strong> where more detail is needed.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Who this is for
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>PhD researchers, early career researchers, postdoctoral researchers, PIs, and professional staff who want research that is <strong>transparent</strong>, <strong>reusable</strong>, and <strong>fit for scrutiny</strong>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-What this course covers
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Structuring projects to ensure data, code, and decisions are <strong>traceable</strong> and <strong>reusable</strong>.</li>
-<li>Applying <strong>FAIR principles</strong> proportionately, including when data cannot be shared openly.</li>
-<li>Documenting research clearly using <strong>READMEs</strong>, <strong>data dictionaries</strong>, <strong>ELNs</strong>, and <strong>SOPs</strong>.</li>
-<li>Improving <strong>code quality</strong> and <strong>reproducibility</strong> without over-engineering.</li>
-<li>Publishing research outputs with appropriate <strong>identifiers</strong>, <strong>licences</strong>, and <strong>availability statements</strong>. .</li>
-</ul>
-</div>
-</div>
-<section id="how-to-use-this-site" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-this-site">How to use this site</h2>
+<section id="before-we-start" class="level1 chapter-hero">
+<h1>Before we start</h1>
+<section id="about-these-workshop-materials" class="level2">
+<h2 class="anchored" data-anchor-id="about-these-workshop-materials">About these workshop materials</h2>
+<p>These materials support the <strong>Open Research &amp; Reproducibility workshop</strong>. They were developed for use at UCL, but much of the content is relevant to researchers, students, analysts and research support staff working in other settings.</p>
+</section>
+</section>
+<section id="purpose-of-this-resource" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="purpose-of-this-resource">Purpose of this resource</h3>
+<p>The aim is not to provide a complete guide to open research. Instead, this resource brings together practical principles, examples, prompts and links that can help you make your own research easier to understand, check, repeat and build on.</p>
+</section>
+<section id="how-to-use-these-materials" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to use these materials</h2>
+<p>This resource is designed to accompany the workshop, but it can also be used afterwards as a reference. You do not need to read it all in one go. Each chapter focuses on one part of the research workflow and includes practical points that you can return to when planning, analysing, documenting or sharing your work.</p>
+<p>The chapters are written as support material rather than as slides. This means the HTML version contains more explanation than the live presentation, so that it remains useful after the workshop.</p>
+</section>
+<section id="what-the-workshop-covers" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-workshop-covers">What the workshop covers</h2>
+<p>The workshop is structured around a practical research workflow:</p>
 <ol type="1">
-<li>Work through <strong>Chapters 1–10</strong> in order (approximately 15–25 minutes per chapter).<br>
-</li>
-<li>Use <strong>Resources and Further Reading</strong> for templates, checklists, and UCL-specific guidance.<br>
-</li>
-<li>Apply the practices to one live project as you go (your project README is the anchor).<br>
-</li>
-<li>Use <strong>Chapter 11</strong> to consolidate learning and identify next steps.</li>
+<li><p><strong>Why open research and reproducibility matter</strong><br>
+What reproducibility means in practice, and why openness is not the same as making everything public.</p></li>
+<li><p><strong>FAIR basics</strong><br>
+How to make outputs findable, accessible, interoperable and reusable, including when data cannot be openly shared.</p></li>
+<li><p><strong>Project organisation and continuity</strong><br>
+Folder structures, file naming, raw and derived data, lightweight versioning and project-level orientation.</p></li>
+<li><p><strong>Data Management Plans</strong><br>
+DMPs as living documents that record decisions about data, roles, storage, access, sharing and restrictions.</p></li>
+<li><p><strong>Organising and tidying data</strong><br>
+Data-file structure, spreadsheet risks, tidy data, missingness, exclusions and data dictionaries.</p></li>
+<li><p><strong>Documentation and protocols</strong><br>
+READMEs, metadata, decision logs, changelogs, SOPs, ELNs, protocols and reporting guidance.</p></li>
+<li><p><strong>Coding for reproducible research</strong><br>
+Readable code, checks, testing, versioning, light automation, sustainable computing and R Markdown/Quarto examples.</p></li>
+<li><p><strong>Publishing, PIDs and preparing for reuse</strong><br>
+Repositories, persistent identifiers, preprints, licences, availability statements and responsible reuse.</p></li>
+<li><p><strong>Wrap-up and next steps</strong><br>
+A practical action plan for applying the workshop to your own work.</p></li>
 </ol>
 </section>
-<section id="chapters" class="level2">
-<h2 class="anchored" data-anchor-id="chapters">Chapters</h2>
+<section id="acknowledgement-and-sources" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgement-and-sources">Acknowledgement and sources</h2>
+<p>These workshop materials were originally co-developed by <strong>Amanda Miotto</strong> and <strong>Adam Partridge</strong> as part of the <em>Reproducible Research</em> training materials:</p>
+<p><a href="https://ampartridge.github.io/ReproducibleResearch/" class="uri">https://ampartridge.github.io/ReproducibleResearch/</a></p>
+<p>This version adapts and builds on several openly available resources, including:</p>
 <ul>
-<li><a href="./01-why-open.html">Chapter 1 - Why Open?</a><br>
-</li>
-<li><a href="./02-fair-basics.html">Chapter 2 - FAIR basics</a><br>
-</li>
-<li><a href="./03-project-mgmt.html">Chapter 3 - Project organisation and continuity</a><br>
-</li>
-<li><a href="./04-dmp.html">Chapter 4 — Data Management Plans (UCL)</a><br>
-</li>
-<li><a href="./05-organise-tidy.html">Chapter 5 - Organising and tidying data</a><br>
-</li>
-<li><a href="./06-docs-eln-sops.html">Chapter 6 — Documentation, ELNs &amp; SOPs</a><br>
-</li>
-<li><a href="./07-code-quality-testing.html">Chapter 7 — Code quality &amp; testing</a><br>
-</li>
-<li><a href="./08-s-responsibility.html">Chapter 8 — Responsible &amp; sustainable research</a><br>
-</li>
-<li><a href="./09-automation.html">Chapter 9 — Automation &amp; simple workflows</a><br>
-</li>
-<li><a href="./10-publishing-pids.html">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</a><br>
-</li>
-<li><a href="./11-wrap-up.html">Chapter 11 — Wrap-up &amp; next steps</a></li>
+<li><p><em>Good Enough Practices in Scientific Computing</em> by Wilson et al.&nbsp;(2017), available via The Carpentries:<br>
+<a href="https://carpentries-lab.github.io/good-enough-practices/" class="uri">https://carpentries-lab.github.io/good-enough-practices/</a></p></li>
+<li><p><em>The Turing Way: A handbook for reproducible, ethical and collaborative research</em>:<br>
+<a href="https://the-turing-way.netlify.app/" class="uri">https://the-turing-way.netlify.app/</a></p></li>
+<li><p>Additional UCL, UK Data Service, CESSDA, Cambridge, OpenAIRE, ARDC, DCC, EQUATOR, ORCID, DataCite and other open research resources signposted throughout the chapters.</p></li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Feedback and corrections
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you spot an error or want to suggest an improvement, please contact joana.cruz@ucl.ac.uk.</p>
-</div>
-</div>
+<p>Where material has been adapted directly, this is acknowledged in the relevant section.</p>
 </section>
-<section id="licence-and-citation" class="level2">
-<h2 class="anchored" data-anchor-id="licence-and-citation">Licence and citation</h2>
-<p>Content is <strong>CC BY 4.0</strong> unless otherwise stated. Please cite original sources linked in each chapter.<br>
-If this site has a DOI (or includes a <code>CITATION.cff</code>), add it below.</p>
-<pre class="text"><code>Suggested citation:
-Open Research &amp; Reproducibility (PPP · UCL ICH). Version &lt;v&gt;, &lt;year&gt;.
-CC BY 4.0. Available at: &lt;site URL or DOI&gt;</code></pre>
+<section id="licence" class="level2">
+<h2 class="anchored" data-anchor-id="licence">Licence</h2>
+<p>This adapted workshop resource is shared under a <strong>Creative Commons Attribution 4.0 International Licence (CC BY 4.0)</strong>, unless otherwise stated.</p>
+<p>Please cite this resource as:</p>
+<blockquote class="blockquote">
+<p>Cruz, J. <em>Open Research &amp; Reproducibility Workshop – day 1</em>. (2026). DOI: <a href="https://doi.org/10.17605/OSF.IO/WAVCE" class="uri">https://doi.org/10.17605/OSF.IO/WAVCE</a></p>
+</blockquote>
 
 
 </section>
@@ -532,6 +524,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
@@ -539,14 +545,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./01-why-open.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 1 - Why Open?</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

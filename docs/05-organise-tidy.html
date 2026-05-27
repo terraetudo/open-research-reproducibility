@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Research &amp; Reproducibility - Chapter 5 - Organising and tidying data</title>
+<title>Open Research &amp; Reproducibility - Chapter 5 — Organising and tidying data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,11 +62,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -82,21 +82,52 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-organise-tidy.html"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-organise-tidy.html"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -106,14 +137,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -123,62 +149,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,13 +212,61 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-5" id="toc-chapter-5" class="nav-link active" data-scroll-target="#chapter-5">Chapter 5</a>
+  <ul class="collapse">
+  <li><a href="#organising-and-tidying-data" id="toc-organising-and-tidying-data" class="nav-link" data-scroll-target="#organising-and-tidying-data">Organising and tidying data</a></li>
+  </ul></li>
+  <li><a href="#what-this-chapter-does" id="toc-what-this-chapter-does" class="nav-link" data-scroll-target="#what-this-chapter-does">What this chapter does</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#if-the-data-are-messy-everything-is-fragile" id="toc-if-the-data-are-messy-everything-is-fragile" class="nav-link" data-scroll-target="#if-the-data-are-messy-everything-is-fragile">If the data are messy, everything is fragile</a>
+  <ul class="collapse">
+  <li><a href="#quick-reflection" id="toc-quick-reflection" class="nav-link" data-scroll-target="#quick-reflection">Quick reflection</a></li>
+  </ul></li>
+  <li><a href="#what-makes-a-dataset-usable" id="toc-what-makes-a-dataset-usable" class="nav-link" data-scroll-target="#what-makes-a-dataset-usable">What makes a dataset usable?</a></li>
+  <li><a href="#spreadsheet-risks" id="toc-spreadsheet-risks" class="nav-link" data-scroll-target="#spreadsheet-risks">Spreadsheet risks</a></li>
+  <li><a href="#a-minimum-spreadsheet-standard" id="toc-a-minimum-spreadsheet-standard" class="nav-link" data-scroll-target="#a-minimum-spreadsheet-standard">A minimum spreadsheet standard</a>
+  <ul class="collapse">
+  <li><a href="#from-human-readable-to-analysis-ready" id="toc-from-human-readable-to-analysis-ready" class="nav-link" data-scroll-target="#from-human-readable-to-analysis-ready">From human-readable to analysis-ready</a></li>
+  </ul></li>
+  <li><a href="#tidy-data-the-core-idea" id="toc-tidy-data-the-core-idea" class="nav-link" data-scroll-target="#tidy-data-the-core-idea">Tidy data: the core idea</a></li>
+  <li><a href="#raw-cleaned-and-analysis-ready-data" id="toc-raw-cleaned-and-analysis-ready-data" class="nav-link" data-scroll-target="#raw-cleaned-and-analysis-ready-data">Raw, cleaned and analysis-ready data</a></li>
+  <li><a href="#data-provenance-and-lineage" id="toc-data-provenance-and-lineage" class="nav-link" data-scroll-target="#data-provenance-and-lineage">Data provenance and lineage</a>
+  <ul class="collapse">
+  <li><a href="#a-simple-data-lineage-record" id="toc-a-simple-data-lineage-record" class="nav-link" data-scroll-target="#a-simple-data-lineage-record">A simple data lineage record</a></li>
+  </ul></li>
+  <li><a href="#missing-data-and-exclusions" id="toc-missing-data-and-exclusions" class="nav-link" data-scroll-target="#missing-data-and-exclusions">Missing data and exclusions</a></li>
+  <li><a href="#exclusions-and-filtering-decisions" id="toc-exclusions-and-filtering-decisions" class="nav-link" data-scroll-target="#exclusions-and-filtering-decisions">Exclusions and filtering decisions</a></li>
+  <li><a href="#data-dictionaries-and-codebooks" id="toc-data-dictionaries-and-codebooks" class="nav-link" data-scroll-target="#data-dictionaries-and-codebooks">Data dictionaries and codebooks</a>
+  <ul class="collapse">
+  <li><a href="#minimal-data-dictionary-example" id="toc-minimal-data-dictionary-example" class="nav-link" data-scroll-target="#minimal-data-dictionary-example">Minimal data dictionary example</a></li>
+  </ul></li>
+  <li><a href="#basic-checks-before-analysis" id="toc-basic-checks-before-analysis" class="nav-link" data-scroll-target="#basic-checks-before-analysis">Basic checks before analysis</a></li>
+  <li><a href="#messy-data-activity" id="toc-messy-data-activity" class="nav-link" data-scroll-target="#messy-data-activity">Messy data activity</a>
+  <ul class="collapse">
+  <li><a href="#activity-identify-the-risks" id="toc-activity-identify-the-risks" class="nav-link" data-scroll-target="#activity-identify-the-risks">Activity: identify the risks</a></li>
+  </ul></li>
+  <li><a href="#minimum-viable-practice" id="toc-minimum-viable-practice" class="nav-link" data-scroll-target="#minimum-viable-practice">Minimum viable practice</a></li>
+  <li><a href="#beginner-and-advanced-next-steps" id="toc-beginner-and-advanced-next-steps" class="nav-link" data-scroll-target="#beginner-and-advanced-next-steps">Beginner and advanced next steps</a>
+  <ul class="collapse">
+  <li><a href="#choose-one-action" id="toc-choose-one-action" class="nav-link" data-scroll-target="#choose-one-action">Choose one action</a></li>
+  </ul></li>
+  <li><a href="#recommended-resources-for-this-chapter" id="toc-recommended-resources-for-this-chapter" class="nav-link" data-scroll-target="#recommended-resources-for-this-chapter">Recommended resources for this chapter</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What comes next?</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/05-organise-tidy.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></h1>
+<h1 class="title"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></h1>
 </div>
 
 
@@ -217,137 +281,638 @@ div.csl-indent {
 
 </header>
 
-<section id="sec-organise" class="level1">
-<h1>Organising and tidying data</h1>
+<section id="chapter-5" class="level1 chapter-hero">
+<h1>Chapter 5</h1>
+<section id="organising-and-tidying-data" class="level2">
+<h2 class="anchored" data-anchor-id="organising-and-tidying-data">Organising and tidying data</h2>
+<p>This chapter moves from the project folder to the data file itself. The aim is to make datasets easier to check, analyse, document and reuse, without pretending that all real-world data arrive clean or simple.</p>
+</section>
+</section>
+<section id="what-this-chapter-does" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="what-this-chapter-does">What this chapter does</h3>
+<p>Chapter 3 focused on where project materials live: folders, filenames, raw and derived files, and lightweight versioning. Chapter 4 focused on the Data Management Plan as the record of decisions, responsibilities and constraints.</p>
+<p>This chapter focuses on the <strong>structure and quality of the data files themselves</strong>. It covers common spreadsheet risks, tidy data principles, missing data, exclusions, data dictionaries and simple checks that make data easier to analyse and defend.</p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you should be able to:</p>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>explain why data organisation is central to reproducibility and reuse;</li>
-<li>distinguish raw, cleaned, and derived data in practice;</li>
-<li>understand data provenance and why it matters;</li>
-<li>document missingness, exclusions, and transformations proportionately;</li>
-<li>locate minimum standards, examples, and templates for organised data.</li>
+<li>explain why messy data make analysis fragile;</li>
+<li>recognise common spreadsheet and data-entry risks;</li>
+<li>describe the core principles of tidy data;</li>
+<li>distinguish raw, cleaned and analysis-ready data without repeating the full project-organisation chapter;</li>
+<li>document missingness, exclusions and filtering decisions;</li>
+<li>identify minimum checks that should be carried out before analysis;</li>
+<li>create or improve a simple data dictionary/codebook.</li>
 </ul>
-<p>This module builds on data planning <a href="./04-dmp.html">Chapter 4 — Data Management Plans (UCL)</a> and supports later modules on documentation, code, automation, and publishing.<br>
-<strong>All concrete examples, templates, and minimum-standard artefacts are provided centrally in the <a href="./resources.html">Resources and Further Reading</a> chapter.</strong></p>
-<hr>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boundary with other chapters
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This chapter is <strong>not</strong> mainly about folder structures or file naming. Those are covered in Chapter 3. It is also not mainly about governance, storage or access. Those are covered in Chapter 4.</p>
+<p>Here, the question is simpler: <strong>is the dataset itself structured so that it can be understood, checked and analysed safely?</strong></p>
+</div>
+</div>
 </section>
-<section id="why-data-organisation-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-data-organisation-matters">Why data organisation matters</h2>
-<p>Poorly organised data are difficult to understand, validate, or reuse—even by the original researcher. Organisation choices made early in a project shape how easily analyses can be checked, rerun, or extended later.</p>
-<p>Good data organisation:</p>
+<section id="if-the-data-are-messy-everything-is-fragile" class="level2">
+<h2 class="anchored" data-anchor-id="if-the-data-are-messy-everything-is-fragile">If the data are messy, everything is fragile</h2>
+<p>Messy data make research harder to check, rerun, defend and reuse. Problems that look small during data entry can become substantial later, especially when data are linked, cleaned, merged or analysed by someone else.</p>
+<p>Common consequences include:</p>
 <ul>
-<li>reduces ambiguity about what files represent;</li>
-<li>preserves provenance and interpretability;</li>
-<li>supports efficient analysis and collaboration;</li>
-<li>reduces the risk of accidental data loss or misuse.</li>
+<li>analysing the wrong version of a dataset;</li>
+<li>treating missing values as real values;</li>
+<li>mixing text and numeric values in the same column;</li>
+<li>losing information that was stored only in formatting or comments;</li>
+<li>introducing manual corrections that cannot be reproduced;</li>
+<li>making code more complicated than it needs to be.</li>
 </ul>
-<p>These benefits apply regardless of whether data can ultimately be shared openly.</p>
+<p>Data Carpentry emphasises that small changes in spreadsheet formatting can improve efficiency and reliability when data are later cleaned and analysed<span class="citation" data-cites="datacarpentry_spreadsheet_errors"><sup><a href="#ref-datacarpentry_spreadsheet_errors" role="doc-biblioref">1</a></sup></span>.</p>
+<section id="quick-reflection" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="quick-reflection">Quick reflection</h3>
+<p>Have you ever analysed, cleaned or shared the wrong version of a dataset?</p>
+<p>If so, what made the error possible?</p>
+<ul>
+<li>unclear filename;</li>
+<li>mixed raw and cleaned data;</li>
+<li>missing documentation;</li>
+<li>manual edits;</li>
+<li>several versions stored in different places;</li>
+<li>no clear owner or approval point.</li>
+</ul>
 </section>
-<section id="raw-cleaned-and-derived-data" class="level2">
-<h2 class="anchored" data-anchor-id="raw-cleaned-and-derived-data">Raw, cleaned, and derived data</h2>
-<p>A useful organising principle is to <strong>separate data by state</strong>:</p>
+</section>
+<section id="what-makes-a-dataset-usable" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-a-dataset-usable">What makes a dataset usable?</h2>
+<p>A usable dataset is not necessarily perfect. It is one that is sufficiently clear, consistent and documented for its intended purpose.</p>
+<p>A usable dataset should make the following visible:</p>
+<div class="practice-grid">
+<section id="structure" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="structure">Structure</h3>
+<p>Rows, columns and tables have clear meanings.</p>
+</section>
+<section id="meaning" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="meaning">Meaning</h3>
+<p>Variables, units, categories and codes are documented.</p>
+</section>
+<section id="provenance" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="provenance">Provenance</h3>
+<p>It is clear where the data came from and how they changed.</p>
+</section>
+<section id="quality" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="quality">Quality</h3>
+<p>Missing values, exclusions and known limitations are recorded.</p>
+</section>
+</div>
+<p>White and colleagues describe practical data-reuse principles that are also useful for the original research team: provide metadata, preserve an unprocessed form of the data, use standard formats, use good null values, and make the data easy to import and understand<span class="citation" data-cites="white2013reuse"><sup><a href="#ref-white2013reuse" role="doc-biblioref">2</a></sup></span>.</p>
+</section>
+<section id="spreadsheet-risks" class="level2">
+<h2 class="anchored" data-anchor-id="spreadsheet-risks">Spreadsheet risks</h2>
+<p>Spreadsheets are useful for viewing, checking and small-scale data entry. They are also risky when they become the main place where cleaning, coding, analysis and documentation happen invisibly.</p>
+<p>Common risks include:</p>
 <ul>
-<li><strong>Raw data</strong>: as collected or received; never overwritten.</li>
-<li><strong>Cleaned data</strong>: errors corrected, formats standardised.</li>
-<li><strong>Derived data</strong>: variables or datasets created during analysis.</li>
+<li><strong>mixed data types</strong>: numbers, dates and text in the same column;</li>
+<li><strong>hidden formatting</strong>: colours, font styles or cell comments used to convey meaning;</li>
+<li><strong>manual edits</strong>: changes made by hand without a script or log;</li>
+<li><strong>implicit missing values</strong>: blanks, <code>NA</code>, <code>N/A</code>, <code>0</code>, <code>-999</code> or text used inconsistently;</li>
+<li><strong>merged cells</strong>: useful for visual display but difficult for analysis software;</li>
+<li><strong>multiple tables in one sheet</strong>: visually convenient but machine-unfriendly;</li>
+<li><strong>multiple tabs with inconsistent structures</strong>: hard to combine and check later;</li>
+<li><strong>dates automatically changed by software</strong>.</li>
 </ul>
-<p>Keeping these states distinct preserves provenance and makes it possible to reproduce analyses from source data when needed.</p>
-<p>This separation should be reflected both in folder structure and in documentation. Canonical structures are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Spreadsheet rule of thumb
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use spreadsheets for inspection and controlled data entry where appropriate. Avoid using formatting, colours, comments or manual edits as the only record of information that matters for analysis.</p>
+</div>
+</div>
+</section>
+<section id="a-minimum-spreadsheet-standard" class="level2">
+<h2 class="anchored" data-anchor-id="a-minimum-spreadsheet-standard">A minimum spreadsheet standard</h2>
+<p>Where spreadsheets are used, keep them boring and machine-readable.</p>
+<p>A minimum standard is:</p>
+<ul>
+<li>one table per sheet;</li>
+<li>one header row;</li>
+<li>one variable per column;</li>
+<li>one observation per row;</li>
+<li>no merged cells;</li>
+<li>no blank rows or columns inside the data table;</li>
+<li>no totals, graphs or notes embedded in the data table;</li>
+<li>explicit and documented missing-value codes;</li>
+<li>dates entered consistently, preferably using ISO format <code>YYYY-MM-DD</code>;</li>
+<li>export or archive an analysis version as <code>.csv</code> where appropriate.</li>
+</ul>
+<section id="from-human-readable-to-analysis-ready" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="from-human-readable-to-analysis-ready">From human-readable to analysis-ready</h3>
+<p>A human-readable spreadsheet might combine address information in one cell:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>address</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>170 Kessels Road Nathan Qld 4111 Australia</td>
+</tr>
+<tr class="even">
+<td>1 Parklands Dr, Southport QLD 4215</td>
+</tr>
+</tbody>
+</table>
+<p>An analysis-ready table separates the components that may need to be checked, cleaned or linked:</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">street_number</th>
+<th>street_name</th>
+<th>street_type</th>
+<th>suburb</th>
+<th>state</th>
+<th style="text-align: right;">postcode</th>
+<th>country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">170</td>
+<td>Kessels</td>
+<td>Road</td>
+<td>Nathan</td>
+<td>Qld</td>
+<td style="text-align: right;">4111</td>
+<td>Australia</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td>Parklands</td>
+<td>Drive</td>
+<td>Southport</td>
+<td>Qld</td>
+<td style="text-align: right;">4215</td>
+<td>Australia</td>
+</tr>
+</tbody>
+</table>
+<p>This does not mean every dataset must be split into the smallest possible units. It means the structure should reflect how the data will be checked, analysed and reused.</p>
+</section>
+</section>
+<section id="tidy-data-the-core-idea" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-the-core-idea">Tidy data: the core idea</h2>
+<p>Tidy data is a simple but powerful way to structure rectangular datasets. Wickham summarises tidy data as a structure where each variable is a column, each observation is a row, and each type of observational unit forms a table<span class="citation" data-cites="wickham2014tidy"><sup><a href="#ref-wickham2014tidy" role="doc-biblioref">3</a></sup></span>.</p>
+<p>For practical purposes, start with these three rules:</p>
+<div class="definition-grid">
+<section id="one-variable-per-column" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="one-variable-per-column">One variable per column</h3>
+<p>Each column should contain one kind of information, such as date of birth, postcode, exposure value, or outcome status.</p>
+</section>
+<section id="one-observation-per-row" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="one-observation-per-row">One observation per row</h3>
+<p>Each row should represent one unit of analysis: for example, one participant, one school, one measurement, one visit, or one time period.</p>
+</section>
+<section id="one-value-per-cell" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="one-value-per-cell">One value per cell</h3>
+<p>Avoid storing multiple pieces of information in one cell when they may need to be analysed separately.</p>
+</section>
+</div>
+<p>Tidy data are easier to search, filter, join, visualise and analyse. They also reduce the amount of special-purpose code needed to interpret the file.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tidy does not mean final
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A tidy dataset is not automatically correct, complete or analysis-ready. It still needs provenance, definitions, quality checks and documentation.</p>
+</div>
+</div>
+</section>
+<section id="raw-cleaned-and-analysis-ready-data" class="level2">
+<h2 class="anchored" data-anchor-id="raw-cleaned-and-analysis-ready-data">Raw, cleaned and analysis-ready data</h2>
+<p>Chapter 3 introduced the principle of separating raw, derived and output files. In this chapter, the same principle matters because a dataset can change through several states.</p>
+<div class="practice-grid">
+<section id="raw-data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="raw-data">Raw data</h3>
+<p>The data as received, collected or extracted. These should be protected from overwrite.</p>
+</section>
+<section id="cleaned-data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="cleaned-data">Cleaned data</h3>
+<p>Data where formats, labels and obvious inconsistencies have been standardised. Cleaning steps should be scripted or documented.</p>
+</section>
+<section id="analysis-ready-data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="analysis-ready-data">Analysis-ready data</h3>
+<p>Data prepared for a specific analysis, with exclusions, derived variables and linkage decisions applied.</p>
+</section>
+</div>
+<p>The important point is not the exact folder name. The important point is that someone can tell <strong>which version is closest to the original source</strong>, <strong>which version has been cleaned</strong>, and <strong>which version was used for a specific result</strong>.</p>
 </section>
 <section id="data-provenance-and-lineage" class="level2">
 <h2 class="anchored" data-anchor-id="data-provenance-and-lineage">Data provenance and lineage</h2>
-<p><strong>Data provenance</strong> describes where data come from, how they change, and how outputs are produced.</p>
-<p>Recording provenance typically involves:</p>
+<p>Data provenance describes where data came from, what happened to them, and how outputs were produced. CESSDA frames data-file structure as part of organising and documenting research data so that files remain understandable over time<span class="citation" data-cites="cessda_data_file_structure"><sup><a href="#ref-cessda_data_file_structure" role="doc-biblioref">4</a></sup></span>.</p>
+<p>For each important dataset, you should be able to answer:</p>
 <ul>
-<li>documenting transformation steps and assumptions;</li>
-<li>linking derived outputs to scripts or workflows;</li>
-<li>recording versions and reasons for change.</li>
+<li>What is the original source?</li>
+<li>Who provided or created it?</li>
+<li>When was it received, extracted or generated?</li>
+<li>What cleaning steps were applied?</li>
+<li>What variables were derived?</li>
+<li>What records were excluded?</li>
+<li>Which script or workflow created the analysis-ready version?</li>
+<li>Which outputs or publications used this version?</li>
 </ul>
-<p>Explicit provenance supports audit, peer review, reuse, and defensibility. It is particularly important in regulated, sensitive, or administrative data contexts, where data access may be restricted but analytical transparency is still expected.</p>
-<p>Key transformations (recoding, aggregation, linkage) should be summarised in documentation even when implemented in code.</p>
+<section id="a-simple-data-lineage-record" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="a-simple-data-lineage-record">A simple data lineage record</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Raw data received] --&gt; B[Cleaning script]
+    B --&gt; C[Cleaned dataset]
+    C --&gt; D[Derivation / linkage]
+    D --&gt; E[Analysis-ready dataset]
+    E --&gt; F[Tables, figures, model outputs]
+
+    B -. record decisions .-&gt; G[Decision log]
+    D -. record exclusions .-&gt; G
+    E -. describe variables .-&gt; H[Data dictionary]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>This is the minimum story someone needs in order to understand how the analysis dataset was produced.</p>
 </section>
-<section id="tidy-data-principles-practical-view" class="level2">
-<h2 class="anchored" data-anchor-id="tidy-data-principles-practical-view">Tidy data principles (practical view)</h2>
-<p>Tidy data conventions aim to make datasets easier to analyse and interpret<span class="citation" data-cites="qut_naming_convention2019 aberdeen_file_naming2017"><sup><a href="#ref-qut_naming_convention2019" role="doc-biblioref">1</a>,<a href="#ref-aberdeen_file_naming2017" role="doc-biblioref">2</a></sup></span>. In practice, this often means:</p>
-<ul>
-<li>one variable per column;</li>
-<li>one observation per row;</li>
-<li>consistent naming and coding conventions.</li>
-</ul>
-<p>Not all data can be perfectly tidy, and perfection is not the goal. Moving <em>towards</em> these principles improves legibility and reduces errors, even when constraints apply.</p>
-<p>Further guidance and examples are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
 </section>
 <section id="missing-data-and-exclusions" class="level2">
 <h2 class="anchored" data-anchor-id="missing-data-and-exclusions">Missing data and exclusions</h2>
-<p>Handling missing data is not only technical but interpretive.</p>
+<p>Missing data are not just a technical nuisance. They can change the interpretation of results, the analytic sample and the conclusions.</p>
 <p>Good practice includes:</p>
 <ul>
-<li>using explicit missing value codes;</li>
-<li>documenting reasons for missingness where known;</li>
-<li>recording exclusions and filtering decisions.</li>
+<li>using explicit and consistent missing-value codes;</li>
+<li>distinguishing true zero from missing or not applicable;</li>
+<li>documenting why data are missing when known;</li>
+<li>recording exclusions and filtering decisions;</li>
+<li>reporting how missingness was handled in analysis.</li>
 </ul>
-<p>This information is often as important as the observed data itself and should be captured in documentation rather than inferred from code alone. Minimum documentation templates are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+<p>Kang describes missing data as a problem that requires attention to the pattern and mechanism of missingness, as well as the method used to handle it<span class="citation" data-cites="kang2013missing"><sup><a href="#ref-kang2013missing" role="doc-biblioref">5</a></sup></span>. For this workshop, the main message is practical: <strong>do not let missingness become invisible</strong>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Missing values need definitions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A blank cell, <code>0</code>, <code>NA</code>, <code>N/A</code>, <code>-999</code>, <code>unknown</code> and <code>not applicable</code> do not mean the same thing unless you define them.</p>
+<p>In R, <code>NA</code> is often appropriate for missing values. In a shared dataset or spreadsheet, the meaning of any missing-value code should be stated in the data dictionary.</p>
+</div>
+</div>
 </section>
-<section id="file-formats-naming-and-versioning" class="level2">
-<h2 class="anchored" data-anchor-id="file-formats-naming-and-versioning">File formats, naming, and versioning</h2>
-<p>Choices about formats, file names, and versions affect both longevity and reproducibility.</p>
-<p>At a principle level, organised data should:</p>
+<section id="exclusions-and-filtering-decisions" class="level2">
+<h2 class="anchored" data-anchor-id="exclusions-and-filtering-decisions">Exclusions and filtering decisions</h2>
+<p>Exclusions should be visible and justifiable. This is particularly important when exclusions affect sample size, bias, precision or the interpretation of inequalities.</p>
+<p>A minimum record should include:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exclusion rule</td>
+<td>Exclude records with missing postcode</td>
+</tr>
+<tr class="even">
+<td>Rationale</td>
+<td>Exposure assignment requires geocoding</td>
+</tr>
+<tr class="odd">
+<td>Number excluded</td>
+<td>184 records, 3.2% of sample</td>
+</tr>
+<tr class="even">
+<td>Timing</td>
+<td>Applied before exposure linkage</td>
+</tr>
+<tr class="odd">
+<td>Script or decision record</td>
+<td><code>02_clean_addresses.R</code>, decision log entry 2025-02-12</td>
+</tr>
+<tr class="even">
+<td>Sensitivity check</td>
+<td>Results compared with missing-postcode group described separately</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avoid hidden exclusions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not delete rows manually and leave no trace. Use a scripted filter where possible, and record the rule and rationale in a decision log, README or analysis note.</p>
+</div>
+</div>
+</section>
+<section id="data-dictionaries-and-codebooks" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionaries-and-codebooks">Data dictionaries and codebooks</h2>
+<p>A data dictionary or codebook explains what each variable means. It is one of the most useful low-burden reproducibility tools.</p>
+<p>A simple data dictionary should include:</p>
 <ul>
-<li>use stable, non-proprietary formats where possible;</li>
-<li>avoid ambiguous or overloaded file names;</li>
-<li>make changes traceable rather than overwriting files.</li>
+<li>variable name;</li>
+<li>short description;</li>
+<li>source dataset;</li>
+<li>data type;</li>
+<li>units, if relevant;</li>
+<li>allowed values or categories;</li>
+<li>missing-value codes;</li>
+<li>derivation rule, if the variable was created;</li>
+<li>notes or known limitations.</li>
 </ul>
-<p>Rather than memorising rules, the key question is whether someone else could understand <em>what changed, when, why, and by whom</em>. Canonical examples and a changelog template are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
+<section id="minimal-data-dictionary-example" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="minimal-data-dictionary-example">Minimal data dictionary example</h3>
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>variable</th>
+<th>description</th>
+<th>source</th>
+<th>type</th>
+<th>allowed values / units</th>
+<th>missing code</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>response_id</code></td>
+<td>Unique survey response identifier</td>
+<td>Census 2021</td>
+<td>character</td>
+<td>17-character string</td>
+<td>blank</td>
+<td>Not personally identifying</td>
+</tr>
+<tr class="even">
+<td><code>postcode</code></td>
+<td>Residential postcode at survey date</td>
+<td>Survey</td>
+<td>character</td>
+<td>Valid UK postcode</td>
+<td><code>NA</code></td>
+<td>Standardised before linkage</td>
+</tr>
+<tr class="odd">
+<td><code>pm25_annual</code></td>
+<td>Annual mean PM2.5 exposure</td>
+<td>Modelled exposure</td>
+<td>numeric</td>
+<td>µg/m³</td>
+<td><code>NA</code></td>
+<td>Linked by postcode centroid</td>
+</tr>
+<tr class="even">
+<td><code>excluded</code></td>
+<td>Record excluded from main analysis</td>
+<td>Derived</td>
+<td>logical</td>
+<td><code>TRUE</code> / <code>FALSE</code></td>
+<td>none</td>
+<td>Rationale in <code>exclusion_reason</code></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="minimum-standards-vs-advanced-practice" class="level2">
-<h2 class="anchored" data-anchor-id="minimum-standards-vs-advanced-practice">Minimum standards vs advanced practice</h2>
-<p>This course defines <strong>minimum standards</strong> that are achievable for most student and early-career research projects.</p>
-<p>More advanced practices—such as automated validation, controlled vocabularies, or formal SOPs—are appropriate for large teams, regulated environments, or long-running studies. These are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter and are <strong>not required</strong> for all projects.</p>
-<p>The emphasis is on proportionality rather than completeness.</p>
 </section>
-<section id="practical-guidance-for-ecr-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
-<p>In practice, proportionate data organisation often involves:</p>
+<section id="basic-checks-before-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="basic-checks-before-analysis">Basic checks before analysis</h2>
+<p>Some checks are simple but high-value. They do not require a formal testing framework.</p>
+<p>Before analysis, ask:</p>
 <ul>
-<li>freezing raw data early and working on copies;</li>
-<li>creating a short data dictionary alongside cleaning;</li>
-<li>documenting transformations as they occur, not retrospectively;</li>
-<li>agreeing naming and versioning conventions within the team.</li>
+<li>Does the dataset have the expected number of rows and columns?</li>
+<li>Are required variables present?</li>
+<li>Are key variables the expected type?</li>
+<li>Are dates in one format?</li>
+<li>Are numeric variables within plausible ranges?</li>
+<li>Are categorical variables using expected labels?</li>
+<li>Are missing values coded consistently?</li>
+<li>Are duplicate records expected or accidental?</li>
+<li>Has the analytic sample size changed since the previous version?</li>
 </ul>
-<p>These steps scale from individual projects to large collaborations.</p>
+<p>These checks belong naturally in the code-quality chapter as well. Here, the focus is on <strong>what to check in the data</strong>. Chapter 7 will cover <strong>how to implement these checks in R code</strong>.</p>
 </section>
-<section id="exercises-515-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-515-minutes">Exercises (5–15 minutes)</h2>
-<ol type="1">
-<li><p>Identify one dataset in a current project.<br>
-Can you clearly distinguish raw, cleaned, and derived versions?</p></li>
-<li><p>Review how missing data are handled.<br>
-Are reasons for missingness or exclusion documented anywhere?</p></li>
-</ol>
+<section id="messy-data-activity" class="level2">
+<h2 class="anchored" data-anchor-id="messy-data-activity">Messy data activity</h2>
+<section id="activity-identify-the-risks" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="activity-identify-the-risks">Activity: identify the risks</h3>
+<p>Look at the example below and identify what would make it difficult to analyse safely.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Date</th>
+<th style="text-align: right;">Age</th>
+<th>Where was the article</th>
+<th>Blood type</th>
+<th>Preferred Gender</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>23/1/2023</td>
+<td style="text-align: right;">32</td>
+<td>United States</td>
+<td>AB</td>
+<td>Female</td>
+</tr>
+<tr class="even">
+<td>Feb-17</td>
+<td style="text-align: right;">54</td>
+<td></td>
+<td>A</td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td>2/2/2000</td>
+<td style="text-align: right;">12</td>
+<td>USA</td>
+<td>0</td>
+<td>Male</td>
+</tr>
+<tr class="even">
+<td>23-Mar-93</td>
+<td style="text-align: right;">53</td>
+<td>Brisbane, Australia</td>
+<td>#NAME?</td>
+<td>Mail</td>
+</tr>
+</tbody>
+</table>
+<p>Questions:</p>
+<ul>
+<li>Are dates recorded consistently?</li>
+<li>Is <code>Age</code> the right variable, or would date of birth plus date of measurement be more stable?</li>
+<li>Are locations recorded consistently?</li>
+<li>Is <code>0</code> a valid blood type, a missing code, or an error?</li>
+<li>What does <code>N/A</code> mean here?</li>
+<li>Is <code>Mail</code> a spelling mistake or a valid category?</li>
+<li>What has Excel or spreadsheet software changed automatically?</li>
+</ul>
 </section>
-<section id="key-takeaways" class="level2 callout-summary">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Possible fixes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Use a consistent date format, preferably <code>YYYY-MM-DD</code>.</li>
+<li>Consider recording date of birth rather than age if age depends on timing.</li>
+<li>Split location into structured fields where useful, such as country, region and city.</li>
+<li>Define missing-value codes explicitly.</li>
+<li>Use controlled categories for gender and blood type where appropriate.</li>
+<li>Keep a data dictionary so future users understand all valid codes.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="minimum-viable-practice" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-viable-practice">Minimum viable practice</h2>
+<p>For most projects, a realistic minimum is:</p>
+<div class="practice-grid">
+<section id="protect-the-raw-data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="protect-the-raw-data">Protect the raw data</h3>
+<p>Keep a copy of the data as received. Do not overwrite it.</p>
+</section>
+<section id="use-one-analysis-dataset" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="use-one-analysis-dataset">Use one analysis dataset</h3>
+<p>Make clear which cleaned or analysis-ready file was used for each analysis.</p>
+</section>
+<section id="create-a-data-dictionary" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="create-a-data-dictionary">Create a data dictionary</h3>
+<p>Document variables, units, categories and missing codes.</p>
+</section>
+<section id="record-exclusions" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="record-exclusions">Record exclusions</h3>
+<p>State what was removed, why, when and by whom.</p>
+</section>
+</div>
+</section>
+<section id="beginner-and-advanced-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="beginner-and-advanced-next-steps">Beginner and advanced next steps</h2>
+<section id="choose-one-action" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="choose-one-action">Choose one action</h3>
+<p><strong>Beginner</strong></p>
+<ul>
+<li>Decide how missing values will be represented.</li>
+<li>Use <code>YYYY-MM-DD</code> for dates.</li>
+<li>Create a short data dictionary for one dataset.</li>
+<li>Save an analysis-ready copy separately from the raw data.</li>
+</ul>
+<p><strong>Advanced</strong></p>
+<ul>
+<li>Add automated checks for row counts, variable names and plausible ranges.</li>
+<li>Create a scripted cleaning pipeline from raw to analysis-ready data.</li>
+<li>Add exclusion counts to the analysis report.</li>
+<li>Use controlled vocabularies or metadata standards where appropriate.</li>
+</ul>
+</section>
+</section>
+<section id="recommended-resources-for-this-chapter" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-resources-for-this-chapter">Recommended resources for this chapter</h2>
+<ul>
+<li>Data Carpentry: common spreadsheet formatting problems<span class="citation" data-cites="datacarpentry_spreadsheet_errors"><sup><a href="#ref-datacarpentry_spreadsheet_errors" role="doc-biblioref">1</a></sup></span></li>
+<li>Wickham: tidy data principles<span class="citation" data-cites="wickham2014tidy"><sup><a href="#ref-wickham2014tidy" role="doc-biblioref">3</a></sup></span></li>
+<li>White et al.: practical data reuse recommendations<span class="citation" data-cites="white2013reuse"><sup><a href="#ref-white2013reuse" role="doc-biblioref">2</a></sup></span></li>
+<li>Kang: prevention and handling of missing data<span class="citation" data-cites="kang2013missing"><sup><a href="#ref-kang2013missing" role="doc-biblioref">5</a></sup></span></li>
+<li>CESSDA: designing a data file structure<span class="citation" data-cites="cessda_data_file_structure"><sup><a href="#ref-cessda_data_file_structure" role="doc-biblioref">4</a></sup></span></li>
+</ul>
+</section>
+<section id="what-comes-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-comes-next">What comes next?</h2>
+<p>The next chapter moves from data-file structure to documentation. We will look at README files, data dictionaries, metadata, decision logs, changelogs, environment notes and protocols.</p>
+</section>
+<section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>Clear data organisation underpins reproducibility and interpretation.</li>
-<li>Separating raw, cleaned, and derived data preserves provenance.</li>
-<li>Provenance and documentation matter even when data are restricted.</li>
-<li>Minimum standards should be achievable and proportionate.</li>
-<li>All templates and examples are centralised in the <a href="./resources.html">Resources and Further Reading</a> chapter.</li>
+<li>Messy data make analysis fragile, even when the project folder is well organised.</li>
+<li>Spreadsheets are useful but risky when formatting, comments or manual edits carry analytical meaning.</li>
+<li>Tidy data principles make datasets easier to check, analyse and reuse.</li>
+<li>Missing values and exclusions need explicit definitions and records.</li>
+<li>A data dictionary is one of the simplest and most valuable reproducibility tools.</li>
+<li>Chapter 7 will show how to implement some of these checks in R code.</li>
 </ul>
 </section>
 
 
 <div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
-<div id="ref-qut_naming_convention2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Queensland University of Technology. <em><a href="https://www.library.qut.edu.au/about/management/documents/QUTTILSDocNamingConvention.pdf">File Naming Convention</a></em>. (Queensland University of Technology Library, 2019).</div>
+<div id="ref-datacarpentry_spreadsheet_errors" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Data Carpentry. <a href="https://datacarpentry.github.io/spreadsheet-ecology-lesson/02-common-mistakes.html">Data organization in spreadsheets for ecologists: Formatting problems</a>. (2025).</div>
 </div>
-<div id="ref-aberdeen_file_naming2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">University of Aberdeen. <em><a href="https://www.abdn.ac.uk/media/site/staffnet/documents/policy-zone-information-policies/File_Naming_Conventions_July_2017.pdf">File Naming Conventions</a></em>. (University of Aberdeen, 2017).</div>
+<div id="ref-white2013reuse" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">White, E. P. <em>et al.</em> <a href="https://doi.org/10.4033/iee.2013.6b.6.f">Nine simple ways to make it easier to (re)use your data</a>. <em>Ideas in Ecology and Evolution</em> <strong>6</strong>, 1–10 (2013).</div>
+</div>
+<div id="ref-wickham2014tidy" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Wickham, H. <a href="https://doi.org/10.18637/jss.v059.i10">Tidy data</a>. <em>Journal of Statistical Software</em> <strong>59</strong>, 1–23 (2014).</div>
+</div>
+<div id="ref-cessda_data_file_structure" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">CESSDA Training Team. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/Designing-a-data-file-structure">Designing a data file structure</a>. (2022).</div>
+</div>
+<div id="ref-kang2013missing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Kang, H. <a href="https://doi.org/10.4097/kjae.2013.64.5.402">The prevention and handling of the missing data</a>. <em>Korean Journal of Anesthesiology</em> <strong>64</strong>, 402–406 (2013).</div>
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -581,24 +1146,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./04-dmp.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 4 — Data Management Plans</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./06-docs-eln-sops.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

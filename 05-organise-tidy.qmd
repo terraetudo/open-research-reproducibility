@@ -1,132 +1,460 @@
 ---
-title: "Chapter 5 - Organising and tidying data"
+title: "Chapter 5 — Organising and tidying data"
 ---
 
-# Organising and tidying data {#sec-organise}
+::: {.chapter-hero}
+# Chapter 5
+
+## Organising and tidying data
+
+This chapter moves from the project folder to the data file itself. The aim is to make datasets easier to check, analyse, document and reuse, without pretending that all real-world data arrive clean or simple.
+:::
+
+::: {.chapter-overview}
+### What this chapter does
+
+Chapter 3 focused on where project materials live: folders, filenames, raw and derived files, and lightweight versioning. Chapter 4 focused on the Data Management Plan as the record of decisions, responsibilities and constraints.
+
+This chapter focuses on the **structure and quality of the data files themselves**. It covers common spreadsheet risks, tidy data principles, missing data, exclusions, data dictionaries and simple checks that make data easier to analyse and defend.
+:::
 
 ## Learning objectives
 
-By the end of this module, you should be able to:
+By the end of this chapter, you should be able to:
 
--   explain why data organisation is central to reproducibility and reuse;
--   distinguish raw, cleaned, and derived data in practice;
--   understand data provenance and why it matters;
--   document missingness, exclusions, and transformations proportionately;
--   locate minimum standards, examples, and templates for organised data.
+- explain why messy data make analysis fragile;
+- recognise common spreadsheet and data-entry risks;
+- describe the core principles of tidy data;
+- distinguish raw, cleaned and analysis-ready data without repeating the full project-organisation chapter;
+- document missingness, exclusions and filtering decisions;
+- identify minimum checks that should be carried out before analysis;
+- create or improve a simple data dictionary/codebook.
 
-This module builds on data planning [Chapter 4 --- Data Management Plans (UCL)](04-dmp.qmd) and supports later modules on documentation, code, automation, and publishing.\
-**All concrete examples, templates, and minimum-standard artefacts are provided centrally in the [Resources and Further Reading](resources.qmd) chapter.**
+::: {.callout-note}
+### Boundary with other chapters
 
-------------------------------------------------------------------------
+This chapter is **not** mainly about folder structures or file naming. Those are covered in Chapter 3. It is also not mainly about governance, storage or access. Those are covered in Chapter 4.
 
-## Why data organisation matters
+Here, the question is simpler: **is the dataset itself structured so that it can be understood, checked and analysed safely?**
+:::
 
-Poorly organised data are difficult to understand, validate, or reuse---even by the original researcher. Organisation choices made early in a project shape how easily analyses can be checked, rerun, or extended later.
+## If the data are messy, everything is fragile
 
-Good data organisation:
+Messy data make research harder to check, rerun, defend and reuse. Problems that look small during data entry can become substantial later, especially when data are linked, cleaned, merged or analysed by someone else.
 
--   reduces ambiguity about what files represent;
--   preserves provenance and interpretability;
--   supports efficient analysis and collaboration;
--   reduces the risk of accidental data loss or misuse.
+Common consequences include:
 
-These benefits apply regardless of whether data can ultimately be shared openly.
+- analysing the wrong version of a dataset;
+- treating missing values as real values;
+- mixing text and numeric values in the same column;
+- losing information that was stored only in formatting or comments;
+- introducing manual corrections that cannot be reproduced;
+- making code more complicated than it needs to be.
 
-## Raw, cleaned, and derived data
+Data Carpentry emphasises that small changes in spreadsheet formatting can improve efficiency and reliability when data are later cleaned and analysed [@datacarpentry_spreadsheet_errors].
 
-A useful organising principle is to **separate data by state**:
+::: {.activity-box}
+### Quick reflection
 
--   **Raw data**: as collected or received; never overwritten.
--   **Cleaned data**: errors corrected, formats standardised.
--   **Derived data**: variables or datasets created during analysis.
+Have you ever analysed, cleaned or shared the wrong version of a dataset?
 
-Keeping these states distinct preserves provenance and makes it possible to reproduce analyses from source data when needed.
+If so, what made the error possible?
 
-This separation should be reflected both in folder structure and in documentation. Canonical structures are provided in the [Resources and Further Reading](resources.qmd) chapter.
+- unclear filename;
+- mixed raw and cleaned data;
+- missing documentation;
+- manual edits;
+- several versions stored in different places;
+- no clear owner or approval point.
+:::
+
+## What makes a dataset usable?
+
+A usable dataset is not necessarily perfect. It is one that is sufficiently clear, consistent and documented for its intended purpose.
+
+A usable dataset should make the following visible:
+
+::: {.practice-grid}
+
+::: {.practice-card}
+### Structure
+
+Rows, columns and tables have clear meanings.
+:::
+
+::: {.practice-card}
+### Meaning
+
+Variables, units, categories and codes are documented.
+:::
+
+::: {.practice-card}
+### Provenance
+
+It is clear where the data came from and how they changed.
+:::
+
+::: {.practice-card}
+### Quality
+
+Missing values, exclusions and known limitations are recorded.
+:::
+
+:::
+
+White and colleagues describe practical data-reuse principles that are also useful for the original research team: provide metadata, preserve an unprocessed form of the data, use standard formats, use good null values, and make the data easy to import and understand [@white2013reuse].
+
+## Spreadsheet risks
+
+Spreadsheets are useful for viewing, checking and small-scale data entry. They are also risky when they become the main place where cleaning, coding, analysis and documentation happen invisibly.
+
+Common risks include:
+
+- **mixed data types**: numbers, dates and text in the same column;
+- **hidden formatting**: colours, font styles or cell comments used to convey meaning;
+- **manual edits**: changes made by hand without a script or log;
+- **implicit missing values**: blanks, `NA`, `N/A`, `0`, `-999` or text used inconsistently;
+- **merged cells**: useful for visual display but difficult for analysis software;
+- **multiple tables in one sheet**: visually convenient but machine-unfriendly;
+- **multiple tabs with inconsistent structures**: hard to combine and check later;
+- **dates automatically changed by software**.
+
+::: {.callout-warning}
+### Spreadsheet rule of thumb
+
+Use spreadsheets for inspection and controlled data entry where appropriate. Avoid using formatting, colours, comments or manual edits as the only record of information that matters for analysis.
+:::
+
+## A minimum spreadsheet standard
+
+Where spreadsheets are used, keep them boring and machine-readable.
+
+A minimum standard is:
+
+- one table per sheet;
+- one header row;
+- one variable per column;
+- one observation per row;
+- no merged cells;
+- no blank rows or columns inside the data table;
+- no totals, graphs or notes embedded in the data table;
+- explicit and documented missing-value codes;
+- dates entered consistently, preferably using ISO format `YYYY-MM-DD`;
+- export or archive an analysis version as `.csv` where appropriate.
+
+::: {.figure-box}
+### From human-readable to analysis-ready
+
+A human-readable spreadsheet might combine address information in one cell:
+
+| address |
+|---|
+| 170 Kessels Road Nathan Qld 4111 Australia |
+| 1 Parklands Dr, Southport QLD 4215 |
+
+An analysis-ready table separates the components that may need to be checked, cleaned or linked:
+
+| street_number | street_name | street_type | suburb | state | postcode | country |
+|---:|---|---|---|---|---:|---|
+| 170 | Kessels | Road | Nathan | Qld | 4111 | Australia |
+| 1 | Parklands | Drive | Southport | Qld | 4215 | Australia |
+
+This does not mean every dataset must be split into the smallest possible units. It means the structure should reflect how the data will be checked, analysed and reused.
+:::
+
+## Tidy data: the core idea
+
+Tidy data is a simple but powerful way to structure rectangular datasets. Wickham summarises tidy data as a structure where each variable is a column, each observation is a row, and each type of observational unit forms a table [@wickham2014tidy].
+
+For practical purposes, start with these three rules:
+
+::: {.definition-grid}
+
+::: {.definition-card}
+### One variable per column
+
+Each column should contain one kind of information, such as date of birth, postcode, exposure value, or outcome status.
+:::
+
+::: {.definition-card}
+### One observation per row
+
+Each row should represent one unit of analysis: for example, one participant, one school, one measurement, one visit, or one time period.
+:::
+
+::: {.definition-card}
+### One value per cell
+
+Avoid storing multiple pieces of information in one cell when they may need to be analysed separately.
+:::
+
+:::
+
+Tidy data are easier to search, filter, join, visualise and analyse. They also reduce the amount of special-purpose code needed to interpret the file.
+
+::: {.callout-note}
+### Tidy does not mean final
+
+A tidy dataset is not automatically correct, complete or analysis-ready. It still needs provenance, definitions, quality checks and documentation.
+:::
+
+## Raw, cleaned and analysis-ready data
+
+Chapter 3 introduced the principle of separating raw, derived and output files. In this chapter, the same principle matters because a dataset can change through several states.
+
+::: {.practice-grid}
+
+::: {.practice-card}
+### Raw data
+
+The data as received, collected or extracted. These should be protected from overwrite.
+:::
+
+::: {.practice-card}
+### Cleaned data
+
+Data where formats, labels and obvious inconsistencies have been standardised. Cleaning steps should be scripted or documented.
+:::
+
+::: {.practice-card}
+### Analysis-ready data
+
+Data prepared for a specific analysis, with exclusions, derived variables and linkage decisions applied.
+:::
+
+:::
+
+The important point is not the exact folder name. The important point is that someone can tell **which version is closest to the original source**, **which version has been cleaned**, and **which version was used for a specific result**.
 
 ## Data provenance and lineage
 
-**Data provenance** describes where data come from, how they change, and how outputs are produced.
+Data provenance describes where data came from, what happened to them, and how outputs were produced. CESSDA frames data-file structure as part of organising and documenting research data so that files remain understandable over time [@cessda_data_file_structure].
 
-Recording provenance typically involves:
+For each important dataset, you should be able to answer:
 
--   documenting transformation steps and assumptions;
--   linking derived outputs to scripts or workflows;
--   recording versions and reasons for change.
+- What is the original source?
+- Who provided or created it?
+- When was it received, extracted or generated?
+- What cleaning steps were applied?
+- What variables were derived?
+- What records were excluded?
+- Which script or workflow created the analysis-ready version?
+- Which outputs or publications used this version?
 
-Explicit provenance supports audit, peer review, reuse, and defensibility. It is particularly important in regulated, sensitive, or administrative data contexts, where data access may be restricted but analytical transparency is still expected.
+::: {.figure-box}
+### A simple data lineage record
 
-Key transformations (recoding, aggregation, linkage) should be summarised in documentation even when implemented in code.
+```{mermaid}
+flowchart LR
+    A[Raw data received] --> B[Cleaning script]
+    B --> C[Cleaned dataset]
+    C --> D[Derivation / linkage]
+    D --> E[Analysis-ready dataset]
+    E --> F[Tables, figures, model outputs]
 
-## Tidy data principles (practical view)
+    B -. record decisions .-> G[Decision log]
+    D -. record exclusions .-> G
+    E -. describe variables .-> H[Data dictionary]
+```
 
-Tidy data conventions aim to make datasets easier to analyse and interpret[@qut_naming_convention2019; @aberdeen_file_naming2017]. In practice, this often means:
-
--   one variable per column;
--   one observation per row;
--   consistent naming and coding conventions.
-
-Not all data can be perfectly tidy, and perfection is not the goal. Moving *towards* these principles improves legibility and reduces errors, even when constraints apply.
-
-Further guidance and examples are signposted in the [Resources and Further Reading](resources.qmd) chapter.
+This is the minimum story someone needs in order to understand how the analysis dataset was produced.
+:::
 
 ## Missing data and exclusions
 
-Handling missing data is not only technical but interpretive.
+Missing data are not just a technical nuisance. They can change the interpretation of results, the analytic sample and the conclusions.
 
 Good practice includes:
 
--   using explicit missing value codes;
--   documenting reasons for missingness where known;
--   recording exclusions and filtering decisions.
+- using explicit and consistent missing-value codes;
+- distinguishing true zero from missing or not applicable;
+- documenting why data are missing when known;
+- recording exclusions and filtering decisions;
+- reporting how missingness was handled in analysis.
 
-This information is often as important as the observed data itself and should be captured in documentation rather than inferred from code alone. Minimum documentation templates are provided in the [Resources and Further Reading](resources.qmd) chapter.
+Kang describes missing data as a problem that requires attention to the pattern and mechanism of missingness, as well as the method used to handle it [@kang2013missing]. For this workshop, the main message is practical: **do not let missingness become invisible**.
 
-## File formats, naming, and versioning
+::: {.callout-important}
+### Missing values need definitions
 
-Choices about formats, file names, and versions affect both longevity and reproducibility.
+A blank cell, `0`, `NA`, `N/A`, `-999`, `unknown` and `not applicable` do not mean the same thing unless you define them.
 
-At a principle level, organised data should:
+In R, `NA` is often appropriate for missing values. In a shared dataset or spreadsheet, the meaning of any missing-value code should be stated in the data dictionary.
+:::
 
--   use stable, non-proprietary formats where possible;
--   avoid ambiguous or overloaded file names;
--   make changes traceable rather than overwriting files.
+## Exclusions and filtering decisions
 
-Rather than memorising rules, the key question is whether someone else could understand *what changed, when, why, and by whom*. Canonical examples and a changelog template are provided in the [Resources and Further Reading](resources.qmd) chapter.
+Exclusions should be visible and justifiable. This is particularly important when exclusions affect sample size, bias, precision or the interpretation of inequalities.
 
-## Minimum standards vs advanced practice
+A minimum record should include:
 
-This course defines **minimum standards** that are achievable for most student and early-career research projects.
+| Item | Example |
+|---|---|
+| Exclusion rule | Exclude records with missing postcode |
+| Rationale | Exposure assignment requires geocoding |
+| Number excluded | 184 records, 3.2% of sample |
+| Timing | Applied before exposure linkage |
+| Script or decision record | `02_clean_addresses.R`, decision log entry 2025-02-12 |
+| Sensitivity check | Results compared with missing-postcode group described separately |
 
-More advanced practices---such as automated validation, controlled vocabularies, or formal SOPs---are appropriate for large teams, regulated environments, or long-running studies. These are signposted in the [Resources and Further Reading](resources.qmd) chapter and are **not required** for all projects.
+::: {.callout-warning}
+### Avoid hidden exclusions
 
-The emphasis is on proportionality rather than completeness.
+Do not delete rows manually and leave no trace. Use a scripted filter where possible, and record the rule and rationale in a decision log, README or analysis note.
+:::
 
-## Practical guidance for ECR workflows
+## Data dictionaries and codebooks
 
-In practice, proportionate data organisation often involves:
+A data dictionary or codebook explains what each variable means. It is one of the most useful low-burden reproducibility tools.
 
--   freezing raw data early and working on copies;
--   creating a short data dictionary alongside cleaning;
--   documenting transformations as they occur, not retrospectively;
--   agreeing naming and versioning conventions within the team.
+A simple data dictionary should include:
 
-These steps scale from individual projects to large collaborations.
+- variable name;
+- short description;
+- source dataset;
+- data type;
+- units, if relevant;
+- allowed values or categories;
+- missing-value codes;
+- derivation rule, if the variable was created;
+- notes or known limitations.
 
-## Exercises (5--15 minutes)
+::: {.figure-box}
+### Minimal data dictionary example
 
-1.  Identify one dataset in a current project.\
-    Can you clearly distinguish raw, cleaned, and derived versions?
+| variable | description | source | type | allowed values / units | missing code | notes |
+|---|---|---|---|---|---|---|
+| `response_id` | Unique survey response identifier | Census 2021 | character | 17-character string | blank | Not personally identifying |
+| `postcode` | Residential postcode at survey date | Survey | character | Valid UK postcode | `NA` | Standardised before linkage |
+| `pm25_annual` | Annual mean PM2.5 exposure | Modelled exposure | numeric | µg/m³ | `NA` | Linked by postcode centroid |
+| `excluded` | Record excluded from main analysis | Derived | logical | `TRUE` / `FALSE` | none | Rationale in `exclusion_reason` |
+:::
 
-2.  Review how missing data are handled.\
-    Are reasons for missingness or exclusion documented anywhere?
+## Basic checks before analysis
 
-::: callout-summary
+Some checks are simple but high-value. They do not require a formal testing framework.
+
+Before analysis, ask:
+
+- Does the dataset have the expected number of rows and columns?
+- Are required variables present?
+- Are key variables the expected type?
+- Are dates in one format?
+- Are numeric variables within plausible ranges?
+- Are categorical variables using expected labels?
+- Are missing values coded consistently?
+- Are duplicate records expected or accidental?
+- Has the analytic sample size changed since the previous version?
+
+These checks belong naturally in the code-quality chapter as well. Here, the focus is on **what to check in the data**. Chapter 7 will cover **how to implement these checks in R code**.
+
+## Messy data activity
+
+::: {.activity-box}
+### Activity: identify the risks
+
+Look at the example below and identify what would make it difficult to analyse safely.
+
+| Date | Age | Where was the article | Blood type | Preferred Gender |
+|---|---:|---|---|---|
+| 23/1/2023 | 32 | United States | AB | Female |
+| Feb-17 | 54 |  | A | N/A |
+| 2/2/2000 | 12 | USA | 0 | Male |
+| 23-Mar-93 | 53 | Brisbane, Australia | #NAME? | Mail |
+
+Questions:
+
+- Are dates recorded consistently?
+- Is `Age` the right variable, or would date of birth plus date of measurement be more stable?
+- Are locations recorded consistently?
+- Is `0` a valid blood type, a missing code, or an error?
+- What does `N/A` mean here?
+- Is `Mail` a spelling mistake or a valid category?
+- What has Excel or spreadsheet software changed automatically?
+:::
+
+::: {.callout-tip}
+### Possible fixes
+
+- Use a consistent date format, preferably `YYYY-MM-DD`.
+- Consider recording date of birth rather than age if age depends on timing.
+- Split location into structured fields where useful, such as country, region and city.
+- Define missing-value codes explicitly.
+- Use controlled categories for gender and blood type where appropriate.
+- Keep a data dictionary so future users understand all valid codes.
+:::
+
+## Minimum viable practice
+
+For most projects, a realistic minimum is:
+
+::: {.practice-grid}
+
+::: {.practice-card}
+### Protect the raw data
+
+Keep a copy of the data as received. Do not overwrite it.
+:::
+
+::: {.practice-card}
+### Use one analysis dataset
+
+Make clear which cleaned or analysis-ready file was used for each analysis.
+:::
+
+::: {.practice-card}
+### Create a data dictionary
+
+Document variables, units, categories and missing codes.
+:::
+
+::: {.practice-card}
+### Record exclusions
+
+State what was removed, why, when and by whom.
+:::
+
+:::
+
+## Beginner and advanced next steps
+
+::: {.activity-box}
+### Choose one action
+
+**Beginner**
+
+- Decide how missing values will be represented.
+- Use `YYYY-MM-DD` for dates.
+- Create a short data dictionary for one dataset.
+- Save an analysis-ready copy separately from the raw data.
+
+**Advanced**
+
+- Add automated checks for row counts, variable names and plausible ranges.
+- Create a scripted cleaning pipeline from raw to analysis-ready data.
+- Add exclusion counts to the analysis report.
+- Use controlled vocabularies or metadata standards where appropriate.
+:::
+
+## Recommended resources for this chapter
+
+- Data Carpentry: common spreadsheet formatting problems [@datacarpentry_spreadsheet_errors]
+- Wickham: tidy data principles [@wickham2014tidy]
+- White et al.: practical data reuse recommendations [@white2013reuse]
+- Kang: prevention and handling of missing data [@kang2013missing]
+- CESSDA: designing a data file structure [@cessda_data_file_structure]
+
+## What comes next?
+
+The next chapter moves from data-file structure to documentation. We will look at README files, data dictionaries, metadata, decision logs, changelogs, environment notes and protocols.
+
+::: {.chapter-summary}
 ## Key takeaways
 
--   Clear data organisation underpins reproducibility and interpretation.
--   Separating raw, cleaned, and derived data preserves provenance.
--   Provenance and documentation matter even when data are restricted.
--   Minimum standards should be achievable and proportionate.
--   All templates and examples are centralised in the [Resources and Further Reading](resources.qmd) chapter.
+- Messy data make analysis fragile, even when the project folder is well organised.
+- Spreadsheets are useful but risky when formatting, comments or manual edits carry analytical meaning.
+- Tidy data principles make datasets easier to check, analyse and reuse.
+- Missing values and exclusions need explicit definitions and records.
+- A data dictionary is one of the simplest and most valuable reproducibility tools.
+- Chapter 7 will show how to implement some of these checks in R code.
 :::

@@ -1,161 +1,412 @@
 ---
-title: "Chapter 4 — Data Management Plans (UCL)"
+title: "Chapter 4 — Data Management Plans"
 ---
 
-# Data Management Plans (DMPs) {#sec-dmp}
+::: {.chapter-hero}
+# Chapter 4
+
+## Data Management Plans as living documents
+
+A Data Management Plan is not just a funder form. It is the written record of what data will be used, how they will be protected, what can be shared, what cannot be shared, and who is responsible.
+:::
+
+::: {.chapter-overview}
+### What this chapter does
+
+This chapter explains how to use a Data Management Plan (DMP) as a practical planning and accountability tool. It focuses on the decisions that need to be made and recorded, rather than repeating the everyday folder and file practices covered in [Chapter 3](03-project-mgmt.qmd).
+
+The chapter is UCL-aware, but the principles apply more widely. The aim is to help you write or review a DMP that is proportionate, realistic and useful throughout the project lifecycle.
+:::
 
 ## Learning objectives
 
-By the end of this module, you should be able to:
+By the end of this chapter, you should be able to:
 
--   explain the purpose of a Data Management Plan beyond funder compliance;
--   recognise a DMP as a living record of decisions;
--   distinguish data description from data governance;
--   identify proportionate planning actions for different data types;
--   locate UCL guidance, templates, and support for DMPs.
+- explain the purpose of a DMP beyond compliance;
+- recognise a DMP as a living record of decisions;
+- identify the main areas a DMP should cover;
+- distinguish data description, data organisation and data governance;
+- record roles and responsibilities in a way that supports accountability;
+- explain how DMPs support FAIR, responsible sharing and later reuse;
+- locate UCL and external resources for drafting or reviewing a DMP.
 
-This module builds on FAIR principles [Chapter 2: FAIR basics](02-fair-basics.qmd) and project organisation [Chapter 3 - Project organisation and continuity](03-project-mgmt.qmd). It prepares you for practical data handling and documentation in later chapters. At UCL, DMPs are structured around six core areas: data collection, storage and security, archiving and preservation, discovery and access, metadata, and roles and responsibilities.
+This chapter builds on [Chapter 2: FAIR basics](02-fair-basics.qmd) and [Chapter 3: Project organisation and continuity](03-project-mgmt.qmd). Chapter 5 then moves to the internal structure and quality of data files.
 
-This chapter focuses on **what a DMP must commit to** and **how assessors interpret it**. Chapters 5–7 cover implementation in practice (data organisation, documentation, and code), and Chapter 9 covers automation and workflows.
+## What is a DMP?
 
-------------------------------------------------------------------------
+A Data Management Plan records how research data and related materials will be managed during and after a project. It usually covers what data will be collected or reused, how they will be stored and protected, how they will be documented, what will be shared or archived, what restrictions apply, and who is responsible.
 
-## What a DMP is (and is not)
+A DMP is not a promise that nothing will change. It is a record of the best current plan, with enough detail to show that data management has been thought through. A strong DMP is updated when the project changes.
 
-A Data Management Plan describes how data will be [@turingway_dmp2025; @michener2015ten; @miksa2019ten]:
+::: {.callout-note}
+### A DMP records decisions
 
--   created or collected;
--   stored, documented, and protected;
--   retained, shared, or archived.
+A useful DMP should answer:
 
-This includes describing what data and materials will be collected or reused, how they are generated, and which data types are in scope. A DMP is **not** a guarantee that plans will not change. Instead, it provides a transparent record of *current intentions and decisions*. Funders expect data management, storage, curation, and sharing to be explicitly resourced and costed, not treated as overhead.
+- **what** data will be collected, created or reused;
+- **how** data will be organised, stored and protected;
+- **who** is responsible for key decisions and tasks;
+- **what** will be shared, archived or restricted;
+- **why** restrictions apply;
+- **under what conditions** data, metadata, code or documentation can be accessed.
+:::
 
-Different data types (e.g. sensitive identifiers, geospatial data, qualitative materials, imaging, code/software outputs) require different levels of governance, documentation, and retention detail. The DMP should reflect this **proportionately**, without over-specifying implementation.
+## A DMP is the agreement; the project structure is the implementation
 
-Where AI or machine-learning tools are used for data processing or analysis, the DMP should record what tools are used, how outputs are generated, and what can be documented or shared (e.g. model version, prompts, training data constraints), without over-committing to full reproducibility where this is infeasible.
+Chapter 3 focused on the practical structure of a project: folders, file names, raw-data protection, versioning and README files. A DMP sits one level above this. It explains the decisions and responsibilities behind those practices.
 
-Where patient or public contributors are involved, DMPs should reflect any implications for data access, consent, governance, and communication of outputs, even where contributors do not access raw data.
+| DMP decision | Where it appears in practice |
+|---|---|
+| Data source and permissions | DMP, ethics/governance documents, README |
+| Storage and access controls | Approved secure drive, TRE, institutional storage, access log |
+| Raw-data protection | Read-only raw-data folder or secure source location |
+| Documentation requirements | README, metadata, data dictionary, codebook |
+| Versioning and provenance | Changelog, scripted workflows, archived releases |
+| Sharing and reuse constraints | Data access statement, repository record, licence, access conditions |
+| Retention and archiving | Institutional policy, funder requirements, repository deposit |
 
-## DMPs as decision records
+The DMP does not need to contain every detail of the folder structure. It should state the principles, locations, responsibilities and restrictions clearly enough that the project team can implement them consistently.
 
-Good DMPs document decisions made under uncertainty, including:
+## Why DMPs matter
 
--   what will happen *if* data cannot be shared openly;
--   how access will be managed under different scenarios;
--   who is responsible for data stewardship over time;
--   how data will be discovered, accessed, or requested, including where metadata will remain available even when access is restricted.
+DMPs are often introduced as funder or institutional requirements, but their practical value is broader. A good DMP helps a team avoid late-stage uncertainty about storage, access, sharing, retention, responsibilities and costs.
 
-Updating a DMP is good practice, not a failure of planning.
+DMPs are useful because they:
 
-## Data description vs data governance
+- make data-related decisions explicit;
+- support ethical and legal compliance;
+- reduce ambiguity about access and responsibilities;
+- make FAIR planning more concrete;
+- help identify what needs to be documented or archived;
+- support handover when staff, students or collaborators change;
+- reduce last-minute work at publication or project close;
+- provide evidence that risks and restrictions have been considered.
 
-It is useful to separate two related but distinct elements:
+DMPonline provides a widely used platform for creating, reviewing and sharing DMPs that align with institutional and funder expectations [@dmponlineDcc]. The Digital Curation Centre also provides guidance and examples across research contexts [@dccDmpGuidanceExamples].
 
--   **Data description**: what the data are, how they are structured, formats used, and how they are documented.
--   **Data governance**: who can access the data, under what conditions, how consent and approvals apply, and how storage, security, and backup responsibilities are defined, even if technical implementation is handled elsewhere.
+## A DMP is a living document
 
-Keeping these elements distinct improves clarity and supports both FAIR practice and ethical compliance. DMPs are also expected to describe how metadata will be created, maintained, and reviewed over time, without requiring field-level standards to be specified at this stage.
+A weak DMP is written once and then forgotten. A useful DMP is revisited as the project develops.
 
-------------------------------------------------------------------------
+The plan may need updating when:
 
-## What assessors look for in a good DMP
+- a new data source is added;
+- data volume, format or sensitivity changes;
+- access conditions change;
+- new collaborators join;
+- a student or staff member leaves;
+- ethics, governance or contractual approvals change;
+- derived datasets or outputs become important;
+- analysis moves from exploratory to final;
+- the project prepares for publication, archiving or closure.
 
-When reviewing a Data Management Plan, assessors are not looking for technical detail for its own sake. Instead, they look for evidence that data management has been **thought through**, is **feasible**, and is **proportionate to the project context**.
+::: {.callout-important}
+### Updating a DMP is good practice
 
-Strong DMPs typically demonstrate:
+Changing a DMP is not a failure. It is evidence that the plan is being used as a working document rather than a static compliance exercise.
+:::
 
--   clarity about what data will be created or used;
--   realistic plans for documentation, storage, and preservation;
--   awareness of ethical, legal, and contractual constraints;
--   alignment between stated plans and the way the project is organised in practice;
--   named responsibility for data stewardship during the project and after staff or funding end.
+## What a DMP should usually cover
 
-Vague or generic statements are a common reason for weak DMP assessments.
+Different templates vary, but most DMPs cover the same broad areas. UCL's research data management guidance and DMP template provide local support for these issues [@uclRdmHub; @uclDmpTemplate; @uclManagingData]. External guidance from the UK Data Service, Oxford, ELIXIR and ARDC can also help interpret what good answers look like in practice [@ukdsChecklist; @oxfordDmpTemplate; @elixirDmp; @ardcDmp].
 
-------------------------------------------------------------------------
+### 1. Data collection or reuse
 
-## Mapping good project practice to DMP sections
+Describe what data will be collected, created or reused.
 
-Many elements of a strong DMP directly reflect good internal project organisation. The table below illustrates this alignment.
+Include:
 
-Use this mapping to check that the DMP reflects plausible working practice. It reassures assessors that statements correspond to real practices, but you do **not** need to duplicate implementation detail in the DMP.
+- type of data, such as survey data, interviews, sensor data, administrative data, geospatial data, code, images or derived measures;
+- approximate scale, such as number of participants, files, records, variables or expected storage size;
+- whether the data are new, reused, purchased, linked or obtained from a partner;
+- whether the data contain personal, sensitive, confidential or commercially restricted information;
+- what permissions, approvals or agreements are needed.
 
--   **Project folder structure**  
-    → DMP sections should state how data organisation and workflow separation will be handled (e.g., raw vs derived; storage locations).
+For secondary data or linked administrative data, the DMP should make clear who owns or controls access to the source data and what restrictions apply.
 
--   **README files and codebooks**  
-    → DMP sections should state what documentation artefacts will exist and who maintains them.
+### 2. Storage and security
 
--   **Structured metadata**  
-    → DMP sections should state how metadata will be captured, updated, and kept available (including when data access is restricted).
+Describe where data will be stored during the project and how access will be controlled.
 
--   **Versioning and change logs**  
-    → DMP sections should state how changes to data, code, and outputs will be tracked (tool-agnostic).
+Include:
 
-Making this alignment explicit reassures assessors that the DMP reflects real working practices rather than aspirational statements.
+- approved storage locations;
+- backup arrangements;
+- access controls and permissions;
+- encryption or secure transfer where needed;
+- whether data will be held in a trusted research environment or secure setting;
+- who can access identifiable, sensitive or restricted data;
+- what happens when staff or students leave the project.
 
-------------------------------------------------------------------------
+Avoid vague statements such as “data will be stored securely” unless you specify where, how and by whom.
+
+### 3. Organisation and documentation
+
+Describe how the data and related materials will be organised and documented.
+
+Include:
+
+- where project conventions are documented;
+- what README files, data dictionaries, codebooks or metadata will be created;
+- how raw, derived and final data will be distinguished;
+- how versions and changes will be tracked;
+- how software, code or workflow dependencies will be recorded;
+- what documentation is needed for reuse or handover.
+
+The details of folder structure and file naming are covered in Chapter 3. In the DMP, the key point is to record that conventions exist and where they can be found.
+
+### 4. Ethics, governance and legal constraints
+
+Describe the ethical, legal and contractual conditions that shape data management.
+
+Include:
+
+- ethics approvals;
+- consent conditions;
+- data-sharing or data-processing agreements;
+- information governance requirements;
+- data protection considerations;
+- intellectual property or commercial restrictions;
+- partner or funder conditions;
+- limits on international transfer or external access.
+
+This is especially important for projects using personal data, NHS data, administrative records, schools data, environmental data linked to individuals, or commercially provided datasets.
+
+### 5. Sharing, access and archiving
+
+Describe what will happen to data and related outputs at the end of the project.
+
+Include:
+
+- what data, code, metadata, documentation or materials will be shared;
+- what cannot be shared and why;
+- where outputs will be archived or deposited;
+- whether a repository can issue a persistent identifier;
+- what access conditions will apply;
+- what licence will be used where appropriate;
+- what will be retained internally and for how long.
+
+A good DMP distinguishes between **open access**, **controlled access**, **restricted access**, and **metadata-only records**. Sensitive or restricted data may still have public metadata, a data access statement, preserved code, synthetic examples or clear access conditions.
+
+### 6. Roles and responsibilities
+
+Describe who is responsible for key data management tasks and who has authority to make decisions.
+
+This should cover responsibility across the lifecycle: data collection or receipt, storage, cleaning, documentation, analysis, sharing, archiving and project closure.
+
+A DMP should not leave responsibility implicit. If responsibility is unclear, tasks tend to be missed or assumed to belong to someone else.
+
+## Roles and accountability
+
+Roles are often where good intentions fail. A project may state that data will be documented, archived or shared, but unless someone is responsible for ensuring this happens, the plan may not be implemented.
+
+A simple responsibility matrix can help.
+
+| Task | Responsible | Accountable | Consulted | Informed |
+|---|---|---|---|---|
+| Data storage and security | Data manager / analyst | PI or project lead | IT / RDM support | Project team |
+| README, metadata and codebook | Researcher / analyst | Project lead | Collaborators | Project team |
+| Code development and review | Analyst / data scientist | Project lead | Methodologists / collaborators | Project team |
+| Ethics and governance compliance | Project lead | PI / institution | Data protection officer / governance team | Project team |
+| Data sharing and archiving | Data steward / researcher | Project lead | Library / repository staff | Project team |
+
+You do not need a formal RACI table for every project. The principle is that responsibilities should be visible and realistic. For small projects, a short section in the DMP may be enough. For larger projects, a matrix can prevent confusion.
+
+::: {.callout-note}
+### Responsibility is not an event
+
+Responsibility is not only ethics approval, governance forms or compliance training. It is also everyday decisions: what can be shared, what cannot be shared, why, under what conditions, and who has authority to decide.
+:::
+
+## Data description, organisation and governance
+
+A common weakness in DMPs is mixing three different questions.
+
+::: {.definition-grid}
+::: {.definition-card}
+### Description
+
+What data exist? What do they contain? Where did they come from? What do variables, codes and files mean?
+:::
+
+::: {.definition-card}
+### Organisation
+
+Where are the files? How are they named? How are raw, derived and output files separated? How are versions tracked?
+:::
+
+::: {.definition-card}
+### Governance
+
+Who is allowed to access the data? Under what approvals, restrictions, agreements or legal conditions?
+:::
+:::
+
+A good DMP connects all three. It does not need to include every technical detail, but it should point to where the details are recorded.
+
+## Responsible sharing does not mean sharing everything
+
+Responsible sharing means making clear what can be shared, what cannot be shared, and why. This is especially important for sensitive or restricted data.
+
+A DMP should distinguish between:
+
+- data that can be made openly available;
+- data that can be shared under controlled access;
+- metadata that can be published even when data cannot;
+- code that can be shared using synthetic or simulated data;
+- documentation that can be shared without disclosing confidential information;
+- outputs that must remain internal because of consent, governance, legal or contractual constraints.
+
+::: {.callout-important}
+### Open does not always mean public
+
+For sensitive or restricted data, good data management may mean discoverable metadata, clear access conditions, preserved documentation, data access statements and secure governance — not public release of the data themselves.
+:::
+
+### Avoid vague statements
+
+Weak:
+
+> Data cannot be shared due to confidentiality.
+
+Stronger:
+
+> Individual-level data cannot be made openly available because they contain personal information and are subject to data provider and ethics restrictions. A metadata record, data dictionary, analysis code where possible, and a data access statement will be made available. Requests for access must be directed to [data controller/repository/access committee], subject to approval.
+
+The stronger version is more useful because it explains the restriction and identifies what *can* be shared.
+
+## Sensitive, restricted and high-risk data
+
+Some projects require more detailed planning because the risk is higher. Examples include:
+
+- personal or identifiable data;
+- linked administrative data;
+- health, education or social care records;
+- qualitative data where participants may be identifiable;
+- geospatial data that could reveal sensitive locations;
+- data subject to commercial licence or data provider agreements;
+- Indigenous, community-controlled or culturally sensitive data;
+- data involving children or vulnerable groups.
+
+For these projects, the DMP should be explicit about:
+
+- access controls;
+- de-identification or pseudonymisation;
+- linkage and separation of identifiers;
+- secure transfer;
+- approved storage environments;
+- retention and destruction;
+- review of outputs before release;
+- what happens at the end of the project;
+- who has authority to approve sharing.
 
 ## Planning for derived and intermediate data
 
-DMPs should consider not only final datasets, but also:
+DMPs often describe the original data but say less about derived data. This can be a problem because derived files are often the files used in analysis and publication.
 
--   derived datasets created during analysis;
--   intermediate files produced by scripts or workflows;
--   which data will be retained, archived, or discarded.
+Ask:
 
-These decisions directly inform the archiving, preservation, and curation plans described in the DMP, including what will be retained beyond the active life of the project.
+- Will the project create cleaned datasets?
+- Will records be linked across sources?
+- Will exposures, indices, scores or classifications be derived?
+- Will geospatial buffers, linkage keys, lookup tables or model outputs be generated?
+- Which derived files need to be preserved?
+- Which derived files can be regenerated from code?
+- Which derived files are sensitive even if they no longer contain obvious identifiers?
 
-Chapter 5 covers how to structure and document data states and provenance in practice. In the DMP, focus on recording what you intend to retain, under what conditions, and why.
+For reproducibility, the key issue is whether derived data can be traced back to the source data and code that created them.
 
-------------------------------------------------------------------------
+## What assessors and reviewers look for
 
-## Sustainability and proportionality
+When DMPs are reviewed by funders, institutions, supervisors or collaborators, the strongest plans are usually:
 
-Planning data management also has environmental implications.
+- specific rather than generic;
+- proportionate to project risk;
+- realistic about staffing and resources;
+- explicit about sensitive data and constraints;
+- clear about who is responsible;
+- clear about what will be shared and what will not;
+- connected to FAIR principles;
+- updated when circumstances change.
 
-DMPs should justify proportionate storage, retention, and compute plans in a way that supports reproducibility without unnecessary resource use. Practical options and examples are signposted in the [Resources and Further Reading](resources.qmd) chapter.
+A DMP does not need to be long to be good. It needs to be clear, truthful and usable.
 
-------------------------------------------------------------------------
+## UCL resources and support
 
-## DMP support at UCL
+For UCL projects, start with UCL's research data management guidance and the current UCL DMP template [@uclRdmHub; @uclDmpTemplate]. UCL guidance on managing data across the research lifecycle is also relevant for planning, storage, sharing and retention [@uclManagingData]. UCL also provides guidance on interdisciplinary data management planning [@uclResearchDataPlanning].
 
-UCL provides:
+DMPonline can help create plans aligned with institutional and funder requirements [@dmponlineDcc].
 
--   an institutional DMP template;
--   Research Data Management guidance;
--   support via Library Services and specialist teams.
+::: {.callout-tip}
+### Use local support early
 
-Relevant links, templates, and contacts are collated in the [Resources and Further Reading](resources.qmd) chapter (see **Data Management Plans** in Resources) to keep this module focused on principles rather than policy detail.
+If the project involves sensitive data, external data providers, linkage, controlled access, NHS or school data, or long-term archiving, involve research data management, information governance, ethics and library support early. It is much easier to design a workable plan at the start than to repair gaps at publication or close-down.
+:::
 
-------------------------------------------------------------------------
+## Activity: review a DMP as a decision record
 
-## Practical prompts when drafting a DMP
+::: {.activity-box}
+### Individual reflection or small-group discussion
 
-In practice, effective DMPs often make the following points explicit:
+Choose one current or recent project. Imagine you are reviewing the DMP.
 
--   what data types, formats, and volumes are in scope (and what is out of scope);
--   likely access and sharing constraints, and how these will be managed;
--   who is responsible for data stewardship during the project and after staff turnover;
--   when the DMP will be reviewed and updated (e.g., start-up, mid-project, pre-publication, project end).
+Ask:
 
-These prompts support continuity and reduce last-minute compliance work.
+- Does it clearly describe the data sources?
+- Does it say where data are stored and who can access them?
+- Does it explain what documentation will be created?
+- Does it state what can be shared, what cannot be shared, and why?
+- Does it identify who is responsible for storage, documentation, analysis, sharing and archiving?
+- Does it explain when the DMP will be reviewed or updated?
 
-------------------------------------------------------------------------
+Identify one section that is too vague and rewrite it as a specific decision.
+:::
 
-## Exercises (5--10 minutes)
+## Activity: constraints and access
 
-1.  Review the DMP (or draft one) for a current project.  
-    Is it clear which decisions are fixed and which may change?
+::: {.activity-box}
+### Make restrictions visible
 
-2.  Identify one type of derived or intermediate data.  
-    Decide whether it should be retained, documented, or discarded, and where that decision should be recorded in the DMP.
+Identify one constraint that limits what can be shared openly. This might be ethical, legal, contractual, governance-related or practical.
 
-::: callout-summary
+Then write a short access statement using this structure:
+
+1. What cannot be shared?
+2. Why not?
+3. What can be shared instead?
+4. Who can be contacted, or what process applies, if access is possible?
+5. Where is this information recorded?
+:::
+
+## Recommended resources for this chapter
+
+::: {.resource-box}
+### DMP guidance and templates
+
+- DMPonline [@dmponlineDcc]
+- Digital Curation Centre DMP guidance and examples [@dccDmpGuidanceExamples]
+- UCL Research Data Management guidance [@uclRdmHub]
+- UCL Data Management Plan template [@uclDmpTemplate]
+- UCL Managing data across the research lifecycle [@uclManagingData]
+- UK Data Service checklist [@ukdsChecklist]
+- Oxford DMP template examples [@oxfordDmpTemplate]
+- ELIXIR RDMkit: Data Management Plans [@elixirDmp]
+- Australian Research Data Commons DMP guidance [@ardcDmp]
+:::
+
+## What comes next?
+
+This chapter focused on the formal record of data-management decisions: what will be done, why, under what constraints, and who is responsible.
+
+The next chapter moves from project-level planning to the structure of the data files themselves: tidy data, spreadsheet risks, missing values, exclusions and data dictionaries.
+
+::: {.chapter-summary}
 ## Key takeaways
 
--   A DMP is a living record of decisions, not a static form.
--   Separating data description from governance improves clarity.
--   Planning should include derived and intermediate data.
--   Proportionate DMPs support reproducibility, ethics, and sustainability.
+- A DMP is a living record of data-management decisions, not just a compliance form.
+- The DMP records the agreement; the project structure implements it.
+- Good DMPs are specific, proportionate and realistic.
+- Roles and responsibilities should be visible, not assumed.
+- Responsible sharing means explaining what can be shared, what cannot, why, and under what conditions.
+- Sensitive or restricted data can still be managed in FAIR, transparent and reproducible ways.
 :::

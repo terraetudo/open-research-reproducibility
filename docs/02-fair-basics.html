@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Research &amp; Reproducibility - Chapter 2 - FAIR basics</title>
+<title>Open Research &amp; Reproducibility - Chapter 2 — FAIR basics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,11 +62,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -82,21 +82,52 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-fair-basics.html"><span class="chapter-title">Chapter 2 - FAIR basics</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-fair-basics.html"><span class="chapter-title">Chapter 2 — FAIR basics</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -106,14 +137,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -123,62 +149,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,13 +212,69 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-2" id="toc-chapter-2" class="nav-link active" data-scroll-target="#chapter-2">Chapter 2</a>
+  <ul class="collapse">
+  <li><a href="#fair-basics" id="toc-fair-basics" class="nav-link" data-scroll-target="#fair-basics">FAIR basics</a></li>
+  </ul></li>
+  <li><a href="#what-this-chapter-does" id="toc-what-this-chapter-does" class="nav-link" data-scroll-target="#what-this-chapter-does">What this chapter does</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#what-fair-means" id="toc-what-fair-means" class="nav-link" data-scroll-target="#what-fair-means">What FAIR means</a>
+  <ul class="collapse">
+  <li><a href="#fair-as-good-structure" id="toc-fair-as-good-structure" class="nav-link" data-scroll-target="#fair-as-good-structure">FAIR as “good structure”</a></li>
+  </ul></li>
+  <li><a href="#fair-is-not-the-same-as-open" id="toc-fair-is-not-the-same-as-open" class="nav-link" data-scroll-target="#fair-is-not-the-same-as-open">FAIR is not the same as “open”</a></li>
+  <li><a href="#fair-applies-to-more-than-datasets" id="toc-fair-applies-to-more-than-datasets" class="nav-link" data-scroll-target="#fair-applies-to-more-than-datasets">FAIR applies to more than datasets</a></li>
+  <li><a href="#findable" id="toc-findable" class="nav-link" data-scroll-target="#findable">Findable</a></li>
+  <li><a href="#accessible" id="toc-accessible" class="nav-link" data-scroll-target="#accessible">Accessible</a></li>
+  <li><a href="#interoperable" id="toc-interoperable" class="nav-link" data-scroll-target="#interoperable">Interoperable</a></li>
+  <li><a href="#reusable" id="toc-reusable" class="nav-link" data-scroll-target="#reusable">Reusable</a></li>
+  <li><a href="#how-to-make-data-more-fair" id="toc-how-to-make-data-more-fair" class="nav-link" data-scroll-target="#how-to-make-data-more-fair">How to make data more FAIR</a></li>
+  <li><a href="#fair-and-sensitive-or-restricted-data" id="toc-fair-and-sensitive-or-restricted-data" class="nav-link" data-scroll-target="#fair-and-sensitive-or-restricted-data">FAIR and sensitive or restricted data</a>
+  <ul class="collapse">
+  <li><a href="#short-exercise-as-open-as-possible-as-closed-as-necessary" id="toc-short-exercise-as-open-as-possible-as-closed-as-necessary" class="nav-link" data-scroll-target="#short-exercise-as-open-as-possible-as-closed-as-necessary">Short exercise: “as open as possible, as closed as necessary”</a></li>
+  </ul></li>
+  <li><a href="#fair-data-management-and-dmps" id="toc-fair-data-management-and-dmps" class="nav-link" data-scroll-target="#fair-data-management-and-dmps">FAIR, data management and DMPs</a>
+  <ul class="collapse">
+  <li><a href="#how-fair-relates-to-data-management" id="toc-how-fair-relates-to-data-management" class="nav-link" data-scroll-target="#how-fair-relates-to-data-management">How FAIR relates to data management</a></li>
+  </ul></li>
+  <li><a href="#fair-and-the-research-lifecycle" id="toc-fair-and-the-research-lifecycle" class="nav-link" data-scroll-target="#fair-and-the-research-lifecycle">FAIR and the research lifecycle</a>
+  <ul class="collapse">
+  <li><a href="#fair-across-the-research-lifecycle" id="toc-fair-across-the-research-lifecycle" class="nav-link" data-scroll-target="#fair-across-the-research-lifecycle">FAIR across the research lifecycle</a></li>
+  </ul></li>
+  <li><a href="#data-integrity-the-alcoa-principles" id="toc-data-integrity-the-alcoa-principles" class="nav-link" data-scroll-target="#data-integrity-the-alcoa-principles">Data integrity: the ALCOA principles</a></li>
+  <li><a href="#alcoa-and-alcoa" id="toc-alcoa-and-alcoa" class="nav-link" data-scroll-target="#alcoa-and-alcoa">ALCOA+ and ALCOA++</a>
+  <ul class="collapse">
+  <li><a href="#from-alcoa-to-alcoa-and-alcoa" id="toc-from-alcoa-to-alcoa-and-alcoa" class="nav-link" data-scroll-target="#from-alcoa-to-alcoa-and-alcoa">From ALCOA to ALCOA+ and ALCOA++</a></li>
+  </ul></li>
+  <li><a href="#bringing-fair-and-alcoa-together" id="toc-bringing-fair-and-alcoa-together" class="nav-link" data-scroll-target="#bringing-fair-and-alcoa-together">Bringing FAIR and ALCOA together</a>
+  <ul class="collapse">
+  <li><a href="#two-complementary-questions" id="toc-two-complementary-questions" class="nav-link" data-scroll-target="#two-complementary-questions">Two complementary questions</a></li>
+  </ul></li>
+  <li><a href="#activity-apply-fair-to-one-output" id="toc-activity-apply-fair-to-one-output" class="nav-link" data-scroll-target="#activity-apply-fair-to-one-output">Activity: apply FAIR to one output</a>
+  <ul class="collapse">
+  <li><a href="#individual-reflection-or-small-group-discussion" id="toc-individual-reflection-or-small-group-discussion" class="nav-link" data-scroll-target="#individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</a></li>
+  </ul></li>
+  <li><a href="#activity-quick-alcoa-check" id="toc-activity-quick-alcoa-check" class="nav-link" data-scroll-target="#activity-quick-alcoa-check">Activity: quick ALCOA check</a>
+  <ul class="collapse">
+  <li><a href="#record-integrity-check" id="toc-record-integrity-check" class="nav-link" data-scroll-target="#record-integrity-check">Record integrity check</a></li>
+  </ul></li>
+  <li><a href="#recommended-resources-for-this-chapter" id="toc-recommended-resources-for-this-chapter" class="nav-link" data-scroll-target="#recommended-resources-for-this-chapter">Recommended resources for this chapter</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What comes next?</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/02-fair-basics.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Chapter 2 - FAIR basics</span></h1>
+<h1 class="title"><span class="chapter-title">Chapter 2 — FAIR basics</span></h1>
 </div>
 
 
@@ -217,177 +289,593 @@ div.csl-indent {
 
 </header>
 
-<section id="sec-fair" class="level1">
-<h1>FAIR basics</h1>
+<section id="chapter-2" class="level1 chapter-hero">
+<h1>Chapter 2</h1>
+<section id="fair-basics" class="level2">
+<h2 class="anchored" data-anchor-id="fair-basics">FAIR basics</h2>
+<p>FAIR is a quick way to describe <strong>good structure</strong>. It helps us design research outputs so they can be found, understood, accessed appropriately, and reused responsibly.</p>
+</section>
+</section>
+<section id="what-this-chapter-does" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="what-this-chapter-does">What this chapter does</h3>
+<p>This chapter introduces the FAIR principles: <strong>Findable, Accessible, Interoperable and Reusable</strong>. It explains what each term means in practical research work, why FAIR is not the same as “open”, and how FAIR applies to more than datasets.</p>
+<p>The aim is not to turn FAIR into a compliance checklist. The aim is to use FAIR as a simple framework for thinking about the structure, documentation and future use of research outputs.</p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you should be able to:</p>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>explain what the FAIR principles are and how they work in practice;</li>
-<li>distinguish FAIR from openness, documentation, and data management planning;</li>
-<li>understand what <em>Findable</em>, <em>Accessible</em>, <em>Interoperable</em>, and <em>Reusable</em> mean conceptually;</li>
-<li>recognise how FAIR applies to data, code, and other research outputs;</li>
-<li>understand where FAIR principles are implemented later in the research workflow.</li>
+<li>explain what the FAIR principles are and why they matter;</li>
+<li>distinguish FAIR from openness, documentation and data management planning;</li>
+<li>describe what <strong>Findable</strong>, <strong>Accessible</strong>, <strong>Interoperable</strong> and <strong>Reusable</strong> mean in practice;</li>
+<li>recognise how FAIR applies to data, code, protocols, documentation and workflows;</li>
+<li>explain why accessibility does not necessarily mean public openness;</li>
+<li>identify practical steps that make research outputs more FAIR;</li>
+<li>understand how FAIR connects to data integrity principles such as ALCOA.</li>
 </ul>
-<p>This module builds on the motivation introduced in <a href="./01-why-open.html">Chapter 1 – Why Open?</a>. It introduces FAIR as a <strong>set of design principles for research outputs</strong>, not as a checklist or compliance exercise.</p>
-<hr>
+<p>This chapter builds on <a href="./01-why-open.html">Chapter 1 — Why Open Research and Reproducibility?</a>. Chapter 1 introduced the problem: research can become difficult to understand, check or reuse when decisions, files, code and outputs are poorly documented. FAIR gives us a language for designing outputs so they remain useful beyond the immediate project.</p>
 </section>
-<section id="what-fair-means-in-practice" class="level2">
-<h2 class="anchored" data-anchor-id="what-fair-means-in-practice">What FAIR means (in practice)</h2>
-<p>FAIR stands for <strong>Findable, Accessible, Interoperable, and Reusable</strong><span class="citation" data-cites="wilkinson2016fair"><sup><a href="#ref-wilkinson2016fair" role="doc-biblioref">1</a></sup></span>.</p>
-<p>The FAIR principles describe <em>how research outputs should be structured and described</em> so that they can be:</p>
+<section id="what-fair-means" class="level2">
+<h2 class="anchored" data-anchor-id="what-fair-means">What FAIR means</h2>
+<p>FAIR stands for <strong>Findable, Accessible, Interoperable and Reusable</strong><span class="citation" data-cites="wilkinson2016fair gofairPrinciples"><sup><a href="#ref-wilkinson2016fair" role="doc-biblioref">1</a>,<a href="#ref-gofairPrinciples" role="doc-biblioref">2</a></sup></span>.</p>
+<p>In simple terms, FAIR asks whether a research output has been structured and described well enough that someone else — or your future self — can:</p>
 <ul>
-<li>discovered,</li>
-<li>accessed under clear conditions,</li>
-<li>correctly interpreted,</li>
-<li>and reused over time.</li>
+<li>discover that it exists;</li>
+<li>understand what it is;</li>
+<li>know how access is managed;</li>
+<li>interpret it correctly;</li>
+<li>judge whether and how it can be reused.</li>
 </ul>
-<p>FAIR applies across the research lifecycle and to <strong>data, code, software, workflows, and documentation</strong>, not only datasets<span class="citation" data-cites="jacobsen2020fair"><sup><a href="#ref-jacobsen2020fair" role="doc-biblioref">2</a></sup></span>.</p>
-<p>FAIR is not: - a requirement to make data open; - a single repository or platform; - a fixed checklist.</p>
-<p>Instead, FAIR provides a shared language for designing outputs that remain usable beyond the immediate project.</p>
-<hr>
+<section id="fair-as-good-structure" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="fair-as-good-structure">FAIR as “good structure”</h3>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 35%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>FAIR element</th>
+<th>Practical question</th>
+<th>What this means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Findable</strong></td>
+<td>Can people discover that this output exists?</td>
+<td>Use persistent identifiers, clear titles, keywords and searchable metadata.</td>
+</tr>
+<tr class="even">
+<td><strong>Accessible</strong></td>
+<td>Is it clear how the output can be accessed?</td>
+<td>State access routes, restrictions, permissions and conditions.</td>
+</tr>
+<tr class="odd">
+<td><strong>Interoperable</strong></td>
+<td>Can it work with other systems, tools or datasets?</td>
+<td>Use appropriate formats, standards, vocabularies and consistent structure.</td>
+</tr>
+<tr class="even">
+<td><strong>Reusable</strong></td>
+<td>Can it be used again responsibly?</td>
+<td>Provide context, provenance, versioning, licences and limitations.</td>
+</tr>
+</tbody>
+</table>
+<p>FAIR is a way to design outputs so they can be <strong>found, understood and reused</strong>.</p>
+</section>
+<p>The word “output” is important. FAIR is often introduced through data, but the same logic increasingly applies to code, protocols, documentation, workflows, metadata, software, models and other research materials<span class="citation" data-cites="turingwayFair carpentriesFairBio cambridgeOpenResearchLicensing"><sup><a href="#ref-turingwayFair" role="doc-biblioref">3</a>–<a href="#ref-cambridgeOpenResearchLicensing" role="doc-biblioref">5</a></sup></span>.</p>
 </section>
 <section id="fair-is-not-the-same-as-open" class="level2">
 <h2 class="anchored" data-anchor-id="fair-is-not-the-same-as-open">FAIR is not the same as “open”</h2>
-<p>FAIR does <strong>not</strong> mean publicly open.</p>
-<p>Research outputs may be: - FAIR and open; - FAIR but access-restricted (e.g.&nbsp;personal or sensitive data); - FAIR with mediated or controlled access.</p>
-<p>A common framing is <strong>“as open as possible, as closed as necessary”</strong>. This distinction is especially important in health, social, and population research and is discussed further in <a href="./08-s-responsibility.html">Chapter 8 – Responsible &amp; sustainable research</a>.</p>
+<p>A common misunderstanding is that FAIR means “make everything public”. It does not.</p>
+<p>An output may be:</p>
+<ul>
+<li><strong>FAIR and open</strong>, for example an anonymised dataset deposited in a trusted repository with a DOI, metadata and a licence;</li>
+<li><strong>FAIR but restricted</strong>, for example sensitive health data that cannot be downloaded publicly but has clear metadata, access conditions and governance routes;</li>
+<li><strong>not FAIR</strong>, even if it is publicly available, for example a spreadsheet uploaded without documentation, variables, licence or version information.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Accessibility does not imply openness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>A</strong> in FAIR means that access conditions are clear. It does not mean that everyone must be able to download the data.</p>
+<p>For sensitive or restricted-access data, FAIR may mean making the metadata, access process, governance restrictions and reuse conditions clear, while keeping the data themselves protected.</p>
+</div>
+</div>
+<p>This distinction is particularly important for health, education, administrative and linked data. In these settings, good practice is often not “share the data openly”, but rather: describe the data well, preserve the analysis materials, explain the access route, and document what cannot be shared and why<span class="citation" data-cites="openaireSensitiveData cambridgeDataAccessStatement"><sup><a href="#ref-openaireSensitiveData" role="doc-biblioref">6</a>,<a href="#ref-cambridgeDataAccessStatement" role="doc-biblioref">7</a></sup></span>.</p>
+</section>
+<section id="fair-applies-to-more-than-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="fair-applies-to-more-than-datasets">FAIR applies to more than datasets</h2>
+<p>The slides emphasise an important point: FAIR applies to more than data. In most research projects, several types of output may need to be structured, described and preserved.</p>
+<div class="practice-grid">
+<section id="data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<p>Raw data, processed data, derived variables, analysis-ready datasets, lookup tables and spatial layers.</p>
+</section>
+<section id="code-and-software" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="code-and-software">Code and software</h3>
+<p>Scripts, functions, packages, notebooks, computational environments and dependencies.</p>
+</section>
+<section id="protocols-and-plans" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="protocols-and-plans">Protocols and plans</h3>
+<p>Study protocols, analysis plans, preregistrations, data management plans and decision logs.</p>
+</section>
+<section id="documentation" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
+<p>READMEs, metadata, data dictionaries, codebooks, SOPs, variable definitions and file inventories.</p>
+</section>
+<section id="workflows" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="workflows">Workflows</h3>
+<p>Steps linking data collection, cleaning, analysis, outputs, archiving and reuse.</p>
+</section>
+</div>
+<p>You do not have to make everything FAIR at once. Some materials will be more important than others. A good starting point is to ask: <em>what would someone need in order to understand, check or reuse this work later?</em></p>
+</section>
+<section id="findable" class="level2">
+<h2 class="anchored" data-anchor-id="findable">Findable</h2>
+<p><strong>Findable</strong> means that research outputs can be discovered by others, including people outside the original project.</p>
+<p>Findability is supported by:</p>
+<ul>
+<li>a clear title and description;</li>
+<li>persistent identifiers such as DOIs;</li>
+<li>author identifiers such as ORCID iDs;</li>
+<li>keywords and subject terms;</li>
+<li>repository records or catalogue entries;</li>
+<li>metadata that can be indexed by search systems;</li>
+<li>file names and folder structures that make sense beyond the original analyst.</li>
+</ul>
+<p>Findability is not the same as access. A restricted dataset can still be findable if there is a public metadata record explaining what the dataset contains and how access can be requested.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Practical example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A dataset stored only on a personal laptop is not findable.<br>
+A dataset deposited in a trusted repository with a DOI, metadata, authorship, dates, access conditions and a citation format is much more findable — even if access to the data is restricted.</p>
+</div>
+</div>
+</section>
+<section id="accessible" class="level2">
+<h2 class="anchored" data-anchor-id="accessible">Accessible</h2>
+<p><strong>Accessible</strong> means that it is clear how an output can be accessed, under what conditions, and by whom.</p>
+<p>Access may be:</p>
+<ul>
+<li>open, where the output can be downloaded directly;</li>
+<li>mediated, where users must complete a request or registration process;</li>
+<li>controlled, where access depends on approvals, contracts, information governance or safe settings;</li>
+<li>closed, where access is not possible, but the reason is documented.</li>
+</ul>
+<p>Accessible outputs should state:</p>
+<ul>
+<li>who can access the material;</li>
+<li>where the material is held;</li>
+<li>whether access is open, restricted, embargoed or unavailable;</li>
+<li>what conditions apply;</li>
+<li>who to contact or what process to follow;</li>
+<li>whether metadata remain available if the data are withdrawn or restricted.</li>
+</ul>
+<p>For sensitive data, accessibility is often about making the <strong>access route and restrictions</strong> transparent, not about removing safeguards.</p>
+</section>
+<section id="interoperable" class="level2">
+<h2 class="anchored" data-anchor-id="interoperable">Interoperable</h2>
+<p><strong>Interoperable</strong> means that outputs can be understood and used correctly in different contexts, systems or tools.</p>
+<p>Interoperability is supported by:</p>
+<ul>
+<li>open or widely used file formats;</li>
+<li>machine-readable formats where appropriate;</li>
+<li>consistent variable names and coding;</li>
+<li>clear units, dates, spatial references and classifications;</li>
+<li>standard vocabularies, ontologies or metadata schemas where relevant;</li>
+<li>documentation of transformations, exclusions and derived variables;</li>
+<li>avoiding unnecessary proprietary formats when possible.</li>
+</ul>
+<p>In practice, interoperability reduces friction. It helps prevent situations where a file technically exists but cannot be interpreted, combined, imported, or used correctly by another person or software environment.</p>
+</section>
+<section id="reusable" class="level2">
+<h2 class="anchored" data-anchor-id="reusable">Reusable</h2>
+<p><strong>Reusable</strong> means that outputs can be used again for future research, whether by others or by your future self.</p>
+<p>Reusability depends on context. A file is not reusable simply because it exists. It needs enough information for someone to judge whether it is appropriate, valid and permitted to use.</p>
+<p>Reusable outputs usually include:</p>
+<ul>
+<li>a README or equivalent orientation document;</li>
+<li>metadata and data dictionaries;</li>
+<li>information about provenance and version history;</li>
+<li>information about software, code or dependencies;</li>
+<li>a licence or reuse statement;</li>
+<li>known limitations and constraints;</li>
+<li>citation information;</li>
+<li>contact or access information where appropriate.</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-FAIR still applies when data cannot be shared
+Reuse is responsible reuse
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When data cannot be shared openly, FAIR principles still apply to <strong>metadata, documentation, and access conditions</strong> describing the existence and nature of the output.</p>
+<p>FAIR does not mean encouraging inappropriate reuse. It means providing enough information for someone to understand what reuse is possible, what conditions apply, and what limitations should be respected.</p>
 </div>
 </div>
-<hr>
 </section>
-<section id="findable-how-outputs-are-discovered" class="level2">
-<h2 class="anchored" data-anchor-id="findable-how-outputs-are-discovered">Findable: how outputs are discovered</h2>
-<p><em>Findable</em> means that research outputs can be <strong>discovered by others</strong>, including people outside the original project.</p>
-<p>In practice, findability is supported by mechanisms such as:</p>
+<section id="how-to-make-data-more-fair" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-make-data-more-fair">How to make data more FAIR</h2>
+<p>The slides summarise six practical actions. These are not the only FAIR actions, but they are a useful starting point.</p>
+<div class="practice-grid">
+<section id="document-your-data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="document-your-data">1. Document your data</h3>
+<p>Explain the data clearly so others — and your future self — can understand and use them. Include a README, data dictionary, codebook and any code needed to interpret or recreate derived variables.</p>
+</section>
+<section id="add-metadata" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="add-metadata">2. Add metadata</h3>
+<p>Metadata help others find, understand and reuse the data. Use repository metadata fields and, where relevant, discipline-specific metadata standards<span class="citation" data-cites="dccMetadataStandards cambridgeMetadata"><sup><a href="#ref-dccMetadataStandards" role="doc-biblioref">8</a>,<a href="#ref-cambridgeMetadata" role="doc-biblioref">9</a></sup></span>.</p>
+</section>
+<section id="use-appropriate-formats" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="use-appropriate-formats">3. Use appropriate formats</h3>
+<p>Use open, machine-readable or widely used formats where possible. Avoid formats that require proprietary software unless there is a clear reason<span class="citation" data-cites="cambridgeFileFormats"><sup><a href="#ref-cambridgeFileFormats" role="doc-biblioref">10</a></sup></span>.</p>
+</section>
+<section id="make-access-clear" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="make-access-clear">4. Make access clear</h3>
+<p>Share openly where possible. If access must be restricted, explain who can access the output, under what conditions, and through what route.</p>
+</section>
+<section id="link-and-cite-outputs" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="link-and-cite-outputs">5. Link and cite outputs</h3>
+<p>Use persistent identifiers, such as DOIs, where possible. Cite datasets, code and other outputs in publications and reports. Trusted repositories make this easier because they normally provide stable records, metadata and persistent identifiers<span class="citation" data-cites="cambridgeFindRepository"><sup><a href="#ref-cambridgeFindRepository" role="doc-biblioref">11</a></sup></span>.</p>
+</section>
+<section id="add-a-licence-or-reuse-statement" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="add-a-licence-or-reuse-statement">6. Add a licence or reuse statement</h3>
+<p>Specify what others are allowed to do with the material. For code, data and documentation, licences may differ, so state the conditions clearly<span class="citation" data-cites="cambridgeCreativeCommons cambridgeSoftwareCode"><sup><a href="#ref-cambridgeCreativeCommons" role="doc-biblioref">12</a>,<a href="#ref-cambridgeSoftwareCode" role="doc-biblioref">13</a></sup></span>.</p>
+</section>
+</div>
+<p>These actions link directly to later chapters on project organisation, documentation, code quality, publishing, persistent identifiers and preparing for reuse.</p>
+</section>
+<section id="fair-and-sensitive-or-restricted-data" class="level2">
+<h2 class="anchored" data-anchor-id="fair-and-sensitive-or-restricted-data">FAIR and sensitive or restricted data</h2>
+<p>FAIR is particularly useful when data cannot be made openly available, because it helps separate <strong>description</strong> from <strong>access</strong>.</p>
+<p>For sensitive or restricted data, you may still be able to make the following FAIR:</p>
 <ul>
-<li>persistent identifiers (e.g.&nbsp;DOIs for datasets, ORCID iDs for researchers);</li>
-<li>descriptive metadata that can be indexed by search systems;</li>
-<li>stable locations (e.g.&nbsp;repositories rather than personal storage).</li>
+<li>metadata describing the dataset;</li>
+<li>a data dictionary or variable list;</li>
+<li>information about data provenance;</li>
+<li>the protocol or analysis plan;</li>
+<li>synthetic or dummy example data;</li>
+<li>code that can be run in the approved environment;</li>
+<li>information about governance and access routes;</li>
+<li>a data access statement in the publication;</li>
+<li>restrictions, retention rules and destruction plans.</li>
 </ul>
-<p>Findability is primarily about <strong>being locatable</strong>, not about being downloadable. An output can be findable even if access is restricted.</p>
-<hr>
-</section>
-<section id="accessible-how-access-is-defined-and-managed" class="level2">
-<h2 class="anchored" data-anchor-id="accessible-how-access-is-defined-and-managed">Accessible: how access is defined and managed</h2>
-<p><em>Accessible</em> means that it is <strong>clear how an output can be accessed</strong>, under what conditions, and by whom.</p>
-<p>Accessibility does not imply openness. Instead, it requires:</p>
+<p>The key is to record the constraint explicitly. A statement such as “data are unavailable” is rarely sufficient. A better statement explains what exists, why it cannot be openly shared, what access may be possible, and who controls access.</p>
+<section id="short-exercise-as-open-as-possible-as-closed-as-necessary" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="short-exercise-as-open-as-possible-as-closed-as-necessary">Short exercise: “as open as possible, as closed as necessary”</h3>
+<p>Choose one research output from your own work.</p>
+<p>Ask:</p>
 <ul>
-<li>a clear access route (open, mediated, or restricted);</li>
-<li>transparent access conditions;</li>
-<li>persistence of metadata even if the data themselves are withdrawn or embargoed.</li>
+<li>Could this output be shared openly?</li>
+<li>If not, what exactly prevents sharing?</li>
+<li>Could the metadata, code, protocol, synthetic example or access statement still be shared?</li>
+<li>Where should this decision be recorded?</li>
 </ul>
-<p>From a FAIR perspective, knowing <em>why</em> something cannot be accessed is as important as knowing <em>how</em> it can be accessed.</p>
-<hr>
 </section>
-<section id="interoperable-how-outputs-can-be-interpreted-correctly" class="level2">
-<h2 class="anchored" data-anchor-id="interoperable-how-outputs-can-be-interpreted-correctly">Interoperable: how outputs can be interpreted correctly</h2>
-<p><em>Interoperable</em> means that outputs can be <strong>understood and used correctly in different contexts</strong>, systems, or tools.</p>
-<p>This is supported by:</p>
+</section>
+<section id="fair-data-management-and-dmps" class="level2">
+<h2 class="anchored" data-anchor-id="fair-data-management-and-dmps">FAIR, data management and DMPs</h2>
+<p>FAIR principles are closely related to data management, but they are not the same thing.</p>
+<section id="how-fair-relates-to-data-management" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="how-fair-relates-to-data-management">How FAIR relates to data management</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[FAIR principles] --&gt; B[Data management practice]
+    B --&gt; C[Data Management Plan]
+    C --&gt; D[Project delivery and preservation]
+
+    A --&gt; A1[Design outputs so they can be found, accessed, understood and reused]
+    B --&gt; B1[Organise files, document variables, manage versions, record decisions]
+    C --&gt; C1[Explain what will be done, why, by whom and with what resources]
+    D --&gt; D1[Preserve, publish, archive or restrict outputs appropriately]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<p>FAIR provides the design principles. Data management practice implements those principles through day-to-day organisation, documentation, versioning, storage, security and preservation. The Data Management Plan explains how these practices will be applied, justified and resourced.</p>
+</section>
+<section id="fair-and-the-research-lifecycle" class="level2">
+<h2 class="anchored" data-anchor-id="fair-and-the-research-lifecycle">FAIR and the research lifecycle</h2>
+<p>FAIR is not only something to think about at publication. It applies across the whole project lifecycle.</p>
+<section id="fair-across-the-research-lifecycle" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="fair-across-the-research-lifecycle">FAIR across the research lifecycle</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Plan and design] --&gt; B[Collect or create]
+    B --&gt; C[Store and manage]
+    C --&gt; D[Analyse and collaborate]
+    D --&gt; E[Share and disseminate]
+    E --&gt; F[Publish and reuse]
+    F --&gt; A
+
+    A -. FAIR questions .-&gt; A1[What outputs will exist?]
+    B -. FAIR questions .-&gt; B1[How will they be structured?]
+    C -. FAIR questions .-&gt; C1[How will they be described and protected?]
+    D -. FAIR questions .-&gt; D1[How will code, versions and decisions be recorded?]
+    E -. FAIR questions .-&gt; E1[What can be shared, restricted or cited?]
+    F -. FAIR questions .-&gt; F1[How will outputs remain reusable?]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<p>This lifecycle framing is useful because FAIR decisions are harder to fix at the end. For example, it is much easier to produce a useful data dictionary if variable names, coding decisions and derived variables have been documented throughout the analysis.</p>
+</section>
+<section id="data-integrity-the-alcoa-principles" class="level2">
+<h2 class="anchored" data-anchor-id="data-integrity-the-alcoa-principles">Data integrity: the ALCOA principles</h2>
+<p>FAIR is about making research outputs findable, accessible, interoperable and reusable. It should be complemented by data integrity principles, which focus on whether data are reliable, traceable and trustworthy.</p>
+<p>The <strong>ALCOA</strong> framework describes core characteristics of reliable records:</p>
+<div class="practice-grid">
+<section id="attributable" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="attributable">Attributable</h3>
+<p>It should be clear who created, collected, modified or approved the data.</p>
+</section>
+<section id="legible" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="legible">Legible</h3>
+<p>The record should be readable, understandable and interpretable over time.</p>
+</section>
+<section id="contemporaneous" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="contemporaneous">Contemporaneous</h3>
+<p>Data should be recorded at the time the activity occurred, or as soon as possible afterwards.</p>
+</section>
+<section id="original" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="original">Original</h3>
+<p>The original record, or an authorised copy, should be retained.</p>
+</section>
+<section id="accurate" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="accurate">Accurate</h3>
+<p>Data should correctly reflect what was observed, measured or derived.</p>
+</section>
+</div>
+<p>ALCOA is useful in this workshop because it makes data integrity concrete. It asks simple questions: Who did this? When was it done? Can the record be read? Is it the original? Is it correct?</p>
+</section>
+<section id="alcoa-and-alcoa" class="level2">
+<h2 class="anchored" data-anchor-id="alcoa-and-alcoa">ALCOA+ and ALCOA++</h2>
+<p>Many organisations extend ALCOA to <strong>ALCOA+</strong> and <strong>ALCOA++</strong>. The exact wording varies, but the additional principles usually emphasise completeness, consistency, durability and ongoing review.</p>
+<section id="from-alcoa-to-alcoa-and-alcoa" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="from-alcoa-to-alcoa-and-alcoa">From ALCOA to ALCOA+ and ALCOA++</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>ALCOA</th>
+<th>ALCOA+</th>
+<th>ALCOA++</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attributable</td>
+<td>Complete</td>
+<td>Integrity</td>
+</tr>
+<tr class="even">
+<td>Legible</td>
+<td>Consistent</td>
+<td>Robustness</td>
+</tr>
+<tr class="odd">
+<td>Contemporaneous</td>
+<td>Enduring</td>
+<td>Transparency</td>
+</tr>
+<tr class="even">
+<td>Original</td>
+<td>Available</td>
+<td>Accountability</td>
+</tr>
+<tr class="odd">
+<td>Accurate</td>
+<td></td>
+<td>Reliability</td>
+</tr>
+</tbody>
+</table>
+<p>These extensions are useful because reproducibility is not only about whether a file exists. It also depends on whether the record is complete, consistent, protected from inappropriate change, available for review, and accountable.</p>
+</section>
+<p>For routine research practice, this does not mean adding another complicated framework. It means checking whether your project records are traceable, understandable and defensible.</p>
+</section>
+<section id="bringing-fair-and-alcoa-together" class="level2">
+<h2 class="anchored" data-anchor-id="bringing-fair-and-alcoa-together">Bringing FAIR and ALCOA together</h2>
+<p>FAIR and ALCOA answer slightly different questions.</p>
+<section id="two-complementary-questions" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="two-complementary-questions">Two complementary questions</h3>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 42%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Framework</th>
+<th>Main question</th>
+<th>Practical focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>FAIR</strong></td>
+<td>Can the output be found, accessed appropriately, interpreted and reused?</td>
+<td>Metadata, identifiers, access routes, formats, documentation, licences.</td>
+</tr>
+<tr class="even">
+<td><strong>ALCOA</strong></td>
+<td>Can the record be trusted as reliable and traceable?</td>
+<td>Attribution, timing, legibility, originality, accuracy, completeness and accountability.</td>
+</tr>
+</tbody>
+</table>
+<p>Together, they support research outputs that are both <strong>usable</strong> and <strong>trustworthy</strong>.</p>
+</section>
+</section>
+<section id="activity-apply-fair-to-one-output" class="level2">
+<h2 class="anchored" data-anchor-id="activity-apply-fair-to-one-output">Activity: apply FAIR to one output</h2>
+<section id="individual-reflection-or-small-group-discussion" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</h3>
+<p>Choose one research output from a current or recent project. This could be a dataset, script, protocol, report, data dictionary, map, figure, model or workflow.</p>
+<p>For that output, ask:</p>
 <ul>
-<li>standard or widely used file formats;</li>
-<li>consistent variable naming and coding;</li>
-<li>use of shared vocabularies or conventions where appropriate;</li>
-<li>clear documentation of transformations and assumptions.</li>
+<li><strong>Findable:</strong> Could someone discover that it exists?</li>
+<li><strong>Accessible:</strong> Is it clear who can access it, and under what conditions?</li>
+<li><strong>Interoperable:</strong> Could it be opened, interpreted and used correctly in another context?</li>
+<li><strong>Reusable:</strong> Is there enough context, documentation and permission information for responsible reuse?</li>
 </ul>
-<p>Interoperability reduces the risk of misinterpretation when data or code move between people, teams, or software environments.</p>
-<hr>
+<p>Then identify the weakest FAIR element and one practical improvement.</p>
 </section>
-<section id="reusable-how-outputs-can-be-used-again" class="level2">
-<h2 class="anchored" data-anchor-id="reusable-how-outputs-can-be-used-again">Reusable: how outputs can be used again</h2>
-<p><em>Reusable</em> means that outputs can be <strong>used again for future research</strong>, whether by others or by your future self.</p>
-<p>Reusability depends on:</p>
+</section>
+<section id="activity-quick-alcoa-check" class="level2">
+<h2 class="anchored" data-anchor-id="activity-quick-alcoa-check">Activity: quick ALCOA check</h2>
+<section id="record-integrity-check" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="record-integrity-check">Record integrity check</h3>
+<p>Choose one important file or decision record from your project.</p>
+<p>Ask:</p>
 <ul>
-<li>sufficient contextual information to interpret the output;</li>
-<li>clear licensing and reuse conditions;</li>
-<li>versioning and provenance information;</li>
-<li>documentation of limitations, assumptions, and constraints.</li>
+<li><strong>Attributable:</strong> Is it clear who created or changed it?</li>
+<li><strong>Legible:</strong> Would someone else understand it?</li>
+<li><strong>Contemporaneous:</strong> Was the information recorded at the time, or reconstructed later?</li>
+<li><strong>Original:</strong> Is it clear which version is the original or authoritative record?</li>
+<li><strong>Accurate:</strong> Has it been checked against the source or decision it represents?</li>
 </ul>
-<p>Reusability is not about guaranteeing reuse; it is about <strong>making reuse possible and responsible</strong>.</p>
-<hr>
+<p>Use this as a quick diagnostic, not as a formal audit.</p>
 </section>
-<section id="fair-applies-to-more-than-datasets" class="level2">
-<h2 class="anchored" data-anchor-id="fair-applies-to-more-than-datasets">FAIR applies to more than datasets</h2>
-<p>FAIR principles apply to:</p>
+</section>
+<section id="recommended-resources-for-this-chapter" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-resources-for-this-chapter">Recommended resources for this chapter</h2>
+<p>These resources are useful if you want to go beyond the workshop slides. I would treat them as a small curated reading list rather than as material everyone must read in full.</p>
+<div class="figure-box">
+<section id="core-fair-references" class="level3">
+<h3 class="anchored" data-anchor-id="core-fair-references">Core FAIR references</h3>
 <ul>
-<li>datasets and associated metadata;</li>
-<li>analysis code and scripts;</li>
-<li>protocols, analysis plans, and workflows;</li>
-<li>documentation capturing decisions and provenance.</li>
+<li><strong>Wilkinson et al.&nbsp;(2016)</strong> — the original FAIR Guiding Principles paper<span class="citation" data-cites="wilkinson2016fair"><sup><a href="#ref-wilkinson2016fair" role="doc-biblioref">1</a></sup></span>.</li>
+<li><strong>GO FAIR: FAIR principles</strong> — concise description of the FAIR principles and their sub-principles<span class="citation" data-cites="gofairPrinciples"><sup><a href="#ref-gofairPrinciples" role="doc-biblioref">2</a></sup></span>.</li>
+<li><strong>The Turing Way: FAIR principles</strong> — accessible explanation of FAIR in relation to reproducible research and research data management<span class="citation" data-cites="turingwayFair"><sup><a href="#ref-turingwayFair" role="doc-biblioref">3</a></sup></span>.</li>
+<li><strong>FAIR in biological practice</strong> — practical teaching material for applying FAIR ideas in research workflows<span class="citation" data-cites="carpentriesFairBio"><sup><a href="#ref-carpentriesFairBio" role="doc-biblioref">4</a></sup></span>.</li>
 </ul>
-<p>Applying FAIR principles to <strong>code and documentation</strong> often delivers the greatest immediate gains in reproducibility and project continuity.</p>
-<hr>
 </section>
-<section id="fair-data-management-and-dmps-how-they-relate" class="level2">
-<h2 class="anchored" data-anchor-id="fair-data-management-and-dmps-how-they-relate">FAIR, data management, and DMPs: how they relate</h2>
-<p>FAIR principles interact with, but are distinct from, other research practices:</p>
+<section id="practical-implementation-resources" class="level3">
+<h3 class="anchored" data-anchor-id="practical-implementation-resources">Practical implementation resources</h3>
 <ul>
-<li><strong>FAIR</strong> provides design principles for structuring outputs.</li>
-<li><strong>Data management practice</strong> implements those principles through organisation, documentation, and versioning.</li>
-<li><strong>Data Management Plans (DMPs)</strong> describe how those practices will be applied, justified, and resourced.</li>
+<li><strong>Cambridge Research Data Management: FAIR principles</strong> — useful plain-language explanation of FAIR<span class="citation" data-cites="cambridgeFairPrinciples"><sup><a href="#ref-cambridgeFairPrinciples" role="doc-biblioref">14</a></sup></span>.</li>
+<li><strong>DCC disciplinary metadata standards</strong> and <strong>Cambridge metadata guidance</strong> — useful when deciding what metadata standards or fields to use<span class="citation" data-cites="dccMetadataStandards cambridgeMetadata"><sup><a href="#ref-dccMetadataStandards" role="doc-biblioref">8</a>,<a href="#ref-cambridgeMetadata" role="doc-biblioref">9</a></sup></span>.</li>
+<li><strong>Cambridge file formats guidance</strong> — useful for explaining why open, machine-readable and widely used formats matter<span class="citation" data-cites="cambridgeFileFormats"><sup><a href="#ref-cambridgeFileFormats" role="doc-biblioref">10</a></sup></span>.</li>
+<li><strong>Cambridge repository guidance</strong> — useful when deciding where to deposit data or other outputs<span class="citation" data-cites="cambridgeFindRepository"><sup><a href="#ref-cambridgeFindRepository" role="doc-biblioref">11</a></sup></span>.</li>
 </ul>
-<p>This course treats FAIR as the <strong>conceptual foundation</strong>, with implementation addressed in later chapters and supported by institutional infrastructure.</p>
-<hr>
 </section>
-<section id="proportionality-and-constraints" class="level2">
-<h2 class="anchored" data-anchor-id="proportionality-and-constraints">Proportionality and constraints</h2>
-<p>FAIR is not all-or-nothing.</p>
-<p>Projects differ in scale, sensitivity, duration, and resources. Good FAIR practice means making <strong>proportionate, defensible choices</strong>, documenting constraints, and being explicit about limitations.</p>
-<p>This course focuses on FAIR considerations that are realistic for early-career researchers working within ethical, legal, and institutional boundaries.</p>
-<hr>
-</section>
-<section id="where-fair-is-implemented-later-in-the-course" class="level2">
-<h2 class="anchored" data-anchor-id="where-fair-is-implemented-later-in-the-course">Where FAIR is implemented later in the course</h2>
-<p>In this course:</p>
+<section id="sensitive-data-access-statements-and-licensing" class="level3">
+<h3 class="anchored" data-anchor-id="sensitive-data-access-statements-and-licensing">Sensitive data, access statements and licensing</h3>
 <ul>
-<li><strong>Minimum metadata standards</strong> are introduced in the <a href="./04-dmp.html"><strong>Chapter 4 — Data Management Plans (UCL)</strong></a>.</li>
-<li><strong>Planning and justification</strong> of FAIR actions are addressed in the <a href="./04-dmp.html"><strong>Chapter 4 — Data Management Plans (UCL)</strong></a>.</li>
-<li><strong>Templates, tools, and institutional routes</strong> are collected in <strong><a href="./resources.html">Resources and Further Reading</a></strong>.</li>
+<li><strong>OpenAIRE sensitive data guide</strong> — useful for explaining why sensitive data can still be preserved and described safely<span class="citation" data-cites="openaireSensitiveData"><sup><a href="#ref-openaireSensitiveData" role="doc-biblioref">6</a></sup></span>.</li>
+<li><strong>Cambridge data access statement guidance</strong> — useful for writing publication statements when data are open, restricted or unavailable<span class="citation" data-cites="cambridgeDataAccessStatement"><sup><a href="#ref-cambridgeDataAccessStatement" role="doc-biblioref">7</a></sup></span>.</li>
+<li><strong>Cambridge Creative Commons and software/code licensing guidance</strong> — useful for explaining why data, documentation and code may need different licences<span class="citation" data-cites="cambridgeCreativeCommons cambridgeSoftwareCode"><sup><a href="#ref-cambridgeCreativeCommons" role="doc-biblioref">12</a>,<a href="#ref-cambridgeSoftwareCode" role="doc-biblioref">13</a></sup></span>.</li>
+<li><strong>Horizon 2020 FAIR data management guidance</strong> — useful historical/policy framing for FAIR data management and DMP expectations<span class="citation" data-cites="h2020FairDmp"><sup><a href="#ref-h2020FairDmp" role="doc-biblioref">15</a></sup></span>.</li>
 </ul>
-<p>The next chapter focuses on <strong>project-level organisation and workflows</strong>, building directly on these principles.</p>
-<hr>
 </section>
-<section id="exercises-510-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-510-minutes">Exercises (5–10 minutes)</h2>
-<ol type="1">
-<li><p>Choose one research output you are working with (data, code, or documentation).<br>
-Which FAIR element (<em>Findable</em>, <em>Accessible</em>, <em>Interoperable</em>, or <em>Reusable</em>) do you think is currently weakest — and why?</p></li>
-<li><p>Identify one constraint (ethical, legal, technical, or practical) that affects how FAIR could be applied to that output.<br>
-Where should that constraint be recorded later in the project?</p></li>
-</ol>
+</div>
 </section>
-<section id="key-takeaways" class="level2 callout-summary">
+<section id="what-comes-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-comes-next">What comes next?</h2>
+<p>FAIR and ALCOA provide the principles. The next chapters move into implementation.</p>
+<p>Later chapters cover:</p>
+<ul>
+<li>project organisation and continuity;</li>
+<li>data management planning;</li>
+<li>file naming, folder structures and tidy data;</li>
+<li>documentation, README files, metadata, ELNs and SOPs;</li>
+<li>code quality, testing and automation;</li>
+<li>publishing, persistent identifiers and preparing for reuse.</li>
+</ul>
+<p>You are not expected to solve everything in this chapter. The aim is to recognise the principles and start applying them proportionately.</p>
+</section>
+<section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>FAIR describes <em>how</em> research outputs should be structured and described, not whether they are open.</li>
-<li>Findable, Accessible, Interoperable, and Reusable each address different aspects of long-term usability.</li>
-<li>FAIR applies to data, code, documentation, and workflows.</li>
-<li>FAIR principles inform — but do not replace — data management practice or DMPs.</li>
-<li>Later chapters translate FAIR principles into concrete project-level actions.</li>
+<li>FAIR is a way to describe good structure for research outputs.</li>
+<li>FAIR does not mean “make everything public”.</li>
+<li>Accessibility means clear access conditions, not necessarily open access.</li>
+<li>FAIR applies to data, code, protocols, documentation and workflows.</li>
+<li>FAIR actions include documentation, metadata, appropriate formats, access statements, persistent identifiers and licences.</li>
+<li>ALCOA complements FAIR by focusing on data integrity, traceability and trustworthiness.</li>
+<li>The aim is proportionate, defensible practice — not perfection.</li>
 </ul>
 </section>
 
 
 <div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
 <div id="ref-wilkinson2016fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> The FAIR guiding principles for scientific data management and stewardship. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> <a href="https://doi.org/10.1038/sdata.2016.18">The FAIR guiding principles for scientific data management and stewardship</a>. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
 </div>
-<div id="ref-jacobsen2020fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Jacobsen, A. <em>et al.</em> FAIR principles: Interpretations and implementation considerations. <em>Data intelligence</em> vol. 2 10–29 (2020).</div>
+<div id="ref-gofairPrinciples" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">GO FAIR. FAIR principles. <a href="https://www.go-fair.org/fair-principles/">https://www.go-fair.org/fair-principles/</a> (2026).</div>
+</div>
+<div id="ref-turingwayFair" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">The Turing Way Community. The FAIR principles. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair/">https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair/</a> (2025).</div>
+</div>
+<div id="ref-carpentriesFairBio" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">The Carpentries Incubator. FAIR in (biological) practice: Being FAIR. <a href="https://carpentries-incubator.github.io/fair-bio-practice/03-being-fair.html">https://carpentries-incubator.github.io/fair-bio-practice/03-being-fair.html</a> (2026).</div>
+</div>
+<div id="ref-cambridgeOpenResearchLicensing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">University of Cambridge Open Research. Copyright, licensing and citation. <a href="https://www.openresearch.cam.ac.uk/copyright-licensing-citation">https://www.openresearch.cam.ac.uk/copyright-licensing-citation</a> (2026).</div>
+</div>
+<div id="ref-openaireSensitiveData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">OpenAIRE. How to deal with sensitive data. <a href="https://www.openaire.eu/sensitive-data-guide">https://www.openaire.eu/sensitive-data-guide</a> (2026).</div>
+</div>
+<div id="ref-cambridgeDataAccessStatement" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">University of Cambridge Open Research. Data access statement. <a href="https://www.openresearch.cam.ac.uk/publications/data-access-statement">https://www.openresearch.cam.ac.uk/publications/data-access-statement</a> (2026).</div>
+</div>
+<div id="ref-dccMetadataStandards" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Digital Curation Centre. Disciplinary metadata. <a href="https://www.dcc.ac.uk/guidance/standards/metadata">https://www.dcc.ac.uk/guidance/standards/metadata</a> (2026).</div>
+</div>
+<div id="ref-cambridgeMetadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">University of Cambridge Research Data Management. Adding metadata to your research data. <a href="https://www.data.cam.ac.uk/organising-storing/metadata">https://www.data.cam.ac.uk/organising-storing/metadata</a> (2026).</div>
+</div>
+<div id="ref-cambridgeFileFormats" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">University of Cambridge Research Data Management. Research data file formats. <a href="https://www.data.cam.ac.uk/organising-storing/file-formats">https://www.data.cam.ac.uk/organising-storing/file-formats</a> (2026).</div>
+</div>
+<div id="ref-cambridgeFindRepository" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">University of Cambridge Open Research. How to find the right repository for your data. <a href="https://www.openresearch.cam.ac.uk/data/find-a-repository">https://www.openresearch.cam.ac.uk/data/find-a-repository</a> (2026).</div>
+</div>
+<div id="ref-cambridgeCreativeCommons" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">University of Cambridge Open Research. Creative commons licences for your research. <a href="https://www.openresearch.cam.ac.uk/copyright-licensing-citation/creative-commons">https://www.openresearch.cam.ac.uk/copyright-licensing-citation/creative-commons</a> (2026).</div>
+</div>
+<div id="ref-cambridgeSoftwareCode" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">University of Cambridge Open Research. Licensing software and code. <a href="https://www.openresearch.cam.ac.uk/copyright-licensing-citation/software-code">https://www.openresearch.cam.ac.uk/copyright-licensing-citation/software-code</a> (2026).</div>
+</div>
+<div id="ref-cambridgeFairPrinciples" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">University of Cambridge Research Data Management. FAIR principles. <a href="https://www.data.cam.ac.uk/about/fair-principles">https://www.data.cam.ac.uk/about/fair-principles</a> (2026).</div>
+</div>
+<div id="ref-h2020FairDmp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">European Commission. Guidelines on FAIR data management in horizon 2020. <a href="https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf">https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf</a> (2016).</div>
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -621,24 +1109,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./01-why-open.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 1 - Why Open?</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./03-project-mgmt.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

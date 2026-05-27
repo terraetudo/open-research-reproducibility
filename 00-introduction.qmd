@@ -1,0 +1,81 @@
+---
+title: "Before we start"
+subtitle: "About these workshop materials"
+---
+
+::: chapter-hero
+# Before we start
+
+## About these workshop materials
+
+These materials support the **Open Research & Reproducibility workshop**. They were developed for use at UCL, but much of the content is relevant to researchers, students, analysts and research support staff working in other settings.
+:::
+
+::: chapter-overview
+### Purpose of this resource
+
+The aim is not to provide a complete guide to open research. Instead, this resource brings together practical principles, examples, prompts and links that can help you make your own research easier to understand, check, repeat and build on.
+:::
+
+## How to use these materials
+
+This resource is designed to accompany the workshop, but it can also be used afterwards as a reference. You do not need to read it all in one go. Each chapter focuses on one part of the research workflow and includes practical points that you can return to when planning, analysing, documenting or sharing your work.
+
+The chapters are written as support material rather than as slides. This means the HTML version contains more explanation than the live presentation, so that it remains useful after the workshop.
+
+## What the workshop covers
+
+The workshop is structured around a practical research workflow:
+
+1.  **Why open research and reproducibility matter**\
+    What reproducibility means in practice, and why openness is not the same as making everything public.
+
+2.  **FAIR basics**\
+    How to make outputs findable, accessible, interoperable and reusable, including when data cannot be openly shared.
+
+3.  **Project organisation and continuity**\
+    Folder structures, file naming, raw and derived data, lightweight versioning and project-level orientation.
+
+4.  **Data Management Plans**\
+    DMPs as living documents that record decisions about data, roles, storage, access, sharing and restrictions.
+
+5.  **Organising and tidying data**\
+    Data-file structure, spreadsheet risks, tidy data, missingness, exclusions and data dictionaries.
+
+6.  **Documentation and protocols**\
+    READMEs, metadata, decision logs, changelogs, SOPs, ELNs, protocols and reporting guidance.
+
+7.  **Coding for reproducible research**\
+    Readable code, checks, testing, versioning, light automation, sustainable computing and R Markdown/Quarto examples.
+
+8.  **Publishing, PIDs and preparing for reuse**\
+    Repositories, persistent identifiers, preprints, licences, availability statements and responsible reuse.
+
+9.  **Wrap-up and next steps**\
+    A practical action plan for applying the workshop to your own work.
+
+## Acknowledgement and sources
+
+These workshop materials were originally co-developed by **Amanda Miotto** and **Adam Partridge** as part of the *Reproducible Research* training materials:
+
+<https://ampartridge.github.io/ReproducibleResearch/>
+
+This version adapts and builds on several openly available resources, including:
+
+-   *Good Enough Practices in Scientific Computing* by Wilson et al. (2017), available via The Carpentries:\
+    <https://carpentries-lab.github.io/good-enough-practices/>
+
+-   *The Turing Way: A handbook for reproducible, ethical and collaborative research*:\
+    <https://the-turing-way.netlify.app/>
+
+-   Additional UCL, UK Data Service, CESSDA, Cambridge, OpenAIRE, ARDC, DCC, EQUATOR, ORCID, DataCite and other open research resources signposted throughout the chapters.
+
+Where material has been adapted directly, this is acknowledged in the relevant section.
+
+## Licence
+
+This adapted workshop resource is shared under a **Creative Commons Attribution 4.0 International Licence (CC BY 4.0)**, unless otherwise stated.
+
+Please cite this resource as:
+
+> Cruz, J. *Open Research & Reproducibility Workshop -- day 1*. (2026). DOI: <https://doi.org/10.17605/OSF.IO/WAVCE>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Research &amp; Reproducibility - Chapter 3 - Project organisation and continuity</title>
+<title>Open Research &amp; Reproducibility - Chapter 3 — Project organisation and continuity</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -62,11 +96,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -82,21 +116,52 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-project-mgmt.html"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-project-mgmt.html"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -106,14 +171,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -123,62 +183,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,13 +246,74 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-3" id="toc-chapter-3" class="nav-link active" data-scroll-target="#chapter-3">Chapter 3</a>
+  <ul class="collapse">
+  <li><a href="#project-organisation-and-continuity" id="toc-project-organisation-and-continuity" class="nav-link" data-scroll-target="#project-organisation-and-continuity">Project organisation and continuity</a></li>
+  </ul></li>
+  <li><a href="#what-this-chapter-does" id="toc-what-this-chapter-does" class="nav-link" data-scroll-target="#what-this-chapter-does">What this chapter does</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#why-project-organisation-matters" id="toc-why-project-organisation-matters" class="nav-link" data-scroll-target="#why-project-organisation-matters">Why project organisation matters</a></li>
+  <li><a href="#a-project-is-more-than-a-folder" id="toc-a-project-is-more-than-a-folder" class="nav-link" data-scroll-target="#a-project-is-more-than-a-folder">A project is more than a folder</a></li>
+  <li><a href="#start-with-the-project-boundary" id="toc-start-with-the-project-boundary" class="nav-link" data-scroll-target="#start-with-the-project-boundary">Start with the project boundary</a>
+  <ul class="collapse">
+  <li><a href="#project-organisation-as-a-reproducibility-layer" id="toc-project-organisation-as-a-reproducibility-layer" class="nav-link" data-scroll-target="#project-organisation-as-a-reproducibility-layer">Project organisation as a reproducibility layer</a></li>
+  </ul></li>
+  <li><a href="#folder-structure-choose-a-pattern-and-document-it" id="toc-folder-structure-choose-a-pattern-and-document-it" class="nav-link" data-scroll-target="#folder-structure-choose-a-pattern-and-document-it">Folder structure: choose a pattern and document it</a>
+  <ul class="collapse">
+  <li><a href="#common-ways-to-organise-a-project" id="toc-common-ways-to-organise-a-project" class="nav-link" data-scroll-target="#common-ways-to-organise-a-project">Common ways to organise a project</a></li>
+  <li><a href="#a-baseline-folder-structure" id="toc-a-baseline-folder-structure" class="nav-link" data-scroll-target="#a-baseline-folder-structure">A baseline folder structure</a></li>
+  </ul></li>
+  <li><a href="#raw-derived-and-output-files" id="toc-raw-derived-and-output-files" class="nav-link" data-scroll-target="#raw-derived-and-output-files">Raw, derived and output files</a>
+  <ul class="collapse">
+  <li><a href="#never-overwrite-raw-data" id="toc-never-overwrite-raw-data" class="nav-link" data-scroll-target="#never-overwrite-raw-data">Never overwrite raw data</a></li>
+  </ul></li>
+  <li><a href="#project-level-readme" id="toc-project-level-readme" class="nav-link" data-scroll-target="#project-level-readme">Project-level README</a>
+  <ul class="collapse">
+  <li><a href="#a-minimal-readme-template" id="toc-a-minimal-readme-template" class="nav-link" data-scroll-target="#a-minimal-readme-template">A minimal README template</a></li>
+  </ul></li>
+  <li><a href="#file-naming-make-meaning-visible" id="toc-file-naming-make-meaning-visible" class="nav-link" data-scroll-target="#file-naming-make-meaning-visible">File naming: make meaning visible</a>
+  <ul class="collapse">
+  <li><a href="#good-file-names-usually" id="toc-good-file-names-usually" class="nav-link" data-scroll-target="#good-file-names-usually">Good file names usually</a></li>
+  <li><a href="#a-simple-naming-pattern" id="toc-a-simple-naming-pattern" class="nav-link" data-scroll-target="#a-simple-naming-pattern">A simple naming pattern</a></li>
+  <li><a href="#which-would-you-prefer" id="toc-which-would-you-prefer" class="nav-link" data-scroll-target="#which-would-you-prefer">Which would you prefer?</a></li>
+  </ul></li>
+  <li><a href="#versioning-without-making-this-a-git-workshop" id="toc-versioning-without-making-this-a-git-workshop" class="nav-link" data-scroll-target="#versioning-without-making-this-a-git-workshop">Versioning without making this a Git workshop</a>
+  <ul class="collapse">
+  <li><a href="#when-a-filename-version-is-enough" id="toc-when-a-filename-version-is-enough" class="nav-link" data-scroll-target="#when-a-filename-version-is-enough">When a filename version is enough</a></li>
+  <li><a href="#when-you-need-a-changelog" id="toc-when-you-need-a-changelog" class="nav-link" data-scroll-target="#when-you-need-a-changelog">When you need a changelog</a></li>
+  <li><a href="#when-git-becomes-useful" id="toc-when-git-becomes-useful" class="nav-link" data-scroll-target="#when-git-becomes-useful">When Git becomes useful</a></li>
+  </ul></li>
+  <li><a href="#decisions-should-not-live-only-in-email" id="toc-decisions-should-not-live-only-in-email" class="nav-link" data-scroll-target="#decisions-should-not-live-only-in-email">Decisions should not live only in email</a></li>
+  <li><a href="#a-dmp-is-the-agreement-the-project-structure-is-the-implementation" id="toc-a-dmp-is-the-agreement-the-project-structure-is-the-implementation" class="nav-link" data-scroll-target="#a-dmp-is-the-agreement-the-project-structure-is-the-implementation">A DMP is the agreement; the project structure is the implementation</a></li>
+  <li><a href="#proportionate-project-organisation" id="toc-proportionate-project-organisation" class="nav-link" data-scroll-target="#proportionate-project-organisation">Proportionate project organisation</a></li>
+  <li><a href="#activity-project-organisation-diagnostic" id="toc-activity-project-organisation-diagnostic" class="nav-link" data-scroll-target="#activity-project-organisation-diagnostic">Activity: project organisation diagnostic</a>
+  <ul class="collapse">
+  <li><a href="#individual-reflection-or-small-group-discussion" id="toc-individual-reflection-or-small-group-discussion" class="nav-link" data-scroll-target="#individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</a></li>
+  </ul></li>
+  <li><a href="#activity-beginner-and-advanced-next-steps" id="toc-activity-beginner-and-advanced-next-steps" class="nav-link" data-scroll-target="#activity-beginner-and-advanced-next-steps">Activity: beginner and advanced next steps</a>
+  <ul class="collapse">
+  <li><a href="#choose-one-action" id="toc-choose-one-action" class="nav-link" data-scroll-target="#choose-one-action">Choose one action</a></li>
+  </ul></li>
+  <li><a href="#recommended-resources-for-this-chapter" id="toc-recommended-resources-for-this-chapter" class="nav-link" data-scroll-target="#recommended-resources-for-this-chapter">Recommended resources for this chapter</a>
+  <ul class="collapse">
+  <li><a href="#project-organisation-and-file-naming" id="toc-project-organisation-and-file-naming" class="nav-link" data-scroll-target="#project-organisation-and-file-naming">Project organisation and file naming</a></li>
+  </ul></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What comes next?</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/03-project-mgmt.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></h1>
+<h1 class="title"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></h1>
 </div>
 
 
@@ -217,145 +328,659 @@ div.csl-indent {
 
 </header>
 
-<section id="sec-project-mgmt" class="level1">
-<h1>Project organisation for reproducible research</h1>
+<section id="chapter-3" class="level1 chapter-hero">
+<h1>Chapter 3</h1>
+<section id="project-organisation-and-continuity" class="level2">
+<h2 class="anchored" data-anchor-id="project-organisation-and-continuity">Project organisation and continuity</h2>
+<p>Reproducibility often lives in ordinary project habits: where files are kept, how they are named, how versions are handled, and whether someone joining the project later can understand what is going on.</p>
+</section>
+</section>
+<section id="what-this-chapter-does" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="what-this-chapter-does">What this chapter does</h3>
+<p>This chapter focuses on the practical structure of a research project. It is about making a project legible: to collaborators, to reviewers, to supervisors, to future team members, and to your future self.</p>
+<p>The emphasis is on everyday organisation rather than formal governance. Data Management Plans are covered in the next chapter. Here, we focus on how good planning becomes visible in folders, file names, raw-data protection, lightweight versioning and project-level orientation.</p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you should be able to:</p>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
 <li>explain why project organisation is central to reproducibility and continuity;</li>
-<li>describe how metadata, roles, and conventions support collaboration;</li>
-<li>apply proportionate principles for organisation, versioning, and continuity;</li>
-<li>understand how project organisation underpins documentation, code, and automation;</li>
-<li>locate UCL-supported tools and templates relevant to project organisation.</li>
+<li>distinguish between a project folder and a well-organised project;</li>
+<li>choose a folder structure that reflects the work being done;</li>
+<li>separate raw, derived and output files in a way that protects provenance;</li>
+<li>apply file naming conventions that make meaning and version history visible;</li>
+<li>use simple versioning practices without turning the workshop into a Git course;</li>
+<li>identify what belongs in the project README and what belongs in a later DMP, data dictionary or decision log.</li>
 </ul>
-<p>This module builds on the FAIR principles introduced in <a href="./02-fair-basics.html">Chapter 2: FAIR basics</a> and focuses on how projects are structured and managed over time.<br>
-<strong>All copy-ready templates and concrete examples are provided centrally in the <a href="./resources.html">Resources and Further Reading</a> chapter.</strong></p>
-<hr>
+<p>This chapter builds on <a href="./02-fair-basics.html">Chapter 2: FAIR basics</a>. The next chapter, <a href="./04-dmp.html">Chapter 4: Data Management Plans</a>, explains how data-management decisions, responsibilities and constraints are formally recorded.</p>
 </section>
 <section id="why-project-organisation-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-project-organisation-matters">Why project organisation matters</h2>
-<p>Many reproducibility problems arise not from technical complexity, but from poorly organised projects. As projects grow, involve multiple contributors, or span years, it becomes increasingly difficult to track what was done, why it was done, and by whom. This chapter does not teach general project management skills; it focuses on organisational practices that directly support reproducibility, governance, and long-term continuity.</p>
-<p>Effective project organisation supports<span class="citation" data-cites="ukdataservice_managing_sharing2019"><sup><a href="#ref-ukdataservice_managing_sharing2019" role="doc-biblioref">1</a></sup></span>:</p>
+<p>Many reproducibility problems are structural rather than technical. They arise because files are scattered across drives, raw and cleaned data are mixed, outputs are overwritten, or important decisions are hidden in email, Teams messages or personal notebooks.</p>
+<p>These problems usually feel small at the time. They become serious later: during analysis, handover, peer review, audit, publication, archiving or reuse. The CESSDA Data Management Expert Guide emphasises file organisation and documentation as practical foundations for data management and reuse<span class="citation" data-cites="cessdaDmeg cessdaFileNaming"><sup><a href="#ref-cessdaDmeg" role="doc-biblioref">1</a>,<a href="#ref-cessdaFileNaming" role="doc-biblioref">2</a></sup></span>. Similar principles are used in reproducible computational project guidance, including Noble’s project organisation recommendations and the TIER protocol<span class="citation" data-cites="noble2009quick tierProtocol"><sup><a href="#ref-noble2009quick" role="doc-biblioref">3</a>,<a href="#ref-tierProtocol" role="doc-biblioref">4</a></sup></span>.</p>
+<p>Good project organisation helps others understand:</p>
 <ul>
-<li>continuity when team members join or leave;</li>
-<li>transparent decision making;</li>
-<li>efficient collaboration across roles and disciplines;</li>
-<li>traceability of changes and outputs.</li>
+<li>what the project is for;</li>
+<li>what data, code, documents and outputs exist;</li>
+<li>which files are raw, derived, interim or final;</li>
+<li>where the current version is;</li>
+<li>what can be re-run and what is only an output;</li>
+<li>where conventions and decisions are documented;</li>
+<li>which materials are safe to edit and which should be preserved.</li>
 </ul>
-<p>These benefits are particularly important in research, where projects often involve multiple data types, governance requirements, and extended timelines.</p>
+<p>The point is not administrative tidiness for its own sake. Organisation reduces ambiguity. Ambiguity is where duplicated work, avoidable error and loss of project memory often begin.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A simple test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If someone joined your project tomorrow, could they understand the purpose of the project, the main folders, the current version of key files, and where to start within ten minutes?</p>
+<p>If not, the project may need a clearer structure, a README, or a simpler naming and versioning convention.</p>
+</div>
+</div>
 </section>
-<section id="metadata-about-the-project" class="level2">
-<h2 class="anchored" data-anchor-id="metadata-about-the-project">Metadata about the project</h2>
-<p>A project is more than a collection of files. Treat <strong>project-level metadata</strong> as a first-class research output. This metadata is distinct from dataset-level metadata (covered in Chapter 5), and exists to make the project itself legible.</p>
-<p>At a minimum, this includes:</p>
+<section id="a-project-is-more-than-a-folder" class="level2">
+<h2 class="anchored" data-anchor-id="a-project-is-more-than-a-folder">A project is more than a folder</h2>
+<p>A folder is only a storage location. A project is a set of linked materials, decisions, people, constraints and outputs. A reproducible project needs more than somewhere to put files.</p>
+<p>At minimum, a project needs five things.</p>
+<div class="practice-grid">
+<section id="clear-purpose" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="clear-purpose">Clear purpose</h3>
+<p>A short statement of what the project is trying to do, what is in scope, and what is out of scope.</p>
+</section>
+<section id="defined-outputs" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="defined-outputs">Defined outputs</h3>
+<p>An agreed view of what the project will produce: manuscript, report, dataset, code, figures, policy brief, teaching material, archived record or internal analysis.</p>
+</section>
+<section id="shared-conventions" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="shared-conventions">Shared conventions</h3>
+<p>Agreed rules for folder structure, file names, versioning and where key information is recorded.</p>
+</section>
+<section id="protected-provenance" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="protected-provenance">Protected provenance</h3>
+<p>A structure that preserves original data and makes it clear how derived files and outputs were created.</p>
+</section>
+<section id="orientation-for-others" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="orientation-for-others">Orientation for others</h3>
+<p>A README or equivalent starting point that explains how the project is organised and what someone should read or run first.</p>
+</section>
+</div>
+<p>Formal responsibilities and governance are important, but they are covered in <a href="./04-dmp.html">Chapter 4: Data Management Plans</a>. This chapter focuses on the day-to-day implementation: the things people see when they open the project.</p>
+</section>
+<section id="start-with-the-project-boundary" class="level2">
+<h2 class="anchored" data-anchor-id="start-with-the-project-boundary">Start with the project boundary</h2>
+<p>Before designing a folder structure, clarify the boundary of the project. This is especially important when projects share datasets, code, collaborators or outputs.</p>
+<p>Ask:</p>
 <ul>
-<li>a brief description of <strong>purpose and scope</strong>;</li>
-<li>the <strong>outputs</strong> the project will generate and how they are identified (e.g.&nbsp;PIDs);</li>
-<li>conventions for naming, versioning, and access;</li>
-<li>roles and responsibilities for key tasks.</li>
+<li>What is the main research question or purpose?</li>
+<li>What are the expected outputs?</li>
+<li>What data sources are in scope?</li>
+<li>Which files are inputs, intermediate products and final outputs?</li>
+<li>Which parts of the workflow are exploratory and which are intended to be repeatable?</li>
+<li>Which files need to be preserved, and which can be regenerated?</li>
+<li>What should someone <em>not</em> edit?</li>
 </ul>
-<p>A short project README or charter at the top level of your repository or shared drive improves discoverability, onboarding, and continuity.<br>
-A minimum README template is provided in <a href="./resources.html">Resources and Further Reading</a>.</p>
+<p>A project boundary does not need to be perfect. It needs to be explicit enough that people know where the work starts, where it ends, and what belongs elsewhere.</p>
+<section id="project-organisation-as-a-reproducibility-layer" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="project-organisation-as-a-reproducibility-layer">Project organisation as a reproducibility layer</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Project purpose] --&gt; B[Folder structure]
+    B --&gt; C[File naming]
+    C --&gt; D[Versioning]
+    D --&gt; E[README]
+    E --&gt; F[Handover and reuse]
+
+    B --&gt; G[Raw data protected]
+    B --&gt; H[Derived data traceable]
+    B --&gt; I[Outputs reproducible]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>A good project structure does not make the research correct on its own. It makes the work easier to inspect, maintain and rerun.</p>
 </section>
-<section id="structuring-the-project" class="level2">
-<h2 class="anchored" data-anchor-id="structuring-the-project">Structuring the project</h2>
-<p>Well-organised projects tend to share common structural features, regardless of discipline or tools:</p>
+</section>
+<section id="folder-structure-choose-a-pattern-and-document-it" class="level2">
+<h2 class="anchored" data-anchor-id="folder-structure-choose-a-pattern-and-document-it">Folder structure: choose a pattern and document it</h2>
+<p>There is no single correct folder structure. The best structure depends on the type of project, the outputs, the team, the data sensitivity, and whether the project is mainly exploratory, analytical, teaching-focused or publication-focused.</p>
+<p>The important thing is to choose a pattern and document it. Data Carpentry’s guidance on file naming and project organisation highlights that consistency matters more than inventing a perfect system<span class="citation" data-cites="dataCarpentryFileNaming"><sup><a href="#ref-dataCarpentryFileNaming" role="doc-biblioref">5</a></sup></span>. Examples from the Good Enough Project and other reproducible science resources show that simple, stable structures are often sufficient<span class="citation" data-cites="goodEnoughProject nikolaFolderStructure"><sup><a href="#ref-goodEnoughProject" role="doc-biblioref">6</a>,<a href="#ref-nikolaFolderStructure" role="doc-biblioref">7</a></sup></span>.</p>
+<section id="common-ways-to-organise-a-project" class="level3">
+<h3 class="anchored" data-anchor-id="common-ways-to-organise-a-project">Common ways to organise a project</h3>
+<p>Two common approaches are to organise by <strong>file type</strong> or by <strong>workflow stage</strong>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pattern</th>
+<th>Example folders</th>
+<th>Works well when</th>
+<th>Main risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>By file type</td>
+<td><code>data/</code>, <code>scripts/</code>, <code>figures/</code>, <code>docs/</code></td>
+<td>Small to medium projects with clear scripts and outputs</td>
+<td>Outputs may become disconnected from the analysis that produced them</td>
+</tr>
+<tr class="even">
+<td>By workflow stage</td>
+<td><code>01_import/</code>, <code>02_clean/</code>, <code>03_analysis/</code>, <code>04_outputs/</code></td>
+<td>Projects with sequential analytical steps</td>
+<td>Can become rigid if the project changes</td>
+</tr>
+<tr class="odd">
+<td>By output</td>
+<td><code>paper1/</code>, <code>policy_brief/</code>, <code>teaching_materials/</code></td>
+<td>Projects with multiple outputs from shared inputs</td>
+<td>Shared data/code may be duplicated or edited inconsistently</td>
+</tr>
+<tr class="even">
+<td>Hybrid</td>
+<td>stable top-level folders plus numbered scripts</td>
+<td>Most research projects</td>
+<td>Needs a README so the logic is visible</td>
+</tr>
+</tbody>
+</table>
+<p>A hybrid structure usually works best for research projects: stable top-level folders, numbered scripts for sequence, and clear separation between raw data, derived data and outputs.</p>
+</section>
+<section id="a-baseline-folder-structure" class="level3">
+<h3 class="anchored" data-anchor-id="a-baseline-folder-structure">A baseline folder structure</h3>
+<p>For many research projects, a simple structure is enough.</p>
+<pre class="text"><code>project-name/
+├── README.md
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── metadata/
+├── scripts/
+│   ├── 01_import.R
+│   ├── 02_clean.R
+│   ├── 03_analysis.R
+│   └── 04_outputs.R
+├── outputs/
+│   ├── tables/
+│   ├── figures/
+│   └── reports/
+├── docs/
+│   ├── decision-log.md
+│   ├── changelog.md
+│   └── notes/
+└── references/</code></pre>
+<p>This is only a starting point. Adapt it to the project. For example, a qualitative project might need <code>transcripts/</code>, <code>coding_framework/</code> and <code>analysis_memos/</code>. A spatial project might need <code>gis/</code>, <code>shapefiles/</code>, <code>rasters/</code> or <code>exposure_surfaces/</code>. A systematic review might need <code>searches/</code>, <code>screening/</code>, <code>extraction/</code> and <code>quality_appraisal/</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Keep it boring
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A good folder structure should be unsurprising. People should not need specialist knowledge of your memory or habits to find the data, scripts, outputs or documentation.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="raw-derived-and-output-files" class="level2">
+<h2 class="anchored" data-anchor-id="raw-derived-and-output-files">Raw, derived and output files</h2>
+<p>The most important organisational distinction is between <strong>raw data</strong>, <strong>derived data</strong> and <strong>outputs</strong>.</p>
+<div class="definition-grid">
+<section id="raw-data" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="raw-data">Raw data</h3>
+<p>The original data as received, downloaded, extracted or collected. These files should be preserved and not edited manually.</p>
+</section>
+<section id="derived-data" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="derived-data">Derived data</h3>
+<p>Files created from raw data through cleaning, linkage, recoding, filtering, aggregation or analysis.</p>
+</section>
+<section id="outputs" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="outputs">Outputs</h3>
+<p>Tables, figures, models, reports, manuscripts or other materials produced from the data and code.</p>
+</section>
+</div>
+<section id="never-overwrite-raw-data" class="level3">
+<h3 class="anchored" data-anchor-id="never-overwrite-raw-data">Never overwrite raw data</h3>
+<p>Raw data should be treated as read-only. If changes are needed, make the changes in code and write the result to a derived or processed folder. This gives you a route back if something goes wrong.</p>
+<p>A practical pattern is:</p>
+<pre class="text"><code>data/raw/          original input files, never edited
+data/processed/    cleaned or linked files created by scripts
+outputs/           tables, figures, reports and model outputs
+scripts/           code that generates processed data and outputs</code></pre>
+<p>For sensitive data, the actual storage location may be a secure drive or trusted research environment rather than the project folder. The same logic still applies: raw inputs should be protected, transformations should be traceable, and derived outputs should be clearly labelled.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common risk point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the only copy of the cleaned data has been manually edited in Excel, and no one can reconstruct what changed, the analysis is fragile.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="project-level-readme" class="level2">
+<h2 class="anchored" data-anchor-id="project-level-readme">Project-level README</h2>
+<p>A README is the front door of a project. It should help a new person understand what the project is, where things are, and what to do first.</p>
+<p>A project README does not need to be long. It should answer five basic questions.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>What to include</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What is this project?</td>
+<td>Purpose, scope, key outputs, status</td>
+</tr>
+<tr class="even">
+<td>What does it contain?</td>
+<td>Main folders and file types</td>
+</tr>
+<tr class="odd">
+<td>What are the main data sources?</td>
+<td>Data origin, restrictions, raw/processed distinction</td>
+</tr>
+<tr class="even">
+<td>How does the workflow run?</td>
+<td>Main scripts, order, software requirements</td>
+</tr>
+<tr class="odd">
+<td>What are the rules?</td>
+<td>Naming conventions, versioning, licence/access conditions, contact person</td>
+</tr>
+</tbody>
+</table>
+<p>A README is not a substitute for a DMP, data dictionary, SOP or decision log. It is the orientation document that points to them.</p>
+<section id="a-minimal-readme-template" class="level3">
+<h3 class="anchored" data-anchor-id="a-minimal-readme-template">A minimal README template</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project title</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Purpose</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>One paragraph describing the aim, scope and main outputs.</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Project status</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Active / paused / archived / teaching example / publication support.</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Folder structure</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>Brief description of each top-level folder.</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data sources</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>List main data sources and where access restrictions are documented.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to reproduce key outputs</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>Explain which scripts to run, in what order, and any software requirements.</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Naming and versioning conventions</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>State the file naming pattern used in this project.</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Documentation</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>Link to the decision log, changelog, data dictionary, DMP and any SOPs.</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Contact</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>Name or role responsible for maintaining the project record.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="file-naming-make-meaning-visible" class="level2">
+<h2 class="anchored" data-anchor-id="file-naming-make-meaning-visible">File naming: make meaning visible</h2>
+<p>File names are a form of documentation. Good file names help people identify the content, status and date of a file without opening it. Poor file names create ambiguity, especially during collaboration and handover.</p>
+<p>CESSDA and Data Carpentry both recommend descriptive, consistent and machine-friendly names<span class="citation" data-cites="cessdaFileNaming dataCarpentryFileNaming"><sup><a href="#ref-cessdaFileNaming" role="doc-biblioref">2</a>,<a href="#ref-dataCarpentryFileNaming" role="doc-biblioref">5</a></sup></span>.</p>
+<section id="good-file-names-usually" class="level3">
+<h3 class="anchored" data-anchor-id="good-file-names-usually">Good file names usually</h3>
 <ul>
-<li>a clear top-level project boundary;</li>
-<li>separation of raw data, derived data, analysis code, and outputs;</li>
-<li>a visible project metadata file (e.g.&nbsp;README);</li>
-<li>predictable locations for documentation and logs.</li>
+<li>are descriptive enough to be understood without opening the file;</li>
+<li>use consistent elements in a consistent order;</li>
+<li>avoid spaces and special characters;</li>
+<li>use ISO-style dates (<code>YYYY-MM-DD</code>) where dates are needed;</li>
+<li>use leading zeros for numbered files (<code>01</code>, <code>02</code>, <code>03</code>);</li>
+<li>include a version number where versions need to be visible;</li>
+<li>avoid jokes, personal shorthand or names tied to one person.</li>
 </ul>
-<p>Structure should prioritise <strong>legibility for someone unfamiliar with the project</strong>, including reviewers and your future self.</p>
-<p>Rather than inventing bespoke layouts, this course encourages starting from a simple baseline structure and adapting it as needed.<br>
-A canonical folder structure and guidance on its intended use are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
 </section>
-<section id="versioning-principles-not-tools" class="level2">
-<h2 class="anchored" data-anchor-id="versioning-principles-not-tools">Versioning: principles, not tools</h2>
-<p>Versioning is essential for understanding how a project evolves over time. Crucially, <strong>versioning principles apply to all research materials</strong>, not only to code<span class="citation" data-cites="ukdataservice_versioning2023"><sup><a href="#ref-ukdataservice_versioning2023" role="doc-biblioref">2</a></sup></span>.</p>
-<p>It is useful to distinguish between two related but distinct practices.</p>
-<section id="file-versioning-data-documents-outputs" class="level3">
-<h3 class="anchored" data-anchor-id="file-versioning-data-documents-outputs">File versioning (data, documents, outputs)</h3>
-<p>File versioning applies to data files, documents, and other non-code outputs. At a minimum, good practice involves:</p>
+<section id="a-simple-naming-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-naming-pattern">A simple naming pattern</h3>
+<p>A useful pattern is:</p>
+<pre class="text"><code>project_component_description_YYYY-MM-DD_v01.ext</code></pre>
+<p>Examples:</p>
+<pre class="text"><code>eyp_cleaned_addresses_2025-03-15_v02.csv
+analysis_modelA_results_2025-03-20_v01.rds
+manuscript_methods_draft_2025-03-22_v03.docx
+decision-log_project_2025-03-22_v01.md</code></pre>
+<p>Avoid:</p>
+<pre class="text"><code>data_new.xlsx
+analysis_final_v2_REAL_final2.xlsx
+table1_revised_use_this_one.xlsx
+jo_notes_latest.docx</code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+“Final” is not a versioning system
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Words like <code>final</code>, <code>real_final</code>, <code>latest</code> and <code>use_this_one</code> usually mean the project has lost a clear versioning convention.</p>
+</div>
+</div>
+</section>
+<section id="which-would-you-prefer" class="level3">
+<h3 class="anchored" data-anchor-id="which-would-you-prefer">Which would you prefer?</h3>
+<pre class="text"><code>analysis_final_v2_REAL_final2.xlsx</code></pre>
+<p>or</p>
+<pre class="text"><code>analysis_modelA_results_2025-03-20_v03.xlsx</code></pre>
+<p>The second file name is not perfect, but it tells you what the file is, when it was created, and which version it is.</p>
+</section>
+</section>
+<section id="versioning-without-making-this-a-git-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="versioning-without-making-this-a-git-workshop">Versioning without making this a Git workshop</h2>
+<p>Version control means keeping track of changes so that earlier states can be recovered and current work can be understood. For code, Git is the most powerful and widely used tool. However, not every participant needs a full Git workflow before they can improve reproducibility.</p>
+<p>For this workshop, start with proportionate versioning:</p>
 <ul>
-<li>retaining historical versions rather than overwriting files;</li>
-<li>using clear, consistent version identifiers;</li>
-<li>recording what changed and why.</li>
+<li>do not overwrite raw data;</li>
+<li>use stable file names for scripts and outputs;</li>
+<li>use dates and version numbers consistently where needed;</li>
+<li>keep a changelog for meaningful updates;</li>
+<li>use numbered scripts to make workflow order visible;</li>
+<li>keep old versions only where they are meaningful;</li>
+<li>avoid parallel personal versions such as <code>analysis_Jo.R</code>, <code>analysis_Matt_edits.R</code>, <code>analysis_new.R</code>.</li>
 </ul>
-<p>This can be achieved using structured file naming and simple change logs, without specialised tools. Minimum examples and a changelog template are provided in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
-</section>
-<section id="code-version-control-e.g.-git" class="level3">
-<h3 class="anchored" data-anchor-id="code-version-control-e.g.-git">Code version control (e.g.&nbsp;Git)</h3>
-<p>Code version control systems are designed for tracking changes to scripts and software. They support:</p>
+<section id="when-a-filename-version-is-enough" class="level3">
+<h3 class="anchored" data-anchor-id="when-a-filename-version-is-enough">When a filename version is enough</h3>
+<p>Filename versioning may be sufficient for:</p>
 <ul>
-<li>fine-grained tracking of changes;</li>
-<li>collaboration across multiple contributors;</li>
-<li>reversible experimentation.</li>
+<li>draft reports;</li>
+<li>circulated manuscripts;</li>
+<li>frozen data extracts;</li>
+<li>external files received from collaborators;</li>
+<li>teaching materials or workshop drafts.</li>
 </ul>
-<p>Not all projects require formal code version control, but where code is central to analysis, its use substantially improves transparency and reproducibility.</p>
-<p>This course emphasises <strong>principles before tools</strong>. Tool-specific guidance and examples are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
 </section>
-</section>
-<section id="roles-responsibilities-and-continuity" class="level2">
-<h2 class="anchored" data-anchor-id="roles-responsibilities-and-continuity">Roles, responsibilities, and continuity</h2>
-<p>Reproducible projects make roles explicit.</p>
-<p>Good practice includes:</p>
+<section id="when-you-need-a-changelog" class="level3">
+<h3 class="anchored" data-anchor-id="when-you-need-a-changelog">When you need a changelog</h3>
+<p>A changelog is useful when changes affect interpretation, reproducibility or reuse. Examples include:</p>
 <ul>
-<li>documenting who is responsible for data, code, and documentation;</li>
-<li>agreeing communication norms and review points;</li>
-<li>onboarding new contributors with a short guide to project conventions.</li>
+<li>updating the data extract;</li>
+<li>changing inclusion/exclusion criteria;</li>
+<li>changing an exposure definition;</li>
+<li>changing an analysis model;</li>
+<li>correcting an error;</li>
+<li>changing a file format;</li>
+<li>preparing a release for archiving.</li>
 </ul>
-<p>Offboarding is equally important. When people leave a project, their context, assumptions, and decisions should not leave with them.</p>
+<p>A simple changelog can be a table:</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>File or component</th>
+<th>Change</th>
+<th>Reason</th>
+<th>Who</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2026-03-10</td>
+<td><code>02_clean.R</code></td>
+<td>Added postcode validation step</td>
+<td>Missing postcodes were not being flagged</td>
+<td>JC</td>
+</tr>
+<tr class="even">
+<td>2026-03-14</td>
+<td><code>data/processed/</code></td>
+<td>Recreated cleaned dataset</td>
+<td>Updated raw extract received</td>
+<td>JC</td>
+</tr>
+<tr class="odd">
+<td>2026-03-18</td>
+<td><code>outputs/tables/</code></td>
+<td>Regenerated Table 1</td>
+<td>Categories corrected after review</td>
+<td>JC</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="project-organisation-across-the-lifecycle" class="level2">
-<h2 class="anchored" data-anchor-id="project-organisation-across-the-lifecycle">Project organisation across the lifecycle</h2>
-<p>Organisation is not a one-off task.</p>
-<p>Structures, documentation, and metadata should evolve as a project moves from setup to analysis to dissemination. Use milestones (e.g.&nbsp;protocol finalised, data locked, analysis frozen) as prompts to review and update organisation and records.</p>
-<p>This helps ensure that published outputs reflect real working practices rather than retrospective reconstruction.</p>
-<p>These organisational practices underpin later chapters on documentation (Chapter 6), code quality (Chapter 7), and automation (Chapter 9).</p>
-</section>
-<section id="practical-guidance-for-ecr-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
-<p>For early career researchers, proportionate project organisation often means:</p>
+<section id="when-git-becomes-useful" class="level3">
+<h3 class="anchored" data-anchor-id="when-git-becomes-useful">When Git becomes useful</h3>
+<p>Git becomes particularly useful when:</p>
 <ul>
-<li>writing a project README at the outset;</li>
-<li>agreeing simple versioning conventions with collaborators;</li>
-<li>maintaining a short decision log alongside active work;</li>
-<li>keeping tasks, roles, and responsibilities visible to the team.</li>
+<li>multiple people edit code;</li>
+<li>the project includes many scripts;</li>
+<li>you need to compare changes over time;</li>
+<li>you want to publish code with a DOI later;</li>
+<li>you want a robust record of analytical development.</li>
 </ul>
-<p>These steps support transparent progress without requiring heavy infrastructure.</p>
+<p>Git and GitHub are introduced later in relation to code quality and release. Here, the key principle is simpler: changes should be visible and recoverable.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Versioning principle
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should be able to answer: what changed, when, why, and where is the previous version if we need it?</p>
+</div>
+</div>
 </section>
-<section id="exercises-515-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-515-minutes">Exercises (5–15 minutes)</h2>
-<ol type="1">
-<li><p>Look at the top level of a current project.<br>
-Is there a project README describing purpose, outputs, and conventions?</p></li>
-<li><p>Identify one recent decision in that project.<br>
-Is it recorded with context and rationale? Add it to a log if not.</p></li>
-</ol>
 </section>
-<section id="key-takeaways" class="level2 callout-summary">
+<section id="decisions-should-not-live-only-in-email" class="level2">
+<h2 class="anchored" data-anchor-id="decisions-should-not-live-only-in-email">Decisions should not live only in email</h2>
+<p>Email and chat messages are useful for discussion but poor places to store the project record. Decisions become hard to find, people are left out of threads, and the reasoning behind analytical choices may be lost.</p>
+<p>A project should have a visible place for decisions that affect interpretation or reproducibility. This may be a decision log, analysis log, lab notebook, issue tracker, or structured document.</p>
+<p>Examples of decisions worth recording include:</p>
+<ul>
+<li>changing inclusion or exclusion rules;</li>
+<li>choosing between alternative exposure metrics;</li>
+<li>changing a variable definition;</li>
+<li>excluding records because of data quality concerns;</li>
+<li>using a restricted dataset under specific governance conditions;</li>
+<li>deciding what can be shared and what must remain restricted;</li>
+<li>changing software or package versions where it affects results.</li>
+</ul>
+<p>Decision logs are covered in more detail in the documentation chapter. In this chapter, the important point is that the project structure should include somewhere for decisions to go.</p>
+</section>
+<section id="a-dmp-is-the-agreement-the-project-structure-is-the-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="a-dmp-is-the-agreement-the-project-structure-is-the-implementation">A DMP is the agreement; the project structure is the implementation</h2>
+<p>The Data Management Plan records the project’s formal decisions about data sources, storage, access, documentation, retention, sharing and responsibilities. The project structure is where these decisions become everyday practice.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>DMP decision</th>
+<th>Project implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Raw data must not be altered</td>
+<td><code>data/raw/</code> protected and treated as read-only</td>
+</tr>
+<tr class="even">
+<td>Derived files must be reproducible</td>
+<td>cleaning scripts write to <code>data/processed/</code></td>
+</tr>
+<tr class="odd">
+<td>Access is restricted</td>
+<td>restricted files stored in approved secure location</td>
+</tr>
+<tr class="even">
+<td>Outputs must be archived</td>
+<td>final outputs placed in a release or archive folder</td>
+</tr>
+<tr class="odd">
+<td>Data must be documented</td>
+<td>data dictionary and README stored in <code>docs/</code> or <code>data/metadata/</code></td>
+</tr>
+<tr class="even">
+<td>Changes must be traceable</td>
+<td>changelog and versioned outputs maintained</td>
+</tr>
+</tbody>
+</table>
+<p>This avoids repetition between chapters. Chapter 3 shows what good organisation looks like in practice. Chapter 4 explains how the relevant data-management decisions and responsibilities are recorded.</p>
+</section>
+<section id="proportionate-project-organisation" class="level2">
+<h2 class="anchored" data-anchor-id="proportionate-project-organisation">Proportionate project organisation</h2>
+<p>A small MSc project, a multi-site clinical study, an administrative data linkage project and a national policy evaluation do not need identical structures. The level of organisation should be proportionate to risk, scale and likely reuse.</p>
+<p>However, almost every project benefits from a minimum viable structure.</p>
+<div class="practice-grid">
+<section id="one-project-root" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="one-project-root">One project root</h3>
+<p>Keep the project materials in one clear location, or document where restricted materials are stored.</p>
+</section>
+<section id="one-readme" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="one-readme">One README</h3>
+<p>Provide a clear starting point for anyone opening the project.</p>
+</section>
+<section id="protected-raw-data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="protected-raw-data">Protected raw data</h3>
+<p>Preserve original inputs and avoid manual edits.</p>
+</section>
+<section id="clear-naming" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="clear-naming">Clear naming</h3>
+<p>Use consistent, descriptive and machine-friendly file names.</p>
+</section>
+<section id="visible-versions" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="visible-versions">Visible versions</h3>
+<p>Record meaningful changes and avoid ambiguous “final” files.</p>
+</section>
+<section id="documentation-links" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="documentation-links">Documentation links</h3>
+<p>Make it obvious where the DMP, data dictionary, decision log and code are stored.</p>
+</section>
+</div>
+</section>
+<section id="activity-project-organisation-diagnostic" class="level2">
+<h2 class="anchored" data-anchor-id="activity-project-organisation-diagnostic">Activity: project organisation diagnostic</h2>
+<section id="individual-reflection-or-small-group-discussion" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</h3>
+<p>Choose one current or recent project.</p>
+<p>Assess it using the questions below:</p>
+<ul>
+<li>Is there one obvious project root or starting point?</li>
+<li>Is there a README or equivalent orientation document?</li>
+<li>Are raw, processed and output files clearly separated?</li>
+<li>Could someone identify the latest version of the main outputs?</li>
+<li>Are file names descriptive and consistent?</li>
+<li>Is there somewhere to record decisions and changes?</li>
+<li>Are restricted or sensitive materials clearly labelled and protected?</li>
+</ul>
+<p>Identify one small change that would make the project easier to understand or hand over.</p>
+</section>
+</section>
+<section id="activity-beginner-and-advanced-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="activity-beginner-and-advanced-next-steps">Activity: beginner and advanced next steps</h2>
+<section id="choose-one-action" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="choose-one-action">Choose one action</h3>
+<p><strong>Beginner option:</strong><br>
+Create or update a project README. Add the purpose, folder structure, data sources and where to find key outputs.</p>
+<p><strong>Intermediate option:</strong><br>
+Rename one small set of files using a consistent pattern. Do not rename everything at once unless you can update scripts and links safely.</p>
+<p><strong>Advanced option:</strong><br>
+Create a changelog and record the last three meaningful changes to the project. Include what changed, when, why and who made the decision.</p>
+</section>
+</section>
+<section id="recommended-resources-for-this-chapter" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-resources-for-this-chapter">Recommended resources for this chapter</h2>
+<section id="project-organisation-and-file-naming" class="level3 resource-box">
+<h3 class="anchored" data-anchor-id="project-organisation-and-file-naming">Project organisation and file naming</h3>
+<ul>
+<li>CESSDA Data Management Expert Guide: file naming and folder structure<span class="citation" data-cites="cessdaFileNaming"><sup><a href="#ref-cessdaFileNaming" role="doc-biblioref">2</a></sup></span></li>
+<li>Data Carpentry: file naming and project organisation<span class="citation" data-cites="dataCarpentryFileNaming"><sup><a href="#ref-dataCarpentryFileNaming" role="doc-biblioref">5</a></sup></span></li>
+<li>Noble: <em>A Quick Guide to Organizing Computational Biology Projects</em><span class="citation" data-cites="noble2009quick"><sup><a href="#ref-noble2009quick" role="doc-biblioref">3</a></sup></span></li>
+<li>The TIER Protocol for reproducible empirical research<span class="citation" data-cites="tierProtocol"><sup><a href="#ref-tierProtocol" role="doc-biblioref">4</a></sup></span></li>
+<li>Good Enough Project template<span class="citation" data-cites="goodEnoughProject"><sup><a href="#ref-goodEnoughProject" role="doc-biblioref">6</a></sup></span></li>
+<li>Example folder structures for research projects<span class="citation" data-cites="nikolaFolderStructure"><sup><a href="#ref-nikolaFolderStructure" role="doc-biblioref">7</a></sup></span></li>
+</ul>
+</section>
+</section>
+<section id="what-comes-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-comes-next">What comes next?</h2>
+<p>This chapter focused on the visible structure of a project: folders, file names, raw-data protection, versioning and the README.</p>
+<p>The next chapter explains how these practices connect to the formal Data Management Plan: the document that records data-related decisions, constraints, responsibilities, access conditions and plans for archiving or sharing.</p>
+</section>
+<section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>Project organisation is foundational for reproducibility and collaboration.</li>
-<li>Project-level metadata improves discoverability and continuity.</li>
-<li>Versioning principles apply to data, documentation, and code.</li>
-<li>Explicit roles and decision records reduce risk and knowledge loss.</li>
-<li>Templates and examples are centralised in the <a href="./resources.html">Resources and Further Reading</a> chapter.</li>
+<li>Project organisation is a reproducibility practice, not just an administrative preference.</li>
+<li>A project needs a clear purpose, defined outputs, shared conventions, protected provenance and a starting point.</li>
+<li>Raw data should be preserved and never overwritten manually.</li>
+<li>File names should make meaning, date and version status visible.</li>
+<li>Versioning can start simply: dates, version numbers, changelogs and recoverable changes.</li>
+<li>The DMP records decisions; the project structure implements them.</li>
 </ul>
 </section>
 
 
 <div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
-<div id="ref-ukdataservice_managing_sharing2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://dam.ukdataservice.ac.uk/media/622417/managingsharing.pdf">Managing and Sharing Data: Best Practice for Researchers</a></em>. (UK Data Service, 2019).</div>
+<div id="ref-cessdaDmeg" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">CESSDA Training Team. CESSDA data management expert guide. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide">https://dmeg.cessda.eu/Data-Management-Expert-Guide</a> (2022).</div>
 </div>
-<div id="ref-ukdataservice_versioning2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/">Versioning Your Data</a></em>. (UK Data Service, 2023).</div>
+<div id="ref-cessdaFileNaming" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">CESSDA Training Team. File naming and folder structure. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/File-naming-and-folder-structure">https://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/File-naming-and-folder-structure</a> (2022).</div>
+</div>
+<div id="ref-noble2009quick" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Noble, W. S. <a href="https://doi.org/10.1371/journal.pcbi.1000424">A quick guide to organizing computational biology projects</a>. <em>PLOS Computational Biology</em> <strong>5</strong>, e1000424 (2009).</div>
+</div>
+<div id="ref-tierProtocol" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Project TIER. TIER protocol 4.0. <a href="https://www.projecttier.org/tier-protocol/protocol-4-0/">https://www.projecttier.org/tier-protocol/protocol-4-0/</a> (2026).</div>
+</div>
+<div id="ref-dataCarpentryFileNaming" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Data Carpentry. Data carpentry: File naming. <a href="https://datacarpentry.github.io/rr-organization1/01-file-naming/index.html">https://datacarpentry.github.io/rr-organization1/01-file-naming/index.html</a> (2026).</div>
+</div>
+<div id="ref-goodEnoughProject" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Vreede, B. Good enough project. <a href="https://github.com/bvreede/good-enough-project">https://github.com/bvreede/good-enough-project</a> (2026).</div>
+</div>
+<div id="ref-nikolaFolderStructure" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Vuković, N. Folder structure for research projects. <a href="http://nikola.me/folder_structure.html">http://nikola.me/folder_structure.html</a> (2026).</div>
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -589,24 +1214,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./02-fair-basics.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 2 - FAIR basics</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 2 — FAIR basics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./04-dmp.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Chapter 4 — Data Management Plans</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

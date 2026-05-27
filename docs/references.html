@@ -61,11 +61,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -83,13 +83,41 @@ div.csl-indent {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -105,14 +133,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -122,62 +145,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -195,7 +208,15 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/references.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -224,80 +245,473 @@ div.csl-indent {
 <div id="ref-plesser2018reproducibility" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Plesser, H. E. <a href="https://doi.org/10.3389/fninf.2017.00076">Reproducibility vs. Replicability: A brief history of a confused terminology</a>. <em>Frontiers in Neuroinformatics</em> <strong>11</strong>, 76 (2018).</div>
 </div>
-<div id="ref-turingway2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">The Turing Way Community. <em><a href="https://the-turing-way.netlify.app">The <span>Turing Way</span>: A Handbook for Reproducible, Ethical and Collaborative Data Science</a></em>. (2022).</div>
-</div>
 <div id="ref-baker2016reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Baker, M. 1,500 scientists lift the lid on reproducibility. <em>Nature</em> <strong>533</strong>, 452–454 (2016).</div>
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Baker, M. <a href="https://doi.org/10.1038/533452a">1,500 scientists lift the lid on reproducibility</a>. <em>Nature</em> <strong>533</strong>, 452–454 (2016).</div>
 </div>
 <div id="ref-munafo2017manifesto" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Munafò, M. R. <em>et al.</em> A manifesto for reproducible science. <em>Nature Human Behaviour</em> <strong>1</strong>, 1–9 (2017).</div>
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Munafò, M. R., Nosek, B. A., Bishop, D. V. M., <em>et al.</em> <a href="https://doi.org/10.1038/s41562-016-0021">A manifesto for reproducible science</a>. <em>Nature Human Behaviour</em> <strong>1</strong>, 0021 (2017).</div>
 </div>
 <div id="ref-nas2019reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">National Academies of Sciences, Engineering, and Medicine. <em>Reproducibility and Replicability in Science</em>. (National Academies Press, 2019).</div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">National Academies of Sciences, Engineering, and Medicine. <em>Reproducibility and Replicability in Science</em>. (National Academies Press, 2019). doi:<a href="https://doi.org/10.17226/25303">10.17226/25303</a>.</div>
+</div>
+<div id="ref-turingway2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">The Turing Way Community. The turing way: A handbook for reproducible, ethical and collaborative research (1.0.2). (2022) doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
 </div>
 <div id="ref-wilkinson2016fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> The FAIR guiding principles for scientific data management and stewardship. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> <a href="https://doi.org/10.1038/sdata.2016.18">The FAIR guiding principles for scientific data management and stewardship</a>. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
+</div>
+<div id="ref-gofairPrinciples" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">GO FAIR. FAIR principles. <a href="https://www.go-fair.org/fair-principles/">https://www.go-fair.org/fair-principles/</a> (2026).</div>
+</div>
+<div id="ref-turingwayFair" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">The Turing Way Community. The FAIR principles. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair/">https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair/</a> (2025).</div>
+</div>
+<div id="ref-openaireSensitiveData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">OpenAIRE. How to deal with sensitive data. <a href="https://www.openaire.eu/sensitive-data-guide">https://www.openaire.eu/sensitive-data-guide</a> (2026).</div>
+</div>
+<div id="ref-carpentriesFairBio" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">The Carpentries Incubator. FAIR in (biological) practice: Being FAIR. <a href="https://carpentries-incubator.github.io/fair-bio-practice/03-being-fair.html">https://carpentries-incubator.github.io/fair-bio-practice/03-being-fair.html</a> (2026).</div>
+</div>
+<div id="ref-cambridgeFairPrinciples" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">University of Cambridge Research Data Management. FAIR principles. <a href="https://www.data.cam.ac.uk/about/fair-principles">https://www.data.cam.ac.uk/about/fair-principles</a> (2026).</div>
+</div>
+<div id="ref-cambridgeFileFormats" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">University of Cambridge Research Data Management. Research data file formats. <a href="https://www.data.cam.ac.uk/organising-storing/file-formats">https://www.data.cam.ac.uk/organising-storing/file-formats</a> (2026).</div>
+</div>
+<div id="ref-cambridgeMetadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">University of Cambridge Research Data Management. Adding metadata to your research data. <a href="https://www.data.cam.ac.uk/organising-storing/metadata">https://www.data.cam.ac.uk/organising-storing/metadata</a> (2026).</div>
+</div>
+<div id="ref-dccMetadataStandards" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Digital Curation Centre. Disciplinary metadata. <a href="https://www.dcc.ac.uk/guidance/standards/metadata">https://www.dcc.ac.uk/guidance/standards/metadata</a> (2026).</div>
+</div>
+<div id="ref-cambridgeOpenResearchLicensing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">University of Cambridge Open Research. Copyright, licensing and citation. <a href="https://www.openresearch.cam.ac.uk/copyright-licensing-citation">https://www.openresearch.cam.ac.uk/copyright-licensing-citation</a> (2026).</div>
+</div>
+<div id="ref-cambridgeCreativeCommons" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">University of Cambridge Open Research. Creative commons licences for your research. <a href="https://www.openresearch.cam.ac.uk/copyright-licensing-citation/creative-commons">https://www.openresearch.cam.ac.uk/copyright-licensing-citation/creative-commons</a> (2026).</div>
+</div>
+<div id="ref-cambridgeSoftwareCode" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">University of Cambridge Open Research. Licensing software and code. <a href="https://www.openresearch.cam.ac.uk/copyright-licensing-citation/software-code">https://www.openresearch.cam.ac.uk/copyright-licensing-citation/software-code</a> (2026).</div>
+</div>
+<div id="ref-cambridgeDataAccessStatement" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">University of Cambridge Open Research. Data access statement. <a href="https://www.openresearch.cam.ac.uk/publications/data-access-statement">https://www.openresearch.cam.ac.uk/publications/data-access-statement</a> (2026).</div>
+</div>
+<div id="ref-cambridgeFindRepository" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">University of Cambridge Open Research. How to find the right repository for your data. <a href="https://www.openresearch.cam.ac.uk/data/find-a-repository">https://www.openresearch.cam.ac.uk/data/find-a-repository</a> (2026).</div>
+</div>
+<div id="ref-h2020FairDmp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">European Commission. Guidelines on FAIR data management in horizon 2020. <a href="https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf">https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf</a> (2016).</div>
 </div>
 <div id="ref-gofair2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">7. </div><div class="csl-right-inline">GO FAIR Initiative. <a href="https://www.go-fair.org/fair-principles/">FAIR principles</a>. (2023).</div>
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">GO FAIR Initiative. <a href="https://www.go-fair.org/fair-principles/">FAIR principles overview</a>. (2023).</div>
 </div>
 <div id="ref-openaire_fair2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline">OpenAIRE. <a href="https://www.openaire.eu/how-to-make-your-data-fair">How to make your data FAIR</a>. (2023).</div>
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">OpenAIRE. <a href="https://www.openaire.eu/how-to-make-your-data-fair">How to make your data FAIR</a>. (2023).</div>
 </div>
 <div id="ref-turingway_fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">9. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair">FAIR data in the turing way</a>.</div>
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair">FAIR principles chapter</a>. in <em>The turing way: A handbook for reproducible research</em> (2022).</div>
 </div>
 <div id="ref-turingway_pm" class="csl-entry" role="listitem">
-<div class="csl-left-margin">10. </div><div class="csl-right-inline">Community, T. T. W. <em><a href="https://book.the-turing-way.org/project-design/">Project Design — the Turing Way</a></em>. (The Turing Way, 2025).</div>
-</div>
-<div id="ref-turingway_metadata" class="csl-entry" role="listitem">
-<div class="csl-left-margin">11. </div><div class="csl-right-inline">Community, T. T. W. <em><a href="https://book.the-turing-way.org/project-design/project-metadata">Project Metadata — the Turing Way</a></em>. (The Turing Way, 2025).</div>
-</div>
-<div id="ref-wickham2014tidy" class="csl-entry" role="listitem">
-<div class="csl-left-margin">12. </div><div class="csl-right-inline">Wickham, H. <a href="https://doi.org/10.18637/jss.v059.i10">Tidy data</a>. <em>Journal of Statistical Software</em> <strong>59</strong>, (2014).</div>
-</div>
-<div id="ref-turingway2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">13. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
-</div>
-<div id="ref-michener2015ten" class="csl-entry" role="listitem">
-<div class="csl-left-margin">14. </div><div class="csl-right-inline">Michener, W. K. Ten simple rules for creating a good data management plan. <em>PLoS computational biology</em> <strong>11</strong>, e1004525 (2015).</div>
-</div>
-<div id="ref-miksa2019ten" class="csl-entry" role="listitem">
-<div class="csl-left-margin">15. </div><div class="csl-right-inline">Miksa, T., Simms, S., Mietchen, D. &amp; Jones, S. Ten principles for machine-actionable data management plans. <em>PLoS computational biology</em> <strong>15</strong>, e1006750 (2019).</div>
-</div>
-<div id="ref-turingway_dmp2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">16. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: Data Management Plans</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
-</div>
-<div id="ref-osborne2014ten" class="csl-entry" role="listitem">
-<div class="csl-left-margin">17. </div><div class="csl-right-inline">Osborne, J. M. <em>et al.</em> Ten simple rules for effective computational research. <em>PLoS Computational Biology</em> <strong>10</strong>, e1003506 (2014).</div>
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/project-design/project-management-methodologies/overview">Project management overview</a>. in <em>The turing way: A handbook for reproducible research</em> (2022).</div>
 </div>
 <div id="ref-noble2009quick" class="csl-entry" role="listitem">
-<div class="csl-left-margin">18. </div><div class="csl-right-inline">Noble, W. S. A quick guide to organizing computational biology projects. <em>PLoS computational biology</em> <strong>5</strong>, e1000424 (2009).</div>
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Noble, W. S. <a href="https://doi.org/10.1371/journal.pcbi.1000424">A quick guide to organizing computational biology projects</a>. <em>PLOS Computational Biology</em> <strong>5</strong>, e1000424 (2009).</div>
+</div>
+<div id="ref-cessdaDmeg" class="csl-entry" role="listitem">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">CESSDA Training Team. CESSDA data management expert guide. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide">https://dmeg.cessda.eu/Data-Management-Expert-Guide</a> (2022).</div>
+</div>
+<div id="ref-cessdaFileNaming" class="csl-entry" role="listitem">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">CESSDA Training Team. File naming and folder structure. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/File-naming-and-folder-structure">https://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/File-naming-and-folder-structure</a> (2022).</div>
+</div>
+<div id="ref-tierProtocol" class="csl-entry" role="listitem">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Project TIER. TIER protocol 4.0. <a href="https://www.projecttier.org/tier-protocol/protocol-4-0/">https://www.projecttier.org/tier-protocol/protocol-4-0/</a> (2026).</div>
+</div>
+<div id="ref-dataCarpentryFileNaming" class="csl-entry" role="listitem">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">Data Carpentry. Data carpentry: File naming. <a href="https://datacarpentry.github.io/rr-organization1/01-file-naming/index.html">https://datacarpentry.github.io/rr-organization1/01-file-naming/index.html</a> (2026).</div>
+</div>
+<div id="ref-goodEnoughProject" class="csl-entry" role="listitem">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Vreede, B. Good enough project. <a href="https://github.com/bvreede/good-enough-project">https://github.com/bvreede/good-enough-project</a> (2026).</div>
+</div>
+<div id="ref-nikolaFolderStructure" class="csl-entry" role="listitem">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Vuković, N. Folder structure for research projects. <a href="http://nikola.me/folder_structure.html">http://nikola.me/folder_structure.html</a> (2026).</div>
+</div>
+<div id="ref-ecorepsciProjectOrganization" class="csl-entry" role="listitem">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Reproducible Science Curriculum. Project organization. <a href="https://ecorepsci.github.io/reproducible-science/project-organization.html">https://ecorepsci.github.io/reproducible-science/project-organization.html</a> (2026).</div>
+</div>
+<div id="ref-uclResearchDataPlanning" class="csl-entry" role="listitem">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">University College London. Data management planning. <a href="https://www.ucl.ac.uk/research/domains/collaborative-social-science/doing-idr/data-magement-planning">https://www.ucl.ac.uk/research/domains/collaborative-social-science/doing-idr/data-magement-planning</a> (2026).</div>
+</div>
+<div id="ref-uclRdmHub" class="csl-entry" role="listitem">
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">UCL Library Services. Research data management. <a href="https://library-guides.ucl.ac.uk/research-data-management">https://library-guides.ucl.ac.uk/research-data-management</a> (2026).</div>
+</div>
+<div id="ref-uclDmpTemplate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">35. </div><div class="csl-right-inline">UCL Library Services. New UCL data management plan template. <a href="https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template">https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template</a> (2024).</div>
+</div>
+<div id="ref-uclManagingData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">36. </div><div class="csl-right-inline">UCL Library Services. Managing data across the research lifecycle. <a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research">https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research</a> (2026).</div>
+</div>
+<div id="ref-ukdsChecklist" class="csl-entry" role="listitem">
+<div class="csl-left-margin">37. </div><div class="csl-right-inline">UK Data Service. Data management checklist. <a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/plan-to-share/checklist/">https://ukdataservice.ac.uk/learning-hub/research-data-management/plan-to-share/checklist/</a> (2026).</div>
+</div>
+<div id="ref-dmponlineDcc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">Digital Curation Centre. DMPonline. <a href="https://dmponline.dcc.ac.uk/">https://dmponline.dcc.ac.uk/</a> (2026).</div>
+</div>
+<div id="ref-dccDmpGuidanceExamples" class="csl-entry" role="listitem">
+<div class="csl-left-margin">39. </div><div class="csl-right-inline">Digital Curation Centre. Data management plans: Guidance and examples. <a href="https://www.dcc.ac.uk/resources/data-management-plans/guidance-examples">https://www.dcc.ac.uk/resources/data-management-plans/guidance-examples</a> (2026).</div>
+</div>
+<div id="ref-oxfordDmpTemplate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">40. </div><div class="csl-right-inline">University of Oxford Research Data Oxford. Data management plan template. <a href="https://researchdata.ox.ac.uk/dmp-template">https://researchdata.ox.ac.uk/dmp-template</a> (2026).</div>
+</div>
+<div id="ref-elixirDmp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">41. </div><div class="csl-right-inline">ELIXIR RDMkit. Data management plan. <a href="https://rdmkit.elixir-europe.org/data_management_plan">https://rdmkit.elixir-europe.org/data_management_plan</a> (2026).</div>
+</div>
+<div id="ref-ardcDmp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">42. </div><div class="csl-right-inline">Australian Research Data Commons. Data management plans. <a href="https://ardc.edu.au/resource/data-management-plans/">https://ardc.edu.au/resource/data-management-plans/</a> (2026).</div>
+</div>
+<div id="ref-projectOrganisationVideo" class="csl-entry" role="listitem">
+<div class="csl-left-margin">43. </div><div class="csl-right-inline">YouTube. Project organisation video resource. <a href="https://www.youtube.com/watch?v=HooeSaj3dQM">https://www.youtube.com/watch?v=HooeSaj3dQM</a> (2026).</div>
+</div>
+<div id="ref-datacarpentry_spreadsheet_errors" class="csl-entry" role="listitem">
+<div class="csl-left-margin">44. </div><div class="csl-right-inline">Data Carpentry. <a href="https://datacarpentry.github.io/spreadsheet-ecology-lesson/02-common-mistakes.html">Data organization in spreadsheets for ecologists: Formatting problems</a>. (2025).</div>
+</div>
+<div id="ref-wickham2014tidy" class="csl-entry" role="listitem">
+<div class="csl-left-margin">45. </div><div class="csl-right-inline">Wickham, H. <a href="https://doi.org/10.18637/jss.v059.i10">Tidy data</a>. <em>Journal of Statistical Software</em> <strong>59</strong>, 1–23 (2014).</div>
+</div>
+<div id="ref-white2013reuse" class="csl-entry" role="listitem">
+<div class="csl-left-margin">46. </div><div class="csl-right-inline">White, E. P. <em>et al.</em> <a href="https://doi.org/10.4033/iee.2013.6b.6.f">Nine simple ways to make it easier to (re)use your data</a>. <em>Ideas in Ecology and Evolution</em> <strong>6</strong>, 1–10 (2013).</div>
+</div>
+<div id="ref-kang2013missing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">47. </div><div class="csl-right-inline">Kang, H. <a href="https://doi.org/10.4097/kjae.2013.64.5.402">The prevention and handling of the missing data</a>. <em>Korean Journal of Anesthesiology</em> <strong>64</strong>, 402–406 (2013).</div>
+</div>
+<div id="ref-cessda_data_file_structure" class="csl-entry" role="listitem">
+<div class="csl-left-margin">48. </div><div class="csl-right-inline">CESSDA Training Team. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide/2.-Organise-Document/Designing-a-data-file-structure">Designing a data file structure</a>. (2022).</div>
+</div>
+<div id="ref-turingwayDocumentation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">49. </div><div class="csl-right-inline">The Turing Way Community. Documentation. (2024).</div>
+</div>
+<div id="ref-turingwayMetadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">50. </div><div class="csl-right-inline">The Turing Way Community. Documentation and metadata. (2024).</div>
+</div>
+<div id="ref-turingwayELNs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">51. </div><div class="csl-right-inline">The Turing Way Community. Electronic lab notebooks. (2024).</div>
+</div>
+<div id="ref-turingwayOnOffboarding" class="csl-entry" role="listitem">
+<div class="csl-left-margin">52. </div><div class="csl-right-inline">The Turing Way Community. On- and offboarding team members. (2024).</div>
+</div>
+<div id="ref-partridgeDocumentation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">53. </div><div class="csl-right-inline">Partridge, A. &amp; Miotto, A. Step 4: Document everything. (2025).</div>
+</div>
+<div id="ref-cessdaDocumentation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">54. </div><div class="csl-right-inline">CESSDA Training Team. Documentation and metadata. (2022).</div>
+</div>
+<div id="ref-ukdataserviceDataLevel" class="csl-entry" role="listitem">
+<div class="csl-left-margin">55. </div><div class="csl-right-inline">UK Data Service. Data-level documentation. (2024).</div>
+</div>
+<div id="ref-ukdataserviceAdministrative" class="csl-entry" role="listitem">
+<div class="csl-left-margin">56. </div><div class="csl-right-inline">UK Data Service. Administrative data. (2024).</div>
+</div>
+<div id="ref-makeareadme" class="csl-entry" role="listitem">
+<div class="csl-left-margin">57. </div><div class="csl-right-inline">Make a README. Make a README. (2024).</div>
+</div>
+<div id="ref-rdamsc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">58. </div><div class="csl-right-inline">Research Data Alliance. Metadata standards catalog. (2024).</div>
+</div>
+<div id="ref-dataciteSchema" class="csl-entry" role="listitem">
+<div class="csl-left-margin">59. </div><div class="csl-right-inline">DataCite Metadata Working Group. DataCite metadata schema documentation for the publication and citation of research data and other research outputs. (2026) doi:<a href="https://doi.org/10.14454/qdd3-ps68">10.14454/qdd3-ps68</a>.</div>
+</div>
+<div id="ref-dublinCore" class="csl-entry" role="listitem">
+<div class="csl-left-margin">60. </div><div class="csl-right-inline">Dublin Core Metadata Initiative. Dublin core metadata initiative. (2024).</div>
+</div>
+<div id="ref-ddiAlliance" class="csl-entry" role="listitem">
+<div class="csl-left-margin">61. </div><div class="csl-right-inline">DDI Alliance. Data documentation initiative. (2024).</div>
+</div>
+<div id="ref-sdmx" class="csl-entry" role="listitem">
+<div class="csl-left-margin">62. </div><div class="csl-right-inline">SDMX. Statistical data and metadata eXchange. (2024).</div>
+</div>
+<div id="ref-iso19115" class="csl-entry" role="listitem">
+<div class="csl-left-margin">63. </div><div class="csl-right-inline">International Organization for Standardization. ISO 19115-1:2014 geographic information — metadata — part 1: fundamentals. (2014).</div>
+</div>
+<div id="ref-hollmann2020sop" class="csl-entry" role="listitem">
+<div class="csl-left-margin">64. </div><div class="csl-right-inline">Hollmann, S. <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1008095">Ten simple rules on how to write a standard operating procedure</a>. <em>PLOS Computational Biology</em> <strong>16</strong>, e1008095 (2020).</div>
+</div>
+<div id="ref-hines2014facs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">65. </div><div class="csl-right-inline">Hines, W. C., Su, Y., Kuhn, I., Polyak, K. &amp; Bissell, M. J. <a href="https://doi.org/10.1016/j.celrep.2014.02.021">Sorting out the FACS: A devil in the details</a>. <em>Cell Reports</em> <strong>6</strong>, 779–781 (2014).</div>
+</div>
+<div id="ref-cosPlanNotPrison" class="csl-entry" role="listitem">
+<div class="csl-left-margin">66. </div><div class="csl-right-inline">Center for Open Science. Preregistration: A plan, not a prison. (2017).</div>
+</div>
+<div id="ref-willroth2024deviations" class="csl-entry" role="listitem">
+<div class="csl-left-margin">67. </div><div class="csl-right-inline">Willroth, E. C. &amp; Atherton, O. E. <a href="https://doi.org/10.1177/25152459231213802">Best laid plans: A guide to reporting preregistration deviations</a>. <em>Advances in Methods and Practices in Psychological Science</em> <strong>7</strong>, (2024).</div>
+</div>
+<div id="ref-vanDenAkkerSecondaryPrereg" class="csl-entry" role="listitem">
+<div class="csl-left-margin">68. </div><div class="csl-right-inline">Akker, O. R. van den <em>et al.</em> Preregistration of secondary data analysis: A template and tutorial. (2019).</div>
+</div>
+<div id="ref-osfRegistries" class="csl-entry" role="listitem">
+<div class="csl-left-margin">69. </div><div class="csl-right-inline">Center for Open Science. OSF registries. (2024).</div>
+</div>
+<div id="ref-prospero" class="csl-entry" role="listitem">
+<div class="csl-left-margin">70. </div><div class="csl-right-inline">Centre for Reviews and Dissemination, University of York. PROSPERO: International prospective register of systematic reviews. (2024).</div>
+</div>
+<div id="ref-protocolsio" class="csl-entry" role="listitem">
+<div class="csl-left-margin">71. </div><div class="csl-right-inline">protocols.io. Protocols.io. (2024).</div>
+</div>
+<div id="ref-cochraneHandbook" class="csl-entry" role="listitem">
+<div class="csl-left-margin">72. </div><div class="csl-right-inline">Cochrane. Cochrane handbook for systematic reviews of interventions. (2024).</div>
+</div>
+<div id="ref-equatorNetwork" class="csl-entry" role="listitem">
+<div class="csl-left-margin">73. </div><div class="csl-right-inline">EQUATOR Network. EQUATOR network: Enhancing the QUAlity and transparency of health research. (2026).</div>
+</div>
+<div id="ref-archbeeVersionControl" class="csl-entry" role="listitem">
+<div class="csl-left-margin">74. </div><div class="csl-right-inline">Archbee. Document version control. (2024).</div>
+</div>
+<div id="ref-elnSoftwareList" class="csl-entry" role="listitem">
+<div class="csl-left-margin">75. </div><div class="csl-right-inline">Wikipedia contributors. List of electronic laboratory notebook software packages. (2026).</div>
+</div>
+<div id="ref-resourcespaceMetadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">76. </div><div class="csl-right-inline">ResourceSpace. Complete guide to metadata. (2024).</div>
+</div>
+<div id="ref-projectManagerDecisionLog" class="csl-entry" role="listitem">
+<div class="csl-left-margin">77. </div><div class="csl-right-inline">ProjectManagerTemplate.com. Decision logs: The ultimate guide. (2024).</div>
+</div>
+<div id="ref-asanaRiskRegister" class="csl-entry" role="listitem">
+<div class="csl-left-margin">78. </div><div class="csl-right-inline">Asana. What is a risk register? A project manager’s guide. (2024).</div>
+</div>
+<div id="ref-imperialDocumentingData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">79. </div><div class="csl-right-inline">Imperial College London. Documenting data. (2024).</div>
+</div>
+<div id="ref-manchesterResearchDataExplained" class="csl-entry" role="listitem">
+<div class="csl-left-margin">80. </div><div class="csl-right-inline">University of Manchester Library. Research data explained. (2024).</div>
+</div>
+<div id="ref-kanza2024elns" class="csl-entry" role="listitem">
+<div class="csl-left-margin">81. </div><div class="csl-right-inline">Kanza, S., Willoughby, C., Gibbins, N., <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1012170">Ten simple rules for implementing electronic laboratory notebooks</a>. <em>PLOS Computational Biology</em> <strong>20</strong>, e1012170 (2024).</div>
+</div>
+<div id="ref-uhbwEssentialDocs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">82. </div><div class="csl-right-inline">University Hospitals Bristol and Weston NHS Foundation Trust. SOP 014: Essential research documents. (2020).</div>
+</div>
+<div id="ref-wilson2017goodenough" class="csl-entry" role="listitem">
+<div class="csl-left-margin">83. </div><div class="csl-right-inline">Wilson, G. <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1005510">Good enough practices in scientific computing</a>. <em>PLOS Computational Biology</em> <strong>13</strong>, e1005510 (2017).</div>
+</div>
+<div id="ref-goodenoughpractices" class="csl-entry" role="listitem">
+<div class="csl-left-margin">84. </div><div class="csl-right-inline">The Carpentries Incubator. <a href="https://carpentries-lab.github.io/good-enough-practices/">Good enough practices in scientific computing</a>. (2024).</div>
+</div>
+<div id="ref-goodenough_trackchanges" class="csl-entry" role="listitem">
+<div class="csl-left-margin">85. </div><div class="csl-right-inline">The Carpentries Incubator. <a href="https://carpentries-lab.github.io/good-enough-practices/06-track_changes.html">Track changes</a>. (2024).</div>
+</div>
+<div id="ref-tidyverse_style" class="csl-entry" role="listitem">
+<div class="csl-left-margin">86. </div><div class="csl-right-inline">The Tidyverse Team. <a href="https://style.tidyverse.org/">The tidyverse style guide</a>. (2024).</div>
+</div>
+<div id="ref-turingway_codequality" class="csl-entry" role="listitem">
+<div class="csl-left-margin">87. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/code-quality/">Code quality</a>. (2025).</div>
+</div>
+<div id="ref-turingway_readablecode" class="csl-entry" role="listitem">
+<div class="csl-left-margin">88. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-readability/">Readable code</a>. (2025).</div>
+</div>
+<div id="ref-turingway_robustcode" class="csl-entry" role="listitem">
+<div class="csl-left-margin">89. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-robust/">Robust code</a>. (2025).</div>
+</div>
+<div id="ref-turingway_testing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">90. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/testing/">Testing</a>. (2025).</div>
+</div>
+<div id="ref-turingway_vcs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">91. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/vcs/">Version control</a>. (2025).</div>
+</div>
+<div id="ref-jupyter_docs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">92. </div><div class="csl-right-inline">Project Jupyter. <a href="https://docs.jupyter.org/en/latest/">Project jupyter documentation</a>. (2025).</div>
+</div>
+<div id="ref-jupyter_try" class="csl-entry" role="listitem">
+<div class="csl-left-margin">93. </div><div class="csl-right-inline">Project Jupyter. <a href="https://jupyter.org/try-jupyter/lab/">Try JupyterLab</a>. (2025).</div>
+</div>
+<div id="ref-broman_knitr" class="csl-entry" role="listitem">
+<div class="csl-left-margin">94. </div><div class="csl-right-inline">Broman, K. W. <a href="https://kbroman.org/knitr_knutshell/">Knitr in a knutshell</a>. (2024).</div>
+</div>
+<div id="ref-ucl_arc_training" class="csl-entry" role="listitem">
+<div class="csl-left-margin">95. </div><div class="csl-right-inline">UCL Advanced Research Computing. <a href="https://www.ucl.ac.uk/advanced-research-computing/education/training">Training</a>. (2026).</div>
+</div>
+<div id="ref-ucl_arc_course_catalogue" class="csl-entry" role="listitem">
+<div class="csl-left-margin">96. </div><div class="csl-right-inline">UCL Advanced Research Computing. <a href="https://www.ucl.ac.uk/advanced-research-computing/training/course-catalogue">Course catalogue</a>. (2026).</div>
+</div>
+<div id="ref-ucl_github_support" class="csl-entry" role="listitem">
+<div class="csl-left-margin">97. </div><div class="csl-right-inline">UCL Advanced Research Computing. <a href="https://www.ucl.ac.uk/advanced-research-computing/expertise/research-software-development/research-software-development-tools/support-ucl-0">Support for UCL researchers to use GitHub</a>. (2026).</div>
+</div>
+<div id="ref-ucl_git_novice" class="csl-entry" role="listitem">
+<div class="csl-left-margin">98. </div><div class="csl-right-inline">UCL Advanced Research Computing. <a href="https://github-pages.ucl.ac.uk/git-novice/">Version control with git</a>. (2024).</div>
+</div>
+<div id="ref-softwarecarpentry_gitnovice" class="csl-entry" role="listitem">
+<div class="csl-left-margin">99. </div><div class="csl-right-inline">Software Carpentry. <a href="https://swcarpentry.github.io/git-novice/">Version control with git</a>. (2024).</div>
+</div>
+<div id="ref-softwarecarpentry_lessons" class="csl-entry" role="listitem">
+<div class="csl-left-margin">100. </div><div class="csl-right-inline">Software Carpentry. <a href="https://software-carpentry.org/lessons/">Software carpentry lessons</a>. (2024).</div>
+</div>
+<div id="ref-git" class="csl-entry" role="listitem">
+<div class="csl-left-margin">101. </div><div class="csl-right-inline">Git Project. <a href="https://git-scm.com/">Git</a>. (2025).</div>
+</div>
+<div id="ref-github" class="csl-entry" role="listitem">
+<div class="csl-left-margin">102. </div><div class="csl-right-inline">GitHub. <a href="https://github.com/">GitHub</a>. (2025).</div>
+</div>
+<div id="ref-github_hello_world" class="csl-entry" role="listitem">
+<div class="csl-left-margin">103. </div><div class="csl-right-inline">GitHub Docs. <a href="https://docs.github.com/en/get-started/start-your-journey/hello-world">Hello world</a>. (2025).</div>
+</div>
+<div id="ref-wickham_bryan_rpackages" class="csl-entry" role="listitem">
+<div class="csl-left-margin">104. </div><div class="csl-right-inline">Wickham, H. &amp; Bryan, J. <em><a href="https://r-pkgs.org/">R Packages</a></em>. (O’Reilly Media, 2023).</div>
+</div>
+<div id="ref-rpackages_testing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">105. </div><div class="csl-right-inline">Wickham, H. &amp; Bryan, J. <a href="https://r-pkgs.org/testing-basics.html">Testing basics</a>. (2023).</div>
+</div>
+<div id="ref-adacs_good_code_etiquette" class="csl-entry" role="listitem">
+<div class="csl-left-margin">106. </div><div class="csl-right-inline">Sinha, M., Hancock, P. &amp; Lange, R. <a href="https://github.com/ADACS-Australia/good-code-etiquette/tree/master">Good code etiquette</a>. (2019).</div>
+</div>
+<div id="ref-adacs_testing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">107. </div><div class="csl-right-inline">Sinha, M., Hancock, P. &amp; Lange, R. <a href="https://github.com/ADACS-Australia/good-code-etiquette/blob/master/Testing.ipynb">Good code etiquette: testing</a>. (2019).</div>
+</div>
+<div id="ref-reproducibleresearch_testing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">108. </div><div class="csl-right-inline">Miotto, A. &amp; Partridge, A. <a href="https://ampartridge.github.io/ReproducibleResearch/step5Testing.html">Step 5: Testing and controls</a>. (2024).</div>
+</div>
+<div id="ref-cessda_data_authenticity" class="csl-entry" role="listitem">
+<div class="csl-left-margin">109. </div><div class="csl-right-inline">CESSDA Training Team. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide/3.-Process/Data-authenticity">Data authenticity</a>. (2022).</div>
+</div>
+<div id="ref-osf_code_example" class="csl-entry" role="listitem">
+<div class="csl-left-margin">110. </div><div class="csl-right-inline">Cruz, J. <a href="https://osf.io/p2bdq/overview">Open research and reproducibility workshop code example</a>. (2026).</div>
+</div>
+<div id="ref-github_code_documentation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">111. </div><div class="csl-right-inline">GitHub Resources. <a href="https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation">Tools and techniques for effective code documentation</a>. (2024).</div>
+</div>
+<div id="ref-writethedocs_beginner" class="csl-entry" role="listitem">
+<div class="csl-left-margin">112. </div><div class="csl-right-inline">Write the Docs. <a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">A beginner’s guide to writing documentation</a>. (2024).</div>
+</div>
+<div id="ref-tierney_good_with_r" class="csl-entry" role="listitem">
+<div class="csl-left-margin">113. </div><div class="csl-right-inline">Tierney, N. <a href="https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/">How to get good with r</a>. (2023).</div>
+</div>
+<div id="ref-rbloggers_good_r_code" class="csl-entry" role="listitem">
+<div class="csl-left-margin">114. </div><div class="csl-right-inline">R-bloggers. <a href="https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/">Guidelines for writing good r code</a>. (2022).</div>
+</div>
+<div id="ref-sandve2013tenrules" class="csl-entry" role="listitem">
+<div class="csl-left-margin">115. </div><div class="csl-right-inline">Sandve, G. K., Nekrutenko, A., Taylor, J. &amp; Hovig, E. <a href="https://doi.org/10.1371/journal.pcbi.1003285">Ten simple rules for reproducible computational research</a>. <em>PLOS Computational Biology</em> <strong>9</strong>, e1003285 (2013).</div>
+</div>
+<div id="ref-r_docstring_crispell" class="csl-entry" role="listitem">
+<div class="csl-left-margin">116. </div><div class="csl-right-inline">Crispell, J. <a href="https://josephcrispell.github.io/2021/07/26/creating-R-docstring.html">Creating r docstrings</a>. (2021).</div>
+</div>
+<div id="ref-pep257" class="csl-entry" role="listitem">
+<div class="csl-left-margin">117. </div><div class="csl-right-inline">Goodger, D. &amp; Rossum, G. van. <a href="https://peps.python.org/pep-0257/">PEP 257 – docstring conventions</a>. (2001).</div>
+</div>
+<div id="ref-stackoverflow_code_comments" class="csl-entry" role="listitem">
+<div class="csl-left-margin">118. </div><div class="csl-right-inline">Stack Overflow Blog. <a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a>. (2021).</div>
+</div>
+<div id="ref-shiny_basics" class="csl-entry" role="listitem">
+<div class="csl-left-margin">119. </div><div class="csl-right-inline">Posit. <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">Shiny basics</a>. (2024).</div>
+</div>
+<div id="ref-turingway_metadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">120. </div><div class="csl-right-inline">Community, T. T. W. <em><a href="https://book.the-turing-way.org/project-design/project-metadata">Project Metadata — the Turing Way</a></em>. (The Turing Way, 2025).</div>
+</div>
+<div id="ref-turingway2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">121. </div><div class="csl-right-inline">Community, T. T. W. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
+</div>
+<div id="ref-michener2015ten" class="csl-entry" role="listitem">
+<div class="csl-left-margin">122. </div><div class="csl-right-inline">Michener, W. K. Ten simple rules for creating a good data management plan. <em>PLoS computational biology</em> <strong>11</strong>, e1004525 (2015).</div>
+</div>
+<div id="ref-miksa2019ten" class="csl-entry" role="listitem">
+<div class="csl-left-margin">123. </div><div class="csl-right-inline">Miksa, T., Simms, S., Mietchen, D. &amp; Jones, S. Ten principles for machine-actionable data management plans. <em>PLoS computational biology</em> <strong>15</strong>, e1006750 (2019).</div>
+</div>
+<div id="ref-turingway_dmp2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">124. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: Data Management Plans</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
+</div>
+<div id="ref-osborne2014ten" class="csl-entry" role="listitem">
+<div class="csl-left-margin">125. </div><div class="csl-right-inline">Osborne, J. M. <em>et al.</em> Ten simple rules for effective computational research. <em>PLoS Computational Biology</em> <strong>10</strong>, e1003506 (2014).</div>
 </div>
 <div id="ref-turingway_envimpact2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">19. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: Environmental Impact of Research</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
+<div class="csl-left-margin">126. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: Environmental Impact of Research</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
 </div>
 <div id="ref-jacobsen2020fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">20. </div><div class="csl-right-inline">Jacobsen, A. <em>et al.</em> FAIR principles: Interpretations and implementation considerations. <em>Data intelligence</em> vol. 2 10–29 (2020).</div>
+<div class="csl-left-margin">127. </div><div class="csl-right-inline">Jacobsen, A. <em>et al.</em> FAIR principles: Interpretations and implementation considerations. <em>Data intelligence</em> vol. 2 10–29 (2020).</div>
 </div>
 <div id="ref-ukdataservice_managing_sharing2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">21. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://dam.ukdataservice.ac.uk/media/622417/managingsharing.pdf">Managing and Sharing Data: Best Practice for Researchers</a></em>. (UK Data Service, 2019).</div>
+<div class="csl-left-margin">128. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://dam.ukdataservice.ac.uk/media/622417/managingsharing.pdf">Managing and Sharing Data: Best Practice for Researchers</a></em>. (UK Data Service, 2019).</div>
 </div>
 <div id="ref-qut_naming_convention2019" class="csl-entry" role="listitem">
-<div class="csl-left-margin">22. </div><div class="csl-right-inline">Queensland University of Technology. <em><a href="https://www.library.qut.edu.au/about/management/documents/QUTTILSDocNamingConvention.pdf">File Naming Convention</a></em>. (Queensland University of Technology Library, 2019).</div>
+<div class="csl-left-margin">129. </div><div class="csl-right-inline">Queensland University of Technology. <em><a href="https://www.library.qut.edu.au/about/management/documents/QUTTILSDocNamingConvention.pdf">File Naming Convention</a></em>. (Queensland University of Technology Library, 2019).</div>
 </div>
 <div id="ref-aberdeen_file_naming2017" class="csl-entry" role="listitem">
-<div class="csl-left-margin">23. </div><div class="csl-right-inline">University of Aberdeen. <em><a href="https://www.abdn.ac.uk/media/site/staffnet/documents/policy-zone-information-policies/File_Naming_Conventions_July_2017.pdf">File Naming Conventions</a></em>. (University of Aberdeen, 2017).</div>
+<div class="csl-left-margin">130. </div><div class="csl-right-inline">University of Aberdeen. <em><a href="https://www.abdn.ac.uk/media/site/staffnet/documents/policy-zone-information-policies/File_Naming_Conventions_July_2017.pdf">File Naming Conventions</a></em>. (University of Aberdeen, 2017).</div>
 </div>
 <div id="ref-ukdataservice_versioning2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">24. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/">Versioning Your Data</a></em>. (UK Data Service, 2023).</div>
+<div class="csl-left-margin">131. </div><div class="csl-right-inline">UK Data Service. <em><a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/">Versioning Your Data</a></em>. (UK Data Service, 2023).</div>
 </div>
 <div id="ref-equator2025reporting" class="csl-entry" role="listitem">
-<div class="csl-left-margin">25. </div><div class="csl-right-inline">The EQUATOR Network. <a href="https://www.equator-network.org/reporting-guidelines/">Reporting guidelines</a>. (2025).</div>
+<div class="csl-left-margin">132. </div><div class="csl-right-inline">The EQUATOR Network. <a href="https://www.equator-network.org/reporting-guidelines/">Reporting guidelines</a>. (2025).</div>
 </div>
 <div id="ref-grech2024reporting" class="csl-entry" role="listitem">
-<div class="csl-left-margin">26. </div><div class="csl-right-inline">Grech, V. &amp; Eldawlatly, A. A. <a href="https://doi.org/10.4103/sja.sja_545_23">STROBE, CONSORT, PRISMA, MOOSE, STARD, SPIRIT, and other guidelines – overview and application</a>. <em>Saudi Journal of Anaesthesia</em> <strong>18</strong>, 137–141 (2024).</div>
+<div class="csl-left-margin">133. </div><div class="csl-right-inline">Grech, V. &amp; Eldawlatly, A. A. <a href="https://doi.org/10.4103/sja.sja_545_23">STROBE, CONSORT, PRISMA, MOOSE, STARD, SPIRIT, and other guidelines – overview and application</a>. <em>Saudi Journal of Anaesthesia</em> <strong>18</strong>, 137–141 (2024).</div>
+</div>
+<div id="ref-orcid" class="csl-entry" role="listitem">
+<div class="csl-left-margin">134. </div><div class="csl-right-inline">ORCID. <a href="https://orcid.org/">ORCID</a>. (2026).</div>
+</div>
+<div id="ref-datacite" class="csl-entry" role="listitem">
+<div class="csl-left-margin">135. </div><div class="csl-right-inline">DataCite. <a href="https://datacite.org/">DataCite</a>. (2026).</div>
+</div>
+<div id="ref-ror" class="csl-entry" role="listitem">
+<div class="csl-left-margin">136. </div><div class="csl-right-inline">Research Organization Registry. <a href="https://ror.org/">Research organization registry</a>. (2026).</div>
+</div>
+<div id="ref-ardc_doi_decision_tree" class="csl-entry" role="listitem">
+<div class="csl-left-margin">137. </div><div class="csl-right-inline">Australian Research Data Commons. <a href="https://ardc.edu.au/resource/doi-decision-tree/">DOI decision tree</a>. (2024).</div>
+</div>
+<div id="ref-cessda_archive_publish" class="csl-entry" role="listitem">
+<div class="csl-left-margin">138. </div><div class="csl-right-inline">CESSDA Training Team. <a href="https://dmeg.cessda.eu/Data-Management-Expert-Guide/6.-Archive-Publish">Archive and publish</a>. (2022).</div>
+</div>
+<div id="ref-bssw_discontinuing_software" class="csl-entry" role="listitem">
+<div class="csl-left-margin">139. </div><div class="csl-right-inline">Better Scientific Software. <a href="https://bssw.io/blog_posts/discontinuing-a-research-software-project">Discontinuing a research software project</a>. (2024).</div>
+</div>
+<div id="ref-ardc_fair_jupyter" class="csl-entry" role="listitem">
+<div class="csl-left-margin">140. </div><div class="csl-right-inline">Australian Research Data Commons. <a href="https://ardc.edu.au/resource/fair-for-jupyter-notebooks-a-practical-guide/">FAIR for jupyter notebooks: A practical guide</a>. (2024).</div>
+</div>
+<div id="ref-ardc_citing_software" class="csl-entry" role="listitem">
+<div class="csl-left-margin">141. </div><div class="csl-right-inline">Australian Research Data Commons. <a href="https://ardc.edu.au/resource/citing-software/">Citing software</a>. (2024).</div>
+</div>
+<div id="ref-lee2022tenrulessoftware" class="csl-entry" role="listitem">
+<div class="csl-left-margin">142. </div><div class="csl-right-inline">Lee, B. D. <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1009768">Ten simple rules for making research software more robust</a>. <em>PLOS Computational Biology</em> <strong>18</strong>, e1009768 (2022).</div>
+</div>
+<div id="ref-katz2022tenrulessustainability" class="csl-entry" role="listitem">
+<div class="csl-left-margin">143. </div><div class="csl-right-inline">Katz, D. S. <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1010476">Ten simple rules to make your research software more sustainable</a>. <em>PLOS Computational Biology</em> <strong>18</strong>, e1010476 (2022).</div>
+</div>
+<div id="ref-ucl_copyright_essentials" class="csl-entry" role="listitem">
+<div class="csl-left-margin">144. </div><div class="csl-right-inline">UCL Library, Culture, Collections and Open Science. <a href="https://lccos.ucl.ac.uk/library/articulate/copyright-essentials/#/">Copyright essentials</a>. (2024).</div>
+</div>
+<div id="ref-ucl_copyright_training" class="csl-entry" role="listitem">
+<div class="csl-left-margin">145. </div><div class="csl-right-inline">UCL Library Services. <a href="https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-training">Copyright training</a>. (2024).</div>
+</div>
+<div id="ref-ucl_copyright_research_publications" class="csl-entry" role="listitem">
+<div class="csl-left-margin">146. </div><div class="csl-right-inline">UCL Library Services. <a href="https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-and-your-research-publications">Copyright and your research publications</a>. (2024).</div>
+</div>
+<div id="ref-turingway_licensing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">147. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/licensing/">Licensing</a>. (2025).</div>
+</div>
+<div id="ref-turingway_licensing_compatibility" class="csl-entry" role="listitem">
+<div class="csl-left-margin">148. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/licensing/licensing-compatibility/">Licence compatibility</a>. (2025).</div>
+</div>
+<div id="ref-choosealicense" class="csl-entry" role="listitem">
+<div class="csl-left-margin">149. </div><div class="csl-right-inline">GitHub. <a href="https://choosealicense.com/">Choose an open source license</a>. (2026).</div>
+</div>
+<div id="ref-creativecommons_licenses" class="csl-entry" role="listitem">
+<div class="csl-left-margin">150. </div><div class="csl-right-inline">Creative Commons. <a href="https://creativecommons.org/licenses/">Creative commons licenses</a>. (2026).</div>
+</div>
+<div id="ref-turingway_repository" class="csl-entry" role="listitem">
+<div class="csl-left-margin">151. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-repository/">Research data repositories</a>. (2025).</div>
+</div>
+<div id="ref-ucl_research_data_repository" class="csl-entry" role="listitem">
+<div class="csl-left-margin">152. </div><div class="csl-right-inline">UCL Library Services. <a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository">UCL research data repository</a>. (2024).</div>
+</div>
+<div id="ref-turingway_preprints" class="csl-entry" role="listitem">
+<div class="csl-left-margin">153. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/open/open-access/#rr-open-access-preprints">Preprints</a>. (2025).</div>
+</div>
+<div id="ref-turingway_citable" class="csl-entry" role="listitem">
+<div class="csl-left-margin">154. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/communication/citable/">Citable research objects</a>. (2025).</div>
+</div>
+<div id="ref-turingway_citable_steps" class="csl-entry" role="listitem">
+<div class="csl-left-margin">155. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/communication/citable/citable-steps/">Data and software citation</a>. (2025).</div>
+</div>
+<div id="ref-github_citing_content" class="csl-entry" role="listitem">
+<div class="csl-left-margin">156. </div><div class="csl-right-inline">GitHub Docs. <a href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content">Referencing and citing content</a>. (2025).</div>
+</div>
+<div id="ref-equator_reporting" class="csl-entry" role="listitem">
+<div class="csl-left-margin">157. </div><div class="csl-right-inline">EQUATOR Network. <a href="https://www.equator-network.org/">EQUATOR network</a>. (2026).</div>
 </div>
 </div>
 </section>
@@ -534,6 +948,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
@@ -548,7 +976,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

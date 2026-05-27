@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Research &amp; Reproducibility - Chapter 7 — Code quality &amp; testing</title>
+<title>Open Research &amp; Reproducibility - Chapter 7 — Coding for reproducible research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./08-s-responsibility.html" rel="next">
+<link href="./08-publishing-pids-reuse.html" rel="next">
 <link href="./06-docs-eln-sops.html" rel="prev">
 <link href="./cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -43,11 +77,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -65,19 +99,47 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-code-quality-testing.html"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-code-quality-testing.html"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -87,14 +149,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -104,62 +161,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,13 +224,85 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-7" id="toc-chapter-7" class="nav-link active" data-scroll-target="#chapter-7">Chapter 7</a>
+  <ul class="collapse">
+  <li><a href="#coding-for-reproducible-research" id="toc-coding-for-reproducible-research" class="nav-link" data-scroll-target="#coding-for-reproducible-research">Coding for reproducible research</a></li>
+  </ul></li>
+  <li><a href="#what-this-chapter-does" id="toc-what-this-chapter-does" class="nav-link" data-scroll-target="#what-this-chapter-does">What this chapter does</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#code-quality-is-research-quality" id="toc-code-quality-is-research-quality" class="nav-link" data-scroll-target="#code-quality-is-research-quality">Code quality is research quality</a></li>
+  <li><a href="#write-code-for-humans-first" id="toc-write-code-for-humans-first" class="nav-link" data-scroll-target="#write-code-for-humans-first">Write code for humans first</a>
+  <ul class="collapse">
+  <li><a href="#naming-and-structure" id="toc-naming-and-structure" class="nav-link" data-scroll-target="#naming-and-structure">Naming and structure</a></li>
+  </ul></li>
+  <li><a href="#start-each-script-with-basic-orientation" id="toc-start-each-script-with-basic-orientation" class="nav-link" data-scroll-target="#start-each-script-with-basic-orientation">Start each script with basic orientation</a></li>
+  <li><a href="#comment-the-why-not-only-the-what" id="toc-comment-the-why-not-only-the-what" class="nav-link" data-scroll-target="#comment-the-why-not-only-the-what">Comment the why, not only the what</a></li>
+  <li><a href="#avoid-copy-and-paste-code" id="toc-avoid-copy-and-paste-code" class="nav-link" data-scroll-target="#avoid-copy-and-paste-code">Avoid copy-and-paste code</a></li>
+  <li><a href="#make-dependencies-explicit" id="toc-make-dependencies-explicit" class="nav-link" data-scroll-target="#make-dependencies-explicit">Make dependencies explicit</a></li>
+  <li><a href="#use-project-relative-paths" id="toc-use-project-relative-paths" class="nav-link" data-scroll-target="#use-project-relative-paths">Use project-relative paths</a></li>
+  <li><a href="#check-before-you-analyse" id="toc-check-before-you-analyse" class="nav-link" data-scroll-target="#check-before-you-analyse">Check before you analyse</a>
+  <ul class="collapse">
+  <li><a href="#check-that-files-exist" id="toc-check-that-files-exist" class="nav-link" data-scroll-target="#check-that-files-exist">Check that files exist</a></li>
+  <li><a href="#check-that-the-dataset-is-not-empty" id="toc-check-that-the-dataset-is-not-empty" class="nav-link" data-scroll-target="#check-that-the-dataset-is-not-empty">Check that the dataset is not empty</a></li>
+  <li><a href="#check-that-required-variables-exist" id="toc-check-that-required-variables-exist" class="nav-link" data-scroll-target="#check-that-required-variables-exist">Check that required variables exist</a></li>
+  <li><a href="#check-variable-types" id="toc-check-variable-types" class="nav-link" data-scroll-target="#check-variable-types">Check variable types</a></li>
+  </ul></li>
+  <li><a href="#check-missingness-and-exclusions" id="toc-check-missingness-and-exclusions" class="nav-link" data-scroll-target="#check-missingness-and-exclusions">Check missingness and exclusions</a></li>
+  <li><a href="#build-in-checks-as-you-go" id="toc-build-in-checks-as-you-go" class="nav-link" data-scroll-target="#build-in-checks-as-you-go">Build in checks as you go</a></li>
+  <li><a href="#testing-supports-safe-change" id="toc-testing-supports-safe-change" class="nav-link" data-scroll-target="#testing-supports-safe-change">Testing supports safe change</a></li>
+  <li><a href="#versioning-do-not-overwrite-without-trace" id="toc-versioning-do-not-overwrite-without-trace" class="nav-link" data-scroll-target="#versioning-do-not-overwrite-without-trace">Versioning: do not overwrite without trace</a></li>
+  <li><a href="#traceability-without-overcomplication" id="toc-traceability-without-overcomplication" class="nav-link" data-scroll-target="#traceability-without-overcomplication">Traceability without overcomplication</a></li>
+  <li><a href="#light-automation-make-repetition-reliable" id="toc-light-automation-make-repetition-reliable" class="nav-link" data-scroll-target="#light-automation-make-repetition-reliable">Light automation: make repetition reliable</a></li>
+  <li><a href="#what-not-to-over-automate" id="toc-what-not-to-over-automate" class="nav-link" data-scroll-target="#what-not-to-over-automate">What not to over-automate</a></li>
+  <li><a href="#sustainable-code-and-green-computing" id="toc-sustainable-code-and-green-computing" class="nav-link" data-scroll-target="#sustainable-code-and-green-computing">Sustainable code and green computing</a>
+  <ul class="collapse">
+  <li><a href="#low-burden-green-coding-practices" id="toc-low-burden-green-coding-practices" class="nav-link" data-scroll-target="#low-burden-green-coding-practices">Low-burden green coding practices</a></li>
+  <li><a href="#example-from-the-r-markdown-workflow" id="toc-example-from-the-r-markdown-workflow" class="nav-link" data-scroll-target="#example-from-the-r-markdown-workflow">Example from the R Markdown workflow</a></li>
+  </ul></li>
+  <li><a href="#ai-generated-code" id="toc-ai-generated-code" class="nav-link" data-scroll-target="#ai-generated-code">AI-generated code</a></li>
+  <li><a href="#worked-example-what-the-r-markdown-file-demonstrates" id="toc-worked-example-what-the-r-markdown-file-demonstrates" class="nav-link" data-scroll-target="#worked-example-what-the-r-markdown-file-demonstrates">Worked example: what the R Markdown file demonstrates</a>
+  <ul class="collapse">
+  <li><a href="#project-orientation" id="toc-project-orientation" class="nav-link" data-scroll-target="#project-orientation">1. Project orientation</a></li>
+  <li><a href="#package-management" id="toc-package-management" class="nav-link" data-scroll-target="#package-management">2. Package management</a></li>
+  <li><a href="#project-relative-folders" id="toc-project-relative-folders" class="nav-link" data-scroll-target="#project-relative-folders">3. Project-relative folders</a></li>
+  <li><a href="#input-checks" id="toc-input-checks" class="nav-link" data-scroll-target="#input-checks">4. Input checks</a></li>
+  <li><a href="#data-validation" id="toc-data-validation" class="nav-link" data-scroll-target="#data-validation">5. Data validation</a></li>
+  <li><a href="#reusable-plotting-code" id="toc-reusable-plotting-code" class="nav-link" data-scroll-target="#reusable-plotting-code">6. Reusable plotting code</a></li>
+  <li><a href="#predictable-outputs" id="toc-predictable-outputs" class="nav-link" data-scroll-target="#predictable-outputs">7. Predictable outputs</a></li>
+  </ul></li>
+  <li><a href="#practical-guidance-for-early-career-researchers" id="toc-practical-guidance-for-early-career-researchers" class="nav-link" data-scroll-target="#practical-guidance-for-early-career-researchers">Practical guidance for early-career researchers</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-review-one-script" id="toc-exercise-1-review-one-script" class="nav-link" data-scroll-target="#exercise-1-review-one-script">Exercise 1: Review one script</a></li>
+  <li><a href="#exercise-2-add-one-check" id="toc-exercise-2-add-one-check" class="nav-link" data-scroll-target="#exercise-2-add-one-check">Exercise 2: Add one check</a></li>
+  <li><a href="#exercise-3-automate-one-output" id="toc-exercise-3-automate-one-output" class="nav-link" data-scroll-target="#exercise-3-automate-one-output">Exercise 3: Automate one output</a></li>
+  <li><a href="#exercise-4-reduce-one-source-of-computational-waste" id="toc-exercise-4-reduce-one-source-of-computational-waste" class="nav-link" data-scroll-target="#exercise-4-reduce-one-source-of-computational-waste">Exercise 4: Reduce one source of computational waste</a></li>
+  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a>
+  <ul class="collapse">
+  <li><a href="#core-guidance-on-research-code" id="toc-core-guidance-on-research-code" class="nav-link" data-scroll-target="#core-guidance-on-research-code">Core guidance on research code</a></li>
+  <li><a href="#r-coding-style-and-learning-resources" id="toc-r-coding-style-and-learning-resources" class="nav-link" data-scroll-target="#r-coding-style-and-learning-resources">R coding style and learning resources</a></li>
+  <li><a href="#testing-and-validation" id="toc-testing-and-validation" class="nav-link" data-scroll-target="#testing-and-validation">Testing and validation</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version control</a></li>
+  <li><a href="#documentation-for-code" id="toc-documentation-for-code" class="nav-link" data-scroll-target="#documentation-for-code">Documentation for code</a></li>
+  <li><a href="#r-markdown-quarto-adjacent-and-notebooks" id="toc-r-markdown-quarto-adjacent-and-notebooks" class="nav-link" data-scroll-target="#r-markdown-quarto-adjacent-and-notebooks">R Markdown, Quarto-adjacent, and notebooks</a></li>
+  <li><a href="#ucl-support" id="toc-ucl-support" class="nav-link" data-scroll-target="#ucl-support">UCL support</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/07-code-quality-testing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></h1>
+<h1 class="title"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></h1>
 </div>
 
 
@@ -198,153 +317,765 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-code-quality-testing" class="level1">
-<h1>Code quality, testing, and sustainable computation</h1>
+<section id="chapter-7" class="level1 chapter-hero">
+<h1>Chapter 7</h1>
+<section id="coding-for-reproducible-research" class="level2">
+<h2 class="anchored" data-anchor-id="coding-for-reproducible-research">Coding for reproducible research</h2>
+<p>Good research code is not just code that runs. It is code that another person — including your future self — can understand, rerun, check, and adapt.</p>
+</section>
+</section>
+<section id="what-this-chapter-does" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="what-this-chapter-does">What this chapter does</h3>
+<p>This chapter brings together code quality, testing, versioning, traceability, light automation, and sustainable computing.</p>
+<p>The focus is not advanced programming. The focus is proportionate coding habits that make research workflows clearer, safer, easier to rerun, and easier to reuse.</p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you should be able to:</p>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>explain why code quality and documentation underpin reproducibility and defensibility;</li>
-<li>recognise the role of testing in reliable research workflows;</li>
-<li>understand how inefficient code affects reproducibility and sustainability;</li>
-<li>apply proportionate “green coding” practices in research contexts;</li>
-<li>identify practical steps to reduce unnecessary computation.</li>
+<li>explain why code quality is part of research quality;</li>
+<li>recognise features of readable, reusable, and defensible research code;</li>
+<li>use simple checks to catch errors early;</li>
+<li>understand how versioning supports traceability and safe change;</li>
+<li>identify where light automation can reduce manual work and improve reproducibility;</li>
+<li>describe how sustainable computing relates to reproducible coding practice.</li>
 </ul>
-<p>This module builds on <a href="./06-docs-eln-sops.html">Chapter 6 — Documentation, ELNs &amp; SOPs</a> and prepares you for automation and workflows in <a href="./09-automation.html">Chapter 9 — Automation &amp; simple workflows</a>.</p>
+<p>This chapter builds on <a href="./05-organise-tidy.html">Chapter 5 — Organising and tidying data</a> and <a href="./06-docs-eln-sops.html">Chapter 6 — Documentation, ELNs and SOPs</a>. It prepares for the later chapter on publishing, persistent identifiers, licensing and preparing outputs for reuse.</p>
 <hr>
 </section>
-<section id="why-code-quality-matters-in-research" class="level2">
-<h2 class="anchored" data-anchor-id="why-code-quality-matters-in-research">Why code quality matters in research</h2>
-<p>In research contexts, code quality is not about elegance or performance alone. It is about whether results can be:</p>
+<section id="code-quality-is-research-quality" class="level2">
+<h2 class="anchored" data-anchor-id="code-quality-is-research-quality">Code quality is research quality</h2>
+<p>In research, code quality is not mainly about elegance. It is about trust.</p>
+<p>Good research code should be:</p>
 <ul>
-<li>regenerated reliably;</li>
-<li>inspected and reviewed;</li>
-<li>adapted or extended by others (including your future self).</li>
+<li><strong>readable</strong> — another person can follow the logic;</li>
+<li><strong>explicit</strong> — assumptions, inputs, outputs, and parameters are visible;</li>
+<li><strong>robust</strong> — errors are caught early;</li>
+<li><strong>re-runnable</strong> — the same inputs produce the same outputs;</li>
+<li><strong>traceable</strong> — changes can be understood and recovered.</li>
 </ul>
-<p>Poor-quality code increases the risk of silent errors, irreproducible results, and excessive rework.</p>
+<p>Poor code creates research risk. It can hide errors, make analyses difficult to rerun, and make it unclear how results were produced. In some cases, poor code can make a study effectively irreproducible, even when the data and scripts are technically available.</p>
+<p>Good-enough code is therefore not a technical luxury. It is part of defensible research practice.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key idea
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Code quality is not about writing beautiful code for its own sake. It is about making the analytical route visible enough that results can be checked, explained and rerun.</p>
+</div>
+</div>
+<hr>
 </section>
-<section id="testing-as-a-research-safeguard" class="level2">
-<h2 class="anchored" data-anchor-id="testing-as-a-research-safeguard">Testing as a research safeguard</h2>
-<p>Testing checks that code behaves as expected when inputs or assumptions change.</p>
-<p>In practice, testing supports reproducibility by:</p>
+<section id="write-code-for-humans-first" class="level2">
+<h2 class="anchored" data-anchor-id="write-code-for-humans-first">Write code for humans first</h2>
+<p>Most research code will be read more often than it is written. This means code should be written for human understanding, not only for the computer.</p>
+<p>A useful principle is: <strong>make the logic visible</strong>.</p>
+<p>For example, avoid short or ambiguous object names:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> <span class="fu">f</span>() <span class="sc">%&gt;%</span> <span class="fu">g</span>() <span class="sc">%&gt;%</span> <span class="fu">h</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Prefer names that describe the analytical step:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">clean_addresses</span>(raw_data)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>linked_data <span class="ot">&lt;-</span> <span class="fu">link_to_uprn</span>(clean_data)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>model_data <span class="ot">&lt;-</span> <span class="fu">derive_exposure</span>(linked_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is not only a style issue. Clear names help someone understand what each object represents, where it came from, and what it should be used for.</p>
+<section id="naming-and-structure" class="level3">
+<h3 class="anchored" data-anchor-id="naming-and-structure">Naming and structure</h3>
+<p>Use:</p>
 <ul>
-<li>detecting errors early;</li>
-<li>reducing reliance on manual checks;</li>
-<li>supporting refactoring without breaking results.</li>
+<li>one consistent naming convention, such as <code>snake_case</code>;</li>
+<li>meaningful names for variables, files, scripts, and functions;</li>
+<li>scripts separated by purpose;</li>
+<li>a stable folder structure;</li>
+<li>filenames that sort in the order they should be run.</li>
 </ul>
-<p>Even simple tests (e.g.&nbsp;checking dimensions, ranges, or invariants) provide substantial benefits.</p>
+<p>For example:</p>
+<pre class="text"><code>01_import_data.R
+02_clean_data.R
+03_link_addresses.R
+04_derive_exposures.R
+05_model_outcomes.R
+06_create_outputs.R</code></pre>
+<p>Avoid:</p>
+<ul>
+<li>spaces in filenames;</li>
+<li>ambiguous names such as <code>final_final_analysis.R</code>;</li>
+<li>mixing different naming styles in the same project;</li>
+<li>scripts that do many unrelated things.</li>
+</ul>
+<p>The Tidyverse style guide is a useful reference for R coding style, especially for naming, spacing, and readable syntax.</p>
+<hr>
+</section>
+</section>
+<section id="start-each-script-with-basic-orientation" class="level2">
+<h2 class="anchored" data-anchor-id="start-each-script-with-basic-orientation">Start each script with basic orientation</h2>
+<p>Every script should begin with enough information for someone else to know what it is and how it fits into the project.</p>
+<p>A simple header might include:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Title: Create descriptive PM2.5 summary table</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: Joana Cruz</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Date: 2026-03-02</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Purpose: Imports cleaned nursery PM2.5 data and creates Table S1.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Inputs: outputs/dataset_unique.rds</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Outputs: documents/manuscript/tables/table_s1_pm25_summary.html</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Notes: Requires cleaned dataset generated by 02_clean_data.R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is a small habit with high value. It reduces confusion, supports handover, and makes scripts easier to review.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Sustainable coding: quality that lasts (and wastes less)
+Practical habit
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sustainable code is not about perfection or performance for its own sake. It is about <strong>reducing unnecessary recomputation, storage, and rework</strong> while keeping analyses <strong>understandable, defensible, and maintainable</strong>.</p>
-<p>Well-designed code saves time, energy, and attention — for you and for others.</p>
+<p>Before writing new code, add a short header. It takes less than two minutes and can save hours later.</p>
 </div>
 </div>
-<section id="what-to-look-for-when-coding-sustainably" class="level3">
-<h3 class="anchored" data-anchor-id="what-to-look-for-when-coding-sustainably">What to look for when coding sustainably</h3>
-<p>The practices below focus on <strong>high-value, low-burden choices</strong> that improve both code quality <em>and</em> environmental sustainability.</p>
+<hr>
+</section>
+<section id="comment-the-why-not-only-the-what" class="level2">
+<h2 class="anchored" data-anchor-id="comment-the-why-not-only-the-what">Comment the why, not only the what</h2>
+<p>Comments should explain reasoning, assumptions, and unusual decisions.</p>
+<p>Poor comments often restate the code:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mean_pm25 <span class="ot">&lt;-</span> <span class="fu">mean</span>(pm25)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Better comments explain why the step matters:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use annual mean PM2.5 because the exposure model provides one estimate per provider-year.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mean_pm25 <span class="ot">&lt;-</span> <span class="fu">mean</span>(pm25, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Useful comments often explain:</p>
 <ul>
-<li><p><strong>Restartable, modular workflows</strong><br>
-Structure scripts so analyses can resume from intermediate outputs rather than rerunning end-to-end. This reduces accidental full recomputation after small changes.<br>
-<em>(Links to workflow tooling in Chapter 9.)</em></p></li>
-<li><p><strong>Incremental recomputation and caching</strong><br>
-Save expensive intermediate results when justified, and recompute only what has changed. This is often the single biggest energy-saving decision in analysis code.</p></li>
-<li><p><strong>Profiling before optimisation</strong><br>
-Use simple timing or memory checks to identify where time and compute are actually spent. Optimising unmeasured code often wastes more energy than it saves.</p></li>
-<li><p><strong>Algorithmic proportionality</strong><br>
-Prefer methods and resolutions that are sufficient for the research question, rather than maximal by default (e.g.&nbsp;spatial resolution, iterations, precision). Small reductions here can dominate total compute cost.</p></li>
-<li><p><strong>Clear inputs, outputs, and assumptions</strong><br>
-Make it obvious what each script expects, produces, and assumes. Ambiguity leads to reruns, duplication, and error-driven recomputation.</p></li>
-<li><p><strong>Lightweight, targeted testing</strong><br>
-A small number of high-value checks (e.g.&nbsp;input validation, key invariants) can prevent long, expensive runs from failing late.</p></li>
-<li><p><strong>Readable structure over cleverness</strong><br>
-Code that is easy to read, review, and modify is less likely to be rerun unnecessarily or replaced wholesale when changes are needed.</p></li>
+<li>why an exclusion was made;</li>
+<li>why a threshold was chosen;</li>
+<li>why a transformation was needed;</li>
+<li>why a sensitivity analysis was added;</li>
+<li>why one method was preferred over another.</li>
+</ul>
+<p>Avoid commenting every line. Too many comments can make code harder to read, and outdated comments can mislead. The aim is to document the analytical reasoning that would not be obvious from the code alone.</p>
+<hr>
+</section>
+<section id="avoid-copy-and-paste-code" class="level2">
+<h2 class="anchored" data-anchor-id="avoid-copy-and-paste-code">Avoid copy-and-paste code</h2>
+<p>Copy-and-paste code is a common source of errors. If the same code appears several times with small changes, it becomes easy to update one version but forget another.</p>
+<p>A better approach is to write a small function.</p>
+<p>For example, instead of repeating similar plotting code for different variables, define one function:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>make_pm25_boxplot <span class="ot">&lt;-</span> <span class="cf">function</span>(data, x_var, x_label, panel_label, <span class="at">x_labels =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  plot_object <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> data,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> .data[[x_var]],</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> pm25,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="fu">factor</span>(year)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> panel_label,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> x_label,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Annual mean PM2.5 concentration (µg/m³)"</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">facet_wrap</span>(<span class="sc">~</span> year, <span class="at">nrow =</span> <span class="dv">1</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(x_labels)) {</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    plot_object <span class="ot">&lt;-</span> plot_object <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> x_labels)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(plot_object)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This improves:</p>
+<ul>
+<li>readability;</li>
+<li>consistency;</li>
+<li>maintainability;</li>
+<li>ease of updating plots;</li>
+<li>reproducibility of figures.</li>
+</ul>
+<p>A function should usually do one task, have clear inputs, and return a clear output.</p>
+<hr>
+</section>
+<section id="make-dependencies-explicit" class="level2">
+<h2 class="anchored" data-anchor-id="make-dependencies-explicit">Make dependencies explicit</h2>
+<p>A reproducible script should make clear what it needs before it can run.</p>
+<p>This includes:</p>
+<ul>
+<li>required packages;</li>
+<li>required input files;</li>
+<li>expected variables;</li>
+<li>relevant software versions;</li>
+<li>external tools or data sources.</li>
+</ul>
+<p>For teaching, it can be useful to include a helper function that installs missing packages:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>load_or_install <span class="ot">&lt;-</span> <span class="cf">function</span>(packages) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  missing_packages <span class="ot">&lt;-</span> packages[<span class="sc">!</span>packages <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[, <span class="st">"Package"</span>]]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(missing_packages) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(missing_packages)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">invisible</span>(<span class="fu">lapply</span>(packages, library, <span class="at">character.only =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However, package installation inside scripts is not the strongest long-term reproducibility strategy. For research projects, tools such as <code>renv</code> in R provide a more robust way to record package versions and recreate the software environment.</p>
+<p>At minimum, record the packages and versions used:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or, if using <code>renv</code>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Teaching example versus research workflow
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Installing packages automatically inside a teaching script can help learners get started. For a research project, recording the exact package versions is more reproducible than simply installing the latest versions.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="use-project-relative-paths" class="level2">
+<h2 class="anchored" data-anchor-id="use-project-relative-paths">Use project-relative paths</h2>
+<p>Hard-coded paths are one of the most common barriers to rerunning code.</p>
+<p>Avoid paths like:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="st">"C:/Users/name/Documents/project/data/file.csv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These will usually only work on one computer.</p>
+<p>Instead, use project-relative paths. In R, the <code>here</code> package is useful:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"processed"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>figures_dir <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"documents"</span>, <span class="st">"manuscript"</span>, <span class="st">"figures"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>tables_dir <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"documents"</span>, <span class="st">"manuscript"</span>, <span class="st">"tables"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If output folders are needed, create them in the script:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_create</span>(figures_dir)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_create</span>(tables_dir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This means the project can be moved to another computer without rewriting every path, provided the folder structure stays the same.</p>
+<hr>
+</section>
+<section id="check-before-you-analyse" class="level2">
+<h2 class="anchored" data-anchor-id="check-before-you-analyse">Check before you analyse</h2>
+<p>Testing does not have to mean formal software engineering.</p>
+<p>In research workflows, simple checks can prevent serious errors. The aim is to fail early, with a clear message, rather than continue silently with invalid data.</p>
+<section id="check-that-files-exist" class="level3">
+<h3 class="anchored" data-anchor-id="check-that-files-exist">Check that files exist</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>missing_files <span class="ot">&lt;-</span> input_paths[<span class="sc">!</span><span class="fu">file.exists</span>(input_paths)]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(missing_files) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"These required input files are missing:</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(missing_files, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-that-the-dataset-is-not-empty" class="level3">
+<h3 class="anchored" data-anchor-id="check-that-the-dataset-is-not-empty">Check that the dataset is not empty</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(nursery_pm25_data) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"The dataset has 0 rows. Analysis cannot continue."</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-that-required-variables-exist" class="level3">
+<h3 class="anchored" data-anchor-id="check-that-required-variables-exist">Check that required variables exist</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>required_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"year"</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"pm25"</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"pm25_cat"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"pm25_int"</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"idaci_q"</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ethnicity"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ruc_nm"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"a_rd_ds_cat"</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>missing_vars <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(required_vars, <span class="fu">names</span>(nursery_pm25_data))</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(missing_vars) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"The dataset is missing these required variables: "</span>,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(missing_vars, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="check-variable-types" class="level3">
+<h3 class="anchored" data-anchor-id="check-variable-types">Check variable types</h3>
+<p>Variable-type checks should reflect what the analysis needs.</p>
+<p>For example, if <code>pm25</code> will be summarised numerically:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(nursery_pm25_data<span class="sc">$</span>pm25)) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Variable 'pm25' must be numeric."</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For variables such as <code>year</code>, be careful. It may be correct for <code>year</code> to be numeric during validation and then converted to a factor for plotting. Alternatively, if your dataset already stores <code>year</code> as a factor, the check should allow that.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(nursery_pm25_data<span class="sc">$</span>year) <span class="sc">&amp;&amp;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.integer</span>(nursery_pm25_data<span class="sc">$</span>year) <span class="sc">&amp;&amp;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.factor</span>(nursery_pm25_data<span class="sc">$</span>year)) {</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Variable 'year' should be numeric, integer, or factor."</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The key point is not the exact rule. The key point is to make the expectation explicit.</p>
+<hr>
+</section>
+</section>
+<section id="check-missingness-and-exclusions" class="level2">
+<h2 class="anchored" data-anchor-id="check-missingness-and-exclusions">Check missingness and exclusions</h2>
+<p>Missing data do not automatically invalidate an analysis, but they need to be understood and documented.</p>
+<p>A simple missingness summary is often a useful first check:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>missingness_summary <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> required_vars,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_missing =</span> <span class="fu">sapply</span>(nursery_pm25_data[required_vars], <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">is.na</span>(x))),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pct_missing =</span> <span class="fu">round</span>(</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sapply</span>(nursery_pm25_data[required_vars], <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">is.na</span>(x)) <span class="sc">*</span> <span class="dv">100</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>missingness_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For reproducibility, exclusions should not be hidden inside code. They should be:</p>
+<ul>
+<li>visible in the script;</li>
+<li>justified in comments or a decision log;</li>
+<li>reported in outputs where relevant.</li>
+</ul>
+<p>For example:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude records with missing postcode because exposure assignment requires geocoding.</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Decision recorded in docs/decision-log.md, 2025-02-12.</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="ot">&lt;-</span> nursery_pm25_data <span class="sc">%&gt;%</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(postcode))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This links coding practice back to documentation and decision capture.</p>
+<hr>
+</section>
+<section id="build-in-checks-as-you-go" class="level2">
+<h2 class="anchored" data-anchor-id="build-in-checks-as-you-go">Build in checks as you go</h2>
+<p>Good code anticipates failure.</p>
+<p>Useful checks include:</p>
+<ul>
+<li>expected number of rows or columns;</li>
+<li>whether identifiers are unique;</li>
+<li>whether categories contain unexpected values;</li>
+<li>whether values fall within plausible ranges;</li>
+<li>whether joins have created missing or duplicated records;</li>
+<li>whether outputs have been saved successfully.</li>
+</ul>
+<p>For example:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">is.na</span>(nursery_pm25_data<span class="sc">$</span>uprn))) {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Missing UPRNs detected after linkage."</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(nursery_pm25_data<span class="sc">$</span>pm25 <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Negative PM2.5 values detected. Check exposure data."</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These checks are simple, but they can prevent long chains of downstream error.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Basic checks are not trivial
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Checking that files, variables, rows, identifiers and values are as expected may feel simple, but these checks catch many common causes of irreproducible or incorrect analysis.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="testing-supports-safe-change" class="level2">
+<h2 class="anchored" data-anchor-id="testing-supports-safe-change">Testing supports safe change</h2>
+<p>Research code often changes. You may clean it, simplify it, adapt it to new data, or reuse it in a new project.</p>
+<p>This process is safer when tests are in place.</p>
+<p>Tests help you check whether:</p>
+<ul>
+<li>outputs still make sense after changing code;</li>
+<li>refactoring has not broken the analysis;</li>
+<li>new data extracts still meet the expected structure;</li>
+<li>assumptions remain valid.</li>
+</ul>
+<p>Formal testing frameworks are useful in larger projects. In R, the <code>testthat</code> package is commonly used, and the testing chapter in <em>R Packages</em> is a good introduction.</p>
+<p>For many research projects, however, the first step is simply to include lightweight checks in scripts and reports. These checks are often enough to catch the most common problems.</p>
+<hr>
+</section>
+<section id="versioning-do-not-overwrite-without-trace" class="level2">
+<h2 class="anchored" data-anchor-id="versioning-do-not-overwrite-without-trace">Versioning: do not overwrite without trace</h2>
+<p>Code changes should be recoverable.</p>
+<p>At a basic level, this means avoiding uncontrolled overwriting of scripts, outputs, or analysis decisions.</p>
+<p>At a stronger level, it means using version control.</p>
+<p>Version control allows you to:</p>
+<ul>
+<li>track what changed;</li>
+<li>see who changed it;</li>
+<li>recover earlier versions;</li>
+<li>collaborate more safely;</li>
+<li>create a transparent analysis history.</li>
+</ul>
+<p>Git is the most widely used version control system for code. GitHub is a platform that can host Git repositories and support collaboration.</p>
+<p>Version control is not only for advanced programmers. Even for small projects, it can act as an “undo” button for your analysis.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Minimum viable versioning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If Git feels too much at the start, do not let that stop you from improving traceability. Use clear filenames, a short changelog, and a stable folder structure while you build confidence with Git.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="traceability-without-overcomplication" class="level2">
+<h2 class="anchored" data-anchor-id="traceability-without-overcomplication">Traceability without overcomplication</h2>
+<p>Not every project needs a complex Git workflow. But every project needs some form of traceability.</p>
+<p>At minimum, you should be able to answer:</p>
+<ul>
+<li>Which script produced this output?</li>
+<li>Which data file was used?</li>
+<li>Which version of the analysis was run?</li>
+<li>What changed since the last version?</li>
+<li>Why was that change made?</li>
+</ul>
+<p>A simple analysis history might include:</p>
+<pre class="text"><code>docs/
+  decision-log.md
+  changelog.md
+
+R/
+  01_import_data.R
+  02_clean_data.R
+  03_create_outputs.R
+
+documents/
+  manuscript/
+    tables/
+    figures/</code></pre>
+<p>This links code, documentation, and outputs.</p>
+<p>If you are not yet using Git, a changelog is still useful. If you are using Git, a changelog and decision log can still help document reasoning that is not obvious from code changes alone.</p>
+<hr>
+</section>
+<section id="light-automation-make-repetition-reliable" class="level2">
+<h2 class="anchored" data-anchor-id="light-automation-make-repetition-reliable">Light automation: make repetition reliable</h2>
+<p>Automation does not need to mean complex pipelines.</p>
+<p>In this chapter, automation means making repeated work runnable without manual copying, clicking, or editing.</p>
+<p>Examples include:</p>
+<ul>
+<li>running a script from start to finish;</li>
+<li>knitting an R Markdown or Quarto report;</li>
+<li>regenerating a table from source data;</li>
+<li>regenerating a figure from source data;</li>
+<li>saving outputs to predictable folders;</li>
+<li>using a function instead of repeating similar code.</li>
+</ul>
+<p>The example R Markdown file demonstrates light automation because one action — knitting the report — can:</p>
+<ul>
+<li>load packages;</li>
+<li>check inputs;</li>
+<li>read data;</li>
+<li>validate assumptions;</li>
+<li>create a summary table;</li>
+<li>create figures;</li>
+<li>save outputs.</li>
+</ul>
+<p>This is already a reproducible workflow.</p>
+<p>More advanced tools such as <code>targets</code>, <code>Make</code>, or <code>Snakemake</code> can be introduced later for larger projects, but they are not required to benefit from automation.</p>
+<p>The principle is simple: <strong>automate one repeated thing first</strong>.</p>
+<hr>
+</section>
+<section id="what-not-to-over-automate" class="level2">
+<h2 class="anchored" data-anchor-id="what-not-to-over-automate">What not to over-automate</h2>
+<p>Automation is most useful for repeated and stable tasks.</p>
+<p>Good candidates include:</p>
+<ul>
+<li>data validation checks;</li>
+<li>missingness summaries;</li>
+<li>repeated tables;</li>
+<li>repeated figures;</li>
+<li>standard reports;</li>
+<li>routine data refreshes.</li>
+</ul>
+<p>Do not over-automate early exploratory thinking.</p>
+<p>Leave flexibility for:</p>
+<ul>
+<li>trying different visualisations;</li>
+<li>understanding unusual data patterns;</li>
+<li>refining variables;</li>
+<li>developing hypotheses;</li>
+<li>changing analytical strategy.</li>
+</ul>
+<p>A good compromise is to keep exploratory scripts, but avoid manual changes that cannot be traced. Exploration should be flexible, but not invisible.</p>
+<hr>
+</section>
+<section id="sustainable-code-and-green-computing" class="level2">
+<h2 class="anchored" data-anchor-id="sustainable-code-and-green-computing">Sustainable code and green computing</h2>
+<p>Sustainable code saves time, energy, storage and attention.</p>
+<p>This is not only about environmental sustainability, although that matters. It is also about avoiding wasted human effort. In reproducible research, green computing is mostly about avoiding unnecessary reruns, duplicated files, inefficient workflows, excessive resolution, and code that is so unclear that people have to redo work.</p>
+<p>Common sources of waste include:</p>
+<ul>
+<li>rerunning an entire analysis because intermediate outputs were not saved;</li>
+<li>duplicating large files because folder structure and versioning are unclear;</li>
+<li>using unnecessarily high spatial or temporal resolution by default;</li>
+<li>running models repeatedly because parameters are edited manually;</li>
+<li>abandoning and rewriting code because the original script is too difficult to understand;</li>
+<li>saving many near-identical output files without clear names or retention rules.</li>
+</ul>
+<p>This matters because inefficient workflows cost time, attention, storage and energy. They can also make research less reproducible: if an analysis is too slow, expensive or fragile to rerun, it becomes harder to check, extend or audit.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Green computing is also a reproducibility issue
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A workflow that can only be rerun with substantial effort, specialist infrastructure or excessive compute is less accessible to others. Clear, modular and restartable code supports both reproducibility and sustainability.</p>
+</div>
+</div>
+<section id="low-burden-green-coding-practices" class="level3">
+<h3 class="anchored" data-anchor-id="low-burden-green-coding-practices">Low-burden green coding practices</h3>
+<p>For most projects, the highest-value steps are simple:</p>
+<ul>
+<li><p><strong>Make scripts restartable</strong><br>
+Do not require the whole analysis to rerun from the beginning after every small change.</p></li>
+<li><p><strong>Save useful intermediate outputs</strong><br>
+Save cleaned or derived datasets when they are costly to recreate, but document how they were produced.</p></li>
+<li><p><strong>Rerun only what changed</strong><br>
+Avoid manually rerunning everything when only one table, model or figure has changed.</p></li>
+<li><p><strong>Use appropriate resolution</strong><br>
+Choose spatial, temporal or simulation resolution that is justified by the research question, not simply the maximum available.</p></li>
+<li><p><strong>Check before running expensive steps</strong><br>
+Validate inputs before running long analyses or models.</p></li>
+<li><p><strong>Keep code readable</strong><br>
+Readable code reduces unnecessary rewriting, duplicated effort and avoidable reruns.</p></li>
+<li><p><strong>Delete or archive deliberately</strong><br>
+Do not keep unlimited duplicate outputs. Decide what needs to be preserved, archived or removed.</p></li>
 </ul>
 </section>
-<section id="why-this-matters-beyond-code-style" class="level3">
-<h3 class="anchored" data-anchor-id="why-this-matters-beyond-code-style">Why this matters beyond code style</h3>
-<p>Poorly structured or opaque code increases the likelihood of:</p>
+<section id="example-from-the-r-markdown-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="example-from-the-r-markdown-workflow">Example from the R Markdown workflow</h3>
+<p>The example R Markdown file already demonstrates several green computing principles:</p>
 <ul>
-<li>full reruns due to uncertainty or small errors;</li>
-<li>duplicated data and intermediate files;</li>
-<li>wasted compute from over-resolution or over-iteration;</li>
-<li>abandonment and reimplementation of analyses.</li>
+<li>it checks that input files exist before analysis starts;</li>
+<li>it validates key variables before producing outputs;</li>
+<li>it saves tables and figures to predictable folders;</li>
+<li>it uses a reusable plotting function rather than repeated code;</li>
+<li>it creates outputs automatically when the report is knitted.</li>
 </ul>
-<p>In practice, inefficient code can make research <em>effectively</em> irreproducible. If analyses are too slow, expensive, or resource-intensive to rerun, this limits verification, sensitivity analysis, and extension by others. These constraints disproportionately affect researchers and teams with limited access to compute resources, creating hidden barriers to transparency and reuse. These costs are <strong>environmental, human, and organisational</strong>. Good-enough code quality is therefore a sustainability intervention, not just a technical preference.</p>
-<p>(Responsibility and proportionality are discussed further in <strong>Chapter 8</strong>; workflow automation and dependency management are covered in <strong>Chapter 9</strong>.)</p>
+<p>The next step would be to make the workflow more restartable, for example by saving cleaned intermediate datasets, recording package versions with <code>renv</code>, or using a workflow tool such as <code>targets</code> for larger projects.</p>
+<hr>
 </section>
-<section id="documenting-your-code-for-clarity-and-reuse" class="level3">
-<h3 class="anchored" data-anchor-id="documenting-your-code-for-clarity-and-reuse">Documenting your code for clarity and reuse</h3>
-<p>Good documentation is not an afterthought — it’s part of writing code that others (and you later) can reliably understand and reuse.</p>
+</section>
+<section id="ai-generated-code" class="level2">
+<h2 class="anchored" data-anchor-id="ai-generated-code">AI-generated code</h2>
+<p>AI-generated code should be treated like any other external contribution.</p>
+<p>It may be useful, but it still needs to be:</p>
 <ul>
-<li><strong>Explain <em>why</em></strong>: Comment the reasoning behind decisions, not just what the code does.<br>
-</li>
-<li><strong>Write docs as you code</strong>: Update documentation alongside code to avoid outdated notes.<br>
-</li>
-<li><strong>Use clear naming and structure</strong>: Consistent variable/function names and well-structured README/help files improve readability.<br>
-</li>
-<li><strong>Document at multiple levels</strong>: Inline comments, function headers, and high-level project docs all have a role.<br>
-</li>
-<li><strong>Include examples</strong>: Minimal usage examples help others understand expected inputs/outputs.<br>
-</li>
-<li><strong>Keep docs up to date</strong>: Outdated documentation misleads and can cost more time than none at all.<br>
-</li>
-<li><strong>Choose appropriate tools</strong>: Use <code>roxygen2</code> (R), Sphinx (Python), or Markdown with docstrings to integrate docs with code.</li>
+<li>read and understood;</li>
+<li>checked against the data;</li>
+<li>tested with expected and unexpected inputs;</li>
+<li>documented;</li>
+<li>adapted to the project context;</li>
+<li>reviewed for errors, bias, and inappropriate assumptions.</li>
 </ul>
-<p><em>Why it matters</em>: well-documented code reduces confusion, unnecessary reruns, and onboarding friction — essential components of sustainable and reproducible research workflows.</p>
-<p>AI-generated code should be treated like any other external contribution: reviewed, tested, and documented before use.</p>
+<p>Do not include code in an analysis simply because it runs. Running is not the same as being correct.</p>
+<hr>
 </section>
-</section>
-<section id="versioning-refactoring-and-tests" class="level2">
-<h2 class="anchored" data-anchor-id="versioning-refactoring-and-tests">Versioning, refactoring, and tests</h2>
-<p>Refactoring code is safer when tests are in place. The versioning principles introduced for data and documentation in <a href="./05-organise-tidy.html">(Chapter 5 - Organising and tidying data)</a> apply equally to code. Scripts and analysis pipelines should not be overwritten without trace, and changes should be attributable, versioned, and recoverable. Code version control systems support this process, but the underlying expectation is consistency and traceability rather than tool choice.</p>
-<p>Testing supports sustainable workflows by:</p>
+<section id="worked-example-what-the-r-markdown-file-demonstrates" class="level2">
+<h2 class="anchored" data-anchor-id="worked-example-what-the-r-markdown-file-demonstrates">Worked example: what the R Markdown file demonstrates</h2>
+<p>The accompanying R Markdown example shows several reproducible coding practices.</p>
+<section id="project-orientation" class="level3">
+<h3 class="anchored" data-anchor-id="project-orientation">1. Project orientation</h3>
+<p>The report starts by explaining its purpose:</p>
 <ul>
-<li>enabling incremental improvements;</li>
-<li>preventing costly re-runs after small changes;</li>
-<li>reducing fear of breaking working code.</li>
+<li>what it does;</li>
+<li>what it produces;</li>
+<li>why the workflow is structured in this way.</li>
 </ul>
-<p>This is particularly important in long-running or resource-intensive analyses.</p>
+<p>This supports reuse and review.</p>
 </section>
-<section id="practical-guidance-for-ecr-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
-<p>Proportionate steps for most research projects include:</p>
+<section id="package-management" class="level3">
+<h3 class="anchored" data-anchor-id="package-management">2. Package management</h3>
+<p>The report lists required packages and loads them at the start. This makes dependencies visible.</p>
+<p>For long-term reproducibility, the next step would be to record package versions using <code>sessionInfo()</code> or manage the environment with <code>renv</code>.</p>
+</section>
+<section id="project-relative-folders" class="level3">
+<h3 class="anchored" data-anchor-id="project-relative-folders">3. Project-relative folders</h3>
+<p>The report uses <code>here::here()</code> rather than hard-coded paths. This makes the project easier to run on another computer.</p>
+</section>
+<section id="input-checks" class="level3">
+<h3 class="anchored" data-anchor-id="input-checks">4. Input checks</h3>
+<p>Before importing data, the report checks that all required files exist. This avoids unclear errors later in the workflow.</p>
+</section>
+<section id="data-validation" class="level3">
+<h3 class="anchored" data-anchor-id="data-validation">5. Data validation</h3>
+<p>The report checks:</p>
 <ul>
-<li>writing scripts so they can be run end-to-end;</li>
-<li>adding basic checks or tests for key assumptions;</li>
-<li>avoiding unnecessary recomputation during exploration;</li>
-<li>documenting when and why full reruns are required.</li>
+<li>whether the dataset has rows;</li>
+<li>whether required variables are present;</li>
+<li>whether key variables have expected types;</li>
+<li>how much missingness is present.</li>
 </ul>
-<p>More advanced optimisation is context-dependent and not always necessary.</p>
+<p>These checks make analytical assumptions explicit.</p>
 </section>
-<section id="exercises-515-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-515-minutes">Exercises (5–15 minutes)</h2>
+<section id="reusable-plotting-code" class="level3">
+<h3 class="anchored" data-anchor-id="reusable-plotting-code">6. Reusable plotting code</h3>
+<p>The report defines a plotting function rather than repeating similar <code>ggplot2</code> code. This supports consistency and reduces copy-paste errors.</p>
+</section>
+<section id="predictable-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="predictable-outputs">7. Predictable outputs</h3>
+<p>The report saves tables and figures to defined folders. This links code execution to outputs and reduces the risk of manual file handling errors.</p>
+<hr>
+</section>
+</section>
+<section id="practical-guidance-for-early-career-researchers" class="level2">
+<h2 class="anchored" data-anchor-id="practical-guidance-for-early-career-researchers">Practical guidance for early-career researchers</h2>
+<p>A proportionate starting point is:</p>
 <ol type="1">
-<li><p>Identify one script or analysis that is slow or frequently re-run.<br>
-Is there a step that could be cached or avoided?</p></li>
-<li><p>Look at one function or script.<br>
-What simple check could be added to detect errors early?</p></li>
+<li>Put all code in scripts or Quarto/R Markdown files.</li>
+<li>Use project-relative paths.</li>
+<li>Give scripts meaningful names.</li>
+<li>Start each script with a short explanatory header.</li>
+<li>Add simple checks for files, variables, missingness, and impossible values.</li>
+<li>Use functions when code is repeated.</li>
+<li>Save outputs automatically.</li>
+<li>Keep raw data unchanged.</li>
+<li>Track changes using Git or, at minimum, a changelog.</li>
+<li>Document decisions that are not obvious from the code.</li>
 </ol>
+<p>You do not need to do everything at once. Start with one improvement that reduces risk in your current workflow.</p>
+<hr>
 </section>
-<section id="key-takeaways" class="level2 callout-summary">
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<section id="exercise-1-review-one-script" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-review-one-script">Exercise 1: Review one script</h3>
+<p>Choose one script from a current or previous project.</p>
+<p>Ask:</p>
+<ul>
+<li>Is the purpose clear from the top of the file?</li>
+<li>Are the inputs and outputs clear?</li>
+<li>Are object names meaningful?</li>
+<li>Is there repeated code that could become a function?</li>
+<li>Are key assumptions checked?</li>
+</ul>
+</section>
+<section id="exercise-2-add-one-check" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-add-one-check">Exercise 2: Add one check</h3>
+<p>Add one simple check to a script.</p>
+<p>For example:</p>
+<ul>
+<li>required file exists;</li>
+<li>required variable exists;</li>
+<li>no impossible values;</li>
+<li>expected number of rows;</li>
+<li>no duplicated IDs;</li>
+<li>missingness below an expected threshold.</li>
+</ul>
+</section>
+<section id="exercise-3-automate-one-output" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-automate-one-output">Exercise 3: Automate one output</h3>
+<p>Choose one table or figure that you currently create manually.</p>
+<p>Can you regenerate it directly from code and save it to a predictable folder?</p>
+</section>
+<section id="exercise-4-reduce-one-source-of-computational-waste" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4-reduce-one-source-of-computational-waste">Exercise 4: Reduce one source of computational waste</h3>
+<p>Choose one analysis step that is slow, repetitive or often rerun.</p>
+<p>Ask:</p>
+<ul>
+<li>Does the whole workflow need to rerun?</li>
+<li>Could an intermediate file be saved?</li>
+<li>Could the input be checked before running the expensive step?</li>
+<li>Is the spatial, temporal or simulation resolution proportionate?</li>
+<li>Are duplicate outputs being kept without a reason?</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>Code quality underpins reproducibility and trust in results.</li>
-<li>Testing reduces errors, rework, and unnecessary computation.</li>
-<li>Inefficient code can make research effectively irreproducible.</li>
-<li>Green coding focuses on reducing waste through clarity and efficiency.</li>
-<li>Proportionate practices deliver most of the benefit.</li>
+<li>Code quality is part of research quality.</li>
+<li>Readable, explicit code is easier to review, rerun, and defend.</li>
+<li>Simple checks catch many errors before they affect results.</li>
+<li>Versioning makes change safer and more transparent.</li>
+<li>Light automation reduces manual work and supports reproducibility.</li>
+<li>Sustainable code saves time, energy, storage and attention.</li>
 </ul>
 </section>
+<hr>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="core-guidance-on-research-code" class="level3">
+<h3 class="anchored" data-anchor-id="core-guidance-on-research-code">Core guidance on research code</h3>
+<ul>
+<li>Good Enough Practices in Scientific Computing: <a href="https://carpentries-lab.github.io/good-enough-practices/" class="uri">https://carpentries-lab.github.io/good-enough-practices/</a></li>
+<li>Wilson et al.&nbsp;(2017). <em>Good enough practices in scientific computing</em>. PLOS Computational Biology: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510" class="uri">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510</a></li>
+<li>The Turing Way — Code quality: <a href="https://book.the-turing-way.org/reproducible-research/code-quality/" class="uri">https://book.the-turing-way.org/reproducible-research/code-quality/</a></li>
+<li>The Turing Way — Readable code: <a href="https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-readability/" class="uri">https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-readability/</a></li>
+<li>The Turing Way — Robust code: <a href="https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-robust/" class="uri">https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-robust/</a></li>
+</ul>
+</section>
+<section id="r-coding-style-and-learning-resources" class="level3">
+<h3 class="anchored" data-anchor-id="r-coding-style-and-learning-resources">R coding style and learning resources</h3>
+<ul>
+<li>Tidyverse style guide: <a href="https://style.tidyverse.org/" class="uri">https://style.tidyverse.org/</a></li>
+<li>How to get good with R, Nicola Tierney: <a href="https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/" class="uri">https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/</a></li>
+<li>Guidelines for writing good R code: <a href="https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/" class="uri">https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/</a></li>
+</ul>
+</section>
+<section id="testing-and-validation" class="level3">
+<h3 class="anchored" data-anchor-id="testing-and-validation">Testing and validation</h3>
+<ul>
+<li>The Turing Way — Testing: <a href="https://book.the-turing-way.org/reproducible-research/testing/" class="uri">https://book.the-turing-way.org/reproducible-research/testing/</a></li>
+<li>R Packages — Testing basics: <a href="https://r-pkgs.org/testing-basics.html" class="uri">https://r-pkgs.org/testing-basics.html</a></li>
+<li>Step 5 — Testing and Controls: <a href="https://ampartridge.github.io/ReproducibleResearch/step5Testing.html" class="uri">https://ampartridge.github.io/ReproducibleResearch/step5Testing.html</a></li>
+<li>ADACS good code etiquette — Testing: <a href="https://github.com/ADACS-Australia/good-code-etiquette/blob/master/Testing.ipynb" class="uri">https://github.com/ADACS-Australia/good-code-etiquette/blob/master/Testing.ipynb</a></li>
+</ul>
+</section>
+<section id="version-control" class="level3">
+<h3 class="anchored" data-anchor-id="version-control">Version control</h3>
+<ul>
+<li>The Turing Way — Version control: <a href="https://book.the-turing-way.org/reproducible-research/vcs/" class="uri">https://book.the-turing-way.org/reproducible-research/vcs/</a></li>
+<li>Software Carpentry — Version Control with Git: <a href="https://swcarpentry.github.io/git-novice/" class="uri">https://swcarpentry.github.io/git-novice/</a></li>
+<li>UCL Git novice training: <a href="https://github-pages.ucl.ac.uk/git-novice/" class="uri">https://github-pages.ucl.ac.uk/git-novice/</a></li>
+<li>Git: <a href="https://git-scm.com/" class="uri">https://git-scm.com/</a></li>
+<li>GitHub: <a href="https://github.com/" class="uri">https://github.com/</a></li>
+<li>GitHub Hello World: <a href="https://docs.github.com/en/get-started/start-your-journey/hello-world" class="uri">https://docs.github.com/en/get-started/start-your-journey/hello-world</a></li>
+<li>Tracking changes in research: <a href="https://carpentries-lab.github.io/good-enough-practices/06-track_changes.html" class="uri">https://carpentries-lab.github.io/good-enough-practices/06-track_changes.html</a></li>
+</ul>
+</section>
+<section id="documentation-for-code" class="level3">
+<h3 class="anchored" data-anchor-id="documentation-for-code">Documentation for code</h3>
+<ul>
+<li>Write the Docs — Beginner’s guide to documentation: <a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/" class="uri">https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/</a></li>
+<li>GitHub — Tools and techniques for effective code documentation: <a href="https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation" class="uri">https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation</a></li>
+<li>PEP 257 — Python docstring conventions: <a href="https://peps.python.org/pep-0257/" class="uri">https://peps.python.org/pep-0257/</a></li>
+<li>Creating docstrings in R: <a href="https://josephcrispell.github.io/2021/07/26/creating-R-docstring.html" class="uri">https://josephcrispell.github.io/2021/07/26/creating-R-docstring.html</a></li>
+<li>Best practices for writing code comments: <a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/" class="uri">https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/</a></li>
+</ul>
+</section>
+<section id="r-markdown-quarto-adjacent-and-notebooks" class="level3">
+<h3 class="anchored" data-anchor-id="r-markdown-quarto-adjacent-and-notebooks">R Markdown, Quarto-adjacent, and notebooks</h3>
+<ul>
+<li>Knitr in a nutshell: <a href="https://kbroman.org/knitr_knutshell/" class="uri">https://kbroman.org/knitr_knutshell/</a></li>
+<li>Jupyter documentation: <a href="https://docs.jupyter.org/en/latest/" class="uri">https://docs.jupyter.org/en/latest/</a></li>
+<li>Try JupyterLab: <a href="https://jupyter.org/try-jupyter/lab/" class="uri">https://jupyter.org/try-jupyter/lab/</a></li>
+<li>Shiny basics: <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/" class="uri">https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/</a></li>
+</ul>
+</section>
+<section id="ucl-support" class="level3">
+<h3 class="anchored" data-anchor-id="ucl-support">UCL support</h3>
+<ul>
+<li>UCL Advanced Research Computing training: <a href="https://www.ucl.ac.uk/advanced-research-computing/education/training" class="uri">https://www.ucl.ac.uk/advanced-research-computing/education/training</a></li>
+<li>UCL ARC course catalogue: <a href="https://www.ucl.ac.uk/advanced-research-computing/training/course-catalogue" class="uri">https://www.ucl.ac.uk/advanced-research-computing/training/course-catalogue</a></li>
+<li>Support for UCL researchers to use GitHub: <a href="https://www.ucl.ac.uk/advanced-research-computing/expertise/research-software-development/research-software-development-tools/support-ucl-0" class="uri">https://www.ucl.ac.uk/advanced-research-computing/expertise/research-software-development/research-software-development-tools/support-ucl-0</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -579,24 +1310,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./06-docs-eln-sops.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08-s-responsibility.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08-publishing-pids-reuse.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./11-wrap-up.html" rel="prev">
+<link href="./09-wrap-up-next-steps.html" rel="prev">
 <link href="./cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -63,11 +63,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -85,13 +85,41 @@ div.csl-indent {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -107,14 +135,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -124,62 +147,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,7 +210,102 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-onboarding-first-actions" id="toc-sec-onboarding-first-actions" class="nav-link active" data-scroll-target="#sec-onboarding-first-actions">Onboarding: first actions on a new project</a></li>
+  <li><a href="#foundations" id="toc-foundations" class="nav-link" data-scroll-target="#foundations">Foundations of open and reproducible research</a>
+  <ul class="collapse">
+  <li><a href="#conceptual-foundations-and-terminology" id="toc-conceptual-foundations-and-terminology" class="nav-link" data-scroll-target="#conceptual-foundations-and-terminology">Conceptual foundations and terminology</a></li>
+  <li><a href="#key-readings" id="toc-key-readings" class="nav-link" data-scroll-target="#key-readings">Key readings</a></li>
+  <li><a href="#ucl-policies-and-frameworks" id="toc-ucl-policies-and-frameworks" class="nav-link" data-scroll-target="#ucl-policies-and-frameworks">UCL policies and frameworks</a></li>
+  </ul></li>
+  <li><a href="#fair-resources" id="toc-fair-resources" class="nav-link" data-scroll-target="#fair-resources">FAIR principles and data stewardship</a>
+  <ul class="collapse">
+  <li><a href="#core-readings" id="toc-core-readings" class="nav-link" data-scroll-target="#core-readings">Core readings</a></li>
+  <li><a href="#fair-in-practice-deeper-dives" id="toc-fair-in-practice-deeper-dives" class="nav-link" data-scroll-target="#fair-in-practice-deeper-dives">FAIR in practice (deeper dives)</a></li>
+  <li><a href="#ucl-support" id="toc-ucl-support" class="nav-link" data-scroll-target="#ucl-support">UCL support</a></li>
+  <li><a href="#project-metadata-roles-and-conventions" id="toc-project-metadata-roles-and-conventions" class="nav-link" data-scroll-target="#project-metadata-roles-and-conventions">Project metadata, roles, and conventions</a></li>
+  <li><a href="#versioning-and-continuity-principles-not-tools" id="toc-versioning-and-continuity-principles-not-tools" class="nav-link" data-scroll-target="#versioning-and-continuity-principles-not-tools">Versioning and continuity (principles, not tools)</a></li>
+  <li><a href="#ucl-supported-tools-and-routes" id="toc-ucl-supported-tools-and-routes" class="nav-link" data-scroll-target="#ucl-supported-tools-and-routes">UCL-supported tools and routes</a></li>
+  <li><a href="#recommended-tools-illustrative-principle-led" id="toc-recommended-tools-illustrative-principle-led" class="nav-link" data-scroll-target="#recommended-tools-illustrative-principle-led">Recommended tools (illustrative; principle-led)</a></li>
+  </ul></li>
+  <li><a href="#sec-dmp-resources" id="toc-sec-dmp-resources" class="nav-link" data-scroll-target="#sec-dmp-resources">Data Management Plans</a>
+  <ul class="collapse">
+  <li><a href="#ucl-dmp-route-and-template" id="toc-ucl-dmp-route-and-template" class="nav-link" data-scroll-target="#ucl-dmp-route-and-template">UCL DMP route and template</a></li>
+  <li><a href="#derived-and-intermediate-data-retention-decision-prompts-quick-guide" id="toc-derived-and-intermediate-data-retention-decision-prompts-quick-guide" class="nav-link" data-scroll-target="#derived-and-intermediate-data-retention-decision-prompts-quick-guide">Derived and intermediate data: retention decision prompts (quick guide)</a></li>
+  <li><a href="#ucl-support-routes-practical" id="toc-ucl-support-routes-practical" class="nav-link" data-scroll-target="#ucl-support-routes-practical">UCL support routes (practical)</a></li>
+  </ul></li>
+  <li><a href="#data-provenance" id="toc-data-provenance" class="nav-link" data-scroll-target="#data-provenance">Data organisation and provenance</a>
+  <ul class="collapse">
+  <li><a href="#deeper-dives" id="toc-deeper-dives" class="nav-link" data-scroll-target="#deeper-dives">Deeper dives</a></li>
+  <li><a href="#domain-specific-metadata-standards-advanced-reference" id="toc-domain-specific-metadata-standards-advanced-reference" class="nav-link" data-scroll-target="#domain-specific-metadata-standards-advanced-reference">Domain-specific metadata standards (Advanced / reference)</a></li>
+  </ul></li>
+  <li><a href="#sec-essential-metadata" id="toc-sec-essential-metadata" class="nav-link" data-scroll-target="#sec-essential-metadata">Essential metadata (minimum standard)</a>
+  <ul class="collapse">
+  <li><a href="#essential-metadata-checklist-minimum-standard" id="toc-essential-metadata-checklist-minimum-standard" class="nav-link" data-scroll-target="#essential-metadata-checklist-minimum-standard">Essential Metadata Checklist (minimum standard)</a></li>
+  <li><a href="#expanded-metadata-templates-advanced-reference" id="toc-expanded-metadata-templates-advanced-reference" class="nav-link" data-scroll-target="#expanded-metadata-templates-advanced-reference">Expanded metadata templates (Advanced / reference)</a></li>
+  </ul></li>
+  <li><a href="#sec-project-organisation-templates" id="toc-sec-project-organisation-templates" class="nav-link" data-scroll-target="#sec-project-organisation-templates">Project organisation templates (copy-ready)</a>
+  <ul class="collapse">
+  <li><a href="#baseline-folder-structure" id="toc-baseline-folder-structure" class="nav-link" data-scroll-target="#baseline-folder-structure">Baseline folder structure</a></li>
+  <li><a href="#file-naming-and-versioning-minimum-standard" id="toc-file-naming-and-versioning-minimum-standard" class="nav-link" data-scroll-target="#file-naming-and-versioning-minimum-standard">File naming and versioning (minimum standard)</a></li>
+  <li><a href="#versioning-cheat-sheet" id="toc-versioning-cheat-sheet" class="nav-link" data-scroll-target="#versioning-cheat-sheet">Versioning cheat-sheet</a></li>
+  <li><a href="#optional-code-version-control-git-advanced-reference" id="toc-optional-code-version-control-git-advanced-reference" class="nav-link" data-scroll-target="#optional-code-version-control-git-advanced-reference">Optional: code version control (Git) (Advanced / reference)</a></li>
+  </ul></li>
+  <li><a href="#sec-codebook-template" id="toc-sec-codebook-template" class="nav-link" data-scroll-target="#sec-codebook-template">Codebook / data dictionary template (minimum standard)</a></li>
+  <li><a href="#docs-resources" id="toc-docs-resources" class="nav-link" data-scroll-target="#docs-resources">Documentation, ELNs, and SOPs</a>
+  <ul class="collapse">
+  <li><a href="#core-principles-of-research-documentation" id="toc-core-principles-of-research-documentation" class="nav-link" data-scroll-target="#core-principles-of-research-documentation">Core principles of research documentation</a></li>
+  <li><a href="#readmes-codebooks-and-dataset-documentation" id="toc-readmes-codebooks-and-dataset-documentation" class="nav-link" data-scroll-target="#readmes-codebooks-and-dataset-documentation">READMEs, codebooks, and dataset documentation</a></li>
+  <li><a href="#sec-readme-template" id="toc-sec-readme-template" class="nav-link" data-scroll-target="#sec-readme-template">README template (minimum standard)</a></li>
+  <li><a href="#elns" id="toc-elns" class="nav-link" data-scroll-target="#elns">ELNs</a></li>
+  <li><a href="#sops-and-essential-research-documents-health-contexts" id="toc-sops-and-essential-research-documents-health-contexts" class="nav-link" data-scroll-target="#sops-and-essential-research-documents-health-contexts">SOPs and essential research documents (health contexts)</a></li>
+  </ul></li>
+  <li><a href="#code-quality" id="toc-code-quality" class="nav-link" data-scroll-target="#code-quality">Code quality, testing, and sustainable software</a>
+  <ul class="collapse">
+  <li><a href="#core-guidance-on-code-quality-and-testing" id="toc-core-guidance-on-code-quality-and-testing" class="nav-link" data-scroll-target="#core-guidance-on-code-quality-and-testing">Core guidance on code quality and testing</a></li>
+  <li><a href="#proportionate-best-practice-for-research-code" id="toc-proportionate-best-practice-for-research-code" class="nav-link" data-scroll-target="#proportionate-best-practice-for-research-code">Proportionate best practice for research code</a></li>
+  <li><a href="#writing-clear-and-maintainable-code" id="toc-writing-clear-and-maintainable-code" class="nav-link" data-scroll-target="#writing-clear-and-maintainable-code">Writing clear and maintainable code</a></li>
+  <li><a href="#documenting-code-as-part-of-code-quality" id="toc-documenting-code-as-part-of-code-quality" class="nav-link" data-scroll-target="#documenting-code-as-part-of-code-quality">Documenting code as part of code quality</a></li>
+  <li><a href="#sustainable-and-green-research-software" id="toc-sustainable-and-green-research-software" class="nav-link" data-scroll-target="#sustainable-and-green-research-software">Sustainable and green research software</a></li>
+  </ul></li>
+  <li><a href="#responsibility" id="toc-responsibility" class="nav-link" data-scroll-target="#responsibility">Responsible and inclusive research across the workflow</a>
+  <ul class="collapse">
+  <li><a href="#ethical-and-inclusive-research-practice" id="toc-ethical-and-inclusive-research-practice" class="nav-link" data-scroll-target="#ethical-and-inclusive-research-practice">Ethical and inclusive research practice</a></li>
+  <li><a href="#roles-responsibilities-and-governance-ucl" id="toc-roles-responsibilities-and-governance-ucl" class="nav-link" data-scroll-target="#roles-responsibilities-and-governance-ucl">Roles, responsibilities, and governance (UCL)</a></li>
+  <li><a href="#trusted-research-security-and-risk" id="toc-trusted-research-security-and-risk" class="nav-link" data-scroll-target="#trusted-research-security-and-risk">Trusted research, security, and risk</a></li>
+  <li><a href="#training-and-support" id="toc-training-and-support" class="nav-link" data-scroll-target="#training-and-support">Training and support</a></li>
+  </ul></li>
+  <li><a href="#automation-resources" id="toc-automation-resources" class="nav-link" data-scroll-target="#automation-resources">Automation and workflows within coding practice</a>
+  <ul class="collapse">
+  <li><a href="#workflow-tools-use-when-complexity-increases" id="toc-workflow-tools-use-when-complexity-increases" class="nav-link" data-scroll-target="#workflow-tools-use-when-complexity-increases">Workflow tools (use when complexity increases)</a></li>
+  <li><a href="#reproducible-execution-environments" id="toc-reproducible-execution-environments" class="nav-link" data-scroll-target="#reproducible-execution-environments">Reproducible execution environments</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul></li>
+  <li><a href="#pids" id="toc-pids" class="nav-link" data-scroll-target="#pids">Publishing, PIDs, repositories, licensing, and reuse</a>
+  <ul class="collapse">
+  <li><a href="#persistent-identifiers-and-citation" id="toc-persistent-identifiers-and-citation" class="nav-link" data-scroll-target="#persistent-identifiers-and-citation">Persistent identifiers and citation</a></li>
+  <li><a href="#preprints-and-early-dissemination" id="toc-preprints-and-early-dissemination" class="nav-link" data-scroll-target="#preprints-and-early-dissemination">Preprints and early dissemination</a></li>
+  <li><a href="#sec-reporting-guidelines" id="toc-sec-reporting-guidelines" class="nav-link" data-scroll-target="#sec-reporting-guidelines">Reporting guidelines for health and population research</a></li>
+  <li><a href="#repositories-and-access-routes" id="toc-repositories-and-access-routes" class="nav-link" data-scroll-target="#repositories-and-access-routes">Repositories and access routes</a></li>
+  <li><a href="#licensing-and-reuse-core" id="toc-licensing-and-reuse-core" class="nav-link" data-scroll-target="#licensing-and-reuse-core">Licensing and reuse (core)</a></li>
+  <li><a href="#copyright-training" id="toc-copyright-training" class="nav-link" data-scroll-target="#copyright-training">Copyright training</a></li>
+  </ul></li>
+  <li><a href="#sec-repo-guidance" id="toc-sec-repo-guidance" class="nav-link" data-scroll-target="#sec-repo-guidance">Repository “minimum viable release” guidance</a></li>
+  <li><a href="#sec-tools" id="toc-sec-tools" class="nav-link" data-scroll-target="#sec-tools">Tools and software (pragmatic, not prescriptive)</a>
+  <ul class="collapse">
+  <li><a href="#reproducible-environments" id="toc-reproducible-environments" class="nav-link" data-scroll-target="#reproducible-environments">Reproducible environments</a></li>
+  <li><a href="#workflow-automation-tools-advanced-reference" id="toc-workflow-automation-tools-advanced-reference" class="nav-link" data-scroll-target="#workflow-automation-tools-advanced-reference">Workflow / automation tools (Advanced / reference)</a></li>
+  </ul></li>
+  <li><a href="#sec-credit-assessment" id="toc-sec-credit-assessment" class="nav-link" data-scroll-target="#sec-credit-assessment">Research evaluation, credit, and incentives</a></li>
+  <li><a href="#sec-community" id="toc-sec-community" class="nav-link" data-scroll-target="#sec-community">Community and support routes</a></li>
+  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training and further reading</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/resources.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -218,7 +326,7 @@ div.csl-indent {
 
 </header>
 
-<p>This chapter gathers together <strong>tools</strong>, <strong>UCL support</strong>, <strong>further reading</strong>, and <strong>copy-ready templates</strong> referenced across <strong>Chapters 1–10</strong>.<br>
+<p>This chapter gathers together <strong>tools</strong>, <strong>UCL support</strong>, <strong>further reading</strong>, and <strong>copy-ready templates</strong> referenced across <strong>Chapters 1–9</strong>.<br>
 It is intended as a <em>one-stop practical library</em> for early-career researchers and researchers onboarding to projects at UCL.</p>
 <p>Use this chapter when you need:</p>
 <ul>
@@ -834,8 +942,8 @@ How to use these resources
 </section>
 </section>
 <section id="responsibility" class="level2">
-<h2 class="anchored" data-anchor-id="responsibility">Responsible and inclusive research</h2>
-<p><em>Supports Chapter 8</em></p>
+<h2 class="anchored" data-anchor-id="responsibility">Responsible and inclusive research across the workflow</h2>
+<p><em>Supports Chapters 4, 6 and 8</em></p>
 <p>Responsible research involves <strong>clear roles, accountability, and escalation routes</strong>, alongside ethical and inclusive practice. The resources below support decision-making, governance, and responsible restriction.</p>
 <section id="ethical-and-inclusive-research-practice" class="level3">
 <h3 class="anchored" data-anchor-id="ethical-and-inclusive-research-practice">Ethical and inclusive research practice</h3>
@@ -872,8 +980,8 @@ How to use these resources
 </section>
 </section>
 <section id="automation-resources" class="level2">
-<h2 class="anchored" data-anchor-id="automation-resources">Automation and workflows</h2>
-<p><em>Supports Chapter 9</em></p>
+<h2 class="anchored" data-anchor-id="automation-resources">Automation and workflows within coding practice</h2>
+<p><em>Supports Chapter 7</em></p>
 <p>Automation supports reproducibility by making <strong>dependencies, execution order, and outputs explicit</strong>. These resources provide practical entry points at different levels of complexity.</p>
 <section id="workflow-tools-use-when-complexity-increases" class="level3">
 <h3 class="anchored" data-anchor-id="workflow-tools-use-when-complexity-increases">Workflow tools (use when complexity increases)</h3>
@@ -913,7 +1021,7 @@ Proportionate automation
 </section>
 <section id="pids" class="level2">
 <h2 class="anchored" data-anchor-id="pids">Publishing, PIDs, repositories, licensing, and reuse</h2>
-<p><em>Supports Chapter 10</em></p>
+<p><em>Supports Chapter 8</em></p>
 <section id="persistent-identifiers-and-citation" class="level3">
 <h3 class="anchored" data-anchor-id="persistent-identifiers-and-citation">Persistent identifiers and citation</h3>
 <ul>
@@ -1053,60 +1161,35 @@ Practical licensing rule
 <li><p><strong>Good Enough Practices in Scientific Computing</strong> <a href="https://doi.org/10.1371/journal.pcbi.1005510">https://doi.org/10.1371/journal.pcbi.1005510</a></p></li>
 </ul>
 <hr>
-</section>
-<section id="sec-pitfalls" class="level2">
-<h2 class="anchored" data-anchor-id="sec-pitfalls">Common pitfalls (and how to avoid them)</h2>
-<ul>
-<li><strong>No clear source of truth</strong> → agree repository/shared drive rules early.</li>
-<li><strong>Raw data overwritten</strong> → lock raw data; derive via scripts.</li>
-<li><strong>Unstated restrictions</strong> → document constraints + access route + rationale.</li>
-<li><strong>No licence</strong> → users assume reuse is not allowed.</li>
-<li><strong>No environment notes</strong> → code becomes “works on my machine”.</li>
-<li><strong>Outputs not linked</strong> → use DOIs/ORCID; reference related objects in metadata/README.</li>
-</ul>
-<hr>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Keep this page current
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Link to this page from your project <code>README.md</code> or internal wiki. When policies or tools change, <strong>update here once</strong> — every Chapter and project benefits.</p>
-</div>
-</div>
 
 
 <div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
 <div id="ref-turingway2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. <em><a href="https://the-turing-way.netlify.app">The <span>Turing Way</span>: A Handbook for Reproducible, Ethical and Collaborative Data Science</a></em>. (2022).</div>
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. The turing way: A handbook for reproducible, ethical and collaborative research (1.0.2). (2022) doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
 </div>
 <div id="ref-baker2016reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Baker, M. 1,500 scientists lift the lid on reproducibility. <em>Nature</em> <strong>533</strong>, 452–454 (2016).</div>
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Baker, M. <a href="https://doi.org/10.1038/533452a">1,500 scientists lift the lid on reproducibility</a>. <em>Nature</em> <strong>533</strong>, 452–454 (2016).</div>
 </div>
 <div id="ref-munafo2017manifesto" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Munafò, M. R. <em>et al.</em> A manifesto for reproducible science. <em>Nature Human Behaviour</em> <strong>1</strong>, 1–9 (2017).</div>
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Munafò, M. R., Nosek, B. A., Bishop, D. V. M., <em>et al.</em> <a href="https://doi.org/10.1038/s41562-016-0021">A manifesto for reproducible science</a>. <em>Nature Human Behaviour</em> <strong>1</strong>, 0021 (2017).</div>
 </div>
 <div id="ref-nas2019reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">National Academies of Sciences, Engineering, and Medicine. <em>Reproducibility and Replicability in Science</em>. (National Academies Press, 2019).</div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">National Academies of Sciences, Engineering, and Medicine. <em>Reproducibility and Replicability in Science</em>. (National Academies Press, 2019). doi:<a href="https://doi.org/10.17226/25303">10.17226/25303</a>.</div>
 </div>
 <div id="ref-wilkinson2016fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> The FAIR guiding principles for scientific data management and stewardship. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> <a href="https://doi.org/10.1038/sdata.2016.18">The FAIR guiding principles for scientific data management and stewardship</a>. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
 </div>
 <div id="ref-gofair2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline">GO FAIR Initiative. <a href="https://www.go-fair.org/fair-principles/">FAIR principles</a>. (2023).</div>
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">GO FAIR Initiative. <a href="https://www.go-fair.org/fair-principles/">FAIR principles overview</a>. (2023).</div>
 </div>
 <div id="ref-openaire_fair2023" class="csl-entry" role="listitem">
 <div class="csl-left-margin">7. </div><div class="csl-right-inline">OpenAIRE. <a href="https://www.openaire.eu/how-to-make-your-data-fair">How to make your data FAIR</a>. (2023).</div>
 </div>
 <div id="ref-turingway_fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair">FAIR data in the turing way</a>.</div>
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair">FAIR principles chapter</a>. in <em>The turing way: A handbook for reproducible research</em> (2022).</div>
 </div>
 <div id="ref-turingway_pm" class="csl-entry" role="listitem">
-<div class="csl-left-margin">9. </div><div class="csl-right-inline">Community, T. T. W. <em><a href="https://book.the-turing-way.org/project-design/">Project Design — the Turing Way</a></em>. (The Turing Way, 2025).</div>
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/project-design/project-management-methodologies/overview">Project management overview</a>. in <em>The turing way: A handbook for reproducible research</em> (2022).</div>
 </div>
 <div id="ref-equator2025reporting" class="csl-entry" role="listitem">
 <div class="csl-left-margin">10. </div><div class="csl-right-inline">The EQUATOR Network. <a href="https://www.equator-network.org/reporting-guidelines/">Reporting guidelines</a>. (2025).</div>
@@ -1349,12 +1432,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11-wrap-up.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></span>
+      <a href="./09-wrap-up-next-steps.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1366,7 +1463,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

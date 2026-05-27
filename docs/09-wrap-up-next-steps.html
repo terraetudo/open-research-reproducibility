@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Open Research &amp; Reproducibility - Chapter 9 — Wrap-up and next steps</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./resources.html" rel="next">
+<link href="./08-publishing-pids-reuse.html" rel="prev">
+<link href="./cover.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-wrap-up-next-steps.html"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-9" id="toc-chapter-9" class="nav-link active" data-scroll-target="#chapter-9">Chapter 9</a>
+  <ul class="collapse">
+  <li><a href="#wrap-up-and-next-steps" id="toc-wrap-up-and-next-steps" class="nav-link" data-scroll-target="#wrap-up-and-next-steps">Wrap-up and next steps</a></li>
+  </ul></li>
+  <li><a href="#what-this-chapter-does" id="toc-what-this-chapter-does" class="nav-link" data-scroll-target="#what-this-chapter-does">What this chapter does</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#what-this-workshop-set-out-to-do" id="toc-what-this-workshop-set-out-to-do" class="nav-link" data-scroll-target="#what-this-workshop-set-out-to-do">What this workshop set out to do</a></li>
+  <li><a href="#the-story-of-the-workshop" id="toc-the-story-of-the-workshop" class="nav-link" data-scroll-target="#the-story-of-the-workshop">The story of the workshop</a></li>
+  <li><a href="#minimum-viable-reproducibility" id="toc-minimum-viable-reproducibility" class="nav-link" data-scroll-target="#minimum-viable-reproducibility">Minimum viable reproducibility</a></li>
+  <li><a href="#what-good-enough-looks-like" id="toc-what-good-enough-looks-like" class="nav-link" data-scroll-target="#what-good-enough-looks-like">What “good enough” looks like</a></li>
+  <li><a href="#practices-not-tools" id="toc-practices-not-tools" class="nav-link" data-scroll-target="#practices-not-tools">Practices, not tools</a></li>
+  <li><a href="#reproducibility-as-risk-reduction" id="toc-reproducibility-as-risk-reduction" class="nav-link" data-scroll-target="#reproducibility-as-risk-reduction">Reproducibility as risk reduction</a></li>
+  <li><a href="#what-to-do-first" id="toc-what-to-do-first" class="nav-link" data-scroll-target="#what-to-do-first">What to do first</a>
+  <ul class="collapse">
+  <li><a href="#activity-choose-one-next-action" id="toc-activity-choose-one-next-action" class="nav-link" data-scroll-target="#activity-choose-one-next-action">Activity: choose one next action</a></li>
+  </ul></li>
+  <li><a href="#a-personal-reproducibility-plan" id="toc-a-personal-reproducibility-plan" class="nav-link" data-scroll-target="#a-personal-reproducibility-plan">A personal reproducibility plan</a>
+  <ul class="collapse">
+  <li><a href="#personal-action-plan" id="toc-personal-action-plan" class="nav-link" data-scroll-target="#personal-action-plan">Personal action plan</a></li>
+  </ul></li>
+  <li><a href="#for-teams-make-it-social" id="toc-for-teams-make-it-social" class="nav-link" data-scroll-target="#for-teams-make-it-social">For teams: make it social</a></li>
+  <li><a href="#what-support-is-available" id="toc-what-support-is-available" class="nav-link" data-scroll-target="#what-support-is-available">What support is available?</a></li>
+  <li><a href="#what-this-workshop-does-not-solve" id="toc-what-this-workshop-does-not-solve" class="nav-link" data-scroll-target="#what-this-workshop-does-not-solve">What this workshop does not solve</a></li>
+  <li><a href="#final-reflection" id="toc-final-reflection" class="nav-link" data-scroll-target="#final-reflection">Final reflection</a>
+  <ul class="collapse">
+  <li><a href="#final-reflection-1" id="toc-final-reflection-1" class="nav-link" data-scroll-target="#final-reflection-1">Final reflection</a></li>
+  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you">Thank you</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/09-wrap-up-next-steps.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="chapter-9" class="level1 chapter-hero">
+<h1>Chapter 9</h1>
+<section id="wrap-up-and-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="wrap-up-and-next-steps">Wrap-up and next steps</h2>
+<p>Open and reproducible research is not a single tool, a single repository, or a final task before submission. It is a set of practical habits that make research easier to understand, check, maintain and reuse.</p>
+</section>
+</section>
+<section id="what-this-chapter-does" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="what-this-chapter-does">What this chapter does</h3>
+<p>This final chapter brings the workshop together. It summarises the core message of the course, revisits the main practices covered across the chapters, and helps you identify a realistic next step for your own work.</p>
+<p>The aim is not to leave with a perfect workflow. The aim is to leave with a clearer sense of what matters most, where your current risks are, and which small changes would make your research more transparent, defensible and sustainable.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this chapter, you should be able to:</p>
+<ul>
+<li>reflect on what proportionate open and reproducible practice looks like;</li>
+<li>identify which practices matter most in your own context;</li>
+<li>recognise reproducibility as a form of risk reduction;</li>
+<li>distinguish between practices that are essential now and practices that can develop over time;</li>
+<li>know where to go next for tools, guidance and support.</li>
+</ul>
+<p>This chapter consolidates the ideas introduced across the workshop and points to the <a href="./resources.html">Resources and further reading</a> chapter for continued learning.</p>
+<hr>
+</section>
+<section id="what-this-workshop-set-out-to-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-workshop-set-out-to-do">What this workshop set out to do</h2>
+<p>This workshop has focused on <strong>practical, proportionate practices</strong> that support open and reproducible research in real institutional contexts.</p>
+<p>It aimed to help you:</p>
+<ul>
+<li>reduce avoidable errors and inefficiencies;</li>
+<li>improve clarity, continuity and defensibility;</li>
+<li>support collaboration and handover;</li>
+<li>make responsible decisions about sharing and restriction;</li>
+<li>prepare outputs so that others can find, cite, understand and reuse them where appropriate.</li>
+</ul>
+<p>It is not a comprehensive technical manual. It is also not a compliance checklist to be completed once and forgotten. Instead, it is a framework for improving everyday research practice.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The central message
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reproducibility is not perfection. It is making the research process visible enough that someone else — including your future self — can understand what was done, why it was done, and how the results were produced.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="the-story-of-the-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="the-story-of-the-workshop">The story of the workshop</h2>
+<p>The workshop followed a workflow logic.</p>
+<div class="practice-grid">
+<section id="why-it-matters" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="why-it-matters">1. Why it matters</h3>
+<p>We started with open research and reproducibility: why they matter, what they mean, and why they are not the same as making everything public.</p>
+</section>
+<section id="good-structure" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="good-structure">2. Good structure</h3>
+<p>We used FAIR principles and data integrity concepts to think about how outputs can be findable, accessible, interoperable and reusable.</p>
+</section>
+<section id="project-organisation" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="project-organisation">3. Project organisation</h3>
+<p>We considered how folder structures, file naming, project-level READMEs and lightweight versioning make research easier to navigate.</p>
+</section>
+<section id="data-management-planning" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="data-management-planning">4. Data management planning</h3>
+<p>We treated the DMP as a living record of decisions about data, roles, storage, protection, sharing and restrictions.</p>
+</section>
+<section id="tidy-and-analysable-data" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="tidy-and-analysable-data">5. Tidy and analysable data</h3>
+<p>We looked at the structure of the data file itself: tidy data, spreadsheet risks, missingness, exclusions and data dictionaries.</p>
+</section>
+<section id="documentation-and-protocols" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="documentation-and-protocols">6. Documentation and protocols</h3>
+<p>We focused on keeping decisions visible through READMEs, metadata, decision logs, changelogs, SOPs, protocols and reporting guidance.</p>
+</section>
+<section id="coding-for-reproducibility" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="coding-for-reproducibility">7. Coding for reproducibility</h3>
+<p>We brought together readable code, checks, testing, versioning, light automation and sustainable computing.</p>
+</section>
+<section id="publishing-and-reuse" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="publishing-and-reuse">8. Publishing and reuse</h3>
+<p>We considered repositories, persistent identifiers, preprints, licences, access statements and preparing outputs for responsible reuse.</p>
+</section>
+</div>
+<p>The common thread is simple: <strong>make the route visible</strong>.</p>
+<hr>
+</section>
+<section id="minimum-viable-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-viable-reproducibility">Minimum viable reproducibility</h2>
+<p>Not every project needs the same level of infrastructure. A small student project, a linked administrative data study, a multi-site collaboration and a policy-facing evaluation will have different levels of risk, sensitivity and complexity.</p>
+<p>However, most projects benefit from a small set of baseline practices.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Minimum viable reproducibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you do only a few things, make them these:</p>
+<ol type="1">
+<li><p><strong>Project README at the root</strong><br>
+Explain the project purpose, structure, conventions, contacts and key restrictions.</p></li>
+<li><p><strong>Raw and derived data separated</strong><br>
+Never overwrite raw data. Document how derived datasets were created.</p></li>
+<li><p><strong>Decisions recorded</strong><br>
+Keep a decision log, ELN entry or equivalent record of key assumptions, exclusions, changes and deviations.</p></li>
+<li><p><strong>Re-runnable analysis</strong><br>
+Use scripts or Quarto/R Markdown files rather than manual steps where possible.</p></li>
+<li><p><strong>Basic checks included</strong><br>
+Check files, variables, missingness, IDs and implausible values before analysis.</p></li>
+<li><p><strong>Planned sharing and access</strong><br>
+Record what can be shared, what cannot, why, and under what conditions.</p></li>
+<li><p><strong>Outputs prepared for citation and reuse</strong><br>
+Use ORCID, DOIs where appropriate, licences, access statements and clear metadata.</p></li>
+</ol>
+</div>
+</div>
+<p>These practices are deliberately modest. They are not the end point, but they are a strong baseline for transparent and defensible research.</p>
+<hr>
+</section>
+<section id="what-good-enough-looks-like" class="level2">
+<h2 class="anchored" data-anchor-id="what-good-enough-looks-like">What “good enough” looks like</h2>
+<p>Reproducibility is incremental.</p>
+<p>What is appropriate depends on:</p>
+<ul>
+<li>project scale and complexity;</li>
+<li>data sensitivity and governance;</li>
+<li>team size and turnover;</li>
+<li>expected reuse;</li>
+<li>available time and resources;</li>
+<li>funder, journal and institutional requirements.</li>
+</ul>
+<p>Good practice means making choices explicit and defensible, not maximising openness at any cost.</p>
+<p>For sensitive or restricted data, “good enough” may mean:</p>
+<ul>
+<li>clear metadata rather than open data;</li>
+<li>documented access conditions rather than public download;</li>
+<li>synthetic examples rather than confidential records;</li>
+<li>preserved code that can run in a secure environment;</li>
+<li>transparent explanation of what cannot be shared and why.</li>
+</ul>
+<p>For low-risk open data projects, “good enough” may mean:</p>
+<ul>
+<li>data in a trusted repository;</li>
+<li>a DOI;</li>
+<li>a README;</li>
+<li>a data dictionary;</li>
+<li>an explicit licence;</li>
+<li>analysis code linked to the publication.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proportionate practice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ask: <em>What would someone need to understand, check or reuse this work appropriately?</em><br>
+Then ask: <em>What is realistic and responsible in this context?</em></p>
+</div>
+</div>
+<hr>
+</section>
+<section id="practices-not-tools" class="level2">
+<h2 class="anchored" data-anchor-id="practices-not-tools">Practices, not tools</h2>
+<p>Throughout the workshop, the emphasis has been on <strong>practices</strong> rather than specific tools.</p>
+<p>Tools change. Research contexts differ. What matters is whether the tool supports a clear practice.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Practice</th>
+<th>Possible tools</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Project organisation</td>
+<td>RStudio projects, folder templates, shared drives, GitHub repositories</td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td>README files, Markdown, Word documents, ELNs, SOPs</td>
+</tr>
+<tr class="odd">
+<td>Decision capture</td>
+<td>Decision logs, lab notebooks, issue trackers, changelogs</td>
+</tr>
+<tr class="even">
+<td>Coding and checking</td>
+<td>R, Python, Quarto, R Markdown, Jupyter, validation scripts</td>
+</tr>
+<tr class="odd">
+<td>Versioning</td>
+<td>Git, GitHub, changelogs, dated releases</td>
+</tr>
+<tr class="even">
+<td>Publishing and citation</td>
+<td>Institutional repositories, Zenodo, OSF, DataCite DOIs, ORCID</td>
+</tr>
+</tbody>
+</table>
+<p>The tool is useful only if it makes the practice easier to sustain.</p>
+<hr>
+</section>
+<section id="reproducibility-as-risk-reduction" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-as-risk-reduction">Reproducibility as risk reduction</h2>
+<p>Many open research practices function as risk management.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th>Reproducible practice that reduces it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No one knows which file is current</td>
+<td>Folder structure, file naming, versioning</td>
+</tr>
+<tr class="even">
+<td>A key team member leaves</td>
+<td>README, onboarding notes, decision logs</td>
+</tr>
+<tr class="odd">
+<td>Analysis cannot be rerun</td>
+<td>Scripted workflows, project-relative paths, environment notes</td>
+</tr>
+<tr class="even">
+<td>Silent data errors affect results</td>
+<td>Validation checks, missingness summaries, tests</td>
+</tr>
+<tr class="odd">
+<td>Data cannot be shared openly</td>
+<td>Metadata, access statements, controlled-access routes</td>
+</tr>
+<tr class="even">
+<td>Others misuse or misinterpret outputs</td>
+<td>Documentation, licences, context and limitations</td>
+</tr>
+<tr class="odd">
+<td>Code is abandoned or rewritten</td>
+<td>Readable code, functions, Git, clear dependencies</td>
+</tr>
+<tr class="even">
+<td>Outputs cannot be credited</td>
+<td>DOIs, ORCID, citation guidance</td>
+</tr>
+</tbody>
+</table>
+<p>Seen this way, reproducibility supports research quality, efficiency and researcher wellbeing. It reduces the mental load of remembering everything and reduces the risk of having to reconstruct decisions under pressure.</p>
+<hr>
+</section>
+<section id="what-to-do-first" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-do-first">What to do first</h2>
+<p>The best next step is usually small and specific.</p>
+<p>Avoid trying to fix the whole workflow at once. Pick one current project and choose one improvement that reduces a real risk.</p>
+<section id="activity-choose-one-next-action" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="activity-choose-one-next-action">Activity: choose one next action</h3>
+<p>Think about a current or recent project.</p>
+<p>Choose one action you could take in the next one or two weeks.</p>
+<p>Examples:</p>
+<ul>
+<li>create or update the project README;</li>
+<li>write down the folder structure and naming convention;</li>
+<li>separate raw and derived data;</li>
+<li>add a short decision log;</li>
+<li>add basic checks to a script;</li>
+<li>record package versions;</li>
+<li>create a data dictionary;</li>
+<li>draft a data/code availability statement;</li>
+<li>identify a suitable repository;</li>
+<li>add a licence to training materials or code.</li>
+</ul>
+</section>
+<p>A good next action is:</p>
+<ul>
+<li>specific;</li>
+<li>realistic;</li>
+<li>visible to the project team;</li>
+<li>linked to a real source of risk;</li>
+<li>small enough to complete.</li>
+</ul>
+<hr>
+</section>
+<section id="a-personal-reproducibility-plan" class="level2">
+<h2 class="anchored" data-anchor-id="a-personal-reproducibility-plan">A personal reproducibility plan</h2>
+<p>Use the prompts below to create a short plan.</p>
+<section id="personal-action-plan" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="personal-action-plan">Personal action plan</h3>
+<p><strong>1. One thing I will keep doing</strong></p>
+<p>What already works well in your current workflow?</p>
+<p><strong>2. One thing I will stop doing</strong></p>
+<p>What creates confusion, duplication or avoidable risk?</p>
+<p><strong>3. One thing I will start doing</strong></p>
+<p>What small habit would make the biggest difference?</p>
+<p><strong>4. One person I need to involve</strong></p>
+<p>Who needs to agree, know about, or support this change?</p>
+<p><strong>5. One place I will record it</strong></p>
+<p>Where will this decision or action be documented?</p>
+</section>
+<p>This can be used individually, in pairs, or as a final workshop discussion.</p>
+<hr>
+</section>
+<section id="for-teams-make-it-social" class="level2">
+<h2 class="anchored" data-anchor-id="for-teams-make-it-social">For teams: make it social</h2>
+<p>Reproducibility is easier when it is a shared expectation rather than an individual burden.</p>
+<p>For teams, useful next steps include:</p>
+<ul>
+<li>agreeing a default folder structure;</li>
+<li>agreeing file naming conventions;</li>
+<li>creating a project README template;</li>
+<li>deciding where decision logs live;</li>
+<li>adding documentation checks to onboarding and offboarding;</li>
+<li>reviewing data management plans at project milestones;</li>
+<li>making code review or script walkthroughs normal;</li>
+<li>agreeing where outputs will be archived or published.</li>
+</ul>
+<p>Small team agreements reduce repeated negotiation and make expectations clearer for students, new staff and collaborators.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reproducibility is a team culture
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If only one person knows how the project works, the project is fragile. Shared conventions and visible decisions make the work more resilient.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="what-support-is-available" class="level2">
+<h2 class="anchored" data-anchor-id="what-support-is-available">What support is available?</h2>
+<p>You do not need to solve everything alone.</p>
+<p>Depending on the issue, useful support may include:</p>
+<ul>
+<li>research data management teams;</li>
+<li>library open research and open access teams;</li>
+<li>ethics and governance support;</li>
+<li>data protection and information governance teams;</li>
+<li>research software engineering or advanced research computing support;</li>
+<li>departmental open science champions;</li>
+<li>institutional repository support;</li>
+<li>journal and funder guidance;</li>
+<li>peer communities such as The Turing Way, The Carpentries and UKRN.</li>
+</ul>
+<p>Use the <a href="./resources.html">Resources and further reading</a> chapter as a starting point. It gathers practical guidance, templates and training routes.</p>
+<hr>
+</section>
+<section id="what-this-workshop-does-not-solve" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-workshop-does-not-solve">What this workshop does not solve</h2>
+<p>It is important to be honest about the limits of individual practice.</p>
+<p>Reproducibility problems are also shaped by:</p>
+<ul>
+<li>incentives and assessment systems;</li>
+<li>workload and time pressure;</li>
+<li>publication bias;</li>
+<li>unequal access to support and infrastructure;</li>
+<li>data governance complexity;</li>
+<li>short-term contracts and staff turnover;</li>
+<li>underinvestment in research software, documentation and stewardship.</li>
+</ul>
+<p>The practices covered here do not fix all of these structural problems. They do, however, help you reduce avoidable risk in your own projects and provide a basis for advocating for better systems, support and recognition.</p>
+<hr>
+</section>
+<section id="final-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="final-reflection">Final reflection</h2>
+<section id="final-reflection-1" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="final-reflection-1">Final reflection</h3>
+<p>Complete one of these sentences:</p>
+<ul>
+<li>The most useful thing I will take from this workshop is…</li>
+<li>One risk I can now see more clearly is…</li>
+<li>One small change I will make in my next project is…</li>
+<li>One thing I need from my team or institution is…</li>
+</ul>
+</section>
+<hr>
+</section>
+<section id="key-takeaways" class="level2 chapter-summary">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Open and reproducible research is incremental and contextual.</li>
+<li>“Good enough” practice depends on risk, scale and constraints.</li>
+<li>Practices matter more than specific tools.</li>
+<li>Reproducibility reduces risk, improves continuity and supports responsible reuse.</li>
+<li>Small, consistent improvements often deliver the greatest benefit.</li>
+<li>Resources, teams and communities can support continued learning.</li>
+</ul>
+</section>
+<hr>
+<section id="thank-you" class="level2">
+<h2 class="anchored" data-anchor-id="thank-you">Thank you</h2>
+<p>Thank you for taking part in the Open Research and Reproducibility workshop.</p>
+<p>The next step is not to make every project perfect. The next step is to make one part of your workflow clearer, safer and easier to understand.</p>
+<p>Start small. Make it visible. Build from there.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08-publishing-pids-reuse.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./resources.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Resources and Further Reading</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">CC BY 4.0 · Built with Quarto</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

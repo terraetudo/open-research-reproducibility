@@ -1,0 +1,513 @@
+---
+title: "Open research and reproducibility workshop — code example"
+author: "Joana Cruz"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+# 1. Purpose of this report
+
+This report provides a reproducible example of how to:
+
+- load and manage packages;
+- use project-relative directories rather than hard-coded file paths;
+- import data safely;
+- carry out basic validation checks before analysis;
+- produce a descriptive summary table;
+- create consistent figures using a reusable function;
+- save outputs in a clear and reproducible way;
+- use sustainable coding habits to avoid unnecessary reruns and manual rework.
+
+The aim is not only to produce results, but also to make the workflow understandable, reusable, and easier for someone else to run.
+
+::: {.callout-note}
+## Why this example matters
+
+This example brings together several practices from Chapter 7:
+
+- clear script structure;
+- visible dependencies;
+- project-relative paths;
+- input checks;
+- data validation;
+- reusable code;
+- saved outputs;
+- light automation through R Markdown;
+- sustainable coding through reduced manual repetition.
+:::
+
+# 2. Setup
+
+```{r setup, include=FALSE}
+# Global chunk options control how code and output are displayed in the report.
+# Setting these once at the start keeps the document consistent.
+
+knitr::opts_chunk$set(
+  echo = TRUE,       # show code in the report
+  warning = FALSE,   # hide warnings from the final report
+  message = FALSE,   # hide package startup messages
+  fig.width = 8,
+  fig.height = 6
+)
+```
+
+# 3. Load packages
+
+```{r load_packages, include=TRUE}
+# In reproducible work, it is helpful to state clearly which packages are needed.
+# This avoids situations where code only works on one person's computer.
+#
+# This helper function is useful for teaching because it makes the script easier
+# to run on a new machine. For a real research project, a stronger approach is
+# to use renv to record exact package versions.
+
+load_or_install <- function(packages) {
+  missing_packages <- packages[!packages %in% installed.packages()[, "Package"]]
+  
+  if (length(missing_packages) > 0) {
+    install.packages(missing_packages)
+  }
+  
+  invisible(lapply(packages, library, character.only = TRUE))
+}
+
+# These are the packages used in this report.
+#
+# here         -> creates project-relative file paths
+# fs           -> works with folders and files, including creating directories
+# readr        -> useful for reading data files; included here as part of tidy workflows
+# dplyr        -> data manipulation
+# tibble       -> tidy table objects
+# ggplot2      -> plotting
+# gtsummary    -> descriptive summary tables
+# gt           -> formatting and saving tables
+# patchwork    -> combining multiple ggplots into one figure
+# RColorBrewer -> colour palettes for plots
+
+required_packages <- c(
+  "here",
+  "fs",
+  "readr",
+  "dplyr",
+  "tibble",
+  "ggplot2",
+  "gtsummary",
+  "gt",
+  "patchwork",
+  "RColorBrewer"
+)
+
+load_or_install(required_packages)
+```
+
+# 4. Define project folders
+
+```{r project_folders, include=TRUE}
+# One of the most common reproducibility problems is the use of absolute paths,
+# for example:
+# "C:/Users/name/Documents/project/data/file.csv"
+#
+# These paths usually only work on one computer.
+#
+# The 'here' package solves this by building paths relative to the project folder.
+# This means the project can be moved to another computer without rewriting paths,
+# as long as the folder structure remains the same.
+
+# In this teaching example, the input datasets are stored in outputs because they
+# were generated earlier in the workshop. In a full project, these might be stored
+# under data/processed or data/derived.
+
+data_dir <- here::here("outputs")
+figures_dir <- here::here("documents", "manuscript", "figures")
+tables_dir <- here::here("documents", "manuscript", "tables")
+
+# Create output folders if they do not already exist.
+# This avoids errors later when saving figures or tables.
+fs::dir_create(figures_dir)
+fs::dir_create(tables_dir)
+
+# Print the paths being used so they are visible in the report.
+data_dir
+figures_dir
+tables_dir
+```
+
+# 5. Import data
+
+## 5.1 Define the expected files
+
+```{r expected_files, include=TRUE}
+# Keeping file names together in one section makes the workflow easier to check
+# and update. It also makes the expected inputs explicit.
+
+input_files <- c(
+  "dataset_unique.rds",
+  "dataset_2018_unique.rds",
+  "dataset_2019_unique.rds",
+  "dataset_2020_unique.rds",
+  "dataset_2021_unique.rds",
+  "dataset_2022_unique.rds"
+)
+
+input_paths <- file.path(data_dir, input_files)
+input_paths
+```
+
+## 5.2 Check that files exist
+
+```{r check_files, include=TRUE}
+# Before reading files, check that they exist.
+# This is a simple but important validation step.
+# It is better to fail early with a clear message than to continue and produce
+# a confusing error later.
+
+missing_files <- input_paths[!file.exists(input_paths)]
+
+if (length(missing_files) > 0) {
+  stop(
+    "These required input files are missing:\n",
+    paste(missing_files, collapse = "\n")
+  )
+}
+```
+
+## 5.3 Read the main dataset
+
+```{r read_dataset, include=TRUE}
+# In this report, the main analyses use the combined dataset.
+# We read that file explicitly and give the object a clear, readable name.
+
+nursery_pm25_data <- readRDS(file.path(data_dir, "dataset_unique.rds"))
+```
+
+# 6. Basic data validation before analysis
+
+## 6.1 Check that the dataset is not empty
+
+```{r validation, include=TRUE}
+# A dataset with zero rows may still load successfully, but it cannot support analysis.
+
+if (nrow(nursery_pm25_data) == 0) {
+  stop("The dataset has 0 rows. Analysis cannot continue.")
+}
+
+nrow(nursery_pm25_data)
+```
+
+## 6.2 Check that required variables exist
+
+```{r variables_present, include=TRUE}
+# Define the variables needed for this report.
+# Writing them out explicitly makes assumptions visible.
+
+required_vars <- c(
+  "year",
+  "pm25",
+  "pm25_cat",
+  "pm25_int",
+  "idaci_q",
+  "ethnicity",
+  "ruc_nm",
+  "a_rd_ds_cat"
+)
+
+missing_vars <- setdiff(required_vars, names(nursery_pm25_data))
+
+if (length(missing_vars) > 0) {
+  stop(
+    "The dataset is missing these required variables: ",
+    paste(missing_vars, collapse = ", ")
+  )
+}
+
+required_vars
+```
+
+## 6.3 Check variable types
+
+```{r variable_types, include=TRUE}
+# Some variables need to be numeric because we summarise or plot them numerically.
+# If a variable has unexpectedly become character, that may indicate a data import
+# or recoding problem.
+
+if (!is.numeric(nursery_pm25_data$pm25)) {
+  stop("Variable 'pm25' must be numeric.")
+}
+
+# For this example, year can be numeric, integer, or factor.
+# It may be numeric in the raw/processed data and converted to factor for plotting.
+
+if (!is.numeric(nursery_pm25_data$year) &&
+    !is.integer(nursery_pm25_data$year) &&
+    !is.factor(nursery_pm25_data$year)) {
+  stop("Variable 'year' should be numeric, integer, or factor.")
+}
+
+# Show the classes of key variables.
+sapply(nursery_pm25_data[required_vars], class)
+```
+
+## 6.4 Check missingness
+
+```{r missingness, include=TRUE}
+# Missing data do not automatically invalidate an analysis,
+# but missingness should be understood and documented.
+
+missingness_summary <- tibble::tibble(
+  variable = required_vars,
+  n_missing = sapply(nursery_pm25_data[required_vars], function(x) sum(is.na(x))),
+  pct_missing = round(
+    sapply(nursery_pm25_data[required_vars], function(x) mean(is.na(x)) * 100),
+    2
+  )
+)
+
+missingness_summary
+```
+
+## 6.5 Check plausible values
+
+```{r plausible_values, include=TRUE}
+# Simple range checks can catch silent errors before they affect results.
+# The thresholds used here are illustrative. In real work, thresholds should be
+# justified using subject knowledge or documented data specifications.
+
+if (any(nursery_pm25_data$pm25 < 0, na.rm = TRUE)) {
+  stop("Negative PM2.5 values detected. Check exposure data.")
+}
+
+if (any(!nursery_pm25_data$year %in% 2018:2022, na.rm = TRUE)) {
+  stop("Unexpected year values detected. Expected years are 2018 to 2022.")
+}
+```
+
+# 7. Create Table S1
+
+```{r tableS1, include=TRUE}
+# gtsummary::tbl_summary() is useful for descriptive tables because it produces
+# publication-friendly output with relatively little code.
+#
+# We specify:
+# - the grouping variable ('by = year')
+# - the variables to include
+# - how continuous variables should be summarised
+# - labels that are more readable than raw variable names
+
+table_s1 <- nursery_pm25_data %>%
+  gtsummary::tbl_summary(
+    by = year,
+    include = c(pm25, pm25_cat, pm25_int, idaci_q, ethnicity, ruc_nm, a_rd_ds_cat),
+    type = all_continuous() ~ "continuous2",
+    statistic = all_continuous() ~ c(
+      "{N_nonmiss}",
+      "{mean} ({sd})",
+      "{min}",
+      "{median}",
+      "{max}",
+      "{p25} - {p75}"
+    ),
+    digits = all_continuous() ~ 2,
+    label = list(
+      pm25 = "PM2.5 annual mean concentration (µg/m³)",
+      pm25_cat = "PM2.5 WHO air quality guideline category",
+      pm25_int = "PM2.5 WHO air quality interim target category",
+      idaci_q = "Income Deprivation Affecting Children Index quintile",
+      ethnicity = "Ethnic composition",
+      ruc_nm = "Rural–urban area",
+      a_rd_ds_cat = "Distance to nearest A road (m)"
+    ),
+    missing = "ifany"
+  ) %>%
+  gtsummary::add_n() %>%
+  gtsummary::modify_header(label = "**Variable**") %>%
+  gtsummary::modify_spanning_header(everything() ~ "**Year**") %>%
+  gtsummary::bold_labels()
+
+table_s1
+```
+
+## 7.1 Save Table S1
+
+```{r save_table, include=TRUE}
+# Saving outputs is part of reproducibility.
+# It means the report not only shows the result, but also writes it to a
+# predictable location.
+
+table_s1_gt <- gtsummary::as_gt(table_s1)
+
+gt::gtsave(
+  data = table_s1_gt,
+  filename = file.path(tables_dir, "table_s1_pm25_summary.html")
+)
+```
+
+# 8. Prepare data for plotting
+
+```{r data_plots, include=TRUE}
+# It is often useful to prepare a specific plotting dataset.
+# Here we convert variables to factors so that ggplot treats them as categories.
+
+plot_data <- nursery_pm25_data %>%
+  dplyr::mutate(
+    year = factor(year, levels = 2018:2022),
+    idaci_q = factor(idaci_q),
+    ethnicity = factor(ethnicity),
+    ruc_nm = factor(ruc_nm),
+    a_rd_ds_cat = factor(a_rd_ds_cat)
+  )
+```
+
+# 9. Create a reusable plotting function
+
+```{r plot_function, include=TRUE}
+# Rather than repeating almost identical ggplot code several times,
+# we define one function that can be reused for different grouping variables.
+#
+# This improves:
+# - readability
+# - consistency across plots
+# - maintainability
+# - sustainability, because it avoids duplicated code and repeated manual edits.
+
+make_pm25_boxplot <- function(data, x_var, x_label, panel_label, x_labels = NULL) {
+  
+  plot_object <- ggplot2::ggplot(
+    data = data,
+    ggplot2::aes(
+      x = .data[[x_var]],
+      y = pm25,
+      fill = factor(year)
+    )
+  ) +
+    ggplot2::geom_boxplot(
+      outlier.color = "darkgrey",
+      color = "lightgrey",
+      size = 0.2
+    ) +
+    ggplot2::scale_fill_manual(
+      values = RColorBrewer::brewer.pal(5, "RdYlGn")
+    ) +
+    ggplot2::geom_hline(
+      yintercept = 10,
+      linetype = "dotted",
+      color = "darkgrey"
+    ) +
+    ggplot2::labs(
+      title = panel_label,
+      x = x_label,
+      y = "Annual mean concentration of PM2.5 (µg/m³)"
+    ) +
+    ggplot2::theme_minimal() +
+    ggplot2::theme(
+      plot.title = ggplot2::element_text(hjust = -0.1, size = 8),
+      axis.text = ggplot2::element_text(size = 8),
+      axis.title = ggplot2::element_text(size = 8),
+      strip.text = ggplot2::element_text(size = 8),
+      axis.text.x = ggplot2::element_text(angle = 45, hjust = 1),
+      legend.position = "none"
+    ) +
+    ggplot2::facet_wrap(~ year, nrow = 1, strip.position = "top")
+  
+  # Optional relabelling of x-axis categories.
+  # This is useful when the coded values in the data are less readable
+  # than the labels you want to show in the final figure.
+  if (!is.null(x_labels)) {
+    plot_object <- plot_object + ggplot2::scale_x_discrete(labels = x_labels)
+  }
+  
+  return(plot_object)
+}
+```
+
+# 10. Produce Figure 2 panels
+
+```{r figure_panel, include=TRUE}
+plot_idaci <- make_pm25_boxplot(
+  data = plot_data,
+  x_var = "idaci_q",
+  x_label = "IDACI quintile",
+  panel_label = "a)"
+)
+
+plot_ethnicity <- make_pm25_boxplot(
+  data = plot_data,
+  x_var = "ethnicity",
+  x_label = "Ethnicity",
+  panel_label = "b)",
+  x_labels = c("White", "Other")
+)
+
+plot_rural_urban <- make_pm25_boxplot(
+  data = plot_data,
+  x_var = "ruc_nm",
+  x_label = "Rural–urban classification",
+  panel_label = "c)",
+  x_labels = c("Rural", "Urban")
+)
+
+plot_road_distance <- make_pm25_boxplot(
+  data = plot_data,
+  x_var = "a_rd_ds_cat",
+  x_label = "Distance to A road (m)",
+  panel_label = "d)",
+  x_labels = c("≤200", "200–500", "≥500")
+)
+```
+
+# 11. Combine and show Figure 2
+
+```{r combine_figure2, include=TRUE}
+# patchwork allows several ggplots to be combined in a clear layout.
+
+figure_2 <- (plot_idaci | plot_ethnicity) / (plot_rural_urban | plot_road_distance)
+
+figure_2
+```
+
+# 12. Save Figure 2
+
+```{r save_figure, include=TRUE}
+figure_2_path <- file.path(figures_dir, "figure_2_pm25_boxplots.jpeg")
+
+ggplot2::ggsave(
+  filename = figure_2_path,
+  plot = figure_2,
+  device = "jpeg",
+  dpi = 600,
+  width = 8.27,
+  height = 11.69,
+  units = "in"
+)
+
+figure_2_path
+```
+
+# 13. Session information
+
+```{r session_info, include=TRUE}
+# Recording session information helps others understand the software environment
+# used to generate the report.
+
+sessionInfo()
+```
+
+# 14. What this workflow demonstrates
+
+This example demonstrates several reproducible coding practices:
+
+- packages are declared at the start;
+- folders are defined using project-relative paths;
+- required inputs are listed explicitly;
+- files are checked before import;
+- the dataset is validated before analysis;
+- missingness is summarised before interpretation;
+- similar plots are generated using a reusable function;
+- tables and figures are saved automatically;
+- the report itself provides a record of the workflow;
+- session information is recorded for transparency.
+
+It also demonstrates sustainable coding: the workflow avoids unnecessary manual repetition, reduces the risk of late errors, and makes rerunning the analysis more reliable.

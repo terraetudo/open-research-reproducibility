@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Research &amp; Reproducibility - Chapter 4 — Data Management Plans (UCL)</title>
+<title>Open Research &amp; Reproducibility - Chapter 4 — Data Management Plans</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,11 +62,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -84,19 +84,47 @@ div.csl-indent {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-dmp.html"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-dmp.html"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -106,14 +134,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -123,62 +146,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,13 +209,63 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-4" id="toc-chapter-4" class="nav-link active" data-scroll-target="#chapter-4">Chapter 4</a>
+  <ul class="collapse">
+  <li><a href="#data-management-plans-as-living-documents" id="toc-data-management-plans-as-living-documents" class="nav-link" data-scroll-target="#data-management-plans-as-living-documents">Data Management Plans as living documents</a></li>
+  </ul></li>
+  <li><a href="#what-this-chapter-does" id="toc-what-this-chapter-does" class="nav-link" data-scroll-target="#what-this-chapter-does">What this chapter does</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#what-is-a-dmp" id="toc-what-is-a-dmp" class="nav-link" data-scroll-target="#what-is-a-dmp">What is a DMP?</a></li>
+  <li><a href="#a-dmp-is-the-agreement-the-project-structure-is-the-implementation" id="toc-a-dmp-is-the-agreement-the-project-structure-is-the-implementation" class="nav-link" data-scroll-target="#a-dmp-is-the-agreement-the-project-structure-is-the-implementation">A DMP is the agreement; the project structure is the implementation</a></li>
+  <li><a href="#why-dmps-matter" id="toc-why-dmps-matter" class="nav-link" data-scroll-target="#why-dmps-matter">Why DMPs matter</a></li>
+  <li><a href="#a-dmp-is-a-living-document" id="toc-a-dmp-is-a-living-document" class="nav-link" data-scroll-target="#a-dmp-is-a-living-document">A DMP is a living document</a></li>
+  <li><a href="#what-a-dmp-should-usually-cover" id="toc-what-a-dmp-should-usually-cover" class="nav-link" data-scroll-target="#what-a-dmp-should-usually-cover">What a DMP should usually cover</a>
+  <ul class="collapse">
+  <li><a href="#data-collection-or-reuse" id="toc-data-collection-or-reuse" class="nav-link" data-scroll-target="#data-collection-or-reuse">1. Data collection or reuse</a></li>
+  <li><a href="#storage-and-security" id="toc-storage-and-security" class="nav-link" data-scroll-target="#storage-and-security">2. Storage and security</a></li>
+  <li><a href="#organisation-and-documentation" id="toc-organisation-and-documentation" class="nav-link" data-scroll-target="#organisation-and-documentation">3. Organisation and documentation</a></li>
+  <li><a href="#ethics-governance-and-legal-constraints" id="toc-ethics-governance-and-legal-constraints" class="nav-link" data-scroll-target="#ethics-governance-and-legal-constraints">4. Ethics, governance and legal constraints</a></li>
+  <li><a href="#sharing-access-and-archiving" id="toc-sharing-access-and-archiving" class="nav-link" data-scroll-target="#sharing-access-and-archiving">5. Sharing, access and archiving</a></li>
+  <li><a href="#roles-and-responsibilities" id="toc-roles-and-responsibilities" class="nav-link" data-scroll-target="#roles-and-responsibilities">6. Roles and responsibilities</a></li>
+  </ul></li>
+  <li><a href="#roles-and-accountability" id="toc-roles-and-accountability" class="nav-link" data-scroll-target="#roles-and-accountability">Roles and accountability</a></li>
+  <li><a href="#data-description-organisation-and-governance" id="toc-data-description-organisation-and-governance" class="nav-link" data-scroll-target="#data-description-organisation-and-governance">Data description, organisation and governance</a></li>
+  <li><a href="#responsible-sharing-does-not-mean-sharing-everything" id="toc-responsible-sharing-does-not-mean-sharing-everything" class="nav-link" data-scroll-target="#responsible-sharing-does-not-mean-sharing-everything">Responsible sharing does not mean sharing everything</a>
+  <ul class="collapse">
+  <li><a href="#avoid-vague-statements" id="toc-avoid-vague-statements" class="nav-link" data-scroll-target="#avoid-vague-statements">Avoid vague statements</a></li>
+  </ul></li>
+  <li><a href="#sensitive-restricted-and-high-risk-data" id="toc-sensitive-restricted-and-high-risk-data" class="nav-link" data-scroll-target="#sensitive-restricted-and-high-risk-data">Sensitive, restricted and high-risk data</a></li>
+  <li><a href="#planning-for-derived-and-intermediate-data" id="toc-planning-for-derived-and-intermediate-data" class="nav-link" data-scroll-target="#planning-for-derived-and-intermediate-data">Planning for derived and intermediate data</a></li>
+  <li><a href="#what-assessors-and-reviewers-look-for" id="toc-what-assessors-and-reviewers-look-for" class="nav-link" data-scroll-target="#what-assessors-and-reviewers-look-for">What assessors and reviewers look for</a></li>
+  <li><a href="#ucl-resources-and-support" id="toc-ucl-resources-and-support" class="nav-link" data-scroll-target="#ucl-resources-and-support">UCL resources and support</a></li>
+  <li><a href="#activity-review-a-dmp-as-a-decision-record" id="toc-activity-review-a-dmp-as-a-decision-record" class="nav-link" data-scroll-target="#activity-review-a-dmp-as-a-decision-record">Activity: review a DMP as a decision record</a>
+  <ul class="collapse">
+  <li><a href="#individual-reflection-or-small-group-discussion" id="toc-individual-reflection-or-small-group-discussion" class="nav-link" data-scroll-target="#individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</a></li>
+  </ul></li>
+  <li><a href="#activity-constraints-and-access" id="toc-activity-constraints-and-access" class="nav-link" data-scroll-target="#activity-constraints-and-access">Activity: constraints and access</a>
+  <ul class="collapse">
+  <li><a href="#make-restrictions-visible" id="toc-make-restrictions-visible" class="nav-link" data-scroll-target="#make-restrictions-visible">Make restrictions visible</a></li>
+  </ul></li>
+  <li><a href="#recommended-resources-for-this-chapter" id="toc-recommended-resources-for-this-chapter" class="nav-link" data-scroll-target="#recommended-resources-for-this-chapter">Recommended resources for this chapter</a>
+  <ul class="collapse">
+  <li><a href="#dmp-guidance-and-templates" id="toc-dmp-guidance-and-templates" class="nav-link" data-scroll-target="#dmp-guidance-and-templates">DMP guidance and templates</a></li>
+  </ul></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What comes next?</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/04-dmp.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></h1>
+<h1 class="title"><span class="chapter-title">Chapter 4 — Data Management Plans</span></h1>
 </div>
 
 
@@ -217,160 +280,537 @@ div.csl-indent {
 
 </header>
 
-<section id="sec-dmp" class="level1">
-<h1>Data Management Plans (DMPs)</h1>
+<section id="chapter-4" class="level1 chapter-hero">
+<h1>Chapter 4</h1>
+<section id="data-management-plans-as-living-documents" class="level2">
+<h2 class="anchored" data-anchor-id="data-management-plans-as-living-documents">Data Management Plans as living documents</h2>
+<p>A Data Management Plan is not just a funder form. It is the written record of what data will be used, how they will be protected, what can be shared, what cannot be shared, and who is responsible.</p>
+</section>
+</section>
+<section id="what-this-chapter-does" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="what-this-chapter-does">What this chapter does</h3>
+<p>This chapter explains how to use a Data Management Plan (DMP) as a practical planning and accountability tool. It focuses on the decisions that need to be made and recorded, rather than repeating the everyday folder and file practices covered in <a href="./03-project-mgmt.html">Chapter 3</a>.</p>
+<p>The chapter is UCL-aware, but the principles apply more widely. The aim is to help you write or review a DMP that is proportionate, realistic and useful throughout the project lifecycle.</p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you should be able to:</p>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>explain the purpose of a Data Management Plan beyond funder compliance;</li>
+<li>explain the purpose of a DMP beyond compliance;</li>
 <li>recognise a DMP as a living record of decisions;</li>
-<li>distinguish data description from data governance;</li>
-<li>identify proportionate planning actions for different data types;</li>
-<li>locate UCL guidance, templates, and support for DMPs.</li>
+<li>identify the main areas a DMP should cover;</li>
+<li>distinguish data description, data organisation and data governance;</li>
+<li>record roles and responsibilities in a way that supports accountability;</li>
+<li>explain how DMPs support FAIR, responsible sharing and later reuse;</li>
+<li>locate UCL and external resources for drafting or reviewing a DMP.</li>
 </ul>
-<p>This module builds on FAIR principles <a href="./02-fair-basics.html">Chapter 2: FAIR basics</a> and project organisation <a href="./03-project-mgmt.html">Chapter 3 - Project organisation and continuity</a>. It prepares you for practical data handling and documentation in later chapters. At UCL, DMPs are structured around six core areas: data collection, storage and security, archiving and preservation, discovery and access, metadata, and roles and responsibilities.</p>
-<p>This chapter focuses on <strong>what a DMP must commit to</strong> and <strong>how assessors interpret it</strong>. Chapters 5–7 cover implementation in practice (data organisation, documentation, and code), and Chapter 9 covers automation and workflows.</p>
-<hr>
+<p>This chapter builds on <a href="./02-fair-basics.html">Chapter 2: FAIR basics</a> and <a href="./03-project-mgmt.html">Chapter 3: Project organisation and continuity</a>. Chapter 5 then moves to the internal structure and quality of data files.</p>
 </section>
-<section id="what-a-dmp-is-and-is-not" class="level2">
-<h2 class="anchored" data-anchor-id="what-a-dmp-is-and-is-not">What a DMP is (and is not)</h2>
-<p>A Data Management Plan describes how data will be<span class="citation" data-cites="turingway_dmp2025 michener2015ten miksa2019ten"><sup><a href="#ref-turingway_dmp2025" role="doc-biblioref">1</a>–<a href="#ref-miksa2019ten" role="doc-biblioref">3</a></sup></span>:</p>
+<section id="what-is-a-dmp" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-dmp">What is a DMP?</h2>
+<p>A Data Management Plan records how research data and related materials will be managed during and after a project. It usually covers what data will be collected or reused, how they will be stored and protected, how they will be documented, what will be shared or archived, what restrictions apply, and who is responsible.</p>
+<p>A DMP is not a promise that nothing will change. It is a record of the best current plan, with enough detail to show that data management has been thought through. A strong DMP is updated when the project changes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A DMP records decisions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A useful DMP should answer:</p>
 <ul>
-<li>created or collected;</li>
-<li>stored, documented, and protected;</li>
-<li>retained, shared, or archived.</li>
+<li><strong>what</strong> data will be collected, created or reused;</li>
+<li><strong>how</strong> data will be organised, stored and protected;</li>
+<li><strong>who</strong> is responsible for key decisions and tasks;</li>
+<li><strong>what</strong> will be shared, archived or restricted;</li>
+<li><strong>why</strong> restrictions apply;</li>
+<li><strong>under what conditions</strong> data, metadata, code or documentation can be accessed.</li>
 </ul>
-<p>This includes describing what data and materials will be collected or reused, how they are generated, and which data types are in scope. A DMP is <strong>not</strong> a guarantee that plans will not change. Instead, it provides a transparent record of <em>current intentions and decisions</em>. Funders expect data management, storage, curation, and sharing to be explicitly resourced and costed, not treated as overhead.</p>
-<p>Different data types (e.g.&nbsp;sensitive identifiers, geospatial data, qualitative materials, imaging, code/software outputs) require different levels of governance, documentation, and retention detail. The DMP should reflect this <strong>proportionately</strong>, without over-specifying implementation.</p>
-<p>Where AI or machine-learning tools are used for data processing or analysis, the DMP should record what tools are used, how outputs are generated, and what can be documented or shared (e.g.&nbsp;model version, prompts, training data constraints), without over-committing to full reproducibility where this is infeasible.</p>
-<p>Where patient or public contributors are involved, DMPs should reflect any implications for data access, consent, governance, and communication of outputs, even where contributors do not access raw data.</p>
+</div>
+</div>
 </section>
-<section id="dmps-as-decision-records" class="level2">
-<h2 class="anchored" data-anchor-id="dmps-as-decision-records">DMPs as decision records</h2>
-<p>Good DMPs document decisions made under uncertainty, including:</p>
-<ul>
-<li>what will happen <em>if</em> data cannot be shared openly;</li>
-<li>how access will be managed under different scenarios;</li>
-<li>who is responsible for data stewardship over time;</li>
-<li>how data will be discovered, accessed, or requested, including where metadata will remain available even when access is restricted.</li>
-</ul>
-<p>Updating a DMP is good practice, not a failure of planning.</p>
+<section id="a-dmp-is-the-agreement-the-project-structure-is-the-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="a-dmp-is-the-agreement-the-project-structure-is-the-implementation">A DMP is the agreement; the project structure is the implementation</h2>
+<p>Chapter 3 focused on the practical structure of a project: folders, file names, raw-data protection, versioning and README files. A DMP sits one level above this. It explains the decisions and responsibilities behind those practices.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>DMP decision</th>
+<th>Where it appears in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data source and permissions</td>
+<td>DMP, ethics/governance documents, README</td>
+</tr>
+<tr class="even">
+<td>Storage and access controls</td>
+<td>Approved secure drive, TRE, institutional storage, access log</td>
+</tr>
+<tr class="odd">
+<td>Raw-data protection</td>
+<td>Read-only raw-data folder or secure source location</td>
+</tr>
+<tr class="even">
+<td>Documentation requirements</td>
+<td>README, metadata, data dictionary, codebook</td>
+</tr>
+<tr class="odd">
+<td>Versioning and provenance</td>
+<td>Changelog, scripted workflows, archived releases</td>
+</tr>
+<tr class="even">
+<td>Sharing and reuse constraints</td>
+<td>Data access statement, repository record, licence, access conditions</td>
+</tr>
+<tr class="odd">
+<td>Retention and archiving</td>
+<td>Institutional policy, funder requirements, repository deposit</td>
+</tr>
+</tbody>
+</table>
+<p>The DMP does not need to contain every detail of the folder structure. It should state the principles, locations, responsibilities and restrictions clearly enough that the project team can implement them consistently.</p>
 </section>
-<section id="data-description-vs-data-governance" class="level2">
-<h2 class="anchored" data-anchor-id="data-description-vs-data-governance">Data description vs data governance</h2>
-<p>It is useful to separate two related but distinct elements:</p>
+<section id="why-dmps-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-dmps-matter">Why DMPs matter</h2>
+<p>DMPs are often introduced as funder or institutional requirements, but their practical value is broader. A good DMP helps a team avoid late-stage uncertainty about storage, access, sharing, retention, responsibilities and costs.</p>
+<p>DMPs are useful because they:</p>
 <ul>
-<li><strong>Data description</strong>: what the data are, how they are structured, formats used, and how they are documented.</li>
-<li><strong>Data governance</strong>: who can access the data, under what conditions, how consent and approvals apply, and how storage, security, and backup responsibilities are defined, even if technical implementation is handled elsewhere.</li>
+<li>make data-related decisions explicit;</li>
+<li>support ethical and legal compliance;</li>
+<li>reduce ambiguity about access and responsibilities;</li>
+<li>make FAIR planning more concrete;</li>
+<li>help identify what needs to be documented or archived;</li>
+<li>support handover when staff, students or collaborators change;</li>
+<li>reduce last-minute work at publication or project close;</li>
+<li>provide evidence that risks and restrictions have been considered.</li>
 </ul>
-<p>Keeping these elements distinct improves clarity and supports both FAIR practice and ethical compliance. DMPs are also expected to describe how metadata will be created, maintained, and reviewed over time, without requiring field-level standards to be specified at this stage.</p>
-<hr>
+<p>DMPonline provides a widely used platform for creating, reviewing and sharing DMPs that align with institutional and funder expectations<span class="citation" data-cites="dmponlineDcc"><sup><a href="#ref-dmponlineDcc" role="doc-biblioref">1</a></sup></span>. The Digital Curation Centre also provides guidance and examples across research contexts<span class="citation" data-cites="dccDmpGuidanceExamples"><sup><a href="#ref-dccDmpGuidanceExamples" role="doc-biblioref">2</a></sup></span>.</p>
 </section>
-<section id="what-assessors-look-for-in-a-good-dmp" class="level2">
-<h2 class="anchored" data-anchor-id="what-assessors-look-for-in-a-good-dmp">What assessors look for in a good DMP</h2>
-<p>When reviewing a Data Management Plan, assessors are not looking for technical detail for its own sake. Instead, they look for evidence that data management has been <strong>thought through</strong>, is <strong>feasible</strong>, and is <strong>proportionate to the project context</strong>.</p>
-<p>Strong DMPs typically demonstrate:</p>
+<section id="a-dmp-is-a-living-document" class="level2">
+<h2 class="anchored" data-anchor-id="a-dmp-is-a-living-document">A DMP is a living document</h2>
+<p>A weak DMP is written once and then forgotten. A useful DMP is revisited as the project develops.</p>
+<p>The plan may need updating when:</p>
 <ul>
-<li>clarity about what data will be created or used;</li>
-<li>realistic plans for documentation, storage, and preservation;</li>
-<li>awareness of ethical, legal, and contractual constraints;</li>
-<li>alignment between stated plans and the way the project is organised in practice;</li>
-<li>named responsibility for data stewardship during the project and after staff or funding end.</li>
+<li>a new data source is added;</li>
+<li>data volume, format or sensitivity changes;</li>
+<li>access conditions change;</li>
+<li>new collaborators join;</li>
+<li>a student or staff member leaves;</li>
+<li>ethics, governance or contractual approvals change;</li>
+<li>derived datasets or outputs become important;</li>
+<li>analysis moves from exploratory to final;</li>
+<li>the project prepares for publication, archiving or closure.</li>
 </ul>
-<p>Vague or generic statements are a common reason for weak DMP assessments.</p>
-<hr>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Updating a DMP is good practice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Changing a DMP is not a failure. It is evidence that the plan is being used as a working document rather than a static compliance exercise.</p>
+</div>
+</div>
 </section>
-<section id="mapping-good-project-practice-to-dmp-sections" class="level2">
-<h2 class="anchored" data-anchor-id="mapping-good-project-practice-to-dmp-sections">Mapping good project practice to DMP sections</h2>
-<p>Many elements of a strong DMP directly reflect good internal project organisation. The table below illustrates this alignment.</p>
-<p>Use this mapping to check that the DMP reflects plausible working practice. It reassures assessors that statements correspond to real practices, but you do <strong>not</strong> need to duplicate implementation detail in the DMP.</p>
+<section id="what-a-dmp-should-usually-cover" class="level2">
+<h2 class="anchored" data-anchor-id="what-a-dmp-should-usually-cover">What a DMP should usually cover</h2>
+<p>Different templates vary, but most DMPs cover the same broad areas. UCL’s research data management guidance and DMP template provide local support for these issues<span class="citation" data-cites="uclRdmHub uclDmpTemplate uclManagingData"><sup><a href="#ref-uclRdmHub" role="doc-biblioref">3</a>–<a href="#ref-uclManagingData" role="doc-biblioref">5</a></sup></span>. External guidance from the UK Data Service, Oxford, ELIXIR and ARDC can also help interpret what good answers look like in practice<span class="citation" data-cites="ukdsChecklist oxfordDmpTemplate elixirDmp ardcDmp"><sup><a href="#ref-ukdsChecklist" role="doc-biblioref">6</a>–<a href="#ref-ardcDmp" role="doc-biblioref">9</a></sup></span>.</p>
+<section id="data-collection-or-reuse" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection-or-reuse">1. Data collection or reuse</h3>
+<p>Describe what data will be collected, created or reused.</p>
+<p>Include:</p>
 <ul>
-<li><p><strong>Project folder structure</strong><br>
-→ DMP sections should state how data organisation and workflow separation will be handled (e.g., raw vs derived; storage locations).</p></li>
-<li><p><strong>README files and codebooks</strong><br>
-→ DMP sections should state what documentation artefacts will exist and who maintains them.</p></li>
-<li><p><strong>Structured metadata</strong><br>
-→ DMP sections should state how metadata will be captured, updated, and kept available (including when data access is restricted).</p></li>
-<li><p><strong>Versioning and change logs</strong><br>
-→ DMP sections should state how changes to data, code, and outputs will be tracked (tool-agnostic).</p></li>
+<li>type of data, such as survey data, interviews, sensor data, administrative data, geospatial data, code, images or derived measures;</li>
+<li>approximate scale, such as number of participants, files, records, variables or expected storage size;</li>
+<li>whether the data are new, reused, purchased, linked or obtained from a partner;</li>
+<li>whether the data contain personal, sensitive, confidential or commercially restricted information;</li>
+<li>what permissions, approvals or agreements are needed.</li>
 </ul>
-<p>Making this alignment explicit reassures assessors that the DMP reflects real working practices rather than aspirational statements.</p>
-<hr>
+<p>For secondary data or linked administrative data, the DMP should make clear who owns or controls access to the source data and what restrictions apply.</p>
+</section>
+<section id="storage-and-security" class="level3">
+<h3 class="anchored" data-anchor-id="storage-and-security">2. Storage and security</h3>
+<p>Describe where data will be stored during the project and how access will be controlled.</p>
+<p>Include:</p>
+<ul>
+<li>approved storage locations;</li>
+<li>backup arrangements;</li>
+<li>access controls and permissions;</li>
+<li>encryption or secure transfer where needed;</li>
+<li>whether data will be held in a trusted research environment or secure setting;</li>
+<li>who can access identifiable, sensitive or restricted data;</li>
+<li>what happens when staff or students leave the project.</li>
+</ul>
+<p>Avoid vague statements such as “data will be stored securely” unless you specify where, how and by whom.</p>
+</section>
+<section id="organisation-and-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="organisation-and-documentation">3. Organisation and documentation</h3>
+<p>Describe how the data and related materials will be organised and documented.</p>
+<p>Include:</p>
+<ul>
+<li>where project conventions are documented;</li>
+<li>what README files, data dictionaries, codebooks or metadata will be created;</li>
+<li>how raw, derived and final data will be distinguished;</li>
+<li>how versions and changes will be tracked;</li>
+<li>how software, code or workflow dependencies will be recorded;</li>
+<li>what documentation is needed for reuse or handover.</li>
+</ul>
+<p>The details of folder structure and file naming are covered in Chapter 3. In the DMP, the key point is to record that conventions exist and where they can be found.</p>
+</section>
+<section id="ethics-governance-and-legal-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="ethics-governance-and-legal-constraints">4. Ethics, governance and legal constraints</h3>
+<p>Describe the ethical, legal and contractual conditions that shape data management.</p>
+<p>Include:</p>
+<ul>
+<li>ethics approvals;</li>
+<li>consent conditions;</li>
+<li>data-sharing or data-processing agreements;</li>
+<li>information governance requirements;</li>
+<li>data protection considerations;</li>
+<li>intellectual property or commercial restrictions;</li>
+<li>partner or funder conditions;</li>
+<li>limits on international transfer or external access.</li>
+</ul>
+<p>This is especially important for projects using personal data, NHS data, administrative records, schools data, environmental data linked to individuals, or commercially provided datasets.</p>
+</section>
+<section id="sharing-access-and-archiving" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-access-and-archiving">5. Sharing, access and archiving</h3>
+<p>Describe what will happen to data and related outputs at the end of the project.</p>
+<p>Include:</p>
+<ul>
+<li>what data, code, metadata, documentation or materials will be shared;</li>
+<li>what cannot be shared and why;</li>
+<li>where outputs will be archived or deposited;</li>
+<li>whether a repository can issue a persistent identifier;</li>
+<li>what access conditions will apply;</li>
+<li>what licence will be used where appropriate;</li>
+<li>what will be retained internally and for how long.</li>
+</ul>
+<p>A good DMP distinguishes between <strong>open access</strong>, <strong>controlled access</strong>, <strong>restricted access</strong>, and <strong>metadata-only records</strong>. Sensitive or restricted data may still have public metadata, a data access statement, preserved code, synthetic examples or clear access conditions.</p>
+</section>
+<section id="roles-and-responsibilities" class="level3">
+<h3 class="anchored" data-anchor-id="roles-and-responsibilities">6. Roles and responsibilities</h3>
+<p>Describe who is responsible for key data management tasks and who has authority to make decisions.</p>
+<p>This should cover responsibility across the lifecycle: data collection or receipt, storage, cleaning, documentation, analysis, sharing, archiving and project closure.</p>
+<p>A DMP should not leave responsibility implicit. If responsibility is unclear, tasks tend to be missed or assumed to belong to someone else.</p>
+</section>
+</section>
+<section id="roles-and-accountability" class="level2">
+<h2 class="anchored" data-anchor-id="roles-and-accountability">Roles and accountability</h2>
+<p>Roles are often where good intentions fail. A project may state that data will be documented, archived or shared, but unless someone is responsible for ensuring this happens, the plan may not be implemented.</p>
+<p>A simple responsibility matrix can help.</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Responsible</th>
+<th>Accountable</th>
+<th>Consulted</th>
+<th>Informed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data storage and security</td>
+<td>Data manager / analyst</td>
+<td>PI or project lead</td>
+<td>IT / RDM support</td>
+<td>Project team</td>
+</tr>
+<tr class="even">
+<td>README, metadata and codebook</td>
+<td>Researcher / analyst</td>
+<td>Project lead</td>
+<td>Collaborators</td>
+<td>Project team</td>
+</tr>
+<tr class="odd">
+<td>Code development and review</td>
+<td>Analyst / data scientist</td>
+<td>Project lead</td>
+<td>Methodologists / collaborators</td>
+<td>Project team</td>
+</tr>
+<tr class="even">
+<td>Ethics and governance compliance</td>
+<td>Project lead</td>
+<td>PI / institution</td>
+<td>Data protection officer / governance team</td>
+<td>Project team</td>
+</tr>
+<tr class="odd">
+<td>Data sharing and archiving</td>
+<td>Data steward / researcher</td>
+<td>Project lead</td>
+<td>Library / repository staff</td>
+<td>Project team</td>
+</tr>
+</tbody>
+</table>
+<p>You do not need a formal RACI table for every project. The principle is that responsibilities should be visible and realistic. For small projects, a short section in the DMP may be enough. For larger projects, a matrix can prevent confusion.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsibility is not an event
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Responsibility is not only ethics approval, governance forms or compliance training. It is also everyday decisions: what can be shared, what cannot be shared, why, under what conditions, and who has authority to decide.</p>
+</div>
+</div>
+</section>
+<section id="data-description-organisation-and-governance" class="level2">
+<h2 class="anchored" data-anchor-id="data-description-organisation-and-governance">Data description, organisation and governance</h2>
+<p>A common weakness in DMPs is mixing three different questions.</p>
+<div class="definition-grid">
+<section id="description" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="description">Description</h3>
+<p>What data exist? What do they contain? Where did they come from? What do variables, codes and files mean?</p>
+</section>
+<section id="organisation" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="organisation">Organisation</h3>
+<p>Where are the files? How are they named? How are raw, derived and output files separated? How are versions tracked?</p>
+</section>
+<section id="governance" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="governance">Governance</h3>
+<p>Who is allowed to access the data? Under what approvals, restrictions, agreements or legal conditions?</p>
+</section>
+</div>
+<p>A good DMP connects all three. It does not need to include every technical detail, but it should point to where the details are recorded.</p>
+</section>
+<section id="responsible-sharing-does-not-mean-sharing-everything" class="level2">
+<h2 class="anchored" data-anchor-id="responsible-sharing-does-not-mean-sharing-everything">Responsible sharing does not mean sharing everything</h2>
+<p>Responsible sharing means making clear what can be shared, what cannot be shared, and why. This is especially important for sensitive or restricted data.</p>
+<p>A DMP should distinguish between:</p>
+<ul>
+<li>data that can be made openly available;</li>
+<li>data that can be shared under controlled access;</li>
+<li>metadata that can be published even when data cannot;</li>
+<li>code that can be shared using synthetic or simulated data;</li>
+<li>documentation that can be shared without disclosing confidential information;</li>
+<li>outputs that must remain internal because of consent, governance, legal or contractual constraints.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Open does not always mean public
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For sensitive or restricted data, good data management may mean discoverable metadata, clear access conditions, preserved documentation, data access statements and secure governance — not public release of the data themselves.</p>
+</div>
+</div>
+<section id="avoid-vague-statements" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-vague-statements">Avoid vague statements</h3>
+<p>Weak:</p>
+<blockquote class="blockquote">
+<p>Data cannot be shared due to confidentiality.</p>
+</blockquote>
+<p>Stronger:</p>
+<blockquote class="blockquote">
+<p>Individual-level data cannot be made openly available because they contain personal information and are subject to data provider and ethics restrictions. A metadata record, data dictionary, analysis code where possible, and a data access statement will be made available. Requests for access must be directed to [data controller/repository/access committee], subject to approval.</p>
+</blockquote>
+<p>The stronger version is more useful because it explains the restriction and identifies what <em>can</em> be shared.</p>
+</section>
+</section>
+<section id="sensitive-restricted-and-high-risk-data" class="level2">
+<h2 class="anchored" data-anchor-id="sensitive-restricted-and-high-risk-data">Sensitive, restricted and high-risk data</h2>
+<p>Some projects require more detailed planning because the risk is higher. Examples include:</p>
+<ul>
+<li>personal or identifiable data;</li>
+<li>linked administrative data;</li>
+<li>health, education or social care records;</li>
+<li>qualitative data where participants may be identifiable;</li>
+<li>geospatial data that could reveal sensitive locations;</li>
+<li>data subject to commercial licence or data provider agreements;</li>
+<li>Indigenous, community-controlled or culturally sensitive data;</li>
+<li>data involving children or vulnerable groups.</li>
+</ul>
+<p>For these projects, the DMP should be explicit about:</p>
+<ul>
+<li>access controls;</li>
+<li>de-identification or pseudonymisation;</li>
+<li>linkage and separation of identifiers;</li>
+<li>secure transfer;</li>
+<li>approved storage environments;</li>
+<li>retention and destruction;</li>
+<li>review of outputs before release;</li>
+<li>what happens at the end of the project;</li>
+<li>who has authority to approve sharing.</li>
+</ul>
 </section>
 <section id="planning-for-derived-and-intermediate-data" class="level2">
 <h2 class="anchored" data-anchor-id="planning-for-derived-and-intermediate-data">Planning for derived and intermediate data</h2>
-<p>DMPs should consider not only final datasets, but also:</p>
+<p>DMPs often describe the original data but say less about derived data. This can be a problem because derived files are often the files used in analysis and publication.</p>
+<p>Ask:</p>
 <ul>
-<li>derived datasets created during analysis;</li>
-<li>intermediate files produced by scripts or workflows;</li>
-<li>which data will be retained, archived, or discarded.</li>
+<li>Will the project create cleaned datasets?</li>
+<li>Will records be linked across sources?</li>
+<li>Will exposures, indices, scores or classifications be derived?</li>
+<li>Will geospatial buffers, linkage keys, lookup tables or model outputs be generated?</li>
+<li>Which derived files need to be preserved?</li>
+<li>Which derived files can be regenerated from code?</li>
+<li>Which derived files are sensitive even if they no longer contain obvious identifiers?</li>
 </ul>
-<p>These decisions directly inform the archiving, preservation, and curation plans described in the DMP, including what will be retained beyond the active life of the project.</p>
-<p>Chapter 5 covers how to structure and document data states and provenance in practice. In the DMP, focus on recording what you intend to retain, under what conditions, and why.</p>
-<hr>
+<p>For reproducibility, the key issue is whether derived data can be traced back to the source data and code that created them.</p>
 </section>
-<section id="sustainability-and-proportionality" class="level2">
-<h2 class="anchored" data-anchor-id="sustainability-and-proportionality">Sustainability and proportionality</h2>
-<p>Planning data management also has environmental implications.</p>
-<p>DMPs should justify proportionate storage, retention, and compute plans in a way that supports reproducibility without unnecessary resource use. Practical options and examples are signposted in the <a href="./resources.html">Resources and Further Reading</a> chapter.</p>
-<hr>
-</section>
-<section id="dmp-support-at-ucl" class="level2">
-<h2 class="anchored" data-anchor-id="dmp-support-at-ucl">DMP support at UCL</h2>
-<p>UCL provides:</p>
+<section id="what-assessors-and-reviewers-look-for" class="level2">
+<h2 class="anchored" data-anchor-id="what-assessors-and-reviewers-look-for">What assessors and reviewers look for</h2>
+<p>When DMPs are reviewed by funders, institutions, supervisors or collaborators, the strongest plans are usually:</p>
 <ul>
-<li>an institutional DMP template;</li>
-<li>Research Data Management guidance;</li>
-<li>support via Library Services and specialist teams.</li>
+<li>specific rather than generic;</li>
+<li>proportionate to project risk;</li>
+<li>realistic about staffing and resources;</li>
+<li>explicit about sensitive data and constraints;</li>
+<li>clear about who is responsible;</li>
+<li>clear about what will be shared and what will not;</li>
+<li>connected to FAIR principles;</li>
+<li>updated when circumstances change.</li>
 </ul>
-<p>Relevant links, templates, and contacts are collated in the <a href="./resources.html">Resources and Further Reading</a> chapter (see <strong>Data Management Plans</strong> in Resources) to keep this module focused on principles rather than policy detail.</p>
-<hr>
+<p>A DMP does not need to be long to be good. It needs to be clear, truthful and usable.</p>
 </section>
-<section id="practical-prompts-when-drafting-a-dmp" class="level2">
-<h2 class="anchored" data-anchor-id="practical-prompts-when-drafting-a-dmp">Practical prompts when drafting a DMP</h2>
-<p>In practice, effective DMPs often make the following points explicit:</p>
+<section id="ucl-resources-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="ucl-resources-and-support">UCL resources and support</h2>
+<p>For UCL projects, start with UCL’s research data management guidance and the current UCL DMP template<span class="citation" data-cites="uclRdmHub uclDmpTemplate"><sup><a href="#ref-uclRdmHub" role="doc-biblioref">3</a>,<a href="#ref-uclDmpTemplate" role="doc-biblioref">4</a></sup></span>. UCL guidance on managing data across the research lifecycle is also relevant for planning, storage, sharing and retention<span class="citation" data-cites="uclManagingData"><sup><a href="#ref-uclManagingData" role="doc-biblioref">5</a></sup></span>. UCL also provides guidance on interdisciplinary data management planning<span class="citation" data-cites="uclResearchDataPlanning"><sup><a href="#ref-uclResearchDataPlanning" role="doc-biblioref">10</a></sup></span>.</p>
+<p>DMPonline can help create plans aligned with institutional and funder requirements<span class="citation" data-cites="dmponlineDcc"><sup><a href="#ref-dmponlineDcc" role="doc-biblioref">1</a></sup></span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use local support early
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the project involves sensitive data, external data providers, linkage, controlled access, NHS or school data, or long-term archiving, involve research data management, information governance, ethics and library support early. It is much easier to design a workable plan at the start than to repair gaps at publication or close-down.</p>
+</div>
+</div>
+</section>
+<section id="activity-review-a-dmp-as-a-decision-record" class="level2">
+<h2 class="anchored" data-anchor-id="activity-review-a-dmp-as-a-decision-record">Activity: review a DMP as a decision record</h2>
+<section id="individual-reflection-or-small-group-discussion" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</h3>
+<p>Choose one current or recent project. Imagine you are reviewing the DMP.</p>
+<p>Ask:</p>
 <ul>
-<li>what data types, formats, and volumes are in scope (and what is out of scope);</li>
-<li>likely access and sharing constraints, and how these will be managed;</li>
-<li>who is responsible for data stewardship during the project and after staff turnover;</li>
-<li>when the DMP will be reviewed and updated (e.g., start-up, mid-project, pre-publication, project end).</li>
+<li>Does it clearly describe the data sources?</li>
+<li>Does it say where data are stored and who can access them?</li>
+<li>Does it explain what documentation will be created?</li>
+<li>Does it state what can be shared, what cannot be shared, and why?</li>
+<li>Does it identify who is responsible for storage, documentation, analysis, sharing and archiving?</li>
+<li>Does it explain when the DMP will be reviewed or updated?</li>
 </ul>
-<p>These prompts support continuity and reduce last-minute compliance work.</p>
-<hr>
+<p>Identify one section that is too vague and rewrite it as a specific decision.</p>
 </section>
-<section id="exercises-510-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-510-minutes">Exercises (5–10 minutes)</h2>
+</section>
+<section id="activity-constraints-and-access" class="level2">
+<h2 class="anchored" data-anchor-id="activity-constraints-and-access">Activity: constraints and access</h2>
+<section id="make-restrictions-visible" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="make-restrictions-visible">Make restrictions visible</h3>
+<p>Identify one constraint that limits what can be shared openly. This might be ethical, legal, contractual, governance-related or practical.</p>
+<p>Then write a short access statement using this structure:</p>
 <ol type="1">
-<li><p>Review the DMP (or draft one) for a current project.<br>
-Is it clear which decisions are fixed and which may change?</p></li>
-<li><p>Identify one type of derived or intermediate data.<br>
-Decide whether it should be retained, documented, or discarded, and where that decision should be recorded in the DMP.</p></li>
+<li>What cannot be shared?</li>
+<li>Why not?</li>
+<li>What can be shared instead?</li>
+<li>Who can be contacted, or what process applies, if access is possible?</li>
+<li>Where is this information recorded?</li>
 </ol>
 </section>
-<section id="key-takeaways" class="level2 callout-summary">
+</section>
+<section id="recommended-resources-for-this-chapter" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-resources-for-this-chapter">Recommended resources for this chapter</h2>
+<section id="dmp-guidance-and-templates" class="level3 resource-box">
+<h3 class="anchored" data-anchor-id="dmp-guidance-and-templates">DMP guidance and templates</h3>
+<ul>
+<li>DMPonline<span class="citation" data-cites="dmponlineDcc"><sup><a href="#ref-dmponlineDcc" role="doc-biblioref">1</a></sup></span></li>
+<li>Digital Curation Centre DMP guidance and examples<span class="citation" data-cites="dccDmpGuidanceExamples"><sup><a href="#ref-dccDmpGuidanceExamples" role="doc-biblioref">2</a></sup></span></li>
+<li>UCL Research Data Management guidance<span class="citation" data-cites="uclRdmHub"><sup><a href="#ref-uclRdmHub" role="doc-biblioref">3</a></sup></span></li>
+<li>UCL Data Management Plan template<span class="citation" data-cites="uclDmpTemplate"><sup><a href="#ref-uclDmpTemplate" role="doc-biblioref">4</a></sup></span></li>
+<li>UCL Managing data across the research lifecycle<span class="citation" data-cites="uclManagingData"><sup><a href="#ref-uclManagingData" role="doc-biblioref">5</a></sup></span></li>
+<li>UK Data Service checklist<span class="citation" data-cites="ukdsChecklist"><sup><a href="#ref-ukdsChecklist" role="doc-biblioref">6</a></sup></span></li>
+<li>Oxford DMP template examples<span class="citation" data-cites="oxfordDmpTemplate"><sup><a href="#ref-oxfordDmpTemplate" role="doc-biblioref">7</a></sup></span></li>
+<li>ELIXIR RDMkit: Data Management Plans<span class="citation" data-cites="elixirDmp"><sup><a href="#ref-elixirDmp" role="doc-biblioref">8</a></sup></span></li>
+<li>Australian Research Data Commons DMP guidance<span class="citation" data-cites="ardcDmp"><sup><a href="#ref-ardcDmp" role="doc-biblioref">9</a></sup></span></li>
+</ul>
+</section>
+</section>
+<section id="what-comes-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-comes-next">What comes next?</h2>
+<p>This chapter focused on the formal record of data-management decisions: what will be done, why, under what constraints, and who is responsible.</p>
+<p>The next chapter moves from project-level planning to the structure of the data files themselves: tidy data, spreadsheet risks, missing values, exclusions and data dictionaries.</p>
+</section>
+<section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>A DMP is a living record of decisions, not a static form.</li>
-<li>Separating data description from governance improves clarity.</li>
-<li>Planning should include derived and intermediate data.</li>
-<li>Proportionate DMPs support reproducibility, ethics, and sustainability.</li>
+<li>A DMP is a living record of data-management decisions, not just a compliance form.</li>
+<li>The DMP records the agreement; the project structure implements it.</li>
+<li>Good DMPs are specific, proportionate and realistic.</li>
+<li>Roles and responsibilities should be visible, not assumed.</li>
+<li>Responsible sharing means explaining what can be shared, what cannot, why, and under what conditions.</li>
+<li>Sensitive or restricted data can still be managed in FAIR, transparent and reproducible ways.</li>
 </ul>
 </section>
 
 
 <div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
-<div id="ref-turingway_dmp2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: Data Management Plans</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
+<div id="ref-dmponlineDcc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Digital Curation Centre. DMPonline. <a href="https://dmponline.dcc.ac.uk/">https://dmponline.dcc.ac.uk/</a> (2026).</div>
 </div>
-<div id="ref-michener2015ten" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Michener, W. K. Ten simple rules for creating a good data management plan. <em>PLoS computational biology</em> <strong>11</strong>, e1004525 (2015).</div>
+<div id="ref-dccDmpGuidanceExamples" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Digital Curation Centre. Data management plans: Guidance and examples. <a href="https://www.dcc.ac.uk/resources/data-management-plans/guidance-examples">https://www.dcc.ac.uk/resources/data-management-plans/guidance-examples</a> (2026).</div>
 </div>
-<div id="ref-miksa2019ten" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Miksa, T., Simms, S., Mietchen, D. &amp; Jones, S. Ten principles for machine-actionable data management plans. <em>PLoS computational biology</em> <strong>15</strong>, e1006750 (2019).</div>
+<div id="ref-uclRdmHub" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">UCL Library Services. Research data management. <a href="https://library-guides.ucl.ac.uk/research-data-management">https://library-guides.ucl.ac.uk/research-data-management</a> (2026).</div>
+</div>
+<div id="ref-uclDmpTemplate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">UCL Library Services. New UCL data management plan template. <a href="https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template">https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template</a> (2024).</div>
+</div>
+<div id="ref-uclManagingData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">UCL Library Services. Managing data across the research lifecycle. <a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research">https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research</a> (2026).</div>
+</div>
+<div id="ref-ukdsChecklist" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">UK Data Service. Data management checklist. <a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/plan-to-share/checklist/">https://ukdataservice.ac.uk/learning-hub/research-data-management/plan-to-share/checklist/</a> (2026).</div>
+</div>
+<div id="ref-oxfordDmpTemplate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">University of Oxford Research Data Oxford. Data management plan template. <a href="https://researchdata.ox.ac.uk/dmp-template">https://researchdata.ox.ac.uk/dmp-template</a> (2026).</div>
+</div>
+<div id="ref-elixirDmp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">ELIXIR RDMkit. Data management plan. <a href="https://rdmkit.elixir-europe.org/data_management_plan">https://rdmkit.elixir-europe.org/data_management_plan</a> (2026).</div>
+</div>
+<div id="ref-ardcDmp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Australian Research Data Commons. Data management plans. <a href="https://ardc.edu.au/resource/data-management-plans/">https://ardc.edu.au/resource/data-management-plans/</a> (2026).</div>
+</div>
+<div id="ref-uclResearchDataPlanning" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">University College London. Data management planning. <a href="https://www.ucl.ac.uk/research/domains/collaborative-social-science/doing-idr/data-magement-planning">https://www.ucl.ac.uk/research/domains/collaborative-social-science/doing-idr/data-magement-planning</a> (2026).</div>
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -604,24 +1044,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./03-project-mgmt.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./05-organise-tidy.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

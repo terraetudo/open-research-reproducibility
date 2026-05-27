@@ -1,0 +1,397 @@
+---
+title: "Chapter 9 — Wrap-up and next steps"
+---
+
+::: {.chapter-hero}
+# Chapter 9
+
+## Wrap-up and next steps
+
+Open and reproducible research is not a single tool, a single repository, or a final task before submission. It is a set of practical habits that make research easier to understand, check, maintain and reuse.
+:::
+
+::: {.chapter-overview}
+### What this chapter does
+
+This final chapter brings the workshop together. It summarises the core message of the course, revisits the main practices covered across the chapters, and helps you identify a realistic next step for your own work.
+
+The aim is not to leave with a perfect workflow. The aim is to leave with a clearer sense of what matters most, where your current risks are, and which small changes would make your research more transparent, defensible and sustainable.
+:::
+
+## Learning objectives
+
+By the end of this chapter, you should be able to:
+
+- reflect on what proportionate open and reproducible practice looks like;
+- identify which practices matter most in your own context;
+- recognise reproducibility as a form of risk reduction;
+- distinguish between practices that are essential now and practices that can develop over time;
+- know where to go next for tools, guidance and support.
+
+This chapter consolidates the ideas introduced across the workshop and points to the [Resources and further reading](resources.qmd) chapter for continued learning.
+
+---
+
+## What this workshop set out to do
+
+This workshop has focused on **practical, proportionate practices** that support open and reproducible research in real institutional contexts.
+
+It aimed to help you:
+
+- reduce avoidable errors and inefficiencies;
+- improve clarity, continuity and defensibility;
+- support collaboration and handover;
+- make responsible decisions about sharing and restriction;
+- prepare outputs so that others can find, cite, understand and reuse them where appropriate.
+
+It is not a comprehensive technical manual. It is also not a compliance checklist to be completed once and forgotten. Instead, it is a framework for improving everyday research practice.
+
+::: {.callout-note}
+### The central message
+
+Reproducibility is not perfection. It is making the research process visible enough that someone else — including your future self — can understand what was done, why it was done, and how the results were produced.
+:::
+
+---
+
+## The story of the workshop
+
+The workshop followed a workflow logic.
+
+::: {.practice-grid}
+::: {.practice-card}
+### 1. Why it matters
+
+We started with open research and reproducibility: why they matter, what they mean, and why they are not the same as making everything public.
+:::
+
+::: {.practice-card}
+### 2. Good structure
+
+We used FAIR principles and data integrity concepts to think about how outputs can be findable, accessible, interoperable and reusable.
+:::
+
+::: {.practice-card}
+### 3. Project organisation
+
+We considered how folder structures, file naming, project-level READMEs and lightweight versioning make research easier to navigate.
+:::
+
+::: {.practice-card}
+### 4. Data management planning
+
+We treated the DMP as a living record of decisions about data, roles, storage, protection, sharing and restrictions.
+:::
+
+::: {.practice-card}
+### 5. Tidy and analysable data
+
+We looked at the structure of the data file itself: tidy data, spreadsheet risks, missingness, exclusions and data dictionaries.
+:::
+
+::: {.practice-card}
+### 6. Documentation and protocols
+
+We focused on keeping decisions visible through READMEs, metadata, decision logs, changelogs, SOPs, protocols and reporting guidance.
+:::
+
+::: {.practice-card}
+### 7. Coding for reproducibility
+
+We brought together readable code, checks, testing, versioning, light automation and sustainable computing.
+:::
+
+::: {.practice-card}
+### 8. Publishing and reuse
+
+We considered repositories, persistent identifiers, preprints, licences, access statements and preparing outputs for responsible reuse.
+:::
+:::
+
+The common thread is simple: **make the route visible**.
+
+---
+
+## Minimum viable reproducibility
+
+Not every project needs the same level of infrastructure. A small student project, a linked administrative data study, a multi-site collaboration and a policy-facing evaluation will have different levels of risk, sensitivity and complexity.
+
+However, most projects benefit from a small set of baseline practices.
+
+::: {.callout-important}
+### Minimum viable reproducibility
+
+If you do only a few things, make them these:
+
+1. **Project README at the root**  
+   Explain the project purpose, structure, conventions, contacts and key restrictions.
+
+2. **Raw and derived data separated**  
+   Never overwrite raw data. Document how derived datasets were created.
+
+3. **Decisions recorded**  
+   Keep a decision log, ELN entry or equivalent record of key assumptions, exclusions, changes and deviations.
+
+4. **Re-runnable analysis**  
+   Use scripts or Quarto/R Markdown files rather than manual steps where possible.
+
+5. **Basic checks included**  
+   Check files, variables, missingness, IDs and implausible values before analysis.
+
+6. **Planned sharing and access**  
+   Record what can be shared, what cannot, why, and under what conditions.
+
+7. **Outputs prepared for citation and reuse**  
+   Use ORCID, DOIs where appropriate, licences, access statements and clear metadata.
+:::
+
+These practices are deliberately modest. They are not the end point, but they are a strong baseline for transparent and defensible research.
+
+---
+
+## What “good enough” looks like
+
+Reproducibility is incremental.
+
+What is appropriate depends on:
+
+- project scale and complexity;
+- data sensitivity and governance;
+- team size and turnover;
+- expected reuse;
+- available time and resources;
+- funder, journal and institutional requirements.
+
+Good practice means making choices explicit and defensible, not maximising openness at any cost.
+
+For sensitive or restricted data, “good enough” may mean:
+
+- clear metadata rather than open data;
+- documented access conditions rather than public download;
+- synthetic examples rather than confidential records;
+- preserved code that can run in a secure environment;
+- transparent explanation of what cannot be shared and why.
+
+For low-risk open data projects, “good enough” may mean:
+
+- data in a trusted repository;
+- a DOI;
+- a README;
+- a data dictionary;
+- an explicit licence;
+- analysis code linked to the publication.
+
+::: {.callout-tip}
+### Proportionate practice
+
+Ask: *What would someone need to understand, check or reuse this work appropriately?*  
+Then ask: *What is realistic and responsible in this context?*
+:::
+
+---
+
+## Practices, not tools
+
+Throughout the workshop, the emphasis has been on **practices** rather than specific tools.
+
+Tools change. Research contexts differ. What matters is whether the tool supports a clear practice.
+
+| Practice | Possible tools |
+|---|---|
+| Project organisation | RStudio projects, folder templates, shared drives, GitHub repositories |
+| Documentation | README files, Markdown, Word documents, ELNs, SOPs |
+| Decision capture | Decision logs, lab notebooks, issue trackers, changelogs |
+| Coding and checking | R, Python, Quarto, R Markdown, Jupyter, validation scripts |
+| Versioning | Git, GitHub, changelogs, dated releases |
+| Publishing and citation | Institutional repositories, Zenodo, OSF, DataCite DOIs, ORCID |
+
+The tool is useful only if it makes the practice easier to sustain.
+
+---
+
+## Reproducibility as risk reduction
+
+Many open research practices function as risk management.
+
+| Risk | Reproducible practice that reduces it |
+|---|---|
+| No one knows which file is current | Folder structure, file naming, versioning |
+| A key team member leaves | README, onboarding notes, decision logs |
+| Analysis cannot be rerun | Scripted workflows, project-relative paths, environment notes |
+| Silent data errors affect results | Validation checks, missingness summaries, tests |
+| Data cannot be shared openly | Metadata, access statements, controlled-access routes |
+| Others misuse or misinterpret outputs | Documentation, licences, context and limitations |
+| Code is abandoned or rewritten | Readable code, functions, Git, clear dependencies |
+| Outputs cannot be credited | DOIs, ORCID, citation guidance |
+
+Seen this way, reproducibility supports research quality, efficiency and researcher wellbeing. It reduces the mental load of remembering everything and reduces the risk of having to reconstruct decisions under pressure.
+
+---
+
+## What to do first
+
+The best next step is usually small and specific.
+
+Avoid trying to fix the whole workflow at once. Pick one current project and choose one improvement that reduces a real risk.
+
+::: {.activity-box}
+### Activity: choose one next action
+
+Think about a current or recent project.
+
+Choose one action you could take in the next one or two weeks.
+
+Examples:
+
+- create or update the project README;
+- write down the folder structure and naming convention;
+- separate raw and derived data;
+- add a short decision log;
+- add basic checks to a script;
+- record package versions;
+- create a data dictionary;
+- draft a data/code availability statement;
+- identify a suitable repository;
+- add a licence to training materials or code.
+:::
+
+A good next action is:
+
+- specific;
+- realistic;
+- visible to the project team;
+- linked to a real source of risk;
+- small enough to complete.
+
+---
+
+## A personal reproducibility plan
+
+Use the prompts below to create a short plan.
+
+::: {.activity-box}
+### Personal action plan
+
+**1. One thing I will keep doing**
+
+What already works well in your current workflow?
+
+**2. One thing I will stop doing**
+
+What creates confusion, duplication or avoidable risk?
+
+**3. One thing I will start doing**
+
+What small habit would make the biggest difference?
+
+**4. One person I need to involve**
+
+Who needs to agree, know about, or support this change?
+
+**5. One place I will record it**
+
+Where will this decision or action be documented?
+:::
+
+This can be used individually, in pairs, or as a final workshop discussion.
+
+---
+
+## For teams: make it social
+
+Reproducibility is easier when it is a shared expectation rather than an individual burden.
+
+For teams, useful next steps include:
+
+- agreeing a default folder structure;
+- agreeing file naming conventions;
+- creating a project README template;
+- deciding where decision logs live;
+- adding documentation checks to onboarding and offboarding;
+- reviewing data management plans at project milestones;
+- making code review or script walkthroughs normal;
+- agreeing where outputs will be archived or published.
+
+Small team agreements reduce repeated negotiation and make expectations clearer for students, new staff and collaborators.
+
+::: {.callout-note}
+### Reproducibility is a team culture
+
+If only one person knows how the project works, the project is fragile. Shared conventions and visible decisions make the work more resilient.
+:::
+
+---
+
+## What support is available?
+
+You do not need to solve everything alone.
+
+Depending on the issue, useful support may include:
+
+- research data management teams;
+- library open research and open access teams;
+- ethics and governance support;
+- data protection and information governance teams;
+- research software engineering or advanced research computing support;
+- departmental open science champions;
+- institutional repository support;
+- journal and funder guidance;
+- peer communities such as The Turing Way, The Carpentries and UKRN.
+
+Use the [Resources and further reading](resources.qmd) chapter as a starting point. It gathers practical guidance, templates and training routes.
+
+---
+
+## What this workshop does not solve
+
+It is important to be honest about the limits of individual practice.
+
+Reproducibility problems are also shaped by:
+
+- incentives and assessment systems;
+- workload and time pressure;
+- publication bias;
+- unequal access to support and infrastructure;
+- data governance complexity;
+- short-term contracts and staff turnover;
+- underinvestment in research software, documentation and stewardship.
+
+The practices covered here do not fix all of these structural problems. They do, however, help you reduce avoidable risk in your own projects and provide a basis for advocating for better systems, support and recognition.
+
+---
+
+## Final reflection
+
+::: {.activity-box}
+### Final reflection
+
+Complete one of these sentences:
+
+- The most useful thing I will take from this workshop is...
+- One risk I can now see more clearly is...
+- One small change I will make in my next project is...
+- One thing I need from my team or institution is...
+:::
+
+---
+
+::: {.chapter-summary}
+## Key takeaways
+
+- Open and reproducible research is incremental and contextual.
+- “Good enough” practice depends on risk, scale and constraints.
+- Practices matter more than specific tools.
+- Reproducibility reduces risk, improves continuity and supports responsible reuse.
+- Small, consistent improvements often deliver the greatest benefit.
+- Resources, teams and communities can support continued learning.
+:::
+
+---
+
+## Thank you
+
+Thank you for taking part in the Open Research and Reproducibility workshop.
+
+The next step is not to make every project perfect. The next step is to make one part of your workflow clearer, safer and easier to understand.
+
+Start small. Make it visible. Build from there.

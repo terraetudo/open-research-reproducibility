@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Research &amp; Reproducibility - Chapter 6 — Documentation, ELNs &amp; SOPs</title>
+<title>Open Research &amp; Reproducibility - Chapter 6 — Documentation and protocols</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -43,11 +62,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -65,19 +84,47 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-docs-eln-sops.html"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-docs-eln-sops.html"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -87,14 +134,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -104,62 +146,52 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,13 +209,65 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-6" id="toc-chapter-6" class="nav-link active" data-scroll-target="#chapter-6">Chapter 6</a>
+  <ul class="collapse">
+  <li><a href="#documentation-and-protocols" id="toc-documentation-and-protocols" class="nav-link" data-scroll-target="#documentation-and-protocols">Documentation and protocols</a></li>
+  </ul></li>
+  <li><a href="#in-this-chapter" id="toc-in-this-chapter" class="nav-link" data-scroll-target="#in-this-chapter">In this chapter</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#why-documentation-matters" id="toc-why-documentation-matters" class="nav-link" data-scroll-target="#why-documentation-matters">Why documentation matters</a></li>
+  <li><a href="#the-bus-factor" id="toc-the-bus-factor" class="nav-link" data-scroll-target="#the-bus-factor">The bus factor</a>
+  <ul class="collapse">
+  <li><a href="#activity-what-would-you-need-to-know" id="toc-activity-what-would-you-need-to-know" class="nav-link" data-scroll-target="#activity-what-would-you-need-to-know">Activity: what would you need to know?</a></li>
+  </ul></li>
+  <li><a href="#documentation-should-be-proportionate" id="toc-documentation-should-be-proportionate" class="nav-link" data-scroll-target="#documentation-should-be-proportionate">Documentation should be proportionate</a></li>
+  <li><a href="#a-documentation-map" id="toc-a-documentation-map" class="nav-link" data-scroll-target="#a-documentation-map">A documentation map</a>
+  <ul class="collapse">
+  <li><a href="#when-to-use-each-document-quick-guide" id="toc-when-to-use-each-document-quick-guide" class="nav-link" data-scroll-target="#when-to-use-each-document-quick-guide">When to use each document — quick guide</a></li>
+  </ul></li>
+  <li><a href="#start-with-a-simple-readme" id="toc-start-with-a-simple-readme" class="nav-link" data-scroll-target="#start-with-a-simple-readme">Start with a simple README</a></li>
+  <li><a href="#data-dictionaries-and-codebooks" id="toc-data-dictionaries-and-codebooks" class="nav-link" data-scroll-target="#data-dictionaries-and-codebooks">Data dictionaries and codebooks</a></li>
+  <li><a href="#metadata-dataset-level-context" id="toc-metadata-dataset-level-context" class="nav-link" data-scroll-target="#metadata-dataset-level-context">Metadata: dataset-level context</a></li>
+  <li><a href="#decision-logs" id="toc-decision-logs" class="nav-link" data-scroll-target="#decision-logs">Decision logs</a></li>
+  <li><a href="#changelogs" id="toc-changelogs" class="nav-link" data-scroll-target="#changelogs">Changelogs</a></li>
+  <li><a href="#environment-notes" id="toc-environment-notes" class="nav-link" data-scroll-target="#environment-notes">Environment notes</a></li>
+  <li><a href="#electronic-lab-notebooks" id="toc-electronic-lab-notebooks" class="nav-link" data-scroll-target="#electronic-lab-notebooks">Electronic lab notebooks</a></li>
+  <li><a href="#sops-documenting-repeatable-tasks" id="toc-sops-documenting-repeatable-tasks" class="nav-link" data-scroll-target="#sops-documenting-repeatable-tasks">SOPs: documenting repeatable tasks</a>
+  <ul class="collapse">
+  <li><a href="#activity-the-cup-of-tea-protocol" id="toc-activity-the-cup-of-tea-protocol" class="nav-link" data-scroll-target="#activity-the-cup-of-tea-protocol">Activity: the cup of tea protocol</a></li>
+  </ul></li>
+  <li><a href="#expert-bias-and-the-curse-of-knowledge" id="toc-expert-bias-and-the-curse-of-knowledge" class="nav-link" data-scroll-target="#expert-bias-and-the-curse-of-knowledge">Expert bias and the curse of knowledge</a></li>
+  <li><a href="#onboarding-and-offboarding" id="toc-onboarding-and-offboarding" class="nav-link" data-scroll-target="#onboarding-and-offboarding">Onboarding and offboarding</a></li>
+  <li><a href="#protocols-preregistration-and-reporting-guidelines" id="toc-protocols-preregistration-and-reporting-guidelines" class="nav-link" data-scroll-target="#protocols-preregistration-and-reporting-guidelines">Protocols, preregistration and reporting guidelines</a></li>
+  <li><a href="#what-belongs-in-this-chapter-and-what-belongs-later" id="toc-what-belongs-in-this-chapter-and-what-belongs-later" class="nav-link" data-scroll-target="#what-belongs-in-this-chapter-and-what-belongs-later">What belongs in this chapter, and what belongs later?</a></li>
+  <li><a href="#activity-how-could-you-show-your-working" id="toc-activity-how-could-you-show-your-working" class="nav-link" data-scroll-target="#activity-how-could-you-show-your-working">Activity: how could you show your working?</a>
+  <ul class="collapse">
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul></li>
+  <li><a href="#recommended-resources-for-this-chapter" id="toc-recommended-resources-for-this-chapter" class="nav-link" data-scroll-target="#recommended-resources-for-this-chapter">Recommended resources for this chapter</a>
+  <ul class="collapse">
+  <li><a href="#core-documentation-guidance" id="toc-core-documentation-guidance" class="nav-link" data-scroll-target="#core-documentation-guidance">Core documentation guidance</a></li>
+  <li><a href="#readmes-data-level-documentation-and-handover" id="toc-readmes-data-level-documentation-and-handover" class="nav-link" data-scroll-target="#readmes-data-level-documentation-and-handover">READMEs, data-level documentation and handover</a></li>
+  <li><a href="#metadata-and-metadata-standards" id="toc-metadata-and-metadata-standards" class="nav-link" data-scroll-target="#metadata-and-metadata-standards">Metadata and metadata standards</a></li>
+  <li><a href="#decision-logs-changelogs-and-risk-registers" id="toc-decision-logs-changelogs-and-risk-registers" class="nav-link" data-scroll-target="#decision-logs-changelogs-and-risk-registers">Decision logs, changelogs and risk registers</a></li>
+  <li><a href="#elns-sops-protocols-and-reporting" id="toc-elns-sops-protocols-and-reporting" class="nav-link" data-scroll-target="#elns-sops-protocols-and-reporting">ELNs, SOPs, protocols and reporting</a></li>
+  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/06-docs-eln-sops.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></h1>
+<h1 class="title"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></h1>
+<p class="subtitle lead">Keeping decisions visible</p>
 </div>
 
 
@@ -198,248 +282,750 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="chapter-6" class="level1 chapter-hero">
+<h1>Chapter 6</h1>
+<section id="documentation-and-protocols" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-and-protocols">Documentation and protocols</h2>
+<p>Documentation is how research decisions remain visible after the meeting, the analysis session, the handover, or the paper submission. It should help someone understand what was done, why it was done, and how to continue or check the work.</p>
+</section>
+</section>
+<section id="in-this-chapter" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="in-this-chapter">In this chapter</h3>
+<p>This chapter focuses on <strong>research documentation</strong>: the records that help a project remain understandable, reproducible and reusable. It covers READMEs, data dictionaries, metadata, decision logs, changelogs, environment notes, ELNs, SOPs, protocols, preregistration and reporting guidelines.</p>
+<p>It deliberately does <strong>not</strong> repeat folder structures and file naming from Chapter 3, data-management responsibilities from Chapter 4, or tidy-data rules from Chapter 5. Instead, it asks: <strong>what needs to be written down, where, and for whom?</strong></p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you should be able to:</p>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
-<li>explain why documentation is central to reproducibility and continuity;</li>
-<li>distinguish between different types of research documentation;</li>
-<li>decide when to use READMEs, ELNs, SOPs, or other formats;</li>
-<li>recognise documentation as a tool for collaboration and handover;</li>
-<li>apply proportionate documentation practices in everyday workflows.</li>
+<li>explain why documentation is central to reproducibility, continuity and handover;</li>
+<li>distinguish between different documentation artefacts and their purposes;</li>
+<li>decide when to use a README, codebook, metadata record, decision log, changelog, ELN, SOP or protocol;</li>
+<li>recognise documentation as a way of reducing project risk and “bus factor”;</li>
+<li>apply proportionate documentation practices in everyday research workflows.</li>
 </ul>
-<p>This module builds on <a href="./03-project-mgmt.html">Chapter 3 - Project organisation and continuity</a> and [Chapter 5 - Organising and tidying data] (05-organise-tidy.qmd). It supports later modules on code, automation, and publishing.</p>
-<hr>
 </section>
 <section id="why-documentation-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-documentation-matters">Why documentation matters</h2>
-<p>Documentation is the backbone of reproducible research. Without it, data and code lose meaning, decisions become opaque, and results are difficult to interpret or defend. This chapter focuses on documentation that directly supports reproducibility, continuity, and reuse, rather than all possible records generated during a project.</p>
-<p>Most documentation failures are not due to lack of effort, but to unclear purpose: documenting everything everywhere, or documenting the wrong things. Over-documentation can be as harmful as under-documentation, creating noise, duplication, and maintenance burden without improving understanding.</p>
-</section>
-<section id="documentation-as-decision-capture" class="level2">
-<h2 class="anchored" data-anchor-id="documentation-as-decision-capture">Documentation as decision capture</h2>
-<p>Good documentation records not only <em>what</em> was done, but <em>why</em> it was done.</p>
-<p>Documentation records analytical judgement, not just procedure. This includes coding decisions, exclusions, parameter choices, and deviations from plans, particularly in exploratory or qualitative work. Good documentation should allow an independent researcher to understand what was done, why it was done, and under what constraints. Documentation is evidence, not memory: it should be attributable, legible, contemporaneous, and retrievable.</p>
-<p>This includes:</p>
-<ul>
-<li>analytical choices and assumptions;</li>
-<li>changes to protocols or plans;</li>
-<li>reasons for exclusions or deviations;</li>
-<li>trade-offs made under constraints.</li>
-</ul>
-<p>Capturing decisions supports transparency and reduces reliance on memory.</p>
-<p>Responsibility for maintaining documentation should be explicit and shared across teams; roles and institutional responsibilities are discussed in Chapter 8.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Documentation is often treated as an administrative extra. In reproducible research, it is part of the research method. It provides evidence of how choices were made and helps others understand whether those choices are justified.</p>
+<p>A common problem is not simply that researchers document too little. It is that documentation has no clear purpose. Some projects have almost nothing written down; others have information scattered across emails, Teams chats, notebooks, Word documents, old protocols and people’s memories. Both situations are fragile.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Documenting PPIE decisions
+Under-documenting and over-documenting are both risks
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Record:</p>
+<p>Documentation is useful when it is findable, current and purposeful. It is less useful when it is either missing or spread across too many places without a clear owner.</p>
+</div>
+</div>
+<p>Good documentation helps to:</p>
 <ul>
-<li><p>who was involved and in what capacity;</p></li>
-<li><p>which stages of the research they informed;</p></li>
-<li><p>how input influenced decisions (or why it did not);</p></li>
-<li><p>any constraints on sharing or reuse arising from PPIE.</p></li>
+<li>track what happened;</li>
+<li>make decisions visible;</li>
+<li>support new team members;</li>
+<li>reduce reliance on memory;</li>
+<li>make handover easier;</li>
+<li>support audit, peer review and reuse;</li>
+<li>explain deviations, exclusions and constraints.</li>
 </ul>
-</div>
-</div>
+<p>The Turing Way and Good Enough Practices both emphasise that documentation should make it possible for someone else — or your future self — to reconstruct the work, not simply remember that something was done<span class="citation" data-cites="turingwayDocumentation wilson2017goodenough"><sup><a href="#ref-turingwayDocumentation" role="doc-biblioref">1</a>,<a href="#ref-wilson2017goodenough" role="doc-biblioref">2</a></sup></span>.</p>
 </section>
-<section id="types-of-documentation-and-what-they-are-for" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-documentation-and-what-they-are-for">Types of documentation (and what they are for)</h2>
-<p>Different documentation artefacts serve different audiences and purposes:</p>
+<section id="the-bus-factor" class="level2">
+<h2 class="anchored" data-anchor-id="the-bus-factor">The bus factor</h2>
+<p>The <strong>bus factor</strong> is a useful way to think about documentation. It asks: how many people would need to become unavailable before the project could no longer continue?</p>
+<p>In research projects, the problem is often less dramatic than a bus: a student finishes, a research fellow moves institution, a collaborator changes role, or a data manager is on leave. The effect is the same if key knowledge only exists in one person’s head.</p>
+<section id="activity-what-would-you-need-to-know" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="activity-what-would-you-need-to-know">Activity: what would you need to know?</h3>
+<p>Imagine that a key member of your project team becomes unavailable tomorrow.</p>
+<p>What would you need to know?</p>
+<p>Consider:</p>
 <ul>
-<li><strong>READMEs</strong>: high-level orientation to the project (purpose, structure, how to run or navigate it).</li>
-<li><strong>Electronic Lab Notebooks (ELNs)</strong>: chronological records of work, observations, and decisions.</li>
-<li><strong>Standard Operating Procedures (SOPs)</strong>: stable instructions for repeatable tasks.</li>
-<li><strong>Code comments and docstrings</strong>: technical detail for specific scripts or functions.</li>
-<li><strong>Codebooks / data dictionaries</strong>: variable-level descriptions supporting interpretation and reuse.</li>
+<li>where the data are stored;</li>
+<li>who has access;</li>
+<li>which files are raw, derived or final;</li>
+<li>what approvals or data-sharing agreements apply;</li>
+<li>how exclusions or analysis decisions were made;</li>
+<li>what software, packages and versions were used;</li>
+<li>which outputs are current;</li>
+<li>what still needs to be done.</li>
 </ul>
-<p>Not all documents produced during a project are research documentation. Project plans, budgets, and timelines support delivery, while READMEs, ELNs, codebooks, and SOPs support reproducibility and reuse. Using the right format for the right purpose improves clarity and reduces duplication.</p>
-<section id="documentation-types-and-when-to-use-each" class="level3">
-<h3 class="anchored" data-anchor-id="documentation-types-and-when-to-use-each">Documentation types and when to use each</h3>
-<p>Research projects typically require <strong>multiple forms of documentation</strong>, each serving a different purpose. Confusion often arises when a single document is used to do everything.</p>
-<p>The table below summarises common documentation types and their primary role.</p>
+</section>
+</section>
+<section id="documentation-should-be-proportionate" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-should-be-proportionate">Documentation should be proportionate</h2>
+<p>Not every project needs every type of document. A short student project may need a README, a data dictionary and a few notes on analysis decisions. A multi-partner project using sensitive linked data may need a DMP, README, data dictionary, metadata record, decision log, changelog, SOPs, governance documents and access-control records.</p>
+<p>The principle is proportionality:</p>
+<ul>
+<li>document decisions that affect interpretation, reuse or trust;</li>
+<li>keep documentation close to the relevant files;</li>
+<li>avoid duplicating the same information in multiple places;</li>
+<li>make ownership and update frequency clear;</li>
+<li>use simple formats where possible.</li>
+</ul>
+</section>
+<section id="a-documentation-map" class="level2">
+<h2 class="anchored" data-anchor-id="a-documentation-map">A documentation map</h2>
+<p>Different documentation artefacts answer different questions.</p>
 <table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 23%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Documentation type</th>
-<th>Primary purpose</th>
-<th>Typical audience</th>
-<th>When to use</th>
+<th>Documentation artefact</th>
+<th>Main question it answers</th>
+<th>Main audience</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>README</strong></td>
-<td>Project or dataset orientation</td>
-<td>New collaborators, reviewers, future you</td>
-<td>At project or dataset level</td>
+<td>What is this project or dataset, and how do I navigate it?</td>
+<td>New collaborator, reviewer, future you</td>
 </tr>
 <tr class="even">
-<td><strong>Codebook / data dictionary</strong></td>
-<td>Variable-level description</td>
-<td>Analysts, secondary users</td>
-<td>For each dataset</td>
+<td><strong>Data dictionary / codebook</strong></td>
+<td>What does each variable mean?</td>
+<td>Analyst, reviewer, secondary user</td>
+</tr>
+<tr class="odd">
+<td><strong>Metadata</strong></td>
+<td>What is this dataset, where did it come from, and how should it be cited/discovered?</td>
+<td>Repository, data steward, future user</td>
+</tr>
+<tr class="even">
+<td><strong>Decision log</strong></td>
+<td>Why was this choice made?</td>
+<td>Project team, reviewer, future analyst</td>
+</tr>
+<tr class="odd">
+<td><strong>Changelog</strong></td>
+<td>What changed, when, and by whom?</td>
+<td>Project team, future user</td>
+</tr>
+<tr class="even">
+<td><strong>Environment notes</strong></td>
+<td>What software context is needed to rerun the work?</td>
+<td>Analyst, future user</td>
 </tr>
 <tr class="odd">
 <td><strong>ELN</strong></td>
-<td>Chronological record of work and decisions</td>
+<td>What happened during active work?</td>
 <td>Project team</td>
-<td>During active research</td>
 </tr>
 <tr class="even">
 <td><strong>SOP</strong></td>
-<td>Stable instructions for repeatable tasks</td>
-<td>Teams, new staff</td>
-<td>When tasks are repeated</td>
+<td>How should this repeatable task be done?</td>
+<td>Team member, new staff</td>
+</tr>
+<tr class="odd">
+<td><strong>Protocol / preregistration</strong></td>
+<td>What was planned before data collection or analysis?</td>
+<td>Reviewer, future reader, research team</td>
 </tr>
 </tbody>
 </table>
-<p>Using the appropriate document type reduces duplication, improves clarity, and supports reproducibility across the project lifecycle.</p>
-</section>
-<section id="choosing-the-right-document" class="level3">
-<h3 class="anchored" data-anchor-id="choosing-the-right-document">Choosing the right document</h3>
-<p>The table below provides a simple decision guide.</p>
+<section id="when-to-use-each-document-quick-guide" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="when-to-use-each-document-quick-guide">When to use each document — quick guide</h3>
 <table class="table">
 <colgroup>
-<col style="width: 70%">
-<col style="width: 30%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Situation</th>
-<th>Use this document</th>
+<th>Useful documentation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Someone new joins the project</td>
+<td>A new person joins the project</td>
 <td>README</td>
 </tr>
 <tr class="even">
-<td>You need to explain what a variable means</td>
-<td>Codebook</td>
+<td>A variable needs explaining</td>
+<td>Data dictionary or codebook</td>
 </tr>
 <tr class="odd">
-<td>You are recording what you tried and why</td>
-<td>ELN</td>
+<td>A dataset needs citing, archiving or discovery</td>
+<td>Metadata</td>
 </tr>
 <tr class="even">
-<td>A task needs to be done the same way every time</td>
+<td>A choice needs justifying later</td>
+<td>Decision log</td>
+</tr>
+<tr class="odd">
+<td>A file, output or document changes</td>
+<td>Changelog</td>
+</tr>
+<tr class="even">
+<td>Code needs to be rerun in the same environment</td>
+<td>Environment notes</td>
+</tr>
+<tr class="odd">
+<td>A task must be done consistently</td>
 <td>SOP</td>
 </tr>
-<tr class="odd">
-<td>You need to justify a decision later</td>
-<td>ELN or decision log</td>
-</tr>
 <tr class="even">
-<td>You are preparing data for sharing or archiving</td>
-<td>README + codebook</td>
+<td>A study or analysis plan needs to be visible before results</td>
+<td>Protocol or preregistration</td>
 </tr>
 </tbody>
 </table>
-<p>Templates and examples for each document type are provided in the <a href="./resources.html">Resources and Further Reading</a>.</p>
 </section>
 </section>
-<section id="using-elns-effectively" class="level2">
-<h2 class="anchored" data-anchor-id="using-elns-effectively">Using ELNs effectively</h2>
-<p>ELNs are most useful for recording:</p>
-<ul>
-<li>what was attempted and what happened;</li>
-<li>decisions made during data collection or analysis;</li>
-<li>deviations from plans or protocols.</li>
-</ul>
-<p>ELNs are <strong>not</strong> well suited for:</p>
-<ul>
-<li>long-term instructions (use SOPs);</li>
-<li>final project summaries (use READMEs);</li>
-<li>storing large data files.</li>
-</ul>
-<p>Keeping ELNs focused improves their value for review and handover.</p>
-</section>
-<section id="sops-and-repeatability" class="level2">
-<h2 class="anchored" data-anchor-id="sops-and-repeatability">SOPs and repeatability</h2>
-<p>SOPs support consistency across people and time.</p>
-<p>Good SOPs are:</p>
-<ul>
-<li>task-specific and scoped;</li>
-<li>written for someone unfamiliar with the project;</li>
-<li>versioned and reviewed periodically.</li>
-</ul>
-<p>SOPs reduce variability, support training, and make quality control explicit.</p>
-</section>
-<section id="documentation-and-collaboration" class="level2">
-<h2 class="anchored" data-anchor-id="documentation-and-collaboration">Documentation and collaboration</h2>
-<p>Documentation is a shared resource. Clear, accessible documentation:</p>
-<ul>
-<li>supports onboarding of new team members;</li>
-<li>reduces reliance on informal knowledge;</li>
-<li>improves equity by making expectations explicit;</li>
-<li>supports offboarding and long-term continuity.</li>
-</ul>
-<p>These benefits are particularly important in interdisciplinary and distributed teams.</p>
+<section id="start-with-a-simple-readme" class="level2">
+<h2 class="anchored" data-anchor-id="start-with-a-simple-readme">Start with a simple README</h2>
+<p>A README is the first place someone should look when they enter a project folder, repository or dataset. It does not need to be long. It should orientate the reader.</p>
+<p>A project README should usually answer:</p>
+<ol type="1">
+<li><strong>What is this project?</strong> Purpose, scope, key outputs.</li>
+<li><strong>What does it contain?</strong> Data files, scripts, documents and folder structure.</li>
+<li><strong>How does it work?</strong> How to run the analysis or navigate the materials.</li>
+<li><strong>What decisions matter?</strong> Versions, exclusions, constraints and key assumptions.</li>
+<li><strong>What are the rules?</strong> Licence, sharing conditions, citation and contact details.</li>
+</ol>
+<p>For a dataset, a README may also include data collection methods, variable descriptions, missing-value codes, software requirements and restrictions on reuse<span class="citation" data-cites="turingwayMetadata makeareadme"><sup><a href="#ref-turingwayMetadata" role="doc-biblioref">3</a>,<a href="#ref-makeareadme" role="doc-biblioref">4</a></sup></span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Documenting AI-assisted work
+Keep it findable
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If AI tools are used for coding, data cleaning, or analysis, record:</p>
-<ul>
-<li><p>the tool and version;</p></li>
-<li><p>the purpose (e.g.&nbsp;refactoring, summarisation, feature generation);</p></li>
-<li><p>human review and validation steps;</p></li>
-<li><p>known limitations or non-determinism.</p></li>
-</ul>
+<p>Put the README at the highest relevant level: project root, data folder or dataset deposit. A hidden README is not doing its job.</p>
 </div>
 </div>
 </section>
-<section id="practical-guidance-for-ecr-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="practical-guidance-for-ecr-workflows">Practical guidance for ECR workflows</h2>
-<p>In practice, proportionate documentation often involves:</p>
+<section id="data-dictionaries-and-codebooks" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionaries-and-codebooks">Data dictionaries and codebooks</h2>
+<p>A <strong>data dictionary</strong> or <strong>codebook</strong> describes the variables in a dataset. This is different from a README. A README orientates the project or dataset as a whole; a data dictionary explains the internal structure of the data.</p>
+<p>A useful data dictionary includes:</p>
 <ul>
-<li>maintaining a short project README;</li>
-<li>recording key decisions in an ELN or decision log;</li>
-<li>creating SOPs only for tasks that are repeated;</li>
-<li>reviewing documentation at project milestones.</li>
+<li>variable name;</li>
+<li>clear variable description;</li>
+<li>unit of measurement;</li>
+<li>expected data type;</li>
+<li>allowed values or categories;</li>
+<li>coding scheme;</li>
+<li>missing-value codes;</li>
+<li>source variable or source dataset;</li>
+<li>derivation or transformation, where relevant.</li>
 </ul>
-<p>Documentation should evolve with the project.</p>
+<p>This is particularly important for administrative, survey, cohort and linked datasets, where variable meanings may depend on coding rules, collection context, eligibility, geography, time period or provider systems<span class="citation" data-cites="ukdataserviceDataLevel ukdataserviceAdministrative"><sup><a href="#ref-ukdataserviceDataLevel" role="doc-biblioref">5</a>,<a href="#ref-ukdataserviceAdministrative" role="doc-biblioref">6</a></sup></span>.</p>
 </section>
-<section id="exercises-510-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-510-minutes">Exercises (5–10 minutes)</h2>
-<ol type="1">
-<li><p>Identify one type of documentation used in a current project.<br>
-Is its purpose clear, or is it being used to do too much?</p></li>
-<li><p>Review a recent decision.<br>
-Where is the rationale recorded, and could it be clearer?</p></li>
-</ol>
+<section id="metadata-dataset-level-context" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-dataset-level-context">Metadata: dataset-level context</h2>
+<p>Metadata describe the dataset as a research object. They support discovery, citation, interpretation, archiving and reuse.</p>
+<p>At minimum, metadata should capture:</p>
+<ul>
+<li>title and description;</li>
+<li>creators and contributors;</li>
+<li>data source and collection context;</li>
+<li>dates, versions and time period covered;</li>
+<li>geography or population, where relevant;</li>
+<li>inclusion and exclusion criteria;</li>
+<li>provenance: how the data were generated, processed or cleaned;</li>
+<li>access conditions and restrictions;</li>
+<li>licence or reuse conditions;</li>
+<li>persistent identifier, if available.</li>
+</ul>
+<p>Metadata standards vary by field and repository. Examples include Dublin Core, DataCite, DDI, SDMX and ISO 19115 for geographic information<span class="citation" data-cites="dublinCore dataciteSchema ddiAlliance sdmx iso19115"><sup><a href="#ref-dublinCore" role="doc-biblioref">7</a>–<a href="#ref-iso19115" role="doc-biblioref">11</a></sup></span>. The Research Data Alliance Metadata Standards Catalog can help identify relevant standards<span class="citation" data-cites="rdamsc"><sup><a href="#ref-rdamsc" role="doc-biblioref">12</a></sup></span>. In practice, most researchers do not need to master these standards, but they do need to understand what metadata are trying to achieve: <strong>enough context for the data to be found, understood and reused appropriately</strong><span class="citation" data-cites="cambridgeMetadata cessdaDocumentation"><sup><a href="#ref-cambridgeMetadata" role="doc-biblioref">13</a>,<a href="#ref-cessdaDocumentation" role="doc-biblioref">14</a></sup></span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Metadata is not only for open data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Restricted or sensitive data still need metadata. Even when the data themselves cannot be shared openly, metadata can explain what exists, who controls access, what restrictions apply, and how legitimate access requests are handled.</p>
+</div>
+</div>
 </section>
-<section id="key-takeaways" class="level2 callout-summary">
+<section id="decision-logs" class="level2">
+<h2 class="anchored" data-anchor-id="decision-logs">Decision logs</h2>
+<p>A decision log records choices that may matter later. It is especially useful when the “right” choice is not obvious, when decisions are made under constraints, or when alternative choices could affect results.</p>
+<p>Decision logs are useful for:</p>
+<ul>
+<li>key analytical choices;</li>
+<li>exclusions and deviations;</li>
+<li>parameter changes;</li>
+<li>changes to inclusion criteria;</li>
+<li>changes to exposure or outcome definitions;</li>
+<li>trade-offs caused by data quality, governance, ethics or feasibility;</li>
+<li>choices made after discussion with collaborators or PPIE contributors.</li>
+</ul>
+<p>Example:</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Decision</th>
+<th>Rationale</th>
+<th>Impact</th>
+<th>Who</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2025-02-12</td>
+<td>Excluded records with missing postcode</td>
+<td>Exposure assignment required geocoding</td>
+<td>Reduced sample size by 3.2%</td>
+<td>JC</td>
+</tr>
+<tr class="even">
+<td>2025-02-18</td>
+<td>Defined heatwave as ≥3 consecutive days above 95th percentile</td>
+<td>Aligned with agreed threshold; sensitivity tested</td>
+<td>Affected exposure prevalence estimates</td>
+<td>JC + PH</td>
+</tr>
+<tr class="odd">
+<td>2025-02-25</td>
+<td>Used 100 m buffer for greenspace instead of 300 m</td>
+<td>300 m caused high spatial overlap; reduced precision</td>
+<td>Changed exposure metric; documented in methods</td>
+<td>JC</td>
+</tr>
+</tbody>
+</table>
+<p>A decision log can be a simple Markdown file, spreadsheet or table in an electronic lab notebook. The format matters less than whether the log is maintained and findable.</p>
+</section>
+<section id="changelogs" class="level2">
+<h2 class="anchored" data-anchor-id="changelogs">Changelogs</h2>
+<p>A changelog records what changed. It is most useful for documents, datasets, code outputs, protocols and resources that evolve over time.</p>
+<p>A simple changelog should record:</p>
+<ul>
+<li>version number or date;</li>
+<li>what changed;</li>
+<li>why it changed;</li>
+<li>who made the change;</li>
+<li>whether earlier outputs are affected.</li>
+</ul>
+<p>For manuscripts or governance documents, the changelog may be part of a document control table. For code or data outputs, it may sit in a <code>CHANGELOG.md</code> file. For more technical projects, Git can provide a detailed history, but a short human-readable changelog is still useful for major changes<span class="citation" data-cites="archbeeVersionControl"><sup><a href="#ref-archbeeVersionControl" role="doc-biblioref">15</a></sup></span>.</p>
+</section>
+<section id="environment-notes" class="level2">
+<h2 class="anchored" data-anchor-id="environment-notes">Environment notes</h2>
+<p>Environment notes document the software context required to rerun an analysis. They become particularly important when projects use R, Python, GIS software, command-line tools or specialist external software.</p>
+<p>Environment notes should include:</p>
+<ul>
+<li>programming language version, for example R 4.3.1 or Python 3.11;</li>
+<li>key packages and versions;</li>
+<li>operating system, if relevant;</li>
+<li>specialist software or external dependencies;</li>
+<li>hardware or processing assumptions, if relevant;</li>
+<li>how to recreate the environment.</li>
+</ul>
+<p>Example:</p>
+<pre class="text"><code>Software environment
+- R version: 4.3.1
+- Platform: Windows 11
+- Key packages:
+  - tidyverse 2.0.0
+  - sf 1.0-14
+  - lme4 1.1-35
+  - targets 1.3.0
+
+Environment management
+- Project uses renv
+- Lockfile: renv.lock stored in project root
+
+To recreate:
+install.packages("renv")
+renv::restore()</code></pre>
+<p>This chapter only introduces environment notes. Chapter 7 covers code quality, checks and version-aware coding in more detail.</p>
+</section>
+<section id="electronic-lab-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="electronic-lab-notebooks">Electronic lab notebooks</h2>
+<p>Electronic Lab Notebooks (ELNs) provide a chronological record of work. They are common in laboratory settings but can also be useful for computational, qualitative and data-intensive research.</p>
+<p>ELNs can help record:</p>
+<ul>
+<li>what was attempted;</li>
+<li>what happened;</li>
+<li>unexpected problems;</li>
+<li>decisions made during active work;</li>
+<li>deviations from protocols;</li>
+<li>links to files, outputs or scripts;</li>
+<li>reflections on what to try next.</li>
+</ul>
+<p>The Turing Way notes that ELNs can improve searchability, remote access, secure storage and sharing compared with traditional paper notebooks<span class="citation" data-cites="turingwayELNs"><sup><a href="#ref-turingwayELNs" role="doc-biblioref">16</a></sup></span>. They are not, however, a replacement for all documentation. A project may still need a README, data dictionary, SOPs and formal governance records.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avoid the “everything notebook” problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ELNs are good for chronological work records. They are less good as the only place to store final instructions, data dictionaries, access rules or project orientation.</p>
+</div>
+</div>
+</section>
+<section id="sops-documenting-repeatable-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="sops-documenting-repeatable-tasks">SOPs: documenting repeatable tasks</h2>
+<p>A <strong>Standard Operating Procedure</strong> is a set of step-by-step instructions for carrying out a routine task. SOPs are useful when a task needs to be done consistently across people, time or sites.</p>
+<p>SOPs are most useful when:</p>
+<ul>
+<li>the task is repeated;</li>
+<li>inconsistency would affect data quality;</li>
+<li>new people need training;</li>
+<li>there are safety, governance or compliance implications;</li>
+<li>the task involves multiple steps or decisions.</li>
+</ul>
+<p>Hollmann and colleagues describe SOPs as tools for reducing deviations and maintaining consistent quality in research workflows<span class="citation" data-cites="hollmann2020sop"><sup><a href="#ref-hollmann2020sop" role="doc-biblioref">17</a></sup></span>. For this workshop, the practical point is simple: write an SOP when a task needs to be done the same way more than once.</p>
+<p>A good SOP should include:</p>
+<ul>
+<li>title and purpose;</li>
+<li>scope: when it applies and when it does not;</li>
+<li>responsibilities;</li>
+<li>required materials/software/access;</li>
+<li>step-by-step procedure;</li>
+<li>quality checks;</li>
+<li>safety or governance considerations;</li>
+<li>version, date and author;</li>
+<li>review date.</li>
+</ul>
+<section id="activity-the-cup-of-tea-protocol" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="activity-the-cup-of-tea-protocol">Activity: the cup of tea protocol</h3>
+<p>Write a step-by-step protocol for making a cup of tea. You have three minutes.</p>
+<p>Then compare protocols. Did everyone specify:</p>
+<ul>
+<li>type and brand of tea?</li>
+<li>cup, mug or teapot?</li>
+<li>water source?</li>
+<li>water temperature?</li>
+<li>brewing time?</li>
+<li>milk first or last?</li>
+<li>how to judge when it is “done”?</li>
+</ul>
+<p>This activity shows how expert knowledge can hide assumptions. The same problem occurs in research methods.</p>
+</section>
+</section>
+<section id="expert-bias-and-the-curse-of-knowledge" class="level2">
+<h2 class="anchored" data-anchor-id="expert-bias-and-the-curse-of-knowledge">Expert bias and the curse of knowledge</h2>
+<p>Experts often omit details because those details feel obvious. This is one reason protocols can be difficult to reproduce. The person writing the protocol already knows the context, equipment, assumptions and tacit steps; the person reading it may not.</p>
+<p>A useful test is:</p>
+<blockquote class="blockquote">
+<p>Could a competent person who is new to the project follow this without asking you?</p>
+</blockquote>
+<p>The answer does not need to be “yes” for every piece of documentation. But for SOPs, data dictionaries, README files and analysis instructions, it should be the aim.</p>
+</section>
+<section id="onboarding-and-offboarding" class="level2">
+<h2 class="anchored" data-anchor-id="onboarding-and-offboarding">Onboarding and offboarding</h2>
+<p>Onboarding and offboarding are documentation opportunities. New team members ask useful questions because they do not yet share the team’s assumptions. Leaving team members are the best people to document what only they know.</p>
+<p>Onboarding documentation may include:</p>
+<ul>
+<li>where research data are stored;</li>
+<li>how to request access;</li>
+<li>restrictions around data stewardship and sharing;</li>
+<li>common software, packages and analysis tools;</li>
+<li>key datasets and documentation;</li>
+<li>authorship, publication and preprint expectations;</li>
+<li>examples of previous ethics, governance or grant applications;</li>
+<li>how to record decisions and issues.</li>
+</ul>
+<p>Offboarding documentation may include:</p>
+<ul>
+<li>where raw, derived and final data are stored;</li>
+<li>who else has access;</li>
+<li>ownership, custodianship and permitted reuse;</li>
+<li>collaborators and contact points;</li>
+<li>retention dates;</li>
+<li>repository links, DOIs or publication links;</li>
+<li>ethics, governance and data-sharing approvals;</li>
+<li>software versions and hardware/software dependencies;</li>
+<li>unfinished tasks and known issues.</li>
+</ul>
+<p>The Turing Way provides useful onboarding and offboarding checklists that can be adapted for research groups and projects<span class="citation" data-cites="turingwayOnOffboarding"><sup><a href="#ref-turingwayOnOffboarding" role="doc-biblioref">18</a></sup></span>.</p>
+</section>
+<section id="protocols-preregistration-and-reporting-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="protocols-preregistration-and-reporting-guidelines">Protocols, preregistration and reporting guidelines</h2>
+<p>Protocols and preregistrations are a special form of documentation. They make planned methods and analyses visible before results are known. They can help distinguish planned analyses from exploratory analyses, but they should not be treated as a prison. Deviations can be legitimate if they are documented transparently<span class="citation" data-cites="cosPlanNotPrison willroth2024deviations"><sup><a href="#ref-cosPlanNotPrison" role="doc-biblioref">19</a>,<a href="#ref-willroth2024deviations" role="doc-biblioref">20</a></sup></span>.</p>
+<p>Preregistration and protocol registration may be useful for:</p>
+<ul>
+<li>clinical trials;</li>
+<li>intervention studies;</li>
+<li>systematic reviews;</li>
+<li>planned secondary data analyses;</li>
+<li>studies where analytic flexibility could affect interpretation.</li>
+</ul>
+<p>Common platforms include OSF Registries, PROSPERO and protocols.io<span class="citation" data-cites="osfRegistries prospero protocolsio"><sup><a href="#ref-osfRegistries" role="doc-biblioref">21</a>–<a href="#ref-protocolsio" role="doc-biblioref">23</a></sup></span>. For systematic reviews, the Cochrane Handbook provides guidance on protocol development and review methods<span class="citation" data-cites="cochraneHandbook"><sup><a href="#ref-cochraneHandbook" role="doc-biblioref">24</a></sup></span>. There are also templates specifically designed for secondary data analysis<span class="citation" data-cites="vanDenAkkerSecondaryPrereg"><sup><a href="#ref-vanDenAkkerSecondaryPrereg" role="doc-biblioref">25</a></sup></span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Protocols can change
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The value of a protocol is not that nothing changes. The value is that changes are visible, justified and interpretable.</p>
+</div>
+</div>
+<p>Reporting guidelines are another form of transparency support. They help researchers report studies with enough detail for readers to understand what was done. EQUATOR curates reporting guidelines across study designs, including CONSORT, SPIRIT, STROBE, PRISMA, MOOSE and STARD<span class="citation" data-cites="equatorNetwork"><sup><a href="#ref-equatorNetwork" role="doc-biblioref">26</a></sup></span>.</p>
+<p>Reporting guidelines should usually be considered early, not only at manuscript submission.</p>
+</section>
+<section id="what-belongs-in-this-chapter-and-what-belongs-later" class="level2">
+<h2 class="anchored" data-anchor-id="what-belongs-in-this-chapter-and-what-belongs-later">What belongs in this chapter, and what belongs later?</h2>
+<p>Some materials on the slides overlap with other parts of the workshop. To avoid repetition, use this boundary:</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Main chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Folder structure and file naming</td>
+<td>Chapter 3</td>
+</tr>
+<tr class="even">
+<td>Data-management responsibilities and access decisions</td>
+<td>Chapter 4</td>
+</tr>
+<tr class="odd">
+<td>Tidy data and missing-value coding</td>
+<td>Chapter 5</td>
+</tr>
+<tr class="even">
+<td>README, metadata, decision logs, changelogs, ELNs, SOPs</td>
+<td>Chapter 6</td>
+</tr>
+<tr class="odd">
+<td>Code comments, package environments, <code>renv</code>, code checks</td>
+<td>Chapter 7</td>
+</tr>
+<tr class="even">
+<td>Preprints, repositories, licences, PIDs, data access statements</td>
+<td>Chapter 8</td>
+</tr>
+</tbody>
+</table>
+<p>Preprints are important, but they are mainly about dissemination and early visibility rather than project documentation. They fit better in the later chapter on publishing and reuse.</p>
+</section>
+<section id="activity-how-could-you-show-your-working" class="level2">
+<h2 class="anchored" data-anchor-id="activity-how-could-you-show-your-working">Activity: how could you show your working?</h2>
+<p>Imagine you are contacted about a paper you published two years ago because a similar paper has reported contradictory results.</p>
+<p>What could you provide to show your working?</p>
+<p>Consider:</p>
+<ul>
+<li>project README;</li>
+<li>data dictionary or codebook;</li>
+<li>metadata;</li>
+<li>analysis scripts;</li>
+<li>decision log;</li>
+<li>changelog;</li>
+<li>environment notes;</li>
+<li>protocol or preregistration;</li>
+<li>reporting guideline checklist;</li>
+<li>data access statement;</li>
+<li>repository or DOI;</li>
+<li>documented deviations or sensitivity analyses.</li>
+</ul>
+<section id="reflection" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="reflection">Reflection</h3>
+<p>Choose one current project. What is the single piece of documentation that would most improve its reproducibility or handover?</p>
+<p>Write one action you could take this week.</p>
+</section>
+</section>
+<section id="recommended-resources-for-this-chapter" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-resources-for-this-chapter">Recommended resources for this chapter</h2>
+<p>These resources are included as a practical reading list. The aim is not for learners to read all of them, but to know where to look when they need a template, example or more detailed guidance.</p>
+<section id="core-documentation-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="core-documentation-guidance">Core documentation guidance</h3>
+<ul>
+<li>The Turing Way: project documentation, metadata and ELNs<span class="citation" data-cites="turingwayDocumentation turingwayMetadata turingwayELNs"><sup><a href="#ref-turingwayDocumentation" role="doc-biblioref">1</a>,<a href="#ref-turingwayMetadata" role="doc-biblioref">3</a>,<a href="#ref-turingwayELNs" role="doc-biblioref">16</a></sup></span></li>
+<li>Good Enough Practices in Scientific Computing<span class="citation" data-cites="wilson2017goodenough"><sup><a href="#ref-wilson2017goodenough" role="doc-biblioref">2</a></sup></span></li>
+<li>Reproducible Research workshop documentation materials<span class="citation" data-cites="partridgeDocumentation"><sup><a href="#ref-partridgeDocumentation" role="doc-biblioref">27</a></sup></span></li>
+<li>CESSDA: documentation and metadata<span class="citation" data-cites="cessdaDocumentation"><sup><a href="#ref-cessdaDocumentation" role="doc-biblioref">14</a></sup></span></li>
+</ul>
+</section>
+<section id="readmes-data-level-documentation-and-handover" class="level3">
+<h3 class="anchored" data-anchor-id="readmes-data-level-documentation-and-handover">READMEs, data-level documentation and handover</h3>
+<ul>
+<li>Make a README<span class="citation" data-cites="makeareadme"><sup><a href="#ref-makeareadme" role="doc-biblioref">4</a></sup></span></li>
+<li>UK Data Service: data-level documentation<span class="citation" data-cites="ukdataserviceDataLevel"><sup><a href="#ref-ukdataserviceDataLevel" role="doc-biblioref">5</a></sup></span></li>
+<li>Imperial College London: documenting data<span class="citation" data-cites="imperialDocumentingData"><sup><a href="#ref-imperialDocumentingData" role="doc-biblioref">28</a></sup></span></li>
+<li>University of Manchester: research data documentation cheat sheets<span class="citation" data-cites="manchesterResearchDataExplained"><sup><a href="#ref-manchesterResearchDataExplained" role="doc-biblioref">29</a></sup></span></li>
+<li>The Turing Way: onboarding and offboarding guidance<span class="citation" data-cites="turingwayOnOffboarding"><sup><a href="#ref-turingwayOnOffboarding" role="doc-biblioref">18</a></sup></span></li>
+</ul>
+</section>
+<section id="metadata-and-metadata-standards" class="level3">
+<h3 class="anchored" data-anchor-id="metadata-and-metadata-standards">Metadata and metadata standards</h3>
+<ul>
+<li>Cambridge guidance on metadata<span class="citation" data-cites="cambridgeMetadata"><sup><a href="#ref-cambridgeMetadata" role="doc-biblioref">13</a></sup></span></li>
+<li>Research Data Alliance Metadata Standards Catalog<span class="citation" data-cites="rdamsc"><sup><a href="#ref-rdamsc" role="doc-biblioref">12</a></sup></span></li>
+<li>DataCite metadata schema<span class="citation" data-cites="dataciteSchema"><sup><a href="#ref-dataciteSchema" role="doc-biblioref">8</a></sup></span></li>
+<li>Dublin Core, DDI, SDMX and ISO 19115 as examples of metadata standards used in different contexts<span class="citation" data-cites="dublinCore ddiAlliance sdmx iso19115"><sup><a href="#ref-dublinCore" role="doc-biblioref">7</a>,<a href="#ref-ddiAlliance" role="doc-biblioref">9</a>–<a href="#ref-iso19115" role="doc-biblioref">11</a></sup></span></li>
+<li>ResourceSpace guide to metadata, useful as a general overview rather than a research-specific standard<span class="citation" data-cites="resourcespaceMetadata"><sup><a href="#ref-resourcespaceMetadata" role="doc-biblioref">30</a></sup></span></li>
+</ul>
+</section>
+<section id="decision-logs-changelogs-and-risk-registers" class="level3">
+<h3 class="anchored" data-anchor-id="decision-logs-changelogs-and-risk-registers">Decision logs, changelogs and risk registers</h3>
+<ul>
+<li>Archbee guide to document version control<span class="citation" data-cites="archbeeVersionControl"><sup><a href="#ref-archbeeVersionControl" role="doc-biblioref">15</a></sup></span></li>
+<li>Project Manager Template guide to decision logs<span class="citation" data-cites="projectManagerDecisionLog"><sup><a href="#ref-projectManagerDecisionLog" role="doc-biblioref">31</a></sup></span></li>
+<li>Asana guide to risk registers<span class="citation" data-cites="asanaRiskRegister"><sup><a href="#ref-asanaRiskRegister" role="doc-biblioref">32</a></sup></span></li>
+</ul>
+</section>
+<section id="elns-sops-protocols-and-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="elns-sops-protocols-and-reporting">ELNs, SOPs, protocols and reporting</h3>
+<ul>
+<li>The Turing Way: electronic lab notebooks<span class="citation" data-cites="turingwayELNs"><sup><a href="#ref-turingwayELNs" role="doc-biblioref">16</a></sup></span></li>
+<li>Kanza et al.&nbsp;on implementing ELNs<span class="citation" data-cites="kanza2024elns"><sup><a href="#ref-kanza2024elns" role="doc-biblioref">33</a></sup></span></li>
+<li>Hollmann et al.&nbsp;on writing SOPs<span class="citation" data-cites="hollmann2020sop"><sup><a href="#ref-hollmann2020sop" role="doc-biblioref">17</a></sup></span></li>
+<li>UHBW essential research documents SOP as a health-research example<span class="citation" data-cites="uhbwEssentialDocs"><sup><a href="#ref-uhbwEssentialDocs" role="doc-biblioref">34</a></sup></span></li>
+<li>EQUATOR Network reporting guidelines<span class="citation" data-cites="equatorNetwork"><sup><a href="#ref-equatorNetwork" role="doc-biblioref">26</a></sup></span></li>
+<li>OSF Registries, PROSPERO and protocols.io<span class="citation" data-cites="osfRegistries prospero protocolsio"><sup><a href="#ref-osfRegistries" role="doc-biblioref">21</a>–<a href="#ref-protocolsio" role="doc-biblioref">23</a></sup></span></li>
+<li>Cochrane Handbook<span class="citation" data-cites="cochraneHandbook"><sup><a href="#ref-cochraneHandbook" role="doc-biblioref">24</a></sup></span></li>
+</ul>
+</section>
+</section>
+<section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
-<li>Documentation underpins reproducibility, interpretation, and continuity.</li>
-<li>Different documentation types serve different purposes.</li>
-<li>Capturing decisions is as important as recording actions.</li>
-<li>Clear documentation supports collaboration and reduces risk.</li>
+<li>Documentation is how decisions remain visible.</li>
+<li>Different documentation artefacts serve different purposes.</li>
+<li>A README orientates; a codebook explains variables; metadata supports discovery and citation; logs record decisions and changes.</li>
+<li>SOPs are useful for repeatable tasks; protocols and preregistrations make planned methods visible.</li>
+<li>Proportionate documentation reduces risk, supports handover and strengthens reproducibility.</li>
 </ul>
 </section>
 
 
+<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-turingwayDocumentation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. Documentation. (2024).</div>
+</div>
+<div id="ref-wilson2017goodenough" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Wilson, G. <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1005510">Good enough practices in scientific computing</a>. <em>PLOS Computational Biology</em> <strong>13</strong>, e1005510 (2017).</div>
+</div>
+<div id="ref-turingwayMetadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">The Turing Way Community. Documentation and metadata. (2024).</div>
+</div>
+<div id="ref-makeareadme" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Make a README. Make a README. (2024).</div>
+</div>
+<div id="ref-ukdataserviceDataLevel" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">UK Data Service. Data-level documentation. (2024).</div>
+</div>
+<div id="ref-ukdataserviceAdministrative" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">UK Data Service. Administrative data. (2024).</div>
+</div>
+<div id="ref-dublinCore" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Dublin Core Metadata Initiative. Dublin core metadata initiative. (2024).</div>
+</div>
+<div id="ref-dataciteSchema" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">DataCite Metadata Working Group. DataCite metadata schema documentation for the publication and citation of research data and other research outputs. (2026) doi:<a href="https://doi.org/10.14454/qdd3-ps68">10.14454/qdd3-ps68</a>.</div>
+</div>
+<div id="ref-ddiAlliance" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">DDI Alliance. Data documentation initiative. (2024).</div>
+</div>
+<div id="ref-sdmx" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">SDMX. Statistical data and metadata eXchange. (2024).</div>
+</div>
+<div id="ref-iso19115" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">International Organization for Standardization. ISO 19115-1:2014 geographic information — metadata — part 1: fundamentals. (2014).</div>
+</div>
+<div id="ref-rdamsc" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Research Data Alliance. Metadata standards catalog. (2024).</div>
+</div>
+<div id="ref-cambridgeMetadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">University of Cambridge Research Data Management. Adding metadata to your research data. <a href="https://www.data.cam.ac.uk/organising-storing/metadata">https://www.data.cam.ac.uk/organising-storing/metadata</a> (2026).</div>
+</div>
+<div id="ref-cessdaDocumentation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">CESSDA Training Team. Documentation and metadata. (2022).</div>
+</div>
+<div id="ref-archbeeVersionControl" class="csl-entry" role="listitem">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Archbee. Document version control. (2024).</div>
+</div>
+<div id="ref-turingwayELNs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">The Turing Way Community. Electronic lab notebooks. (2024).</div>
+</div>
+<div id="ref-hollmann2020sop" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Hollmann, S. <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1008095">Ten simple rules on how to write a standard operating procedure</a>. <em>PLOS Computational Biology</em> <strong>16</strong>, e1008095 (2020).</div>
+</div>
+<div id="ref-turingwayOnOffboarding" class="csl-entry" role="listitem">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">The Turing Way Community. On- and offboarding team members. (2024).</div>
+</div>
+<div id="ref-cosPlanNotPrison" class="csl-entry" role="listitem">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Center for Open Science. Preregistration: A plan, not a prison. (2017).</div>
+</div>
+<div id="ref-willroth2024deviations" class="csl-entry" role="listitem">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Willroth, E. C. &amp; Atherton, O. E. <a href="https://doi.org/10.1177/25152459231213802">Best laid plans: A guide to reporting preregistration deviations</a>. <em>Advances in Methods and Practices in Psychological Science</em> <strong>7</strong>, (2024).</div>
+</div>
+<div id="ref-osfRegistries" class="csl-entry" role="listitem">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Center for Open Science. OSF registries. (2024).</div>
+</div>
+<div id="ref-prospero" class="csl-entry" role="listitem">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Centre for Reviews and Dissemination, University of York. PROSPERO: International prospective register of systematic reviews. (2024).</div>
+</div>
+<div id="ref-protocolsio" class="csl-entry" role="listitem">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">protocols.io. Protocols.io. (2024).</div>
+</div>
+<div id="ref-cochraneHandbook" class="csl-entry" role="listitem">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Cochrane. Cochrane handbook for systematic reviews of interventions. (2024).</div>
+</div>
+<div id="ref-vanDenAkkerSecondaryPrereg" class="csl-entry" role="listitem">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Akker, O. R. van den <em>et al.</em> Preregistration of secondary data analysis: A template and tutorial. (2019).</div>
+</div>
+<div id="ref-equatorNetwork" class="csl-entry" role="listitem">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">EQUATOR Network. EQUATOR network: Enhancing the QUAlity and transparency of health research. (2026).</div>
+</div>
+<div id="ref-partridgeDocumentation" class="csl-entry" role="listitem">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Partridge, A. &amp; Miotto, A. Step 4: Document everything. (2025).</div>
+</div>
+<div id="ref-imperialDocumentingData" class="csl-entry" role="listitem">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Imperial College London. Documenting data. (2024).</div>
+</div>
+<div id="ref-manchesterResearchDataExplained" class="csl-entry" role="listitem">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">University of Manchester Library. Research data explained. (2024).</div>
+</div>
+<div id="ref-resourcespaceMetadata" class="csl-entry" role="listitem">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">ResourceSpace. Complete guide to metadata. (2024).</div>
+</div>
+<div id="ref-projectManagerDecisionLog" class="csl-entry" role="listitem">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">ProjectManagerTemplate.com. Decision logs: The ultimate guide. (2024).</div>
+</div>
+<div id="ref-asanaRiskRegister" class="csl-entry" role="listitem">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Asana. What is a risk register? A project manager’s guide. (2024).</div>
+</div>
+<div id="ref-kanza2024elns" class="csl-entry" role="listitem">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">Kanza, S., Willoughby, C., Gibbins, N., <em>et al.</em> <a href="https://doi.org/10.1371/journal.pcbi.1012170">Ten simple rules for implementing electronic laboratory notebooks</a>. <em>PLOS Computational Biology</em> <strong>20</strong>, e1012170 (2024).</div>
+</div>
+<div id="ref-uhbwEssentialDocs" class="csl-entry" role="listitem">
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">University Hospitals Bristol and Weston NHS Foundation Trust. SOP 014: Essential research documents. (2020).</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -673,24 +1259,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./05-organise-tidy.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./07-code-quality-testing.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

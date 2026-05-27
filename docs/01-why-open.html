@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open Research &amp; Reproducibility - Chapter 1 - Why Open?</title>
+<title>Open Research &amp; Reproducibility - Chapter 1 — Why Open Research and Reproducibility?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,11 +62,11 @@ div.csl-indent {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -82,21 +82,52 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles/style.scss">
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Open Research &amp; Reproducibility</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html" rel="" target="">
+ <span class="menu-text">References</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/terraetudo/open-research-reproducibility" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-why-open.html"><span class="chapter-title">Chapter 1 - Why Open?</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-why-open.html"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -106,14 +137,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Chapters</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -123,62 +149,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Overview</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Before we start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 1 - Why Open?</span></a>
+  <a href="./01-why-open.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 - FAIR basics</span></a>
+  <a href="./02-fair-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2 — FAIR basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 - Project organisation and continuity</span></a>
+  <a href="./03-project-mgmt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3 — Project organisation and continuity</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans (UCL)</span></a>
+  <a href="./04-dmp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4 — Data Management Plans</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 - Organising and tidying data</span></a>
+  <a href="./05-organise-tidy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5 — Organising and tidying data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation, ELNs &amp; SOPs</span></a>
+  <a href="./06-docs-eln-sops.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6 — Documentation and protocols</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Code quality &amp; testing</span></a>
+  <a href="./07-code-quality-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7 — Coding for reproducible research</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-s-responsibility.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Responsible research: roles, decisions, and accountability</span></a>
+  <a href="./08-publishing-pids-reuse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8 — Publishing, PIDs and preparing for reuse</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-automation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Automation &amp; simple workflows</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10-publishing-pids.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10 — Publishing, PIDs &amp; preparing for reuse</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11-wrap-up.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11 — Wrap-up &amp; next steps</span></a>
+  <a href="./09-wrap-up-next-steps.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9 — Wrap-up and next steps</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,13 +212,60 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-1" id="toc-chapter-1" class="nav-link active" data-scroll-target="#chapter-1">Chapter 1</a>
+  <ul class="collapse">
+  <li><a href="#why-open-research-and-reproducibility" id="toc-why-open-research-and-reproducibility" class="nav-link" data-scroll-target="#why-open-research-and-reproducibility">Why Open Research and Reproducibility?</a></li>
+  </ul></li>
+  <li><a href="#what-this-chapter-does" id="toc-what-this-chapter-does" class="nav-link" data-scroll-target="#what-this-chapter-does">What this chapter does</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#why-openness-now" id="toc-why-openness-now" class="nav-link" data-scroll-target="#why-openness-now">Why openness now?</a></li>
+  <li><a href="#reproducibility-as-a-visible-route" id="toc-reproducibility-as-a-visible-route" class="nav-link" data-scroll-target="#reproducibility-as-a-visible-route">Reproducibility as a visible route</a>
+  <ul class="collapse">
+  <li><a href="#making-the-route-visible" id="toc-making-the-route-visible" class="nav-link" data-scroll-target="#making-the-route-visible">Making the route visible</a></li>
+  </ul></li>
+  <li><a href="#key-terms-used-in-this-workshop" id="toc-key-terms-used-in-this-workshop" class="nav-link" data-scroll-target="#key-terms-used-in-this-workshop">Key terms used in this workshop</a></li>
+  <li><a href="#reproducible-is-not-the-only--ible" id="toc-reproducible-is-not-the-only--ible" class="nav-link" data-scroll-target="#reproducible-is-not-the-only--ible">Reproducible is not the only “-ible”</a>
+  <ul class="collapse">
+  <li><a href="#different-ways-research-can-be-checked-or-extended" id="toc-different-ways-research-can-be-checked-or-extended" class="nav-link" data-scroll-target="#different-ways-research-can-be-checked-or-extended">Different ways research can be checked or extended</a></li>
+  </ul></li>
+  <li><a href="#principles-practices-and-tools" id="toc-principles-practices-and-tools" class="nav-link" data-scroll-target="#principles-practices-and-tools">Principles, practices and tools</a></li>
+  <li><a href="#minimum-expectations-in-practice" id="toc-minimum-expectations-in-practice" class="nav-link" data-scroll-target="#minimum-expectations-in-practice">Minimum expectations in practice</a></li>
+  <li><a href="#where-irreproducibility-comes-from" id="toc-where-irreproducibility-comes-from" class="nav-link" data-scroll-target="#where-irreproducibility-comes-from">Where irreproducibility comes from</a>
+  <ul class="collapse">
+  <li><a href="#where-reproducibility-can-break-down" id="toc-where-reproducibility-can-break-down" class="nav-link" data-scroll-target="#where-reproducibility-can-break-down">Where reproducibility can break down</a></li>
+  </ul></li>
+  <li><a href="#barriers-are-real" id="toc-barriers-are-real" class="nav-link" data-scroll-target="#barriers-are-real">Barriers are real</a>
+  <ul class="collapse">
+  <li><a href="#quick-discussion" id="toc-quick-discussion" class="nav-link" data-scroll-target="#quick-discussion">Quick discussion</a></li>
+  </ul></li>
+  <li><a href="#why-this-helps-you-too" id="toc-why-this-helps-you-too" class="nav-link" data-scroll-target="#why-this-helps-you-too">Why this helps you too</a></li>
+  <li><a href="#open-research-in-day-to-day-work" id="toc-open-research-in-day-to-day-work" class="nav-link" data-scroll-target="#open-research-in-day-to-day-work">Open research in day-to-day work</a></li>
+  <li><a href="#what-can-be-made-open" id="toc-what-can-be-made-open" class="nav-link" data-scroll-target="#what-can-be-made-open">What can be made open?</a></li>
+  <li><a href="#ai-and-reproducibility" id="toc-ai-and-reproducibility" class="nav-link" data-scroll-target="#ai-and-reproducibility">AI and reproducibility</a></li>
+  <li><a href="#activity-the-six-month-test" id="toc-activity-the-six-month-test" class="nav-link" data-scroll-target="#activity-the-six-month-test">Activity: the six-month test</a>
+  <ul class="collapse">
+  <li><a href="#individual-reflection-or-small-group-discussion" id="toc-individual-reflection-or-small-group-discussion" class="nav-link" data-scroll-target="#individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</a></li>
+  </ul></li>
+  <li><a href="#activity-constraints-are-part-of-the-workflow" id="toc-activity-constraints-are-part-of-the-workflow" class="nav-link" data-scroll-target="#activity-constraints-are-part-of-the-workflow">Activity: constraints are part of the workflow</a>
+  <ul class="collapse">
+  <li><a href="#sensitive-or-restricted-data" id="toc-sensitive-or-restricted-data" class="nav-link" data-scroll-target="#sensitive-or-restricted-data">Sensitive or restricted data</a></li>
+  </ul></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What comes next?</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/01-why-open.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Chapter 1 - Why Open?</span></h1>
+<h1 class="title"><span class="chapter-title">Chapter 1 — Why Open Research and Reproducibility?</span></h1>
 </div>
 
 
@@ -217,189 +280,442 @@ div.csl-indent {
 
 </header>
 
-<section id="sec-why-open" class="level1">
-<h1>Why Open?</h1>
+<section id="chapter-1" class="level1 chapter-hero">
+<h1>Chapter 1</h1>
+<section id="why-open-research-and-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="why-open-research-and-reproducibility">Why Open Research and Reproducibility?</h2>
+<p>Open research is not about making everything public. It is about making research easier to understand, check, trust and reuse, within appropriate ethical, legal and practical boundaries.</p>
+</section>
+</section>
+<section id="what-this-chapter-does" class="level3 chapter-overview">
+<h3 class="anchored" data-anchor-id="what-this-chapter-does">What this chapter does</h3>
+<p>This chapter sets up the rest of the workshop. It explains why openness and reproducibility matter, what the key terms mean in practice, and why these issues are relevant even when working with sensitive or restricted-access data.</p>
+<p>The aim is not to make every project perfectly open. The aim is to make everyday research workflows clearer, better documented, easier to check, and easier to hand over.</p>
+</section>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>By the end of this module, you should be able to:</p>
+<p>By the end of this chapter, you should be able to:</p>
 <ul>
 <li>explain why openness and reproducibility are now core expectations in research;</li>
-<li>distinguish between <em>openness</em>, <em>transparency</em>, and <em>reproducibility</em> in practical terms;</li>
-<li>recognise common sources of irreproducibility in everyday research workflows;</li>
-<li>understand how open practices reduce research risk, inefficiency, and avoidable error;</li>
-<li>see how the principles introduced here translate into concrete practices covered in later modules.</li>
+<li>distinguish between <strong>open research</strong>, <strong>transparency</strong> and <strong>reproducibility</strong>;</li>
+<li>recognise common sources of irreproducibility in everyday workflows;</li>
+<li>understand how open practices can reduce risk, inefficiency and avoidable error;</li>
+<li>identify how later chapters translate these principles into practical research habits.</li>
 </ul>
-<p>This module sets the conceptual foundation for the rest of the course. The next module moves from <em>why openness matters</em> to <em>how to describe and structure outputs so they remain usable over time</em> (<a href="./02-fair-basics.html">Chapter 2: FAIR basics</a>).</p>
-<hr>
+<p>This chapter is deliberately conceptual. Later chapters turn these ideas into practical steps: project organisation, data management planning, documentation, code quality, automation, publishing, persistent identifiers and reuse.</p>
 </section>
 <section id="why-openness-now" class="level2">
 <h2 class="anchored" data-anchor-id="why-openness-now">Why openness now?</h2>
-<p>Open research is no longer a niche movement or an optional add-on. Across scientific research, concerns about irreproducible findings, undocumented analytical decisions, and inaccessible research outputs have led funders, journals, and institutions to raise expectations around transparency and robustness<span class="citation" data-cites="baker2016reproducibility munafo2017manifesto plesser2018reproducibility"><sup><a href="#ref-baker2016reproducibility" role="doc-biblioref">1</a>–<a href="#ref-plesser2018reproducibility" role="doc-biblioref">3</a></sup></span></p>
-<p>In practice, this shift is less about ideology and more about reducing avoidable risk: rework, errors, lost context, and fragile results that cannot be checked, reused, or defended. This course is designed to support proportionate improvements that fit real research constraints.</p>
-<p>Open and reproducible research supports meaningful involvement of patients, participants, and communities by making assumptions, decisions, and limitations visible and contestable.</p>
-<hr>
-</section>
-<section id="key-terms-used-consistently-in-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="key-terms-used-consistently-in-this-course">Key terms (used consistently in this course)</h2>
-<p>These terms overlap, but they are not identical:</p>
+<p>Open research is no longer a niche movement or an optional add-on. Across research, concerns about irreproducible findings, undocumented analytical decisions and inaccessible outputs have led funders, journals and institutions to raise expectations around transparency and robustness<span class="citation" data-cites="baker2016reproducibility munafo2017manifesto plesser2018reproducibility"><sup><a href="#ref-baker2016reproducibility" role="doc-biblioref">1</a>–<a href="#ref-plesser2018reproducibility" role="doc-biblioref">3</a></sup></span>.</p>
+<p>For most researchers, the issue is not ideology. It is practical risk.</p>
+<p>Research projects often involve multiple datasets, changing teams, evolving analyses, sensitive information and informal decisions made under time pressure. Without clear organisation and documentation, it becomes difficult to explain what was done, why it was done and whether the same results could be produced again.</p>
+<p>Open and reproducible practice helps reduce:</p>
 <ul>
-<li><strong>Open research</strong>: making research outputs, methods, and decisions accessible to others, where lawful, ethical, and appropriate.</li>
-<li><strong>Transparency</strong>: clearly documenting what was done, why it was done, and how decisions were made (including decisions not visible in the final paper).</li>
-<li><strong>Reproducibility</strong>: enabling someone else (or you in six months) to understand and, where possible, recreate the analytical steps and results using the same data and methods.</li>
+<li>avoidable rework;</li>
+<li>loss of project memory;</li>
+<li>uncertainty about which file, script or output is current;</li>
+<li>errors introduced through manual or undocumented steps;</li>
+<li>barriers to collaboration, handover, publication and reuse.</li>
 </ul>
-<p>A project can be reproducible without being fully open (e.g.&nbsp;sensitive data). Conversely, sharing outputs is not sufficient for reproducibility if key steps or provenance are missing.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Reproducible is not the only “-ible”
+A practical way to think about reproducibility
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In The Turing Way terminology, results may be described as:</p>
-<ul>
-<li><strong>reproducible</strong> (same data, same analysis),</li>
-<li><strong>replicable</strong> (different data, same analysis),</li>
-<li><strong>robust</strong> (same data, different analysis),</li>
-<li><strong>generalisable</strong> (different data, different analysis).</li>
-</ul>
-<p>These distinctions are useful when deciding what level of checking or reuse is realistic for a given project. For a short explainer and visual summary, see The Turing Way Definitions page<span class="citation" data-cites="turingway2025"><sup><a href="#ref-turingway2025" role="doc-biblioref">4</a></sup></span>.</p>
+<p>Could someone else understand what you did well enough to check it?</p>
+<p>Could you understand it yourself if you came back to the project in six months?</p>
+<p>If the answer is “probably not”, the workflow may need better organisation, clearer documentation or more explicit version control.</p>
 </div>
 </div>
-<hr>
 </section>
-<section id="how-to-read-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-this-course">How to read this course</h2>
-<p>This course separates <strong>principles</strong>, <strong>practices</strong>, and <strong>tools</strong>:</p>
-<ul>
-<li><strong>Principles</strong> are the underlying aims (e.g.&nbsp;transparency, accountability, reuse).</li>
-<li><strong>Practices</strong> are the behaviours that implement those aims (e.g.&nbsp;versioning, documentation, sharing decisions).</li>
-<li><strong>Tools</strong> are the platforms that support practices (e.g.&nbsp;repositories, version control systems, workflow tools).</li>
-</ul>
-<p>Tools change quickly; principles and practices travel well across projects and roles. This is why the course emphasises <em>practices</em>, while the <a href="./resources.html"><strong>Resources and Further Reading</strong></a> chapter centralises tool- and UCL-specific signposting.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="reproducibility-as-a-visible-route" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-as-a-visible-route">Reproducibility as a visible route</h2>
+<p>Reproducibility is sometimes framed narrowly as whether someone can re-run an analysis and get exactly the same result. That matters, but it is not the whole story.</p>
+<p>A more useful starting point is whether someone with relevant expertise can follow the route taken through the research process: what was done, why it was done, what evidence was generated, what judgements were made, and how these led to the findings.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-New to UCL (or a new project team)?
+UKRN definition of reproducibility
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use the <a href="./resources.html"><strong>Resources and Further Reading</strong></a> chapter as your “where to go next” page: UCL routes, contacts, and copy-ready templates are maintained there so links only need updating in one place.</p>
+<p>The UK Reproducibility Network describes reproducibility as research being sufficiently transparent that someone with the relevant expertise can clearly follow:</p>
+<ul>
+<li><strong>how</strong> the research was done;</li>
+<li><strong>why</strong> it was done in that way;</li>
+<li>the <strong>evidence</strong> that was established;</li>
+<li>the <strong>reasoning and judgements</strong> that were used;</li>
+<li>how these led justifiably to the <strong>research findings and conclusions</strong>.</li>
+</ul>
 </div>
 </div>
-<hr>
+<section id="making-the-route-visible" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="making-the-route-visible">Making the route visible</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Research question] --&gt; B[Data sources]
+    B --&gt; C[Data cleaning]
+    C --&gt; D[Analysis decisions]
+    D --&gt; E[Results]
+    E --&gt; F[Findings and conclusions]
+
+    B -. document .-&gt; G[Project record]
+    C -. document .-&gt; G
+    D -. document .-&gt; G
+    E -. document .-&gt; G
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>Without documentation, others may see only the final conclusion. Reproducible research makes the route to that conclusion visible.</p>
 </section>
-<section id="minimum-expectations-in-practice-ucl-and-uk-funders" class="level2">
-<h2 class="anchored" data-anchor-id="minimum-expectations-in-practice-ucl-and-uk-funders">Minimum expectations in practice (UCL and UK funders)</h2>
-<p>Open research is treated as a <strong>default position</strong>, applied across the research lifecycle and implemented proportionately within ethical, legal, and contractual constraints.</p>
-<p>In most UCL research contexts, you should assume the following <strong>baseline expectations</strong> apply somewhere in your project:</p>
+</section>
+<section id="key-terms-used-in-this-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="key-terms-used-in-this-workshop">Key terms used in this workshop</h2>
+<p>These terms overlap, but they are not identical.</p>
+<div class="definition-grid">
+<section id="open-research" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="open-research">Open research</h3>
+<p>Making research outputs, methods and decisions accessible to others, where this is lawful, ethical and appropriate.</p>
+</section>
+<section id="transparency" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="transparency">Transparency</h3>
+<p>Clearly documenting what was done, why it was done and how decisions were made, including decisions that may not appear in the final paper.</p>
+</section>
+<section id="reproducibility" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="reproducibility">Reproducibility</h3>
+<p>Enabling someone else — or your future self — to understand and, where possible, recreate the analytical steps and results using the same data and methods.</p>
+</section>
+</div>
+<p>A project can be reproducible without being fully open. This is particularly important for research using sensitive, confidential or linked administrative data. Conversely, sharing outputs is not enough for reproducibility if key steps, assumptions, software, metadata or decisions are missing.</p>
+</section>
+<section id="reproducible-is-not-the-only--ible" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-is-not-the-only--ible">Reproducible is not the only “-ible”</h2>
+<p>The Turing Way distinguishes between several related concepts<span class="citation" data-cites="turingway2025"><sup><a href="#ref-turingway2025" role="doc-biblioref">4</a></sup></span>.</p>
+<section id="different-ways-research-can-be-checked-or-extended" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="different-ways-research-can-be-checked-or-extended">Different ways research can be checked or extended</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Same analysis</th>
+<th>Different analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Same data</strong></td>
+<td><strong>Reproducible</strong></td>
+<td><strong>Robust</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Different data</strong></td>
+<td><strong>Replicable</strong></td>
+<td><strong>Generalisable</strong></td>
+</tr>
+</tbody>
+</table>
+<p>These distinctions help clarify what kind of checking is possible. Not every project can support every form of reuse, especially when data are sensitive, access-controlled or context-specific.</p>
+</section>
+<div class="definition-grid">
+<section id="reproducible" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="reproducible">Reproducible</h3>
+<p>Same data, same analysis.</p>
+</section>
+<section id="replicable" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="replicable">Replicable</h3>
+<p>Different data, same analysis.</p>
+</section>
+<section id="robust" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="robust">Robust</h3>
+<p>Same data, different analysis.</p>
+</section>
+<section id="generalisable" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="generalisable">Generalisable</h3>
+<p>Different data, different analysis.</p>
+</section>
+</div>
+<p>The important point is to be clear about what kind of checking, reuse or scrutiny is realistic.</p>
+</section>
+<section id="principles-practices-and-tools" class="level2">
+<h2 class="anchored" data-anchor-id="principles-practices-and-tools">Principles, practices and tools</h2>
+<p>This workshop separates <strong>principles</strong>, <strong>practices</strong> and <strong>tools</strong>.</p>
+<div class="practice-grid">
+<section id="principles" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="principles">Principles</h3>
+<p>The underlying aims, such as transparency, accountability, reuse, quality and trust.</p>
+</section>
+<section id="practices" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="practices">Practices</h3>
+<p>The behaviours that implement those aims, such as documentation, version control, naming conventions and decision logs.</p>
+</section>
+<section id="tools" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="tools">Tools</h3>
+<p>The software, repositories and platforms that support the practices, such as RStudio, Quarto, Git, GitHub, OSF or institutional repositories.</p>
+</section>
+</div>
+<p>Tools change quickly. Good practices travel across projects, disciplines and institutions. This is why the workshop focuses on habits and workflows, not only on any single platform.</p>
+</section>
+<section id="minimum-expectations-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-expectations-in-practice">Minimum expectations in practice</h2>
+<p>Open research is increasingly treated as a <strong>default position</strong>, applied across the research lifecycle and implemented proportionately within ethical, legal and contractual constraints.</p>
+<p>In most UCL and UK-funded research contexts, you should assume that the following expectations may apply somewhere in your project:</p>
 <ul>
-<li><strong>Plan data management proportionately</strong>, and document decisions (a Data Management Plan may be required by funders and is generally expected for funded projects and projects handling research data).</li>
-<li><strong>Make outputs findable and preservable</strong>: ensure data, code, protocols, and other outputs (or at least metadata describing them) can be located, interpreted, and retained appropriately.</li>
-<li><strong>Enable open access to publications</strong> through the institutional route, in line with funder and assessment requirements.</li>
-<li><strong>Record constraints explicitly</strong> (e.g.&nbsp;sensitive data, governance restrictions, IP, contractual limits) and document how they affect sharing, access, and retention.</li>
+<li><strong>plan data management proportionately</strong>, and document decisions;</li>
+<li><strong>make outputs findable and preservable</strong>, including data, code, protocols, materials or metadata where appropriate;</li>
+<li><strong>enable open access to publications</strong> through institutional and funder-compliant routes;</li>
+<li><strong>record constraints explicitly</strong>, including sensitive data, governance restrictions, intellectual property or contractual limits;</li>
+<li><strong>document how restrictions affect sharing, access, reuse and retention</strong>.</li>
 </ul>
-<p>This course shows how to meet these expectations through robust everyday practice. UCL-facing routes, contacts, and templates are maintained in <a href="./resources.html"><strong>Resources and Further Reading</strong></a>.</p>
-<hr>
+<p>The key point is proportionality. Open research does not mean treating all projects in the same way. It means making defensible decisions and recording them clearly.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Open does not always mean public
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For sensitive data, good open research may mean clear metadata, documented access routes, transparent governance, synthetic examples, preserved code and well-described restrictions.</p>
+</div>
+</div>
 </section>
-<section id="where-irreproducibility-comes-from-in-normal-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="where-irreproducibility-comes-from-in-normal-workflows">Where irreproducibility comes from (in normal workflows)</h2>
-<p>Irreproducibility is usually not caused by misconduct. More commonly it arises from routine workflow issues, including:</p>
+<section id="where-irreproducibility-comes-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-irreproducibility-comes-from">Where irreproducibility comes from</h2>
+<p>Irreproducibility is usually not caused by misconduct. More often, it comes from ordinary workflow problems.</p>
+<p>Common examples include:</p>
 <ul>
-<li>manual data cleaning or analysis steps that are not recorded;</li>
-<li>unclear file organisation, naming, or versioning;</li>
-<li>results generated interactively without a saved script or pipeline;</li>
-<li>missing information about software environments or dependencies;</li>
-<li>loss of project memory when staff or students move on.</li>
+<li>manual data cleaning steps that are not recorded;</li>
+<li>unclear file names, folder structures or version histories;</li>
+<li>results generated interactively without a saved script;</li>
+<li>missing information about software versions, packages or dependencies;</li>
+<li>undocumented exclusions, recoding decisions or sensitivity analyses;</li>
+<li>project knowledge held by one person and lost when they move on.</li>
 </ul>
-<p>These problems tend to surface late (submission, peer review, audit, or handover), when they are most expensive to fix.</p>
-<hr>
+<p>These problems often become visible late: during submission, peer review, audit, collaboration or handover. By then, they are harder and more expensive to fix.</p>
+<section id="where-reproducibility-can-break-down" class="level3 figure-box">
+<h3 class="anchored" data-anchor-id="where-reproducibility-can-break-down">Where reproducibility can break down</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Generate research question] --&gt; B[Design study]
+    B --&gt; C[Collect or access data]
+    C --&gt; D[Clean and analyse data]
+    D --&gt; E[Interpret results]
+    E --&gt; F[Publish and reuse]
+
+    B -. bias or weak design .-&gt; X[Risk to reproducibility]
+    C -. missing provenance .-&gt; X
+    D -. undocumented cleaning or p-hacking .-&gt; X
+    E -. selective interpretation .-&gt; X
+    F -. inaccessible materials .-&gt; X
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>Some risks are methodological, such as poor design or low statistical power. Others are workflow risks, such as missing documentation, unclear data provenance or inaccessible materials<span class="citation" data-cites="munafo2017manifesto"><sup><a href="#ref-munafo2017manifesto" role="doc-biblioref">2</a></sup></span>.</p>
 </section>
-<section id="proportionality-and-constraints" class="level2">
-<h2 class="anchored" data-anchor-id="proportionality-and-constraints">Proportionality and constraints</h2>
-<p>Open and reproducible practice is not a one-size-fits-all checklist. Constraints may include personal or sensitive data, contractual obligations, intellectual property considerations, and limited time or resource.</p>
-<p>Good practice means making constraints explicit, documenting decisions, and using appropriate infrastructure. Proportionality applies to <em>how</em> you implement open practices, not to whether you document and justify decisions.</p>
-<hr>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Common risk point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If your workflow depends on remembering what you did, rather than recording it somewhere stable, it is fragile.</p>
+</div>
+</div>
 </section>
-<section id="open-research-in-practice-what-this-implies-for-day-to-day-work" class="level2">
-<h2 class="anchored" data-anchor-id="open-research-in-practice-what-this-implies-for-day-to-day-work">Open research in practice: what this implies for day-to-day work</h2>
-<p>Open research is not only about making outputs publicly available at the end of a project. Across the research lifecycle, work should be organised, documented, and described so that others — including your future self — can understand:</p>
+<section id="barriers-are-real" class="level2">
+<h2 class="anchored" data-anchor-id="barriers-are-real">Barriers are real</h2>
+<p>Working reproducibly takes time, skills and support. Barriers can include lack of incentives, fear of being held to higher standards than others, limited recognition in promotion processes, complex data governance, large computational infrastructure, and uncertainty about what can be shared.</p>
+<p>This workshop will not fix all of those structural issues. It focuses on practical improvements that are within the control of individual researchers and teams, while recognising that institutions, funders, journals and senior leaders also have responsibilities.</p>
+<section id="quick-discussion" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="quick-discussion">Quick discussion</h3>
+<p>Which barrier is most relevant to your own work at the moment?</p>
+<p>Is it mainly a <strong>personal workflow issue</strong>, a <strong>team issue</strong>, an <strong>institutional issue</strong>, or a <strong>data governance issue</strong>?</p>
+</section>
+</section>
+<section id="why-this-helps-you-too" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-helps-you-too">Why this helps you too</h2>
+<p>Open and reproducible practice is often presented as something researchers do for other people: reviewers, funders, journals, collaborators or future users of the work. That is true, but it is also useful for you.</p>
+<div class="practice-grid">
+<section id="avoid-disaster" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="avoid-disaster">Avoid disaster</h3>
+<p>Clear records make it less likely that an analysis becomes impossible to explain, repeat or defend later.</p>
+</section>
+<section id="write-papers-more-easily" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="write-papers-more-easily">Write papers more easily</h3>
+<p>Methods, exclusions, decisions and outputs are easier to report when they have been recorded during the project.</p>
+</section>
+<section id="support-review-and-revision" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="support-review-and-revision">Support review and revision</h3>
+<p>Reviewers, supervisors and collaborators can assess the work more efficiently when the workflow is transparent.</p>
+</section>
+<section id="enable-continuity" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="enable-continuity">Enable continuity</h3>
+<p>A well-documented project is easier to hand over when someone moves role, changes institution or returns after a break.</p>
+</section>
+<section id="build-reputation" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="build-reputation">Build reputation</h3>
+<p>Reliable, well-organised work increases trust in the research and in the team producing it.</p>
+</section>
+</div>
+</section>
+<section id="open-research-in-day-to-day-work" class="level2">
+<h2 class="anchored" data-anchor-id="open-research-in-day-to-day-work">Open research in day-to-day work</h2>
+<p>Open research is not only about making outputs publicly available at the end of a project. Across the research lifecycle, work should be organised, documented and described so that others — including your future self — can understand:</p>
 <ul>
-<li>what was done and why;</li>
+<li>what was done;</li>
+<li>why it was done;</li>
 <li>how results were produced;</li>
 <li>what assumptions and decisions shaped the work;</li>
-<li>what could (and could not) be reused, and under what conditions.</li>
+<li>what could and could not be reused;</li>
+<li>what restrictions apply.</li>
 </ul>
-<p>Three foundations support this:</p>
+<p>Three foundations support this.</p>
+<div class="practice-grid">
+<section id="documentation" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
+<p>READMEs, protocols, decision logs, metadata, data dictionaries and codebooks that capture context and rationale.</p>
+</section>
+<section id="organisation" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="organisation">Organisation</h3>
+<p>Consistent folder structures, file names and versioning that reduce ambiguity and error.</p>
+</section>
+<section id="description" class="level3 practice-card">
+<h3 class="anchored" data-anchor-id="description">Description</h3>
+<p>Clear metadata and access information so that outputs are interpretable, discoverable and reusable where appropriate.</p>
+</section>
+</div>
+<p>These foundations are particularly important for collaborative, longitudinal or sensitive-data projects, where people may join or leave the team and not all materials can be made publicly available.</p>
+</section>
+<section id="what-can-be-made-open" class="level2">
+<h2 class="anchored" data-anchor-id="what-can-be-made-open">What can be made open?</h2>
+<p>Open research is not a single action. Different parts of the research process can be made more visible, reusable or accessible.</p>
+<div class="definition-grid">
+<section id="publications" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="publications">Publications</h3>
+<p>Open access articles, reports, preprints or plain-language summaries.</p>
+</section>
+<section id="data-and-metadata" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="data-and-metadata">Data and metadata</h3>
+<p>Open data where possible; metadata, documentation and access conditions where data are restricted.</p>
+</section>
+<section id="code-and-software" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="code-and-software">Code and software</h3>
+<p>Scripts, notebooks, packages, workflows and dependency information.</p>
+</section>
+<section id="methods-and-materials" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="methods-and-materials">Methods and materials</h3>
+<p>Protocols, analysis plans, survey instruments, SOPs and decision logs.</p>
+</section>
+<section id="review-and-interpretation" class="level3 definition-card">
+<h3 class="anchored" data-anchor-id="review-and-interpretation">Review and interpretation</h3>
+<p>Transparent peer review, reporting checklists, sensitivity analyses and clear statements of limitations.</p>
+</section>
+</div>
+</section>
+<section id="ai-and-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="ai-and-reproducibility">AI and reproducibility</h2>
+<p>Automated and AI-assisted tools can support research workflows, for example by helping with coding, summarising, drafting, checking or exploring ideas. They can also introduce reproducibility challenges.</p>
+<p>These include:</p>
 <ul>
-<li><strong>Documentation</strong>: READMEs, protocols, decision logs, and data dictionaries that capture context and rationale.</li>
-<li><strong>Organisation</strong>: consistent folder structures, naming conventions, and versioning that reduce ambiguity and error.</li>
-<li><strong>Metadata</strong>: structured descriptions that make outputs interpretable and discoverable (including for restricted-access data).</li>
+<li>outputs that vary across prompts, sessions or model versions;</li>
+<li>unclear provenance of generated text, code or summaries;</li>
+<li>hidden assumptions in suggested analyses;</li>
+<li>difficulty reconstructing how an output was produced;</li>
+<li>risk of over-reliance on plausible but incorrect outputs.</li>
 </ul>
-<p>The next chapter introduces minimum expectations for describing outputs through the FAIR principles (see <a href="./02-fair-basics.html">Chapter 2: FAIR basics</a>).</p>
-<hr>
+<p>The same reproducibility principles still apply: document important decisions, keep records of prompts or generated code where relevant, check outputs critically, and make clear where AI-assisted tools have materially shaped the work.</p>
 </section>
-<section id="ai-and-open-science-and-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="ai-and-open-science-and-reproducibility">AI and Open Science and Reproducibility</h2>
-<p>Automated and AI-assisted tools can improve efficiency and insight, but introduce new reproducibility challenges: opaque decision-making, stochastic outputs, undocumented prompts or parameters, and rapid model version changes. Open research practices remain essential to ensure transparency, accountability, and reuse in AI-assisted workflows.</p>
-<hr>
-</section>
-<section id="what-you-will-do-in-later-modules" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-will-do-in-later-modules">What you will do in later modules</h2>
-<p>This course focuses on practical steps that reduce risk and increase continuity, including:</p>
+<section id="activity-the-six-month-test" class="level2">
+<h2 class="anchored" data-anchor-id="activity-the-six-month-test">Activity: the six-month test</h2>
+<section id="individual-reflection-or-small-group-discussion" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="individual-reflection-or-small-group-discussion">Individual reflection or small-group discussion</h3>
+<p>Choose one current or recent project.</p>
+<p>Write down one thing that would make it difficult for someone else to understand your results in six months’ time.</p>
+<p>Then ask:</p>
 <ul>
-<li>structuring data and materials for reuse (<a href="./02-fair-basics.html">Chapter 2: FAIR basics</a>);</li>
+<li>Where is this information recorded now?</li>
+<li>Would someone else know where to find it?</li>
+<li>Would your future self understand it?</li>
+<li>What small change would reduce the risk?</li>
+</ul>
+</section>
+</section>
+<section id="activity-constraints-are-part-of-the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="activity-constraints-are-part-of-the-workflow">Activity: constraints are part of the workflow</h2>
+<section id="sensitive-or-restricted-data" class="level3 activity-box">
+<h3 class="anchored" data-anchor-id="sensitive-or-restricted-data">Sensitive or restricted data</h3>
+<p>Identify one constraint that limits what you can share openly. This might be ethical, legal, contractual, governance-related or practical.</p>
+<p>Then ask:</p>
+<ul>
+<li>Where is that constraint recorded?</li>
+<li>Does it explain what can be shared, what cannot be shared and why?</li>
+<li>Does it explain how someone could request access, if access is possible?</li>
+<li>Is the restriction visible to future project members?</li>
+</ul>
+</section>
+</section>
+<section id="what-comes-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-comes-next">What comes next?</h2>
+<p>Later chapters translate these ideas into practical steps:</p>
+<ul>
+<li>describing outputs using FAIR principles (<a href="./02-fair-basics.html">Chapter 2: FAIR basics</a>);</li>
 <li>organising projects so work remains legible and maintainable;</li>
 <li>documenting decisions and workflows so results can be understood and defended;</li>
 <li>improving code quality and reducing manual steps where appropriate;</li>
-<li>preparing outputs for sharing, archiving, and attribution.</li>
+<li>preparing outputs for sharing, archiving, attribution and reuse.</li>
 </ul>
-<p>You are not expected to adopt everything at once. The course is designed to support incremental improvement.</p>
-<hr>
+<p>You are not expected to change everything at once. The workshop is designed to support incremental improvement: making each project a little easier to understand, check and build on.</p>
 </section>
-<section id="exercises-510-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="exercises-510-minutes">Exercises (5–10 minutes)</h2>
-<ol type="1">
-<li><p>Choose one current or recent project you are involved in.<br>
-Write down one thing that would make it hard for someone else to understand your results in six months’ time.<br>
-<strong>Where would you record this?</strong> (e.g.&nbsp;project <code>README</code>, methods note, decision log)</p></li>
-<li><p>Identify one constraint (ethical, legal, contractual, or practical) that limits what you can share openly.<br>
-<strong>Where is that constraint recorded now — and where should it be recorded?</strong> (e.g.&nbsp;DMP, ethics documentation, governance notes, project <code>README</code>)</p></li>
-</ol>
-<p>If you are unsure what “good enough” looks like for these artefacts, see the relevant templates in <a href="./resources.html"><strong>Resources and Further Reading</strong></a>.</p>
-</section>
-<section id="key-takeaways" class="level2 callout-summary">
+<section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
 <ul>
 <li>Open research is now a baseline expectation, not an optional ideal.</li>
 <li>Reproducibility problems usually arise from everyday workflow issues, not misconduct.</li>
-<li>Proportionate openness reduces risk, inefficiency, and avoidable error.</li>
-<li>You do not need fully open data to practise open research — but you do need clear documentation and defensible decisions.</li>
-<li><a href="./02-fair-basics.html">Chapter 2: FAIR basics</a> translates these ideas into concrete, data-level practice.</li>
+<li>Sensitive or restricted data can still be handled in transparent and reproducible ways.</li>
+<li>Good documentation reduces risk, improves continuity and supports reuse.</li>
+<li>The aim is not perfection, but proportionate and defensible practice.</li>
 </ul>
 </section>
 
 
 <div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
 <div id="ref-baker2016reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Baker, M. 1,500 scientists lift the lid on reproducibility. <em>Nature</em> <strong>533</strong>, 452–454 (2016).</div>
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Baker, M. <a href="https://doi.org/10.1038/533452a">1,500 scientists lift the lid on reproducibility</a>. <em>Nature</em> <strong>533</strong>, 452–454 (2016).</div>
 </div>
 <div id="ref-munafo2017manifesto" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Munafò, M. R. <em>et al.</em> A manifesto for reproducible science. <em>Nature Human Behaviour</em> <strong>1</strong>, 1–9 (2017).</div>
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Munafò, M. R., Nosek, B. A., Bishop, D. V. M., <em>et al.</em> <a href="https://doi.org/10.1038/s41562-016-0021">A manifesto for reproducible science</a>. <em>Nature Human Behaviour</em> <strong>1</strong>, 0021 (2017).</div>
 </div>
 <div id="ref-plesser2018reproducibility" class="csl-entry" role="listitem">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">Plesser, H. E. <a href="https://doi.org/10.3389/fninf.2017.00076">Reproducibility vs. Replicability: A brief history of a confused terminology</a>. <em>Frontiers in Neuroinformatics</em> <strong>11</strong>, 76 (2018).</div>
 </div>
 <div id="ref-turingway2025" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">The Turing Way Community. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Community, T. T. W. <em>The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research</em>. (Zenodo, 2025). doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -633,24 +949,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/terraetudo\.github\.io\/open-research-reproducibility\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Overview</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Before we start</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./02-fair-basics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Chapter 2 - FAIR basics</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Chapter 2 — FAIR basics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© PPP · UCL Institute of Child Health</div>   
+    <div class="nav-footer-left">© UCL Great Ormond Street Institute of Child Health</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

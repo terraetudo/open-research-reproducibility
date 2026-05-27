@@ -1,0 +1,21 @@
+---
+title: "All-in-One Guide: Open & Reproducible Research"
+description: "A single consolidated version of Chapters 1–10."
+---
+
+include:
+
+chapters/index.qmd
+chapters/01-why-open.qmd
+chapters/02-fair-basics.qmd
+chapters/03-project-mgmt.qmd
+chapters/04-dmp.qmd
+chapters/05-organise-tidy.qmd
+chapters/06-docs-eln-sops.qmd
+chapters/07-code-quality-testing.qmd
+chapters/08-s-responsibility.qmd
+chapters/09-automation.qmd
+chapters/10-publishing-pids.qmd
+chapters/11-wrap-up.qmd
+chapters/resources.qmd
+chapters/references.qmd
