@@ -62,6 +62,8 @@ Reproducibility is sometimes framed narrowly as whether someone can re-run an an
 
 A more useful starting point is whether someone with relevant expertise can follow the route taken through the research process: what was done, why it was done, what evidence was generated, what judgements were made, and how these led to the findings.
 
+![Longleat Maze. Photo: Niki Odolphie / Wikimedia Commons, CC BY 2.0.](fig/chap01_01.jpg)
+
 ::: callout-note
 ### UKRN definition of reproducibility
 
@@ -133,32 +135,6 @@ The Turing Way distinguishes between several related concepts [@turingway2025].
 | **Different data** | **Replicable**   | **Generalisable**  |
 
 These distinctions help clarify what kind of checking is possible. Not every project can support every form of reuse, especially when data are sensitive, access-controlled or context-specific.
-:::
-
-::: definition-grid
-::: definition-card
-### Reproducible
-
-Same data, same analysis.
-:::
-
-::: definition-card
-### Replicable
-
-Different data, same analysis.
-:::
-
-::: definition-card
-### Robust
-
-Same data, different analysis.
-:::
-
-::: definition-card
-### Generalisable
-
-Different data, different analysis.
-:::
 :::
 
 The important point is to be clear about what kind of checking, reuse or scrutiny is realistic.
@@ -268,6 +244,8 @@ Is it mainly a **personal workflow issue**, a **team issue**, an **institutional
 ## Why this helps you too
 
 Open and reproducible practice is often presented as something researchers do for other people: reviewers, funders, journals, collaborators or future users of the work. That is true, but it is also useful for you.
+
+![\![Advantages to sharing your research openly. Source: The Turing Way Community & Scriberia (2021), original version on Zenodo, CC BY 4.0.\](fig/ch01/advantages-open-sharing.png)](fig/chap01_02.jpg)
 
 ::: practice-grid
 ::: practice-card
