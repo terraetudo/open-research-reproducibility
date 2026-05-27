@@ -245,7 +245,7 @@ Is it mainly a **personal workflow issue**, a **team issue**, an **institutional
 
 Open and reproducible practice is often presented as something researchers do for other people: reviewers, funders, journals, collaborators or future users of the work. That is true, but it is also useful for you.
 
-![\![Advantages to sharing your research openly. Source: The Turing Way Community & Scriberia (2021), original version on Zenodo, CC BY 4.0.\](fig/ch01/advantages-open-sharing.png)](fig/chap01_02.jpg)
+![Advantages to sharing your research openly. Source: The Turing Way Community & Scriberia (2021), original version on Zenodo, CC BY 4.0](fig/chap01_02.jpg)
 
 ::: practice-grid
 ::: practice-card
