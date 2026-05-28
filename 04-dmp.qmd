@@ -380,7 +380,7 @@ Then write a short access statement using this structure:
 
 ## Recommended resources for this chapter
 
-::: {.resource-box}
+::: figure-box
 ### DMP guidance and templates
 
 - DMPonline [@dmponlineDcc]

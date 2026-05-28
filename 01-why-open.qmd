@@ -25,8 +25,7 @@ By the end of this chapter, you should be able to:
 -   explain why openness and reproducibility are now core expectations in research;
 -   distinguish between **open research**, **transparency** and **reproducibility**;
 -   recognise common sources of irreproducibility in everyday workflows;
--   understand how open practices can reduce risk, inefficiency and avoidable error;
--   identify how later chapters translate these principles into practical research habits.
+-   understand how open practices can reduce risk, inefficiency and avoidable error.
 
 This chapter is deliberately conceptual. Later chapters turn these ideas into practical steps: project organisation, data management planning, documentation, code quality, automation, publishing, persistent identifiers and reuse.
 
@@ -395,6 +394,51 @@ Then ask:
 -   Does it explain how someone could request access, if access is possible?
 -   Is the restriction visible to future project members?
 :::
+
+## Recommended resources for this chapter
+
+These resources are useful if you want to go beyond the workshop slides. I would treat them as a small curated reading list rather than as material everyone must read in full.
+
+::: figure-box
+### Conceptual foundations and terminology
+
+- **Why reproducible research matters (overview and benefits)**  
+  <https://book.the-turing-way.org/reproducible-research/overview>
+  
+- **Definitions: reproducible, replicable, robust, and generalisable**  
+  <https://book.the-turing-way.org/reproducible-research/overview/overview-definitions/>
+
+### Key readings
+
+- *The Turing Way* — foundational guidance on reproducibility, collaboration, project design, FAIR, and governance @turingway2022  
+- Nature survey of reproducibility challenges across science @baker2016reproducibility  
+- Manifesto for reproducible science @munafo2017manifesto  
+- National Academies report on reproducibility and replicability @nas2019reproducibility  
+
+### UCL policies and frameworks
+
+- **UCL Research Transparency Policy**  
+  <https://www.ucl.ac.uk/research/strategy-environment/research-transparency>
+
+- **UCL Research Integrity**  
+  <https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity>
+
+- **UCL Office for Open Science & Scholarship**  
+  <https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship>
+
+- **UCL Open Access guidance**  
+  <https://www.ucl.ac.uk/library/open-science-research-support/open-access>
+  
+- **UCL Research Data Repository:**
+<https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository> 
+
+- **Acknowledging the use of generative AI and referencing generative AI**
+<https://library-guides.ucl.ac.uk/referencing-plagiarism/acknowledging-genAI>
+
+- **UCL RSDP: Research Governance and Organisation**
+  [https://www.ucl.ac.uk/human-resources/organisational-development/researcher-development/research-staff/rsdp-research-governance-and](https://www.ucl.ac.uk/human-resources/organisational-development/researcher-development/research-staff/rsdp-research-governance-and)
+:::
+
 
 ## What comes next?
 

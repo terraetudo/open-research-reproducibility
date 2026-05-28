@@ -21,7 +21,7 @@ The aim is not to provide a complete guide to open research. Instead, this resou
 
 This resource is designed to accompany the workshop, but it can also be used afterwards as a reference. You do not need to read it all in one go. Each chapter focuses on one part of the research workflow and includes practical points that you can return to when planning, analysing, documenting or sharing your work.
 
-The chapters are written as support material rather than as slides. This means the HTML version contains more explanation than the live presentation, so that it remains useful after the workshop.
+The chapters are written as support material rather than as slides. This means this version contains more explanation than the live presentation, so that it remains useful after the workshop.
 
 ## What the workshop covers
 

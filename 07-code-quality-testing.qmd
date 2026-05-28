@@ -2,15 +2,15 @@
 title: "Chapter 7 — Coding for reproducible research"
 ---
 
-::: {.chapter-hero}
+::: chapter-hero
 # Chapter 7
 
 ## Coding for reproducible research
 
-Good research code is not just code that runs. It is code that another person — including your future self — can understand, rerun, check, and adapt.
+Good research code is not just code that runs. It is code that another person --- including your future self --- can understand, rerun, check, and adapt.
 :::
 
-::: {.chapter-overview}
+::: chapter-overview
 ### What this chapter does
 
 This chapter brings together code quality, testing, versioning, traceability, light automation, and sustainable computing.
@@ -22,16 +22,16 @@ The focus is not advanced programming. The focus is proportionate coding habits 
 
 By the end of this chapter, you should be able to:
 
-- explain why code quality is part of research quality;
-- recognise features of readable, reusable, and defensible research code;
-- use simple checks to catch errors early;
-- understand how versioning supports traceability and safe change;
-- identify where light automation can reduce manual work and improve reproducibility;
-- describe how sustainable computing relates to reproducible coding practice.
+-   explain why code quality is part of research quality;
+-   recognise features of readable, reusable, and defensible research code;
+-   use simple checks to catch errors early;
+-   understand how versioning supports traceability and safe change;
+-   identify where light automation can reduce manual work and improve reproducibility;
+-   describe how sustainable computing relates to reproducible coding practice.
 
-This chapter builds on [Chapter 5 — Organising and tidying data](05-organise-tidy.qmd) and [Chapter 6 — Documentation, ELNs and SOPs](06-docs-eln-sops.qmd). It prepares for the later chapter on publishing, persistent identifiers, licensing and preparing outputs for reuse.
+This chapter builds on [Chapter 5 --- Organising and tidying data](05-organise-tidy.qmd) and [Chapter 6 --- Documentation, ELNs and SOPs](06-docs-eln-sops.qmd). Check on [Resources --- code example] for an example on how to write good code. It prepares for the later chapter on publishing, persistent identifiers, licensing and preparing outputs for reuse.
 
----
+------------------------------------------------------------------------
 
 ## Code quality is research quality
 
@@ -39,23 +39,23 @@ In research, code quality is not mainly about elegance. It is about trust.
 
 Good research code should be:
 
-- **readable** — another person can follow the logic;
-- **explicit** — assumptions, inputs, outputs, and parameters are visible;
-- **robust** — errors are caught early;
-- **re-runnable** — the same inputs produce the same outputs;
-- **traceable** — changes can be understood and recovered.
+-   **readable** --- another person can follow the logic;
+-   **explicit** --- assumptions, inputs, outputs, and parameters are visible;
+-   **robust** --- errors are caught early;
+-   **re-runnable** --- the same inputs produce the same outputs;
+-   **traceable** --- changes can be understood and recovered.
 
 Poor code creates research risk. It can hide errors, make analyses difficult to rerun, and make it unclear how results were produced. In some cases, poor code can make a study effectively irreproducible, even when the data and scripts are technically available.
 
 Good-enough code is therefore not a technical luxury. It is part of defensible research practice.
 
-::: {.callout-note}
+::: callout-note
 ### Key idea
 
 Code quality is not about writing beautiful code for its own sake. It is about making the analytical route visible enough that results can be checked, explained and rerun.
 :::
 
----
+------------------------------------------------------------------------
 
 ## Write code for humans first
 
@@ -65,13 +65,13 @@ A useful principle is: **make the logic visible**.
 
 For example, avoid short or ambiguous object names:
 
-```r
+``` r
 x1 <- d %>% f() %>% g() %>% h()
 ```
 
 Prefer names that describe the analytical step:
 
-```r
+``` r
 clean_data <- clean_addresses(raw_data)
 
 linked_data <- link_to_uprn(clean_data)
@@ -85,15 +85,15 @@ This is not only a style issue. Clear names help someone understand what each ob
 
 Use:
 
-- one consistent naming convention, such as `snake_case`;
-- meaningful names for variables, files, scripts, and functions;
-- scripts separated by purpose;
-- a stable folder structure;
-- filenames that sort in the order they should be run.
+-   one consistent naming convention, such as `snake_case`;
+-   meaningful names for variables, files, scripts, and functions;
+-   scripts separated by purpose;
+-   a stable folder structure;
+-   filenames that sort in the order they should be run.
 
 For example:
 
-```text
+``` text
 01_import_data.R
 02_clean_data.R
 03_link_addresses.R
@@ -104,14 +104,14 @@ For example:
 
 Avoid:
 
-- spaces in filenames;
-- ambiguous names such as `final_final_analysis.R`;
-- mixing different naming styles in the same project;
-- scripts that do many unrelated things.
+-   spaces in filenames;
+-   ambiguous names such as `final_final_analysis.R`;
+-   mixing different naming styles in the same project;
+-   scripts that do many unrelated things.
 
 The Tidyverse style guide is a useful reference for R coding style, especially for naming, spacing, and readable syntax.
 
----
+------------------------------------------------------------------------
 
 ## Start each script with basic orientation
 
@@ -119,7 +119,7 @@ Every script should begin with enough information for someone else to know what 
 
 A simple header might include:
 
-```r
+``` r
 # Title: Create descriptive PM2.5 summary table
 # Author: Joana Cruz
 # Date: 2026-03-02
@@ -131,13 +131,13 @@ A simple header might include:
 
 This is a small habit with high value. It reduces confusion, supports handover, and makes scripts easier to review.
 
-::: {.callout-tip}
+::: callout-tip
 ### Practical habit
 
 Before writing new code, add a short header. It takes less than two minutes and can save hours later.
 :::
 
----
+------------------------------------------------------------------------
 
 ## Comment the why, not only the what
 
@@ -145,29 +145,29 @@ Comments should explain reasoning, assumptions, and unusual decisions.
 
 Poor comments often restate the code:
 
-```r
+``` r
 # Calculate mean
 mean_pm25 <- mean(pm25)
 ```
 
 Better comments explain why the step matters:
 
-```r
+``` r
 # Use annual mean PM2.5 because the exposure model provides one estimate per provider-year.
 mean_pm25 <- mean(pm25, na.rm = TRUE)
 ```
 
 Useful comments often explain:
 
-- why an exclusion was made;
-- why a threshold was chosen;
-- why a transformation was needed;
-- why a sensitivity analysis was added;
-- why one method was preferred over another.
+-   why an exclusion was made;
+-   why a threshold was chosen;
+-   why a transformation was needed;
+-   why a sensitivity analysis was added;
+-   why one method was preferred over another.
 
 Avoid commenting every line. Too many comments can make code harder to read, and outdated comments can mislead. The aim is to document the analytical reasoning that would not be obvious from the code alone.
 
----
+------------------------------------------------------------------------
 
 ## Avoid copy-and-paste code
 
@@ -177,7 +177,7 @@ A better approach is to write a small function.
 
 For example, instead of repeating similar plotting code for different variables, define one function:
 
-```r
+``` r
 make_pm25_boxplot <- function(data, x_var, x_label, panel_label, x_labels = NULL) {
 
   plot_object <- ggplot2::ggplot(
@@ -206,15 +206,15 @@ make_pm25_boxplot <- function(data, x_var, x_label, panel_label, x_labels = NULL
 
 This improves:
 
-- readability;
-- consistency;
-- maintainability;
-- ease of updating plots;
-- reproducibility of figures.
+-   readability;
+-   consistency;
+-   maintainability;
+-   ease of updating plots;
+-   reproducibility of figures.
 
 A function should usually do one task, have clear inputs, and return a clear output.
 
----
+------------------------------------------------------------------------
 
 ## Make dependencies explicit
 
@@ -222,15 +222,15 @@ A reproducible script should make clear what it needs before it can run.
 
 This includes:
 
-- required packages;
-- required input files;
-- expected variables;
-- relevant software versions;
-- external tools or data sources.
+-   required packages;
+-   required input files;
+-   expected variables;
+-   relevant software versions;
+-   external tools or data sources.
 
 For teaching, it can be useful to include a helper function that installs missing packages:
 
-```r
+``` r
 load_or_install <- function(packages) {
   missing_packages <- packages[!packages %in% installed.packages()[, "Package"]]
 
@@ -246,23 +246,23 @@ However, package installation inside scripts is not the strongest long-term repr
 
 At minimum, record the packages and versions used:
 
-```r
+``` r
 sessionInfo()
 ```
 
 or, if using `renv`:
 
-```r
+``` r
 renv::snapshot()
 ```
 
-::: {.callout-warning}
+::: callout-warning
 ### Teaching example versus research workflow
 
 Installing packages automatically inside a teaching script can help learners get started. For a research project, recording the exact package versions is more reproducible than simply installing the latest versions.
 :::
 
----
+------------------------------------------------------------------------
 
 ## Use project-relative paths
 
@@ -270,7 +270,7 @@ Hard-coded paths are one of the most common barriers to rerunning code.
 
 Avoid paths like:
 
-```r
+``` r
 "C:/Users/name/Documents/project/data/file.csv"
 ```
 
@@ -278,7 +278,7 @@ These will usually only work on one computer.
 
 Instead, use project-relative paths. In R, the `here` package is useful:
 
-```r
+``` r
 data_dir <- here::here("data", "processed")
 figures_dir <- here::here("documents", "manuscript", "figures")
 tables_dir <- here::here("documents", "manuscript", "tables")
@@ -286,14 +286,14 @@ tables_dir <- here::here("documents", "manuscript", "tables")
 
 If output folders are needed, create them in the script:
 
-```r
+``` r
 fs::dir_create(figures_dir)
 fs::dir_create(tables_dir)
 ```
 
 This means the project can be moved to another computer without rewriting every path, provided the folder structure stays the same.
 
----
+------------------------------------------------------------------------
 
 ## Check before you analyse
 
@@ -303,7 +303,7 @@ In research workflows, simple checks can prevent serious errors. The aim is to f
 
 ### Check that files exist
 
-```r
+``` r
 missing_files <- input_paths[!file.exists(input_paths)]
 
 if (length(missing_files) > 0) {
@@ -316,7 +316,7 @@ if (length(missing_files) > 0) {
 
 ### Check that the dataset is not empty
 
-```r
+``` r
 if (nrow(nursery_pm25_data) == 0) {
   stop("The dataset has 0 rows. Analysis cannot continue.")
 }
@@ -324,7 +324,7 @@ if (nrow(nursery_pm25_data) == 0) {
 
 ### Check that required variables exist
 
-```r
+``` r
 required_vars <- c(
   "year",
   "pm25",
@@ -352,7 +352,7 @@ Variable-type checks should reflect what the analysis needs.
 
 For example, if `pm25` will be summarised numerically:
 
-```r
+``` r
 if (!is.numeric(nursery_pm25_data$pm25)) {
   stop("Variable 'pm25' must be numeric.")
 }
@@ -362,7 +362,7 @@ For variables such as `year`, be careful. It may be correct for `year` to be num
 
 For example:
 
-```r
+``` r
 if (!is.numeric(nursery_pm25_data$year) &&
     !is.integer(nursery_pm25_data$year) &&
     !is.factor(nursery_pm25_data$year)) {
@@ -372,7 +372,7 @@ if (!is.numeric(nursery_pm25_data$year) &&
 
 The key point is not the exact rule. The key point is to make the expectation explicit.
 
----
+------------------------------------------------------------------------
 
 ## Check missingness and exclusions
 
@@ -380,7 +380,7 @@ Missing data do not automatically invalidate an analysis, but they need to be un
 
 A simple missingness summary is often a useful first check:
 
-```r
+``` r
 missingness_summary <- tibble::tibble(
   variable = required_vars,
   n_missing = sapply(nursery_pm25_data[required_vars], function(x) sum(is.na(x))),
@@ -395,13 +395,13 @@ missingness_summary
 
 For reproducibility, exclusions should not be hidden inside code. They should be:
 
-- visible in the script;
-- justified in comments or a decision log;
-- reported in outputs where relevant.
+-   visible in the script;
+-   justified in comments or a decision log;
+-   reported in outputs where relevant.
 
 For example:
 
-```r
+``` r
 # Exclude records with missing postcode because exposure assignment requires geocoding.
 # Decision recorded in docs/decision-log.md, 2025-02-12.
 analysis_data <- nursery_pm25_data %>%
@@ -410,7 +410,7 @@ analysis_data <- nursery_pm25_data %>%
 
 This links coding practice back to documentation and decision capture.
 
----
+------------------------------------------------------------------------
 
 ## Build in checks as you go
 
@@ -418,16 +418,16 @@ Good code anticipates failure.
 
 Useful checks include:
 
-- expected number of rows or columns;
-- whether identifiers are unique;
-- whether categories contain unexpected values;
-- whether values fall within plausible ranges;
-- whether joins have created missing or duplicated records;
-- whether outputs have been saved successfully.
+-   expected number of rows or columns;
+-   whether identifiers are unique;
+-   whether categories contain unexpected values;
+-   whether values fall within plausible ranges;
+-   whether joins have created missing or duplicated records;
+-   whether outputs have been saved successfully.
 
 For example:
 
-```r
+``` r
 if (any(is.na(nursery_pm25_data$uprn))) {
   stop("Missing UPRNs detected after linkage.")
 }
@@ -435,7 +435,7 @@ if (any(is.na(nursery_pm25_data$uprn))) {
 
 or:
 
-```r
+``` r
 if (any(nursery_pm25_data$pm25 < 0, na.rm = TRUE)) {
   stop("Negative PM2.5 values detected. Check exposure data.")
 }
@@ -443,13 +443,13 @@ if (any(nursery_pm25_data$pm25 < 0, na.rm = TRUE)) {
 
 These checks are simple, but they can prevent long chains of downstream error.
 
-::: {.callout-note}
+::: callout-note
 ### Basic checks are not trivial
 
 Checking that files, variables, rows, identifiers and values are as expected may feel simple, but these checks catch many common causes of irreproducible or incorrect analysis.
 :::
 
----
+------------------------------------------------------------------------
 
 ## Testing supports safe change
 
@@ -459,16 +459,16 @@ This process is safer when tests are in place.
 
 Tests help you check whether:
 
-- outputs still make sense after changing code;
-- refactoring has not broken the analysis;
-- new data extracts still meet the expected structure;
-- assumptions remain valid.
+-   outputs still make sense after changing code;
+-   refactoring has not broken the analysis;
+-   new data extracts still meet the expected structure;
+-   assumptions remain valid.
 
 Formal testing frameworks are useful in larger projects. In R, the `testthat` package is commonly used, and the testing chapter in *R Packages* is a good introduction.
 
 For many research projects, however, the first step is simply to include lightweight checks in scripts and reports. These checks are often enough to catch the most common problems.
 
----
+------------------------------------------------------------------------
 
 ## Versioning: do not overwrite without trace
 
@@ -480,23 +480,23 @@ At a stronger level, it means using version control.
 
 Version control allows you to:
 
-- track what changed;
-- see who changed it;
-- recover earlier versions;
-- collaborate more safely;
-- create a transparent analysis history.
+-   track what changed;
+-   see who changed it;
+-   recover earlier versions;
+-   collaborate more safely;
+-   create a transparent analysis history.
 
 Git is the most widely used version control system for code. GitHub is a platform that can host Git repositories and support collaboration.
 
-Version control is not only for advanced programmers. Even for small projects, it can act as an “undo” button for your analysis.
+Version control is not only for advanced programmers. Even for small projects, it can act as an "undo" button for your analysis.
 
-::: {.callout-tip}
+::: callout-tip
 ### Minimum viable versioning
 
 If Git feels too much at the start, do not let that stop you from improving traceability. Use clear filenames, a short changelog, and a stable folder structure while you build confidence with Git.
 :::
 
----
+------------------------------------------------------------------------
 
 ## Traceability without overcomplication
 
@@ -504,15 +504,15 @@ Not every project needs a complex Git workflow. But every project needs some for
 
 At minimum, you should be able to answer:
 
-- Which script produced this output?
-- Which data file was used?
-- Which version of the analysis was run?
-- What changed since the last version?
-- Why was that change made?
+-   Which script produced this output?
+-   Which data file was used?
+-   Which version of the analysis was run?
+-   What changed since the last version?
+-   Why was that change made?
 
 A simple analysis history might include:
 
-```text
+``` text
 docs/
   decision-log.md
   changelog.md
@@ -532,7 +532,7 @@ This links code, documentation, and outputs.
 
 If you are not yet using Git, a changelog is still useful. If you are using Git, a changelog and decision log can still help document reasoning that is not obvious from code changes alone.
 
----
+------------------------------------------------------------------------
 
 ## Light automation: make repetition reliable
 
@@ -542,22 +542,22 @@ In this chapter, automation means making repeated work runnable without manual c
 
 Examples include:
 
-- running a script from start to finish;
-- knitting an R Markdown or Quarto report;
-- regenerating a table from source data;
-- regenerating a figure from source data;
-- saving outputs to predictable folders;
-- using a function instead of repeating similar code.
+-   running a script from start to finish;
+-   knitting an R Markdown or Quarto report;
+-   regenerating a table from source data;
+-   regenerating a figure from source data;
+-   saving outputs to predictable folders;
+-   using a function instead of repeating similar code.
 
-The example R Markdown file demonstrates light automation because one action — knitting the report — can:
+The example R Markdown file demonstrates light automation because one action --- knitting the report --- can:
 
-- load packages;
-- check inputs;
-- read data;
-- validate assumptions;
-- create a summary table;
-- create figures;
-- save outputs.
+-   load packages;
+-   check inputs;
+-   read data;
+-   validate assumptions;
+-   create a summary table;
+-   create figures;
+-   save outputs.
 
 This is already a reproducible workflow.
 
@@ -565,7 +565,7 @@ More advanced tools such as `targets`, `Make`, or `Snakemake` can be introduced 
 
 The principle is simple: **automate one repeated thing first**.
 
----
+------------------------------------------------------------------------
 
 ## What not to over-automate
 
@@ -573,26 +573,26 @@ Automation is most useful for repeated and stable tasks.
 
 Good candidates include:
 
-- data validation checks;
-- missingness summaries;
-- repeated tables;
-- repeated figures;
-- standard reports;
-- routine data refreshes.
+-   data validation checks;
+-   missingness summaries;
+-   repeated tables;
+-   repeated figures;
+-   standard reports;
+-   routine data refreshes.
 
 Do not over-automate early exploratory thinking.
 
 Leave flexibility for:
 
-- trying different visualisations;
-- understanding unusual data patterns;
-- refining variables;
-- developing hypotheses;
-- changing analytical strategy.
+-   trying different visualisations;
+-   understanding unusual data patterns;
+-   refining variables;
+-   developing hypotheses;
+-   changing analytical strategy.
 
 A good compromise is to keep exploratory scripts, but avoid manual changes that cannot be traced. Exploration should be flexible, but not invisible.
 
----
+------------------------------------------------------------------------
 
 ## Sustainable code and green computing
 
@@ -602,16 +602,16 @@ This is not only about environmental sustainability, although that matters. It i
 
 Common sources of waste include:
 
-- rerunning an entire analysis because intermediate outputs were not saved;
-- duplicating large files because folder structure and versioning are unclear;
-- using unnecessarily high spatial or temporal resolution by default;
-- running models repeatedly because parameters are edited manually;
-- abandoning and rewriting code because the original script is too difficult to understand;
-- saving many near-identical output files without clear names or retention rules.
+-   rerunning an entire analysis because intermediate outputs were not saved;
+-   duplicating large files because folder structure and versioning are unclear;
+-   using unnecessarily high spatial or temporal resolution by default;
+-   running models repeatedly because parameters are edited manually;
+-   abandoning and rewriting code because the original script is too difficult to understand;
+-   saving many near-identical output files without clear names or retention rules.
 
 This matters because inefficient workflows cost time, attention, storage and energy. They can also make research less reproducible: if an analysis is too slow, expensive or fragile to rerun, it becomes harder to check, extend or audit.
 
-::: {.callout-note}
+::: callout-note
 ### Green computing is also a reproducibility issue
 
 A workflow that can only be rerun with substantial effort, specialist infrastructure or excessive compute is less accessible to others. Clear, modular and restartable code supports both reproducibility and sustainability.
@@ -621,40 +621,40 @@ A workflow that can only be rerun with substantial effort, specialist infrastruc
 
 For most projects, the highest-value steps are simple:
 
-- **Make scripts restartable**  
-  Do not require the whole analysis to rerun from the beginning after every small change.
+-   **Make scripts restartable**\
+    Do not require the whole analysis to rerun from the beginning after every small change.
 
-- **Save useful intermediate outputs**  
-  Save cleaned or derived datasets when they are costly to recreate, but document how they were produced.
+-   **Save useful intermediate outputs**\
+    Save cleaned or derived datasets when they are costly to recreate, but document how they were produced.
 
-- **Rerun only what changed**  
-  Avoid manually rerunning everything when only one table, model or figure has changed.
+-   **Rerun only what changed**\
+    Avoid manually rerunning everything when only one table, model or figure has changed.
 
-- **Use appropriate resolution**  
-  Choose spatial, temporal or simulation resolution that is justified by the research question, not simply the maximum available.
+-   **Use appropriate resolution**\
+    Choose spatial, temporal or simulation resolution that is justified by the research question, not simply the maximum available.
 
-- **Check before running expensive steps**  
-  Validate inputs before running long analyses or models.
+-   **Check before running expensive steps**\
+    Validate inputs before running long analyses or models.
 
-- **Keep code readable**  
-  Readable code reduces unnecessary rewriting, duplicated effort and avoidable reruns.
+-   **Keep code readable**\
+    Readable code reduces unnecessary rewriting, duplicated effort and avoidable reruns.
 
-- **Delete or archive deliberately**  
-  Do not keep unlimited duplicate outputs. Decide what needs to be preserved, archived or removed.
+-   **Delete or archive deliberately**\
+    Do not keep unlimited duplicate outputs. Decide what needs to be preserved, archived or removed.
 
 ### Example from the R Markdown workflow
 
 The example R Markdown file already demonstrates several green computing principles:
 
-- it checks that input files exist before analysis starts;
-- it validates key variables before producing outputs;
-- it saves tables and figures to predictable folders;
-- it uses a reusable plotting function rather than repeated code;
-- it creates outputs automatically when the report is knitted.
+-   it checks that input files exist before analysis starts;
+-   it validates key variables before producing outputs;
+-   it saves tables and figures to predictable folders;
+-   it uses a reusable plotting function rather than repeated code;
+-   it creates outputs automatically when the report is knitted.
 
 The next step would be to make the workflow more restartable, for example by saving cleaned intermediate datasets, recording package versions with `renv`, or using a workflow tool such as `targets` for larger projects.
 
----
+------------------------------------------------------------------------
 
 ## AI-generated code
 
@@ -662,18 +662,18 @@ AI-generated code should be treated like any other external contribution.
 
 It may be useful, but it still needs to be:
 
-- read and understood;
-- checked against the data;
-- tested with expected and unexpected inputs;
-- documented;
-- adapted to the project context;
-- reviewed for errors, bias, and inappropriate assumptions.
+-   read and understood;
+-   checked against the data;
+-   tested with expected and unexpected inputs;
+-   documented;
+-   adapted to the project context;
+-   reviewed for errors, bias, and inappropriate assumptions.
 
 Do not include code in an analysis simply because it runs. Running is not the same as being correct.
 
----
+------------------------------------------------------------------------
 
-## Worked example: what the R Markdown file demonstrates
+## /Worked example: what the R Markdown file demonstrates
 
 The accompanying R Markdown example shows several reproducible coding practices.
 
@@ -681,9 +681,9 @@ The accompanying R Markdown example shows several reproducible coding practices.
 
 The report starts by explaining its purpose:
 
-- what it does;
-- what it produces;
-- why the workflow is structured in this way.
+-   what it does;
+-   what it produces;
+-   why the workflow is structured in this way.
 
 This supports reuse and review.
 
@@ -705,10 +705,10 @@ Before importing data, the report checks that all required files exist. This avo
 
 The report checks:
 
-- whether the dataset has rows;
-- whether required variables are present;
-- whether key variables have expected types;
-- how much missingness is present.
+-   whether the dataset has rows;
+-   whether required variables are present;
+-   whether key variables have expected types;
+-   how much missingness is present.
 
 These checks make analytical assumptions explicit.
 
@@ -720,26 +720,26 @@ The report defines a plotting function rather than repeating similar `ggplot2` c
 
 The report saves tables and figures to defined folders. This links code execution to outputs and reduces the risk of manual file handling errors.
 
----
+------------------------------------------------------------------------
 
 ## Practical guidance for early-career researchers
 
 A proportionate starting point is:
 
-1. Put all code in scripts or Quarto/R Markdown files.
-2. Use project-relative paths.
-3. Give scripts meaningful names.
-4. Start each script with a short explanatory header.
-5. Add simple checks for files, variables, missingness, and impossible values.
-6. Use functions when code is repeated.
-7. Save outputs automatically.
-8. Keep raw data unchanged.
-9. Track changes using Git or, at minimum, a changelog.
+1.  Put all code in scripts or Quarto/R Markdown files.
+2.  Use project-relative paths.
+3.  Give scripts meaningful names.
+4.  Start each script with a short explanatory header.
+5.  Add simple checks for files, variables, missingness, and impossible values.
+6.  Use functions when code is repeated.
+7.  Save outputs automatically.
+8.  Keep raw data unchanged.
+9.  Track changes using Git or, at minimum, a changelog.
 10. Document decisions that are not obvious from the code.
 
 You do not need to do everything at once. Start with one improvement that reduces risk in your current workflow.
 
----
+------------------------------------------------------------------------
 
 ## Exercises
 
@@ -749,11 +749,11 @@ Choose one script from a current or previous project.
 
 Ask:
 
-- Is the purpose clear from the top of the file?
-- Are the inputs and outputs clear?
-- Are object names meaningful?
-- Is there repeated code that could become a function?
-- Are key assumptions checked?
+-   Is the purpose clear from the top of the file?
+-   Are the inputs and outputs clear?
+-   Are object names meaningful?
+-   Is there repeated code that could become a function?
+-   Are key assumptions checked?
 
 ### Exercise 2: Add one check
 
@@ -761,12 +761,12 @@ Add one simple check to a script.
 
 For example:
 
-- required file exists;
-- required variable exists;
-- no impossible values;
-- expected number of rows;
-- no duplicated IDs;
-- missingness below an expected threshold.
+-   required file exists;
+-   required variable exists;
+-   no impossible values;
+-   expected number of rows;
+-   no duplicated IDs;
+-   missingness below an expected threshold.
 
 ### Exercise 3: Automate one output
 
@@ -780,77 +780,84 @@ Choose one analysis step that is slow, repetitive or often rerun.
 
 Ask:
 
-- Does the whole workflow need to rerun?
-- Could an intermediate file be saved?
-- Could the input be checked before running the expensive step?
-- Is the spatial, temporal or simulation resolution proportionate?
-- Are duplicate outputs being kept without a reason?
+-   Does the whole workflow need to rerun?
+-   Could an intermediate file be saved?
+-   Could the input be checked before running the expensive step?
+-   Is the spatial, temporal or simulation resolution proportionate?
+-   Are duplicate outputs being kept without a reason?
 
----
+## Recommended resources for this chapter
 
-::: {.chapter-summary}
-## Key takeaways
-
-- Code quality is part of research quality.
-- Readable, explicit code is easier to review, rerun, and defend.
-- Simple checks catch many errors before they affect results.
-- Versioning makes change safer and more transparent.
-- Light automation reduces manual work and supports reproducibility.
-- Sustainable code saves time, energy, storage and attention.
-:::
-
----
-
-## Resources
-
+::: figure-box
 ### Core guidance on research code
 
-- Good Enough Practices in Scientific Computing: <https://carpentries-lab.github.io/good-enough-practices/>
-- Wilson et al. (2017). *Good enough practices in scientific computing*. PLOS Computational Biology: <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510>
-- The Turing Way — Code quality: <https://book.the-turing-way.org/reproducible-research/code-quality/>
-- The Turing Way — Readable code: <https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-readability/>
-- The Turing Way — Robust code: <https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-robust/>
+-   Good Enough Practices in Scientific Computing: <https://carpentries-lab.github.io/good-enough-practices/>
+-   Wilson et al. (2017). *Good enough practices in scientific computing*. PLOS Computational Biology: <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510>
+-   The Turing Way --- Code quality: <https://book.the-turing-way.org/reproducible-research/code-quality/>
+-   The Turing Way --- Readable code: <https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-readability/>
+-   The Turing Way --- Robust code: <https://book.the-turing-way.org/reproducible-research/code-quality/code-quality-robust/>
+-   **Ten simple rules for reproducible computational research** <https://doi.org/10.1371/journal.pcbi.1003285>
 
 ### R coding style and learning resources
 
-- Tidyverse style guide: <https://style.tidyverse.org/>
-- How to get good with R, Nicola Tierney: <https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/>
-- Guidelines for writing good R code: <https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/>
+-   Tidyverse style guide: <https://style.tidyverse.org/>
+-   How to get good with R, Nicola Tierney: <https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/>
+-   Guidelines for writing good R code: <https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/>
 
 ### Testing and validation
 
-- The Turing Way — Testing: <https://book.the-turing-way.org/reproducible-research/testing/>
-- R Packages — Testing basics: <https://r-pkgs.org/testing-basics.html>
-- Step 5 — Testing and Controls: <https://ampartridge.github.io/ReproducibleResearch/step5Testing.html>
-- ADACS good code etiquette — Testing: <https://github.com/ADACS-Australia/good-code-etiquette/blob/master/Testing.ipynb>
+-   The Turing Way --- Testing: <https://book.the-turing-way.org/reproducible-research/testing/>
+-   R Packages --- Testing basics: <https://r-pkgs.org/testing-basics.html>
+-   Step 5 --- Testing and Controls: <https://ampartridge.github.io/ReproducibleResearch/step5Testing.html>
+-   ADACS good code etiquette --- Testing: <https://github.com/ADACS-Australia/good-code-etiquette/blob/master/Testing.ipynb>
 
 ### Version control
 
-- The Turing Way — Version control: <https://book.the-turing-way.org/reproducible-research/vcs/>
-- Software Carpentry — Version Control with Git: <https://swcarpentry.github.io/git-novice/>
-- UCL Git novice training: <https://github-pages.ucl.ac.uk/git-novice/>
-- Git: <https://git-scm.com/>
-- GitHub: <https://github.com/>
-- GitHub Hello World: <https://docs.github.com/en/get-started/start-your-journey/hello-world>
-- Tracking changes in research: <https://carpentries-lab.github.io/good-enough-practices/06-track_changes.html>
+-   The Turing Way --- Version control: <https://book.the-turing-way.org/reproducible-research/vcs/>
+-   Software Carpentry --- Version Control with Git: <https://swcarpentry.github.io/git-novice/>
+-   UCL Git novice training: <https://github-pages.ucl.ac.uk/git-novice/>
+-   Git: <https://git-scm.com/>
+-   GitHub: <https://github.com/>
+-   GitHub Hello World: <https://docs.github.com/en/get-started/start-your-journey/hello-world>
+-   Tracking changes in research: <https://carpentries-lab.github.io/good-enough-practices/06-track_changes.html>
 
 ### Documentation for code
 
-- Write the Docs — Beginner’s guide to documentation: <https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/>
-- GitHub — Tools and techniques for effective code documentation: <https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation>
-- PEP 257 — Python docstring conventions: <https://peps.python.org/pep-0257/>
-- Creating docstrings in R: <https://josephcrispell.github.io/2021/07/26/creating-R-docstring.html>
-- Best practices for writing code comments: <https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/>
+-   Write the Docs --- Beginner's guide to documentation: <https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/>
+-   GitHub --- Tools and techniques for effective code documentation: <https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation>
+-   PEP 257 --- Python docstring conventions: <https://peps.python.org/pep-0257/>
+-   Creating docstrings in R: <https://josephcrispell.github.io/2021/07/26/creating-R-docstring.html>
+-   Best practices for writing code comments: <https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/>
 
 ### R Markdown, Quarto-adjacent, and notebooks
 
-- Knitr in a nutshell: <https://kbroman.org/knitr_knutshell/>
-- Jupyter documentation: <https://docs.jupyter.org/en/latest/>
-- Try JupyterLab: <https://jupyter.org/try-jupyter/lab/>
-- Shiny basics: <https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/>
+-   Knitr in a nutshell: <https://kbroman.org/knitr_knutshell/>
+-   Jupyter documentation: <https://docs.jupyter.org/en/latest/>
+-   Try JupyterLab: <https://jupyter.org/try-jupyter/lab/>
+-   Shiny basics: <https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/>
+
+### Sustainable and green research software
+
+-   **Environmental impact of digital research** <https://book.the-turing-way.org/reproducible-research/reproducible-research-environment>
+
+-   **Green Software Principles** <https://principles.green/>
+
+-   **Measuring and reducing computational cost** <https://www.software.ac.uk/blog/2022-05-24-measuring-environmental-impact-research-software>
 
 ### UCL support
 
-- UCL Advanced Research Computing training: <https://www.ucl.ac.uk/advanced-research-computing/education/training>
-- UCL ARC course catalogue: <https://www.ucl.ac.uk/advanced-research-computing/training/course-catalogue>
-- Support for UCL researchers to use GitHub: <https://www.ucl.ac.uk/advanced-research-computing/expertise/research-software-development/research-software-development-tools/support-ucl-0>
+-   UCL Advanced Research Computing training: <https://www.ucl.ac.uk/advanced-research-computing/education/training>
+-   UCL ARC course catalogue: <https://www.ucl.ac.uk/advanced-research-computing/training/course-catalogue>
+-   Support for UCL researchers to use GitHub: <https://www.ucl.ac.uk/advanced-research-computing/expertise/research-software-development/research-software-development-tools/support-ucl-0>
+:::
+
+::: chapter-summary
+## Key takeaways
+
+-   Code quality is part of research quality.
+-   Readable, explicit code is easier to review, rerun, and defend.
+-   Simple checks catch many errors before they affect results.
+-   Versioning makes change safer and more transparent.
+-   Light automation reduces manual work and supports reproducibility.
+-   Sustainable code saves time, energy, storage and attention.
+:::

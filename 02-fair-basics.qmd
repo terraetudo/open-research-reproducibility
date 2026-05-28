@@ -44,11 +44,13 @@ In simple terms, FAIR asks whether a research output has been structured and des
 -   interpret it correctly;
 -   judge whether and how it can be reused.
 
+![FAIR data principles: Findable, Accessible, Interoperable and Reusable. (Source: SangyaPundir/Wikimedia Commons, CC BY-SA 4.0.)](fig/chap02_01.jpg)
+
 ::: figure-box
 ### FAIR as "good structure"
 
 | FAIR element      | Practical question                                 | What this means                                                             |
-|-------------------|----------------------------------------------------|-----------------------------------------------------------------------------|
+|------------------|----------------------|--------------------------------|
 | **Findable**      | Can people discover that this output exists?       | Use persistent identifiers, clear titles, keywords and searchable metadata. |
 | **Accessible**    | Is it clear how the output can be accessed?        | State access routes, restrictions, permissions and conditions.              |
 | **Interoperable** | Can it work with other systems, tools or datasets? | Use appropriate formats, standards, vocabularies and consistent structure.  |
@@ -385,6 +387,8 @@ These extensions are useful because reproducibility is not only about whether a 
 
 For routine research practice, this does not mean adding another complicated framework. It means checking whether your project records are traceable, understandable and defensible.
 
+![ALCOA-CCEA principles for data integrity: Attributable, Legible, Contemporaneous, Original, Accurate, Complete, Consistent, Enduring and Available. (Source:Kakomat/Wikimedia Commons, CC BY-SA 4.0.)](fig/chap2_02.png)
+
 ## Bringing FAIR and ALCOA together
 
 FAIR and ALCOA answer slightly different questions.
@@ -393,7 +397,7 @@ FAIR and ALCOA answer slightly different questions.
 ### Two complementary questions
 
 | Framework | Main question                                                            | Practical focus                                                                          |
-|-----------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+|-----------------|-------------------------|------------------------------|
 | **FAIR**  | Can the output be found, accessed appropriately, interpreted and reused? | Metadata, identifiers, access routes, formats, documentation, licences.                  |
 | **ALCOA** | Can the record be trusted as reliable and traceable?                     | Attribution, timing, legibility, originality, accuracy, completeness and accountability. |
 
@@ -449,6 +453,8 @@ These resources are useful if you want to go beyond the workshop slides. I would
 
 ### Practical implementation resources
 
+-   **Research Data Management guidance**\
+    <https://library-guides.ucl.ac.uk/research-data-management/best-practices-fair-data>
 -   **Cambridge Research Data Management: FAIR principles** --- useful plain-language explanation of FAIR [@cambridgeFairPrinciples].
 -   **DCC disciplinary metadata standards** and **Cambridge metadata guidance** --- useful when deciding what metadata standards or fields to use [@dccMetadataStandards; @cambridgeMetadata].
 -   **Cambridge file formats guidance** --- useful for explaining why open, machine-readable and widely used formats matter [@cambridgeFileFormats].

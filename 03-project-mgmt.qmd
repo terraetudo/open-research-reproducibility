@@ -181,9 +181,9 @@ project-name/
 
 This is only a starting point. Adapt it to the project. For example, a qualitative project might need `transcripts/`, `coding_framework/` and `analysis_memos/`. A spatial project might need `gis/`, `shapefiles/`, `rasters/` or `exposure_surfaces/`. A systematic review might need `searches/`, `screening/`, `extraction/` and `quality_appraisal/`.
 
-![Project-based directory organization (Source: https://ecorepsci.github.io/reproducible-science/project-organization.html)](fig/chap03_01.jpg){fig-align="left" width="300"}
+![Project-based directory organization (Source: https://ecorepsci.github.io/reproducible-science/project-organization.html)](fig/chap03_01.jpg){fig-align="center" width="300"}
 
-![Activity-based directory organisation. (Source: https://ecorepsci.github.io/reproducible-science/project-organization.html](fig/chap03_02.jpg){width="300"}
+![Activity-based directory organisation. (Source: https://ecorepsci.github.io/reproducible-science/project-organization.html](fig/chap03_02.jpg){fig-align="center" width="300"}
 
 ![(Source: https://datamanagement.hms.harvard.edu/plan-design/directory-structure)](fig/chap03_03.jpg)
 
@@ -526,7 +526,7 @@ Create a changelog and record the last three meaningful changes to the project. 
 
 ## Recommended resources for this chapter
 
-::: resource-box
+::: figure-box
 ### Project organisation and file naming
 
 -   CESSDA Data Management Expert Guide: file naming and folder structure [@cessdaFileNaming]

@@ -196,7 +196,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Resources and Further Reading</span></a>
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Open research and reproducibility workshop — code example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,14 +249,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
   </ul></li>
-  <li><a href="#recommended-resources-for-this-chapter" id="toc-recommended-resources-for-this-chapter" class="nav-link" data-scroll-target="#recommended-resources-for-this-chapter">Recommended resources for this chapter</a>
-  <ul class="collapse">
-  <li><a href="#core-documentation-guidance" id="toc-core-documentation-guidance" class="nav-link" data-scroll-target="#core-documentation-guidance">Core documentation guidance</a></li>
-  <li><a href="#readmes-data-level-documentation-and-handover" id="toc-readmes-data-level-documentation-and-handover" class="nav-link" data-scroll-target="#readmes-data-level-documentation-and-handover">READMEs, data-level documentation and handover</a></li>
-  <li><a href="#metadata-and-metadata-standards" id="toc-metadata-and-metadata-standards" class="nav-link" data-scroll-target="#metadata-and-metadata-standards">Metadata and metadata standards</a></li>
-  <li><a href="#decision-logs-changelogs-and-risk-registers" id="toc-decision-logs-changelogs-and-risk-registers" class="nav-link" data-scroll-target="#decision-logs-changelogs-and-risk-registers">Decision logs, changelogs and risk registers</a></li>
-  <li><a href="#elns-sops-protocols-and-reporting" id="toc-elns-sops-protocols-and-reporting" class="nav-link" data-scroll-target="#elns-sops-protocols-and-reporting">ELNs, SOPs, protocols and reporting</a></li>
-  </ul></li>
+  <li><a href="#recommended-resources-for-this-chapter" id="toc-recommended-resources-for-this-chapter" class="nav-link" data-scroll-target="#recommended-resources-for-this-chapter">Recommended resources for this chapter</a></li>
   <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/06-docs-eln-sops.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -291,7 +284,7 @@ div.csl-indent {
 </section>
 <section id="in-this-chapter" class="level3 chapter-overview">
 <h3 class="anchored" data-anchor-id="in-this-chapter">In this chapter</h3>
-<p>This chapter focuses on <strong>research documentation</strong>: the records that help a project remain understandable, reproducible and reusable. It covers READMEs, data dictionaries, metadata, decision logs, changelogs, environment notes, ELNs, SOPs, protocols, preregistration and reporting guidelines.</p>
+<p>This chapter focuses on <strong>research documentation</strong>: the records that help a project remain understandable, reproducible and reusable. It covers READMEs, metadata, decision logs, changelogs, environment notes, ELNs, SOPs, protocols, preregistration and reporting guidelines.</p>
 <p>It deliberately does <strong>not</strong> repeat folder structures and file naming from Chapter 3, data-management responsibilities from Chapter 4, or tidy-data rules from Chapter 5. Instead, it asks: <strong>what needs to be written down, where, and for whom?</strong></p>
 </section>
 <section id="learning-objectives" class="level2">
@@ -736,29 +729,86 @@ Avoid the “everything notebook” problem
 <section id="onboarding-and-offboarding" class="level2">
 <h2 class="anchored" data-anchor-id="onboarding-and-offboarding">Onboarding and offboarding</h2>
 <p>Onboarding and offboarding are documentation opportunities. New team members ask useful questions because they do not yet share the team’s assumptions. Leaving team members are the best people to document what only they know.</p>
-<p>Onboarding documentation may include:</p>
-<ul>
-<li>where research data are stored;</li>
-<li>how to request access;</li>
-<li>restrictions around data stewardship and sharing;</li>
-<li>common software, packages and analysis tools;</li>
-<li>key datasets and documentation;</li>
-<li>authorship, publication and preprint expectations;</li>
-<li>examples of previous ethics, governance or grant applications;</li>
-<li>how to record decisions and issues.</li>
+<div class="callout callout-style-default callout-note callout-titled" title="Onboarding: quick checklist">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Onboarding: quick checklist
+</div>
+</div>
+<section id="onboarding-quick-checklist" class="level2 callout-body-container callout-body">
+<h2 class="anchored" data-anchor-id="onboarding-quick-checklist">Onboarding: quick checklist</h2>
+<p>When joining a new research project, ask where the key information is stored and how the team expects work to be documented, checked and shared.</p>
+<section id="planning" class="level3">
+<h3 class="anchored" data-anchor-id="planning">Planning</h3>
+<ul class="task-list">
+<li><input type="checkbox">Read the project protocol, data management plan or analysis plan.</li>
+<li><input type="checkbox">Identify the main research question, outputs and intended users.</li>
+<li><input type="checkbox">Clarify roles, responsibilities and who reviews decisions, code and outputs.</li>
 </ul>
-<p>Offboarding documentation may include:</p>
-<ul>
-<li>where raw, derived and final data are stored;</li>
-<li>who else has access;</li>
-<li>ownership, custodianship and permitted reuse;</li>
-<li>collaborators and contact points;</li>
-<li>retention dates;</li>
-<li>repository links, DOIs or publication links;</li>
-<li>ethics, governance and data-sharing approvals;</li>
-<li>software versions and hardware/software dependencies;</li>
-<li>unfinished tasks and known issues.</li>
+</section>
+<section id="data-and-governance" class="level3">
+<h3 class="anchored" data-anchor-id="data-and-governance">Data and governance</h3>
+<ul class="task-list">
+<li><input type="checkbox">Check which datasets are being used and where they came from.</li>
+<li><input type="checkbox">Check any approvals, licences, data sharing agreements or access restrictions.</li>
+<li><input type="checkbox">Understand what can be shared openly, shared under restriction, or not shared.</li>
 </ul>
+</section>
+<section id="workflow-and-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="workflow-and-documentation">Workflow and documentation</h3>
+<ul class="task-list">
+<li><input type="checkbox">Review the project folder structure and file-naming conventions.</li>
+<li><input type="checkbox">Find the data dictionary, metadata, codebook or README files.</li>
+<li><input type="checkbox">Check how decisions, assumptions, errors and changes are recorded.</li>
+</ul>
+</section>
+<section id="reproducible-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="reproducible-analysis">Reproducible analysis</h3>
+<ul class="task-list">
+<li><input type="checkbox">Check where scripts are stored and how they should be run.</li>
+<li><input type="checkbox">Record software versions, packages and dependencies.</li>
+<li><input type="checkbox">Make sure outputs can be regenerated from the underlying data and code.</li>
+</ul>
+</section>
+<section id="sharing-and-handover" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-and-handover">Sharing and handover</h3>
+<ul class="task-list">
+<li><input type="checkbox">Check which outputs will be shared, deposited or archived.</li>
+<li><input type="checkbox">Confirm how data, code, protocols or reports should be cited.</li>
+<li><input type="checkbox">Before leaving the project, make sure files, scripts and notes are understandable to someone else.</li>
+</ul>
+</section>
+</section>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Offboarding: quick checklist">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Offboarding: quick checklist
+</div>
+</div>
+<section id="offboarding-quick-checklist" class="level2 callout-body-container callout-body">
+<h2 class="anchored" data-anchor-id="offboarding-quick-checklist">Offboarding: quick checklist</h2>
+<p>Before leaving a project, make sure another researcher can understand, check and continue your work.</p>
+<ul class="task-list">
+<li><input type="checkbox">Update the README, project notes or handover document.</li>
+<li><input type="checkbox">Check that files are named clearly and stored in the agreed locations.</li>
+<li><input type="checkbox">Remove or clearly label temporary, duplicate or outdated files.</li>
+<li><input type="checkbox">Make sure scripts can be run by someone else.</li>
+<li><input type="checkbox">Record software versions, packages and dependencies.</li>
+<li><input type="checkbox">Document key decisions, assumptions, exclusions and deviations from the plan.</li>
+<li><input type="checkbox">Check that figures, tables and reports can be traced back to the data and code.</li>
+<li><input type="checkbox">Confirm which data, code, metadata or outputs should be archived or shared.</li>
+<li><input type="checkbox">Note any unresolved issues, limitations or next steps.</li>
+<li><input type="checkbox">Transfer ownership of relevant files, repositories or project tasks.</li>
+</ul>
+</section>
+</div>
 <p>The Turing Way provides useful onboarding and offboarding checklists that can be adapted for research groups and projects<span class="citation" data-cites="turingwayOnOffboarding"><sup><a href="#ref-turingwayOnOffboarding" role="doc-biblioref">18</a></sup></span>.</p>
 </section>
 <section id="protocols-preregistration-and-reporting-guidelines" class="level2">
@@ -860,6 +910,7 @@ Protocols can change
 <section id="recommended-resources-for-this-chapter" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-resources-for-this-chapter">Recommended resources for this chapter</h2>
 <p>These resources are included as a practical reading list. The aim is not for learners to read all of them, but to know where to look when they need a template, example or more detailed guidance.</p>
+<div class="figure-box">
 <section id="core-documentation-guidance" class="level3">
 <h3 class="anchored" data-anchor-id="core-documentation-guidance">Core documentation guidance</h3>
 <ul>
@@ -877,6 +928,7 @@ Protocols can change
 <li>Imperial College London: documenting data<span class="citation" data-cites="imperialDocumentingData"><sup><a href="#ref-imperialDocumentingData" role="doc-biblioref">28</a></sup></span></li>
 <li>University of Manchester: research data documentation cheat sheets<span class="citation" data-cites="manchesterResearchDataExplained"><sup><a href="#ref-manchesterResearchDataExplained" role="doc-biblioref">29</a></sup></span></li>
 <li>The Turing Way: onboarding and offboarding guidance<span class="citation" data-cites="turingwayOnOffboarding"><sup><a href="#ref-turingwayOnOffboarding" role="doc-biblioref">18</a></sup></span></li>
+<li><a href="https://researchdata.wisc.edu/wp-content/uploads/2019/08/OnboardingChecklist.pdf">Research Data Management Onboarding Checklist</a></li>
 </ul>
 </section>
 <section id="metadata-and-metadata-standards" class="level3">
@@ -909,6 +961,7 @@ Protocols can change
 <li>Cochrane Handbook<span class="citation" data-cites="cochraneHandbook"><sup><a href="#ref-cochraneHandbook" role="doc-biblioref">24</a></sup></span></li>
 </ul>
 </section>
+</div>
 </section>
 <section id="key-takeaways" class="level2 chapter-summary">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>

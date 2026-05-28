@@ -3,17 +3,18 @@ title: "Chapter 6 — Documentation and protocols"
 subtitle: "Keeping decisions visible"
 ---
 
-::: {.chapter-hero}
+::: chapter-hero
 # Chapter 6
+
 ## Documentation and protocols
 
 Documentation is how research decisions remain visible after the meeting, the analysis session, the handover, or the paper submission. It should help someone understand what was done, why it was done, and how to continue or check the work.
 :::
 
-::: {.chapter-overview}
+::: chapter-overview
 ### In this chapter
 
-This chapter focuses on **research documentation**: the records that help a project remain understandable, reproducible and reusable. It covers READMEs, data dictionaries, metadata, decision logs, changelogs, environment notes, ELNs, SOPs, protocols, preregistration and reporting guidelines.
+This chapter focuses on **research documentation**: the records that help a project remain understandable, reproducible and reusable. It covers READMEs, metadata, decision logs, changelogs, environment notes, ELNs, SOPs, protocols, preregistration and reporting guidelines.
 
 It deliberately does **not** repeat folder structures and file naming from Chapter 3, data-management responsibilities from Chapter 4, or tidy-data rules from Chapter 5. Instead, it asks: **what needs to be written down, where, and for whom?**
 :::
@@ -22,19 +23,19 @@ It deliberately does **not** repeat folder structures and file naming from Chapt
 
 By the end of this chapter, you should be able to:
 
-- explain why documentation is central to reproducibility, continuity and handover;
-- distinguish between different documentation artefacts and their purposes;
-- decide when to use a README, codebook, metadata record, decision log, changelog, ELN, SOP or protocol;
-- recognise documentation as a way of reducing project risk and “bus factor”;
-- apply proportionate documentation practices in everyday research workflows.
+-   explain why documentation is central to reproducibility, continuity and handover;
+-   distinguish between different documentation artefacts and their purposes;
+-   decide when to use a README, codebook, metadata record, decision log, changelog, ELN, SOP or protocol;
+-   recognise documentation as a way of reducing project risk and "bus factor";
+-   apply proportionate documentation practices in everyday research workflows.
 
 ## Why documentation matters
 
 Documentation is often treated as an administrative extra. In reproducible research, it is part of the research method. It provides evidence of how choices were made and helps others understand whether those choices are justified.
 
-A common problem is not simply that researchers document too little. It is that documentation has no clear purpose. Some projects have almost nothing written down; others have information scattered across emails, Teams chats, notebooks, Word documents, old protocols and people’s memories. Both situations are fragile.
+A common problem is not simply that researchers document too little. It is that documentation has no clear purpose. Some projects have almost nothing written down; others have information scattered across emails, Teams chats, notebooks, Word documents, old protocols and people's memories. Both situations are fragile.
 
-::: {.callout-warning}
+::: callout-warning
 ### Under-documenting and over-documenting are both risks
 
 Documentation is useful when it is findable, current and purposeful. It is less useful when it is either missing or spread across too many places without a clear owner.
@@ -42,23 +43,23 @@ Documentation is useful when it is findable, current and purposeful. It is less 
 
 Good documentation helps to:
 
-- track what happened;
-- make decisions visible;
-- support new team members;
-- reduce reliance on memory;
-- make handover easier;
-- support audit, peer review and reuse;
-- explain deviations, exclusions and constraints.
+-   track what happened;
+-   make decisions visible;
+-   support new team members;
+-   reduce reliance on memory;
+-   make handover easier;
+-   support audit, peer review and reuse;
+-   explain deviations, exclusions and constraints.
 
-The Turing Way and Good Enough Practices both emphasise that documentation should make it possible for someone else — or your future self — to reconstruct the work, not simply remember that something was done [@turingwayDocumentation; @wilson2017goodenough].
+The Turing Way and Good Enough Practices both emphasise that documentation should make it possible for someone else --- or your future self --- to reconstruct the work, not simply remember that something was done [@turingwayDocumentation; @wilson2017goodenough].
 
 ## The bus factor
 
 The **bus factor** is a useful way to think about documentation. It asks: how many people would need to become unavailable before the project could no longer continue?
 
-In research projects, the problem is often less dramatic than a bus: a student finishes, a research fellow moves institution, a collaborator changes role, or a data manager is on leave. The effect is the same if key knowledge only exists in one person’s head.
+In research projects, the problem is often less dramatic than a bus: a student finishes, a research fellow moves institution, a collaborator changes role, or a data manager is on leave. The effect is the same if key knowledge only exists in one person's head.
 
-::: {.activity-box}
+::: activity-box
 ### Activity: what would you need to know?
 
 Imagine that a key member of your project team becomes unavailable tomorrow.
@@ -67,14 +68,14 @@ What would you need to know?
 
 Consider:
 
-- where the data are stored;
-- who has access;
-- which files are raw, derived or final;
-- what approvals or data-sharing agreements apply;
-- how exclusions or analysis decisions were made;
-- what software, packages and versions were used;
-- which outputs are current;
-- what still needs to be done.
+-   where the data are stored;
+-   who has access;
+-   which files are raw, derived or final;
+-   what approvals or data-sharing agreements apply;
+-   how exclusions or analysis decisions were made;
+-   what software, packages and versions were used;
+-   which outputs are current;
+-   what still needs to be done.
 :::
 
 ## Documentation should be proportionate
@@ -83,40 +84,40 @@ Not every project needs every type of document. A short student project may need
 
 The principle is proportionality:
 
-- document decisions that affect interpretation, reuse or trust;
-- keep documentation close to the relevant files;
-- avoid duplicating the same information in multiple places;
-- make ownership and update frequency clear;
-- use simple formats where possible.
+-   document decisions that affect interpretation, reuse or trust;
+-   keep documentation close to the relevant files;
+-   avoid duplicating the same information in multiple places;
+-   make ownership and update frequency clear;
+-   use simple formats where possible.
 
 ## A documentation map
 
 Different documentation artefacts answer different questions.
 
-| Documentation artefact | Main question it answers | Main audience |
-|---|---|---|
-| **README** | What is this project or dataset, and how do I navigate it? | New collaborator, reviewer, future you |
-| **Data dictionary / codebook** | What does each variable mean? | Analyst, reviewer, secondary user |
-| **Metadata** | What is this dataset, where did it come from, and how should it be cited/discovered? | Repository, data steward, future user |
-| **Decision log** | Why was this choice made? | Project team, reviewer, future analyst |
-| **Changelog** | What changed, when, and by whom? | Project team, future user |
-| **Environment notes** | What software context is needed to rerun the work? | Analyst, future user |
-| **ELN** | What happened during active work? | Project team |
-| **SOP** | How should this repeatable task be done? | Team member, new staff |
-| **Protocol / preregistration** | What was planned before data collection or analysis? | Reviewer, future reader, research team |
+| Documentation artefact         | Main question it answers                                                             | Main audience                          |
+|------------------------|------------------------|------------------------|
+| **README**                     | What is this project or dataset, and how do I navigate it?                           | New collaborator, reviewer, future you |
+| **Data dictionary / codebook** | What does each variable mean?                                                        | Analyst, reviewer, secondary user      |
+| **Metadata**                   | What is this dataset, where did it come from, and how should it be cited/discovered? | Repository, data steward, future user  |
+| **Decision log**               | Why was this choice made?                                                            | Project team, reviewer, future analyst |
+| **Changelog**                  | What changed, when, and by whom?                                                     | Project team, future user              |
+| **Environment notes**          | What software context is needed to rerun the work?                                   | Analyst, future user                   |
+| **ELN**                        | What happened during active work?                                                    | Project team                           |
+| **SOP**                        | How should this repeatable task be done?                                             | Team member, new staff                 |
+| **Protocol / preregistration** | What was planned before data collection or analysis?                                 | Reviewer, future reader, research team |
 
-::: {.figure-box}
-### When to use each document — quick guide
+::: figure-box
+### When to use each document --- quick guide
 
-| Situation | Useful documentation |
-|---|---|
-| A new person joins the project | README |
-| A variable needs explaining | Data dictionary or codebook |
-| A dataset needs citing, archiving or discovery | Metadata |
-| A choice needs justifying later | Decision log |
-| A file, output or document changes | Changelog |
-| Code needs to be rerun in the same environment | Environment notes |
-| A task must be done consistently | SOP |
+| Situation                                                   | Useful documentation        |
+|------------------------------------|------------------------------------|
+| A new person joins the project                              | README                      |
+| A variable needs explaining                                 | Data dictionary or codebook |
+| A dataset needs citing, archiving or discovery              | Metadata                    |
+| A choice needs justifying later                             | Decision log                |
+| A file, output or document changes                          | Changelog                   |
+| Code needs to be rerun in the same environment              | Environment notes           |
+| A task must be done consistently                            | SOP                         |
 | A study or analysis plan needs to be visible before results | Protocol or preregistration |
 :::
 
@@ -126,15 +127,15 @@ A README is the first place someone should look when they enter a project folder
 
 A project README should usually answer:
 
-1. **What is this project?** Purpose, scope, key outputs.
-2. **What does it contain?** Data files, scripts, documents and folder structure.
-3. **How does it work?** How to run the analysis or navigate the materials.
-4. **What decisions matter?** Versions, exclusions, constraints and key assumptions.
-5. **What are the rules?** Licence, sharing conditions, citation and contact details.
+1.  **What is this project?** Purpose, scope, key outputs.
+2.  **What does it contain?** Data files, scripts, documents and folder structure.
+3.  **How does it work?** How to run the analysis or navigate the materials.
+4.  **What decisions matter?** Versions, exclusions, constraints and key assumptions.
+5.  **What are the rules?** Licence, sharing conditions, citation and contact details.
 
 For a dataset, a README may also include data collection methods, variable descriptions, missing-value codes, software requirements and restrictions on reuse [@turingwayMetadata; @makeareadme].
 
-::: {.callout-tip}
+::: callout-tip
 ### Keep it findable
 
 Put the README at the highest relevant level: project root, data folder or dataset deposit. A hidden README is not doing its job.
@@ -146,15 +147,15 @@ A **data dictionary** or **codebook** describes the variables in a dataset. This
 
 A useful data dictionary includes:
 
-- variable name;
-- clear variable description;
-- unit of measurement;
-- expected data type;
-- allowed values or categories;
-- coding scheme;
-- missing-value codes;
-- source variable or source dataset;
-- derivation or transformation, where relevant.
+-   variable name;
+-   clear variable description;
+-   unit of measurement;
+-   expected data type;
+-   allowed values or categories;
+-   coding scheme;
+-   missing-value codes;
+-   source variable or source dataset;
+-   derivation or transformation, where relevant.
 
 This is particularly important for administrative, survey, cohort and linked datasets, where variable meanings may depend on coding rules, collection context, eligibility, geography, time period or provider systems [@ukdataserviceDataLevel; @ukdataserviceAdministrative].
 
@@ -164,20 +165,20 @@ Metadata describe the dataset as a research object. They support discovery, cita
 
 At minimum, metadata should capture:
 
-- title and description;
-- creators and contributors;
-- data source and collection context;
-- dates, versions and time period covered;
-- geography or population, where relevant;
-- inclusion and exclusion criteria;
-- provenance: how the data were generated, processed or cleaned;
-- access conditions and restrictions;
-- licence or reuse conditions;
-- persistent identifier, if available.
+-   title and description;
+-   creators and contributors;
+-   data source and collection context;
+-   dates, versions and time period covered;
+-   geography or population, where relevant;
+-   inclusion and exclusion criteria;
+-   provenance: how the data were generated, processed or cleaned;
+-   access conditions and restrictions;
+-   licence or reuse conditions;
+-   persistent identifier, if available.
 
 Metadata standards vary by field and repository. Examples include Dublin Core, DataCite, DDI, SDMX and ISO 19115 for geographic information [@dublinCore; @dataciteSchema; @ddiAlliance; @sdmx; @iso19115]. The Research Data Alliance Metadata Standards Catalog can help identify relevant standards [@rdamsc]. In practice, most researchers do not need to master these standards, but they do need to understand what metadata are trying to achieve: **enough context for the data to be found, understood and reused appropriately** [@cambridgeMetadata; @cessdaDocumentation].
 
-::: {.callout-note}
+::: callout-note
 ### Metadata is not only for open data
 
 Restricted or sensitive data still need metadata. Even when the data themselves cannot be shared openly, metadata can explain what exists, who controls access, what restrictions apply, and how legitimate access requests are handled.
@@ -185,25 +186,25 @@ Restricted or sensitive data still need metadata. Even when the data themselves 
 
 ## Decision logs
 
-A decision log records choices that may matter later. It is especially useful when the “right” choice is not obvious, when decisions are made under constraints, or when alternative choices could affect results.
+A decision log records choices that may matter later. It is especially useful when the "right" choice is not obvious, when decisions are made under constraints, or when alternative choices could affect results.
 
 Decision logs are useful for:
 
-- key analytical choices;
-- exclusions and deviations;
-- parameter changes;
-- changes to inclusion criteria;
-- changes to exposure or outcome definitions;
-- trade-offs caused by data quality, governance, ethics or feasibility;
-- choices made after discussion with collaborators or PPIE contributors.
+-   key analytical choices;
+-   exclusions and deviations;
+-   parameter changes;
+-   changes to inclusion criteria;
+-   changes to exposure or outcome definitions;
+-   trade-offs caused by data quality, governance, ethics or feasibility;
+-   choices made after discussion with collaborators or PPIE contributors.
 
 Example:
 
-| Date | Decision | Rationale | Impact | Who |
-|---|---|---|---|---|
-| 2025-02-12 | Excluded records with missing postcode | Exposure assignment required geocoding | Reduced sample size by 3.2% | JC |
-| 2025-02-18 | Defined heatwave as ≥3 consecutive days above 95th percentile | Aligned with agreed threshold; sensitivity tested | Affected exposure prevalence estimates | JC + PH |
-| 2025-02-25 | Used 100 m buffer for greenspace instead of 300 m | 300 m caused high spatial overlap; reduced precision | Changed exposure metric; documented in methods | JC |
+| Date       | Decision                                                      | Rationale                                            | Impact                                         | Who     |
+|---------------|---------------|---------------|---------------|---------------|
+| 2025-02-12 | Excluded records with missing postcode                        | Exposure assignment required geocoding               | Reduced sample size by 3.2%                    | JC      |
+| 2025-02-18 | Defined heatwave as ≥3 consecutive days above 95th percentile | Aligned with agreed threshold; sensitivity tested    | Affected exposure prevalence estimates         | JC + PH |
+| 2025-02-25 | Used 100 m buffer for greenspace instead of 300 m             | 300 m caused high spatial overlap; reduced precision | Changed exposure metric; documented in methods | JC      |
 
 A decision log can be a simple Markdown file, spreadsheet or table in an electronic lab notebook. The format matters less than whether the log is maintained and findable.
 
@@ -213,11 +214,11 @@ A changelog records what changed. It is most useful for documents, datasets, cod
 
 A simple changelog should record:
 
-- version number or date;
-- what changed;
-- why it changed;
-- who made the change;
-- whether earlier outputs are affected.
+-   version number or date;
+-   what changed;
+-   why it changed;
+-   who made the change;
+-   whether earlier outputs are affected.
 
 For manuscripts or governance documents, the changelog may be part of a document control table. For code or data outputs, it may sit in a `CHANGELOG.md` file. For more technical projects, Git can provide a detailed history, but a short human-readable changelog is still useful for major changes [@archbeeVersionControl].
 
@@ -227,16 +228,16 @@ Environment notes document the software context required to rerun an analysis. T
 
 Environment notes should include:
 
-- programming language version, for example R 4.3.1 or Python 3.11;
-- key packages and versions;
-- operating system, if relevant;
-- specialist software or external dependencies;
-- hardware or processing assumptions, if relevant;
-- how to recreate the environment.
+-   programming language version, for example R 4.3.1 or Python 3.11;
+-   key packages and versions;
+-   operating system, if relevant;
+-   specialist software or external dependencies;
+-   hardware or processing assumptions, if relevant;
+-   how to recreate the environment.
 
 Example:
 
-```text
+``` text
 Software environment
 - R version: 4.3.1
 - Platform: Windows 11
@@ -263,18 +264,18 @@ Electronic Lab Notebooks (ELNs) provide a chronological record of work. They are
 
 ELNs can help record:
 
-- what was attempted;
-- what happened;
-- unexpected problems;
-- decisions made during active work;
-- deviations from protocols;
-- links to files, outputs or scripts;
-- reflections on what to try next.
+-   what was attempted;
+-   what happened;
+-   unexpected problems;
+-   decisions made during active work;
+-   deviations from protocols;
+-   links to files, outputs or scripts;
+-   reflections on what to try next.
 
 The Turing Way notes that ELNs can improve searchability, remote access, secure storage and sharing compared with traditional paper notebooks [@turingwayELNs]. They are not, however, a replacement for all documentation. A project may still need a README, data dictionary, SOPs and formal governance records.
 
-::: {.callout-warning}
-### Avoid the “everything notebook” problem
+::: callout-warning
+### Avoid the "everything notebook" problem
 
 ELNs are good for chronological work records. They are less good as the only place to store final instructions, data dictionaries, access rules or project orientation.
 :::
@@ -285,40 +286,40 @@ A **Standard Operating Procedure** is a set of step-by-step instructions for car
 
 SOPs are most useful when:
 
-- the task is repeated;
-- inconsistency would affect data quality;
-- new people need training;
-- there are safety, governance or compliance implications;
-- the task involves multiple steps or decisions.
+-   the task is repeated;
+-   inconsistency would affect data quality;
+-   new people need training;
+-   there are safety, governance or compliance implications;
+-   the task involves multiple steps or decisions.
 
 Hollmann and colleagues describe SOPs as tools for reducing deviations and maintaining consistent quality in research workflows [@hollmann2020sop]. For this workshop, the practical point is simple: write an SOP when a task needs to be done the same way more than once.
 
 A good SOP should include:
 
-- title and purpose;
-- scope: when it applies and when it does not;
-- responsibilities;
-- required materials/software/access;
-- step-by-step procedure;
-- quality checks;
-- safety or governance considerations;
-- version, date and author;
-- review date.
+-   title and purpose;
+-   scope: when it applies and when it does not;
+-   responsibilities;
+-   required materials/software/access;
+-   step-by-step procedure;
+-   quality checks;
+-   safety or governance considerations;
+-   version, date and author;
+-   review date.
 
-::: {.activity-box}
+::: activity-box
 ### Activity: the cup of tea protocol
 
 Write a step-by-step protocol for making a cup of tea. You have three minutes.
 
 Then compare protocols. Did everyone specify:
 
-- type and brand of tea?
-- cup, mug or teapot?
-- water source?
-- water temperature?
-- brewing time?
-- milk first or last?
-- how to judge when it is “done”?
+-   type and brand of tea?
+-   cup, mug or teapot?
+-   water source?
+-   water temperature?
+-   brewing time?
+-   milk first or last?
+-   how to judge when it is "done"?
 
 This activity shows how expert knowledge can hide assumptions. The same problem occurs in research methods.
 :::
@@ -331,34 +332,64 @@ A useful test is:
 
 > Could a competent person who is new to the project follow this without asking you?
 
-The answer does not need to be “yes” for every piece of documentation. But for SOPs, data dictionaries, README files and analysis instructions, it should be the aim.
+The answer does not need to be "yes" for every piece of documentation. But for SOPs, data dictionaries, README files and analysis instructions, it should be the aim.
 
 ## Onboarding and offboarding
 
-Onboarding and offboarding are documentation opportunities. New team members ask useful questions because they do not yet share the team’s assumptions. Leaving team members are the best people to document what only they know.
+Onboarding and offboarding are documentation opportunities. New team members ask useful questions because they do not yet share the team's assumptions. Leaving team members are the best people to document what only they know.
 
-Onboarding documentation may include:
+::: {.callout-note title="Onboarding: quick checklist"}
+## Onboarding: quick checklist
 
-- where research data are stored;
-- how to request access;
-- restrictions around data stewardship and sharing;
-- common software, packages and analysis tools;
-- key datasets and documentation;
-- authorship, publication and preprint expectations;
-- examples of previous ethics, governance or grant applications;
-- how to record decisions and issues.
+When joining a new research project, ask where the key information is stored and how the team expects work to be documented, checked and shared.
 
-Offboarding documentation may include:
+### Planning
 
-- where raw, derived and final data are stored;
-- who else has access;
-- ownership, custodianship and permitted reuse;
-- collaborators and contact points;
-- retention dates;
-- repository links, DOIs or publication links;
-- ethics, governance and data-sharing approvals;
-- software versions and hardware/software dependencies;
-- unfinished tasks and known issues.
+-   [ ] Read the project protocol, data management plan or analysis plan.
+-   [ ] Identify the main research question, outputs and intended users.
+-   [ ] Clarify roles, responsibilities and who reviews decisions, code and outputs.
+
+### Data and governance
+
+-   [ ] Check which datasets are being used and where they came from.
+-   [ ] Check any approvals, licences, data sharing agreements or access restrictions.
+-   [ ] Understand what can be shared openly, shared under restriction, or not shared.
+
+### Workflow and documentation
+
+-   [ ] Review the project folder structure and file-naming conventions.
+-   [ ] Find the data dictionary, metadata, codebook or README files.
+-   [ ] Check how decisions, assumptions, errors and changes are recorded.
+
+### Reproducible analysis
+
+-   [ ] Check where scripts are stored and how they should be run.
+-   [ ] Record software versions, packages and dependencies.
+-   [ ] Make sure outputs can be regenerated from the underlying data and code.
+
+### Sharing and handover
+
+-   [ ] Check which outputs will be shared, deposited or archived.
+-   [ ] Confirm how data, code, protocols or reports should be cited.
+-   [ ] Before leaving the project, make sure files, scripts and notes are understandable to someone else.
+:::
+
+::: {.callout-note title="Offboarding: quick checklist"}
+## Offboarding: quick checklist
+
+Before leaving a project, make sure another researcher can understand, check and continue your work.
+
+-   [ ] Update the README, project notes or handover document.
+-   [ ] Check that files are named clearly and stored in the agreed locations.
+-   [ ] Remove or clearly label temporary, duplicate or outdated files.
+-   [ ] Make sure scripts can be run by someone else.
+-   [ ] Record software versions, packages and dependencies.
+-   [ ] Document key decisions, assumptions, exclusions and deviations from the plan.
+-   [ ] Check that figures, tables and reports can be traced back to the data and code.
+-   [ ] Confirm which data, code, metadata or outputs should be archived or shared.
+-   [ ] Note any unresolved issues, limitations or next steps.
+-   [ ] Transfer ownership of relevant files, repositories or project tasks.
+:::
 
 The Turing Way provides useful onboarding and offboarding checklists that can be adapted for research groups and projects [@turingwayOnOffboarding].
 
@@ -368,15 +399,15 @@ Protocols and preregistrations are a special form of documentation. They make pl
 
 Preregistration and protocol registration may be useful for:
 
-- clinical trials;
-- intervention studies;
-- systematic reviews;
-- planned secondary data analyses;
-- studies where analytic flexibility could affect interpretation.
+-   clinical trials;
+-   intervention studies;
+-   systematic reviews;
+-   planned secondary data analyses;
+-   studies where analytic flexibility could affect interpretation.
 
 Common platforms include OSF Registries, PROSPERO and protocols.io [@osfRegistries; @prospero; @protocolsio]. For systematic reviews, the Cochrane Handbook provides guidance on protocol development and review methods [@cochraneHandbook]. There are also templates specifically designed for secondary data analysis [@vanDenAkkerSecondaryPrereg].
 
-::: {.callout-note}
+::: callout-note
 ### Protocols can change
 
 The value of a protocol is not that nothing changes. The value is that changes are visible, justified and interpretable.
@@ -390,14 +421,14 @@ Reporting guidelines should usually be considered early, not only at manuscript 
 
 Some materials on the slides overlap with other parts of the workshop. To avoid repetition, use this boundary:
 
-| Topic | Main chapter |
-|---|---|
-| Folder structure and file naming | Chapter 3 |
-| Data-management responsibilities and access decisions | Chapter 4 |
-| Tidy data and missing-value coding | Chapter 5 |
-| README, metadata, decision logs, changelogs, ELNs, SOPs | Chapter 6 |
-| Code comments, package environments, `renv`, code checks | Chapter 7 |
-| Preprints, repositories, licences, PIDs, data access statements | Chapter 8 |
+| Topic                                                           | Main chapter |
+|------------------------------------|------------------------------------|
+| Folder structure and file naming                                | Chapter 3    |
+| Data-management responsibilities and access decisions           | Chapter 4    |
+| Tidy data and missing-value coding                              | Chapter 5    |
+| README, metadata, decision logs, changelogs, ELNs, SOPs         | Chapter 6    |
+| Code comments, package environments, `renv`, code checks        | Chapter 7    |
+| Preprints, repositories, licences, PIDs, data access statements | Chapter 8    |
 
 Preprints are important, but they are mainly about dissemination and early visibility rather than project documentation. They fit better in the later chapter on publishing and reuse.
 
@@ -409,20 +440,20 @@ What could you provide to show your working?
 
 Consider:
 
-- project README;
-- data dictionary or codebook;
-- metadata;
-- analysis scripts;
-- decision log;
-- changelog;
-- environment notes;
-- protocol or preregistration;
-- reporting guideline checklist;
-- data access statement;
-- repository or DOI;
-- documented deviations or sensitivity analyses.
+-   project README;
+-   data dictionary or codebook;
+-   metadata;
+-   analysis scripts;
+-   decision log;
+-   changelog;
+-   environment notes;
+-   protocol or preregistration;
+-   reporting guideline checklist;
+-   data access statement;
+-   repository or DOI;
+-   documented deviations or sensitivity analyses.
 
-::: {.activity-box}
+::: activity-box
 ### Reflection
 
 Choose one current project. What is the single piece of documentation that would most improve its reproducibility or handover?
@@ -434,51 +465,54 @@ Write one action you could take this week.
 
 These resources are included as a practical reading list. The aim is not for learners to read all of them, but to know where to look when they need a template, example or more detailed guidance.
 
+::: figure-box
 ### Core documentation guidance
 
-- The Turing Way: project documentation, metadata and ELNs [@turingwayDocumentation; @turingwayMetadata; @turingwayELNs]
-- Good Enough Practices in Scientific Computing [@wilson2017goodenough]
-- Reproducible Research workshop documentation materials [@partridgeDocumentation]
-- CESSDA: documentation and metadata [@cessdaDocumentation]
+-   The Turing Way: project documentation, metadata and ELNs [@turingwayDocumentation; @turingwayMetadata; @turingwayELNs]
+-   Good Enough Practices in Scientific Computing [@wilson2017goodenough]
+-   Reproducible Research workshop documentation materials [@partridgeDocumentation]
+-   CESSDA: documentation and metadata [@cessdaDocumentation]
 
 ### READMEs, data-level documentation and handover
 
-- Make a README [@makeareadme]
-- UK Data Service: data-level documentation [@ukdataserviceDataLevel]
-- Imperial College London: documenting data [@imperialDocumentingData]
-- University of Manchester: research data documentation cheat sheets [@manchesterResearchDataExplained]
-- The Turing Way: onboarding and offboarding guidance [@turingwayOnOffboarding]
+-   Make a README [@makeareadme]
+-   UK Data Service: data-level documentation [@ukdataserviceDataLevel]
+-   Imperial College London: documenting data [@imperialDocumentingData]
+-   University of Manchester: research data documentation cheat sheets [@manchesterResearchDataExplained]
+-   The Turing Way: onboarding and offboarding guidance [@turingwayOnOffboarding]
+-   [Research Data Management Onboarding Checklist](https://researchdata.wisc.edu/wp-content/uploads/2019/08/OnboardingChecklist.pdf)
 
 ### Metadata and metadata standards
 
-- Cambridge guidance on metadata [@cambridgeMetadata]
-- Research Data Alliance Metadata Standards Catalog [@rdamsc]
-- DataCite metadata schema [@dataciteSchema]
-- Dublin Core, DDI, SDMX and ISO 19115 as examples of metadata standards used in different contexts [@dublinCore; @ddiAlliance; @sdmx; @iso19115]
-- ResourceSpace guide to metadata, useful as a general overview rather than a research-specific standard [@resourcespaceMetadata]
+-   Cambridge guidance on metadata [@cambridgeMetadata]
+-   Research Data Alliance Metadata Standards Catalog [@rdamsc]
+-   DataCite metadata schema [@dataciteSchema]
+-   Dublin Core, DDI, SDMX and ISO 19115 as examples of metadata standards used in different contexts [@dublinCore; @ddiAlliance; @sdmx; @iso19115]
+-   ResourceSpace guide to metadata, useful as a general overview rather than a research-specific standard [@resourcespaceMetadata]
 
 ### Decision logs, changelogs and risk registers
 
-- Archbee guide to document version control [@archbeeVersionControl]
-- Project Manager Template guide to decision logs [@projectManagerDecisionLog]
-- Asana guide to risk registers [@asanaRiskRegister]
+-   Archbee guide to document version control [@archbeeVersionControl]
+-   Project Manager Template guide to decision logs [@projectManagerDecisionLog]
+-   Asana guide to risk registers [@asanaRiskRegister]
 
 ### ELNs, SOPs, protocols and reporting
 
-- The Turing Way: electronic lab notebooks [@turingwayELNs]
-- Kanza et al. on implementing ELNs [@kanza2024elns]
-- Hollmann et al. on writing SOPs [@hollmann2020sop]
-- UHBW essential research documents SOP as a health-research example [@uhbwEssentialDocs]
-- EQUATOR Network reporting guidelines [@equatorNetwork]
-- OSF Registries, PROSPERO and protocols.io [@osfRegistries; @prospero; @protocolsio]
-- Cochrane Handbook [@cochraneHandbook]
+-   The Turing Way: electronic lab notebooks [@turingwayELNs]
+-   Kanza et al. on implementing ELNs [@kanza2024elns]
+-   Hollmann et al. on writing SOPs [@hollmann2020sop]
+-   UHBW essential research documents SOP as a health-research example [@uhbwEssentialDocs]
+-   EQUATOR Network reporting guidelines [@equatorNetwork]
+-   OSF Registries, PROSPERO and protocols.io [@osfRegistries; @prospero; @protocolsio]
+-   Cochrane Handbook [@cochraneHandbook]
+:::
 
-::: {.chapter-summary}
+::: chapter-summary
 ## Key takeaways
 
-- Documentation is how decisions remain visible.
-- Different documentation artefacts serve different purposes.
-- A README orientates; a codebook explains variables; metadata supports discovery and citation; logs record decisions and changes.
-- SOPs are useful for repeatable tasks; protocols and preregistrations make planned methods visible.
-- Proportionate documentation reduces risk, supports handover and strengthens reproducibility.
+-   Documentation is how decisions remain visible.
+-   Different documentation artefacts serve different purposes.
+-   A README orientates; a codebook explains variables; metadata supports discovery and citation; logs record decisions and changes.
+-   SOPs are useful for repeatable tasks; protocols and preregistrations make planned methods visible.
+-   Proportionate documentation reduces risk, supports handover and strengthens reproducibility.
 :::

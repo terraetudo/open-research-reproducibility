@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Tools, UCL support, and copy-ready templates referenced across the Chapters.">
+<meta name="author" content="Joana Cruz">
 
-<title>Open Research &amp; Reproducibility - Resources and Further Reading</title>
+<title>Open Research &amp; Reproducibility – 11&nbsp; ``` R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,26 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -125,7 +140,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./resources.html"><span class="chapter-title">Resources and Further Reading</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./resources.html"><span class="chapter-title">Open research and reproducibility workshop — code example</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -197,7 +212,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Resources and Further Reading</span></a>
+  <a href="./resources.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Open research and reproducibility workshop — code example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,94 +230,33 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-onboarding-first-actions" id="toc-sec-onboarding-first-actions" class="nav-link active" data-scroll-target="#sec-onboarding-first-actions">Onboarding: first actions on a new project</a></li>
-  <li><a href="#foundations" id="toc-foundations" class="nav-link" data-scroll-target="#foundations">Foundations of open and reproducible research</a>
+  <li><a href="#title-resources---code-example" id="toc-title-resources---code-example" class="nav-link active" data-scroll-target="#title-resources---code-example">title: “Resources - code example”</a></li>
+  <li><a href="#define-project-folders" id="toc-define-project-folders" class="nav-link" data-scroll-target="#define-project-folders">4. Define project folders</a></li>
+  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">5. Import data</a>
   <ul class="collapse">
-  <li><a href="#conceptual-foundations-and-terminology" id="toc-conceptual-foundations-and-terminology" class="nav-link" data-scroll-target="#conceptual-foundations-and-terminology">Conceptual foundations and terminology</a></li>
-  <li><a href="#key-readings" id="toc-key-readings" class="nav-link" data-scroll-target="#key-readings">Key readings</a></li>
-  <li><a href="#ucl-policies-and-frameworks" id="toc-ucl-policies-and-frameworks" class="nav-link" data-scroll-target="#ucl-policies-and-frameworks">UCL policies and frameworks</a></li>
+  <li><a href="#define-the-expected-files" id="toc-define-the-expected-files" class="nav-link" data-scroll-target="#define-the-expected-files">5.1 Define the expected files</a></li>
+  <li><a href="#check-that-files-exist" id="toc-check-that-files-exist" class="nav-link" data-scroll-target="#check-that-files-exist">5.2 Check that files exist</a></li>
+  <li><a href="#read-the-main-dataset" id="toc-read-the-main-dataset" class="nav-link" data-scroll-target="#read-the-main-dataset">5.3 Read the main dataset</a></li>
   </ul></li>
-  <li><a href="#fair-resources" id="toc-fair-resources" class="nav-link" data-scroll-target="#fair-resources">FAIR principles and data stewardship</a>
+  <li><a href="#basic-data-validation-before-analysis" id="toc-basic-data-validation-before-analysis" class="nav-link" data-scroll-target="#basic-data-validation-before-analysis">6. Basic data validation before analysis</a>
   <ul class="collapse">
-  <li><a href="#core-readings" id="toc-core-readings" class="nav-link" data-scroll-target="#core-readings">Core readings</a></li>
-  <li><a href="#fair-in-practice-deeper-dives" id="toc-fair-in-practice-deeper-dives" class="nav-link" data-scroll-target="#fair-in-practice-deeper-dives">FAIR in practice (deeper dives)</a></li>
-  <li><a href="#ucl-support" id="toc-ucl-support" class="nav-link" data-scroll-target="#ucl-support">UCL support</a></li>
-  <li><a href="#project-metadata-roles-and-conventions" id="toc-project-metadata-roles-and-conventions" class="nav-link" data-scroll-target="#project-metadata-roles-and-conventions">Project metadata, roles, and conventions</a></li>
-  <li><a href="#versioning-and-continuity-principles-not-tools" id="toc-versioning-and-continuity-principles-not-tools" class="nav-link" data-scroll-target="#versioning-and-continuity-principles-not-tools">Versioning and continuity (principles, not tools)</a></li>
-  <li><a href="#ucl-supported-tools-and-routes" id="toc-ucl-supported-tools-and-routes" class="nav-link" data-scroll-target="#ucl-supported-tools-and-routes">UCL-supported tools and routes</a></li>
-  <li><a href="#recommended-tools-illustrative-principle-led" id="toc-recommended-tools-illustrative-principle-led" class="nav-link" data-scroll-target="#recommended-tools-illustrative-principle-led">Recommended tools (illustrative; principle-led)</a></li>
+  <li><a href="#check-that-the-dataset-is-not-empty" id="toc-check-that-the-dataset-is-not-empty" class="nav-link" data-scroll-target="#check-that-the-dataset-is-not-empty">6.1 Check that the dataset is not empty</a></li>
+  <li><a href="#check-that-required-variables-exist" id="toc-check-that-required-variables-exist" class="nav-link" data-scroll-target="#check-that-required-variables-exist">6.2 Check that required variables exist</a></li>
+  <li><a href="#check-variable-types" id="toc-check-variable-types" class="nav-link" data-scroll-target="#check-variable-types">6.3 Check variable types</a></li>
+  <li><a href="#check-missingness" id="toc-check-missingness" class="nav-link" data-scroll-target="#check-missingness">6.4 Check missingness</a></li>
+  <li><a href="#check-plausible-values" id="toc-check-plausible-values" class="nav-link" data-scroll-target="#check-plausible-values">6.5 Check plausible values</a></li>
   </ul></li>
-  <li><a href="#sec-dmp-resources" id="toc-sec-dmp-resources" class="nav-link" data-scroll-target="#sec-dmp-resources">Data Management Plans</a>
+  <li><a href="#create-table-s1" id="toc-create-table-s1" class="nav-link" data-scroll-target="#create-table-s1">7. Create Table S1</a>
   <ul class="collapse">
-  <li><a href="#ucl-dmp-route-and-template" id="toc-ucl-dmp-route-and-template" class="nav-link" data-scroll-target="#ucl-dmp-route-and-template">UCL DMP route and template</a></li>
-  <li><a href="#derived-and-intermediate-data-retention-decision-prompts-quick-guide" id="toc-derived-and-intermediate-data-retention-decision-prompts-quick-guide" class="nav-link" data-scroll-target="#derived-and-intermediate-data-retention-decision-prompts-quick-guide">Derived and intermediate data: retention decision prompts (quick guide)</a></li>
-  <li><a href="#ucl-support-routes-practical" id="toc-ucl-support-routes-practical" class="nav-link" data-scroll-target="#ucl-support-routes-practical">UCL support routes (practical)</a></li>
+  <li><a href="#save-table-s1" id="toc-save-table-s1" class="nav-link" data-scroll-target="#save-table-s1">7.1 Save Table S1</a></li>
   </ul></li>
-  <li><a href="#data-provenance" id="toc-data-provenance" class="nav-link" data-scroll-target="#data-provenance">Data organisation and provenance</a>
-  <ul class="collapse">
-  <li><a href="#deeper-dives" id="toc-deeper-dives" class="nav-link" data-scroll-target="#deeper-dives">Deeper dives</a></li>
-  <li><a href="#domain-specific-metadata-standards-advanced-reference" id="toc-domain-specific-metadata-standards-advanced-reference" class="nav-link" data-scroll-target="#domain-specific-metadata-standards-advanced-reference">Domain-specific metadata standards (Advanced / reference)</a></li>
-  </ul></li>
-  <li><a href="#sec-essential-metadata" id="toc-sec-essential-metadata" class="nav-link" data-scroll-target="#sec-essential-metadata">Essential metadata (minimum standard)</a>
-  <ul class="collapse">
-  <li><a href="#essential-metadata-checklist-minimum-standard" id="toc-essential-metadata-checklist-minimum-standard" class="nav-link" data-scroll-target="#essential-metadata-checklist-minimum-standard">Essential Metadata Checklist (minimum standard)</a></li>
-  <li><a href="#expanded-metadata-templates-advanced-reference" id="toc-expanded-metadata-templates-advanced-reference" class="nav-link" data-scroll-target="#expanded-metadata-templates-advanced-reference">Expanded metadata templates (Advanced / reference)</a></li>
-  </ul></li>
-  <li><a href="#sec-project-organisation-templates" id="toc-sec-project-organisation-templates" class="nav-link" data-scroll-target="#sec-project-organisation-templates">Project organisation templates (copy-ready)</a>
-  <ul class="collapse">
-  <li><a href="#baseline-folder-structure" id="toc-baseline-folder-structure" class="nav-link" data-scroll-target="#baseline-folder-structure">Baseline folder structure</a></li>
-  <li><a href="#file-naming-and-versioning-minimum-standard" id="toc-file-naming-and-versioning-minimum-standard" class="nav-link" data-scroll-target="#file-naming-and-versioning-minimum-standard">File naming and versioning (minimum standard)</a></li>
-  <li><a href="#versioning-cheat-sheet" id="toc-versioning-cheat-sheet" class="nav-link" data-scroll-target="#versioning-cheat-sheet">Versioning cheat-sheet</a></li>
-  <li><a href="#optional-code-version-control-git-advanced-reference" id="toc-optional-code-version-control-git-advanced-reference" class="nav-link" data-scroll-target="#optional-code-version-control-git-advanced-reference">Optional: code version control (Git) (Advanced / reference)</a></li>
-  </ul></li>
-  <li><a href="#sec-codebook-template" id="toc-sec-codebook-template" class="nav-link" data-scroll-target="#sec-codebook-template">Codebook / data dictionary template (minimum standard)</a></li>
-  <li><a href="#docs-resources" id="toc-docs-resources" class="nav-link" data-scroll-target="#docs-resources">Documentation, ELNs, and SOPs</a>
-  <ul class="collapse">
-  <li><a href="#core-principles-of-research-documentation" id="toc-core-principles-of-research-documentation" class="nav-link" data-scroll-target="#core-principles-of-research-documentation">Core principles of research documentation</a></li>
-  <li><a href="#readmes-codebooks-and-dataset-documentation" id="toc-readmes-codebooks-and-dataset-documentation" class="nav-link" data-scroll-target="#readmes-codebooks-and-dataset-documentation">READMEs, codebooks, and dataset documentation</a></li>
-  <li><a href="#sec-readme-template" id="toc-sec-readme-template" class="nav-link" data-scroll-target="#sec-readme-template">README template (minimum standard)</a></li>
-  <li><a href="#elns" id="toc-elns" class="nav-link" data-scroll-target="#elns">ELNs</a></li>
-  <li><a href="#sops-and-essential-research-documents-health-contexts" id="toc-sops-and-essential-research-documents-health-contexts" class="nav-link" data-scroll-target="#sops-and-essential-research-documents-health-contexts">SOPs and essential research documents (health contexts)</a></li>
-  </ul></li>
-  <li><a href="#code-quality" id="toc-code-quality" class="nav-link" data-scroll-target="#code-quality">Code quality, testing, and sustainable software</a>
-  <ul class="collapse">
-  <li><a href="#core-guidance-on-code-quality-and-testing" id="toc-core-guidance-on-code-quality-and-testing" class="nav-link" data-scroll-target="#core-guidance-on-code-quality-and-testing">Core guidance on code quality and testing</a></li>
-  <li><a href="#proportionate-best-practice-for-research-code" id="toc-proportionate-best-practice-for-research-code" class="nav-link" data-scroll-target="#proportionate-best-practice-for-research-code">Proportionate best practice for research code</a></li>
-  <li><a href="#writing-clear-and-maintainable-code" id="toc-writing-clear-and-maintainable-code" class="nav-link" data-scroll-target="#writing-clear-and-maintainable-code">Writing clear and maintainable code</a></li>
-  <li><a href="#documenting-code-as-part-of-code-quality" id="toc-documenting-code-as-part-of-code-quality" class="nav-link" data-scroll-target="#documenting-code-as-part-of-code-quality">Documenting code as part of code quality</a></li>
-  <li><a href="#sustainable-and-green-research-software" id="toc-sustainable-and-green-research-software" class="nav-link" data-scroll-target="#sustainable-and-green-research-software">Sustainable and green research software</a></li>
-  </ul></li>
-  <li><a href="#responsibility" id="toc-responsibility" class="nav-link" data-scroll-target="#responsibility">Responsible and inclusive research across the workflow</a>
-  <ul class="collapse">
-  <li><a href="#ethical-and-inclusive-research-practice" id="toc-ethical-and-inclusive-research-practice" class="nav-link" data-scroll-target="#ethical-and-inclusive-research-practice">Ethical and inclusive research practice</a></li>
-  <li><a href="#roles-responsibilities-and-governance-ucl" id="toc-roles-responsibilities-and-governance-ucl" class="nav-link" data-scroll-target="#roles-responsibilities-and-governance-ucl">Roles, responsibilities, and governance (UCL)</a></li>
-  <li><a href="#trusted-research-security-and-risk" id="toc-trusted-research-security-and-risk" class="nav-link" data-scroll-target="#trusted-research-security-and-risk">Trusted research, security, and risk</a></li>
-  <li><a href="#training-and-support" id="toc-training-and-support" class="nav-link" data-scroll-target="#training-and-support">Training and support</a></li>
-  </ul></li>
-  <li><a href="#automation-resources" id="toc-automation-resources" class="nav-link" data-scroll-target="#automation-resources">Automation and workflows within coding practice</a>
-  <ul class="collapse">
-  <li><a href="#workflow-tools-use-when-complexity-increases" id="toc-workflow-tools-use-when-complexity-increases" class="nav-link" data-scroll-target="#workflow-tools-use-when-complexity-increases">Workflow tools (use when complexity increases)</a></li>
-  <li><a href="#reproducible-execution-environments" id="toc-reproducible-execution-environments" class="nav-link" data-scroll-target="#reproducible-execution-environments">Reproducible execution environments</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
-  </ul></li>
-  <li><a href="#pids" id="toc-pids" class="nav-link" data-scroll-target="#pids">Publishing, PIDs, repositories, licensing, and reuse</a>
-  <ul class="collapse">
-  <li><a href="#persistent-identifiers-and-citation" id="toc-persistent-identifiers-and-citation" class="nav-link" data-scroll-target="#persistent-identifiers-and-citation">Persistent identifiers and citation</a></li>
-  <li><a href="#preprints-and-early-dissemination" id="toc-preprints-and-early-dissemination" class="nav-link" data-scroll-target="#preprints-and-early-dissemination">Preprints and early dissemination</a></li>
-  <li><a href="#sec-reporting-guidelines" id="toc-sec-reporting-guidelines" class="nav-link" data-scroll-target="#sec-reporting-guidelines">Reporting guidelines for health and population research</a></li>
-  <li><a href="#repositories-and-access-routes" id="toc-repositories-and-access-routes" class="nav-link" data-scroll-target="#repositories-and-access-routes">Repositories and access routes</a></li>
-  <li><a href="#licensing-and-reuse-core" id="toc-licensing-and-reuse-core" class="nav-link" data-scroll-target="#licensing-and-reuse-core">Licensing and reuse (core)</a></li>
-  <li><a href="#copyright-training" id="toc-copyright-training" class="nav-link" data-scroll-target="#copyright-training">Copyright training</a></li>
-  </ul></li>
-  <li><a href="#sec-repo-guidance" id="toc-sec-repo-guidance" class="nav-link" data-scroll-target="#sec-repo-guidance">Repository “minimum viable release” guidance</a></li>
-  <li><a href="#sec-tools" id="toc-sec-tools" class="nav-link" data-scroll-target="#sec-tools">Tools and software (pragmatic, not prescriptive)</a>
-  <ul class="collapse">
-  <li><a href="#reproducible-environments" id="toc-reproducible-environments" class="nav-link" data-scroll-target="#reproducible-environments">Reproducible environments</a></li>
-  <li><a href="#workflow-automation-tools-advanced-reference" id="toc-workflow-automation-tools-advanced-reference" class="nav-link" data-scroll-target="#workflow-automation-tools-advanced-reference">Workflow / automation tools (Advanced / reference)</a></li>
-  </ul></li>
-  <li><a href="#sec-credit-assessment" id="toc-sec-credit-assessment" class="nav-link" data-scroll-target="#sec-credit-assessment">Research evaluation, credit, and incentives</a></li>
-  <li><a href="#sec-community" id="toc-sec-community" class="nav-link" data-scroll-target="#sec-community">Community and support routes</a></li>
-  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training and further reading</a></li>
+  <li><a href="#prepare-data-for-plotting" id="toc-prepare-data-for-plotting" class="nav-link" data-scroll-target="#prepare-data-for-plotting">8. Prepare data for plotting</a></li>
+  <li><a href="#create-a-reusable-plotting-function" id="toc-create-a-reusable-plotting-function" class="nav-link" data-scroll-target="#create-a-reusable-plotting-function">9. Create a reusable plotting function</a></li>
+  <li><a href="#produce-figure-2-panels" id="toc-produce-figure-2-panels" class="nav-link" data-scroll-target="#produce-figure-2-panels">10. Produce Figure 2 panels</a></li>
+  <li><a href="#combine-and-show-figure-2" id="toc-combine-and-show-figure-2" class="nav-link" data-scroll-target="#combine-and-show-figure-2">11. Combine and show Figure 2</a></li>
+  <li><a href="#save-figure-2" id="toc-save-figure-2" class="nav-link" data-scroll-target="#save-figure-2">12. Save Figure 2</a></li>
+  <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information">13. Session information</a></li>
+  <li><a href="#what-this-workflow-demonstrates" id="toc-what-this-workflow-demonstrates" class="nav-link" data-scroll-target="#what-this-workflow-demonstrates">14. What this workflow demonstrates</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/terraetudo/open-research-reproducibility/edit/main/resources.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/terraetudo/open-research-reproducibility/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -311,14 +265,26 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Resources and Further Reading</span></h1>
+<h1 class="title"><span class="chapter-title">``` R</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Joana Cruz </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
   
     
   </div>
@@ -326,878 +292,541 @@ div.csl-indent {
 
 </header>
 
-<p>This chapter gathers together <strong>tools</strong>, <strong>UCL support</strong>, <strong>further reading</strong>, and <strong>copy-ready templates</strong> referenced across <strong>Chapters 1–9</strong>.<br>
-It is intended as a <em>one-stop practical library</em> for early-career researchers and researchers onboarding to projects at UCL.</p>
-<p>Use this chapter when you need:</p>
-<ul>
-<li>examples to implement ideas from the Chapters;</li>
-<li>templates to copy into your own repositories;</li>
-<li>links to UCL policies, services, and support.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How to use this page
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Start here</strong> if you are new to UCL or new to a project team.</li>
-<li><strong>Use the checklists</strong> first; use the deeper links when you need more detail.</li>
-<li>Sections marked <strong>Advanced / reference</strong> are optional unless your project context requires them.</li>
-</ul>
-</div>
-</div>
-<hr>
-<section id="sec-onboarding-first-actions" class="level2">
-<h2 class="anchored" data-anchor-id="sec-onboarding-first-actions">Onboarding: first actions on a new project</h2>
-<p>Use this when you join a project (or onboard someone else).</p>
-<ol type="1">
-<li>Find or create the <strong>project README</strong> (purpose, scope, structure, contacts).</li>
-<li>Confirm <strong>data access and governance</strong> (what you can/can’t do; where it’s documented).</li>
-<li>Identify the <strong>source of truth</strong> (repository/shared drive) and the agreed naming/versioning rules.</li>
-<li>Locate <strong>raw data</strong> and confirm it is immutable; find how <strong>derived data</strong> are produced.</li>
-<li>Identify the <strong>analysis entry point</strong> (main script / workflow) and the environment notes.</li>
-<li>Find the <strong>decision log / ELN</strong> and record your first assumptions and uncertainties.</li>
-<li>Check expected outputs (papers, datasets, code releases) and likely <strong>release points</strong>.</li>
-</ol>
-<hr>
-</section>
-<section id="foundations" class="level2">
-<h2 class="anchored" data-anchor-id="foundations">Foundations of open and reproducible research</h2>
-<p><em>Supports Chapter 1</em></p>
-<section id="conceptual-foundations-and-terminology" class="level3">
-<h3 class="anchored" data-anchor-id="conceptual-foundations-and-terminology">Conceptual foundations and terminology</h3>
-<ul>
-<li><p><strong>Definitions: reproducible, replicable, robust, and generalisable</strong><br>
-<a href="https://book.the-turing-way.org/reproducible-research/overview/overview-definitions/" class="uri">https://book.the-turing-way.org/reproducible-research/overview/overview-definitions/</a></p></li>
-<li><p><strong>Why reproducible research matters (overview and benefits)</strong><br>
-<a href="https://book.the-turing-way.org/reproducible-research/overview" class="uri">https://book.the-turing-way.org/reproducible-research/overview</a></p></li>
-</ul>
-</section>
-<section id="key-readings" class="level3">
-<h3 class="anchored" data-anchor-id="key-readings">Key readings</h3>
-<ul>
-<li><em>The Turing Way</em> — foundational guidance on reproducibility, collaboration, project design, FAIR, and governance<span class="citation" data-cites="turingway2022"><sup><a href="#ref-turingway2022" role="doc-biblioref">1</a></sup></span><br>
-</li>
-<li>Nature survey of reproducibility challenges across science<span class="citation" data-cites="baker2016reproducibility"><sup><a href="#ref-baker2016reproducibility" role="doc-biblioref">2</a></sup></span><br>
-</li>
-<li>Manifesto for reproducible science<span class="citation" data-cites="munafo2017manifesto"><sup><a href="#ref-munafo2017manifesto" role="doc-biblioref">3</a></sup></span><br>
-</li>
-<li>National Academies report on reproducibility and replicability<span class="citation" data-cites="nas2019reproducibility"><sup><a href="#ref-nas2019reproducibility" role="doc-biblioref">4</a></sup></span></li>
-</ul>
-</section>
-<section id="ucl-policies-and-frameworks" class="level3">
-<h3 class="anchored" data-anchor-id="ucl-policies-and-frameworks">UCL policies and frameworks</h3>
-<ul>
-<li><p><strong>UCL Research Transparency Policy</strong><br>
-<a href="https://www.ucl.ac.uk/research/strategy-environment/research-transparency" class="uri">https://www.ucl.ac.uk/research/strategy-environment/research-transparency</a></p></li>
-<li><p><strong>UCL Research Integrity</strong><br>
-<a href="https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity" class="uri">https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity</a></p></li>
-<li><p><strong>UCL Office for Open Science &amp; Scholarship</strong><br>
-<a href="https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship" class="uri">https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship</a></p></li>
-<li><p><strong>UCL Open Access guidance</strong><br>
-<a href="https://www.ucl.ac.uk/library/open-science-research-support/open-access" class="uri">https://www.ucl.ac.uk/library/open-science-research-support/open-access</a></p></li>
-<li><p><strong>UCL Research Data Repository:</strong> <a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository" class="uri">https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository</a></p></li>
-<li><p><strong>Acknowledging the use of generative AI and referencing generative AI</strong> <a href="https://library-guides.ucl.ac.uk/referencing-plagiarism/acknowledging-genAI" class="uri">https://library-guides.ucl.ac.uk/referencing-plagiarism/acknowledging-genAI</a></p></li>
-<li><p><strong>UCL RSDP: Research Governance and Organisation</strong> <a href="https://www.ucl.ac.uk/human-resources/organisational-development/researcher-development/research-staff/rsdp-research-governance-and">https://www.ucl.ac.uk/human-resources/organisational-development/researcher-development/research-staff/rsdp-research-governance-and</a></p></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="fair-resources" class="level2">
-<h2 class="anchored" data-anchor-id="fair-resources">FAIR principles and data stewardship</h2>
-<p><em>Supports Chapter 2</em></p>
-<section id="core-readings" class="level3">
-<h3 class="anchored" data-anchor-id="core-readings">Core readings</h3>
-<ul>
-<li>Original FAIR principles<span class="citation" data-cites="wilkinson2016fair"><sup><a href="#ref-wilkinson2016fair" role="doc-biblioref">5</a></sup></span><br>
-</li>
-<li>GO FAIR overview<span class="citation" data-cites="gofair2023"><sup><a href="#ref-gofair2023" role="doc-biblioref">6</a></sup></span><br>
-</li>
-<li>OpenAIRE FAIR implementation guidance<span class="citation" data-cites="openaire_fair2023"><sup><a href="#ref-openaire_fair2023" role="doc-biblioref">7</a></sup></span><br>
-</li>
-<li>FAIR chapter from <em>The Turing Way</em><span class="citation" data-cites="turingway_fair"><sup><a href="#ref-turingway_fair" role="doc-biblioref">8</a></sup></span></li>
-</ul>
-</section>
-<section id="fair-in-practice-deeper-dives" class="level3">
-<h3 class="anchored" data-anchor-id="fair-in-practice-deeper-dives">FAIR in practice (deeper dives)</h3>
-<ul>
-<li><p><strong>FAIR Princples</strong><br>
-<a href="https://www.go-fair.org/fair-principles/" class="uri">https://www.go-fair.org/fair-principles/</a></p></li>
-<li><p><strong>Machine-actionable metadata (overview)</strong><br>
-<a href="https://rdmkit.elixir-europe.org/machine_actionability" class="uri">https://rdmkit.elixir-europe.org/machine_actionability</a></p></li>
-<li><p><strong>Persistent identifiers and metadata schemas (DataCite)</strong><br>
-<a href="https://schema.datacite.org/" class="uri">https://schema.datacite.org/</a></p></li>
-<li><p><strong>FAIR and sensitive data</strong><br>
-<a href="https://www.openaire.eu/sensitive-data-guide" class="uri">https://www.openaire.eu/sensitive-data-guide</a></p></li>
-<li><p><strong>Provenance and critical data elements</strong><br>
-<a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-metadata/" class="uri">https://book.the-turing-way.org/reproducible-research/rdm/rdm-metadata/</a></p></li>
-</ul>
-</section>
-<section id="ucl-support" class="level3">
-<h3 class="anchored" data-anchor-id="ucl-support">UCL support</h3>
-<ul>
-<li><p><strong>UCL Research Data Repository</strong><br>
-<a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository" class="uri">https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository</a></p></li>
-<li><p><strong>Research Data Management guidance</strong><br>
-<a href="https://library-guides.ucl.ac.uk/research-data-management/best-practices-fair-data" class="uri">https://library-guides.ucl.ac.uk/research-data-management/best-practices-fair-data</a></p></li>
-</ul>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">## Project design and management {#pm}</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><em>Supports Chapter 3 — Project organisation for reproducible research</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">### Core conceptual readings</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">- <em>The Turing Way</em>: project management methodologies overview<span class="citation" data-cites="turingway_pm"><sup><a href="#ref-turingway_pm" role="doc-biblioref">9</a></sup></span> <a href="https://book.the-turing-way.org/project-design/project-management-methodologies/overview" class="uri">https://book.the-turing-way.org/project-design/project-management-methodologies/overview</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">These introductions orient you to project-level decisions, continuity, and collaboration concepts in research contexts.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="project-metadata-roles-and-conventions" class="level3">
-<h3 class="anchored" data-anchor-id="project-metadata-roles-and-conventions">Project metadata, roles, and conventions</h3>
-<p>Project organisation is not just files; it’s <em>agreements</em> about how work is described and aligned across people and outputs.</p>
-<ul>
-<li><p><strong>Project metadata and conventions</strong><br>
-<a href="https://www.resourcespace.com/complete-guide-to-metadata" class="uri">https://www.resourcespace.com/complete-guide-to-metadata</a></p></li>
-<li><p><strong>Decision logs and risk registers</strong><br>
-<a href="https://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions." class="uri">https://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions.</a> <a href="https://www.prince2.com/uk/blog/the-risk-register-what-to-include-and-what-to-avoid" class="uri">https://www.prince2.com/uk/blog/the-risk-register-what-to-include-and-what-to-avoid</a></p></li>
-<li><p><strong>Onboarding and offboarding practices</strong><br>
-<a href="https://book.the-turing-way.org/community-handbook/onboarding-offboarding/onboarding-core-team" class="uri">https://book.the-turing-way.org/community-handbook/onboarding-offboarding/onboarding-core-team</a> <a href="https://book.the-turing-way.org/community-handbook/onboarding-offboarding/offboarding-core-team/" class="uri">https://book.the-turing-way.org/community-handbook/onboarding-offboarding/offboarding-core-team/</a></p></li>
-</ul>
-<p>This set supports the Chapter 3 emphasis on <em>metadata, roles, and conventions</em> for collaboration.</p>
-<hr>
-</section>
-<section id="versioning-and-continuity-principles-not-tools" class="level3">
-<h3 class="anchored" data-anchor-id="versioning-and-continuity-principles-not-tools">Versioning and continuity (principles, not tools)</h3>
-<p>Project continuity depends on <em>how</em> changes are tracked, not just <em>which tool</em> you use.</p>
-<ul>
-<li><p><strong>Versioning data and documents (principle overview)</strong> — UK Data Service guidance<br>
-<a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/" class="uri">https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/</a></p></li>
-<li><p><strong>Good Enough Practices in Scientific Computing (principles for tracking changes)</strong><br>
-<a href="https://carpentries-lab.github.io/good-enough-practices/" class="uri">https://carpentries-lab.github.io/good-enough-practices/</a></p></li>
-<li><p><strong>Decision-making records and continuity</strong> <a href="https://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions." class="uri">https://www.projectmanagertemplate.com/post/decision-logs-the-ultimate-guide#:~:text=What%20is%20a%20Decision%20Log,of%20miscommunication%20or%20conflicting%20decisions.</a></p></li>
-</ul>
-<p>These reinforce Chapter 3’s focus on <em>proportionate principles</em> rather than tool adoption.</p>
-<hr>
-</section>
-<section id="ucl-supported-tools-and-routes" class="level3">
-<h3 class="anchored" data-anchor-id="ucl-supported-tools-and-routes">UCL-supported tools and routes</h3>
-<p>Chapter 3 promises learners can <em>locate UCL support</em>. These links are the authoritative institutional routes.</p>
-<ul>
-<li><p><strong>UCL Research Data Management (Library Services)</strong> — guidance, templates, training<br>
-<a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management" class="uri">https://www.ucl.ac.uk/library/open-science-research-support/research-data-management</a></p></li>
-<li><p><strong>Research governance (UCL Governance &amp; Compliance)</strong> — structures and approvals<br>
-<a href="https://www.ucl.ac.uk/governance-compliance/research-governance" class="uri">https://www.ucl.ac.uk/governance-compliance/research-governance</a></p></li>
-<li><p><strong>Research Integrity (RI&amp;S)</strong> — responsible conduct and research policy<br>
-<a href="https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity" class="uri">https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity</a></p></li>
-<li><p><strong>UCL Office for Open Science &amp; Scholarship</strong> — broader open science support<br>
-<a href="https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship" class="uri">https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship</a></p></li>
-</ul>
-<p>These support learners in locating <strong>institutional expectations, help, and policy</strong> without burying it in narrative.</p>
-<hr>
-</section>
-<section id="recommended-tools-illustrative-principle-led" class="level3">
-<h3 class="anchored" data-anchor-id="recommended-tools-illustrative-principle-led">Recommended tools (illustrative; principle-led)</h3>
-<p>Tools can help, but their use should reflect project needs and principles of reproducibility.</p>
-<ul>
-<li><strong>Coordination &amp; collaboration tools</strong>: GitHub / GitLab, Planner, Trello, OSF<br>
-</li>
-<li><strong>Documentation &amp; publication tooling</strong>: Quarto<br>
-</li>
-<li><strong>Environment stability</strong>: <code>renv</code> / <code>conda</code> / containers (see Resources → Tools and software)</li>
-</ul>
-<p>These appear here as orientation; tool-specific guidance is signposted in other resource sections (e.g., Documentation, Code quality, Automation).</p>
-<hr>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How this supports Chapter 3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Project metadata, roles, and conventions make <em>collaboration legible</em>.<br>
-</li>
-<li>Versioning principles support <em>long-term continuity</em>.<br>
-</li>
-<li>UCL-supported routes help learners <em>navigate policy and templates</em>.<br>
-</li>
-<li>Tool suggestions are illustrative, not prescriptive.</li>
-</ul>
-<p>For <strong>concrete templates</strong> (folder structure, versioning examples, change logs, project README), see the <code>files/</code> folder in this book and the appropriate sections in this Resources chapter.</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="sec-dmp-resources" class="level2">
-<h2 class="anchored" data-anchor-id="sec-dmp-resources">Data Management Plans</h2>
-<p><em>Supports Chapter 4 — Data Management Plans (UCL)</em></p>
-<p>Use this section when you need <strong>UCL-specific routes</strong>, <strong>copy-ready DMP text</strong>, and <strong>signposting</strong> to governance and documentation resources.</p>
-<section id="ucl-dmp-route-and-template" class="level3">
-<h3 class="anchored" data-anchor-id="ucl-dmp-route-and-template">UCL DMP route and template</h3>
-<ul>
-<li><p><strong>UCL RDM hub (DMP guidance)</strong><br>
-<a href="https://library-guides.ucl.ac.uk/research-data-management" class="uri">https://library-guides.ucl.ac.uk/research-data-management</a></p></li>
-<li><p><strong>UCL Data Management Plan template</strong> <a href="https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template" class="uri">https://www.ucl.ac.uk/library/news/2024/apr/new-ucl-data-management-plan-template</a></p></li>
-<li><p><strong>UCL DMP template (local file)</strong> — <a href="files/ucl_data_management_plan_template_2024.docx">Download <code>ucl_data_management_plan_template_2024.docx</code></a></p></li>
-<li><p><strong>UCL Managing data across the research lifecycle</strong> <a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research" class="uri">https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/policies/managing-data-across-research</a></p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How this links to the rest of the course
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Chapter 4 focuses on <strong>what the DMP must commit to</strong> and <strong>how assessors interpret it</strong>.</li>
-<li>Chapter 5 owns <strong>minimum essential metadata</strong>: see <a href="#sec-essential-metadata">Essential metadata</a>.</li>
-<li>Chapter 6 covers <strong>documentation artefacts</strong> (READMEs, ELNs, SOPs): see <a href="#docs-resources">Documentation, ELNs, and SOPs</a>.</li>
-</ul>
-</div>
-</div>
-<hr>
-</section>
-<section id="derived-and-intermediate-data-retention-decision-prompts-quick-guide" class="level3">
-<h3 class="anchored" data-anchor-id="derived-and-intermediate-data-retention-decision-prompts-quick-guide">Derived and intermediate data: retention decision prompts (quick guide)</h3>
-<p>Use these prompts when writing the DMP sections on <strong>retention</strong>, <strong>preservation</strong>, and <strong>storage</strong>.</p>
-<p><strong>Record explicitly:</strong></p>
-<ul>
-<li>which derived datasets are considered <strong>analysis-critical</strong> (needed to reproduce results);</li>
-<li>which intermediate files are <strong>recomputable</strong> (can be regenerated from scripts + inputs);</li>
-<li>what will be retained <strong>during</strong> the project vs <strong>after</strong> project end;</li>
-<li>expected access model (open / safeguarded / controlled / mediated) for each retained component;</li>
-<li>how provenance will be captured at a high level (e.g., “derived datasets are generated by scripted workflows and versioned”).</li>
-</ul>
-<p>Chapter 5 covers how to implement raw/derived organisation and provenance in practice; the DMP should state the <strong>commitment</strong>, <strong>scope</strong>, and <strong>rationale</strong>.</p>
-</section>
-<section id="ucl-support-routes-practical" class="level3">
-<h3 class="anchored" data-anchor-id="ucl-support-routes-practical">UCL support routes (practical)</h3>
-<p>Use these routes when you are unsure what to commit to, what is permissible, or who should approve decisions.</p>
-<ul>
-<li><p><strong>UCL Research Integrity</strong><br>
-<a href="https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity" class="uri">https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity</a></p></li>
-<li><p><strong>UCL Advanced Research Computing — sensitive data and trusted research environments</strong><br>
-<a href="https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments" class="uri">https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments</a></p></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="data-provenance" class="level2">
-<h2 class="anchored" data-anchor-id="data-provenance">Data organisation and provenance</h2>
-<p><em>Supports Chapter 5</em></p>
-<section id="deeper-dives" class="level3">
-<h3 class="anchored" data-anchor-id="deeper-dives">Deeper dives</h3>
-<ul>
-<li><p><strong>Tidy data principles (overview)</strong><br>
-<a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-spreadsheets/#rr-rdm-spreadsheets-format" class="uri">https://book.the-turing-way.org/reproducible-research/rdm/rdm-spreadsheets/#rr-rdm-spreadsheets-format</a></p></li>
-<li><p><strong>Data and version</strong><br>
-<a href="https://book.the-turing-way.org/reproducible-research/vcs/vcs-data/" class="uri">https://book.the-turing-way.org/reproducible-research/vcs/vcs-data/</a></p></li>
-<li><p><strong>Data dictionaries and documentation examples</strong><br>
-<a href="https://imi-immuniverse.pages.uni.lu/datadictionary#:~:text=What%20should%20be%20included%20in,ImmUniverse's%20data%20and%20analysis%20platform." class="uri">https://imi-immuniverse.pages.uni.lu/datadictionary#:~:text=What%20should%20be%20included%20in,ImmUniverse's%20data%20and%20analysis%20platform.</a></p></li>
-<li><p><strong>Process mapping to inform DMPs and metadata</strong> (conceptual bridge to Chapters 3–4)<br>
-<a href="https://libguides.library.ohio.edu/RDM/dmps#:~:text=What%20is%20a%20Data%20Management,DMP%20with%20every%20funding%20request." class="uri">https://libguides.library.ohio.edu/RDM/dmps#:~:text=What%20is%20a%20Data%20Management,DMP%20with%20every%20funding%20request.</a> <a href="https://learning.nceas.ucsb.edu/2023-04-coreR/session_14.html" class="uri">https://learning.nceas.ucsb.edu/2023-04-coreR/session_14.html</a></p></li>
-<li><p><strong>Tidy Data (Hadley Wickham)</strong> <a href="https://vita.had.co.nz/papers/tidy-data.pdf" class="uri">https://vita.had.co.nz/papers/tidy-data.pdf</a></p></li>
-<li><p><strong>Data integrity principles (ALCOA)</strong> (reference; regulated/lab contexts) ALCOA (Attributable Legible Contemporaneous Original Accurate) is a framework that is required for the implementation of Good Documentation Practices (GDPs) and is utilized by regulated enterprises to ensure data integrity. <a href="https://www.ukcrfnetwork.co.uk/app/uploads/2023/07/Advisory-Notes-Data-Integrity_v01_Oct2019.pdf" class="uri">https://www.ukcrfnetwork.co.uk/app/uploads/2023/07/Advisory-Notes-Data-Integrity_v01_Oct2019.pdf</a></p></li>
-</ul>
-</section>
-<section id="domain-specific-metadata-standards-advanced-reference" class="level3">
-<h3 class="anchored" data-anchor-id="domain-specific-metadata-standards-advanced-reference">Domain-specific metadata standards (Advanced / reference)</h3>
-<ul>
-<li><strong>ISO 19115 / ISO 19139</strong> — geographic information metadata<br>
-</li>
-<li><strong>DDI (Data Documentation Initiative)</strong> — social science and survey data<br>
-<a href="https://ddialliance.org/" class="uri">https://ddialliance.org/</a></li>
-<li><strong>Dublin Core</strong> — general-purpose descriptive metadata<br>
-<a href="https://www.dublincore.org/" class="uri">https://www.dublincore.org/</a></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="sec-essential-metadata" class="level2">
-<h2 class="anchored" data-anchor-id="sec-essential-metadata">Essential metadata (minimum standard)</h2>
-<p><em>Supports Chapter 5 — Organising and tidying data</em><br>
-<em>Referenced by Chapters 6 (documentation) and 10 (publishing and reuse).</em></p>
-<section id="essential-metadata-checklist-minimum-standard" class="level3">
-<h3 class="anchored" data-anchor-id="essential-metadata-checklist-minimum-standard">Essential Metadata Checklist (minimum standard)</h3>
-<p>When documenting a dataset, code release, protocol, or other output, include at least:</p>
-<ul>
-<li><strong>Title</strong></li>
-<li><strong>Creators / contributors</strong> (including ORCID where possible)</li>
-<li><strong>Dates</strong> (created; last updated)</li>
-<li><strong>Description</strong> (what it is; why it exists; what it can and cannot support)</li>
-<li><strong>Version</strong></li>
-<li><strong>Methods / provenance summary</strong> (how it was generated; key transformations)</li>
-<li><strong>Geography / time coverage</strong> (if relevant)</li>
-<li><strong>File formats</strong> and any required software</li>
-<li><strong>Access conditions</strong> (open / controlled / mediated; who to contact)</li>
-<li><strong>Licence</strong> (or explicit statement if licensing is constrained)</li>
-<li><strong>Funding / grant</strong> (if relevant)</li>
-<li><strong>Persistent identifier</strong> (DOI where appropriate; or stable URL + repository record)</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Minimum rule of thumb
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a competent colleague can answer <em>what it is, where it came from, how to access it, how to cite it, and what they are allowed to do with it</em>, your metadata is likely “good enough” for most purposes.</p>
-</div>
-</div>
-</section>
-<section id="expanded-metadata-templates-advanced-reference" class="level3">
-<h3 class="anchored" data-anchor-id="expanded-metadata-templates-advanced-reference">Expanded metadata templates (Advanced / reference)</h3>
-<ul>
-<li><strong>General research metadata template</strong> (provenance, methods, versions, licences, access conditions, related outputs)<br>
-</li>
-<li><strong>Spatial/geocoded metadata template</strong> (CRS, extent, resolution, temporal coverage, processing)</li>
-</ul>
-<p>(Keep these as copy-ready templates or separate downloadable files, then link them here.)</p>
-<hr>
-</section>
-</section>
-<section id="sec-project-organisation-templates" class="level2">
-<h2 class="anchored" data-anchor-id="sec-project-organisation-templates">Project organisation templates (copy-ready)</h2>
-<p>These templates define <strong>project-level coordination conventions</strong>.<br>
-Data-state conventions (raw, derived, documentation) are interpreted in Chapter 5 and applied here.</p>
-<section id="baseline-folder-structure" class="level3">
-<h3 class="anchored" data-anchor-id="baseline-folder-structure">Baseline folder structure</h3>
-<pre class="text"><code>project-root/
-├── README.md
-├── data/
-│   ├── raw/
-│   ├── derived/
-│   └── documentation/
-├── analysis/
-│   ├── scripts/
-│   └── outputs/
-├── docs/
-├── logs/
-└── outputs/</code></pre>
-</section>
-<section id="file-naming-and-versioning-minimum-standard" class="level3">
-<h3 class="anchored" data-anchor-id="file-naming-and-versioning-minimum-standard">File naming and versioning (minimum standard)</h3>
-<p><strong>Recommended elements</strong></p>
-<ul>
-<li>short descriptive name</li>
-<li>date (ISO): <code>YYYYMMDD</code></li>
-<li>version identifier (e.g.&nbsp;<code>v01</code>)</li>
-<li>no spaces or special characters</li>
-</ul>
-<p><strong>Examples</strong></p>
-<pre class="text"><code>survey_responses_raw_20240315_v01.csv
-survey_responses_clean_20240318_v02.csv
-analysis_model1_20240402_v03.R
-protocol_amendment_20240510_v01.docx</code></pre>
-</section>
-<section id="versioning-cheat-sheet" class="level3">
-<h3 class="anchored" data-anchor-id="versioning-cheat-sheet">Versioning cheat-sheet</h3>
-<p><strong>Create a new version when:</strong></p>
-<ul>
-<li>cleaning/transformation changes;</li>
-<li>analysis logic/parameters change;</li>
-<li>outputs are regenerated using modified inputs;</li>
-<li>errors are corrected.</li>
-</ul>
-<p><strong>Record:</strong></p>
-<ul>
-<li>version identifier;</li>
-<li>date;</li>
-<li>what changed (1–2 lines);</li>
-<li>who changed it.</li>
-</ul>
-</section>
-<section id="optional-code-version-control-git-advanced-reference" class="level3">
-<h3 class="anchored" data-anchor-id="optional-code-version-control-git-advanced-reference">Optional: code version control (Git) (Advanced / reference)</h3>
-<p>Appropriate when code is central and/or multiple contributors edit scripts.</p>
-<p>Key principles:</p>
-<ul>
-<li>commit little and often with meaningful messages;</li>
-<li>avoid committing large data files;</li>
-<li>use tags/releases for milestones.</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="sec-codebook-template" class="level2">
-<h2 class="anchored" data-anchor-id="sec-codebook-template">Codebook / data dictionary template (minimum standard)</h2>
-<p><em>Supports Chapter 5</em></p>
-<pre class="text"><code># Codebook / data dictionary
-
-## Dataset
-- Name:
-- Version:
-- Created:
-- Source(s):
-- Unit of observation:
-- Notes on linkage / identifiers (if relevant):
-
-## Missingness and exclusions
-- Missing value codes:
-- Key exclusions (and rationale):
-- Known limitations:
-
-## Variables
-For each variable:
-- Variable name:
-- Description:
-- Type (numeric / categorical / date / text):
-- Units (if applicable):
-- Valid range / levels:
-- Missingness coding:
-- Derivation (if derived):
-- Notes</code></pre>
-<hr>
-</section>
-<section id="docs-resources" class="level2">
-<h2 class="anchored" data-anchor-id="docs-resources">Documentation, ELNs, and SOPs</h2>
-<p><em>Supports Chapter 6</em></p>
-<p>This section focuses on <strong>documentation as a reproducibility practice</strong>: capturing decisions, assumptions, and procedures so work can be understood, reviewed, and reused over time.</p>
-<section id="core-principles-of-research-documentation" class="level3">
-<h3 class="anchored" data-anchor-id="core-principles-of-research-documentation">Core principles of research documentation</h3>
-<ul>
-<li><p><strong>Documentation as decision-making evidence</strong> (<em>The Turing Way — Documentation</em>) <a href="https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project/">https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project/</a></p></li>
-<li><p><strong>Good Enough Practices: documenting analyses and decisions</strong> <a href="https://carpentries-lab.github.io/good-enough-practices/">https://carpentries-lab.github.io/good-enough-practices/</a></p></li>
-</ul>
-<p>These resources reinforce the principle that documentation should enable <em>independent reconstruction</em>, not just internal memory.</p>
-</section>
-<section id="readmes-codebooks-and-dataset-documentation" class="level3">
-<h3 class="anchored" data-anchor-id="readmes-codebooks-and-dataset-documentation">READMEs, codebooks, and dataset documentation</h3>
-<ul>
-<li><p><strong>README 101</strong> (<em>Make a README</em>) <a href="https://www.makeareadme.com/">https://www.makeareadme.com/</a></p></li>
-<li><p><strong>Documenting data: project- and dataset-level documentation</strong> (<em>Imperial College London</em>) <a href="https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/organising-and-describing-data/documenting-data/">https://www.imperial.ac.uk/research-and-innovation/support-for-staff/scholarly-communication/research-data-management/organising-and-describing-data/documenting-data/</a></p></li>
-<li><p><strong>Research data documentation cheat sheets</strong> (<em>University of Manchester — Research data explained</em>) <a href="https://www.education.library.manchester.ac.uk/mre/research-data-explained/">https://www.education.library.manchester.ac.uk/mre/research-data-explained/</a></p></li>
-</ul>
-<p>Use these when preparing data for sharing, archiving, or handover.</p>
-</section>
-<section id="sec-readme-template" class="level3">
-<h3 class="anchored" data-anchor-id="sec-readme-template">README template (minimum standard)</h3>
-<pre class="text"><code># Project / dataset title
-
-## Overview
-- Purpose:
-- Research question(s):
-- Dates covered:
-- Geographic scope (if applicable):
-- Primary outputs:
-
-## Contents and structure
-- data/raw/:
-- data/derived/:
-- analysis/scripts/:
-- outputs/:
-
-## Data sources
-- Source 1:
-- Source 2:
-
-## Processing summary
-- Key scripts:
-- Key transformations:
-- Quality checks:
-
-## Conventions
-- File naming:
-- Versioning approach:
-- Missing value coding:
-
-## Access, governance, and ethics
-- Data sensitivity:
-- Approvals / consent:
-- Access conditions:
-
-## Software and environment (if relevant)
-- Software used:
-- Key packages:
-- Reproducibility notes:
-
-## Contacts
-- Data steward / maintainer:
-- Email / team contact:
-- Last updated:</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Codebooks and data dictionaries are defined as dataset-level artefacts. Use the <strong>Codebook / data dictionary template</strong> in the Resources that support Chapter 5 {#sec-codebook-template}.</p>
-</div>
-</div>
-</section>
-<section id="elns" class="level3">
-<h3 class="anchored" data-anchor-id="elns">ELNs</h3>
-<ul>
-<li><p><strong>Electronic lab notebooks (ELNs): good practice</strong> (<em>The Turing Way</em>) <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-elns/">https://book.the-turing-way.org/reproducible-research/rdm/rdm-elns/</a></p></li>
-<li><p><strong>Ten simple rules for implementing electronic lab notebooks (ELNs)</strong> <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012170">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012170</a></p></li>
-<li><p><strong>What is a risk register: a project manager’s guide (and example)</strong> (<em>Asana</em>) <a href="https://asana.com/resources/risk-register">https://asana.com/resources/risk-register</a></p></li>
-</ul>
-<p>These resources support chronological recording of analytical judgement, exploration, and deviations from plans.</p>
-</section>
-<section id="sops-and-essential-research-documents-health-contexts" class="level3">
-<h3 class="anchored" data-anchor-id="sops-and-essential-research-documents-health-contexts">SOPs and essential research documents (health contexts)</h3>
-<p>Particularly relevant for clinical, NHS-linked, or regulated research.</p>
-<ul>
-<li><p><strong>Essential research documents (SOP example: UHBW)</strong> <a href="https://www.uhbristol.nhs.uk/media/3960134/sop_014_essential_research_documents_uhbw_v2.1_24.08.20.pdf">https://www.uhbristol.nhs.uk/media/3960134/sop_014_essential_research_documents_uhbw_v2.1_24.08.20.pdf</a></p></li>
-<li><p><strong>Essential documents and Investigator Site File (UCLH/JRO SOP)</strong> <a href="https://www.ucl.ac.uk/joint-research-office/sites/joint-research-office/files/uclh_sop_8_essential_documents_and_investigator_site_file_v3_02.09.2019_clean_.pdf">https://www.ucl.ac.uk/joint-research-office/sites/joint-research-office/files/uclh_sop_8_essential_documents_and_investigator_site_file_v3_02.09.2019_clean_.pdf</a></p></li>
-</ul>
-<p>These clarify what <em>must</em> be documented in regulated environments and how SOPs fit alongside READMEs and ELNs.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Documentation rule of thumb
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a colleague outside your project can understand <strong>what was done, why it was done, and under what constraints</strong>, your documentation is likely sufficient.</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="code-quality" class="level2">
-<h2 class="anchored" data-anchor-id="code-quality">Code quality, testing, and sustainable software</h2>
-<p><em>Supports Chapter 7</em></p>
-<p>These resources support <strong>writing clear, testable, and maintainable research code</strong> that can be understood, rerun, and reused over time. They focus on principles and proportionate practices rather than specialist tooling.</p>
-<section id="core-guidance-on-code-quality-and-testing" class="level3">
-<h3 class="anchored" data-anchor-id="core-guidance-on-code-quality-and-testing">Core guidance on code quality and testing</h3>
-<ul>
-<li><p><strong>The Turing Way — Code quality</strong> <a href="https://book.the-turing-way.org/reproducible-research/code-quality">https://book.the-turing-way.org/reproducible-research/code-quality</a></p></li>
-<li><p><strong>The Turing Way — Testing</strong> <a href="https://book.the-turing-way.org/reproducible-research/testing">https://book.the-turing-way.org/reproducible-research/testing</a></p></li>
-</ul>
-</section>
-<section id="proportionate-best-practice-for-research-code" class="level3">
-<h3 class="anchored" data-anchor-id="proportionate-best-practice-for-research-code">Proportionate best practice for research code</h3>
-<ul>
-<li><p><strong>Good Enough Practices in Scientific Computing</strong> <a href="https://carpentries-lab.github.io/good-enough-practices/">https://carpentries-lab.github.io/good-enough-practices/</a></p></li>
-<li><p><strong>Ten simple rules for reproducible computational research</strong> <a href="https://doi.org/10.1371/journal.pcbi.1003285">https://doi.org/10.1371/journal.pcbi.1003285</a></p></li>
-</ul>
-</section>
-<section id="writing-clear-and-maintainable-code" class="level3">
-<h3 class="anchored" data-anchor-id="writing-clear-and-maintainable-code">Writing clear and maintainable code</h3>
-<ul>
-<li><p><strong>Guidelines for writing good R code</strong> <a href="https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/">https://www.r-bloggers.com/2022/02/guidelines-for-writing-good-r-code/</a></p></li>
-<li><p><strong>How to get good with R</strong> (Nicola Tierney) <a href="https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/">https://www.njtierney.com/post/2023/11/10/how-to-get-good-with-r/</a></p></li>
-</ul>
-</section>
-<section id="documenting-code-as-part-of-code-quality" class="level3">
-<h3 class="anchored" data-anchor-id="documenting-code-as-part-of-code-quality">Documenting code as part of code quality</h3>
-<ul>
-<li><p><strong>Beginner’s guide to documentation</strong> (<em>Write the Docs</em>) <a href="https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/</a></p></li>
-<li><p><strong>Tools and techniques for effective code documentation</strong> (GitHub) <a href="https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation">https://github.com/resources/articles/tools-and-techniques-for-effective-code-documentation</a></p></li>
-</ul>
-</section>
-<section id="sustainable-and-green-research-software" class="level3">
-<h3 class="anchored" data-anchor-id="sustainable-and-green-research-software">Sustainable and green research software</h3>
-<ul>
-<li><p><strong>Environmental impact of digital research</strong> <a href="https://book.the-turing-way.org/reproducible-research/reproducible-research-environment">https://book.the-turing-way.org/reproducible-research/reproducible-research-environment</a></p></li>
-<li><p><strong>Green Software Principles</strong> <a href="https://principles.green/">https://principles.green/</a></p></li>
-<li><p><strong>Measuring and reducing computational cost</strong> <a href="https://www.software.ac.uk/blog/2022-05-24-measuring-environmental-impact-research-software">https://www.software.ac.uk/blog/2022-05-24-measuring-environmental-impact-research-software</a></p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How to use these resources
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Focus first on <strong>readability, structure, basic testing, and documentation</strong>. Advanced optimisation or tooling should be driven by demonstrated need, not habit.</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="responsibility" class="level2">
-<h2 class="anchored" data-anchor-id="responsibility">Responsible and inclusive research across the workflow</h2>
-<p><em>Supports Chapters 4, 6 and 8</em></p>
-<p>Responsible research involves <strong>clear roles, accountability, and escalation routes</strong>, alongside ethical and inclusive practice. The resources below support decision-making, governance, and responsible restriction.</p>
-<section id="ethical-and-inclusive-research-practice" class="level3">
-<h3 class="anchored" data-anchor-id="ethical-and-inclusive-research-practice">Ethical and inclusive research practice</h3>
-<ul>
-<li><strong>Ethical research</strong> (<em>The Turing Way</em>) <a href="https://book.the-turing-way.org/ethical-research">https://book.the-turing-way.org/ethical-research</a></li>
-</ul>
-</section>
-<section id="roles-responsibilities-and-governance-ucl" class="level3">
-<h3 class="anchored" data-anchor-id="roles-responsibilities-and-governance-ucl">Roles, responsibilities, and governance (UCL)</h3>
-<ul>
-<li><p><strong>UCL Research Ethics Service</strong> <a href="https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-ethics-service">https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-ethics-service</a></p></li>
-<li><p><strong>UCL Research Integrity</strong> <a href="https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity">https://www.ucl.ac.uk/research-innovation-services/compliance-and-assurance/research-integrity</a></p></li>
-<li><p><strong>UCL Data Protection and GDPR guidance</strong> <a href="https://www.ucl.ac.uk/data-protection">https://www.ucl.ac.uk/data-protection</a></p></li>
-</ul>
-<p>These pages clarify <strong>who is responsible for what</strong>, and where accountability sits institutionally.</p>
-</section>
-<section id="trusted-research-security-and-risk" class="level3">
-<h3 class="anchored" data-anchor-id="trusted-research-security-and-risk">Trusted research, security, and risk</h3>
-<ul>
-<li><p><strong>UKRI Trusted Research and Innovation (TR&amp;I)</strong> <a href="https://www.ukri.org/about-us/policies-standards-and-data/good-research-resource-hub/trusted-research-and-innovation/">https://www.ukri.org/about-us/policies-standards-and-data/good-research-resource-hub/trusted-research-and-innovation/</a></p></li>
-<li><p><strong>UCL Trusted Research guidance</strong> <a href="https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments">https://www.ucl.ac.uk/advanced-research-computing/sensitive-data-and-trusted-research-environments</a></p></li>
-</ul>
-<p>Trusted research focuses on identifying and managing risks related to collaboration, data access, and international engagement.</p>
-</section>
-<section id="training-and-support" class="level3">
-<h3 class="anchored" data-anchor-id="training-and-support">Training and support</h3>
-<ul>
-<li><p><strong>UCL Research Integrity training</strong> <a href="https://www.ucl.ac.uk/research/integrity/training">https://www.ucl.ac.uk/research/integrity/training</a></p></li>
-<li><p><strong>UCL Data Protection training</strong> <a href="https://www.ucl.ac.uk/data-protection/">https://www.ucl.ac.uk/data-protection/</a></p></li>
-<li><p><strong>UCL Library Open Science &amp; Research Support</strong> <a href="https://www.ucl.ac.uk/library/open-science-research-support">https://www.ucl.ac.uk/library/open-science-research-support</a></p></li>
-</ul>
-<p>Use these routes when responsibilities or boundaries are unclear. Seeking advice is part of responsible practice.</p>
-<hr>
-</section>
-</section>
-<section id="automation-resources" class="level2">
-<h2 class="anchored" data-anchor-id="automation-resources">Automation and workflows within coding practice</h2>
-<p><em>Supports Chapter 7</em></p>
-<p>Automation supports reproducibility by making <strong>dependencies, execution order, and outputs explicit</strong>. These resources provide practical entry points at different levels of complexity.</p>
-<section id="workflow-tools-use-when-complexity-increases" class="level3">
-<h3 class="anchored" data-anchor-id="workflow-tools-use-when-complexity-increases">Workflow tools (use when complexity increases)</h3>
-<ul>
-<li><p><strong>targets (R)</strong> <a href="https://docs.ropensci.org/targets/">https://docs.ropensci.org/targets/</a></p></li>
-<li><p><strong>Snakemake</strong> <a href="https://snakemake.readthedocs.io/">https://snakemake.readthedocs.io/</a></p></li>
-</ul>
-</section>
-<section id="reproducible-execution-environments" class="level3">
-<h3 class="anchored" data-anchor-id="reproducible-execution-environments">Reproducible execution environments</h3>
-<ul>
-<li><p><strong>renv (R)</strong> <a href="https://rstudio.github.io/renv/">https://rstudio.github.io/renv/</a></p></li>
-<li><p><strong>conda (Python)</strong> <a href="https://docs.conda.io/">https://docs.conda.io/</a></p></li>
-</ul>
-</section>
-<section id="further-reading" class="level3">
-<h3 class="anchored" data-anchor-id="further-reading">Further reading</h3>
-<ul>
-<li><p><strong>Workflow concepts overview</strong> <a href="https://book.the-turing-way.org/reproducible-research/ci/ci-github-actions/#id-1-workflow">https://book.the-turing-way.org/reproducible-research/ci/ci-github-actions/#id-1-workflow</a> <a href="https://pure.manchester.ac.uk/ws/portalfiles/portal/783113834/2410.03490v1.pdf" class="uri">https://pure.manchester.ac.uk/ws/portalfiles/portal/783113834/2410.03490v1.pdf</a> <a href="https://tm.web.ox.ac.uk/blog/workflows-how-do-researchers-do-their-research-how-does-collaboration-work" class="uri">https://tm.web.ox.ac.uk/blog/workflows-how-do-researchers-do-their-research-how-does-collaboration-work</a></p></li>
-<li><p><strong>Continuous integration for research</strong> (Advanced / reference) <a href="https://book.the-turing-way.org/reproducible-research/ci">https://book.the-turing-way.org/reproducible-research/ci</a></p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proportionate automation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If automation makes your work harder to understand, it is too heavy. Start with scripts, add structure when needed, and document decisions as you go.</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="pids" class="level2">
-<h2 class="anchored" data-anchor-id="pids">Publishing, PIDs, repositories, licensing, and reuse</h2>
-<p><em>Supports Chapter 8</em></p>
-<section id="persistent-identifiers-and-citation" class="level3">
-<h3 class="anchored" data-anchor-id="persistent-identifiers-and-citation">Persistent identifiers and citation</h3>
-<ul>
-<li><p><strong>ORCID</strong> — researcher identifiers <a href="https://orcid.org">https://orcid.org</a></p></li>
-<li><p><strong>DataCite</strong> — DOIs and dataset metadata <a href="https://datacite.org">https://datacite.org</a></p></li>
-<li><p><strong>ROR</strong> — organisational identifiers <a href="https://ror.org">https://ror.org</a></p></li>
-<li><p><strong>Zenodo ↔︎ GitHub: minting DOIs for code releases</strong> <a href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content">https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content</a></p></li>
-<li><p><strong>Citable research objects (The Turing Way)</strong> <a href="https://book.the-turing-way.org/communication/citable">https://book.the-turing-way.org/communication/citable</a></p></li>
-<li><p><strong>Data and software citation guidance (The Turing Way)</strong> <a href="https://book.the-turing-way.org/communication/citable/citable-steps">https://book.the-turing-way.org/communication/citable/citable-steps</a></p></li>
-</ul>
-</section>
-<section id="preprints-and-early-dissemination" class="level3">
-<h3 class="anchored" data-anchor-id="preprints-and-early-dissemination">Preprints and early dissemination</h3>
-<ul>
-<li><strong>Preprints overview (The Turing Way)</strong> <a href="https://book.the-turing-way.org/reproducible-research/open/open-access/#rr-open-access-preprints">https://book.the-turing-way.org/reproducible-research/open/open-access/#rr-open-access-preprints</a></li>
-</ul>
-</section>
-<section id="sec-reporting-guidelines" class="level3">
-<h3 class="anchored" data-anchor-id="sec-reporting-guidelines">Reporting guidelines for health and population research</h3>
-<p>This section provides <strong>orientation and signposting</strong>. Detailed application and worked examples belong in Chapter 10.</p>
-<p>High-quality research is only useful if it is <strong>reported transparently</strong>. Reporting guidelines specify the <strong>minimum information</strong> needed to describe how a study was designed, conducted, analysed, and interpreted.</p>
-<p>More than <strong>250 reporting guidelines</strong> exist, curated by the <strong>EQUATOR Network (Enhancing the QUAlity and Transparency Of health Research)</strong>.</p>
-<p><strong>EQUATOR Network — reporting guidelines library</strong><span class="citation" data-cites="equator2025reporting"><sup><a href="#ref-equator2025reporting" role="doc-biblioref">10</a></sup></span></p>
-<p>Core guideline families (commonly used):</p>
-<ul>
-<li><strong>CONSORT</strong> — randomised controlled trials</li>
-<li><strong>SPIRIT</strong> — protocols for interventional trials</li>
-<li><strong>STROBE</strong> — observational studies (cohort, case–control, cross-sectional)</li>
-<li><strong>PRISMA</strong> — systematic reviews and meta-analyses (incl.&nbsp;extensions such as PRISMA-S)</li>
-<li><strong>MOOSE</strong> — meta-analyses of observational studies</li>
-<li><strong>STARD</strong> — diagnostic accuracy studies</li>
-</ul>
-<p>Overview resource (optional):<span class="citation" data-cites="grech2024reporting"><sup><a href="#ref-grech2024reporting" role="doc-biblioref">11</a></sup></span></p>
-</section>
-<section id="repositories-and-access-routes" class="level3">
-<h3 class="anchored" data-anchor-id="repositories-and-access-routes">Repositories and access routes</h3>
-<ul>
-<li><p><strong>UCL Research Data Repository</strong> <a href="https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository">https://www.ucl.ac.uk/library/open-science-research-support/research-data-management/ucl-research-data-repository</a></p></li>
-<li><p><strong>Choosing a repository (The Turing Way)</strong> <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-repository/">https://book.the-turing-way.org/reproducible-research/rdm/rdm-repository/</a></p></li>
-</ul>
-</section>
-<section id="licensing-and-reuse-core" class="level3">
-<h3 class="anchored" data-anchor-id="licensing-and-reuse-core">Licensing and reuse (core)</h3>
-<ul>
-<li><p><strong>Copyright and your research publications (UCL)</strong> <a href="https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-and-your-research-publications">https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-and-your-research-publications</a></p></li>
-<li><p><strong>Licensing research outputs (The Turing Way)</strong> <a href="https://book.the-turing-way.org/reproducible-research/licensing">https://book.the-turing-way.org/reproducible-research/licensing</a></p></li>
-<li><p><strong>Creative Commons licences (overview)</strong> <a href="https://creativecommons.org/licenses/">https://creativecommons.org/licenses/</a></p></li>
-<li><p><strong>Open-source software licences (chooser)</strong> <a href="https://choosealicense.com/">https://choosealicense.com/</a></p></li>
-<li><p><strong>Licence compatibility and common pitfalls</strong> <a href="https://book.the-turing-way.org/reproducible-research/licensing/licensing-compatibility">https://book.the-turing-way.org/reproducible-research/licensing/licensing-compatibility</a></p></li>
-</ul>
-</section>
-<section id="copyright-training" class="level3">
-<h3 class="anchored" data-anchor-id="copyright-training">Copyright training</h3>
-<ul>
-<li><p><strong>UCL Copyright training</strong> <a href="https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-training">https://www.ucl.ac.uk/library/learning-teaching-support/ucl-copyright-advice/copyright-training</a></p></li>
-<li><p><strong>UCL Copyright Essentials 2023–2024</strong> <a href="https://lccos.ucl.ac.uk/library/articulate/copyright-essentials/#/">https://lccos.ucl.ac.uk/library/articulate/copyright-essentials/#/</a></p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Practical licensing rule
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Pick a licence <strong>per output type</strong> (text, data/metadata, code) and record it alongside <strong>access conditions</strong>. If you cannot licence something, record <em>why</em> and what can be shared instead (e.g., metadata + code + synthetic example).</p>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="sec-repo-guidance" class="level2">
-<h2 class="anchored" data-anchor-id="sec-repo-guidance">Repository “minimum viable release” guidance</h2>
-<p>When you release code/data/materials to a repository, include at least:</p>
-<ul>
-<li>README (purpose, how to run/use, inputs/outputs)</li>
-<li>CITATION information (e.g., <code>CITATION.cff</code>)</li>
-<li>Licence file</li>
-<li>Version tag/release notes (what changed)</li>
-<li>Environment notes (how to recreate the software environment)</li>
-<li>Data documentation and access statement (even if data are restricted)</li>
-</ul>
-<p>Tools:</p>
-<ul>
-<li><p><strong>CITATION.cff generator</strong> <a href="https://citation-file-format.github.io/">https://citation-file-format.github.io/</a></p></li>
-<li><p><strong>Good Enough Project scaffold</strong> <a href="https://github.com/bvreede/good-enough-project">https://github.com/bvreede/good-enough-project</a></p></li>
-</ul>
-<hr>
-</section>
-<section id="sec-tools" class="level2">
-<h2 class="anchored" data-anchor-id="sec-tools">Tools and software (pragmatic, not prescriptive)</h2>
-<section id="reproducible-environments" class="level3">
-<h3 class="anchored" data-anchor-id="reproducible-environments">Reproducible environments</h3>
-<ul>
-<li>R: <code>renv</code></li>
-<li>Python: <code>conda</code> / <code>venv</code> (choose one per team)</li>
-<li>Containers (Docker/Singularity): <strong>Advanced / reference</strong> (use when portability is critical)</li>
-</ul>
-</section>
-<section id="workflow-automation-tools-advanced-reference" class="level3">
-<h3 class="anchored" data-anchor-id="workflow-automation-tools-advanced-reference">Workflow / automation tools (Advanced / reference)</h3>
-<ul>
-<li><p>Snakemake <a href="https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html">https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html</a></p></li>
-<li><p>targets (R) <a href="https://docs.ropensci.org/targets/">https://docs.ropensci.org/targets/</a></p></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="sec-credit-assessment" class="level2">
-<h2 class="anchored" data-anchor-id="sec-credit-assessment">Research evaluation, credit, and incentives</h2>
-<p>Why this matters (briefly):</p>
-<ul>
-<li>PIDs and well-described outputs make attribution easier across systems.</li>
-<li>Clear releases reduce friction for internal reporting and assessment processes.</li>
-</ul>
-<p>(Keep this light; point learners to PIDs, ORCID, DOI practice, and good release notes.)</p>
-<hr>
-</section>
-<section id="sec-community" class="level2">
-<h2 class="anchored" data-anchor-id="sec-community">Community and support routes</h2>
-<ul>
-<li><p><strong>UCL Office for Open Science &amp; Scholarship</strong> <a href="https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship">https://www.ucl.ac.uk/library/open-science-research-support/ucl-office-open-science-and-scholarship</a></p></li>
-<li><p><strong>UCL Research Data Management (RDM)</strong> <a href="https://library-guides.ucl.ac.uk/research-data-management">https://library-guides.ucl.ac.uk/research-data-management</a></p></li>
-<li><p><strong>UKRN resources</strong> <a href="https://www.ukrn.org/">https://www.ukrn.org/</a></p></li>
-<li><p><strong>The Turing Way (book)</strong> <a href="https://book.the-turing-way.org/">https://book.the-turing-way.org/</a></p></li>
-</ul>
-<hr>
-</section>
-<section id="training" class="level2">
-<h2 class="anchored" data-anchor-id="training">Training and further reading</h2>
-<ul>
-<li><p><strong>UCL transparency training</strong> <a href="https://www.ucl.ac.uk/research/strategy-environment/research-transparency#training">https://www.ucl.ac.uk/research/strategy-environment/research-transparency#training</a></p></li>
-<li><p><strong>The Carpentries</strong> <a href="https://carpentries.org/">https://carpentries.org/</a></p></li>
-<li><p><strong>Ten simple rules for reproducible computational research</strong> <a href="https://doi.org/10.1371/journal.pcbi.1003285">https://doi.org/10.1371/journal.pcbi.1003285</a></p></li>
-<li><p><strong>Good Enough Practices in Scientific Computing</strong> <a href="https://doi.org/10.1371/journal.pcbi.1005510">https://doi.org/10.1371/journal.pcbi.1005510</a></p></li>
-</ul>
-<hr>
+<section id="title-resources---code-example" class="level2">
+<h2 class="anchored" data-anchor-id="title-resources---code-example">title: “Resources - code example”</h2>
+<pre><code>
 
 
-<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
-<div id="ref-turingway2022" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">The Turing Way Community. The turing way: A handbook for reproducible, ethical and collaborative research (1.0.2). (2022) doi:<a href="https://doi.org/10.5281/zenodo.3233853">10.5281/zenodo.3233853</a>.</div>
+---
+title: "Open research and reproducibility workshop — code example"
+author: "Joana Cruz"
+date: "2026-05-28"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+
+
+# 1. Purpose of this report
+
+This report provides a reproducible example of how to:
+
+-   load and manage packages;
+-   use project-relative directories rather than hard-coded file paths;
+-   import data safely;
+-   carry out basic validation checks before analysis;
+-   produce a descriptive summary table;
+-   create consistent figures using a reusable function;
+-   save outputs in a clear and reproducible way;
+-   use sustainable coding habits to avoid unnecessary reruns and manual rework.
+
+The aim is not only to produce results, but also to make the workflow understandable, reusable, and easier for someone else to run.
+
+::: callout-note
+## Why this example matters
+
+This example brings together several practices from Chapter 7:
+
+-   clear script structure;
+-   visible dependencies;
+-   project-relative paths;
+-   input checks;
+-   data validation;
+-   reusable code;
+-   saved outputs;
+-   light automation through R Markdown;
+-   sustainable coding through reduced manual repetition.
+:::
+
+# 2. Setup
+
+
+
+
+
+# 3. Load packages
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# In reproducible work, it is helpful to state clearly which packages are needed.
+# This avoids situations where code only works on one person's computer.
+#
+# This helper function is useful for teaching because it makes the script easier
+# to run on a new machine. For a real research project, a stronger approach is
+# to use renv to record exact package versions.
+
+load_or_install &lt;- function(packages) {
+  missing_packages &lt;- packages[!packages %in% installed.packages()[, "Package"]]
+  
+  if (length(missing_packages) &gt; 0) {
+    install.packages(missing_packages)
+  }
+  
+  invisible(lapply(packages, library, character.only = TRUE))
+}
+
+# These are the packages used in this report.
+#
+# here         -&gt; creates project-relative file paths
+# fs           -&gt; works with folders and files, including creating directories
+# readr        -&gt; useful for reading data files; included here as part of tidy workflows
+# dplyr        -&gt; data manipulation
+# tibble       -&gt; tidy table objects
+# ggplot2      -&gt; plotting
+# gtsummary    -&gt; descriptive summary tables
+# gt           -&gt; formatting and saving tables
+# patchwork    -&gt; combining multiple ggplots into one figure
+# RColorBrewer -&gt; colour palettes for plots
+
+required_packages &lt;- c(
+  "here",
+  "fs",
+  "readr",
+  "dplyr",
+  "tibble",
+  "ggplot2",
+  "gtsummary",
+  "gt",
+  "patchwork",
+  "RColorBrewer"
+)
+
+load_or_install(required_packages)</code></pre>
+<p>:::</p>
+</section>
+<section id="define-project-folders" class="level1">
+<h1>4. Define project folders</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># One of the most common reproducibility problems is the use of absolute paths,</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for example:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># "C:/Users/name/Documents/project/data/file.csv"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># These paths usually only work on one computer.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># The 'here' package solves this by building paths relative to the project folder.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This means the project can be moved to another computer without rewriting paths,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># as long as the folder structure remains the same.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># In this teaching example, the input datasets are stored in outputs because they</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># were generated earlier in the workshop. In a full project, these might be stored</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># under data/processed or data/derived.</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>data_dir <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"outputs"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>figures_dir <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"documents"</span>, <span class="st">"manuscript"</span>, <span class="st">"figures"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>tables_dir <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"documents"</span>, <span class="st">"manuscript"</span>, <span class="st">"tables"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create output folders if they do not already exist.</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># This avoids errors later when saving figures or tables.</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_create</span>(figures_dir)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>fs<span class="sc">::</span><span class="fu">dir_create</span>(tables_dir)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the paths being used so they are visible in the report.</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>data_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/outputs"</code></pre>
 </div>
-<div id="ref-baker2016reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Baker, M. <a href="https://doi.org/10.1038/533452a">1,500 scientists lift the lid on reproducibility</a>. <em>Nature</em> <strong>533</strong>, 452–454 (2016).</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>figures_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/documents/manuscript/figures"</code></pre>
 </div>
-<div id="ref-munafo2017manifesto" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Munafò, M. R., Nosek, B. A., Bishop, D. V. M., <em>et al.</em> <a href="https://doi.org/10.1038/s41562-016-0021">A manifesto for reproducible science</a>. <em>Nature Human Behaviour</em> <strong>1</strong>, 0021 (2017).</div>
-</div>
-<div id="ref-nas2019reproducibility" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">National Academies of Sciences, Engineering, and Medicine. <em>Reproducibility and Replicability in Science</em>. (National Academies Press, 2019). doi:<a href="https://doi.org/10.17226/25303">10.17226/25303</a>.</div>
-</div>
-<div id="ref-wilkinson2016fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">Wilkinson, M. D. <em>et al.</em> <a href="https://doi.org/10.1038/sdata.2016.18">The FAIR guiding principles for scientific data management and stewardship</a>. <em>Scientific Data</em> <strong>3</strong>, 160018 (2016).</div>
-</div>
-<div id="ref-gofair2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline">GO FAIR Initiative. <a href="https://www.go-fair.org/fair-principles/">FAIR principles overview</a>. (2023).</div>
-</div>
-<div id="ref-openaire_fair2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">7. </div><div class="csl-right-inline">OpenAIRE. <a href="https://www.openaire.eu/how-to-make-your-data-fair">How to make your data FAIR</a>. (2023).</div>
-</div>
-<div id="ref-turingway_fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/reproducible-research/rdm/rdm-fair">FAIR principles chapter</a>. in <em>The turing way: A handbook for reproducible research</em> (2022).</div>
-</div>
-<div id="ref-turingway_pm" class="csl-entry" role="listitem">
-<div class="csl-left-margin">9. </div><div class="csl-right-inline">The Turing Way Community. <a href="https://book.the-turing-way.org/project-design/project-management-methodologies/overview">Project management overview</a>. in <em>The turing way: A handbook for reproducible research</em> (2022).</div>
-</div>
-<div id="ref-equator2025reporting" class="csl-entry" role="listitem">
-<div class="csl-left-margin">10. </div><div class="csl-right-inline">The EQUATOR Network. <a href="https://www.equator-network.org/reporting-guidelines/">Reporting guidelines</a>. (2025).</div>
-</div>
-<div id="ref-grech2024reporting" class="csl-entry" role="listitem">
-<div class="csl-left-margin">11. </div><div class="csl-right-inline">Grech, V. &amp; Eldawlatly, A. A. <a href="https://doi.org/10.4103/sja.sja_545_23">STROBE, CONSORT, PRISMA, MOOSE, STARD, SPIRIT, and other guidelines – overview and application</a>. <em>Saudi Journal of Anaesthesia</em> <strong>18</strong>, 137–141 (2024).</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tables_dir</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/documents/manuscript/tables"</code></pre>
 </div>
 </div>
+</section>
+<section id="import-data" class="level1">
+<h1>5. Import data</h1>
+<section id="define-the-expected-files" class="level2">
+<h2 class="anchored" data-anchor-id="define-the-expected-files">5.1 Define the expected files</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keeping file names together in one section makes the workflow easier to check</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># and update. It also makes the expected inputs explicit.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>input_files <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dataset_unique.rds"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dataset_2018_unique.rds"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dataset_2019_unique.rds"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dataset_2020_unique.rds"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dataset_2021_unique.rds"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"dataset_2022_unique.rds"</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>input_paths <span class="ot">&lt;-</span> <span class="fu">file.path</span>(data_dir, input_files)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>input_paths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/outputs/dataset_unique.rds"     
+[2] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/outputs/dataset_2018_unique.rds"
+[3] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/outputs/dataset_2019_unique.rds"
+[4] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/outputs/dataset_2020_unique.rds"
+[5] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/outputs/dataset_2021_unique.rds"
+[6] "C:/Users/sejj399/OneDrive - University College London/2021_UCL/Education/course_delivery/Train-the-trainer/ppp-reproducibility-workshop/outputs/dataset_2022_unique.rds"</code></pre>
+</div>
+</div>
+</section>
+<section id="check-that-files-exist" class="level2">
+<h2 class="anchored" data-anchor-id="check-that-files-exist">5.2 Check that files exist</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Before reading files, check that they exist.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a simple but important validation step.</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># It is better to fail early with a clear message than to continue and produce</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a confusing error later.</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>missing_files <span class="ot">&lt;-</span> input_paths[<span class="sc">!</span><span class="fu">file.exists</span>(input_paths)]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(missing_files) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"These required input files are missing:</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(missing_files, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="read-the-main-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="read-the-main-dataset">5.3 Read the main dataset</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In this report, the main analyses use the combined dataset.</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We read that file explicitly and give the object a clear, readable name.</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>nursery_pm25_data <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">file.path</span>(data_dir, <span class="st">"dataset_unique.rds"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="basic-data-validation-before-analysis" class="level1">
+<h1>6. Basic data validation before analysis</h1>
+<section id="check-that-the-dataset-is-not-empty" class="level2">
+<h2 class="anchored" data-anchor-id="check-that-the-dataset-is-not-empty">6.1 Check that the dataset is not empty</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A dataset with zero rows may still load successfully, but it cannot support analysis.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(nursery_pm25_data) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"The dataset has 0 rows. Analysis cannot continue."</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(nursery_pm25_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="check-that-required-variables-exist" class="level2">
+<h2 class="anchored" data-anchor-id="check-that-required-variables-exist">6.2 Check that required variables exist</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the variables needed for this report.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing them out explicitly makes assumptions visible.</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>required_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"year"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"pm25"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"pm25_cat"</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"pm25_int"</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"idaci_q"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ethnicity"</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ruc_nm"</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"a_rd_ds_cat"</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>missing_vars <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(required_vars, <span class="fu">names</span>(nursery_pm25_data))</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">length</span>(missing_vars) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"The dataset is missing these required variables: "</span>,</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(missing_vars, <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>required_vars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="check-variable-types" class="level2">
+<h2 class="anchored" data-anchor-id="check-variable-types">6.3 Check variable types</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some variables need to be numeric because we summarise or plot them numerically.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If a variable has unexpectedly become character, that may indicate a data import</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or recoding problem.</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(nursery_pm25_data<span class="sc">$</span>pm25)) {</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Variable 'pm25' must be numeric."</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># For this example, year can be numeric, integer, or factor.</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># It may be numeric in the raw/processed data and converted to factor for plotting.</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.numeric</span>(nursery_pm25_data<span class="sc">$</span>year) <span class="sc">&amp;&amp;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.integer</span>(nursery_pm25_data<span class="sc">$</span>year) <span class="sc">&amp;&amp;</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.factor</span>(nursery_pm25_data<span class="sc">$</span>year)) {</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Variable 'year' should be numeric, integer, or factor."</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the classes of key variables.</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(nursery_pm25_data[required_vars], class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="check-missingness" class="level2">
+<h2 class="anchored" data-anchor-id="check-missingness">6.4 Check missingness</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Missing data do not automatically invalidate an analysis,</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># but missingness should be understood and documented.</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>missingness_summary <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> required_vars,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_missing =</span> <span class="fu">sapply</span>(nursery_pm25_data[required_vars], <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">is.na</span>(x))),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">pct_missing =</span> <span class="fu">round</span>(</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sapply</span>(nursery_pm25_data[required_vars], <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">is.na</span>(x)) <span class="sc">*</span> <span class="dv">100</span>),</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>missingness_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="check-plausible-values" class="level2">
+<h2 class="anchored" data-anchor-id="check-plausible-values">6.5 Check plausible values</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple range checks can catch silent errors before they affect results.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The thresholds used here are illustrative. In real work, thresholds should be</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># justified using subject knowledge or documented data specifications.</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(nursery_pm25_data<span class="sc">$</span>pm25 <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Negative PM2.5 values detected. Check exposure data."</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">any</span>(<span class="sc">!</span>nursery_pm25_data<span class="sc">$</span>year <span class="sc">%in%</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2022</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stop</span>(<span class="st">"Unexpected year values detected. Expected years are 2018 to 2022."</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="create-table-s1" class="level1">
+<h1>7. Create Table S1</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gtsummary::tbl_summary() is useful for descriptive tables because it produces</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># publication-friendly output with relatively little code.</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We specify:</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - the grouping variable ('by = year')</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - the variables to include</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># - how continuous variables should be summarised</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># - labels that are more readable than raw variable names</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>table_s1 <span class="ot">&lt;-</span> nursery_pm25_data <span class="sc">%&gt;%</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> year,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">include =</span> <span class="fu">c</span>(pm25, pm25_cat, pm25_int, idaci_q, ethnicity, ruc_nm, a_rd_ds_cat),</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"continuous2"</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"{N_nonmiss}"</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"{mean} ({sd})"</span>,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"{min}"</span>,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">"{median}"</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"{max}"</span>,</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"{p25} - {p75}"</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">list</span>(</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">pm25 =</span> <span class="st">"PM2.5 annual mean concentration (µg/m³)"</span>,</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">pm25_cat =</span> <span class="st">"PM2.5 WHO air quality guideline category"</span>,</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">pm25_int =</span> <span class="st">"PM2.5 WHO air quality interim target category"</span>,</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">idaci_q =</span> <span class="st">"Income Deprivation Affecting Children Index quintile"</span>,</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">ethnicity =</span> <span class="st">"Ethnic composition"</span>,</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">ruc_nm =</span> <span class="st">"Rural–urban area"</span>,</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">a_rd_ds_cat =</span> <span class="st">"Distance to nearest A road (m)"</span></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">"ifany"</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">add_n</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">modify_header</span>(<span class="at">label =</span> <span class="st">"**Variable**"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">modify_spanning_header</span>(<span class="fu">everything</span>() <span class="sc">~</span> <span class="st">"**Year**"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">bold_labels</span>()</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>table_s1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="save-table-s1" class="level2">
+<h2 class="anchored" data-anchor-id="save-table-s1">7.1 Save Table S1</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving outputs is part of reproducibility.</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># It means the report not only shows the result, but also writes it to a</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># predictable location.</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>table_s1_gt <span class="ot">&lt;-</span> gtsummary<span class="sc">::</span><span class="fu">as_gt</span>(table_s1)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gtsave</span>(</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> table_s1_gt,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> <span class="fu">file.path</span>(tables_dir, <span class="st">"table_s1_pm25_summary.html"</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="prepare-data-for-plotting" class="level1">
+<h1>8. Prepare data for plotting</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It is often useful to prepare a specific plotting dataset.</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Here we convert variables to factors so that ggplot treats them as categories.</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> nursery_pm25_data <span class="sc">%&gt;%</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">factor</span>(year, <span class="at">levels =</span> <span class="dv">2018</span><span class="sc">:</span><span class="dv">2022</span>),</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">idaci_q =</span> <span class="fu">factor</span>(idaci_q),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">ethnicity =</span> <span class="fu">factor</span>(ethnicity),</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">ruc_nm =</span> <span class="fu">factor</span>(ruc_nm),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">a_rd_ds_cat =</span> <span class="fu">factor</span>(a_rd_ds_cat)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-a-reusable-plotting-function" class="level1">
+<h1>9. Create a reusable plotting function</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rather than repeating almost identical ggplot code several times,</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># we define one function that can be reused for different grouping variables.</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This improves:</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - readability</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - consistency across plots</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># - maintainability</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># - sustainability, because it avoids duplicated code and repeated manual edits.</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>make_pm25_boxplot <span class="ot">&lt;-</span> <span class="cf">function</span>(data, x_var, x_label, panel_label, <span class="at">x_labels =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  plot_object <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> data,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">aes</span>(</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> .data[[x_var]],</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> pm25,</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="fu">factor</span>(year)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_boxplot</span>(</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">outlier.color =</span> <span class="st">"darkgrey"</span>,</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"lightgrey"</span>,</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">size =</span> <span class="fl">0.2</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">scale_fill_manual</span>(</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">values =</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="dv">5</span>, <span class="st">"RdYlGn"</span>)</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">geom_hline</span>(</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">yintercept =</span> <span class="dv">10</span>,</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">linetype =</span> <span class="st">"dotted"</span>,</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"darkgrey"</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">labs</span>(</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> panel_label,</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> x_label,</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Annual mean concentration of PM2.5 (µg/m³)"</span></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.title =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">strip.text =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>),</span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">axis.text.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>    ggplot2<span class="sc">::</span><span class="fu">facet_wrap</span>(<span class="sc">~</span> year, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">strip.position =</span> <span class="st">"top"</span>)</span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Optional relabelling of x-axis categories.</span></span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This is useful when the coded values in the data are less readable</span></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># than the labels you want to show in the final figure.</span></span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(x_labels)) {</span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>    plot_object <span class="ot">&lt;-</span> plot_object <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> x_labels)</span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(plot_object)</span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="produce-figure-2-panels" class="level1">
+<h1>10. Produce Figure 2 panels</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>plot_idaci <span class="ot">&lt;-</span> <span class="fu">make_pm25_boxplot</span>(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> plot_data,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_var =</span> <span class="st">"idaci_q"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_label =</span> <span class="st">"IDACI quintile"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">panel_label =</span> <span class="st">"a)"</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plot_ethnicity <span class="ot">&lt;-</span> <span class="fu">make_pm25_boxplot</span>(</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> plot_data,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_var =</span> <span class="st">"ethnicity"</span>,</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_label =</span> <span class="st">"Ethnicity"</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">panel_label =</span> <span class="st">"b)"</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_labels =</span> <span class="fu">c</span>(<span class="st">"White"</span>, <span class="st">"Other"</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>plot_rural_urban <span class="ot">&lt;-</span> <span class="fu">make_pm25_boxplot</span>(</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> plot_data,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_var =</span> <span class="st">"ruc_nm"</span>,</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_label =</span> <span class="st">"Rural–urban classification"</span>,</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">panel_label =</span> <span class="st">"c)"</span>,</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_labels =</span> <span class="fu">c</span>(<span class="st">"Rural"</span>, <span class="st">"Urban"</span>)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>plot_road_distance <span class="ot">&lt;-</span> <span class="fu">make_pm25_boxplot</span>(</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> plot_data,</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_var =</span> <span class="st">"a_rd_ds_cat"</span>,</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_label =</span> <span class="st">"Distance to A road (m)"</span>,</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">panel_label =</span> <span class="st">"d)"</span>,</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">x_labels =</span> <span class="fu">c</span>(<span class="st">"≤200"</span>, <span class="st">"200–500"</span>, <span class="st">"≥500"</span>)</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="combine-and-show-figure-2" class="level1">
+<h1>11. Combine and show Figure 2</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># patchwork allows several ggplots to be combined in a clear layout.</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>figure_2 <span class="ot">&lt;-</span> (plot_idaci <span class="sc">|</span> plot_ethnicity) <span class="sc">/</span> (plot_rural_urban <span class="sc">|</span> plot_road_distance)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>figure_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="save-figure-2" class="level1">
+<h1>12. Save Figure 2</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>figure_2_path <span class="ot">&lt;-</span> <span class="fu">file.path</span>(figures_dir, <span class="st">"figure_2_pm25_boxplots.jpeg"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggsave</span>(</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> figure_2_path,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot =</span> figure_2,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">device =</span> <span class="st">"jpeg"</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">600</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="fl">8.27</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="fl">11.69</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">units =</span> <span class="st">"in"</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>figure_2_path</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="session-information" class="level1">
+<h1>13. Session information</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recording session information helps others understand the software environment</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># used to generate the report.</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="what-this-workflow-demonstrates" class="level1">
+<h1>14. What this workflow demonstrates</h1>
+<p>This example demonstrates several reproducible coding practices:</p>
+<ul>
+<li>packages are declared at the start;</li>
+<li>folders are defined using project-relative paths;</li>
+<li>required inputs are listed explicitly;</li>
+<li>files are checked before import;</li>
+<li>the dataset is validated before analysis;</li>
+<li>missingness is summarised before interpretation;</li>
+<li>similar plots are generated using a reusable function;</li>
+<li>tables and figures are saved automatically;</li>
+<li>the report itself provides a record of the workflow;</li>
+<li>session information is recorded for transparency.</li>
+</ul>
+<p>It also demonstrates sustainable coding: the workflow avoids unnecessary manual repetition, reduces the risk of late errors, and makes rerunning the analysis more reliable.</p>
+
+
 </section>
 
 </main> <!-- /main -->

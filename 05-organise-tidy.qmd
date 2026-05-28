@@ -436,6 +436,7 @@ State what was removed, why, when and by whom.
 - Use controlled vocabularies or metadata standards where appropriate.
 :::
 
+::: figure-box
 ## Recommended resources for this chapter
 
 - Data Carpentry: common spreadsheet formatting problems [@datacarpentry_spreadsheet_errors]
@@ -443,6 +444,11 @@ State what was removed, why, when and by whom.
 - White et al.: practical data reuse recommendations [@white2013reuse]
 - Kang: prevention and handling of missing data [@kang2013missing]
 - CESSDA: designing a data file structure [@cessda_data_file_structure]
+-   **Tidy data principles (overview)**\
+    <https://book.the-turing-way.org/reproducible-research/rdm/rdm-spreadsheets/#rr-rdm-spreadsheets-format>
+-   **Data and version**\
+    <https://book.the-turing-way.org/reproducible-research/vcs/vcs-data/>
+:::
 
 ## What comes next?
 

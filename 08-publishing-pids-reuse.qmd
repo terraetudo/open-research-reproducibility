@@ -544,23 +544,9 @@ Choose one output and answer two separate questions:
 
 If these answers are not clear, the output is not yet ready for responsible reuse.
 
-------------------------------------------------------------------------
+## Recommended resources for this chapter
 
-::: chapter-summary
-## Key takeaways
-
--   Publishing is a process of releasing research outputs, not a single event.
--   Repositories and persistent identifiers support preservation, citation and traceability.
--   Sharing is not the same as enabling reuse.
--   Access and licensing are different decisions.
--   Sensitive data can often be made FAIR through metadata, documentation and controlled access routes.
--   Preprints, reporting guidelines, code citation and availability statements are part of responsible publishing practice.
-:::
-
-------------------------------------------------------------------------
-
-## Resources
-
+::: figure-box
 ### Persistent identifiers and citation
 
 -   ORCID: <https://orcid.org/>
@@ -599,3 +585,15 @@ If these answers are not clear, the output is not yet ready for responsible reus
 -   Discontinuing a research software project: <https://bssw.io/blog_posts/discontinuing-a-research-software-project>
 -   Ten simple rules for making research software more robust: <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009768>
 -   Ten simple rules for improving research software sustainability: <https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010476>
+:::
+
+::: chapter-summary
+## Key takeaways
+
+-   Publishing is a process of releasing research outputs, not a single event.
+-   Repositories and persistent identifiers support preservation, citation and traceability.
+-   Sharing is not the same as enabling reuse.
+-   Access and licensing are different decisions.
+-   Sensitive data can often be made FAIR through metadata, documentation and controlled access routes.
+-   Preprints, reporting guidelines, code citation and availability statements are part of responsible publishing practice.
+:::
