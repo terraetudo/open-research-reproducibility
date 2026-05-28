@@ -900,7 +900,7 @@
     "href": "06-docs-eln-sops.html#activity-how-could-you-show-your-working",
     "title": "Chapter 6 — Documentation and protocols",
     "section": "Activity: how could you show your working?",
-    "text": "Activity: how could you show your working?\nImagine you are contacted about a paper you published two years ago because a similar paper has reported contradictory results.\nWhat could you provide to show your working?\nConsider:\n\nproject README;\ndata dictionary or codebook;\nmetadata;\nanalysis scripts;\ndecision log;\nchangelog;\nenvironment notes;\nprotocol or preregistration;\nreporting guideline checklist;\ndata access statement;\nrepository or DOI;\ndocumented deviations or sensitivity analyses.\n\n\nReflection\nChoose one current project. What is the single piece of documentation that would most improve its reproducibility or handover?\nWrite one action you could take this week."
+    "text": "Activity: how could you show your working?\n\nImagine you are contacted about a paper you published two years ago because a similar paper has reported contradictory results.\nWhat could you provide to show your working?\nConsider:\n\nproject README;\ndata dictionary or codebook;\nmetadata;\nanalysis scripts;\ndecision log;\nchangelog;\nenvironment notes;\nprotocol or preregistration;\nreporting guideline checklist;\ndata access statement;\nrepository or DOI;\ndocumented deviations or sensitivity analyses.\n\n\nReflection\nChoose one current project. What is the single piece of documentation that would most improve its reproducibility or handover?\nWrite one action you could take this week."
   },
   {
     "objectID": "06-docs-eln-sops.html#recommended-resources-for-this-chapter",
@@ -1071,11 +1071,11 @@
     "text": "Practical guidance for early-career researchers\nA proportionate starting point is:\n\nPut all code in scripts or Quarto/R Markdown files.\nUse project-relative paths.\nGive scripts meaningful names.\nStart each script with a short explanatory header.\nAdd simple checks for files, variables, missingness, and impossible values.\nUse functions when code is repeated.\nSave outputs automatically.\nKeep raw data unchanged.\nTrack changes using Git or, at minimum, a changelog.\nDocument decisions that are not obvious from the code.\n\nYou do not need to do everything at once. Start with one improvement that reduces risk in your current workflow."
   },
   {
-    "objectID": "07-code-quality-testing.html#exercises",
-    "href": "07-code-quality-testing.html#exercises",
+    "objectID": "07-code-quality-testing.html#activity",
+    "href": "07-code-quality-testing.html#activity",
     "title": "Chapter 7 — Coding for reproducible research",
-    "section": "Exercises",
-    "text": "Exercises\n\nExercise 1: Review one script\nChoose one script from a current or previous project.\nAsk:\n\nIs the purpose clear from the top of the file?\nAre the inputs and outputs clear?\nAre object names meaningful?\nIs there repeated code that could become a function?\nAre key assumptions checked?\n\n\n\nExercise 2: Add one check\nAdd one simple check to a script.\nFor example:\n\nrequired file exists;\nrequired variable exists;\nno impossible values;\nexpected number of rows;\nno duplicated IDs;\nmissingness below an expected threshold.\n\n\n\nExercise 3: Automate one output\nChoose one table or figure that you currently create manually.\nCan you regenerate it directly from code and save it to a predictable folder?\n\n\nExercise 4: Reduce one source of computational waste\nChoose one analysis step that is slow, repetitive or often rerun.\nAsk:\n\nDoes the whole workflow need to rerun?\nCould an intermediate file be saved?\nCould the input be checked before running the expensive step?\nIs the spatial, temporal or simulation resolution proportionate?\nAre duplicate outputs being kept without a reason?"
+    "section": "Activity",
+    "text": "Activity\n\n\nReview one script\nChoose one script from a current or previous project.\nAsk:\n\nIs the purpose clear from the top of the file?\nAre the inputs and outputs clear?\nAre object names meaningful?\nIs there repeated code that could become a function?\nAre key assumptions checked?\n\n\n\nAdd one check\nAdd one simple check to a script.\nFor example:\n\nrequired file exists;\nrequired variable exists;\nno impossible values;\nexpected number of rows;\nno duplicated IDs;\nmissingness below an expected threshold.\n\n\n\nAutomate one output\nChoose one table or figure that you currently create manually.\nCan you regenerate it directly from code and save it to a predictable folder?\n\n\nReduce one source of computational waste\nChoose one analysis step that is slow, repetitive or often rerun.\nAsk:\n\nDoes the whole workflow need to rerun?\nCould an intermediate file be saved?\nCould the input be checked before running the expensive step?\nIs the spatial, temporal or simulation resolution proportionate?\nAre duplicate outputs being kept without a reason?"
   },
   {
     "objectID": "07-code-quality-testing.html#recommended-resources-for-this-chapter",
@@ -1232,11 +1232,11 @@
     "text": "Practical guidance for researchers\nFor most projects, a proportionate publishing workflow is:\n\nList the project outputs: paper, data, code, documentation, figures, protocols, notebooks.\nDecide which outputs can be open, restricted, described only, or not shared.\nChoose suitable repositories.\nPrepare README files, metadata and availability statements.\nChoose an appropriate licence for each output type.\nCreate a stable version or release.\nMint or record persistent identifiers.\nLink outputs together in the paper and repository records.\nAdd citation guidance.\nKeep a record of what was released and when.\n\nYou do not need to publish everything. You do need to make clear, defensible and documented decisions."
   },
   {
-    "objectID": "08-publishing-pids-reuse.html#exercises",
-    "href": "08-publishing-pids-reuse.html#exercises",
+    "objectID": "08-publishing-pids-reuse.html#activity",
+    "href": "08-publishing-pids-reuse.html#activity",
     "title": "Chapter 8 — Publishing, PIDs and preparing for reuse",
-    "section": "Exercises",
-    "text": "Exercises\n\nExercise 1: Output inventory\nChoose one recent or current project.\nList all possible outputs:\n\npaper or preprint;\ndataset;\nmetadata;\ncode;\nfigures and tables;\nprotocol or analysis plan;\ndocumentation;\ntraining or engagement materials.\n\nFor each output, decide whether it could be:\n\nopenly shared;\nshared under controlled access;\ndescribed through metadata only;\nnot shared, with a reason.\n\n\n\nExercise 2: Repository and DOI check\nChoose one output.\nAsk:\n\nWhere would it be deposited?\nWould the repository issue a DOI?\nWould the output need versioning?\nWhat metadata would be required?\nWhat related outputs should it link to?\n\n\n\nExercise 3: Access versus licence\nChoose one output and answer two separate questions:\n\nWho can access it?\nWhat can they do with it once they have access?\n\nIf these answers are not clear, the output is not yet ready for responsible reuse."
+    "section": "Activity",
+    "text": "Activity\n\n\nOutput inventory\nChoose one recent or current project.\nList all possible outputs:\n\npaper or preprint;\ndataset;\nmetadata;\ncode;\nfigures and tables;\nprotocol or analysis plan;\ndocumentation;\ntraining or engagement materials.\n\nFor each output, decide whether it could be:\n\nopenly shared;\nshared under controlled access;\ndescribed through metadata only;\nnot shared, with a reason.\n\n\n\nRepository and DOI check\nChoose one output.\nAsk:\n\nWhere would it be deposited?\nWould the repository issue a DOI?\nWould the output need versioning?\nWhat metadata would be required?\nWhat related outputs should it link to?\n\n\n\nAccess versus licence\nChoose one output and answer two separate questions:\n\nWho can access it?\nWhat can they do with it once they have access?\n\nIf these answers are not clear, the output is not yet ready for responsible reuse."
   },
   {
     "objectID": "08-publishing-pids-reuse.html#recommended-resources-for-this-chapter",

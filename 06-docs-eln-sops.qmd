@@ -434,6 +434,7 @@ Preprints are important, but they are mainly about dissemination and early visib
 
 ## Activity: how could you show your working?
 
+::: activity-box
 Imagine you are contacted about a paper you published two years ago because a similar paper has reported contradictory results.
 
 What could you provide to show your working?
@@ -453,7 +454,6 @@ Consider:
 -   repository or DOI;
 -   documented deviations or sensitivity analyses.
 
-::: activity-box
 ### Reflection
 
 Choose one current project. What is the single piece of documentation that would most improve its reproducibility or handover?

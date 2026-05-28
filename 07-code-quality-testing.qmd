@@ -741,9 +741,9 @@ You do not need to do everything at once. Start with one improvement that reduce
 
 ------------------------------------------------------------------------
 
-## Exercises
-
-### Exercise 1: Review one script
+## Activity
+::: activity-box
+### Review one script
 
 Choose one script from a current or previous project.
 
@@ -755,7 +755,7 @@ Ask:
 -   Is there repeated code that could become a function?
 -   Are key assumptions checked?
 
-### Exercise 2: Add one check
+### Add one check
 
 Add one simple check to a script.
 
@@ -768,13 +768,13 @@ For example:
 -   no duplicated IDs;
 -   missingness below an expected threshold.
 
-### Exercise 3: Automate one output
+### Automate one output
 
 Choose one table or figure that you currently create manually.
 
 Can you regenerate it directly from code and save it to a predictable folder?
 
-### Exercise 4: Reduce one source of computational waste
+### Reduce one source of computational waste
 
 Choose one analysis step that is slow, repetitive or often rerun.
 
@@ -785,6 +785,7 @@ Ask:
 -   Could the input be checked before running the expensive step?
 -   Is the spatial, temporal or simulation resolution proportionate?
 -   Are duplicate outputs being kept without a reason?
+:::
 
 ## Recommended resources for this chapter
 

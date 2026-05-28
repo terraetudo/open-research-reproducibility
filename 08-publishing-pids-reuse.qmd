@@ -499,9 +499,9 @@ You do not need to publish everything. You do need to make clear, defensible and
 
 ------------------------------------------------------------------------
 
-## Exercises
-
-### Exercise 1: Output inventory
+## Activity
+::: activity-box
+### Output inventory
 
 Choose one recent or current project.
 
@@ -523,7 +523,7 @@ For each output, decide whether it could be:
 -   described through metadata only;
 -   not shared, with a reason.
 
-### Exercise 2: Repository and DOI check
+### Repository and DOI check
 
 Choose one output.
 
@@ -535,7 +535,7 @@ Ask:
 -   What metadata would be required?
 -   What related outputs should it link to?
 
-### Exercise 3: Access versus licence
+### Access versus licence
 
 Choose one output and answer two separate questions:
 
@@ -543,6 +543,7 @@ Choose one output and answer two separate questions:
 2.  What can they do with it once they have access?
 
 If these answers are not clear, the output is not yet ready for responsible reuse.
+:::
 
 ## Recommended resources for this chapter
 
